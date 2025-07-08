@@ -28,7 +28,7 @@ d |>
   filter(!is.na(session)) |>
   select(-dow, -admin_notes, -number, -session) |>
   mutate(
-    date = as.Date(as.Date(purrr::map_chr(date, as.character))),
+    date = as.Date(as.Date(map_chr(date, as.character))), #modified this as date is a list of dttm variables
     prepare = if_else(date > prepare_cutoff_date, "*To be posted*", prepare)
     ) |>
   relocate(due, .after = materials) |>
