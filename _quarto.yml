@@ -1,0 +1,131 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "STA 199"
+  description: "Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2025."
+  site-url: "https://sta199-f25.github.io/"
+
+  repo-url: https://github.com/sta199-f25/sta199-f25.github.io/
+  repo-actions: [edit, issue]
+
+  open-graph: true
+  # twitter-card:
+  #   creator: "@minebocek"
+  #   image: "img/twitter-card.png"
+
+  # draft-mode: unlinked
+
+  sidebar:
+    background: "#5D737E"
+    logo: "img/logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/sta199-f25
+        text: "GitHub organization"
+      - icon: code-square
+        href: https://cmgr.oit.duke.edu/containers
+        text: "RStudio containers"
+      - icon: life-preserver
+        text: Support
+        menu:
+          - icon: person-raised-hand
+            text: Office hours
+            # href: https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing
+          - icon: people-fill
+            text: Help from humans (Ed Discussion)
+            # href: https://edstem.org/us/courses/62468/discussion/
+          # - icon: robot
+          #   text: Help from AI (Chatbot)
+          #   href: https://canvas.duke.edu/courses/39994/external_tools/5887
+      - icon: file-check-fill
+        text: "Canvas"
+        menu:
+          - icon: megaphone-fill
+            text: Announcements
+            # url: https://canvas.duke.edu/courses/39994/announcements
+          - icon: file-arrow-up-fill
+            text: Gradescope
+            # url: https://canvas.duke.edu/courses/39994/external_tools/181
+          - icon: alphabet-uppercase
+            text: Gradebook
+            # url: https://canvas.duke.edu/courses/39994/gradebook
+
+    style: docked
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course-overview.qmd
+            text: Overview
+          - href: course-syllabus.qmd
+            text: Syllabus
+          - href: course-support.qmd
+            text: Support
+          - href: course-team.qmd
+            text: Team
+          - href: index.qmd
+            text: Schedule
+          - href: course-links.qmd
+            text: Useful links
+          - href: course-faq.qmd
+            text: FAQ
+      - section: "Computing"
+        contents:
+          - href: computing-access.qmd
+            text: Access
+          - href: computing-code-alongs.qmd
+            text: Code alongs
+          - href: computing-cheatsheets.qmd
+            text: Cheatsheets
+          - href: coding-principles-oh.qmd
+            text: Coding principles
+          - href: computing-troubleshooting.qmd
+            text: Troubleshooting
+      - section: "Project"
+        # contents:
+        #   - href: project/description.qmd
+        #     text: Description
+        #   - href: project/1-working-collaboratively.qmd
+        #     text: Milestone 1
+        #   - href: project/2-proposal.qmd
+        #     text: Milestone 2
+        #   - href: project/3-improvement-progress.qmd
+        #     text: Milestone 3
+        #   - href: project/4-peer-review.qmd
+        #     text: Milestone 4
+        #   - href: project/5-writeup-presentation.qmd
+        #     text: Milestone 5            
+        #   - href: project/tips-resources.qmd
+        #     text: Tips + resources
+      - lab.qmd
+      - ae.qmd
+      - exam-review.qmd
+            
+  page-footer:
+    right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
+    left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel"
+    background: "#5D737E"
+
+format: 
+  html:
+    mainfont: Atkinson Hyperlegible
+    highlight-style: a11y-light
+
+theme:
+  light: [cosmo, style/sta199.scss]
+  dark: [cosmo, style/sta199.scss, style/dark.scss]
+linkcolor: "#5D737E"
+toc: true
+code-copy: hover
+code-link: true
+code-overflow: wrap
+
+execute:
+  freeze: auto
+
+editor: visual

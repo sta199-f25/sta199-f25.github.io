@@ -1,0 +1,41 @@
+---
+title: "STA 199<br>Fall 2025"
+image: img/logo-f24.png
+image-alt: Hex logo for course with
+about:
+  template: trestles
+  links:
+    - icon: laptop
+      href: https://sta199-f25.github.io
+      aria-label: Link to course website
+    - icon: github
+      href: https://github.com/sta199-f25
+      aria-label: Link to course GitHub organization
+---
+
+## Overview
+
+Intro to data science and statistical thinking.
+Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner.
+Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results.
+Work on problems and case studies inspired by and based on real-world questions and data.
+The course will focus on the R statistical computing language.
+No statistical or computing background is necessary.
+Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.
+
+## Meetings
+
+| Meeting | Location                       | Time                          |
+|---------|--------------------------------|-------------------------------|
+| Lecture | Biological Sciences 111        | Tue & Thur 11:45 am - 1:00 pm |
+| Lab 01  | Perkins LINK 071 (Classroom 5) | Mon 8:30 - 9:45 am            |
+| Lab 02  | Perkins LINK 087 (Classroom 3) | Mon 8:30 - 9:45 am            |
+| Lab 03  | Allen 326                      | Mon 10:05 - 11:20 am          |
+| Lab 04  | Perkins LINK 087 (Classroom 3) | Mon 10:05 - 11:20 am          |
+| Lab 05  | Perkins LINK 087 (Classroom 3) | Mon 11:45 am - 1:00 pm        |
+| Lab 06  | Perkins LINK 071 (Classroom 5) | Mon 11:45 am - 1:00 pm        |
+| Lab 07  | Perkins LINK 087 (Classroom 3) | Mon 1:25 - 2:40 pm            |
+| Lab 08  | Perkins LINK 071 (Classroom 5) | Mon 1:25 - 2:40 pm            |
+| Lab 09  | Perkins LINK 087 (Classroom 3) | Mon 3:05 - 4:20 pm            |
+| Lab 10  | Perkins LINK 087 (Classroom 3) | Mon 4:40 - 5:55 pm            |
+| Lab 11  | Perkins LINK 071 (Classroom 5) | Mon 4:40 - 5:55 pm            |

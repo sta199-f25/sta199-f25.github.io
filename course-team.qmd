@@ -1,0 +1,47 @@
+---
+title: "Teaching team"
+listing:
+  id: ta-listing
+  contents: ta
+  sort: title
+  sort-ui: [title, categories, description, subtitle]
+  filter-ui: [categories, description]
+  type: table
+  fields: [image, title, categories, description, subtitle]
+  field-display-names:
+    title: Name
+    categories: "Role(s)"
+    description: "Section(s)"
+    subtitle: Office hours
+---
+
+## Instructor
+
+![](img/mine.png){.circular-portrait-mine style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel"}
+
+[**Dr. Mine Çetinkaya-Rundel**](http://mine-cr.com/) (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.
+
++------------------------------------------------------------+---------------+
+| Office hours                                               | Location      |
++============================================================+===============+
+| Tuesdays and Thursdays 1-1:30 pm (after class)             | Bio Sci 111   |
++------------------------------------------------------------+---------------+
+| TBD.                                                       | Old Chem 2XX  |
++------------------------------------------------------------+---------------+
+
+: {tbl-colwidths="[70,30]"}
+
+## Teaching assistants {#teaching-assistants}
+
+Each TA holds [office hours](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing).
+Some TAs are also leaders or helpers for lab sections.
+Some TAs help out in lecture.
+
+::: {#ta-listing}
+:::
+
+## Course coordinator
+
+![](img/mary.png){.circular-portrait-mary style="float:right;" fig-alt="Headshot of Dr. Mary Knox"}
+
+Dr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding accommodations, missed work, extensions, etc., and registration.
