@@ -1,0 +1,681 @@
+[
+  {
+    "objectID": "computing-troubleshooting.html",
+    "href": "computing-troubleshooting.html",
+    "title": "Computing troubleshooting",
+    "section": "",
+    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
+    "crumbs": [
+      "Computing",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "course-support.html",
+    "href": "course-support.html",
+    "title": "Course support",
+    "section": "",
+    "text": "Most of you will need help at some point, and we want to make sure you can identify where that is so that you don’t get too frustrated and feel comfortable seeking help.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#lectures-and-labs",
+    "href": "course-support.html#lectures-and-labs",
+    "title": "Course support",
+    "section": "Lectures and labs",
+    "text": "Lectures and labs\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so asking will create a learning opportunity for everyone.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#help-from-humans",
+    "href": "course-support.html#help-from-humans",
+    "title": "Course support",
+    "section": "Help from humans",
+    "text": "Help from humans\n\nOffice hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. Many questions are most effectively answered in person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by during office hours at least once during the first three weeks of class. If you have no questions, stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.\nMy office hours will start in Week 1, TA office hours will start in Week 2.\n\n\nEd Discussion\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course discussion forum, Ed Discussion, is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!\nYou can access this tool on the course website toolbar – just click on the lifesaver icon.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#email",
+    "href": "course-support.html#email",
+    "title": "Course support",
+    "section": "Email",
+    "text": "Email\nPlease refrain from emailing any course content questions (those should go to Ed Discussion), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at mc301@duke.edu.\nIf there is a question that’s not appropriate for the public forum, you are welcome to email me directly. If you email me, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#academic-support",
+    "href": "course-support.html#academic-support",
+    "title": "Course support",
+    "section": "Academic support",
+    "text": "Academic support\nThere are times you may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact ARC@duke.edu, 919-684-5917.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#mental-health-and-well-being",
+    "href": "course-support.html#mental-health-and-well-being",
+    "title": "Course support",
+    "section": "Mental health and well-being",
+    "text": "Mental health and well-being\nDuke is committed to holistic student well-being, including mental, emotional, and physical health. The university offers resources to help students manage daily stress, encourage intentional self-care, and access just-in-time support. If you find you need support, your mental and/or emotional health concerns are impacting your day-to-day activities and your academic performance, or you need someone to talk to, the resources below are available to you:\n\nDukeReach: DukeReach provides comprehensive outreach services to support students in managing all aspects of well-being, including referrals and follow-up services for students who are experiencing significant challenges related to mental health, physical health, social adjustment, and/or a variety of other stressors. You can reach the DukeReach team at dukereach@duke.edu.\nCounseling and Psychological Services (CAPS): CAPS services include individual and group counseling services, psychiatric services, and workshops. CAPS also provides referrals to off-campus resources for specialized care. You can reach CAPS at (919) 660-1000.\nTimelyCare1: TimelyCare is an online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling.\nBC Fellows for Healthy Relationship: The BC Fellows meet with students individually and in groups, supporting the development of healthy relationships and building meaningful community in all areas of a student’s life.\nDukeLine: Students who want to connect anonymously with a Peer Coach can text 984-230-4888 from 5 to 11 p.m. daily. DukeLine offers in-the-moment anonymous, non-emergency text support from a peer.\nDuWell: DuWell provides Moments of Mindfulness (stress management and resilience building) and meditation programming (Koru workshop) to assist students in developing a daily emotional well-being practice. All are welcome, and no experience is necessary. You can reach DuWell at (919) 681-8421.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#course-costs",
+    "href": "course-support.html#course-costs",
+    "title": "Course support",
+    "section": "Course costs",
+    "text": "Course costs\n\nTextbooks: The textbooks for this course are freely available on the web.\nLaptops: Each student is expected to have a laptop they can bring to each lecture and lab.\n\nIf you are having difficulty with the costs associated with this course, here are some resources:\n\nKarsh Office of Undergraduate Support: Regardless of your aid package, Karsh offers loans and resources for connecting students with campus programs that might help alleviate course costs.\nDukeLIFE: The Course Material Assistance program offers assistance for eligible students, including through the LIFE Loaner Laptop Program. Students who are eligible for DukeLIFE benefits are notified before the start of the semester; program resources are limited.\nDuke Libraries: The library’s Top Textbook Program allows you to rent some textbooks for 3 hours at a time.\nDuke Link: You can reserve rental equipment from the Link for course-specific technology needs, such as a Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, Handheld Projector, or GoPro.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#assistance-with-zoom-or-canvas",
+    "href": "course-support.html#assistance-with-zoom-or-canvas",
+    "title": "Course support",
+    "section": "Assistance with Zoom or Canvas",
+    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom and Canvas.\nNote that we will be using Canvas minimally in this course (primarily for announcements and the grade book). All assignment submissions will take place on Gradescope and GitHub, and conversations will take place on Ed Discussion.\nZoom will be used for online office hours and as a backup option should we need to hold the course online instead of in person.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#footnotes",
+    "href": "course-support.html#footnotes",
+    "title": "Course support",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFormerly known as Blue Devils Care.↩︎",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "href": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "title": "FAQ",
+    "section": "How can I submit my assignment to Gradescope?",
+    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions.",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "title": "FAQ",
+    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
+    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nThe short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.5.1: https://cran.r-project.org/\nDownload and install RStudio: https://posit.co/download/rstudio-desktop/\nInstall Quarto 1.7.32 or higher: https://quarto.org/docs/get-started/\nInstall Git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here.",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "computing-code-alongs.html",
+    "href": "computing-code-alongs.html",
+    "title": "Code alongs",
+    "section": "",
+    "text": "The following videos feature “code alongs” as an additional resource for getting coding practice.",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
+  },
+  {
+    "objectID": "computing-code-alongs.html#data-visualization-and-transformation",
+    "href": "computing-code-alongs.html#data-visualization-and-transformation",
+    "title": "Code alongs",
+    "section": "Data visualization and transformation",
+    "text": "Data visualization and transformation\n\nUN Votes\nFirst look at R amd RStudio.\n\n\n\nFirst look at Palmer Penguins\nFirst look at data science with the tidyverse.\n\n\n\nFlights and pipes\nData transformation\n\n\n\nStarwars characters\nData visualization\n\n\n\nDiving deeper with Palmer Penguins\nData visualization and transformation",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
+  },
+  {
+    "objectID": "lab.html",
+    "href": "lab.html",
+    "title": "Labs",
+    "section": "",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course.",
+    "crumbs": [
+      "Computing",
+      "Access"
+    ]
+  },
+  {
+    "objectID": "exam-review.html",
+    "href": "exam-review.html",
+    "title": "Exam reviews",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Exam reviews"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html",
+    "href": "coding-principles-oh.html",
+    "title": "Intro to Coding Principles",
+    "section": "",
+    "text": "library(tidyverse)",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#definition",
+    "href": "coding-principles-oh.html#definition",
+    "title": "Intro to Coding Principles",
+    "section": "Definition",
+    "text": "Definition\nSo what even is a variable, in the first place? There are many possible definitions:\n\nAnything you assign!\nPractically speaking, variables are a way for you to store data without having to type it out every time.\nThey allow you to manipulate data with the help of pre-built functions (more on that later).\nThey can also be changed - hence the name “variable”.\n\nWhat are some examples of variables?\n\nThe simplest is a single value - like in math. I could say “x = 10”.\nIt might also be a vector - essentially a list of values. For example, I might just store every name in this class in a vector.\nMost frequently, your variables will be your entire data frames.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#assignment-saving",
+    "href": "coding-principles-oh.html#assignment-saving",
+    "title": "Intro to Coding Principles",
+    "section": "Assignment & Saving",
+    "text": "Assignment & Saving\nOk, these seem pretty useful - so how do we use them? In math and most programming languages, you use the “=” operator. This is also possible to do in R:\n\nx = 10\nx\n\n[1] 10\n\n\nHowever, in R, we prefer to use the “&lt;-” operator, to avoid confusion between variable assignment and function arguments. Here’s how that looks:\n\ny &lt;- 15\ny\n\n[1] 15\n\n\nSaving Changes\nSuppose you run a function on a variable. By default, R will show you the output of this function, but it will not actually modify your variable. For example, let’s look at the midwest data set:\n\nmidwest\n\n# A tibble: 437 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 427 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nNow, let’s run a function that “changes” the data frame. We can use select() to look only at the county column:\n\nmidwest |&gt;\n  select(county)\n\n# A tibble: 437 × 1\n   county   \n   &lt;chr&gt;    \n 1 ADAMS    \n 2 ALEXANDER\n 3 BOND     \n 4 BOONE    \n 5 BROWN    \n 6 BUREAU   \n 7 CALHOUN  \n 8 CARROLL  \n 9 CASS     \n10 CHAMPAIGN\n# ℹ 427 more rows\n\n\nCool change! So, just to make sure, let’s look at the midwest data frame one more time.\n\nmidwest\n\n# A tibble: 437 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 427 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nNow wait a minute - what happened here? I clearly told it to select the county column, and it did! So why is it that, when I went to look at the midwest data frame again, it had all of the columns, not just the one that I selected?\nThe answer is that we never saved midwest back to a variable! By default, R will show the output, but not modify the data frame unless I want it to. Let’s look at a couple ways we can do that:\n\nmidwest &lt;- midwest |&gt;\n  select(county)\n\nmidwest\n\n# A tibble: 437 × 1\n   county   \n   &lt;chr&gt;    \n 1 ADAMS    \n 2 ALEXANDER\n 3 BOND     \n 4 BOONE    \n 5 BROWN    \n 6 BUREAU   \n 7 CALHOUN  \n 8 CARROLL  \n 9 CASS     \n10 CHAMPAIGN\n# ℹ 427 more rows\n\n\nThe first option is to simply overwrite the variable. This is useful if you’re never going to need those data in their original form - it saves you some confusion in that case.\nHowever, what if later on I decide I did need those data after all? Perhaps I wanted population density data. I go to try and find this variable in the midwest data set, because that’s where I know it’s stored…\n\nmidwest |&gt;\n  select(popdensity)\n\nError in `select()`:\n! Can't select columns that don't exist.\n✖ Column `popdensity` doesn't exist.\n\n\n…but the variable is gone! This is a common point of confusion for students in STA 199, so it’s important to understand what you’re doing whenever you modify your data in-place like this - you’re overwriting the existing data.\nWe have a couple of options here. If we were loading these data from a .csv file, we could go back to the top of the document. Or, we could do something more effective: Go to Environment, click the little broom icon, and select “yes”.\n\nmidwest\n\n# A tibble: 437 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 427 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nNow the second option: let’s try making the modification a little more carefully: saving the data to a new variable.\n\nmidwest_counties &lt;- midwest |&gt;\n  select(county)\n\nmidwest_counties\n\n# A tibble: 437 × 1\n   county   \n   &lt;chr&gt;    \n 1 ADAMS    \n 2 ALEXANDER\n 3 BOND     \n 4 BOONE    \n 5 BROWN    \n 6 BUREAU   \n 7 CALHOUN  \n 8 CARROLL  \n 9 CASS     \n10 CHAMPAIGN\n# ℹ 427 more rows\n\nmidwest\n\n# A tibble: 437 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 427 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nNow we have two data frames: the new data frame midwest_counties, which contains our modifications from the data pipeline above, and the original data frame midwest, which has not been changed. Both of these are useful operations, and you will undoubtedly use both this semester! However, keep this distinction in mind when you’re mutating your data - don’t remove anything you think you’ll need later.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#variable-examples",
+    "href": "coding-principles-oh.html#variable-examples",
+    "title": "Intro to Coding Principles",
+    "section": "Variable Examples",
+    "text": "Variable Examples\n\nx &lt;- 10\nx\n\n[1] 10\n\ny &lt;- c(3, 5)\ny\n\n[1] 3 5\n\nz &lt;- midwest\nz\n\n# A tibble: 437 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 427 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#examples",
+    "href": "coding-principles-oh.html#examples",
+    "title": "Intro to Coding Principles",
+    "section": "Examples",
+    "text": "Examples\nEvery column in a data frame will have a particular data type - sort of a way that R recognizes, classifies, and interacts with the data. Let’s look at an example, using the convenient glimpse function:\n\nglimpse(midwest)\n\nRows: 437\nColumns: 28\n$ PID                  &lt;int&gt; 561, 562, 563, 564, 565, 566, 567, 568, 569, 570,…\n$ county               &lt;chr&gt; \"ADAMS\", \"ALEXANDER\", \"BOND\", \"BOONE\", \"BROWN\", \"…\n$ state                &lt;chr&gt; \"IL\", \"IL\", \"IL\", \"IL\", \"IL\", \"IL\", \"IL\", \"IL\", \"…\n$ area                 &lt;dbl&gt; 0.052, 0.014, 0.022, 0.017, 0.018, 0.050, 0.017, …\n$ poptotal             &lt;int&gt; 66090, 10626, 14991, 30806, 5836, 35688, 5322, 16…\n$ popdensity           &lt;dbl&gt; 1270.9615, 759.0000, 681.4091, 1812.1176, 324.222…\n$ popwhite             &lt;int&gt; 63917, 7054, 14477, 29344, 5264, 35157, 5298, 165…\n$ popblack             &lt;int&gt; 1702, 3496, 429, 127, 547, 50, 1, 111, 16, 16559,…\n$ popamerindian        &lt;int&gt; 98, 19, 35, 46, 14, 65, 8, 30, 8, 331, 51, 26, 17…\n$ popasian             &lt;int&gt; 249, 48, 16, 150, 5, 195, 15, 61, 23, 8033, 89, 3…\n$ popother             &lt;int&gt; 124, 9, 34, 1139, 6, 221, 0, 84, 6, 1596, 20, 7, …\n$ percwhite            &lt;dbl&gt; 96.71206, 66.38434, 96.57128, 95.25417, 90.19877,…\n$ percblack            &lt;dbl&gt; 2.57527614, 32.90043290, 2.86171703, 0.41225735, …\n$ percamerindan        &lt;dbl&gt; 0.14828264, 0.17880670, 0.23347342, 0.14932156, 0…\n$ percasian            &lt;dbl&gt; 0.37675897, 0.45172219, 0.10673071, 0.48691813, 0…\n$ percother            &lt;dbl&gt; 0.18762294, 0.08469791, 0.22680275, 3.69733169, 0…\n$ popadults            &lt;int&gt; 43298, 6724, 9669, 19272, 3979, 23444, 3583, 1132…\n$ perchsd              &lt;dbl&gt; 75.10740, 59.72635, 69.33499, 75.47219, 68.86152,…\n$ percollege           &lt;dbl&gt; 19.63139, 11.24331, 17.03382, 17.27895, 14.47600,…\n$ percprof             &lt;dbl&gt; 4.355859, 2.870315, 4.488572, 4.197800, 3.367680,…\n$ poppovertyknown      &lt;int&gt; 63628, 10529, 14235, 30337, 4815, 35107, 5241, 16…\n$ percpovertyknown     &lt;dbl&gt; 96.27478, 99.08714, 94.95697, 98.47757, 82.50514,…\n$ percbelowpoverty     &lt;dbl&gt; 13.151443, 32.244278, 12.068844, 7.209019, 13.520…\n$ percchildbelowpovert &lt;dbl&gt; 18.011717, 45.826514, 14.036061, 11.179536, 13.02…\n$ percadultpoverty     &lt;dbl&gt; 11.009776, 27.385647, 10.852090, 5.536013, 11.143…\n$ percelderlypoverty   &lt;dbl&gt; 12.443812, 25.228976, 12.697410, 6.217047, 19.200…\n$ inmetro              &lt;int&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0…\n$ category             &lt;chr&gt; \"AAR\", \"LHR\", \"AAR\", \"ALU\", \"AAR\", \"AAR\", \"LAR\", …\n\n\nNext to the data, we can see various designations - &lt;int&gt;, &lt;dbl&gt;, &lt;chr&gt;, etc. These are data types. But what exactly is the difference?\nDouble/Numeric\nThe dbl data type, which is the default implementation of the numeric class, stands for double - meaning “double-precision floating-point format”. It’s pretty clear that double is an easier word to remember! This allows you to store numbers with a lot of decimal points (but not infinite!). For example, let’s look at \\(\\pi\\), which is built in as pi in R:\n\npi\n\n[1] 3.141593\n\nclass(pi)\n\n[1] \"numeric\"\n\n\nHere, we use the class() function to determine what data type R is using to store our variables. In this case, we can see that R stores pi as a default numeric variable, which is implemented as a double. In general, whenever you work with numbers, they will be doubles, and for purposes of STA 199 there is no issue with this.\nInteger\nThe int data type means integer - as in, the mathematical concept of an integer. All data represented as integers will be whole numbers. This data type is not capable of storing decimal places, so if you try to do decimal operations with it, R will implicitly cast it to another data type. Implicitly means that it does this without us telling it to. Let’s take a look at a couple of examples:\n\na &lt;- 3\nclass(a)\n\n[1] \"numeric\"\n\n\nBy default, R will treat all numbers as the numeric class. If you want to explicitly tell R that your number is an integer, follow the number with “L”:\n\na &lt;- 3L\nclass(a)\n\n[1] \"integer\"\n\n\nNow, let’s say we want to divide this number by 2:\n\nb &lt;- a / 2\nclass(b)\n\n[1] \"numeric\"\n\n\nSince 3 is not divisible by 2, the output is a decimal. However, since we have performed a decimal operation, rather than trying to guess whether to round up or down, R simply implicitly casts it back to numeric.\nLogical/Boolean\nWhile there isn’t an example in this data frame, there is a data type called logical - which represents true/false.\n\nc &lt;- TRUE\nclass(c)\n\n[1] \"logical\"\n\n\nIn R, you need to type out TRUE/FALSE in all caps for it to be recognized. Under the hood, R stores these values as “FALSE = 0” and “TRUE = 1”, which means that if you want to find the percentage of TRUE in your data, you can just take the average:\n\nd &lt;- c(TRUE, FALSE, TRUE)\nmean(d)\n\n[1] 0.6666667\n\n\nCharacter/String\nThe chr data type represents all characters and strings in R. Unlike some languages, R does not differentiate between these. In general, strings are used to represent words and categorical data, for example:\n\nplace &lt;- \"Durham, NC\"\nclass(place)\n\n[1] \"character\"\n\n\nHowever, there is an important point of caution here. Sometimes, when you load in a data frame, there will be columns that should be represented as numbers, but are accidentally represented as strings. If you’re not careful, this can have consequences. For example, consider the following:\n\n0 == 00\n\n[1] TRUE\n\n\"0\" == \"00\"\n\n[1] FALSE\n\n\nIn R, the numbers 0 and 00 represent the same thing! However, when they are strings, they do not. R treats numbers differently than it does strings, so it’s important to pay attention to which one you are actually implementing. You might also run into issues with some of your operations - for example, if you try to take the average of a column of strings, R has no idea what to do and will throw an error.\nNote: pay attention to the usage of two equal signs here, rather than just one. Why did we do this? (More on this shortly.)",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#casting",
+    "href": "coding-principles-oh.html#casting",
+    "title": "Intro to Coding Principles",
+    "section": "Casting",
+    "text": "Casting\nSo what is the solution to this problem? The answer is called casting, which means changing the data type. You do this using the as.character(), as.numeric(), and as.logical() commands. Let’s look at an example:\n\ne &lt;- \"00\"\nclass(e)\n\n[1] \"character\"\n\ne\n\n[1] \"00\"\n\ne &lt;- as.numeric(e)\nclass(e)\n\n[1] \"numeric\"\n\ne\n\n[1] 0\n\ne &lt;- as.logical(e)\nclass(e)\n\n[1] \"logical\"\n\ne\n\n[1] FALSE\n\ne &lt;- as.character(e)\nclass(e)\n\n[1] \"character\"\n\ne\n\n[1] \"FALSE\"\n\ne &lt;- as.numeric(e) # What happened?\n\nWarning: NAs introduced by coercion\n\ne\n\n[1] NA\n\n\nBe mindful with your casting - you can lose information along the way!\nNote: NA is a specific type in R. It essentially means “nothing” or “this value has not been declared”. You cannot use == to check whether a value is NA. Instead, you must use is.na().",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#equals",
+    "href": "coding-principles-oh.html#equals",
+    "title": "Intro to Coding Principles",
+    "section": "Equals",
+    "text": "Equals\nThe first Boolean operator is “equals”. This is a place where it is easy to get confused. We use the single equals sign, =, to denote assignment - essentially, telling R “this thing takes this value.” We use the double equals sign, ==, to denote comparison - essentially, asking R “are these two values equal?” It is important to keep these two things distinct - if you want to check equality, or filter for a specific value, you always need to use the double equals sign!\n\nmidwest |&gt;\n  filter(county = \"Cook\")\n\nError in `filter()`:\n! We detected a named input.\nℹ This usually means that you've used `=` instead of `==`.\nℹ Did you mean `county == \"Cook\"`?\n\n\nHere’s an example of where a single equals sign is incorrect, and R returns an error. Fortunately, it has a very helpful suggestion in the error message! Let’s replace that with the double equals:\n\nmidwest |&gt;\n  filter(county == \"Cook\")\n\n# A tibble: 0 × 28\n# ℹ 28 variables: PID &lt;int&gt;, county &lt;chr&gt;, state &lt;chr&gt;, area &lt;dbl&gt;,\n#   poptotal &lt;int&gt;, popdensity &lt;dbl&gt;, popwhite &lt;int&gt;, popblack &lt;int&gt;,\n#   popamerindian &lt;int&gt;, popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;, …\n\n\nNow there’s no error message, but we also didn’t return any values. Why did this happen? When I use ==, I am checking whether these two strings are exactly equivalent, and that includes being case sensitive. If I view the data in the data frame, I see that all of the county names are actually in all caps. I can fix the string in my example…\n\nmidwest |&gt;\n  filter(county == \"COOK\")\n\n# A tibble: 1 × 28\n    PID county state  area poptotal popdensity popwhite popblack popamerindian\n  &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n1   576 COOK   IL    0.058  5105067     88018.  3204947  1317147         10289\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\n…and finally find Chicago!",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#and",
+    "href": "coding-principles-oh.html#and",
+    "title": "Intro to Coding Principles",
+    "section": "And",
+    "text": "And\nThe second Boolean operator is “and”. We use this when we want multiple conditions to be true. In R, to denote and, we use the single ampersand & (in some other languages, you use a double ampersand). When R sees this, it checks both statements, and only returns TRUE if both statements are true. Let’s look at an example, again using filter():\n\nmidwest |&gt;\n  filter(state == \"IL\")\n\n# A tibble: 102 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98\n 2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19\n 3   563 BOND    IL    0.022    14991       681.    14477      429            35\n 4   564 BOONE   IL    0.017    30806      1812.    29344      127            46\n 5   565 BROWN   IL    0.018     5836       324.     5264      547            14\n 6   566 BUREAU  IL    0.05     35688       714.    35157       50            65\n 7   567 CALHOUN IL    0.017     5322       313.     5298        1             8\n 8   568 CARROLL IL    0.027    16805       622.    16519      111            30\n 9   569 CASS    IL    0.024    13437       560.    13384       16             8\n10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331\n# ℹ 92 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nUsing our == operator, we can find all of the counties in Illinois. Now, let’s find only the ones with a population density over 30,000:\n\nmidwest |&gt;\n  filter(state == \"IL\" & popdensity &gt;= 30000)\n\n# A tibble: 2 × 28\n    PID county  state  area poptotal popdensity popwhite popblack popamerindian\n  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n1   576 COOK    IL    0.058  5105067     88018.  3204947  1317147         10289\n2   582 DU PAGE IL    0.02    781666     39083.   714905    15462           962\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nNow, the filter() statement is returning all of the rows from this data frame where BOTH the state is “IL” AND the population density is \\(\\geq\\) 30,000.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#or",
+    "href": "coding-principles-oh.html#or",
+    "title": "Intro to Coding Principles",
+    "section": "Or",
+    "text": "Or\nThe third Boolean operator is “or”. We use this when we want at least one condition to be true. In R, to denote or, we use the vertical line | (again, in some other languages, you use a double line). When R sees this, it checks both statements, and returns TRUE if either (or both) of the statements are true. Let’s go back to our example:\n\nmidwest |&gt;\n  filter(state == \"IL\" | popdensity &gt;= 30000) |&gt;\n  arrange(desc(popdensity))\n\n# A tibble: 107 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1   576 COOK    IL    0.058  5105067     88018.  3204947  1317147         10289\n 2  3021 MILWAU… WI    0.015   959275     63952.   718918   195470          6994\n 3  1278 WAYNE   MI    0.035  2111687     60334.  1212007   849109          8048\n 4  2026 CUYAHO… OH    0.026  1412140     54313.  1025756   350185          2533\n 5   582 DU PAGE IL    0.02    781666     39083.   714905    15462           962\n 6   711 MARION  IN    0.023   797159     34659.   615039   169654          1698\n 7  2039 HAMILT… OH    0.025   866228     34649.   672972   181145          1204\n 8   609 LAKE    IL    0.028   516418     18444.   450666    34771          1198\n 9   605 KANE    IL    0.029   317471     10947.   269675    19006           620\n10   661 Winneb… IL    0.03    252913      8430.   222439    23256           651\n# ℹ 97 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nNow, R returns all of the rows that are in Illinois, as well as all of the rows that are not in Illinois, but have a population density of at least 30,000.\nNote: Keep in mind that | is not exclusive. That means that | will return true if only one condition is true, but it will also return true if both conditions are true. If you want exactly one condition to be true, look up the operator XOR.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#not",
+    "href": "coding-principles-oh.html#not",
+    "title": "Intro to Coding Principles",
+    "section": "Not",
+    "text": "Not\nThe fourth Boolean operator is “not”. We use this when we want to exclude certain values from the data or prevent something from happening. In R, to denote not, we use the exclamation mark !. Specifically, you place the !, also known as a bang sign, in front of the statement that you want to be false. The most frequent use of this is to say “not equals”, which is denoted != (note that it is only one equals sign now, not two!) Let’s look at an example:\n\nmidwest |&gt;\n  filter(state != \"IL\") |&gt;\n  arrange(desc(popdensity))\n\n# A tibble: 335 × 28\n     PID county  state  area poptotal popdensity popwhite popblack popamerindian\n   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;\n 1  3021 MILWAU… WI    0.015   959275     63952.   718918   195470          6994\n 2  1278 WAYNE   MI    0.035  2111687     60334.  1212007   849109          8048\n 3  2026 CUYAHO… OH    0.026  1412140     54313.  1025756   350185          2533\n 4   711 MARION  IN    0.023   797159     34659.   615039   169654          1698\n 5  2039 HAMILT… OH    0.025   866228     34649.   672972   181145          1204\n 6  2033 FRANKL… OH    0.034   961437     28278.   783714   152840          2056\n 7  1246 MACOMB  MI    0.028   717400     25621.   693686    10400          2639\n 8  2056 LUCAS   OH    0.021   462361     22017.   380155    68456          1164\n 9  2085 SUMMIT  OH    0.024   514990     21458.   446902    61185          1065\n10  2065 MONTGO… OH    0.027   573809     21252.   463551   101817          1065\n# ℹ 325 more rows\n# ℹ 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,\n#   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,\n#   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,\n#   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,\n#   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,\n#   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;\n\n\nIn these data, all rows from Illinois have been removed. You can check this by commenting out the filter line, and observing the difference, or just noting that Cook County, IL (home of Chicago, the densest city in the midwest) is absent!",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#combining-boolean-operators",
+    "href": "coding-principles-oh.html#combining-boolean-operators",
+    "title": "Intro to Coding Principles",
+    "section": "Combining Boolean Operators",
+    "text": "Combining Boolean Operators\nYou can also combine multiple Boolean operators in more complex logical statements. We will not look at any examples here, because they can get very confusing, very quickly (and are generally unnecessary for this course). However, if you do want to combine Boolean operators, here are some things to keep in mind:\n\nParentheses: Just like in math, any statements that you put in parentheses will execute first. If I say “A and B or C”, it’s unclear exactly what I mean. If I would accept either (A and B) or (A and C), I would write A & (B | C), meaning I need at least one of B or C to be true. If I would accept either (A and B) or C, I would write (A & B) | C, meaning I need either (A and B) or C to be true.\nOrder of operations: Pay attention to the order in which your statements evaluate! If I write !(A & B), that means I need at least one of A or B to be false. If I write !A & !B, that means I need both A and B to be false. This can get confusing, so it’s best to write out your logic fully and work through a few examples by hand (or avoid layering these operators entirely).",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#definition-1",
+    "href": "coding-principles-oh.html#definition-1",
+    "title": "Intro to Coding Principles",
+    "section": "Definition",
+    "text": "Definition\nWhat is a function? A function is, essentially, a block of code that does something (so that you don’t have to implement it!). A function will always have a name, followed by open and closed parentheses (). Some functions do not take arguments. However, if they do, these arguments will go within the parentheses. Once R sees an opening parenthesis, it will not execute the code until it sees a closing parenthesis. Beware - when you start layering functions, such as using aes() inside of ggplot(), you need to pay attention to what your parentheses are around and make sure that they all close!",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#arguments",
+    "href": "coding-principles-oh.html#arguments",
+    "title": "Intro to Coding Principles",
+    "section": "Arguments",
+    "text": "Arguments\nArguments are the commands that you give to a function that tell it what to do. Most functions take at least one argument, and some can take arbitrarily many. Functions have a default order for (some of) their arguments. If you know this order, you do not have to explicitly name the arguments. If not, you must list them explicitly. Here are two examples:\n\n# Named Arguments\nggplot(\n  data = midwest, \n  mapping = aes(x = poptotal, y = popdensity, color = percwhite)\n  ) +\n  geom_point()\n\n\n\n\n\n\n# Unnamed Arguments\nggplot(\n  midwest, \n  aes(poptotal, popdensity, percwhite)\n  ) +\n  geom_point()\n\n\n\n\n\n\n\nIn ggplot, the first two arguments are always data and mapping, so it is common to drop these. However, in the second plot here, we lost our fill aesthetic. Why?\nWhen we look at the aes() documentation, we see that x is the first named argument and y is the second, but after that there are no named arguments. That means, while you can add more aesthetics, you must name them explicitly, since they do not appear by default.\nPipe Operator\nMany times in this class, you will see the symbol |&gt; used. This is known as the pipe operator, and it allows us to have a so-called “data pipeline”. This helps make code a lot more readable! Let’s take a look at why:\n\nhead(arrange(mutate(select(filter(midwest, state == \"IL\"), county, state, area, poptotal, inmetro), inmetro = as.logical(inmetro)), desc(poptotal)), 10)\n\n# A tibble: 10 × 5\n   county    state  area poptotal inmetro\n   &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt; &lt;lgl&gt;  \n 1 COOK      IL    0.058  5105067 TRUE   \n 2 DU PAGE   IL    0.02    781666 TRUE   \n 3 LAKE      IL    0.028   516418 TRUE   \n 4 WILL      IL    0.05    357313 TRUE   \n 5 KANE      IL    0.029   317471 TRUE   \n 6 ST CLAIR  IL    0.04    262852 TRUE   \n 7 Winnebago IL    0.03    252913 TRUE   \n 8 MADISON   IL    0.045   249238 TRUE   \n 9 MCHENRY   IL    0.036   183241 TRUE   \n10 PEORIA    IL    0.038   182827 TRUE   \n\n\nTechnically, we can write our code in this manner! Strictly speaking, under the hood, the pipe operator is reconstructing your code into this format. However, this is nearly impossible to read (I’ve been coding in R for years, and I still ran into multiple errors trying to write this).\nWith the pipe operator, we can skip this and execute each function on its own line. By default, the pipe operator “pipes” your data into the first argument of a function - which, in the tidyverse, is almost always the “data” argument. This lets us write our data in a much neater pipeline, where you can see step-by-step what is happening to the data:\n\nmidwest |&gt;   # Operate on the midwest data frame\n  filter(state == \"IL\") |&gt;   # Filter for only the counties in Illinois\n  select(county, state, area, poptotal, inmetro) |&gt;   # Select only these five columns, and drop all others\n  mutate(inmetro = as.logical(inmetro)) |&gt;   # Cast inmetro to a logical type\n  arrange(desc(poptotal)) |&gt;   # Arrange the data frame by poptotal in descending order\n  head(10)   # Select the top 10 rows\n\n# A tibble: 10 × 5\n   county    state  area poptotal inmetro\n   &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt; &lt;lgl&gt;  \n 1 COOK      IL    0.058  5105067 TRUE   \n 2 DU PAGE   IL    0.02    781666 TRUE   \n 3 LAKE      IL    0.028   516418 TRUE   \n 4 WILL      IL    0.05    357313 TRUE   \n 5 KANE      IL    0.029   317471 TRUE   \n 6 ST CLAIR  IL    0.04    262852 TRUE   \n 7 Winnebago IL    0.03    252913 TRUE   \n 8 MADISON   IL    0.045   249238 TRUE   \n 9 MCHENRY   IL    0.036   183241 TRUE   \n10 PEORIA    IL    0.038   182827 TRUE   \n\n\nMuch better, right? Remember, whenever you’re using the pipe operator (or the +, in ggplot, which is different!), you should start a new line of code. As long as you have a pipe operator, R is expecting another function, so it won’t execute only part of your code.\nNote: In this class, we focus on the base R pipe, which is denoted by |&gt;. However, when you’re debugging on the internet, you may come across the symbol %&gt;%, which is the magrittr pipe. There are some technical differences in these that generally go beyond the scope of this class, but they essentially serve the same purpose. Don’t be scared by the magrittr pipe when you’re doing your debugging!",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#definition-2",
+    "href": "coding-principles-oh.html#definition-2",
+    "title": "Intro to Coding Principles",
+    "section": "Definition",
+    "text": "Definition\nEvery time we start programming in this class, we run library(tidyverse). Why do we do this?\nLibraries are collections of functions, and running them means that we are loading those functions into our current R session. If you try to open up a fresh R session and run ggplot() immediately, you will get an error, because that function is not found. However, with the library, you can load in everything that you need, all at once. The tidyverse is especially cool, because it is actually a collection of libraries - libraryception!",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#environment",
+    "href": "coding-principles-oh.html#environment",
+    "title": "Intro to Coding Principles",
+    "section": "Environment",
+    "text": "Environment\nYour environment in R is basically the current instance of your program. When you run a library, it is part of your environment until you restart R, meaning you can call any of its functions at any time. When you create a variable, it is part of your environment until you restart R, meaning you can reference those variables at any time.\nWhen you use the containers, they do not regularly restart R. This can be a problem sometimes, when old code gets tangled up with new code! It is my personal recommendation that you (at a minimum) restart R and clear your environment every time you start a new project (AE, lab, etc). You can restart R by going to Session -&gt; Restart R, and clear your environment by going to the environment pane and clicking the broom icon.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#rendering-quarto",
+    "href": "coding-principles-oh.html#rendering-quarto",
+    "title": "Intro to Coding Principles",
+    "section": "Rendering Quarto",
+    "text": "Rendering Quarto\nWhen you click the “Render” button for your .qmd file, what happens? R executes a program, called a “compiler”, that runs your entire .qmd file in a new environment. In other words, if you have loaded a library, or edited a variable, or done any number of things in the console (or even later in the .qmd file) without saving them in the .qmd file, and then you try to render, you will get an error because that function/variable/etc has not been defined in the rendering environment. This forces you to write reproducible code, and it’s the first thing to think about when you run into errors while rendering!",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#documentation",
+    "href": "coding-principles-oh.html#documentation",
+    "title": "Intro to Coding Principles",
+    "section": "Documentation",
+    "text": "Documentation\nUnless you have a function and its usage entirely memorized, you are going to be reading documentation. Documentation is useful, but it is dense, and can be hard to parse. Let’s look at an example of how we can look through documentation.\n\n?if_else\n\n?geom_point",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#errors",
+    "href": "coding-principles-oh.html#errors",
+    "title": "Intro to Coding Principles",
+    "section": "Errors",
+    "text": "Errors\nUnless you are the Roman God of Programming (and even then, I’m not too sure), you are going to encounter errors in your programming. These are completely natural, and nothing to be ashamed of - sometimes I write partial code, just to see where it will catch errors. However, some error messages are easier to understand than others. Let’s look through a couple of examples of common errors, and what I would do to interpret and fix them.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#example-1",
+    "href": "coding-principles-oh.html#example-1",
+    "title": "Intro to Coding Principles",
+    "section": "Example 1",
+    "text": "Example 1\n\nmidwest |&gt;\n  sumarize(avg_pop_dens = mean(popdensity))\n\nError in sumarize(midwest, avg_pop_dens = mean(popdensity)): could not find function \"sumarize\"\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nIn this case, we just have a simple spelling error! It may seem trivial, but this will constitute at least half of the errors that you have. Make this the first thing you check - you will never meet a programmer who doesn’t have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#example-2",
+    "href": "coding-principles-oh.html#example-2",
+    "title": "Intro to Coding Principles",
+    "section": "Example 2",
+    "text": "Example 2\n\nggplot(midwest, aes(x = poptotal, y = popdensity,)) |&gt;\n  geom_point() |&gt;\n  labs(x = \"Total Population\", y = \"Population Density\")\n\nError in `geom_point()`:\n! `mapping` must be created by `aes()`.\nℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nThis one should be pretty obvious, since it’s a common enough error that R gives an extremely helpful error message. When you’re building a ggplot object, you use + rather than |&gt; to add additional lines!\nThere’s a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks. Did anyone spot it?",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "coding-principles-oh.html#example-3",
+    "href": "coding-principles-oh.html#example-3",
+    "title": "Intro to Coding Principles",
+    "section": "Example 3",
+    "text": "Example 3\n\nggplot(midwest, aes(x = state, y = poptotal, fill = state)) +\n  geom_bar() +\n  theme_bw() +\n  scale_y_continuous(labels = scales::unit_format(unit = \"M\", scale = 1e-6)) +\n  labs(\n    x = \"State\",\n    y = \"Total Population\\n(Millions)\",\n    title = \"Total Population by State\"\n  ) +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    panel.grid.major.x = element_blank(),\n    legend.position = \"none\"\n  ) +\n  scale_fill_viridis_d()\n\nError in `geom_bar()`:\n! Problem while computing stat.\nℹ Error occurred in the 1st layer.\nCaused by error in `setup_params()`:\n! `stat_count()` must only have an x or y aesthetic.\n\n\nThere’s a lot going on here, so it might not be obvious at first where the issue is! The error has something to do with the function stat_count(), but that’s not a function we used (explicitly) anywhere in this code. This is why you should iterate on your code, running it intermittently, so that you can catch errors when they pop up.\nMy first thought would be to run rlang::last_trace(), as suggested by the error message. This is sometimes helpful - it can reference certain functions and even lines of code, especially when you’re executing something more complex. Frequently, though, it’s too complicated to understand. In this case, I would certainly say I can’t make any sense of that.\nMy next thought is to google the error message. It can be a little tricky to know what to google from the error message. You want to look for anything that seems general enough that other people might have asked, but specific enough that it will apply to your situation. Let’s go line by line:\n\n“Error in geom_bar()”: Probably too general to bother googling. There are a lot of possible errors with geom_bar(), and it would take too long to look through them all to get to your specific problem!\n“Problem while computing stat.”: This is more helpful, because it gives a little more direction as to the source of the error, but it is still too general - what stat are we computing? What problem?\n“Error occured in the 1st layer”: This can be helpful for you, if you know the order of ggplot layers. However, it is probably not helpful to google, since people could have built their layers in a different order before encountering this error.\n“Caused by error in setup_params()”: Closer! This is getting more and more specific, and this might be good enough to google. However, it still doesn’t say what the error is, it just says that there was one.\n“stat_count() must only have an x or y aesthetic”: Bingo! This is the one we’re looking for, which tells us exactly what the issue is. Now, it may be possible to interpret manually, but let’s say you can’t. Here’s where we go now:\n\nI would copy-paste the entire final line into google. You don’t want to copy-paste the full error message, since that’s probably too specific, and you might not find any results. At the same time, you don’t want to copy-paste only a couple of words, since that might not be specific enough, and you could be stuck looking through a lot of links. If you google just that line, you are likely to find someone on stack exchange who has posted a question with this exact (or almost this exact) error message. You can also help your google out by throwing in some relevant key words:\n\nggplot\nR\nerror\n\nTake a couple minutes to google this, and see if you can figure out what’s wrong with the code! Then, remember to cite the source where you found this answer! In general, it’s okay to google your error messages for help, but not to use someone else’s solution without credit.\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nI looked at https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic for my answer. There’s a few different suggestions on this page, all of which could be useful! This page definitely suggests to me that the issue with my plot is in the geom_bar() line - which makes sense, since this is layer 1 of the plot. While they have a couple simple fixes, here’s the actual error I wrote: geom_bar() is expecting only one variable. If you want two variables, like this, you should use geom_col() instead.",
+    "crumbs": [
+      "Computing",
+      "Coding principles"
+    ]
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "Course GitHub organization\n🔗 on GitHub\n\n\n\nRStudio containers\n🔗 on Duke Container Manager\n\n\n\nOffice hours\n🔗 on Google Sheets\n\n\n\nEd Discussion\n🔗 on Canvas\n\n\n\nGradescope\n🔗 on Canvas\n\n\n\nGradebook\n🔗 on Canvas\n\n\n\nTexbooks\n🔗 R for Data Science\n🔗 Introduction to Modern Statistics\n\n\n\nPackage documentation\n🔗 ggplot2: ggplot2.tidyverse.org\n🔗 dplyr: dplyr.tidyverse.org\n🔗 tidyr: tidyr.tidyverse.org\n🔗 forcats: forcats.tidyverse.org\n🔗 stringr: stringr.tidyverse.org\n🔗 lubridate: lubridate.tidyverse.org\n🔗 readr: readr.tidyverse.org\n🔗 readxl: readxl.tidyverse.org",
+    "crumbs": [
+      "Course information",
+      "Useful links"
+    ]
+  },
+  {
+    "objectID": "ae.html",
+    "href": "ae.html",
+    "title": "Application exercises",
+    "section": "",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n\nNo matching items\n\n\n\nMore AEs to be added as the semester progresses.",
+    "crumbs": [
+      "Application exercises"
+    ]
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#overview",
+    "href": "course-overview.html#overview",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#meetings",
+    "href": "course-overview.html#meetings",
+    "title": "STA 199Fall 2025",
+    "section": "Meetings",
+    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\n\n\nLab 02\nPerkins LINK 087 (Classroom 3)\nMon 8:30 - 9:45 am\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 10\nPerkins LINK 087 (Classroom 3)\nMon 4:40 - 5:55 pm\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 199: Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n1\nMon, Aug 26\n\nLab 0: Hello, World and STA 199!\n💻 lab 0\n\nLab 0 due at the end of lab session\n\n\n\nTue, Aug 27\n\nWelcome to STA 199\n🖥️ slides 00  🗒️ notes 00  ⌨️ ae 00\n\n\n\n\n\nThu, Aug 29\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\nMeet the toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n\n\n2\nMon, Sep 2\n\nNo lab - Labor Day\n\n\n\n\n\nTue, Sep 3\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\nGrammar of data visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02  ✅ ae 02\n\n\n\n\n\nThu, Sep 5\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\nGrammar of data transformation\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n\n\n\n3\nMon, Sep 9\n\nLab 1: From the Midwest to North Carolina\n💻 lab 1  ✅ lab 1\n\n\n\n\n\nTue, Sep 10\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships  🎥 Code along :: Star Wars characters\n\nExploring data I\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04  ✅ ae 04\n\n\n\n\n\nThu, Sep 12\n📘 ims - chp 5  📘 ims - chp 6  🎥 Code along :: Diving deeper with Palmer Penguins\n\nExploring data II\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 05  ✅ ae 05\n\n\n\n\n4\nMon, Sep 16\n📗 r4ds - chp 4\n\nLab 2: Revisiting the Midwest\n💻 lab 2\n\nLab 1 at 8:30 am\n\n\n\nTue, Sep 17\n🎥 Tidy data  🎥 Tidying data  🎥 Code along :: Country populations over time  📗 r4ds - chp 5\n\nTidying data\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 06  ✅ ae 06\n\n\n\n\n\nThu, Sep 19\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\nJoining data\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 07  ✅ ae 07\n\n\n\n\n5\nMon, Sep 23\n\nLab 3: Inflation everywhere\n💻 lab 3\n\nLab 2 at 8:30 am\n\n\n\nTue, Sep 24\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\nData types and classes\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 08  ✅ ae 08\n\n\n\n\n\nThu, Sep 26\n🎥 Importing data  🎥 Code along :: Halving CO2 emissions  🎥 Code along :: Student survey  📗 r4ds - chp 7  📗 r4ds - chp 17.1 - 17.3\n\nImporting and recoding data\n🖥️ slides 09  🗒️ notes 09  ⌨️ ae 09  ✅ ae 09\n\n\n\n\n6\nMon, Sep 30\n\nLab 4: Everything so far I\n💻 lab 4\n\nLab 3 at 8:30 am\n\n\n\nTue, Oct 1\n🎥 Web scraping basics  🎥 Code along :: Scraping an eCommerce page  🎥 Code along :: Scraping many eCommerce pages  🎥 Web scraping considerations  📗 r4ds - chp 24.1 - 24.6  📗 r4ds - chp 25.1 - 25.2\n\nWeb scraping\n🖥️ slides 10  🗒️ notes 10  ⌨️ ae 10  ⌨️ ae 10  ✅ ae 10\n\n\n\n\n\nThu, Oct 3\n\nMidterm review\n🖥️ slides 11  🗒️ notes 11  📝 midterm review  ✅ midterm review\n\n\n\n\n7\nMon, Oct 7\n📝 Merge conflicts\n\nProject milestone 1 - Working collaboratively\n📓 project milestone 1\n\nLab 4 due at 8:30 am  Project milestone 1 at the end of lab session\n\n\n\nTue, Oct 8\n\nMidterm - In-class + take-home released\n\n\n\n\n\nThu, Oct 10\n\nWorking with generative AI tools\n🖥️ slides 12  🗒️ notes 12  ⌨️ ae 11\n\nMidterm course evaluation due midnight (optional)\n\n\n\nFri, Oct 11\n\n\n\nMidterm take-home due at 5:00 pm\n\n\n8\nMon, Oct 14\n\nNo lab - Fall Break\n\n\n\n\n\nTue, Oct 15\n\nNo lecture - Fall Break\n\n\n\n\n\nThu, Oct 17\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\nData science ethics\n🖥️ slides 13  🗒️ notes 13\n\n\n\n\n\nFri, Oct 18\n\n\n\nPeer evaluation 1 due by 5:00 pm\n\n\n9\nMon, Oct 21\n📝 Project description  📝 Tidyverse style guide - Chp 1-5\n\nProject milestone 2 - Project proposals\n📓 project milestone 2\n\n\n\n\n\nTue, Oct 22\n🎥 The language of models  📘 ims - chp 7.1\n\nThe language of models\n🖥️ slides 14  🗒️ notes 14  ⌨️ ae 12  ✅ ae 12\n\n\n\n\n\nThu, Oct 24\n🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships  📘 ims - chp 7.2\n\nLinear regression with a single predictor\n🖥️ slides 15  🗒️ notes 15  ⌨️ ae 13  ✅ ae 13\n\n\n\n\n10\nMon, Oct 28\n\nLab 5: Visualize, model, interpret\n💻 lab 5\n\nProject milestone 2 at 8:30 am\n\n\n\nTue, Oct 29\n🎥 Models with multiple predictors  🎥 More models with multiple predictors  📘 ims - chp 8.1-8.2\n\nLinear regression with multiple predictors I\n🖥️ slides 16  🗒️ notes 16  ⌨️ ae 14  ✅ ae 14\n\n\n\n\n\nThu, Oct 31\n📘 ims - chp 8.3-8.5\n\nLinear regression with multiple predictors II\n🖥️ slides 17  🗒️ notes 17  ⌨️ ae 15\n\n\n\n\n\nFri, Nov 1\n\n\n\nPeer evaluation 2 due by 5:00 pm\n\n\n11\nMon, Nov 4\n\nLab 6: Visualize, model, interpret again\n💻 lab 6\n\nLab 5 at 8:30 am\n\n\n\nTue, Nov 5\n🎥 Logistic regression\n\nModel selection and overfitting\n🖥️ slides 18  🗒️ notes 18  ⌨️ ae 15 - Continue  ✅ ae 15\n\n\n\n\n\nThu, Nov 7\n📘 ims - chp 9\n\nLogistic regression\n🖥️ slides 19  🗒️ notes 19  ⌨️ ae 16  ✅ ae 16\n\n\n\n\n12\nMon, Nov 11\n\nLab 7: Explore and classify\n💻 lab 7\n\nLab 6 at 8:30 am\n\n\n\nTue, Nov 12\n🎥 Prediction and overfitting\n\nEvaluating models\n🖥️ slides 20  🗒️ notes 20  ⌨️ ae 17  ✅ ae 17\n\n\n\n\n\nThu, Nov 14\n🎥 Quantifying uncertainty  🎥 Bootstrapping  📘 ims - chp 12\n\nQuantifying uncertainty with bootstrap intervals\n🖥️ slides 21  🗒️ notes 21\n\n\n\n\n\nFri, Nov 15\n\n\n\nProject milestone 3 - Improvement and progress at 5:00 pm\n\n\n13\nMon, Nov 18\n\nLab 8: Everything so far II\n💻 lab 8\n\nLab 7 at 8:30 am\n\n\n\nTue, Nov 19\n📘 ims - chp 11\n\nMaking decisions with randomization tests\n🖥️ slides 22  🗒️ notes 22  ⌨️ ae 18  ✅ ae 18\n\n\n\n\n\nThu, Nov 21\n\nInference overview\n🖥️ slides 23  🗒️ notes 23  ⌨️ ae 19\n\n\n\n\n\nFri, Nov 22\n\n\n\nPeer evaluation 3 due by 5:00 pm\n\n\n14\nMon, Nov 25\n\nProject milestone 4 - Peer review\n📓 project milestone 4\n\nProject milestone 4 at the end of lab session\n\n\n\nTue, Nov 26\n🎥 Tips for effective data visualization  📘 ims - chp 6  📗 r4ds - chp 10  🎥 Doing data science\n\nCommunicating data science results effectively  Customizing Quarto reports and presentations\n🖥️ slides 24  🗒️ notes 24  ⌨️ ae 19  ✅ ae 19\n\nLab 8 at 10:30 pm\n\n\n\nThu, Nov 28\n\nNo lecture - Thanksgiving\n\n\n\n\n15\nMon, Dec 2\n\nProject milestone 5 - Work on writeup and presentations\n📓 project milestone 5\n\n\n\n\n\nTue, Dec 3\n\nLooking back: STA 199 overview\n🖥️ slides 25  🗒️ notes 25  ⌨️ ae 20  ✅ ae 20\n\n\n\n\n\nThu, Dec 5\n\nLooking further: Building interactive web apps with R and Shiny\n🖥️ slides 26  🗒️ notes 26  ⌨️ ae 21  ✅ ae 21\n\nProject milestone 5 - Writeup and presentation videos by 5:00 pm\n\n\n\nFri, Dec 6\n\n\n\nPeer evaluation 4 due by 5:00 pm\n\n\n\nTue, Dec 10\n\nFinal review (11 am - 1 pm, Bio Sci 111)\n📝 final review  ✅ final review\n\n\n\n\n16\nThu, Dec 12\n\nFinal (9 am - 12 pm)",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course-team.html",
+    "href": "course-team.html",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.\n\n\n\n\n\n\n\nOffice hours\nLocation\n\n\n\n\nTuesdays and Thursdays 1-1:30 pm (after class)\nBio Sci 111\n\n\nTBD.\nOld Chem 2XX",
+    "crumbs": [
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "course-team.html#instructor",
+    "href": "course-team.html#instructor",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.\n\n\n\n\n\n\n\nOffice hours\nLocation\n\n\n\n\nTuesdays and Thursdays 1-1:30 pm (after class)\nBio Sci 111\n\n\nTBD.\nOld Chem 2XX",
+    "crumbs": [
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "course-team.html#teaching-assistants",
+    "href": "course-team.html#teaching-assistants",
+    "title": "Teaching team",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\nEach TA holds office hours. Some TAs are also leaders or helpers for lab sections. Some TAs help out in lecture.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Name\n        \n         \n          Role(s)\n        \n         \n          Section(s)\n        \n         \n          Office hours\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nName\n\n\nRole(s)\n\n\nSection(s)\n\n\nOffice hours\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "course-team.html#course-coordinator",
+    "href": "course-team.html#course-coordinator",
+    "title": "Teaching team",
+    "section": "Course coordinator",
+    "text": "Course coordinator\nDr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at mary.knox@duke.edu) with any questions regarding accommodations, missed work, extensions, etc., and registration.",
+    "crumbs": [
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "computing-cheatsheets.html",
+    "href": "computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "crumbs": [
+      "Computing",
+      "Cheatsheets"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-learning-objectives",
+    "href": "course-syllabus.html#course-learning-objectives",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-materials",
+    "href": "course-syllabus.html#course-materials",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course materials",
+    "text": "Course materials\n\nTextbooks\nAll books are freely available online.\n\nR for Data Science, 2e, Wickham, Çetinkaya-Rundel, Grolemund. O’Reilly, 2nd edition, 2023. Hard copy available on Amazon.\nIntroduction to Modern Statistics, Çetinkaya-Rundel, Hardin. OpenIntro Inc., 2nd Edition, 2023. Hard copy available on Amazon.\n\n\n\nComputing\nYou will need a laptop you can bring to lecture and lab for this course. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the computing page for more information.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-community",
+    "href": "course-syllabus.html#course-community",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course community",
+    "text": "Course community\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. I intend to present materials and activities that respect diversity and align with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives, and experiences and honors their identities. To help accomplish this:\n\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If anything was said in class (by anyone) that made you feel uncomfortable, please let me or a teaching team member know.\n\n\n\nPersonal pronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. You can update your gender pronouns in Duke Hub and learn more about personal pronouns at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf any portion of the course is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students can engage with their courses and related assignments. Students should contact the SDAO to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta199-f25.github.io.\nAnnouncements will periodically be emailed through Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.\n\n\nEmail\nIf you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at mc301@duke.edu. If you do so, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours, Monday through Friday. Response time may be slower for emails sent Friday evening through Sunday.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#five-tips-for-success",
+    "href": "course-syllabus.html#five-tips-for-success",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Five tips for success",
+    "text": "Five tips for success\nYour success in this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you by providing you with materials answering questions, and setting a pace, but for this to work, you must do the following:\n\nComplete all the preparation work before class.\nAsk questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.\nDo the readings.\nDo the lab. The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).\nDon’t procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#getting-help",
+    "href": "course-syllabus.html#getting-help",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Getting help",
+    "text": "Getting help\n\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!\n\nCheck out the Support tab for more resources.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-components",
+    "href": "course-syllabus.html#course-components",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course components",
+    "text": "Course components\n\nLectures and labs\nLectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and use them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will work on various tasks and activities throughout each lecture and lab. You are expected to prepare for class by completing assigned readings, attending lectures and lab sessions, and meaningfully contributing to in-class exercises and discussions. Additionally, most lectures will feature application exercises that will be graded based on completing what we do in class.\nYou are expected to bring a laptop (or Chromebook) to each class so that you can participate in the in-class exercises. Please ensure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone. A tablet also works, but the user experience will be much smoother on a laptop.\n\n\nTeams\nYou will be assigned to a team early on in the semester. You are encouraged to sit with your teammates in lectures, and you will also work with them in some of the lab sessions. All team members are expected to contribute equally to the completion of the project, and you will be asked to evaluate your team members throughout the semester. Failure to adequately contribute to any project component will result in a penalty to your mark relative to the team’s overall mark.\nYou are expected to use the provided GitHub repository as the central collaborative platform. Commits to this repository will be used as a metric (one of several) of each team member’s relative contribution to each project.\n\n\nActivities & Assessment\nYou will be assessed based on five components: application exercises, labs, exams, project, and teamwork.\n\nLabs\nIn labs, you will apply what you’ve learned in the videos and during lectures to complete data analysis tasks. You may discuss lab assignments with other students; however, the lab should be completed and submitted individually. Lab assignments must be typed up using Quarto, all work must be pushed to your GitHub repository for the lab, and the lab’s PDF output must be submitted on Gradescope by the deadline.\nLabs are generally due at 11:59 pm ET on the indicated due date (generally the Sunday following the lab).\nThe lowest lab grade will be dropped at the end of the semester.\n\n\nExams\nThis course will have three exams: two exams and a final. The exams will include an in-class component (with a cheat sheet) and an open-note take-home component, while the final will include only an in-class component (with a cheat sheet).\nYou can demonstrate what you’ve learned in the course thus far through these exams. The exams will focus on both conceptual understanding of the content and application through analysis and computational tasks. The exam’s content will be related to the content in videos and reading assignments, lectures, application exercises, and labs.\nMore details about the exams will be given during the semester.\n\n\nProject\nThe project aims to apply what you’ve learned throughout the semester to analyze an interesting data-driven research question. The project will be completed in teams, and each team will present their work during a lab session in the latter part of the semester. The write-up will be due on the same day.\nYou cannot pass this course if you have not completed the project.\nMore information about the project will be provided during the semester.\n\n\nApplication exercises\nParts of many lectures will be dedicated to working on Application Exercises (AEs). These exercises allow you to apply the statistical concepts and code introduced in the preparation materials. These AEs are due by 2 pm ET on the day of the lecture they are covered. To submit the AEs, you only need to push your work to your GitHub repo.\nBecause these AEs are for practice, they will be graded based on attempt, i.e., a good-faith effort has been made in attempting all parts.\nSuccessful on-time completion of at least 70% of AEs will result in full credit for AEs in the final course grade.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#grading",
+    "href": "course-syllabus.html#grading",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Grading",
+    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLabs\n20%\n\n\nProject\n15%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nFinal\n20%\n\n\nApplication Exercises\n5%\n\n\n\nWhile there are no specific points allocated to attendance, we will record your attendance periodically throughout the semester. This information will be used as “extra credit” if you’re in between two grades and a minor bump would help.\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-policies",
+    "href": "course-syllabus.html#course-policies",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Course policies",
+    "text": "Course policies\n\nDuke Community Standard\nAs a student in this course, you have agreed to uphold the Duke Community Standard and the practices specific to this course.\n\n\n\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as teamwork should be completed collaboratively.\n\nYou may discuss lab assignments with other students; however, you may not directly share (or copy) code or write-up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write-up with another team. Unauthorized sharing (or copying) of the code or write-up will be considered a violation for all students involved.\nYou may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date.\nCollaboration within teams is not only allowed but expected for the project. Communication between teams at a high level is also allowed; however, you may not share code or project components across teams.\nOn individual assignments, you may not directly share work (including code) with another student in this class; on team assignments, you may not directly share work (including code) with another team.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow), but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:\n\nCognitive dimension: Working with AI should not reduce your thinking ability. We will practice using AI to facilitate—rather than hinder—learning.\nEthical dimension: Students using AI should be transparent about their use and ensure it aligns with academic integrity.\n\n\n{{&lt; fa check &gt;}} AI tools for code: You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines to cite AI-generated content. The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n{{&lt; fa ban &gt;}} AI tools for narrative: Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.\n{{&lt; fa check &gt;}} AI tools for learning: You’re welcomed to ask AI tools questions that might help your learning and understanding in this course.\n\nIn general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.\n\nIf you are unsure if using a particular resource complies with the academic honesty policy, please ask a teaching team member.\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically results in a 0 for the relevant portion or the entire assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct & Community Standards for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. Note that the lowest lab assignment will be dropped to accommodate such circumstances.\n\nLabs may be submitted up to 3 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.\nNo late work is accepted for application exercises since these are designed to help you prepare for other assessments in the course.\nNo late work is accepted for exams.\nNo late work is accepted for projects.\n\n\n\nWaiver for extenuating circumstances\nIf circumstances prevent you from completing a lab by the stated due date, you may email the course coordinator, Dr. Mary Knox, before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide an explanation. This waiver may only be used once a semester, so only use it for a truly extenuating circumstance.\nIf circumstances have a longer-term impact on your academic performance, please let your academic dean know. They can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nRegrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Regrade requests are also not a mechanism for asking for clarification on feedback, those questions should be brought to office hours. Note that by submitting a regrade request, the entire assignment may be regraded, which could potentially result in losing points.\nNo grades will be changed after the final exam has been administered.\n\n\nAttendance policy\nEvery student is expected to attend and participate in lecture and labs. There may be times, however, when you cannot attend class. Lecture recordings are available upon request for students who have an excused absence. See the Lecture recording request policy for more detail. If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture. Labs dedicated to completing the lab assignment and collaborating with your lab team. If you miss a lab session, make sure to communicate with your lab TA and teammates about how you can make up your contribution. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your lab TA and teammates ahead of time.\nMore details on Trinity attendance policies are available here.\n\n\nLecture recording request\nLectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture’s video, please fill out the form at the link below. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as STINFs, Dean’s excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.\n🔗 https://forms.office.com/r/kJ6cWGE1Mp\nAbout one week before each exam, the class recordings will be available to all students. These recordings will be available until the start of the exam.\n\n\n\n\n\n\nClick here for syllabus bounty!\n\n\n\n\n\nIf you’ve read this far in the syllabus, post a picture of your pet if you have one or your favorite meme on ed in this thread! If you’re willing, share the name of your pet too!",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#accommodations",
+    "href": "course-syllabus.html#accommodations",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Accommodations",
+    "text": "Accommodations\n\nAcademic accommodations\nIf you need accommodations for this class, you will need to register with the Student Disability Access Office (SDAO) and provide them with documentation related to your needs. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: trinity.duke.edu/undergraduate/academic-policies/religious-holidays",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#important-dates",
+    "href": "course-syllabus.html#important-dates",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Important dates",
+    "text": "Important dates\n\nAug 25: Classes begin\nSep 1: Labor Day\nSep 5: Drop/add ends\nOct 2: Exam 1 in-class + take-home released\nOct 4: Exam 1 take-home due\nOct 13-14: Fall break\nNov 7: Last day to withdraw with W\nNov 26-28: Thanksgiving break\nDec 5: Classes end\nDec 12: Final exam\n\nLab and project deadlines are listed on the course schedule.\nFor more important dates, see the full Duke Academic Calendar.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  }
+]
