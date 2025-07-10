@@ -1,6 +1,6 @@
 ---
 title: "STA 199<br>Fall 2025"
-image: img/logo-f24.png
+image: img/logo-f25.png
 image-alt: Hex logo for course with
 about:
   template: trestles

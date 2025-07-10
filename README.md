@@ -32,4 +32,6 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 -   course-links.qmd: ed discussion, gradescope, gradebook
 
+-   course-overview.qmd: do we want logo file (it currently doesn't exist) — may just want to change this page?
+
     ##  {#teaching-assistants}
