@@ -30,16 +30,6 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 -   course-team.qmd: Teaching assistants section, took out mine and mary imgs
 
--   index.qmd: deal with prepare_cutoff_date, currently using old schedule to get around errors
+-   course-links.qmd: ed discussion, gradescope, gradebook
 
--   course-links.qmd: office hours, ed discussion, gradescope, gradebook
-
-    ## Teaching assistants {#teaching-assistants}
-
-    ## Teaching assistants
-
-    ## 
-
-    ## Teaching assistants
-
-    ## Teaching assistants
+    ##  {#teaching-assistants}

@@ -18,7 +18,7 @@ library(gt)
 library(tidyverse)
 gs4_deauth()
 d <- read_sheet("https://docs.google.com/spreadsheets/d/1rWhVJd5JXvHKpsUkXz8I4dRr1E6_u8__GgTS-Ir0sq8/edit?gid=675503730#gid=675503730", sheet = "Schedule")
-prepare_cutoff_date <- as.Date("2025-09-01")
+prepare_cutoff_date <- as.Date("2025-09-04")
 ```
 
 ```{r}
@@ -26,11 +26,12 @@ prepare_cutoff_date <- as.Date("2025-09-01")
 #| column: screen-inset-right
 d |>
   filter(!is.na(session)) |>
-  select(-dow, -admin_notes, -number, -session) |>
   mutate(
     date = as.Date(as.Date(map_chr(date, as.character))), #modified this as date is a list of dttm variables
-    prepare = if_else(date > prepare_cutoff_date, "*To be posted*", prepare)
+    prepare = if_else(date > prepare_cutoff_date & (!(session == "-" & is.na(topic) & is.na(prepare))), "*To be posted*", prepare) #added the other & statements so that deadlines don't have "To be posted" language
+    #prepare = if_else(date > prepare_cutoff_date, "*To be posted*", prepare) #added the other & statements so that deadlines don't have "To be posted" language
     ) |>
+  select(-dow, -admin_notes, -number, -session) |> #moved this down so i can use session value in above mutate prepare line
   relocate(due, .after = materials) |>
   gt() |>
   fmt_date(date, date_style = 31) |>

@@ -7,7 +7,7 @@ title: "Useful links"
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+----------+
 | RStudio containers         | 🔗 on [Duke Container Manager](https://cmgr.oit.duke.edu/containers)                                                        |          |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+----------+
-| Office hours               | 🔗 on [Google Sheets](https://docs.google.com/spreadsheets/d/1gXNQ9UMT01bU9qr-YDsA2GIpslldHmfwPg1gcOj2GTA/edit?usp=sharing) |          |
+| Office hours               | 🔗 on [Google Sheets](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing) |          |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+----------+
 | Ed Discussion              | 🔗 on [Canvas](https://edstem.org/us/courses/62468/discussion/)                                                             |          |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+----------+
