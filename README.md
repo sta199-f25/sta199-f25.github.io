@@ -28,7 +28,7 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 -   course-support.qmd: peer tutoring section (removed for now), ai chatbot (removed for now)
 
--   course-team.qmd: Teaching assistants section, took out mine and mary imgs
+-   course-team.qmd: Teaching assistants section
 
 -   course-links.qmd: ed discussion, gradescope, gradebook
 
