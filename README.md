@@ -24,7 +24,7 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 -   \_quarto.yml: see commented lines
 
--   course-syllabus.qmd: ed discussion link, update grading percentages, revisit citing AI, lecture recording requests (two spots), syllabus bounty, check important dates (removed project milestone dates)
+-   course-syllabus.qmd: ed discussion link, update grading percentages, revisit citing AI, lecture recording requests (two spots), syllabus bounty, check important dates (removed project milestone dates), revisit exams section
 
 -   course-support.qmd: peer tutoring section (removed for now), ai chatbot (removed for now)
 
