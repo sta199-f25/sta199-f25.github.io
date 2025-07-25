@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sta199-f25.github.io/coding-principles-oh.html</loc>
-    <lastmod>2025-07-11T16:49:59.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-overview.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ae.html</loc>
-    <lastmod>2025-07-11T16:49:59.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/computing-troubleshooting.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/index.html</loc>
-    <lastmod>2025-07-11T16:49:59.123Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-links.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/exam-review.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/computing-cheatsheets.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/lab.html</loc>
-    <lastmod>2025-07-11T16:49:59.124Z</lastmod>
-  </url>
-  <url>
     <loc>https://sta199-f25.github.io/course-syllabus.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/computing-code-alongs.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-team.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/computing-access.html</loc>
-    <lastmod>2025-07-11T16:49:59.107Z</lastmod>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/computing-cheatsheets.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/computing-troubleshooting.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/course-support.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/index.html</loc>
+    <lastmod>2025-07-25T15:18:01.229Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/computing-code-alongs.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-links.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/coding-principles-oh.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-team.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-overview.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/course-faq.html</loc>
-    <lastmod>2025-07-11T16:49:59.108Z</lastmod>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/exam-review.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae.html</loc>
+    <lastmod>2025-07-25T15:18:01.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/lab.html</loc>
+    <lastmod>2025-07-25T15:18:01.229Z</lastmod>
   </url>
 </urlset>
