@@ -6,8 +6,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-This page contains an outline of the topics, content, and assignments for the semester.
-Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.
+This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.
 
 ```{r}
 #| echo: false
@@ -28,7 +27,7 @@ d |>
   filter(!is.na(session)) |>
   mutate(
     date = as.Date(as.Date(map_chr(date, as.character))), #modified this as date is a list of dttm variables
-    prepare = if_else(date > prepare_cutoff_date & (!(session == "-" & is.na(topic) & is.na(prepare))), "*To be posted*", prepare) #added the other & statements so that deadlines don't have "To be posted" language
+    prepare = if_else(date > prepare_cutoff_date & (!(session == "-" & is.na(topic) & is.na(prepare))), "To be posted", prepare) #added the other & statements so that deadlines don't have "To be posted" language
     #prepare = if_else(date > prepare_cutoff_date, "*To be posted*", prepare) #added the other & statements so that deadlines don't have "To be posted" language
     ) |>
   select(-dow, -admin_notes, -number, -session) |> #moved this down so i can use session value in above mutate prepare line
