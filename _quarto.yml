@@ -107,7 +107,7 @@ website:
       - exam-review.qmd
             
   page-footer:
-    right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
+    right: 'This page is built with [{{< fa heart >}}]{role="img" aria-label="heart" style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
     left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox"
     background: "#5D737E"
 
