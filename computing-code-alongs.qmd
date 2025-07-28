@@ -11,33 +11,37 @@ The following videos feature "code alongs" as an additional resource for getting
 First look at R amd RStudio.
 
 ```{=html}
-<iframe height="360" width="640" src="https://warpwire.duke.edu/w/22sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/22sIAA/" title="Code Along :: My First Data Visualization UN Votes" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
 ```
+
 ### First look at Palmer Penguins
 
 First look at data science with the tidyverse.
 
 ```{=html}
-<iframe height="360" width="640" src="https://warpwire.duke.edu/w/82sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/82sIAA/" title="Code Along :: First Look at Palmer Penguins" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
 ```
+
 ### Flights and pipes
 
 Data transformation
 
 ```{=html}
-<iframe height="360" width="640" src="https://warpwire.duke.edu/w/8WsIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/8WsIAA/" title="Code Along :: Flights and Pipes" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
 ```
+
 ### Starwars characters
 
 Data visualization
 
 ```{=html}
-<iframe height="360" width="640" src="https://warpwire.duke.edu/w/92sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/92sIAA/" title="Code Along :: Star Wars Characters" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
 ```
+
 ### Diving deeper with Palmer Penguins
 
 Data visualization and transformation
 
 ```{=html}
-<iframe height="360" width="640" src="https://warpwire.duke.edu/w/72sIAA/" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
+<iframe height="360" width="640" src="https://warpwire.duke.edu/w/72sIAA/" title="Code Along :: Diving Deeper with Palmer Penguins" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *;" allowfullscreen></iframe>
 ```

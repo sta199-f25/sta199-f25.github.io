@@ -111,8 +111,7 @@ website:
     left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox"
     right: |
       <p>This page is built with <span style="color: #FFBE98;">♥</span> and <a href="https://quarto.org/">Quarto</a>.</p>
-
-
+      
 format: 
   html:
     mainfont: Atkinson Hyperlegible

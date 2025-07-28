@@ -224,7 +224,7 @@ The final letter grade will be determined based on the following thresholds:
 
 As a student in this course, you have agreed to uphold the [Duke Community Standard](https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct) and the practices specific to this course.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" title="Duke Community Standard" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
 </iframe>
 
