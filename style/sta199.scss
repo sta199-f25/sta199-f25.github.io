@@ -71,7 +71,7 @@ div.sourceCode pre.sourceCode {
   background-color: #e9e9e9;
 }
 
-/* Added to ignore text within links */
+/* Added for website compliance: to ignore text for icons (see course-overview.qmd) */
 .about-link-text {
   position: absolute;
   width: 1px;
@@ -82,4 +82,9 @@ div.sourceCode pre.sourceCode {
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Added for website compliance: to darken footnote back symbol (see course-support.qmd) */
+.footnote-back {
+    color: #4a5862; /* Even darker for better accessibility */
 }

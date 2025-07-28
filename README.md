@@ -30,11 +30,31 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 -   index.qmd: replaced "*To be posted*" with "*To be posted*" (asterisks with underscores -- asterisks made font a faded color)
 
--   added language to sta199.scss file in order to add text to link images (e.g., github, laptop)
+-   added language to sta199.scss file in order to:
 
-    -   /\* Added to ignore text within links \*/ .about-link-text { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    -   add text to link images (e.g., github, laptop)
 
--   also added text argument to link icons in course-overview.qmd file. (laptop, github)
+        -   /\* Added to ignore text within links \*/ .about-link-text { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+    -   make footnote back error darker
+
+-   also added text argument to link icons in course-overview.qmd file. (laptop, github) – in addition to editing sta199.scss file
+
+-   added/edited title to iframes (syllabus, FAQ, and code alongs)
+
+Remaining issues:
+
+-   code alongs: issues that seem to be generated in generation from .qmd to .html
+
+-   \_quarto.yml: heart (how to deal with it – update font awesome?)
+
+-   syllabus: check marks and circle with line (how to deal with it – update font awesome?)
+
+-   coding principles: one million issues
+
+-   computing troubleshooting: may want to add images? update?
+
+-   will need to check project pages: one contrast issue, table cells (milestone 4), more contrast issues with code in tips+resources
 
 ## Things to come back to
 
