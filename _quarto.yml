@@ -107,9 +107,11 @@ website:
       - exam-review.qmd
             
   page-footer:
-    right: 'This page is built with [{{< fa heart >}}]{role="img" aria-label="heart" style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
-    left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox"
     background: "#5D737E"
+    left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox"
+    right: |
+      <p>This page is built with <span style="color: #FFBE98;">♥</span> and <a href="https://quarto.org/">Quarto</a>.</p>
+
 
 format: 
   html:

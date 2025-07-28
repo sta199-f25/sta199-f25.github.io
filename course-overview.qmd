@@ -8,20 +8,16 @@ about:
     - icon: laptop
       href: https://sta199-f25.github.io
       aria-label: Link to course website
+      text: Course Website
     - icon: github
       href: https://github.com/sta199-f25
       aria-label: Link to course GitHub organization
+      text: GitHub
 ---
 
 ## Overview
 
-Intro to data science and statistical thinking.
-Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner.
-Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results.
-Work on problems and case studies inspired by and based on real-world questions and data.
-The course will focus on the R statistical computing language.
-No statistical or computing background is necessary.
-Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.
+Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.
 
 ## Meetings
 
