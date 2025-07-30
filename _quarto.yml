@@ -109,7 +109,8 @@ website:
   page-footer:
     background: "#5D737E"
     left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox"
-    right: 'This page is built with [{{< fa heart title="Love" >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
+    right: |
+      <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" title="heart" aria-hidden="true" ></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
     
 format: 
   html:

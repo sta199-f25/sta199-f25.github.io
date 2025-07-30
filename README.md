@@ -44,15 +44,25 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 Remaining issues:
 
--   code alongs: issues that seem to be generated in generation from .qmd to .html
+-   code alongs: issues that seem to be generated in generation from .qmd to .html (images and stuff created by warpwire)
 
--   \_quarto.yml: heart (how to deal with it – update font awesome?)
+-   \_quarto.yml: heart (how to deal with it?)
 
--   syllabus: check marks and circle with line (how to deal with it – update font awesome?)
+-   syllabus: check marks and circle with line (how to deal with it?)
 
 -   coding principles: one million issues
 
--   computing troubleshooting: may want to add images? update?
+    -   contrast in colors
+
+    -   can't have expanding box (that's hidden til it's clicked)
+
+    -   plots need a role, e.g., role="img"
+
+    -   table results need to be scrollable
+
+    -   links (within the code functions need to be distinguishable without relying on color
+
+-   computing troubleshooting: may want to add images? update? (THIS IS NOT AN ERROR)
 
 -   will need to check project pages: one contrast issue, table cells (milestone 4), more contrast issues with code in tips+resources
 
