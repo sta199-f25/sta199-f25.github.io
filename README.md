@@ -20,6 +20,18 @@ Locally, in RStudio, click *Build Website* on the Build tab or in any editor (in
 
 Push changes to the repo to trigger the GitHub Action that publishes the website. If any R packages are added or updated, run `renv::snapshot()`, commit, and push the updated lockfile.
 
+## Things to come back to
+
+-   \_quarto.yml: see commented lines
+
+-   course-syllabus.qmd: ed discussion link, update grading percentages, revisit citing AI, lecture recording requests (two spots – fill out microsoft doc), syllabus bounty
+
+-   course-support.qmd: peer tutoring section (removed for now, check again), ai chatbot (removed for now; maybe link DukeGPT?)
+
+-   course-team.qmd: Teaching assistants section
+
+-   course-links.qmd: ed discussion, gradescope, gradebook
+
 ## Things edited for axe devtools:
 
 -   \_quarto.yml: replaced {{< fa heart >}}\]{style="color: `#FFBE98`;"}. with
@@ -65,19 +77,3 @@ Remaining issues:
 -   computing troubleshooting: may want to add images? update? (THIS IS NOT AN ERROR)
 
 -   will need to check project pages: one contrast issue, table cells (milestone 4), more contrast issues with code in tips+resources
-
-## Things to come back to
-
--   \_quarto.yml: see commented lines
-
--   course-syllabus.qmd: ed discussion link, update grading percentages, revisit citing AI, lecture recording requests (two spots), syllabus bounty, check important dates (removed project milestone dates), revisit exams section
-
--   course-support.qmd: peer tutoring section (removed for now), ai chatbot (removed for now)
-
--   course-team.qmd: Teaching assistants section
-
--   course-links.qmd: ed discussion, gradescope, gradebook
-
--   course-overview.qmd: do we want logo file (it currently doesn't exist) — may just want to change this page to remove the first column
-
-    ## 
