@@ -342,7 +342,7 @@ To request a particular lecture’s video, please fill out the form at the link 
 Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording.
 Please also make sure that any official documentation, such as STINFs, Dean’s excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.
 
-🔗 <https://forms.office.com/r/kJ6cWGE1Mp>
+🔗 <https://forms.cloud.microsoft/r/jwFuhygVw5>
 
 About one week before each exam, the class recordings will be available to all students.
 These recordings will be available until the start of the exam.
