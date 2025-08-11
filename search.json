@@ -309,7 +309,7 @@
     "href": "course-team.html#course-coordinator",
     "title": "Teaching team",
     "section": "Course coordinator",
-    "text": "Course coordinator\n\nDr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at mary.knox@duke.edu) with any questions regarding accommodations, missed work, extensions, etc., and registration.",
+    "text": "Course coordinator\n\nDr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at mary.knox@duke.edu) with any questions regarding registration, accommodations, missed work, extensions, etc.",
     "crumbs": [
       "Course information",
       "Team"
@@ -441,7 +441,7 @@
     "href": "course-syllabus.html#important-dates",
     "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
     "section": "Important dates",
-    "text": "Important dates\n\nAug 25: Classes begin\nSep 1: Labor Day\nSep 5: Drop/add ends\nOct 2: Exam 1 in-class + take-home released\nOct 4: Exam 1 take-home due\nOct 13-14: Fall break\nNov 7: Last day to withdraw with W\nNov 26-28: Thanksgiving break\nDec 5: Classes end\nDec 12: Final exam\n\nLab and project deadlines are listed on the course schedule.\nFor more important dates, see the full Duke Academic Calendar.",
+    "text": "Important dates\n\nAug 25: Classes begin\nSep 1: Labor Day\nSep 5: Drop/add ends\nOct 2: Exam 1 in-class + take-home released\nOct 4: Exam 1 take-home due\nOct 13-14: Fall break\nNov 7: Last day to withdraw with W\nNov 20: Exam 2 in-class + take-home released\nNov 22: Exam 2 take-home due\nNov 26-28: Thanksgiving break\nDec 5: Classes end\nDec 12: Final exam\n\nLab and project deadlines are listed on the course schedule.\nFor more important dates, see the full Duke Academic Calendar.",
     "crumbs": [
       "Course information",
       "Syllabus"
