@@ -24,13 +24,27 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 -   \_quarto.yml: see commented lines
 
--   course-syllabus.qmd: ed discussion link, update grading percentages, revisit citing AI, lecture recording requests (two spots – fill out microsoft doc), syllabus bounty
+-   course-syllabus.qmd: ed discussion link, revisit: teams, revisit: exams (language of exams vs final), update grading percentages, revisit: teams, revisit: exams, revisit: online resources (include example citation), AI tools for code (include example citation), revisit: "Any violations in academic honesty" and more clearly outline repercussions, syllabus bounty
+
+    -   question about AEs: i think it's simpler if we drop 30% of AEs for all students (instead of just those with 70%+)
 
 -   course-support.qmd: peer tutoring section (removed for now, check again), ai chatbot (removed for now; maybe link DukeGPT?)
 
--   course-team.qmd: Teaching assistants section
+-   course-team.qmd: Teaching assistants section, Mine OH times and locations, also include Mary OH times and location?
 
 -   course-links.qmd: ed discussion, gradescope, gradebook
+
+-   computing-troubleshooting:
+
+    -   from this: If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).
+
+    -   to this: If your issue persists, post on the course forum with your code (or up-to-date GitHub link), your container URL, what you’ve tried and the errors you see (including verbatim errors and/or screenshots).
+
+        -   also add images: img/request-restart-\*
+
+-   exam-review: is empty. probably should be
+
+-   Project: removed all details about project for now; need to add another milestone, may want to edit some final milestone grading?
 
 ## Things edited for axe devtools:
 
@@ -73,7 +87,5 @@ Remaining issues:
     -   table results need to be scrollable
 
     -   links (within the code functions need to be distinguishable without relying on color
-
--   computing troubleshooting: may want to add images? update? (THIS IS NOT AN ERROR)
 
 -   will need to check project pages: one contrast issue, table cells (milestone 4), more contrast issues with code in tips+resources

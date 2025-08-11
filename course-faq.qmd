@@ -15,7 +15,7 @@ Go to your *Files* tab, check the box next to the file you want to download, the
 The instructions for submitting your assignment to Gradescope can be found [here](https://help.gradescope.com/article/ccbpppziu9-student-submit-work#submitting_a_pdf). In a nutshell, you'll upload your PDF and them mark the page(s) where each question can be found. It's OK if a question spans multiple pages, just mark them all. It's also OK if a page includes multiple questions.
 
 ```{=html}
-<iframe width="700" height="394" src="https://www.youtube.com/watch?v=nksyA0s-Geo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/nksyA0s-Geo" title="For Students: Submit Homework on the Gradescope Website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
 ## Can I use a local install of R and RStudio instead of using the RStudio containers?
