@@ -5,7 +5,9 @@
   },
   {
     "listing": "/lab.html",
-    "items": []
+    "items": [
+      "/lab/lab-0.html"
+    ]
   },
   {
     "listing": "/exam-review.html",
