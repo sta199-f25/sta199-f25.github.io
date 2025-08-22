@@ -5,6 +5,9 @@ description: "End of lab on Mon, Aug 25"
 categories: "Lab"
 execute:
   eval: false
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 This lab will set you up for the computing workflow and give you an opportunity to introduce yourselves to each other and the teaching team.
@@ -12,7 +15,7 @@ This lab will set you up for the computing workflow and give you an opportunity 
 # `Hello, World!`
 
 You may have heard/seen this phrase, `Hello, World!`, elsewhere before.
-It's usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen.
+It's usually the first thing you learn in programming -- to learn to write a computer program to print this sentence to screen.
 Things will be different in this course, as it's not a programming, but a data science course.
 So, starting tomorrow in class, you'll learn to use a computer program (called R) to work with data.
 
@@ -42,6 +45,19 @@ Everything in one place, beautifully formatted!
 ::: callout-note
 Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
 :::
+
+#### An analogy to English: 
+
+While most of the above tools might be new to you, they have many similarities with tools you have probably seen before.
+
+Suppose you wanted to write an essay for a literature class.
+You would need to pick a language (e.g. English) and choose an interface to write your document with (such as Microsoft word with a .docx word doc).
+You also might want to use track changes to see edits you make and use a platform such as Google Drive to collaborate.
+\
+\
+While the computational toolkit is different than the one for a literature class, we can find many similarities between the tools, as is shown in the figure below.
+
+![](images/lab-0/r-english-analogy.jpg){fig-align="center" width="624" height="327"}
 
 ## Access R and RStudio
 
@@ -101,7 +117,7 @@ It will help us get to know you (and recognize you in class) and will also help 
 
 ## Set up your SSH key
 
-You will authenticate GitHub using SSH (Secure Shell Protocol – it doesn't really matter what this means for the purpose of this course).
+You will authenticate GitHub using SSH (Secure Shell Protocol -- it doesn't really matter what this means for the purpose of this course).
 Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.
 
 ::: callout-note
@@ -124,7 +140,7 @@ This requires two pieces of information: your name and email address.
 To do so, you will use the `use_git_config()` function from the `usethis` package.
 
 ::: callout-note
-You'll hear about 📦 packages a lot in the context of R – basically they're how developers write functions and bundle them to distribute to the community (and more on this later too!).
+You'll hear about 📦 packages a lot in the context of R -- basically they're how developers write functions and bundle them to distribute to the community (and more on this later too!).
 :::
 
 Type the following lines of code in the **console** in RStudio filling in your name and the address associated with your GitHub account.
