@@ -15,7 +15,7 @@ It refers to the setup required before cooking, and is often used in professiona
 
 [^1]: Source: [Wikipedia](https://en.wikipedia.org/wiki/Mise_en_place).
 
-![](images/lab-0/mise-en-place.jpg){fig-align="right"}
+![](images/lab-0/mise-en-place.jpg){fig-align="center" fig-alt="A photo of a kitchen counter with various ingredients and tools arranged neatly, ready for cooking."}
 
 This lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you'll need for the rest of the semester and it's about getting to know each other and the teaching team.
 
@@ -205,12 +205,12 @@ Now that you have your GitHub account set up, you can clone your first repositor
 
 To do so, follow these steps.
 
--   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
-    Click on the repo with the prefix **lab-0**.
-    It contains the starter documents you need to complete the lab.
+-   Go to the repository for **lab-0** in the course GitHub organization: <https://github.com/sta199-f25/lab-0>.
 
 -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
     Click on the clipboard icon to copy the repo URL.
+
+    ![](images/lab-0/lab-0-repo.png){fig-alt="Clone with SSH button in GitHub repository page." width="600" fig-align="center"}
 
 -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
 
@@ -218,11 +218,13 @@ To do so, follow these steps.
 
 -   Click *Create Project*.
 
+    ![](images/lab-0/lab-0-clone.png){fig-alt="Cloning a GitHub repository in RStudio." width="600" fig-align="center"}
+
 -   Since this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host.
     This will happen in a pop-up window like the one below.
     Type **yes** in the box and hit *Enter*.
 
-    ![](images/lab-0/authenticity-of-host.png){fig-alt="Authenticity of host pop-up window asking to confirm the authenticity of the host. Type 'yes' in the box and hit Enter."}
+    ![](images/lab-0/authenticity-of-host.png){fig-alt="Authenticity of host pop-up window asking to confirm the authenticity of the host. Type 'yes' in the box and hit Enter." width="400" fig-align="center"}
 
 -   RStudio will now clone the repo and create a new RStudio project for you.
     This might take a few seconds.
