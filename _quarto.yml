@@ -18,7 +18,7 @@ website:
   # draft-mode: unlinked
 
   sidebar:
-    background: "#5D737E"
+    background: "#005871"
     logo: "img/logo.png"
     pinned: true
     align: center
@@ -105,7 +105,7 @@ website:
       - exam-review.qmd
             
   page-footer:
-    background: "#5D737E"
+    background: "#005871"
     left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox"
     right: |
       <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" title="heart" aria-hidden="true" ></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
@@ -118,7 +118,7 @@ format:
 theme:
   light: [cosmo, style/sta199.scss]
   dark: [cosmo, style/sta199.scss, style/dark.scss]
-linkcolor: "#5D737E"
+linkcolor: "#005871"
 toc: true
 code-copy: hover
 code-link: true

@@ -2,15 +2,17 @@
 
 ## Colors
 
--   `#5D737E` - Grayish blue
+Pantone Fall 2025 colors:
 
--   `#9AA067` - Pantone Fern (Fall 2024 / Winter 2024 colors)
+-   `#005871` - Lyons blue
 
--   `#FE5D26` - Pantone Red Orange
+-   `#d1805f` - Brandied melon
 
--   `#c57644` - Pantone Tomato Cream
+-   `#BE394F` - Winterberry
 
--   `#BCF4F5` - Bright tealish blue
+-   `#6b4140` - Hot chocolate
+
+-   `#eed4d9` - Primrose pink
 
 ## Rendering
 
