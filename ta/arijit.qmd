@@ -1,0 +1,9 @@
+---
+title: Arijit Dey
+categories:
+  - Lab leader
+description: "M 1:25 PM - 2:40 PM (Sec 8)"
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)"
+image: headshots/arijit.png
+image-alt: Headshot of TA
+---

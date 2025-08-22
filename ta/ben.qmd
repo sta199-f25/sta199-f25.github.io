@@ -1,0 +1,9 @@
+---
+title: Ben Sherman
+categories:
+  - Lab helper
+description: "M 4:40 PM - 5:55 PM (Sec 11)"
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)"
+image: headshots/ben.png
+image-alt: Headshot of TA
+---
