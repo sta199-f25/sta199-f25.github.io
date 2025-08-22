@@ -112,6 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:description" content="End of lab on Mon, Aug 25">
 <meta property="og:image" content="https://sta199-f25.github.io/lab/images/lab-0/mise-en-place.jpg">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:alt" content="A photo of a kitchen counter with various ingredients and tools arranged neatly, ready for cooking.">
 </head>
 
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -535,9 +536,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><em>Mise en place</em> (French pronunciation: [mi zɑ̃ ˈplas]) is a French culinary phrase which means “putting in place” or “gather”. It refers to the setup required before cooking, and is often used in professional kitchens to refer to organizing and arranging the ingredients (e.g., cuts of meat, relishes, sauces, par-cooked items, spices, freshly chopped vegetables, and other components) that a cook will require for the menu items that are expected to be prepared during a shift.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="quarto-figure quarto-figure-right">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/lab-0/mise-en-place.jpg" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
+<p><img src="images/lab-0/mise-en-place.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A photo of a kitchen counter with various ingredients and tools arranged neatly, ready for cooking."></p>
 </figure>
 </div>
 <p>This lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you’ll need for the rest of the semester and it’s about getting to know each other and the teaching team.</p>
@@ -793,13 +794,27 @@ Need a recap? Watch this video!
 <p>Now that you have your GitHub account set up, you can clone your first repository.</p>
 <p>To do so, follow these steps.</p>
 <ul>
-<li><p>Go to the course organization at <a href="https://github.com/sta199-f25">github.com/sta199-f25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-0</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
+<li><p>Go to the repository for <strong>lab-0</strong> in the course GitHub organization: <a href="https://github.com/sta199-f25/lab-0" class="uri">https://github.com/sta199-f25/lab-0</a>.</p></li>
+<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab-0/lab-0-repo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Clone with SSH button in GitHub repository page." width="600"></p>
+</figure>
+</div></li>
 <li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
 <li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
-<li><p>Click <em>Create Project</em>.</p></li>
+<li><p>Click <em>Create Project</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab-0/lab-0-clone.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Cloning a GitHub repository in RStudio." width="600"></p>
+</figure>
+</div></li>
 <li><p>Since this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host. This will happen in a pop-up window like the one below. Type <strong>yes</strong> in the box and hit <em>Enter</em>.</p>
-<p><img src="images/lab-0/authenticity-of-host.png" class="img-fluid" alt="Authenticity of host pop-up window asking to confirm the authenticity of the host. Type 'yes' in the box and hit Enter."></p></li>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab-0/authenticity-of-host.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Authenticity of host pop-up window asking to confirm the authenticity of the host. Type 'yes' in the box and hit Enter." width="400"></p>
+</figure>
+</div></li>
 <li><p>RStudio will now clone the repo and create a new RStudio project for you. This might take a few seconds. Once done, the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
 </ul>
 </section>
