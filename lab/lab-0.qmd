@@ -1,6 +1,6 @@
 ---
 title: "Lab 0"
-subtitle: "Hello, World and STA 199!"
+subtitle: "Mise en place"
 description: "End of lab on Mon, Aug 25"
 categories: "Lab"
 execute:
@@ -10,7 +10,16 @@ editor:
     wrap: sentence
 ---
 
-This lab will set you up for the computing workflow and give you an opportunity to introduce yourselves to each other and the teaching team.
+*Mise en place* (French pronunciation: [mi zɑ̃ ˈplas]) is a French culinary phrase which means "putting in place" or "gather". 
+It refers to the setup required before cooking, and is often used in professional kitchens to refer to organizing and arranging the ingredients (e.g., cuts of meat, relishes, sauces, par-cooked items, spices, freshly chopped vegetables, and other components) that a cook will require for the menu items that are expected to be prepared during a shift.[^1]
+
+[^1]: Source: [Wikipedia](https://en.wikipedia.org/wiki/Mise_en_place).
+
+This lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you'll need for the rest of the semester and it's about getting to know each other and the teaching team.
+
+And just like the *mise an place* phase for cooking something that is new to you, it might not be entirely clear how everything will come together at the end.
+Hang in there, and it'll all start to make sense by the end of the week.
+And you'll be a pro at it all just in time for the first assignment!
 
 # `Hello, World!`
 
@@ -26,27 +35,27 @@ Let's first briefly review the components of the computational toolkit for the c
 
 2.  RStudio: The piece of software (a.k.a. the integrated development environment, IDE) you'll use to write R code in.
 
-::: callout-note
-R is the name of the programming language itself and RStudio is a convenient interface.
-:::
+    ::: callout-note
+    R is the name of the programming language itself and RStudio is a convenient interface.
+    :::
 
 3.  Quarto: The tool you'll use to create reproducible computational documents that contain both your narrative (i.e., words in English) and your code (i.e., code in R). Every piece of assignment you hand in will be a Quarto document.
 
-::: callout-note
-You might be familiar with word processors like MS Word or Google Docs.
-We will not be using these in this class.
-Instead, the words you would write in such a document as well as the code will go into a Quarto document, and when you *render* the document (more on what this means later) you will get a document out that has your words, your code, and the output of that code.
-Everything in one place, beautifully formatted!
-:::
+    ::: callout-note
+    You might be familiar with word processors like MS Word or Google Docs.
+    We will not be using these in this class.
+    Instead, the words you would write in such a document as well as the code will go into a Quarto document, and when you *render* the document (more on what this means later) you will get a document out that has your words, your code, and the output of that code.
+    Everything in one place, beautifully formatted!
+    :::
 
 4.  Git: Version control system.
 5.  GitHub: A web hosting service for the Git version control system that also allows for transparent collaboration between team members.
 
-::: callout-note
-Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
-:::
+    ::: callout-note
+    Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
+    :::
 
-#### An analogy to English: 
+## An analogy to English: 
 
 While most of the above tools might be new to you, they have many similarities with tools you have probably seen before.
 
@@ -124,9 +133,14 @@ Below is an outline of the authentication steps; you are encouraged to follow al
 You only need to do this authentication process one time on a single system.
 :::
 
--   Go back to your RStudio container and type `credentials::ssh_setup_github()` into your console.
--   R will ask "No SSH key found. Generate one now?" You should click 1 for yes.
--   You will generate a key. R will then ask "Would you like to open a browser now?" You should click 1 for yes.
+-   Go back to your RStudio container and copy-and-paste or type the following in the Console.
+
+```{r}
+credentials::ssh_setup_github()
+```
+
+-   This will print a message in the Console. Read it. It should say: "No SSH key found. Generate one now?" You should click 1 for yes.
+-   This will generate a key (basically a really long alpha-numeric password). R will then ask "Would you like to open a browser now?" You should click 1 for yes again.
 -   You may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., `sta199`).
 
 You can find more detailed instructions [here](https://github.com/DukeStatSci/github_auth_guide) if you're interested.
@@ -189,12 +203,6 @@ Now that you have your GitHub account set up, you can clone your first repositor
 
 To do so, follow these steps.
 
-### Step 1: Log in to RStudio
-
-Go to your RStudio container and log in if you haven't already: <https://cmgr.oit.duke.edu/containers>.
-
-### Step 2: Clone the repo & start new RStudio project
-
 -   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
     Click on the repo with the prefix **lab-0**.
     It contains the starter documents you need to complete the lab.
@@ -220,8 +228,6 @@ Go to your RStudio container and log in if you haven't already: <https://cmgr.oi
 
 # Hello STA 199!
 
-Fill out the course "Getting to know you" survey on Canvas: <https://canvas.duke.edu/courses/39994/quizzes/25798>.
+Fill out the course "Getting to know you" survey on Canvas: <https://canvas.duke.edu/courses/61539/quizzes/37441>.
 
-**TO DO: Update link above once quiz is live.**
-
-We will use the information collected in this survey for a variety of goals, from inviting you to the course GitHub organization (more on that later) to getting to know you as a person and your course goals and concerns.
+We will use the information collected in this survey for a variety of goals, from inviting you to the course GitHub organization (and you should accept that invite soon as you see it in your mailbox!) to getting to know you as a person and your course goals and concerns.
