@@ -15,6 +15,8 @@ It refers to the setup required before cooking, and is often used in professiona
 
 [^1]: Source: [Wikipedia](https://en.wikipedia.org/wiki/Mise_en_place).
 
+![](images/lab-0/mise-en-place.jpg){fig-align="right"}
+
 This lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you'll need for the rest of the semester and it's about getting to know each other and the teaching team.
 
 And just like the *mise an place* phase for cooking something that is new to you, it might not be entirely clear how everything will come together at the end.
@@ -55,7 +57,7 @@ Let's first briefly review the components of the computational toolkit for the c
     Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
     :::
 
-## An analogy to English: 
+## An analogy to English
 
 While most of the above tools might be new to you, they have many similarities with tools you have probably seen before.
 
@@ -82,9 +84,9 @@ You will do all of your computing in your container.
 
 Once you've reserved the container you'll see that it will show up under *My reservations*.
 
-To launch your container click on it under My reservations, then click *Login*, and then *Start*.[^1]
+To launch your container click on it under My reservations, then click *Login*, and then *Start*.[^2]
 
-[^1]: Yes, it's too many steps.
+[^2]: Yes, it's too many steps.
     I don't know why!
     But it works, and you'll get used to it.
     Trust me, it beats downloading and installing everything you need on your computers!
@@ -92,9 +94,9 @@ To launch your container click on it under My reservations, then click *Login*, 
 ## Create a GitHub account
 
 Go to <https://github.com/> and walk through the steps for creating an account.
-You do not have to use your Duke email address, but I recommend doing so.[^2]
+You do not have to use your Duke email address, but I recommend doing so.[^3]
 
-[^2]: GitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.
+[^3]: GitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.
 
 ::: callout-note
 You'll need to choose a user name.
