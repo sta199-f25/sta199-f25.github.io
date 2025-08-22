@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta property="og:title" content="Lab 0 – STA 199">
 <meta property="og:description" content="End of lab on Mon, Aug 25">
-<meta property="og:image" content="https://sta199-f25.github.io/lab/images/lab-0/r-english-analogy.jpg">
+<meta property="og:image" content="https://sta199-f25.github.io/lab/images/lab-0/mise-en-place.jpg">
 <meta property="og:site_name" content="STA 199">
 </head>
 
@@ -490,16 +490,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#hello-world" id="toc-hello-world" class="nav-link active" data-scroll-target="#hello-world"><code>Hello, World!</code></a>
   <ul class="collapse">
+  <li><a href="#an-analogy-to-english" id="toc-an-analogy-to-english" class="nav-link" data-scroll-target="#an-analogy-to-english">An analogy to English</a></li>
   <li><a href="#access-r-and-rstudio" id="toc-access-r-and-rstudio" class="nav-link" data-scroll-target="#access-r-and-rstudio">Access R and RStudio</a></li>
   <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">Create a GitHub account</a></li>
   <li><a href="#update-your-github-profile" id="toc-update-your-github-profile" class="nav-link" data-scroll-target="#update-your-github-profile">Update your GitHub profile</a></li>
   <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">Set up your SSH key</a></li>
   <li><a href="#configure-git-to-introduce-yourself" id="toc-configure-git-to-introduce-yourself" class="nav-link" data-scroll-target="#configure-git-to-introduce-yourself">Configure Git to introduce yourself</a></li>
-  <li><a href="#clone-your-first-repository" id="toc-clone-your-first-repository" class="nav-link" data-scroll-target="#clone-your-first-repository">Clone your first repository</a>
-  <ul class="collapse">
-  <li><a href="#step-1-log-in-to-rstudio" id="toc-step-1-log-in-to-rstudio" class="nav-link" data-scroll-target="#step-1-log-in-to-rstudio">Step 1: Log in to RStudio</a></li>
-  <li><a href="#step-2-clone-the-repo-start-new-rstudio-project" id="toc-step-2-clone-the-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</a></li>
-  </ul></li>
+  <li><a href="#clone-your-first-repository" id="toc-clone-your-first-repository" class="nav-link" data-scroll-target="#clone-your-first-repository">Clone your first repository</a></li>
   </ul></li>
   <li><a href="#hello-sta-199" id="toc-hello-sta-199" class="nav-link" data-scroll-target="#hello-sta-199">Hello STA 199!</a></li>
   </ul>
@@ -512,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 0</h1>
-<p class="subtitle lead">Hello, World and STA 199!</p>
+<p class="subtitle lead">Mise en place</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -537,15 +534,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This lab will set you up for the computing workflow and give you an opportunity to introduce yourselves to each other and the teaching team.</p>
+<p><em>Mise en place</em> (French pronunciation: [mi zɑ̃ ˈplas]) is a French culinary phrase which means “putting in place” or “gather”. It refers to the setup required before cooking, and is often used in professional kitchens to refer to organizing and arranging the ingredients (e.g., cuts of meat, relishes, sauces, par-cooked items, spices, freshly chopped vegetables, and other components) that a cook will require for the menu items that are expected to be prepared during a shift.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="images/lab-0/mise-en-place.jpg" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
+</figure>
+</div>
+<p>This lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you’ll need for the rest of the semester and it’s about getting to know each other and the teaching team.</p>
+<p>And just like the <em>mise an place</em> phase for cooking something that is new to you, it might not be entirely clear how everything will come together at the end. Hang in there, and it’ll all start to make sense by the end of the week. And you’ll be a pro at it all just in time for the first assignment!</p>
 <section id="hello-world" class="level1">
 <h1><code>Hello, World!</code></h1>
 <p>You may have heard/seen this phrase, <code>Hello, World!</code>, elsewhere before. It’s usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen. Things will be different in this course, as it’s not a programming, but a data science course. So, starting tomorrow in class, you’ll learn to use a computer program (called R) to work with data.</p>
 <p>But today, we need to set you up for success! Let’s first briefly review the components of the computational toolkit for the course:</p>
 <ol type="1">
 <li><p>R: The programming language you’ll learn in this course.</p></li>
-<li><p>RStudio: The piece of software (a.k.a. the integrated development environment, IDE) you’ll use to write R code in.</p></li>
-</ol>
+<li><p>RStudio: The piece of software (a.k.a. the integrated development environment, IDE) you’ll use to write R code in.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -558,10 +561,8 @@ Note
 <div class="callout-body-container callout-body">
 <p>R is the name of the programming language itself and RStudio is a convenient interface.</p>
 </div>
-</div>
-<ol start="3" type="1">
-<li>Quarto: The tool you’ll use to create reproducible computational documents that contain both your narrative (i.e., words in English) and your code (i.e., code in R). Every piece of assignment you hand in will be a Quarto document.</li>
-</ol>
+</div></li>
+<li><p>Quarto: The tool you’ll use to create reproducible computational documents that contain both your narrative (i.e., words in English) and your code (i.e., code in R). Every piece of assignment you hand in will be a Quarto document.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -574,11 +575,9 @@ Note
 <div class="callout-body-container callout-body">
 <p>You might be familiar with word processors like MS Word or Google Docs. We will not be using these in this class. Instead, the words you would write in such a document as well as the code will go into a Quarto document, and when you <em>render</em> the document (more on what this means later) you will get a document out that has your words, your code, and the output of that code. Everything in one place, beautifully formatted!</p>
 </div>
-</div>
-<ol start="4" type="1">
-<li>Git: Version control system.</li>
-<li>GitHub: A web hosting service for the Git version control system that also allows for transparent collaboration between team members.</li>
-</ol>
+</div></li>
+<li><p>Git: Version control system.</p></li>
+<li><p>GitHub: A web hosting service for the Git version control system that also allows for transparent collaboration between team members.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -591,9 +590,10 @@ Note
 <div class="callout-body-container callout-body">
 <p>Git is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</p>
 </div>
-</div>
-<section id="an-analogy-to-english" class="level4">
-<h4 class="anchored" data-anchor-id="an-analogy-to-english">An analogy to English:</h4>
+</div></li>
+</ol>
+<section id="an-analogy-to-english" class="level2">
+<h2 class="anchored" data-anchor-id="an-analogy-to-english">An analogy to English</h2>
 <p>While most of the above tools might be new to you, they have many similarities with tools you have probably seen before.</p>
 <p>Suppose you wanted to write an essay for a literature class. You would need to pick a language (e.g.&nbsp;English) and choose an interface to write your document with (such as Microsoft word with a .docx word doc). You also might want to use track changes to see edits you make and use a platform such as Google Drive to collaborate.<br>
 <br>
@@ -625,11 +625,11 @@ Note
 </div>
 </div>
 <p>Once you’ve reserved the container you’ll see that it will show up under <em>My reservations</em>.</p>
-<p>To launch your container click on it under My reservations, then click <em>Login</em>, and then <em>Start</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>To launch your container click on it under My reservations, then click <em>Login</em>, and then <em>Start</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
 <section id="create-a-github-account" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-github-account">Create a GitHub account</h2>
-<p>Go to <a href="https://github.com/" class="uri">https://github.com/</a> and walk through the steps for creating an account. You do not have to use your Duke email address, but I recommend doing so.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Go to <a href="https://github.com/" class="uri">https://github.com/</a> and walk through the steps for creating an account. You do not have to use your Duke email address, but I recommend doing so.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -699,9 +699,14 @@ Note
 </div>
 </div>
 <ul>
-<li>Go back to your RStudio container and type <code>credentials::ssh_setup_github()</code> into your console.</li>
-<li>R will ask “No SSH key found. Generate one now?” You should click 1 for yes.</li>
-<li>You will generate a key. R will then ask “Would you like to open a browser now?” You should click 1 for yes.</li>
+<li>Go back to your RStudio container and copy-and-paste or type the following in the Console.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>credentials<span class="sc">::</span><span class="fu">ssh_setup_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>This will print a message in the Console. Read it. It should say: “No SSH key found. Generate one now?” You should click 1 for yes.</li>
+<li>This will generate a key (basically a really long alpha-numeric password). R will then ask “Would you like to open a browser now?” You should click 1 for yes again.</li>
 <li>You may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., <code>sta199</code>).</li>
 </ul>
 <p>You can find more detailed instructions <a href="https://github.com/DukeStatSci/github_auth_guide">here</a> if you’re interested.</p>
@@ -725,17 +730,17 @@ Note
 </div>
 <p>Type the following lines of code in the <strong>console</strong> in RStudio filling in your name and the address associated with your GitHub account.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, mine would be</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Mine Çetinkaya-Rundel"</span>, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"cetinkaya.mine@gmail.com"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Mine Çetinkaya-Rundel"</span>, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"cetinkaya.mine@gmail.com"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -787,12 +792,6 @@ Need a recap? Watch this video!
 <h2 class="anchored" data-anchor-id="clone-your-first-repository">Clone your first repository</h2>
 <p>Now that you have your GitHub account set up, you can clone your first repository.</p>
 <p>To do so, follow these steps.</p>
-<section id="step-1-log-in-to-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-log-in-to-rstudio">Step 1: Log in to RStudio</h3>
-<p>Go to your RStudio container and log in if you haven’t already: <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a>.</p>
-</section>
-<section id="step-2-clone-the-repo-start-new-rstudio-project" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</h3>
 <ul>
 <li><p>Go to the course organization at <a href="https://github.com/sta199-f25">github.com/sta199-f25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-0</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
@@ -805,12 +804,10 @@ Need a recap? Watch this video!
 </ul>
 </section>
 </section>
-</section>
 <section id="hello-sta-199" class="level1">
 <h1>Hello STA 199!</h1>
-<p>Fill out the course “Getting to know you” survey on Canvas: <a href="https://canvas.duke.edu/courses/39994/quizzes/25798" class="uri">https://canvas.duke.edu/courses/39994/quizzes/25798</a>.</p>
-<p><strong>TO DO: Update link above once quiz is live.</strong></p>
-<p>We will use the information collected in this survey for a variety of goals, from inviting you to the course GitHub organization (more on that later) to getting to know you as a person and your course goals and concerns.</p>
+<p>Fill out the course “Getting to know you” survey on Canvas: <a href="https://canvas.duke.edu/courses/61539/quizzes/37441" class="uri">https://canvas.duke.edu/courses/61539/quizzes/37441</a>.</p>
+<p>We will use the information collected in this survey for a variety of goals, from inviting you to the course GitHub organization (and you should accept that invite soon as you see it in your mailbox!) to getting to know you as a person and your course goals and concerns.</p>
 
 
 </section>
@@ -819,8 +816,9 @@ Need a recap? Watch this video!
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Yes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>GitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Source: <a href="https://en.wikipedia.org/wiki/Mise_en_place">Wikipedia</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Yes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>GitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
