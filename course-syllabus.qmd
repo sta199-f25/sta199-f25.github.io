@@ -10,10 +10,12 @@ format:
 
 By the end of the semester, you will...
 
--   learn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio
--   gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization
--   work on problems and case studies inspired by and based on real-world questions and data
--   learn to communicate results through written assignments and project presentation effectively
+-   learn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio;
+-   gain experience in data wrangling and tidying, exploratory data analysis, data visualization, predictive and descriptive modeling, and statistical inference;
+-   work on problems and case studies inspired by and based on real-world questions and data;
+-   explore ethical considerations in data science, including issues of misrepresentation, privacy, and bias;
+-   responsibly leverage AI tools within data science workflows while  critically assessing the validity and potential biases in AI-generated insights; 
+-   learn to communicate results through written assignments and project presentation effectively.
 
 ## Course materials
 
@@ -64,23 +66,33 @@ If you have questions about assignment extensions, accommodations, or any other 
 
 Your success in this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you by providing you with materials answering questions, and setting a pace, but for this to work, you must do the following:
 
-1.  Complete all the preparation work before class.
+1.  **Watch the videos and do the readings before each class.**
 
-2.  Ask questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.
+Come prepared so you can deeply engage with the material during lectures and labs instead of using class time to learn the basics.
 
-3.  Do the readings.
+2.  **Be present and engaged in every lecture and lab.**
 
-4.  Do the lab. The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).
+In lectures do the application exercises, ask questions, and participate in discussions. In labs, work on the lab exercises, ask questions, and collaborate with your teammates. If you miss a class, make sure to catch up on the material before the next class.
 
-5.  Don’t procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.
+3.  **Ask questions.**
+
+As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.
+
+4.  **Do the homework.** 
+
+The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).
+
+5.  **Don’t procrastinate.** 
+
+The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.
 
 ## Getting help
 
 -   If you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
--   Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, [Ed Discussion](https://edstem.org/us/courses/62468/discussion/). There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!
+-   Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, [Ed Discussion](https://edstem.org/us/courses/80616/discussion/). There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!
 
-Check out the [Support](https://sta199-f25.github.io/course-support.html) tab for more resources.
+Check out the [Support](course-support.html) tab for more resources.
 
 ## Course components
 
@@ -138,12 +150,12 @@ The final course grade will be calculated as follows:
 
 | Category              | Percentage |
 |-----------------------|------------|
-| Labs                  | 20%        |
-| Project               | 15%        |
+| Labs                  | 15%        |
+| Project               | 20%        |
 | Exam 1                | 20%        |
 | Exam 2                | 20%        |
 | Final                 | 20%        |
-| Application Exercises | 5%         |
+| Attendance            | 5%         |
 
 While there are no specific points allocated to attendance, we will record your attendance periodically throughout the semester. This information will be used as "extra credit" if you're in between two grades and a minor bump would help.
 
@@ -256,7 +268,7 @@ About one week before each exam, the class recordings will be available to all s
 ::: {.callout-note collapse="true"}
 ## Click here for syllabus bounty!
 
-If you've read this far in the syllabus, post a picture of your pet if you have one or your favorite meme on ed in [this thread](https://edstem.org/us/courses/62468/discussion/5172863)! If you're willing, share the name of your pet too!
+If you've read this far in the syllabus, post a picture of your pet if you have one or your favorite meme on ed in [this thread](https://edstem.org/us/courses/80616/discussion/5172863)! If you're willing, share the name of your pet too!
 :::
 
 ## Accommodations

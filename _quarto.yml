@@ -37,7 +37,7 @@ website:
             href: https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing
           - icon: people-fill
             text: Help from humans (Ed Discussion)
-            # href: https://edstem.org/us/courses/62468/discussion/
+            # href: https://edstem.org/us/courses/80616/discussion/
           # - icon: robot
           #   text: Help from AI (Chatbot)
           #   href: https://canvas.duke.edu/courses/39994/external_tools/5887
@@ -85,9 +85,9 @@ website:
           - href: computing-troubleshooting.qmd
             text: Troubleshooting
       - section: "Project"
-        # contents:
-        #   - href: project/description.qmd
-        #     text: Description
+        contents:
+          - href: project/description.qmd
+            text: Description
         #   - href: project/1-working-collaboratively.qmd
         #     text: Milestone 1
         #   - href: project/2-proposal.qmd

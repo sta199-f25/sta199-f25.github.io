@@ -177,8 +177,6 @@ To do so, follow these steps.
 
 Go to your RStudio container and log in if you haven't already: <https://cmgr.oit.duke.edu/containers>.
 
-### Step 2: Open the terminal
-
 ### Step 2: Clone the repo & start new RStudio project
 
 -   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
