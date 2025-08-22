@@ -42,9 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-445a4c1aac74a2eea6fe9a9be21fcaff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-af336c6ce99510024bc0c0408912668f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-445a4c1aac74a2eea6fe9a9be21fcaff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3ba3d5147f17b5646439d5b7379703cf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-badcc228b785af3ae99339609c1b43e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3ba3d5147f17b5646439d5b7379703cf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -411,8 +411,21 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Project</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -512,10 +525,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="course-learning-objectives">Course learning objectives</h2>
 <p>By the end of the semester, you will…</p>
 <ul>
-<li>learn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio</li>
-<li>gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization</li>
-<li>work on problems and case studies inspired by and based on real-world questions and data</li>
-<li>learn to communicate results through written assignments and project presentation effectively</li>
+<li>learn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio;</li>
+<li>gain experience in data wrangling and tidying, exploratory data analysis, data visualization, predictive and descriptive modeling, and statistical inference;</li>
+<li>work on problems and case studies inspired by and based on real-world questions and data;</li>
+<li>explore ethical considerations in data science, including issues of misrepresentation, privacy, and bias;</li>
+<li>responsibly leverage AI tools within data science workflows while critically assessing the validity and potential biases in AI-generated insights;</li>
+<li>learn to communicate results through written assignments and project presentation effectively.</li>
 </ul>
 </section>
 <section id="course-materials" class="level2">
@@ -567,21 +582,34 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="five-tips-for-success">Five tips for success</h2>
 <p>Your success in this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you by providing you with materials answering questions, and setting a pace, but for this to work, you must do the following:</p>
 <ol type="1">
-<li><p>Complete all the preparation work before class.</p></li>
-<li><p>Ask questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.</p></li>
-<li><p>Do the readings.</p></li>
-<li><p>Do the lab. The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).</p></li>
-<li><p>Don’t procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.</p></li>
+<li><strong>Watch the videos and do the readings before each class.</strong></li>
 </ol>
+<p>Come prepared so you can deeply engage with the material during lectures and labs instead of using class time to learn the basics.</p>
+<ol start="2" type="1">
+<li><strong>Be present and engaged in every lecture and lab.</strong></li>
+</ol>
+<p>In lectures do the application exercises, ask questions, and participate in discussions. In labs, work on the lab exercises, ask questions, and collaborate with your teammates. If you miss a class, make sure to catch up on the material before the next class.</p>
+<ol start="3" type="1">
+<li><strong>Ask questions.</strong></li>
+</ol>
+<p>As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.</p>
+<ol start="4" type="1">
+<li><strong>Do the homework.</strong></li>
+</ol>
+<p>The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).</p>
+<ol start="5" type="1">
+<li><strong>Don’t procrastinate.</strong></li>
+</ol>
+<p>The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.</p>
 </section>
 <section id="getting-help" class="level2">
 <h2 class="anchored" data-anchor-id="getting-help">Getting help</h2>
 <ul>
 <li>If you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.</li>
 <li>The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!</li>
-<li>Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, <a href="https://edstem.org/us/courses/62468/discussion/">Ed Discussion</a>. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!</li>
+<li>Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, <a href="https://edstem.org/us/courses/80616/discussion/">Ed Discussion</a>. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!</li>
 </ul>
-<p>Check out the <a href="https://sta199-f25.github.io/course-support.html">Support</a> tab for more resources.</p>
+<p>Check out the <a href="course-support.html">Support</a> tab for more resources.</p>
 </section>
 <section id="course-components" class="level2">
 <h2 class="anchored" data-anchor-id="course-components">Course components</h2>
@@ -637,11 +665,11 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Labs</td>
-<td>20%</td>
+<td>15%</td>
 </tr>
 <tr class="even">
 <td>Project</td>
-<td>15%</td>
+<td>20%</td>
 </tr>
 <tr class="odd">
 <td>Exam 1</td>
@@ -656,7 +684,7 @@ ul.task-list li input[type="checkbox"] {
 <td>20%</td>
 </tr>
 <tr class="even">
-<td>Application Exercises</td>
+<td>Attendance</td>
 <td>5%</td>
 </tr>
 </tbody>
@@ -806,7 +834,7 @@ Click here for syllabus bounty!
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If you’ve read this far in the syllabus, post a picture of your pet if you have one or your favorite meme on ed in <a href="https://edstem.org/us/courses/62468/discussion/5172863">this thread</a>! If you’re willing, share the name of your pet too!</p>
+<p>If you’ve read this far in the syllabus, post a picture of your pet if you have one or your favorite meme on ed in <a href="https://edstem.org/us/courses/80616/discussion/5172863">this thread</a>! If you’re willing, share the name of your pet too!</p>
 </div>
 </div>
 </div>
