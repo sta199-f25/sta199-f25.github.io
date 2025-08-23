@@ -15,7 +15,7 @@ website:
   #   creator: "@minebocek"
   #   image: "img/twitter-card.png"
 
-  # draft-mode: unlinked
+  draft-mode: unlinked
 
   sidebar:
     background: "#005871"
@@ -37,7 +37,7 @@ website:
             href: https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing
           - icon: people-fill
             text: Help from humans (Ed Discussion)
-            # href: https://edstem.org/us/courses/80616/discussion/
+            href: https://edstem.org/us/courses/80616/discussion
           # - icon: robot
           #   text: Help from AI (Chatbot)
           #   href: https://canvas.duke.edu/courses/39994/external_tools/5887
@@ -46,13 +46,13 @@ website:
         menu:
           - icon: megaphone-fill
             text: Announcements
-            # url: https://canvas.duke.edu/courses/39994/announcements
+            url: https://canvas.duke.edu/courses/61539/announcements
           - icon: file-arrow-up-fill
             text: Gradescope
-            # url: https://canvas.duke.edu/courses/39994/external_tools/181
+            url: https://canvas.duke.edu/courses/61539/external_tools/181
           - icon: alphabet-uppercase
             text: Gradebook
-            # url: https://canvas.duke.edu/courses/39994/gradebook
+            url: https://canvas.duke.edu/courses/61539/gradebook
 
     style: docked
     search: true
