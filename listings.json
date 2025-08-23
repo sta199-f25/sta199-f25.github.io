@@ -1,19 +1,5 @@
 [
   {
-    "listing": "/ae.html",
-    "items": []
-  },
-  {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": []
-  },
-  {
     "listing": "/course-team.html",
     "items": [
       "/ta/abuzar.html",
@@ -34,6 +20,20 @@
       "/ta/sarah.html",
       "/ta/xueyan.html",
       "/ta/ziyan.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": []
+  },
+  {
+    "listing": "/ae.html",
+    "items": []
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html"
     ]
   }
 ]
