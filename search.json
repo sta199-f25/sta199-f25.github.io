@@ -180,7 +180,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 2 pm) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\n\n\n\n\n\nTitle\nSubtitle\n\n\n\n\n\nNo matching items\n\n\nMore AEs to be added as the semester progresses.",
+    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\nTitle\nSubtitle\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Application exercises"
     ]
@@ -205,6 +205,49 @@
     "crumbs": [
       "Computing",
       "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "hw.html",
+    "href": "hw.html",
+    "title": "Homeworks",
+    "section": "",
+    "text": "More homeworks to be added as the semester progresses.\n\n\n\n\n\n\n\n\nNo.\nTitle\nDue date\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homeworks"
+    ]
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#overview",
+    "href": "course-overview.html#overview",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#meetings",
+    "href": "course-overview.html#meetings",
+    "title": "STA 199Fall 2025",
+    "section": "Meetings",
+    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm",
+    "crumbs": [
+      "Course information",
+      "Overview"
     ]
   },
   {
@@ -269,39 +312,6 @@
     "title": "Lab 0",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nSource: Wikipedia.↩︎\nYes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!↩︎\nGitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.↩︎"
-  },
-  {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "STA 199Fall 2025",
-    "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#overview",
-    "href": "course-overview.html#overview",
-    "title": "STA 199Fall 2025",
-    "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#meetings",
-    "href": "course-overview.html#meetings",
-    "title": "STA 199Fall 2025",
-    "section": "Meetings",
-    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
   },
   {
     "objectID": "lab.html",
@@ -460,7 +470,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n\n\n\nLab 0 at the end of lab session (not graded)\n\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\n\nLab 1 at the end of the lab session\n\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 14\n\n\n\n\n\n\nHW 1 at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\n\nLab 2 at the end of the lab session\n\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 21\n\n\n\n\n\n\nHW 2 at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\n\nLab 3 at the end of the lab session\n\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 28\n\n\n\n\n\n\nHW 3 at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\n\nLab 4 at the end of lab session\n\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Oct 4\n\n\n\n\n\n\nExam 1 take-home due at noon\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins] Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\nProject milestone 1 at the end of lab session (in-person attendance required for credit)\n\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\n\nMidterm course evaluation due midnight (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\n\n\n\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\n\nTo be posted\n\n\nProject milestone 2 due  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\nProject milestone 3 due at the end of lab session (in-person attendance required for credit)\n\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes] Lab 5: Visualize, model, interpret\nTo be posted\n📓 project milestone 4\nProject milestone 4 due at the end of lab session Lab 5 at the end of the lab session\n\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\n\nPeer evaluation 3 due at 11:59 pm\n\n\n\n\nSun, Nov 2\n\n\n\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\nProject milestone 5 due at the end of lab session (in-person attendance required for credit)\n\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\n\nLab 6 at the end of lab session\n\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Nov 22\n\n\n\n\n\n\nExam 2 take-home due by noon\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\n\n\n\n\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\n\n\n\nSun, Nov 30\n\n\n\n\n\n\nLab 7 at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\n\n\n\n\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\n\n\n\nFri, Dec 5\n\n\n\n\n\n\nLab 8 at midnight (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n\n\n\nLab 0 due at the end of lab session (not graded)\n\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\n\nLab 1 due at the end of the lab session\n\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 14\n\n\n\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\n\nLab 2 due at the end of the lab session\n\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 21\n\n\n\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\n\nLab 3 due at the end of the lab session\n\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 28\n\n\n\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\n\nLab 4 due at the end of lab session\n\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Oct 4\n\n\n\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins] Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\nProject milestone 1 due at the end of lab session\n\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\n\n\n\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\n\nTo be posted\n\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\nProject milestone 3 due at the end of lab session\n\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes] Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\nProject milestone 4 at the end of lab session Lab 5 due at the end of the lab session\n\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\n\nPeer evaluation 3 at 11:59 pm\n\n\n\n\nSun, Nov 2\n\n\n\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\nProject milestone 5 due at the end of lab session (in-person attendance required for credit)\n\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\n\nLab 6 due at the end of lab session\n\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Nov 22\n\n\n\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\n\nLab 7 due at the end of lab session\n\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\n\n\n\nSun, Nov 30\n\n\n\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\n\nLab 8 due at the end of lab session\n\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\n\n\n\nFri, Dec 5\n\n\n\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
     "crumbs": [
       "Course information",
       "Schedule"
