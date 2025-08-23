@@ -2,9 +2,7 @@
 title: Marie Neubrander
 categories:
   - Lab leader
-description: "M 8:30 AM - 9:45 AM (Sec 1)
-
-M 1:25 PM - 2:40 PM (Sec 7)"
+description: "M 8:30 AM - 9:45 AM (Sec 1)<br>M 1:25 PM - 2:40 PM (Sec 7)"
 subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)"
 image: headshots/marie.png
 image-alt: Headshot of TA

@@ -39,10 +39,4 @@ Each TA holds [office hours](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG
 
 ![](img/mary.png){.circular-portrait-mary style="float:right;" fig-alt="Headshot of Dr. Mary Knox"}
 
-Dr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding registration, accommodations, missed work, extensions, etc.
-
-| Office hours                                   | Location     |
-|------------------------------------------------|--------------|
-| Thursdays 10 am - 11:30 am                     | Zoom (https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)  |
-
-: {tbl-colwidths="\[70,30\]"}
+Dr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding registration, accommodations, missed work, extensions, etc. Mary has office hours on Thursdays 10 am - 11:30 am on [Zoom](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing).
