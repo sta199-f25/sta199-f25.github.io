@@ -11,11 +11,6 @@ website:
   repo-actions: [edit, issue]
 
   open-graph: true
-  # twitter-card:
-  #   creator: "@minebocek"
-  #   image: "img/twitter-card.png"
-
-  draft-mode: unlinked
 
   sidebar:
     background: "#005871"
@@ -101,6 +96,7 @@ website:
         #   - href: project/tips-resources.qmd
         #     text: Tips + resources
       - lab.qmd
+      - hw.qmd
       - ae.qmd
       - exam-review.qmd
             

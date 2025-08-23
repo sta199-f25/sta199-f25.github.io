@@ -1,7 +1,7 @@
 ---
-title: "Labs"
+title: "Homeworks"
 listing:
-  contents: lab
+  contents: hw
   sort: title
   sort-ui: false
   filter-ui: false
@@ -13,4 +13,4 @@ listing:
     description: "Due date"
 ---
 
-More labs to be added as the semester progresses.
+More homeworks to be added as the semester progresses.
