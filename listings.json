@@ -1,5 +1,32 @@
 [
   {
+    "listing": "/course-team.html",
+    "items": [
+      "/ta/abuzar.html",
+      "/ta/alexa.html",
+      "/ta/allison.html",
+      "/ta/arijit.html",
+      "/ta/ben.html",
+      "/ta/bethany.html",
+      "/ta/eduardo.html",
+      "/ta/federico.html",
+      "/ta/jessie.html",
+      "/ta/kathleen.html",
+      "/ta/katie.html",
+      "/ta/luxman.html",
+      "/ta/marie.html",
+      "/ta/max.html",
+      "/ta/natasha.html",
+      "/ta/sarah.html",
+      "/ta/xueyan.html",
+      "/ta/ziyan.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": []
+  },
+  {
     "listing": "/ae.html",
     "items": []
   },
@@ -8,13 +35,5 @@
     "items": [
       "/lab/lab-0.html"
     ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": []
-  },
-  {
-    "listing": "/course-team.html",
-    "items": []
   }
 ]
