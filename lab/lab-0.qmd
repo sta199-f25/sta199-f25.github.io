@@ -25,10 +25,12 @@ And you'll be a pro at it all just in time for the first assignment!
 
 # `Hello, World!`
 
+## Computational toolkit
+
 You may have heard/seen this phrase, `Hello, World!`, elsewhere before.
 It's usually the first thing you learn in programming -- to learn to write a computer program to print this sentence to screen.
 Things will be different in this course, as it's not a programming, but a data science course.
-So, starting tomorrow in class, you'll learn to use a computer program (called R) to work with data.
+So, starting tomorrow in class, you'll learn to use a computing language (called R) to work with data.
 
 But today, we need to set you up for success!
 Let's first briefly review the components of the computational toolkit for the course:
