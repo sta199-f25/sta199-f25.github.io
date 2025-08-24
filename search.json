@@ -328,7 +328,84 @@
     "href": "course-syllabus.html",
     "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio;\ngain experience in data wrangling and tidying, exploratory data analysis, data visualization, predictive and descriptive modeling, and statistical inference;\nwork on problems and case studies inspired by and based on real-world questions and data;\nexplore ethical considerations in data science, including issues of misrepresentation, privacy, and bias;\nresponsibly leverage AI tools within data science workflows while critically assessing the validity and potential biases in AI-generated insights;\nlearn to communicate results through written assignments and project presentation effectively.",
+    "text": "for quick reference…1 but really, read the long version!\n\n\nLearn to explore, visualize, and analyze data using R and RStudio through real-world problems. Covers data wrangling, visualization, modeling, statistical inference, and ethical considerations in data science, including responsible AI tool usage.\n\n\n\n\nTextbooks (free online): R for Data Science, 2e and Introduction to Modern Statistics\nComputing: Laptop required for all classes; R accessed through Duke containers, no installation needed\nPlatform: Course website at sta199-f25.github.io – everything you need is there or linked from there!\n\n\n\n\n\n\n\n\n\n\n\n\nComponent\nWeight\nDetails\n\n\n\n\nLectures\n5%\nAttendance/participation via Wooclap (20/26 lectures minimum)\n\n\nLabs\n8%\nTeam-based, completed in class (lowest 2 dropped)\n\n\nHomework\n12%\nIndividual assignments (lowest grade dropped)\n\n\nProject\n15%\nTeam-based data analysis with presentation\n\n\nExam 1\n20%\nIn-class + take-home components\n\n\nExam 2\n20%\nIn-class + take-home components\n\n\nFinal\n20%\nIn-class only\n\n\n\n\n\n\n\n\n\nIndividual work: Homework and exams must be completed alone\nTeam collaboration: Expected for labs and project\nAI tools: Allowed for code assistance with proper citation; prohibited for direct narrative generation\nOnline resources: Permitted with explicit citation\n\n\n\n\n\nHomework: Up to 3 days late (-5% per day)\nLabs: No late work (completed in class)\nExams/Project: No extensions\nOne-time waiver: Available for extenuating circumstances\n\n\n\n\n\nLectures: Participation tracked via Wooclap\nLabs: Mandatory attendance (no make-ups possible)\nLecture recordings: Available for excused absences only\n\n\n\n\n\n\nPrepare: Watch videos and read before class\nEngage: Attend all lectures and labs actively\nAsk questions: Use office hours and Ed Discussion forum\nStart early: Don’t procrastinate on assignments\nStay current: Content builds progressively\n\n\n\n\n\nClasses begin: Aug 25\nExam 1: Oct 2 (in-class) / Oct 4 (take-home due)\nFall break: Oct 13-14\nProject: Nov 10 (presentation in lab + write-up due)\nExam 2: Nov 20 (in-class) / Nov 22 (take-home due)\nClasses end: Dec 5\nFinal exam: Dec 12\n\n\n\n\n\nOffice hours: Regular TA and instructor availability\nEd Discussion: Online forum for course questions\nEmail: Include “STA 199” in subject line\nAccommodations: Contact SDAO for academic accommodations\n\nNote: You cannot pass without completing the project. The course emphasizes hands-on learning, ethical data science practices, and effective communication of results.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-overview",
+    "href": "course-syllabus.html#course-overview",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "Learn to explore, visualize, and analyze data using R and RStudio through real-world problems. Covers data wrangling, visualization, modeling, statistical inference, and ethical considerations in data science, including responsible AI tool usage.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#required-materials",
+    "href": "course-syllabus.html#required-materials",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "Textbooks (free online): R for Data Science, 2e and Introduction to Modern Statistics\nComputing: Laptop required for all classes; R accessed through Duke containers, no installation needed\nPlatform: Course website at sta199-f25.github.io – everything you need is there or linked from there!",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#assessment-grading",
+    "href": "course-syllabus.html#assessment-grading",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "Component\nWeight\nDetails\n\n\n\n\nLectures\n5%\nAttendance/participation via Wooclap (20/26 lectures minimum)\n\n\nLabs\n8%\nTeam-based, completed in class (lowest 2 dropped)\n\n\nHomework\n12%\nIndividual assignments (lowest grade dropped)\n\n\nProject\n15%\nTeam-based data analysis with presentation\n\n\nExam 1\n20%\nIn-class + take-home components\n\n\nExam 2\n20%\nIn-class + take-home components\n\n\nFinal\n20%\nIn-class only",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#key-policies",
+    "href": "course-syllabus.html#key-policies",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "Individual work: Homework and exams must be completed alone\nTeam collaboration: Expected for labs and project\nAI tools: Allowed for code assistance with proper citation; prohibited for direct narrative generation\nOnline resources: Permitted with explicit citation\n\n\n\n\n\nHomework: Up to 3 days late (-5% per day)\nLabs: No late work (completed in class)\nExams/Project: No extensions\nOne-time waiver: Available for extenuating circumstances\n\n\n\n\n\nLectures: Participation tracked via Wooclap\nLabs: Mandatory attendance (no make-ups possible)\nLecture recordings: Available for excused absences only",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#success-tips",
+    "href": "course-syllabus.html#success-tips",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "Prepare: Watch videos and read before class\nEngage: Attend all lectures and labs actively\nAsk questions: Use office hours and Ed Discussion forum\nStart early: Don’t procrastinate on assignments\nStay current: Content builds progressively",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#important-dates",
+    "href": "course-syllabus.html#important-dates",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "Classes begin: Aug 25\nExam 1: Oct 2 (in-class) / Oct 4 (take-home due)\nFall break: Oct 13-14\nProject: Nov 10 (presentation in lab + write-up due)\nExam 2: Nov 20 (in-class) / Nov 22 (take-home due)\nClasses end: Dec 5\nFinal exam: Dec 12",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#getting-help",
+    "href": "course-syllabus.html#getting-help",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "Office hours: Regular TA and instructor availability\nEd Discussion: Online forum for course questions\nEmail: Include “STA 199” in subject line\nAccommodations: Contact SDAO for academic accommodations\n\nNote: You cannot pass without completing the project. The course emphasizes hands-on learning, ethical data science practices, and effective communication of results.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -338,8 +415,8 @@
     "objectID": "course-syllabus.html#course-learning-objectives",
     "href": "course-syllabus.html#course-learning-objectives",
     "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
-    "section": "",
-    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio;\ngain experience in data wrangling and tidying, exploratory data analysis, data visualization, predictive and descriptive modeling, and statistical inference;\nwork on problems and case studies inspired by and based on real-world questions and data;\nexplore ethical considerations in data science, including issues of misrepresentation, privacy, and bias;\nresponsibly leverage AI tools within data science workflows while critically assessing the validity and potential biases in AI-generated insights;\nlearn to communicate results through written assignments and project presentation effectively.",
+    "section": "Course learning objectives",
+    "text": "Course learning objectives\nBy the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio;\ngain experience in data wrangling and tidying, exploratory data analysis, data visualization, predictive and descriptive modeling, and statistical inference;\nwork on problems and case studies inspired by and based on real-world questions and data;\nexplore ethical considerations in data science, including issues of misrepresentation, privacy, and bias;\nresponsibly leverage AI tools within data science workflows while critically assessing the validity and potential biases in AI-generated insights;\nlearn to communicate results through written assignments and project presentation effectively.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -379,8 +456,8 @@
     ]
   },
   {
-    "objectID": "course-syllabus.html#getting-help",
-    "href": "course-syllabus.html#getting-help",
+    "objectID": "course-syllabus.html#getting-help-1",
+    "href": "course-syllabus.html#getting-help-1",
     "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
     "section": "Getting help",
     "text": "Getting help\n\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!\n\nCheck out the Support tab for more resources.",
@@ -405,7 +482,7 @@
     "href": "course-syllabus.html#grading",
     "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
     "section": "Grading",
-    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLectures\n5%\n\n\nLabs\n10%\n\n\nHW\n10%\n\n\nProject\n15%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nFinal\n20%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60",
+    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLectures\n5%\n\n\nLabs\n8%\n\n\nHW\n12%\n\n\nProject\n15%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nFinal\n20%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -434,11 +511,22 @@
     ]
   },
   {
-    "objectID": "course-syllabus.html#important-dates",
-    "href": "course-syllabus.html#important-dates",
+    "objectID": "course-syllabus.html#important-dates-1",
+    "href": "course-syllabus.html#important-dates-1",
     "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
     "section": "Important dates",
-    "text": "Important dates\n\nAug 25: Classes begin\nSep 1: Labor Day\nSep 5: Drop/add ends\nOct 2: Exam 1 in-class + take-home released\nOct 4: Exam 1 take-home due\nOct 13-14: Fall break\nNov 7: Last day to withdraw with W\nNov 20: Exam 2 in-class + take-home released\nNov 22: Exam 2 take-home due\nNov 26-28: Thanksgiving break\nDec 5: Classes end\nDec 12: Final exam\n\nLab and project deadlines are listed on the course schedule.\nFor more important dates, see the full Duke Academic Calendar.",
+    "text": "Important dates\n\nAug 25: Classes begin\nSep 1: Labor Day\nSep 5: Drop/add ends\nOct 2: Exam 1 in-class + take-home released\nOct 4: Exam 1 take-home due\nOct 13-14: Fall break\nNov 7: Last day to withdraw with W\nNov 10: Project presentation in lab + write-up due\nNov 20: Exam 2 in-class + take-home released\nNov 22: Exam 2 take-home due\nNov 26-28: Thanksgiving break\nDec 5: Classes end\nDec 12: Final exam\n\nLab and project deadlines are listed on the course schedule.\nFor more important dates, see the full Duke Academic Calendar.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#footnotes",
+    "href": "course-syllabus.html#footnotes",
+    "title": "STA 199 - Introduction to Data Science and Statistical Thinking",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe TL;DR short version was generated by Claude Sonnet 4 on 2025-08-23 with the prompt “Summarize the following syllabus to a 1-pager” and providing the long version content for context.↩︎",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -470,7 +558,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n\n\n\nLab 0 due at the end of lab session (not graded)\n\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\n\nLab 1 due at the end of the lab session\n\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 14\n\n\n\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\n\nLab 2 due at the end of the lab session\n\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 21\n\n\n\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\n\nLab 3 due at the end of the lab session\n\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 28\n\n\n\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\n\nLab 4 due at the end of lab session\n\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Oct 4\n\n\n\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins] Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\nProject milestone 1 due at the end of lab session\n\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\n\n\n\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\n\nTo be posted\n\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\nProject milestone 3 due at the end of lab session\n\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes] Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\nProject milestone 4 at the end of lab session Lab 5 due at the end of the lab session\n\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\n\nPeer evaluation 3 at 11:59 pm\n\n\n\n\nSun, Nov 2\n\n\n\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\nProject milestone 5 due at the end of lab session (in-person attendance required for credit)\n\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\n\nLab 6 due at the end of lab session\n\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Nov 22\n\n\n\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\n\nLab 7 due at the end of lab session\n\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\n\n\n\nSun, Nov 30\n\n\n\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\n\nLab 8 due at the end of lab session\n\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\n\n\n\nFri, Dec 5\n\n\n\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n\n\n\nLab 0 due at the end of lab session (not graded)\n\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n\n\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\n\nLab 1 due at the end of the lab session\n\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 14\n\n\n\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\n\nLab 2 due at the end of the lab session\n\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 21\n\n\n\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\n\nLab 3 due at the end of the lab session\n\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 28\n\n\n\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\n\nLab 4 due at the end of lab session\n\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Oct 4\n\n\n\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins] Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\nProject milestone 1 due at the end of lab session\n\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\n\n\n\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\n\nTo be posted\n\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\nProject milestone 3 due at the end of lab session\n\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes] Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\nProject milestone 4 at the end of lab session Lab 5 due at the end of the lab session\n\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\n\nPeer evaluation 3 at 11:59 pm\n\n\n\n\nSun, Nov 2\n\n\n\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\nProject milestone 5 due at the end of lab session (in-person attendance required for credit)\n\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\n\nLab 6 due at the end of lab session\n\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Nov 22\n\n\n\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\n\nLab 7 due at the end of lab session\n\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\n\n\n\nSun, Nov 30\n\n\n\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\n\nLab 8 due at the end of lab session\n\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\n\n\n\nFri, Dec 5\n\n\n\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
     "crumbs": [
       "Course information",
       "Schedule"
