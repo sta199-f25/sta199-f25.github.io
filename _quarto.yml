@@ -33,9 +33,9 @@ website:
           - icon: people-fill
             text: Help from humans (Ed Discussion)
             href: https://edstem.org/us/courses/80616/discussion
-          # - icon: robot
-          #   text: Help from AI (Chatbot)
-          #   href: https://canvas.duke.edu/courses/39994/external_tools/5887
+          - icon: robot
+            text: Help from AI (Chatbot)
+            href: https://canvas.duke.edu/courses/61539/modules/items/647028
       - icon: file-check-fill
         text: "Canvas"
         menu:
