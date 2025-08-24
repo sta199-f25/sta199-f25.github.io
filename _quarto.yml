@@ -110,11 +110,12 @@ format:
   html:
     mainfont: Atkinson Hyperlegible
     highlight-style: a11y-light
+    linkcolor: "#005871"
 
 theme:
   light: [cosmo, style/sta199.scss]
   dark: [cosmo, style/sta199.scss, style/dark.scss]
-linkcolor: "#005871"
+
 toc: true
 code-copy: hover
 code-link: true
