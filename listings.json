@@ -1,5 +1,9 @@
 [
   {
+    "listing": "/ae.html",
+    "items": []
+  },
+  {
     "listing": "/hw.html",
     "items": []
   },
@@ -8,10 +12,6 @@
     "items": [
       "/lab/lab-0.html"
     ]
-  },
-  {
-    "listing": "/ae.html",
-    "items": []
   },
   {
     "listing": "/exam-review.html",
