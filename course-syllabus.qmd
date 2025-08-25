@@ -28,10 +28,10 @@ Covers data wrangling, visualization, modeling, statistical inference, and ethic
 
 | Component | Weight | Details |
 |----------------------------|---------------------|-----------------------|
-| Lectures | 5% | Attendance/participation via Wooclap (18/26 lectures minimum) |
+| Lectures | 5% | Attendance/participation via Wooclap (18/26 lectures minimum for full score) |
 | Labs | 8% | Team-based, completed in class (lowest 2 dropped) |
-| Homework | 12% | Individual assignments (lowest grade dropped) |
-| Project | 15% | Team-based data analysis with presentation |
+| Homework | 12% | Individual (lowest grade dropped) |
+| Project | 15% | Team-based data analysis with write-up and presentation |
 | Exam 1 | 20% | In-class + take-home components |
 | Exam 2 | 20% | In-class + take-home components |
 | Final | 20% | In-class only |
@@ -49,8 +49,8 @@ Covers data wrangling, visualization, modeling, statistical inference, and ethic
 
 -   **Homework**: Up to 3 days late (-5% per day)
 -   **Labs**: No late work (completed in class)
--   **Exams/Project**: No extensions
--   **One-time waiver**: Available for extenuating circumstances
+-   **Exams/Project**: No extensions or make-ups
+-   **One-time late penalty waiver**: One-time waiver for homework late penalty, [request before deadline](mailto:mary.knox@duke.edu)
 
 ### Attendance
 
@@ -419,11 +419,12 @@ Note that the lowest lab assignment will be dropped to accommodate such circumst
 -   No late work is accepted for exams.
 -   No late work is accepted for projects.
 
-### Waiver for extenuating circumstances
+###  One-time late penalty waiver
 
-If circumstances prevent you from completing a lab in class or a homework by the stated due date, you may email the course coordinator, [Dr. Mary Knox](mailto:mary.knox@duke.edu), before the deadline to waive the late penalty.
+If circumstances prevent you from completing a homework by the stated due date, you may email the course coordinator, [Dr. Mary Knox](mailto:mary.knox@duke.edu), **before the deadline** to request to waive the late penalty.
 In your email, you only need to request the waiver; you do not need to provide an explanation.
-This waiver may only be used **once** a semester, so only use it for a truly extenuating circumstance.
+This waiver may only be used **once** in the semester, so only use it wisely.
+The waiver may only be used for homework assignments, not for attendance/participation, labs, exams, or the project.
 
 If circumstances have a longer-term impact on your academic performance, please let your Quad advisor or academic dean know.
 They can be a resource.
