@@ -24,7 +24,7 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 ## Things to come back to
 
--   \_quarto.yml: see commented lines (just project milestones)
+-   \_quarto.yml: see commented lines (just project milestones left)
 
 -   course-syllabus.qmd: revisit: teams, revisit: exams (language of exams vs final), revisit: teams, revisit: online resources (include example citation), AI tools for code (include example citation), revisit: "Any violations in academic honesty" and more clearly outline repercussions
 
