@@ -412,7 +412,7 @@ Any violations in academic honesty standards as outlined in the [Duke Community 
 
 The due dates for homework assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner.
 We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.
-Note that the lowest lab assignment will be dropped to accommodate such circumstances.
+Note that the lowest homework assignment and lowest 2 lab assignments will be dropped to accommodate such circumstances.
 
 -   Homework assignments may be submitted up to 3 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.
 -   No late work is accepted for labs since these are designed to be completed in class.
