@@ -342,32 +342,31 @@ As a student in this course, you have agreed to uphold the [Duke Community Stand
 
 **TL;DR: Don't cheat!**
 
+#### What is allowed and what is not?
+
 Please abide by the following as you work on assignments in this course:
 
--   **Collaboration:** Only work that is clearly assigned as teamwork should be completed collaboratively.
+-   **Collaboration:** Only work that is clearly assigned as teamwork should be completed collaboratively. On individual assignments, you may not directly share work (including code) with another student in this class; on team assignments, you may not directly share work (including code) with another team. "Sharing" includes, but is not limited to, messaging, emailing, or otherwise providing your work to another student or team.
 
-    -   Collaboration in teams for lab assignments is not only allowed but expected.
-        You are encouraged to work together with your lab team to complete the lab exercise.
+    -   Labs: Collaboration in teams for lab assignments is not only allowed but expected.
+        You will work together with your lab team to complete the lab exercise.
         However, each student must submit their own write-up of the lab exercise, which should reflect their understanding and ideas.
+        It's expected that lab submission will be similar across team members.
 
-    -   Similarly, collaboration within teams is not only allowed but expected for the project.
+    -   Project: Similarly, collaboration within teams is not only allowed but expected for the project.
         The difference is that the project is a single, collaborative work developed by the entire team.
         It is the team's responsibility to make sure all components of the project are vetted and revised by all team members, even if some division of labor takes place for first drafts of components.
         Communication between teams at a high level is also allowed; however, you may not share code or project components across teams.
 
-    -   You may discuss homework assignments with other students; however, you may not directly share (or copy) code or write-up with other students.
-        Unauthorized sharing (or copying) of the code or write-up will be considered a violation for all students involved, regardless of whether the work was shared or copied -- all students involved will receive a 0 for assignment and will be reported to the Office of Student Conduct & Community Standards for further action.
+    -   Homework: You may discuss homework assignments with other students; however, you may not directly share (or copy) code or write-up with other students.
+        For homework assignments, sharing (or copying) of the code or write-up will be considered a violation for all students involved, regardless of who initiated the sharing.
 
-    -   You may not discuss or otherwise work with others on the exams (in class and take home).
-        Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved.
-        **Unauthorized sharing (or copying) of the code or write-up will be considered a violation for all students involved, regardless of whether the work was shared or copied -- all students involved will receive a 0 for assignment and will be reported to the Office of Student Conduct & Community Standards for further action.**
+    -   Exams: You may not discuss or otherwise work with others on the exams (in class and take home).
+        On exams, collaboration, sharing (or copying) of the code, or using unauthorized materials will be considered a violation for all students involved, regardless of who initiated the sharing.
 
-    -   On individual assignments, you may not directly share work (including code) with another student in this class; on team assignments, you may not directly share work (including code) with another team.
-        "Sharing" includes, but is not limited to, messaging, emailing, or otherwise providing your work to another student or team.
-
--   **Online resources:** I am well aware that a huge volume of code is available on the web to solve any number of problems.
+-   **Use of online resources:** I am well aware that a huge volume of code is available on the web to solve any number of problems.
     Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow), but you must explicitly cite where you obtained any code you directly use (or use as inspiration).
-    Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
+    **Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism, resulting in an automatic 0 for the relevant portion of the assignment.**
 
 -   **Use of generative artificial intelligence (AI)**: You should treat generative AI, such as ChatGPT, like other online resources.
     Two guiding principles govern how to use AI in this course:
@@ -392,21 +391,23 @@ Please abide by the following as you work on assignments in this course:
     In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you.
     You are ultimately responsible for the work you turn in; it should reflect *your* understanding of the course content.
     Identifying AI-generated content is fairly straightforward.
-    **Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such, resulting in a 0 for the relevant portion of the assignment.**
+    **Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be treated as plagiarism, resulting in an automatic 0 for the relevant portion of the assignment.**
 
 If you are unsure if using a particular resource complies with the academic honesty policy, please ask a teaching team member.
+
+#### What happens if you violate the academic honesty policy?
+
+Any violations in academic honesty standards as outlined in the [Duke Community Standard](https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct) and those specific to this course 
+
+-   will automatically result in a 0 for the relevant portion or the entire assignment or assessment,
+
+-   can result in further deductions to your overall course grade (e.g., drop down to the next letter grade or drop down to an F), and
+
+-   can be reported to the [Office of Student Conduct & Community Standards](https://students.duke.edu/get-assistance/community-standard/osccs/) for further action.
 
 Regardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more).
 Ignoring these requirements is a violation of the Duke Community Standard.
 Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at [conduct\@duke.edu](mailto:conduct@duke.edu).
-
-Any violations in academic honesty standards as outlined in the [Duke Community Standard](https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct) and those specific to this course will
-
--   automatically result in a 0 for the relevant portion or the entire assignment,
-
--   can further impact your overall course grade, and
-
--   will be reported to the [Office of Student Conduct & Community Standards](https://students.duke.edu/get-assistance/community-standard/osccs/) for further action.
 
 ### Late work & extensions
 
