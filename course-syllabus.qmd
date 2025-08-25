@@ -28,7 +28,7 @@ Covers data wrangling, visualization, modeling, statistical inference, and ethic
 
 | Component | Weight | Details |
 |----------------------------|---------------------|-----------------------|
-| Lectures | 5% | Attendance/participation via Wooclap (20/26 lectures minimum) |
+| Lectures | 5% | Attendance/participation via Wooclap (18/26 lectures minimum) |
 | Labs | 8% | Team-based, completed in class (lowest 2 dropped) |
 | Homework | 12% | Individual assignments (lowest grade dropped) |
 | Project | 15% | Team-based data analysis with presentation |
@@ -251,7 +251,7 @@ You will be assessed based on seven components: lecture, lab, homework, project,
 Attendance and participation will be tracked through in-class questions via Wooclap, which you can access on your laptop or phone.
 You will earn points for answering questions during lecture, and these points will contribute to your attendance and participation grade.
 
-*There are 26 lectures during the semester. You must participate in Wooclap questions in at least 20 lectures to get full credit on this component. Otherwise your grade on this component will be calculated as the percentage of lectures you attended and participated, e.g., if you attend and participate in 22/26 lectures, you get the full 5% but if you attend and participate in 15/26 lectures, you get (15/26)*5% = 2.88%.
+*There are 26 lectures during the semester. You must participate in Wooclap questions in at least 18 lectures to get full credit on this component. Otherwise your grade on this component will be calculated as the percentage of lectures you attended and participated, e.g., if you attend and participate in 22/26 lectures, you get the full 5% but if you attend and participate in 15/26 lectures, you get (15/26)*5% = 2.88%.
 
 Application exercises won't be graded directly, but we will track activity on them to ensure you're staying engaged with the course and exams will feature topics and questions from these exercises.
 
