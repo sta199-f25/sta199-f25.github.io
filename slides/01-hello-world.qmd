@@ -1,0 +1,691 @@
+---
+title: "Hello, World!"
+subtitle: "Lecture 1"
+date: "2025-08-26"
+format: 
+  revealjs: 
+    output-file: 01-hello-world-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: "images/logo.png" 
+    toc: false
+  html: 
+    code-link: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
+```
+
+# Hello world!
+
+## Meet the prof {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**Dr. Mine Çetinkaya-Rundel**
+
+Professor of the Practice
+
+Director of Undergraduate Studies, Statistical Science
+
+Director of First-Year Experience in Trinity College of Arts & Sciences
+
+**Office:** Old Chem 211C
+:::
+::: {.column width="50%"}
+**Office hours:**
+
+- 1-1:30 pm T Th (after class, here or outside the classroom)
+- 12:45-2:15 pm F (Old Chem 211C)
+- By appointment
+:::
+::: 
+
+## Meet the course team {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+- **Mary Knox (Course coordinator)**
+- Marie	Neubrander (Head TA)
+- **Abuzar	Khudaverdiyeva**
+- **Alexa	Fahrer**
+- Allison	Yang
+- Arijit	Dey
+- Benjamin	Sherman
+- Bethany	Akinola
+- Eduardo	Vasquez
+- Federico	Arboleda
+:::
+
+::: {.column width="50%"}
+- Jessie	Ringness
+- Kathleen	Zhang
+- Katie	Solarz
+- Luxman	Maheswaran
+- Max	Niu
+- Natasha	Harris
+- Sarah	Wu
+- Xueyan	Hu
+- Ziyan	Wang
+:::
+:::::
+
+## Meet each other!
+
+::: question
+Please share with at least two classmates...
+
+-   Your name
+-   Your year
+-   Where you're from
+-   What you did this past summer
+-   What you hope to get out of this course
+:::
+
+::: {.content-visible when-format="revealjs"}
+{{< countdown minutes=4 font-size="5rem" >}}
+:::
+
+## Meet data science
+
+::: incremental
+-   **Data science** is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.
+
+-   We're going to learn to do this in a modern and `tidy` way -- more on that later!
+
+-   This is a course on introduction to data science, with an emphasis on **statistical thinking**.
+:::
+
+## Let's do some data science! {.smaller}
+
+::: {.columns}
+::: {.column}
+-   Yesterday we collected some data from you!
+
+-   Today we're going to explore that data together, following the data science cycle.
+:::
+::: {.column}
+![](images/01/data-science-cycle.png){fig-alt="Data science cycle: Import, tidy, transform, visualize, model, communicate." fig-align="center"}
+:::
+:::
+
+. . .
+
+::: callout-warning
+The data is anonymized and randomized and contains only a subset of the data collected. The rows have been shuffled for each column independently, meaning that no row belongs to a single student in the course. Additionally, any identifying information has been removed. Please do not try to de-anonymize or re-identify any individuals in the dataset.
+:::
+
+
+## Beginning the data science cycle {.smaller}
+
+::: {.columns}
+::: {.column width="50%" .fragment}
+You took a survey:
+
+![](images/01/canvas-survey.png){fig-alt="Screenshot of Getting to know you survey on Canvas." fig-align="center" fig-width="200"}
+:::
+::: {.column width="25%" .fragment}
+Canvas stored your data in a CSV (comma-separated values) file:
+
+{{< fa file-csv size=8x title="CSV file icon" >}}
+:::
+::: {.column width="25%" .fragment}
+We want to explore the data that is in that file!
+:::
+::: 
+
+## Import
+
+![](images/01/data-science-cycle-import.png){fig-alt="Data science cycle: Import, tidy, transform, visualize, model, communicate. Import is highlighted." fig-align="center"}
+
+## Load some packages
+
+More on what packages are on Thursday, but in a nutshell "get your tools out of the toolbox":
+
+```{r}
+#| message: false
+library(tidyverse) # for data wrangling and visualization
+library(scales)    # for better axis labels
+library(tidytext)  # for handling text data
+library(taylor)    # for a surprise!
+```
+
+## Import the data
+
+Import the data called `survey-anonymized.csv` in the folder called `data` using the `read_csv()` function:
+
+```{r}
+#| eval: false
+survey <- read_csv("data/survey-anonymized.csv")
+```
+
+```{r}
+#| include: false
+survey <- read_csv(here::here("slides", "data/survey-anonymized.csv"))
+```
+
+## Take a peek at the data {.smaller}
+
+```{r}
+survey
+```
+
+## Participate 💻📱
+
+{{< include _wooclap-slide.qmd >}}
+
+## Take a peek + Participate 💻📱 {.xsmall}
+
+::: {.columns}
+::: {.column width="70%"}
+```{r}
+#| echo: false
+survey
+```
+:::
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+:::
+
+## Statistics experience
+
+We asked you the following multiple-choice question where you could only pick one option:
+
+::: demo
+Have you taken any statistics courses before?
+
+- Yes, I have taken another college course on statistics
+- Yes, I have taken a high school statistics course
+- No, I have not taken any statistics courses
+:::
+
+## Visualize
+
+One way to make sense of data collected via a question like this is to visualize it.
+
+![](images/01/data-science-cycle-visualize.png){fig-alt="Data science cycle: Import, tidy, transform, visualize, model, communicate. Visualize is highlighted." fig-align="center"}
+
+## Visualize
+
+```{r}
+#| code-fold: true
+#| fig-width: 10
+#| fig-asp: 0.4
+survey |>
+  count(stats_experience) |>
+  mutate(prop = n / sum(n)) |>
+  ggplot(aes(y = stats_experience, x = prop))+
+  geom_col(show.legend = FALSE) +
+  scale_y_discrete(labels = label_wrap(20)) +
+  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.25, 0.5)) +
+  labs(
+    title = "Prior statistics experience among STA 199 students",
+    y = NULL,
+    x = "Count"
+  ) +
+  labs(
+    caption = "Data are self-reported, collected from STA 199 students on August 25, 2025."
+  )
+```
+
+
+## Programming experience
+
+We also asked you the following multiple-choice question where you could only pick one option:
+
+::: demo
+How much experience do you have with programming?
+
+- None
+- A little — I've written a few lines or done small exercises
+- Some — I've worked on a few projects or used it occasionally
+- A lot — I use programming regularly and feel confident writing code
+:::
+
+## Visualize
+
+```{r}
+#| code-fold: true
+#| fig-width: 10
+#| fig-asp: 0.5
+survey |>
+  count(programming_experience) |>
+  mutate(prop = n / sum(n)) |>
+  ggplot(aes(y = fct_reorder(programming_experience, prop), x = prop, fill = prop))+
+  geom_col(show.legend = FALSE) +
+  scale_y_discrete(labels = label_wrap(25)) +
+  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.1, 0.2, 0.3, 0.4)) +
+  scale_fill_viridis_c(option = "E") +
+  labs(
+    title = "Prior programming experience among STA 199 students",
+    y = NULL,
+    x = "Count"
+  ) +
+  labs(
+    caption = "Data are self-reported, collected from STA 199 students on August 25, 2025."
+  ) +
+  theme_minimal(base_size = 16)
+```
+
+## Learn best {.smaller}
+
+We also asked you the following multiple-choice question where you could as many options as you liked:
+
+::: demo
+What types of data interest you?
+
+- Crime
+- Economics
+- Education
+- Entertainment (e.g., books, movies, music)
+- Environment/Climate
+- Health (e.g., social determinants of health, medical)
+- Politics
+- Sports
+- Other
+- No preference
+:::
+
+## Peek at the data {.smaller}
+
+```{r}
+#| code-fold: true
+survey |>
+  select(data_interests)
+```
+
+## Tidy  + Transform
+
+Before we can visualize this variable, we need to tidy and transform it.
+
+![](images/01/data-science-cycle-tidy-transform.png){fig-alt="Data science cycle: Import, tidy, transform, visualize, model, communicate. Tidy and transform are highlighted." fig-align="center"}
+
+## Tidy + Transform {.smaller}
+
+```{r}
+#| code-fold: true
+survey |>
+  # remove text in parentheses
+  mutate(data_interests = str_remove_all(data_interests, "\\s*\\(.*?\\)")) |>
+  # separate into multiple rows for each interest, using comma as delimiter
+  separate_longer_delim(data_interests, delim = ",") |>
+  count(data_interests, sort = TRUE) |>
+  mutate(prop = n / sum(n))
+```
+
+## Visualize
+
+```{r}
+#| code-fold: true
+survey |>
+  mutate(data_interests = str_remove_all(data_interests, "\\s*\\(.*?\\)")) |>
+  separate_longer_delim(data_interests, delim = ",") |>
+  count(data_interests, sort = TRUE) |>
+  mutate(prop = n / sum(n)) |>
+  filter(!is.na(data_interests)) |>
+  ggplot(aes(y = fct_reorder(data_interests, prop), x = prop, fill = prop)) +
+  geom_col(show.legend = FALSE) +
+  scale_y_discrete(labels = label_wrap(20)) +
+  scale_x_continuous(labels = percent_format(accuracy = 1)) +
+  scale_fill_taylor_c(album = "Speak Now") +
+  labs(
+    title = "Data interests among STA 199 students",
+    y = NULL,
+    x = "Count",
+    caption = "Data are self-reported, collected from STA 199 students on August 25, 2025."
+  ) +
+  theme_minimal(base_size = 16)
+```
+
+## Learn best
+
+We also asked you the following open-ended question:
+
+::: demo
+How do you learn best?
+:::
+
+## Tidy + Transform + Summarize {.smaller}
+
+We can use text mining techniques, like *tokenizing* to words to explore this open-ended question:
+
+```{r}
+#| code-fold: true
+survey |>
+  select(learn_best) |>
+  unnest_tokens(word, learn_best) |>
+  anti_join(stop_words, by = "word") |>
+  count(word, sort = TRUE) |>
+  filter(n > 15) |>
+  print(n = Inf)
+```
+
+## Tidy + Transform + Summarize {.smaller}
+
+We can also tokenize to *bigrams* (pairs of words):
+
+```{r}
+#| code-fold: true
+survey |>
+  select(learn_best) |>
+  tidytext::unnest_tokens(bigrams, learn_best, token = "ngrams", n = 2) |>
+  count(bigrams, sort = TRUE) |>
+  filter(n > 10) |>
+  print(n = Inf)
+```
+
+## Programming language comfort {.smaller}
+
+We also asked you the following open-ended question:
+
+::: demo
+If you’ve programmed before, which languages have you used, and how comfortable do you feel with each? If you haven’t programmed before, please leave this question blank.
+:::
+
+## Take a peek + Participate 💻📱 {.smaller}
+
+::: {.columns}
+::: {.column width="60%"}
+And the answers are non-trivial to tidy up, e.g.,
+
+```
+- Python - I've used it very little.
+- I have not programmed before. 
+- Java - very comfortable. Python - pretty comfortable. C/C++ - not super comfortable, haven't used since high school.
+```
+
+:::
+::: {.column width="40%"}
+{{< include _wooclap-column.qmd >}}
+:::
+:::
+
+## Can AI help? {.smaller}
+
+```{r}
+#| eval: false
+#| code-fold: true
+library(ellmer)
+
+chat <- chat_openai()
+
+prompts <- survey |>
+  filter(!is.na(programming_languages)) |>
+  pull(programming_languages) |>
+  list()
+
+type_language <- type_object(
+  language = type_string(),
+  experience = type_string()
+)
+
+language_experience <- parallel_chat_structured(chat, prompts, type = type_language)
+language_experience
+```
+
+```
+language
+1 Python, Java, R, C/C++, JavaScript, HTML/CSS, SQL, C#, VBA, MATLAB, Rust, Assembly, Swift, Stata, Bash, Typescript, Web3 Suite (HTML, CSS, JS), Nextflow, SAS, PsycoPy, Mathematica, React, Vue, Yaml, CourseKata, Flutter, Scratch
+
+experience
+1 Most students report a range of programming experience, from never having programmed before to being very comfortable in languages such as Python, Java, and R. Many took introductory courses (e.g., CS101, AP CS A) and are comfortable with basic programming constructs. Proficiency is generally highest in Python and Java, though some only have a little experience with languages like R, C/C++, and JavaScript. Quite a few have only used programming languages for specific classes or research projects and may not feel confident after a long break. Some students have experience with more niche or specialized tools such as MATLAB, SAS, and web technologies (HTML, CSS, JavaScript/JS frameworks). Many express a need for a refresher if not used recently. In summary, while a core group is comfortable with at least one language, especially Python or Java, many others have only basic to moderate experience and express the desire to gain more proficiency.
+```
+
+## Can it be trusted 100%? {.xsmall}
+
+**Mathematica** is a software system used for mathematics.
+
+```{r}
+survey |>
+  filter(str_detect(programming_languages, "Mathematica")) |>
+  select(programming_languages)
+```
+
+. . .
+
+**Nextflow** extends the Unix pipes model with a DSL.
+
+```{r}
+survey |>
+  filter(str_detect(programming_languages, "Nextflow"))  |>
+  select(programming_languages)
+```
+
+. . .
+
+**PsycoPy** is a desktop application for in-lab studies.
+
+```{r}
+survey |>
+  filter(str_detect(programming_languages, "PsycoPy"))  |>
+  select(programming_languages)
+```
+
+# Course overview
+
+## Homepage
+
+[https://sta199-f25.github.io](https://sta199-f25.github.io/){.uri}
+
+-   All course materials
+-   Links to Canvas, GitHub, RStudio containers, etc.
+
+## Course toolkit
+
+All linked from the course website:
+
+-   GitHub organization: [github.com/sta199-f25](https://github.com/sta199-f25)
+-   RStudio containers: [cmgr.oit.duke.edu/containers](https://cmgr.oit.duke.edu/containers)
+-   Communication: Ed Discussion
+-   Assignment submission and feedback: Gradescope
+
+## Activities {.smaller}
+
+-   Introduce new content and prepare for lectures by watching the videos and completing the readings
+-   Attend and actively participate in lectures (and answer questions for participation credit) and labs, office hours, team meetings
+-   Practice applying statistical concepts and computing with application exercises during lecture, graded for attempting
+-   Put together what you've learned to analyze real-world data
+    -   Lab assignments
+    -   Homework assignments
+    -   Exams
+    -   Term project completed in teams
+
+## Attendance and participation {.smaller}
+
+-   Daily in lecture
+
+-   Tracked for credit, but not based on correctness, only participation (and often they will be questions designed to make you think that might not have a single right answer!)
+
+## Application exercises {.smaller}
+
+-   Daily-ish in lecture
+
+-   Not graded, but tracked for feedback on workflow
+
+## Labs {.smaller}
+
+-   Hands-on practice with data analysis
+
+-   A sigle exercise per lab, graded based on being there and in something reasonable + correctness
+
+-   Completed in-person, in lab, in teams
+
+-   Teams randomized each week until project teams assigned
+
+-   Developed collaboratively, but turned in individually by the end of the lab session
+
+-   8 throughout semester, two lowest scores dropped
+
+-   No late work accepted
+
+## Homwork {.smaller}
+
+-   Hands-on practice with data analysis
+
+-   Some questions for practice with instant feedback by AI
+
+-   Some questions to be graded by humans for correctness
+
+-   Can start in lab if time permits, but completed at home
+
+-   Can consult with course team and peers, but completed and turned in individually by the end of the week
+
+-   6 throughout semester, lowest score dropped
+
+-   Up to 3 days late (-5% per day), no late work accepted after that
+
+-   One-time late penalty waiver: Can be used on any homework assignment, no questions asked, must be requested from Dr. Knox before the deadline
+
+## Exams {.smaller}
+
+-   Two exams during semester, comprised of two parts:
+
+    -   In-class: 75 minute in-class exam. Closed book, one sheet of notes – 80% of the grade.
+
+    -   Take-home: Follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 20% of the grade.
+
+-   Final, in-class only: Closed book, one sheet of notes
+
+- Notes for exams: No larger than 8 1/2 x 11, both sides, **must be prepared by you**
+
+- No extensions or make-ups
+
+::: callout-caution
+Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.
+:::
+
+## Project {.smaller}
+
+-   Dataset of your choice, method of your choice
+
+-   Teamwork
+
+-   Five milestones, interim deadlines throughout semester
+
+-   Final milestone: Presentation in lab and write-up
+
+-   Must be in lab, in-person to present
+
+-   Peer review between teams for content, peer evaluation within teams for contribution
+
+-   Some lab sessions allocated to project progress
+
+::: callout-caution
+Project due date cannot be changed. You must complete the project to pass this class.
+:::
+
+## Teams {.smaller}
+
+-   Randomized at first for weekly labs
+
+-   Then selected by you or assigned by me if you don't express a preference for project and remaining labs
+
+-   Expectations and roles
+    -   Everyone is expected to contribute equal *effort*
+    -   Everyone is expected to understand *all* code turned in
+    -   Individual contribution evaluated by peer evaluation, commits, etc.
+
+-   For the project: Peer evaluation during teamwork and after completion
+
+## Grading {.smaller}
+
+| Category              | Percentage |
+|-----------------------|------------|
+| Lectures (attendance + participation) | 5%         |
+| Labs                  | 8%         |
+| HW                    | 12%         |
+| Project               | 15%        |
+| Exam 1                | 20%        |
+| Exam 2                | 20%        |
+| Final                 | 20%        |
+
+See course syllabus for how the final letter grade will be determined.
+
+## Participate 💻📱
+
+{{< include _wooclap-slide.qmd >}}
+
+## Tips for success
+
+- Prepare: Watch videos and read before class
+- Engage: Attend all lectures and labs actively
+- Ask questions: Use office hours and Ed Discussion forum
+- Start early: Don’t procrastinate on assignments
+- Stay current: Content builds progressively
+
+## Support
+
+-   Help from humans:
+    -   Attend office hours
+    -   Ask and answer questions on the discussion forum
+-   Help from AI: Use the course chatbot (in Canvas!)
+-   Reserve email for questions on personal matters and/or grades
+-   Read the course support page
+
+## Announcements
+
+-   Posted on Canvas (Announcements tool) and sent via email, be sure to check both regularly
+-   I'll assume that you've read an announcement by the next "business" day
+-   I'll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform
+
+## Diversity, inclusion, and belonging {.smaller}
+
+It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
+
+::: incremental
+-   Fill out the Getting to know you survey.
+-   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.
+-   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+:::
+
+## Access and accommodations
+
+-   The [Duke Access and Accommodation Services](https://access.duke.edu) is available to ensure that students are able to engage with their courses and related assignments.
+
+-   Accoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.
+
+-   I am committed to making all course materials accessible and I'm always learning how to do this better. If any course component is not accessible to you in any way, please don't hesitate to let me know.
+
+# Course policies
+
+## Late work, waivers, lecture recordings, regrades...
+
+-   We have policies!
+-   Read about them on the [course syllabus](https://sta199-f25.github.io/course-syllabus.html) and refer back to them when you need it
+
+## Use of AI tools
+
+-   {{< fa check >}} **AI tools for code:** 
+    - Sure, but be careful/critical! Working code `!=` correct/good code.
+    - Must explicitly cite, with **at a minimum** AI tool you're using (e.g., ChatGPT) and your prompt.
+
+-   {{< fa ban >}} **AI tools for narrative:** Absolutely not!
+
+-   {{< fa check >}} **AI tools for learning:** Sure, but be careful/critical!
+
+## Academic integrity
+
+> To uphold the Duke Community Standard:
+>
+> -   I will not lie, cheat, or steal in my academic endeavors;
+>
+> -   I will conduct myself honorably in all my endeavors; and
+>
+> -   I will act if the Standard is compromised.
+
+# Wrap up
+
+## This week's tasks
+
+-   Complete Lab 0
+    -   Computational setup
+    -   Getting to know you survey
+-   Accept your GitHub organization invitation
+-   Read the syllabus
+-   Complete readings and videos for next class

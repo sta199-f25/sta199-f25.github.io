@@ -1,0 +1,13 @@
+institute: "Duke University <br> STA 199 - Fall 2024"
+author: "Dr. Mine Çetinkaya-Rundel"
+date-format: long
+engine: knitr
+highlight-style: a11y-light
+fig-align: center
+execute:
+  echo: true
+  warning: true
+knitr:
+  opts_chunk: 
+    R.options:
+      width: 70
