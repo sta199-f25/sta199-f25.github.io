@@ -197,57 +197,713 @@
     ]
   },
   {
-    "objectID": "computing-troubleshooting.html",
-    "href": "computing-troubleshooting.html",
-    "title": "Computing troubleshooting",
-    "section": "",
-    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
-    "crumbs": [
-      "Computing",
-      "Troubleshooting"
-    ]
+    "objectID": "slides/01-hello-world-slides.html#meet-the-prof",
+    "href": "slides/01-hello-world-slides.html#meet-the-prof",
+    "title": "Hello, World!",
+    "section": "Meet the prof",
+    "text": "Meet the prof\n\n\nDr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nDirector of Undergraduate Studies, Statistical Science\nDirector of First-Year Experience in Trinity College of Arts & Sciences\nOffice: Old Chem 211C\n\nOffice hours:\n\n1-1:30 pm T Th (after class, here or outside the classroom)\n12:45-2:15 pm F (Old Chem 211C)\nBy appointment"
   },
   {
-    "objectID": "hw.html",
-    "href": "hw.html",
-    "title": "Homeworks",
-    "section": "",
-    "text": "More homeworks to be added as the semester progresses.\n\n\n\n\n\n\n\n\nNo.\nTitle\nDue date\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Homeworks"
-    ]
+    "objectID": "slides/01-hello-world-slides.html#meet-the-course-team",
+    "href": "slides/01-hello-world-slides.html#meet-the-course-team",
+    "title": "Hello, World!",
+    "section": "Meet the course team",
+    "text": "Meet the course team\n\n\n\nMary Knox (Course coordinator)\nMarie Neubrander (Head TA)\nAbuzar Khudaverdiyeva\nAlexa Fahrer\nAllison Yang\nArijit Dey\nBenjamin Sherman\nBethany Akinola\nEduardo Vasquez\nFederico Arboleda\n\n\n\nJessie Ringness\nKathleen Zhang\nKatie Solarz\nLuxman Maheswaran\nMax Niu\nNatasha Harris\nSarah Wu\nXueyan Hu\nZiyan Wang"
   },
   {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "STA 199Fall 2025",
-    "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
+    "objectID": "slides/01-hello-world-slides.html#meet-each-other",
+    "href": "slides/01-hello-world-slides.html#meet-each-other",
+    "title": "Hello, World!",
+    "section": "Meet each other!",
+    "text": "Meet each other!\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n  \n    −\n    +\n \n 04:00"
   },
   {
-    "objectID": "course-overview.html#overview",
-    "href": "course-overview.html#overview",
-    "title": "STA 199Fall 2025",
-    "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
+    "objectID": "slides/01-hello-world-slides.html#meet-data-science",
+    "href": "slides/01-hello-world-slides.html#meet-data-science",
+    "title": "Hello, World!",
+    "section": "Meet data science",
+    "text": "Meet data science\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a modern and tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
   },
   {
-    "objectID": "course-overview.html#meetings",
-    "href": "course-overview.html#meetings",
-    "title": "STA 199Fall 2025",
-    "section": "Meetings",
-    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm",
+    "objectID": "slides/01-hello-world-slides.html#lets-do-some-data-science",
+    "href": "slides/01-hello-world-slides.html#lets-do-some-data-science",
+    "title": "Hello, World!",
+    "section": "Let’s do some data science!",
+    "text": "Let’s do some data science!\n\n\n\nYesterday we collected some data from you!\nToday we’re going to explore that data together, following the data science cycle.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nThe data is anonymized and randomized and contains only a subset of the data collected. The rows have been shuffled for each column independently, meaning that no row belongs to a single student in the course. Additionally, any identifying information has been removed. Please do not try to de-anonymize or re-identify any individuals in the dataset."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#beginning-the-data-science-cycle",
+    "href": "slides/01-hello-world-slides.html#beginning-the-data-science-cycle",
+    "title": "Hello, World!",
+    "section": "Beginning the data science cycle",
+    "text": "Beginning the data science cycle\n\n\nYou took a survey:\n\n\n\n\n\n\nCanvas stored your data in a CSV (comma-separated values) file:\n\n\nWe want to explore the data that is in that file!"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#import",
+    "href": "slides/01-hello-world-slides.html#import",
+    "title": "Hello, World!",
+    "section": "Import",
+    "text": "Import"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#load-some-packages",
+    "href": "slides/01-hello-world-slides.html#load-some-packages",
+    "title": "Hello, World!",
+    "section": "Load some packages",
+    "text": "Load some packages\nMore on what packages are on Thursday, but in a nutshell “get your tools out of the toolbox”:\n\nlibrary(tidyverse) # for data wrangling and visualization\nlibrary(scales)    # for better axis labels\nlibrary(tidytext)  # for handling text data\nlibrary(taylor)    # for a surprise!"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#import-the-data",
+    "href": "slides/01-hello-world-slides.html#import-the-data",
+    "title": "Hello, World!",
+    "section": "Import the data",
+    "text": "Import the data\nImport the data called survey-anonymized.csv in the folder called data using the read_csv() function:\n\nsurvey &lt;- read_csv(\"data/survey-anonymized.csv\")"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#take-a-peek-at-the-data",
+    "href": "slides/01-hello-world-slides.html#take-a-peek-at-the-data",
+    "title": "Hello, World!",
+    "section": "Take a peek at the data",
+    "text": "Take a peek at the data\n\nsurvey\n\n# A tibble: 230 × 5\n   stats_experience       programming_experience programming_languages\n   &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;                \n 1 Yes, I have taken a h… A little — I’ve writt… \"Java, Python, Yaml,…\n 2 No, I have not taken … None                    &lt;NA&gt;                \n 3 Yes, I have taken a h… A little — I’ve writt…  &lt;NA&gt;                \n 4 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 5 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 6 No, I have not taken … A little — I’ve writt…  &lt;NA&gt;                \n 7 Yes, I have taken a h… None                   \"Python and java\"    \n 8 No, I have not taken … None                    &lt;NA&gt;                \n 9 Yes, I have taken a h… None                   \"Python- a little bi…\n10 Yes, I have taken a h… None                    &lt;NA&gt;                \n# ℹ 220 more rows\n# ℹ 2 more variables: learn_best &lt;chr&gt;, data_interests &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#participate",
+    "href": "slides/01-hello-world-slides.html#participate",
+    "title": "Hello, World!",
+    "section": "Participate 💻📱",
+    "text": "Participate 💻📱\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199.\nLog in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#take-a-peek-participate",
+    "href": "slides/01-hello-world-slides.html#take-a-peek-participate",
+    "title": "Hello, World!",
+    "section": "Take a peek + Participate 💻📱",
+    "text": "Take a peek + Participate 💻📱\n\n\n\n\n# A tibble: 230 × 5\n   stats_experience       programming_experience programming_languages\n   &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;                \n 1 Yes, I have taken a h… A little — I’ve writt… \"Java, Python, Yaml,…\n 2 No, I have not taken … None                    &lt;NA&gt;                \n 3 Yes, I have taken a h… A little — I’ve writt…  &lt;NA&gt;                \n 4 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 5 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 6 No, I have not taken … A little — I’ve writt…  &lt;NA&gt;                \n 7 Yes, I have taken a h… None                   \"Python and java\"    \n 8 No, I have not taken … None                    &lt;NA&gt;                \n 9 Yes, I have taken a h… None                   \"Python- a little bi…\n10 Yes, I have taken a h… None                    &lt;NA&gt;                \n# ℹ 220 more rows\n# ℹ 2 more variables: learn_best &lt;chr&gt;, data_interests &lt;chr&gt;\n\n\n\n\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#statistics-experience",
+    "href": "slides/01-hello-world-slides.html#statistics-experience",
+    "title": "Hello, World!",
+    "section": "Statistics experience",
+    "text": "Statistics experience\nWe asked you the following multiple-choice question where you could only pick one option:\n\nHave you taken any statistics courses before?\n\nYes, I have taken another college course on statistics\nYes, I have taken a high school statistics course\nNo, I have not taken any statistics courses"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#visualize",
+    "href": "slides/01-hello-world-slides.html#visualize",
+    "title": "Hello, World!",
+    "section": "Visualize",
+    "text": "Visualize\nOne way to make sense of data collected via a question like this is to visualize it."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#visualize-1",
+    "href": "slides/01-hello-world-slides.html#visualize-1",
+    "title": "Hello, World!",
+    "section": "Visualize",
+    "text": "Visualize\n\n\nCode\nsurvey |&gt;\n  count(stats_experience) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  ggplot(aes(y = stats_experience, x = prop))+\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(20)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.25, 0.5)) +\n  labs(\n    title = \"Prior statistics experience among STA 199 students\",\n    y = NULL,\n    x = \"Count\"\n  ) +\n  labs(\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  )"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#programming-experience",
+    "href": "slides/01-hello-world-slides.html#programming-experience",
+    "title": "Hello, World!",
+    "section": "Programming experience",
+    "text": "Programming experience\nWe also asked you the following multiple-choice question where you could only pick one option:\n\nHow much experience do you have with programming?\n\nNone\nA little — I’ve written a few lines or done small exercises\nSome — I’ve worked on a few projects or used it occasionally\nA lot — I use programming regularly and feel confident writing code"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#visualize-2",
+    "href": "slides/01-hello-world-slides.html#visualize-2",
+    "title": "Hello, World!",
+    "section": "Visualize",
+    "text": "Visualize\n\n\nCode\nsurvey |&gt;\n  count(programming_experience) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  ggplot(aes(y = fct_reorder(programming_experience, prop), x = prop, fill = prop))+\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(25)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.1, 0.2, 0.3, 0.4)) +\n  scale_fill_viridis_c(option = \"E\") +\n  labs(\n    title = \"Prior programming experience among STA 199 students\",\n    y = NULL,\n    x = \"Count\"\n  ) +\n  labs(\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  ) +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#learn-best",
+    "href": "slides/01-hello-world-slides.html#learn-best",
+    "title": "Hello, World!",
+    "section": "Learn best",
+    "text": "Learn best\nWe also asked you the following multiple-choice question where you could as many options as you liked:\n\nWhat types of data interest you?\n\nCrime\nEconomics\nEducation\nEntertainment (e.g., books, movies, music)\nEnvironment/Climate\nHealth (e.g., social determinants of health, medical)\nPolitics\nSports\nOther\nNo preference"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#peek-at-the-data",
+    "href": "slides/01-hello-world-slides.html#peek-at-the-data",
+    "title": "Hello, World!",
+    "section": "Peek at the data",
+    "text": "Peek at the data\n\n\nCode\nsurvey |&gt;\n  select(data_interests)\n\n\n# A tibble: 230 × 1\n   data_interests                                                     \n   &lt;chr&gt;                                                              \n 1 \"Economics,Politics\"                                               \n 2 \"Health (e.g.\\\\, social determinants of health\\\\, medical),Politic…\n 3 \"Crime,Economics,Education,Environment/Climate,Politics,No prefere…\n 4 \"Crime,Education,Politics,Sports\"                                  \n 5 \"Crime,Education,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),…\n 6 \"Crime,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Health (e.…\n 7 \"Health (e.g.\\\\, social determinants of health\\\\, medical)\"        \n 8 \"Education,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Health…\n 9 \"Economics,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Enviro…\n10 \"Economics,Environment/Climate,Sports\"                             \n# ℹ 220 more rows"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#tidy-transform",
+    "href": "slides/01-hello-world-slides.html#tidy-transform",
+    "title": "Hello, World!",
+    "section": "Tidy + Transform",
+    "text": "Tidy + Transform\nBefore we can visualize this variable, we need to tidy and transform it."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#tidy-transform-1",
+    "href": "slides/01-hello-world-slides.html#tidy-transform-1",
+    "title": "Hello, World!",
+    "section": "Tidy + Transform",
+    "text": "Tidy + Transform\n\n\nCode\nsurvey |&gt;\n  # remove text in parentheses\n  mutate(data_interests = str_remove_all(data_interests, \"\\\\s*\\\\(.*?\\\\)\")) |&gt;\n  # separate into multiple rows for each interest, using comma as delimiter\n  separate_longer_delim(data_interests, delim = \",\") |&gt;\n  count(data_interests, sort = TRUE) |&gt;\n  mutate(prop = n / sum(n))\n\n\n# A tibble: 11 × 3\n   data_interests          n    prop\n   &lt;chr&gt;               &lt;int&gt;   &lt;dbl&gt;\n 1 Health                142 0.169  \n 2 Sports                111 0.132  \n 3 Politics              110 0.131  \n 4 Entertainment         107 0.128  \n 5 Crime                  97 0.116  \n 6 Economics              93 0.111  \n 7 Education              86 0.103  \n 8 Environment/Climate    76 0.0906 \n 9 Other                  12 0.0143 \n10 No preference           3 0.00358\n11 &lt;NA&gt;                    2 0.00238"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#visualize-3",
+    "href": "slides/01-hello-world-slides.html#visualize-3",
+    "title": "Hello, World!",
+    "section": "Visualize",
+    "text": "Visualize\n\n\nCode\nsurvey |&gt;\n  mutate(data_interests = str_remove_all(data_interests, \"\\\\s*\\\\(.*?\\\\)\")) |&gt;\n  separate_longer_delim(data_interests, delim = \",\") |&gt;\n  count(data_interests, sort = TRUE) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  filter(!is.na(data_interests)) |&gt;\n  ggplot(aes(y = fct_reorder(data_interests, prop), x = prop, fill = prop)) +\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(20)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1)) +\n  scale_fill_taylor_c(album = \"Speak Now\") +\n  labs(\n    title = \"Data interests among STA 199 students\",\n    y = NULL,\n    x = \"Count\",\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  ) +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#learn-best-1",
+    "href": "slides/01-hello-world-slides.html#learn-best-1",
+    "title": "Hello, World!",
+    "section": "Learn best",
+    "text": "Learn best\nWe also asked you the following open-ended question:\n\nHow do you learn best?"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#tidy-transform-summarize",
+    "href": "slides/01-hello-world-slides.html#tidy-transform-summarize",
+    "title": "Hello, World!",
+    "section": "Tidy + Transform + Summarize",
+    "text": "Tidy + Transform + Summarize\nWe can use text mining techniques, like tokenizing to words to explore this open-ended question:\n\n\nCode\nsurvey |&gt;\n  select(learn_best) |&gt;\n  unnest_tokens(word, learn_best) |&gt;\n  anti_join(stop_words, by = \"word\") |&gt;\n  count(word, sort = TRUE) |&gt;\n  filter(n &gt; 15) |&gt;\n  print(n = Inf)\n\n\n# A tibble: 12 × 2\n   word          n\n   &lt;chr&gt;     &lt;int&gt;\n 1 learn        89\n 2 practice     66\n 3 visual       28\n 4 step         27\n 5 learning     26\n 6 hands        24\n 7 class        22\n 8 questions    21\n 9 examples     19\n10 lecture      17\n11 lectures     17\n12 learner      16"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#tidy-transform-summarize-1",
+    "href": "slides/01-hello-world-slides.html#tidy-transform-summarize-1",
+    "title": "Hello, World!",
+    "section": "Tidy + Transform + Summarize",
+    "text": "Tidy + Transform + Summarize\nWe can also tokenize to bigrams (pairs of words):\n\n\nCode\nsurvey |&gt;\n  select(learn_best) |&gt;\n  tidytext::unnest_tokens(bigrams, learn_best, token = \"ngrams\", n = 2) |&gt;\n  count(bigrams, sort = TRUE) |&gt;\n  filter(n &gt; 10) |&gt;\n  print(n = Inf)\n\n\n# A tibble: 20 × 2\n   bigrams               n\n   &lt;chr&gt;             &lt;int&gt;\n 1 i learn              73\n 2 learn best           68\n 3 practice problems    28\n 4 hands on             24\n 5 best by              21\n 6 best through         19\n 7 i also               16\n 8 i am                 16\n 9 and then             15\n10 in class             14\n11 when i               14\n12 by step              13\n13 i can                13\n14 step by              13\n15 &lt;NA&gt;                 13\n16 problems and         12\n17 a lot                11\n18 a visual             11\n19 on my                11\n20 visual learner       11"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#programming-language-comfort",
+    "href": "slides/01-hello-world-slides.html#programming-language-comfort",
+    "title": "Hello, World!",
+    "section": "Programming language comfort",
+    "text": "Programming language comfort\nWe also asked you the following open-ended question:\n\nIf you’ve programmed before, which languages have you used, and how comfortable do you feel with each? If you haven’t programmed before, please leave this question blank."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#take-a-peek-participate-1",
+    "href": "slides/01-hello-world-slides.html#take-a-peek-participate-1",
+    "title": "Hello, World!",
+    "section": "Take a peek + Participate 💻📱",
+    "text": "Take a peek + Participate 💻📱\n\n\nAnd the answers are non-trivial to tidy up, e.g.,\n- Python - I've used it very little.\n- I have not programmed before. \n- Java - very comfortable. Python - pretty comfortable. C/C++ - not super comfortable, haven't used since high school.\n\n\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#can-ai-help",
+    "href": "slides/01-hello-world-slides.html#can-ai-help",
+    "title": "Hello, World!",
+    "section": "Can AI help?",
+    "text": "Can AI help?\n\n\nCode\nlibrary(ellmer)\n\nchat &lt;- chat_openai()\n\nprompts &lt;- survey |&gt;\n  filter(!is.na(programming_languages)) |&gt;\n  pull(programming_languages) |&gt;\n  list()\n\ntype_language &lt;- type_object(\n  language = type_string(),\n  experience = type_string()\n)\n\nlanguage_experience &lt;- parallel_chat_structured(chat, prompts, type = type_language)\nlanguage_experience\n\n\nlanguage\n1 Python, Java, R, C/C++, JavaScript, HTML/CSS, SQL, C#, VBA, MATLAB, Rust, Assembly, Swift, Stata, Bash, Typescript, Web3 Suite (HTML, CSS, JS), Nextflow, SAS, PsycoPy, Mathematica, React, Vue, Yaml, CourseKata, Flutter, Scratch\n\nexperience\n1 Most students report a range of programming experience, from never having programmed before to being very comfortable in languages such as Python, Java, and R. Many took introductory courses (e.g., CS101, AP CS A) and are comfortable with basic programming constructs. Proficiency is generally highest in Python and Java, though some only have a little experience with languages like R, C/C++, and JavaScript. Quite a few have only used programming languages for specific classes or research projects and may not feel confident after a long break. Some students have experience with more niche or specialized tools such as MATLAB, SAS, and web technologies (HTML, CSS, JavaScript/JS frameworks). Many express a need for a refresher if not used recently. In summary, while a core group is comfortable with at least one language, especially Python or Java, many others have only basic to moderate experience and express the desire to gain more proficiency."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#can-it-be-trusted-100",
+    "href": "slides/01-hello-world-slides.html#can-it-be-trusted-100",
+    "title": "Hello, World!",
+    "section": "Can it be trusted 100%?",
+    "text": "Can it be trusted 100%?\nMathematica is a software system used for mathematics.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"Mathematica\")) |&gt;\n  select(programming_languages)\n\n# A tibble: 1 × 1\n  programming_languages                                           \n  &lt;chr&gt;                                                           \n1 Most familiar to least: Java, Mathematica, Python, Matlab, React\n\n\n\nNextflow extends the Unix pipes model with a DSL.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"Nextflow\"))  |&gt;\n  select(programming_languages)\n\n# A tibble: 0 × 1\n# ℹ 1 variable: programming_languages &lt;chr&gt;\n\n\n\n\nPsycoPy is a desktop application for in-lab studies.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"PsycoPy\"))  |&gt;\n  select(programming_languages)\n\n# A tibble: 0 × 1\n# ℹ 1 variable: programming_languages &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#homepage",
+    "href": "slides/01-hello-world-slides.html#homepage",
+    "title": "Hello, World!",
+    "section": "Homepage",
+    "text": "Homepage\nhttps://sta199-f25.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#course-toolkit",
+    "href": "slides/01-hello-world-slides.html#course-toolkit",
+    "title": "Hello, World!",
+    "section": "Course toolkit",
+    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-f25\nRStudio containers: cmgr.oit.duke.edu/containers\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#activities",
+    "href": "slides/01-hello-world-slides.html#activities",
+    "title": "Hello, World!",
+    "section": "Activities",
+    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures (and answer questions for participation credit) and labs, office hours, team meetings\nPractice applying statistical concepts and computing with application exercises during lecture, graded for attempting\nPut together what you’ve learned to analyze real-world data\n\nLab assignments\nHomework assignments\nExams\nTerm project completed in teams"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#attendance-and-participation",
+    "href": "slides/01-hello-world-slides.html#attendance-and-participation",
+    "title": "Hello, World!",
+    "section": "Attendance and participation",
+    "text": "Attendance and participation\n\nDaily in lecture\nTracked for credit, but not based on correctness, only participation (and often they will be questions designed to make you think that might not have a single right answer!)"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#application-exercises",
+    "href": "slides/01-hello-world-slides.html#application-exercises",
+    "title": "Hello, World!",
+    "section": "Application exercises",
+    "text": "Application exercises\n\nDaily-ish in lecture\nNot graded, but tracked for feedback on workflow"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#labs",
+    "href": "slides/01-hello-world-slides.html#labs",
+    "title": "Hello, World!",
+    "section": "Labs",
+    "text": "Labs\n\nHands-on practice with data analysis\nA sigle exercise per lab, graded based on being there and in something reasonable + correctness\nCompleted in-person, in lab, in teams\nTeams randomized each week until project teams assigned\nDeveloped collaboratively, but turned in individually by the end of the lab session\n8 throughout semester, two lowest scores dropped\nNo late work accepted"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#homwork",
+    "href": "slides/01-hello-world-slides.html#homwork",
+    "title": "Hello, World!",
+    "section": "Homwork",
+    "text": "Homwork\n\nHands-on practice with data analysis\nSome questions for practice with instant feedback by AI\nSome questions to be graded by humans for correctness\nCan start in lab if time permits, but completed at home\nCan consult with course team and peers, but completed and turned in individually by the end of the week\n6 throughout semester, lowest score dropped\nUp to 3 days late (-5% per day), no late work accepted after that\nOne-time late penalty waiver: Can be used on any homework assignment, no questions asked, must be requested from Dr. Knox before the deadline"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#exams",
+    "href": "slides/01-hello-world-slides.html#exams",
+    "title": "Hello, World!",
+    "section": "Exams",
+    "text": "Exams\n\nTwo exams during semester, comprised of two parts:\n\nIn-class: 75 minute in-class exam. Closed book, one sheet of notes – 80% of the grade.\nTake-home: Follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 20% of the grade.\n\nFinal, in-class only: Closed book, one sheet of notes\nNotes for exams: No larger than 8 1/2 x 11, both sides, must be prepared by you\nNo extensions or make-ups\n\n\n\n\n\n\n\nCaution\n\n\nExam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#project",
+    "href": "slides/01-hello-world-slides.html#project",
+    "title": "Hello, World!",
+    "section": "Project",
+    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nFive milestones, interim deadlines throughout semester\nFinal milestone: Presentation in lab and write-up\nMust be in lab, in-person to present\nPeer review between teams for content, peer evaluation within teams for contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\nProject due date cannot be changed. You must complete the project to pass this class."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#teams",
+    "href": "slides/01-hello-world-slides.html#teams",
+    "title": "Hello, World!",
+    "section": "Teams",
+    "text": "Teams\n\nRandomized at first for weekly labs\nThen selected by you or assigned by me if you don’t express a preference for project and remaining labs\nExpectations and roles\n\nEveryone is expected to contribute equal effort\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc.\n\nFor the project: Peer evaluation during teamwork and after completion"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#grading",
+    "href": "slides/01-hello-world-slides.html#grading",
+    "title": "Hello, World!",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nLectures (attendance + participation)\n5%\n\n\nLabs\n8%\n\n\nHW\n12%\n\n\nProject\n15%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nFinal\n20%\n\n\n\nSee course syllabus for how the final letter grade will be determined."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#participate-1",
+    "href": "slides/01-hello-world-slides.html#participate-1",
+    "title": "Hello, World!",
+    "section": "Participate 💻📱",
+    "text": "Participate 💻📱\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199.\nLog in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#tips-for-success",
+    "href": "slides/01-hello-world-slides.html#tips-for-success",
+    "title": "Hello, World!",
+    "section": "Tips for success",
+    "text": "Tips for success\n\nPrepare: Watch videos and read before class\nEngage: Attend all lectures and labs actively\nAsk questions: Use office hours and Ed Discussion forum\nStart early: Don’t procrastinate on assignments\nStay current: Content builds progressively"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#support",
+    "href": "slides/01-hello-world-slides.html#support",
+    "title": "Hello, World!",
+    "section": "Support",
+    "text": "Support\n\nHelp from humans:\n\nAttend office hours\nAsk and answer questions on the discussion forum\n\nHelp from AI: Use the course chatbot (in Canvas!)\nReserve email for questions on personal matters and/or grades\nRead the course support page"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#announcements",
+    "href": "slides/01-hello-world-slides.html#announcements",
+    "title": "Hello, World!",
+    "section": "Announcements",
+    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nI’ll assume that you’ve read an announcement by the next “business” day\nI’ll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#diversity-inclusion-and-belonging",
+    "href": "slides/01-hello-world-slides.html#diversity-inclusion-and-belonging",
+    "title": "Hello, World!",
+    "section": "Diversity, inclusion, and belonging",
+    "text": "Diversity, inclusion, and belonging\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\nFill out the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#access-and-accommodations",
+    "href": "slides/01-hello-world-slides.html#access-and-accommodations",
+    "title": "Hello, World!",
+    "section": "Access and accommodations",
+    "text": "Access and accommodations\n\nThe Duke Access and Accommodation Services is available to ensure that students are able to engage with their courses and related assignments.\nAccoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.\nI am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#late-work-waivers-lecture-recordings-regrades",
+    "href": "slides/01-hello-world-slides.html#late-work-waivers-lecture-recordings-regrades",
+    "title": "Hello, World!",
+    "section": "Late work, waivers, lecture recordings, regrades…",
+    "text": "Late work, waivers, lecture recordings, regrades…\n\nWe have policies!\nRead about them on the course syllabus and refer back to them when you need it"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#use-of-ai-tools",
+    "href": "slides/01-hello-world-slides.html#use-of-ai-tools",
+    "title": "Hello, World!",
+    "section": "Use of AI tools",
+    "text": "Use of AI tools\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct/good code.\nMust explicitly cite, with at a minimum AI tool you’re using (e.g., ChatGPT) and your prompt.\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!"
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#academic-integrity",
+    "href": "slides/01-hello-world-slides.html#academic-integrity",
+    "title": "Hello, World!",
+    "section": "Academic integrity",
+    "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "slides/01-hello-world-slides.html#this-weeks-tasks",
+    "href": "slides/01-hello-world-slides.html#this-weeks-tasks",
+    "title": "Hello, World!",
+    "section": "This week’s tasks",
+    "text": "This week’s tasks\n\nComplete Lab 0\n\nComputational setup\nGetting to know you survey\n\nAccept your GitHub organization invitation\nRead the syllabus\nComplete readings and videos for next class"
+  },
+  {
+    "objectID": "slides/01-hello-world.html",
+    "href": "slides/01-hello-world.html",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nDirector of Undergraduate Studies, Statistical Science\nDirector of First-Year Experience in Trinity College of Arts & Sciences\nOffice: Old Chem 211C\n\nOffice hours:\n\n1-1:30 pm T Th (after class, here or outside the classroom)\n12:45-2:15 pm F (Old Chem 211C)\nBy appointment\n\n\n\n\n\n\n\n\n\nMary Knox (Course coordinator)\nMarie Neubrander (Head TA)\nAbuzar Khudaverdiyeva\nAlexa Fahrer\nAllison Yang\nArijit Dey\nBenjamin Sherman\nBethany Akinola\nEduardo Vasquez\nFederico Arboleda\n\n\n\nJessie Ringness\nKathleen Zhang\nKatie Solarz\nLuxman Maheswaran\nMax Niu\nNatasha Harris\nSarah Wu\nXueyan Hu\nZiyan Wang\n\n\n\n\n\n\n\nPlease share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course\n\n\n\n\n\n\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a modern and tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking.\n\n\n\n\n\n\n\n\nYesterday we collected some data from you!\nToday we’re going to explore that data together, following the data science cycle.\n\n\n\n\n\n\n\n\n\n. . .\n\n\n\n\n\n\nWarning\n\n\n\nThe data is anonymized and randomized and contains only a subset of the data collected. The rows have been shuffled for each column independently, meaning that no row belongs to a single student in the course. Additionally, any identifying information has been removed. Please do not try to de-anonymize or re-identify any individuals in the dataset.\n\n\n\n\n\n\n\nYou took a survey:\n\n\n\n\n\n\nCanvas stored your data in a CSV (comma-separated values) file:\n\n\nWe want to explore the data that is in that file!\n\n\n\n\n\n\n\n\n\n\n\n\n\nMore on what packages are on Thursday, but in a nutshell “get your tools out of the toolbox”:\n\nlibrary(tidyverse) # for data wrangling and visualization\nlibrary(scales)    # for better axis labels\nlibrary(tidytext)  # for handling text data\nlibrary(taylor)    # for a surprise!\n\n\n\n\nImport the data called survey-anonymized.csv in the folder called data using the read_csv() function:\n\nsurvey &lt;- read_csv(\"data/survey-anonymized.csv\")\n\n\n\n\n\nsurvey\n\n# A tibble: 230 × 5\n   stats_experience       programming_experience programming_languages\n   &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;                \n 1 Yes, I have taken a h… A little — I’ve writt… \"Java, Python, Yaml,…\n 2 No, I have not taken … None                    &lt;NA&gt;                \n 3 Yes, I have taken a h… A little — I’ve writt…  &lt;NA&gt;                \n 4 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 5 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 6 No, I have not taken … A little — I’ve writt…  &lt;NA&gt;                \n 7 Yes, I have taken a h… None                   \"Python and java\"    \n 8 No, I have not taken … None                    &lt;NA&gt;                \n 9 Yes, I have taken a h… None                   \"Python- a little bi…\n10 Yes, I have taken a h… None                    &lt;NA&gt;                \n# ℹ 220 more rows\n# ℹ 2 more variables: learn_best &lt;chr&gt;, data_interests &lt;chr&gt;\n\n\n\n\n\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199.\nLog in with your Duke NetID.\n\n\n\n\n\n\n\n\n\n# A tibble: 230 × 5\n   stats_experience       programming_experience programming_languages\n   &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;                \n 1 Yes, I have taken a h… A little — I’ve writt… \"Java, Python, Yaml,…\n 2 No, I have not taken … None                    &lt;NA&gt;                \n 3 Yes, I have taken a h… A little — I’ve writt…  &lt;NA&gt;                \n 4 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 5 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 6 No, I have not taken … A little — I’ve writt…  &lt;NA&gt;                \n 7 Yes, I have taken a h… None                   \"Python and java\"    \n 8 No, I have not taken … None                    &lt;NA&gt;                \n 9 Yes, I have taken a h… None                   \"Python- a little bi…\n10 Yes, I have taken a h… None                    &lt;NA&gt;                \n# ℹ 220 more rows\n# ℹ 2 more variables: learn_best &lt;chr&gt;, data_interests &lt;chr&gt;\n\n\n\n\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199. Log in with your Duke NetID.\n\n\n\n\n\nWe asked you the following multiple-choice question where you could only pick one option:\n\nHave you taken any statistics courses before?\n\nYes, I have taken another college course on statistics\nYes, I have taken a high school statistics course\nNo, I have not taken any statistics courses\n\n\n\n\n\nOne way to make sense of data collected via a question like this is to visualize it.\n\n\n\n\n\n\n\n\n\n\nCode\nsurvey |&gt;\n  count(stats_experience) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  ggplot(aes(y = stats_experience, x = prop))+\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(20)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.25, 0.5)) +\n  labs(\n    title = \"Prior statistics experience among STA 199 students\",\n    y = NULL,\n    x = \"Count\"\n  ) +\n  labs(\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nWe also asked you the following multiple-choice question where you could only pick one option:\n\nHow much experience do you have with programming?\n\nNone\nA little — I’ve written a few lines or done small exercises\nSome — I’ve worked on a few projects or used it occasionally\nA lot — I use programming regularly and feel confident writing code\n\n\n\n\n\n\n\nCode\nsurvey |&gt;\n  count(programming_experience) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  ggplot(aes(y = fct_reorder(programming_experience, prop), x = prop, fill = prop))+\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(25)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.1, 0.2, 0.3, 0.4)) +\n  scale_fill_viridis_c(option = \"E\") +\n  labs(\n    title = \"Prior programming experience among STA 199 students\",\n    y = NULL,\n    x = \"Count\"\n  ) +\n  labs(\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  ) +\n  theme_minimal(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\n\nWe also asked you the following multiple-choice question where you could as many options as you liked:\n\nWhat types of data interest you?\n\nCrime\nEconomics\nEducation\nEntertainment (e.g., books, movies, music)\nEnvironment/Climate\nHealth (e.g., social determinants of health, medical)\nPolitics\nSports\nOther\nNo preference\n\n\n\n\n\n\n\nCode\nsurvey |&gt;\n  select(data_interests)\n\n\n# A tibble: 230 × 1\n   data_interests                                                     \n   &lt;chr&gt;                                                              \n 1 \"Economics,Politics\"                                               \n 2 \"Health (e.g.\\\\, social determinants of health\\\\, medical),Politic…\n 3 \"Crime,Economics,Education,Environment/Climate,Politics,No prefere…\n 4 \"Crime,Education,Politics,Sports\"                                  \n 5 \"Crime,Education,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),…\n 6 \"Crime,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Health (e.…\n 7 \"Health (e.g.\\\\, social determinants of health\\\\, medical)\"        \n 8 \"Education,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Health…\n 9 \"Economics,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Enviro…\n10 \"Economics,Environment/Climate,Sports\"                             \n# ℹ 220 more rows\n\n\n\n\n\nBefore we can visualize this variable, we need to tidy and transform it.\n\n\n\n\n\n\n\n\n\n\nCode\nsurvey |&gt;\n  # remove text in parentheses\n  mutate(data_interests = str_remove_all(data_interests, \"\\\\s*\\\\(.*?\\\\)\")) |&gt;\n  # separate into multiple rows for each interest, using comma as delimiter\n  separate_longer_delim(data_interests, delim = \",\") |&gt;\n  count(data_interests, sort = TRUE) |&gt;\n  mutate(prop = n / sum(n))\n\n\n# A tibble: 11 × 3\n   data_interests          n    prop\n   &lt;chr&gt;               &lt;int&gt;   &lt;dbl&gt;\n 1 Health                142 0.169  \n 2 Sports                111 0.132  \n 3 Politics              110 0.131  \n 4 Entertainment         107 0.128  \n 5 Crime                  97 0.116  \n 6 Economics              93 0.111  \n 7 Education              86 0.103  \n 8 Environment/Climate    76 0.0906 \n 9 Other                  12 0.0143 \n10 No preference           3 0.00358\n11 &lt;NA&gt;                    2 0.00238\n\n\n\n\n\n\n\nCode\nsurvey |&gt;\n  mutate(data_interests = str_remove_all(data_interests, \"\\\\s*\\\\(.*?\\\\)\")) |&gt;\n  separate_longer_delim(data_interests, delim = \",\") |&gt;\n  count(data_interests, sort = TRUE) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  filter(!is.na(data_interests)) |&gt;\n  ggplot(aes(y = fct_reorder(data_interests, prop), x = prop, fill = prop)) +\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(20)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1)) +\n  scale_fill_taylor_c(album = \"Speak Now\") +\n  labs(\n    title = \"Data interests among STA 199 students\",\n    y = NULL,\n    x = \"Count\",\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  ) +\n  theme_minimal(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\n\nWe also asked you the following open-ended question:\n\nHow do you learn best?\n\n\n\n\nWe can use text mining techniques, like tokenizing to words to explore this open-ended question:\n\n\nCode\nsurvey |&gt;\n  select(learn_best) |&gt;\n  unnest_tokens(word, learn_best) |&gt;\n  anti_join(stop_words, by = \"word\") |&gt;\n  count(word, sort = TRUE) |&gt;\n  filter(n &gt; 15) |&gt;\n  print(n = Inf)\n\n\n# A tibble: 12 × 2\n   word          n\n   &lt;chr&gt;     &lt;int&gt;\n 1 learn        89\n 2 practice     66\n 3 visual       28\n 4 step         27\n 5 learning     26\n 6 hands        24\n 7 class        22\n 8 questions    21\n 9 examples     19\n10 lecture      17\n11 lectures     17\n12 learner      16\n\n\n\n\n\nWe can also tokenize to bigrams (pairs of words):\n\n\nCode\nsurvey |&gt;\n  select(learn_best) |&gt;\n  tidytext::unnest_tokens(bigrams, learn_best, token = \"ngrams\", n = 2) |&gt;\n  count(bigrams, sort = TRUE) |&gt;\n  filter(n &gt; 10) |&gt;\n  print(n = Inf)\n\n\n# A tibble: 20 × 2\n   bigrams               n\n   &lt;chr&gt;             &lt;int&gt;\n 1 i learn              73\n 2 learn best           68\n 3 practice problems    28\n 4 hands on             24\n 5 best by              21\n 6 best through         19\n 7 i also               16\n 8 i am                 16\n 9 and then             15\n10 in class             14\n11 when i               14\n12 by step              13\n13 i can                13\n14 step by              13\n15 &lt;NA&gt;                 13\n16 problems and         12\n17 a lot                11\n18 a visual             11\n19 on my                11\n20 visual learner       11\n\n\n\n\n\nWe also asked you the following open-ended question:\n\nIf you’ve programmed before, which languages have you used, and how comfortable do you feel with each? If you haven’t programmed before, please leave this question blank.\n\n\n\n\n\n\nAnd the answers are non-trivial to tidy up, e.g.,\n- Python - I've used it very little.\n- I have not programmed before. \n- Java - very comfortable. Python - pretty comfortable. C/C++ - not super comfortable, haven't used since high school.\n\n\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nCode\nlibrary(ellmer)\n\nchat &lt;- chat_openai()\n\nprompts &lt;- survey |&gt;\n  filter(!is.na(programming_languages)) |&gt;\n  pull(programming_languages) |&gt;\n  list()\n\ntype_language &lt;- type_object(\n  language = type_string(),\n  experience = type_string()\n)\n\nlanguage_experience &lt;- parallel_chat_structured(chat, prompts, type = type_language)\nlanguage_experience\n\n\nlanguage\n1 Python, Java, R, C/C++, JavaScript, HTML/CSS, SQL, C#, VBA, MATLAB, Rust, Assembly, Swift, Stata, Bash, Typescript, Web3 Suite (HTML, CSS, JS), Nextflow, SAS, PsycoPy, Mathematica, React, Vue, Yaml, CourseKata, Flutter, Scratch\n\nexperience\n1 Most students report a range of programming experience, from never having programmed before to being very comfortable in languages such as Python, Java, and R. Many took introductory courses (e.g., CS101, AP CS A) and are comfortable with basic programming constructs. Proficiency is generally highest in Python and Java, though some only have a little experience with languages like R, C/C++, and JavaScript. Quite a few have only used programming languages for specific classes or research projects and may not feel confident after a long break. Some students have experience with more niche or specialized tools such as MATLAB, SAS, and web technologies (HTML, CSS, JavaScript/JS frameworks). Many express a need for a refresher if not used recently. In summary, while a core group is comfortable with at least one language, especially Python or Java, many others have only basic to moderate experience and express the desire to gain more proficiency.\n\n\n\nMathematica is a software system used for mathematics.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"Mathematica\")) |&gt;\n  select(programming_languages)\n\n# A tibble: 1 × 1\n  programming_languages                                           \n  &lt;chr&gt;                                                           \n1 Most familiar to least: Java, Mathematica, Python, Matlab, React\n\n\n. . .\nNextflow extends the Unix pipes model with a DSL.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"Nextflow\"))  |&gt;\n  select(programming_languages)\n\n# A tibble: 0 × 1\n# ℹ 1 variable: programming_languages &lt;chr&gt;\n\n\n. . .\nPsycoPy is a desktop application for in-lab studies.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"PsycoPy\"))  |&gt;\n  select(programming_languages)\n\n# A tibble: 0 × 1\n# ℹ 1 variable: programming_languages &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#meet-the-prof",
+    "href": "slides/01-hello-world.html#meet-the-prof",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nDirector of Undergraduate Studies, Statistical Science\nDirector of First-Year Experience in Trinity College of Arts & Sciences\nOffice: Old Chem 211C\n\nOffice hours:\n\n1-1:30 pm T Th (after class, here or outside the classroom)\n12:45-2:15 pm F (Old Chem 211C)\nBy appointment"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#meet-the-course-team",
+    "href": "slides/01-hello-world.html#meet-the-course-team",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Mary Knox (Course coordinator)\nMarie Neubrander (Head TA)\nAbuzar Khudaverdiyeva\nAlexa Fahrer\nAllison Yang\nArijit Dey\nBenjamin Sherman\nBethany Akinola\nEduardo Vasquez\nFederico Arboleda\n\n\n\nJessie Ringness\nKathleen Zhang\nKatie Solarz\nLuxman Maheswaran\nMax Niu\nNatasha Harris\nSarah Wu\nXueyan Hu\nZiyan Wang"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#meet-each-other",
+    "href": "slides/01-hello-world.html#meet-each-other",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Please share with at least two classmates…\n\nYour name\nYour year\nWhere you’re from\nWhat you did this past summer\nWhat you hope to get out of this course"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#meet-data-science",
+    "href": "slides/01-hello-world.html#meet-data-science",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a modern and tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#lets-do-some-data-science",
+    "href": "slides/01-hello-world.html#lets-do-some-data-science",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Yesterday we collected some data from you!\nToday we’re going to explore that data together, following the data science cycle.\n\n\n\n\n\n\n\n\n\n. . .\n\n\n\n\n\n\nWarning\n\n\n\nThe data is anonymized and randomized and contains only a subset of the data collected. The rows have been shuffled for each column independently, meaning that no row belongs to a single student in the course. Additionally, any identifying information has been removed. Please do not try to de-anonymize or re-identify any individuals in the dataset."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#beginning-the-data-science-cycle",
+    "href": "slides/01-hello-world.html#beginning-the-data-science-cycle",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "You took a survey:\n\n\n\n\n\n\nCanvas stored your data in a CSV (comma-separated values) file:\n\n\nWe want to explore the data that is in that file!"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#load-some-packages",
+    "href": "slides/01-hello-world.html#load-some-packages",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "More on what packages are on Thursday, but in a nutshell “get your tools out of the toolbox”:\n\nlibrary(tidyverse) # for data wrangling and visualization\nlibrary(scales)    # for better axis labels\nlibrary(tidytext)  # for handling text data\nlibrary(taylor)    # for a surprise!"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#import-the-data",
+    "href": "slides/01-hello-world.html#import-the-data",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Import the data called survey-anonymized.csv in the folder called data using the read_csv() function:\n\nsurvey &lt;- read_csv(\"data/survey-anonymized.csv\")"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#take-a-peek-at-the-data",
+    "href": "slides/01-hello-world.html#take-a-peek-at-the-data",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "survey\n\n# A tibble: 230 × 5\n   stats_experience       programming_experience programming_languages\n   &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;                \n 1 Yes, I have taken a h… A little — I’ve writt… \"Java, Python, Yaml,…\n 2 No, I have not taken … None                    &lt;NA&gt;                \n 3 Yes, I have taken a h… A little — I’ve writt…  &lt;NA&gt;                \n 4 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 5 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 6 No, I have not taken … A little — I’ve writt…  &lt;NA&gt;                \n 7 Yes, I have taken a h… None                   \"Python and java\"    \n 8 No, I have not taken … None                    &lt;NA&gt;                \n 9 Yes, I have taken a h… None                   \"Python- a little bi…\n10 Yes, I have taken a h… None                    &lt;NA&gt;                \n# ℹ 220 more rows\n# ℹ 2 more variables: learn_best &lt;chr&gt;, data_interests &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#participate",
+    "href": "slides/01-hello-world.html#participate",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Scan the QR code or go to wooclap.com and enter the code STA199.\nLog in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#take-a-peek-participate",
+    "href": "slides/01-hello-world.html#take-a-peek-participate",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "# A tibble: 230 × 5\n   stats_experience       programming_experience programming_languages\n   &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;                \n 1 Yes, I have taken a h… A little — I’ve writt… \"Java, Python, Yaml,…\n 2 No, I have not taken … None                    &lt;NA&gt;                \n 3 Yes, I have taken a h… A little — I’ve writt…  &lt;NA&gt;                \n 4 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 5 No, I have not taken … Some — I’ve worked on…  &lt;NA&gt;                \n 6 No, I have not taken … A little — I’ve writt…  &lt;NA&gt;                \n 7 Yes, I have taken a h… None                   \"Python and java\"    \n 8 No, I have not taken … None                    &lt;NA&gt;                \n 9 Yes, I have taken a h… None                   \"Python- a little bi…\n10 Yes, I have taken a h… None                    &lt;NA&gt;                \n# ℹ 220 more rows\n# ℹ 2 more variables: learn_best &lt;chr&gt;, data_interests &lt;chr&gt;\n\n\n\n\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#statistics-experience",
+    "href": "slides/01-hello-world.html#statistics-experience",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We asked you the following multiple-choice question where you could only pick one option:\n\nHave you taken any statistics courses before?\n\nYes, I have taken another college course on statistics\nYes, I have taken a high school statistics course\nNo, I have not taken any statistics courses"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#visualize",
+    "href": "slides/01-hello-world.html#visualize",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "One way to make sense of data collected via a question like this is to visualize it."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#visualize-1",
+    "href": "slides/01-hello-world.html#visualize-1",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Code\nsurvey |&gt;\n  count(stats_experience) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  ggplot(aes(y = stats_experience, x = prop))+\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(20)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.25, 0.5)) +\n  labs(\n    title = \"Prior statistics experience among STA 199 students\",\n    y = NULL,\n    x = \"Count\"\n  ) +\n  labs(\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  )"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#programming-experience",
+    "href": "slides/01-hello-world.html#programming-experience",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We also asked you the following multiple-choice question where you could only pick one option:\n\nHow much experience do you have with programming?\n\nNone\nA little — I’ve written a few lines or done small exercises\nSome — I’ve worked on a few projects or used it occasionally\nA lot — I use programming regularly and feel confident writing code"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#visualize-2",
+    "href": "slides/01-hello-world.html#visualize-2",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Code\nsurvey |&gt;\n  count(programming_experience) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  ggplot(aes(y = fct_reorder(programming_experience, prop), x = prop, fill = prop))+\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(25)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1), breaks = c(0, 0.1, 0.2, 0.3, 0.4)) +\n  scale_fill_viridis_c(option = \"E\") +\n  labs(\n    title = \"Prior programming experience among STA 199 students\",\n    y = NULL,\n    x = \"Count\"\n  ) +\n  labs(\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  ) +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#learn-best",
+    "href": "slides/01-hello-world.html#learn-best",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We also asked you the following multiple-choice question where you could as many options as you liked:\n\nWhat types of data interest you?\n\nCrime\nEconomics\nEducation\nEntertainment (e.g., books, movies, music)\nEnvironment/Climate\nHealth (e.g., social determinants of health, medical)\nPolitics\nSports\nOther\nNo preference"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#peek-at-the-data",
+    "href": "slides/01-hello-world.html#peek-at-the-data",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Code\nsurvey |&gt;\n  select(data_interests)\n\n\n# A tibble: 230 × 1\n   data_interests                                                     \n   &lt;chr&gt;                                                              \n 1 \"Economics,Politics\"                                               \n 2 \"Health (e.g.\\\\, social determinants of health\\\\, medical),Politic…\n 3 \"Crime,Economics,Education,Environment/Climate,Politics,No prefere…\n 4 \"Crime,Education,Politics,Sports\"                                  \n 5 \"Crime,Education,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),…\n 6 \"Crime,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Health (e.…\n 7 \"Health (e.g.\\\\, social determinants of health\\\\, medical)\"        \n 8 \"Education,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Health…\n 9 \"Economics,Entertainment (e.g.\\\\, books\\\\, movies\\\\, music),Enviro…\n10 \"Economics,Environment/Climate,Sports\"                             \n# ℹ 220 more rows"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#tidy-transform",
+    "href": "slides/01-hello-world.html#tidy-transform",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Before we can visualize this variable, we need to tidy and transform it."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#tidy-transform-1",
+    "href": "slides/01-hello-world.html#tidy-transform-1",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Code\nsurvey |&gt;\n  # remove text in parentheses\n  mutate(data_interests = str_remove_all(data_interests, \"\\\\s*\\\\(.*?\\\\)\")) |&gt;\n  # separate into multiple rows for each interest, using comma as delimiter\n  separate_longer_delim(data_interests, delim = \",\") |&gt;\n  count(data_interests, sort = TRUE) |&gt;\n  mutate(prop = n / sum(n))\n\n\n# A tibble: 11 × 3\n   data_interests          n    prop\n   &lt;chr&gt;               &lt;int&gt;   &lt;dbl&gt;\n 1 Health                142 0.169  \n 2 Sports                111 0.132  \n 3 Politics              110 0.131  \n 4 Entertainment         107 0.128  \n 5 Crime                  97 0.116  \n 6 Economics              93 0.111  \n 7 Education              86 0.103  \n 8 Environment/Climate    76 0.0906 \n 9 Other                  12 0.0143 \n10 No preference           3 0.00358\n11 &lt;NA&gt;                    2 0.00238"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#visualize-3",
+    "href": "slides/01-hello-world.html#visualize-3",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Code\nsurvey |&gt;\n  mutate(data_interests = str_remove_all(data_interests, \"\\\\s*\\\\(.*?\\\\)\")) |&gt;\n  separate_longer_delim(data_interests, delim = \",\") |&gt;\n  count(data_interests, sort = TRUE) |&gt;\n  mutate(prop = n / sum(n)) |&gt;\n  filter(!is.na(data_interests)) |&gt;\n  ggplot(aes(y = fct_reorder(data_interests, prop), x = prop, fill = prop)) +\n  geom_col(show.legend = FALSE) +\n  scale_y_discrete(labels = label_wrap(20)) +\n  scale_x_continuous(labels = percent_format(accuracy = 1)) +\n  scale_fill_taylor_c(album = \"Speak Now\") +\n  labs(\n    title = \"Data interests among STA 199 students\",\n    y = NULL,\n    x = \"Count\",\n    caption = \"Data are self-reported, collected from STA 199 students on August 25, 2025.\"\n  ) +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#learn-best-1",
+    "href": "slides/01-hello-world.html#learn-best-1",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We also asked you the following open-ended question:\n\nHow do you learn best?"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#tidy-transform-summarize",
+    "href": "slides/01-hello-world.html#tidy-transform-summarize",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We can use text mining techniques, like tokenizing to words to explore this open-ended question:\n\n\nCode\nsurvey |&gt;\n  select(learn_best) |&gt;\n  unnest_tokens(word, learn_best) |&gt;\n  anti_join(stop_words, by = \"word\") |&gt;\n  count(word, sort = TRUE) |&gt;\n  filter(n &gt; 15) |&gt;\n  print(n = Inf)\n\n\n# A tibble: 12 × 2\n   word          n\n   &lt;chr&gt;     &lt;int&gt;\n 1 learn        89\n 2 practice     66\n 3 visual       28\n 4 step         27\n 5 learning     26\n 6 hands        24\n 7 class        22\n 8 questions    21\n 9 examples     19\n10 lecture      17\n11 lectures     17\n12 learner      16"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#tidy-transform-summarize-1",
+    "href": "slides/01-hello-world.html#tidy-transform-summarize-1",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We can also tokenize to bigrams (pairs of words):\n\n\nCode\nsurvey |&gt;\n  select(learn_best) |&gt;\n  tidytext::unnest_tokens(bigrams, learn_best, token = \"ngrams\", n = 2) |&gt;\n  count(bigrams, sort = TRUE) |&gt;\n  filter(n &gt; 10) |&gt;\n  print(n = Inf)\n\n\n# A tibble: 20 × 2\n   bigrams               n\n   &lt;chr&gt;             &lt;int&gt;\n 1 i learn              73\n 2 learn best           68\n 3 practice problems    28\n 4 hands on             24\n 5 best by              21\n 6 best through         19\n 7 i also               16\n 8 i am                 16\n 9 and then             15\n10 in class             14\n11 when i               14\n12 by step              13\n13 i can                13\n14 step by              13\n15 &lt;NA&gt;                 13\n16 problems and         12\n17 a lot                11\n18 a visual             11\n19 on my                11\n20 visual learner       11"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#programming-language-comfort",
+    "href": "slides/01-hello-world.html#programming-language-comfort",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We also asked you the following open-ended question:\n\nIf you’ve programmed before, which languages have you used, and how comfortable do you feel with each? If you haven’t programmed before, please leave this question blank."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#take-a-peek-participate-1",
+    "href": "slides/01-hello-world.html#take-a-peek-participate-1",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "And the answers are non-trivial to tidy up, e.g.,\n- Python - I've used it very little.\n- I have not programmed before. \n- Java - very comfortable. Python - pretty comfortable. C/C++ - not super comfortable, haven't used since high school.\n\n\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#can-ai-help",
+    "href": "slides/01-hello-world.html#can-ai-help",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Code\nlibrary(ellmer)\n\nchat &lt;- chat_openai()\n\nprompts &lt;- survey |&gt;\n  filter(!is.na(programming_languages)) |&gt;\n  pull(programming_languages) |&gt;\n  list()\n\ntype_language &lt;- type_object(\n  language = type_string(),\n  experience = type_string()\n)\n\nlanguage_experience &lt;- parallel_chat_structured(chat, prompts, type = type_language)\nlanguage_experience\n\n\nlanguage\n1 Python, Java, R, C/C++, JavaScript, HTML/CSS, SQL, C#, VBA, MATLAB, Rust, Assembly, Swift, Stata, Bash, Typescript, Web3 Suite (HTML, CSS, JS), Nextflow, SAS, PsycoPy, Mathematica, React, Vue, Yaml, CourseKata, Flutter, Scratch\n\nexperience\n1 Most students report a range of programming experience, from never having programmed before to being very comfortable in languages such as Python, Java, and R. Many took introductory courses (e.g., CS101, AP CS A) and are comfortable with basic programming constructs. Proficiency is generally highest in Python and Java, though some only have a little experience with languages like R, C/C++, and JavaScript. Quite a few have only used programming languages for specific classes or research projects and may not feel confident after a long break. Some students have experience with more niche or specialized tools such as MATLAB, SAS, and web technologies (HTML, CSS, JavaScript/JS frameworks). Many express a need for a refresher if not used recently. In summary, while a core group is comfortable with at least one language, especially Python or Java, many others have only basic to moderate experience and express the desire to gain more proficiency."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#can-it-be-trusted-100",
+    "href": "slides/01-hello-world.html#can-it-be-trusted-100",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Mathematica is a software system used for mathematics.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"Mathematica\")) |&gt;\n  select(programming_languages)\n\n# A tibble: 1 × 1\n  programming_languages                                           \n  &lt;chr&gt;                                                           \n1 Most familiar to least: Java, Mathematica, Python, Matlab, React\n\n\n. . .\nNextflow extends the Unix pipes model with a DSL.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"Nextflow\"))  |&gt;\n  select(programming_languages)\n\n# A tibble: 0 × 1\n# ℹ 1 variable: programming_languages &lt;chr&gt;\n\n\n. . .\nPsycoPy is a desktop application for in-lab studies.\n\nsurvey |&gt;\n  filter(str_detect(programming_languages, \"PsycoPy\"))  |&gt;\n  select(programming_languages)\n\n# A tibble: 0 × 1\n# ℹ 1 variable: programming_languages &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#homepage",
+    "href": "slides/01-hello-world.html#homepage",
+    "title": "Hello, World!",
+    "section": "Homepage",
+    "text": "Homepage\nhttps://sta199-f25.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#course-toolkit",
+    "href": "slides/01-hello-world.html#course-toolkit",
+    "title": "Hello, World!",
+    "section": "Course toolkit",
+    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-f25\nRStudio containers: cmgr.oit.duke.edu/containers\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#activities",
+    "href": "slides/01-hello-world.html#activities",
+    "title": "Hello, World!",
+    "section": "Activities",
+    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures (and answer questions for participation credit) and labs, office hours, team meetings\nPractice applying statistical concepts and computing with application exercises during lecture, graded for attempting\nPut together what you’ve learned to analyze real-world data\n\nLab assignments\nHomework assignments\nExams\nTerm project completed in teams"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#attendance-and-participation",
+    "href": "slides/01-hello-world.html#attendance-and-participation",
+    "title": "Hello, World!",
+    "section": "Attendance and participation",
+    "text": "Attendance and participation\n\nDaily in lecture\nTracked for credit, but not based on correctness, only participation (and often they will be questions designed to make you think that might not have a single right answer!)"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#application-exercises",
+    "href": "slides/01-hello-world.html#application-exercises",
+    "title": "Hello, World!",
+    "section": "Application exercises",
+    "text": "Application exercises\n\nDaily-ish in lecture\nNot graded, but tracked for feedback on workflow"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#labs",
+    "href": "slides/01-hello-world.html#labs",
+    "title": "Hello, World!",
+    "section": "Labs",
+    "text": "Labs\n\nHands-on practice with data analysis\nA sigle exercise per lab, graded based on being there and in something reasonable + correctness\nCompleted in-person, in lab, in teams\nTeams randomized each week until project teams assigned\nDeveloped collaboratively, but turned in individually by the end of the lab session\n8 throughout semester, two lowest scores dropped\nNo late work accepted"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#homwork",
+    "href": "slides/01-hello-world.html#homwork",
+    "title": "Hello, World!",
+    "section": "Homwork",
+    "text": "Homwork\n\nHands-on practice with data analysis\nSome questions for practice with instant feedback by AI\nSome questions to be graded by humans for correctness\nCan start in lab if time permits, but completed at home\nCan consult with course team and peers, but completed and turned in individually by the end of the week\n6 throughout semester, lowest score dropped\nUp to 3 days late (-5% per day), no late work accepted after that\nOne-time late penalty waiver: Can be used on any homework assignment, no questions asked, must be requested from Dr. Knox before the deadline"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#exams",
+    "href": "slides/01-hello-world.html#exams",
+    "title": "Hello, World!",
+    "section": "Exams",
+    "text": "Exams\n\nTwo exams during semester, comprised of two parts:\n\nIn-class: 75 minute in-class exam. Closed book, one sheet of notes – 80% of the grade.\nTake-home: Follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam – 20% of the grade.\n\nFinal, in-class only: Closed book, one sheet of notes\nNotes for exams: No larger than 8 1/2 x 11, both sides, must be prepared by you\nNo extensions or make-ups\n\n\n\n\n\n\n\nCaution\n\n\n\nExam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#project",
+    "href": "slides/01-hello-world.html#project",
+    "title": "Hello, World!",
+    "section": "Project",
+    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nFive milestones, interim deadlines throughout semester\nFinal milestone: Presentation in lab and write-up\nMust be in lab, in-person to present\nPeer review between teams for content, peer evaluation within teams for contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\n\nProject due date cannot be changed. You must complete the project to pass this class."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#teams",
+    "href": "slides/01-hello-world.html#teams",
+    "title": "Hello, World!",
+    "section": "Teams",
+    "text": "Teams\n\nRandomized at first for weekly labs\nThen selected by you or assigned by me if you don’t express a preference for project and remaining labs\nExpectations and roles\n\nEveryone is expected to contribute equal effort\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc.\n\nFor the project: Peer evaluation during teamwork and after completion"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#grading",
+    "href": "slides/01-hello-world.html#grading",
+    "title": "Hello, World!",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nLectures (attendance + participation)\n5%\n\n\nLabs\n8%\n\n\nHW\n12%\n\n\nProject\n15%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nFinal\n20%\n\n\n\nSee course syllabus for how the final letter grade will be determined."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#participate-1",
+    "href": "slides/01-hello-world.html#participate-1",
+    "title": "Hello, World!",
+    "section": "Participate 💻📱",
+    "text": "Participate 💻📱\n\n\n\n\nScan the QR code or go to wooclap.com and enter the code STA199.\nLog in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#tips-for-success",
+    "href": "slides/01-hello-world.html#tips-for-success",
+    "title": "Hello, World!",
+    "section": "Tips for success",
+    "text": "Tips for success\n\nPrepare: Watch videos and read before class\nEngage: Attend all lectures and labs actively\nAsk questions: Use office hours and Ed Discussion forum\nStart early: Don’t procrastinate on assignments\nStay current: Content builds progressively"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#support",
+    "href": "slides/01-hello-world.html#support",
+    "title": "Hello, World!",
+    "section": "Support",
+    "text": "Support\n\nHelp from humans:\n\nAttend office hours\nAsk and answer questions on the discussion forum\n\nHelp from AI: Use the course chatbot (in Canvas!)\nReserve email for questions on personal matters and/or grades\nRead the course support page"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#announcements",
+    "href": "slides/01-hello-world.html#announcements",
+    "title": "Hello, World!",
+    "section": "Announcements",
+    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nI’ll assume that you’ve read an announcement by the next “business” day\nI’ll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#diversity-inclusion-and-belonging",
+    "href": "slides/01-hello-world.html#diversity-inclusion-and-belonging",
+    "title": "Hello, World!",
+    "section": "Diversity, inclusion, and belonging",
+    "text": "Diversity, inclusion, and belonging\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\n\nFill out the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#access-and-accommodations",
+    "href": "slides/01-hello-world.html#access-and-accommodations",
+    "title": "Hello, World!",
+    "section": "Access and accommodations",
+    "text": "Access and accommodations\n\nThe Duke Access and Accommodation Services is available to ensure that students are able to engage with their courses and related assignments.\nAccoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.\nI am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#late-work-waivers-lecture-recordings-regrades",
+    "href": "slides/01-hello-world.html#late-work-waivers-lecture-recordings-regrades",
+    "title": "Hello, World!",
+    "section": "Late work, waivers, lecture recordings, regrades…",
+    "text": "Late work, waivers, lecture recordings, regrades…\n\nWe have policies!\nRead about them on the course syllabus and refer back to them when you need it"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#use-of-ai-tools",
+    "href": "slides/01-hello-world.html#use-of-ai-tools",
+    "title": "Hello, World!",
+    "section": "Use of AI tools",
+    "text": "Use of AI tools\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct/good code.\nMust explicitly cite, with at a minimum AI tool you’re using (e.g., ChatGPT) and your prompt.\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!"
+  },
+  {
+    "objectID": "slides/01-hello-world.html#academic-integrity",
+    "href": "slides/01-hello-world.html#academic-integrity",
+    "title": "Hello, World!",
+    "section": "Academic integrity",
+    "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "slides/01-hello-world.html#this-weeks-tasks",
+    "href": "slides/01-hello-world.html#this-weeks-tasks",
+    "title": "Hello, World!",
+    "section": "This week’s tasks",
+    "text": "This week’s tasks\n\nComplete Lab 0\n\nComputational setup\nGetting to know you survey\n\nAccept your GitHub organization invitation\nRead the syllabus\nComplete readings and videos for next class"
+  },
+  {
+    "objectID": "lab.html",
+    "href": "lab.html",
+    "title": "Labs",
+    "section": "",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nEnd of lab on Mon, Aug 25\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Course information",
-      "Overview"
+      "Labs"
     ]
   },
   {
@@ -321,13 +977,57 @@
     "text": "Footnotes\n\n\nSource: Wikipedia.↩︎\nYes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!↩︎\nGitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.↩︎"
   },
   {
-    "objectID": "lab.html",
-    "href": "lab.html",
-    "title": "Labs",
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "STA 199Fall 2025",
     "section": "",
-    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nEnd of lab on Mon, Aug 25\n\n\n\n\n\n\nNo matching items",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
     "crumbs": [
-      "Labs"
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#overview",
+    "href": "course-overview.html#overview",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#meetings",
+    "href": "course-overview.html#meetings",
+    "title": "STA 199Fall 2025",
+    "section": "Meetings",
+    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "hw.html",
+    "href": "hw.html",
+    "title": "Homeworks",
+    "section": "",
+    "text": "More homeworks to be added as the semester progresses.\n\n\n\n\n\n\n\n\nNo.\nTitle\nDue date\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homeworks"
+    ]
+  },
+  {
+    "objectID": "computing-troubleshooting.html",
+    "href": "computing-troubleshooting.html",
+    "title": "Computing troubleshooting",
+    "section": "",
+    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
+    "crumbs": [
+      "Computing",
+      "Troubleshooting"
     ]
   },
   {
@@ -565,7 +1265,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n\n💻 lab 0\nLab 0 due at the end of lab session (not graded)\n\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n\n\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\n\nLab 1 due at the end of the lab session\n\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 14\n\n\n\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\n\nLab 2 due at the end of the lab session\n\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 21\n\n\n\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\n\nLab 3 due at the end of the lab session\n\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 28\n\n\n\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\n\nLab 4 due at the end of lab session\n\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Oct 4\n\n\n\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\nProject milestone 1 due at the end of lab session\n\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\n\n\n\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\n\nTo be posted\n\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\nProject milestone 3 due at the end of lab session\n\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\n\nPeer evaluation 3 at 11:59 pm\n\n\n\n\nSun, Nov 2\n\n\n\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\nProject milestone 5 due at the end of lab session\n\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\n\nLab 6 due at the end of lab session\n\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Nov 22\n\n\n\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\n\nLab 7 due at the end of lab session\n\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\n\n\n\nSun, Nov 30\n\n\n\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\n\nLab 8 due at the end of lab session\n\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\n\n\n\nFri, Dec 5\n\n\n\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n\n💻 lab 0\nLab 0 due at the end of lab session (not graded)\n\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n🖥️ slides 01  🗒️ notes 01\n\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\n\nLab 1 due at the end of the lab session\n\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 14\n\n\n\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\n\nLab 2 due at the end of the lab session\n\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 21\n\n\n\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\n\nLab 3 due at the end of the lab session\n\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\n\n\n\nSun, Sep 28\n\n\n\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\n\nLab 4 due at the end of lab session\n\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Oct 4\n\n\n\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\nProject milestone 1 due at the end of lab session\n\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\n\n\n\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\n\nTo be posted\n\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\nProject milestone 3 due at the end of lab session\n\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\n\nPeer evaluation 3 at 11:59 pm\n\n\n\n\nSun, Nov 2\n\n\n\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\nProject milestone 5 due at the end of lab session\n\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\n\nLab 6 due at the end of lab session\n\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\n\n\n\nSat, Nov 22\n\n\n\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\n\nLab 7 due at the end of lab session\n\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\n\n\n\nSun, Nov 30\n\n\n\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\n\nLab 8 due at the end of lab session\n\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\n\n\n\nFri, Dec 5\n\n\n\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
     "crumbs": [
       "Course information",
       "Schedule"
