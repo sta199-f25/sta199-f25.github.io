@@ -4,14 +4,14 @@
     "items": []
   },
   {
+    "listing": "/hw.html",
+    "items": []
+  },
+  {
     "listing": "/lab.html",
     "items": [
       "/lab/lab-0.html"
     ]
-  },
-  {
-    "listing": "/hw.html",
-    "items": []
   },
   {
     "listing": "/exam-review.html",
