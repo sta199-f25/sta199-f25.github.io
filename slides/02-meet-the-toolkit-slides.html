@@ -8,18 +8,18 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
-
-  <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-  <meta name="dcterms.date" content="2025-08-28">
-  <title>STA 199 – Meet the toolkit</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+<meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
+<meta name="dcterms.date" content="2025-08-28">
+<title>STA 199 – Meet the toolkit</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -98,12 +98,12 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a857f325a1761b836f9f5139c1c9ddf3.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a857f325a1761b836f9f5139c1c9ddf3.css">
+<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -198,8 +198,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Meet the toolkit</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Meet the toolkit</h1>
   <p class="subtitle">Lecture 2</p>
 
 <div class="quarto-title-authors">
@@ -214,14 +213,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 
   <p class="date">August 28, 2025</p>
-</section>
-<section>
-<section id="from-last-time-correction" class="title-slide slide level1 center">
-<h1>From last time: Correction</h1>
+</section><section><section id="from-last-time-correction" class="title-slide slide level1 center"><h1>From last time: Correction</h1>
 
-</section>
-<section id="setup" class="slide level2">
-<h2>Setup</h2>
+</section><section id="setup" class="slide level2"><h2>Setup</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -240,13 +234,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/survey-anonymized.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="revisit-cleaning-up-programming-languages-with-ai" class="slide level2 smaller">
-<h2>Revisit: Cleaning up programming languages with AI</h2>
+</section><section id="revisit-cleaning-up-programming-languages-with-ai" class="slide level2 smaller"><h2>Revisit: Cleaning up programming languages with AI</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ellmer)</span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ellmer)</span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openai</span>()</span>
 <span id="cb4-4"><a></a></span>
@@ -269,9 +259,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 
 experience
 1 Most students report a range of programming experience, from never having programmed before to being very comfortable in languages such as Python, Java, and R. Many took introductory courses (e.g., CS101, AP CS A) and are comfortable with basic programming constructs. Proficiency is generally highest in Python and Java, though some only have a little experience with languages like R, C/C++, and JavaScript. Quite a few have only used programming languages for specific classes or research projects and may not feel confident after a long break. Some students have experience with more niche or specialized tools such as MATLAB, SAS, and web technologies (HTML, CSS, JavaScript/JS frameworks). Many express a need for a refresher if not used recently. In summary, while a core group is comfortable with at least one language, especially Python or Java, many others have only basic to moderate experience and express the desire to gain more proficiency.</code></pre>
-</section>
-<section id="can-it-be-trusted-100" class="slide level2 xsmall">
-<h2>Can it be trusted 100%?</h2>
+</section><section id="can-it-be-trusted-100" class="slide level2 xsmall"><h2>Can it be trusted 100%?</h2>
 <p><strong>Nextflow</strong> – didn’t show up before due to case mismatch (Netxflow vs.&nbsp;nextflow)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>survey <span class="sc">|&gt;</span></span>
@@ -312,81 +300,58 @@ experience
 1 i took statistics as my core math class last year. we coded with r;…</code></pre>
 </div>
 </div>
-</section></section>
-<section>
-<section id="from-last-time-course-overview-policies" class="title-slide slide level1 center">
-<h1>From last time: Course overview + policies</h1>
+</section></section><section><section id="from-last-time-course-overview-policies" class="title-slide slide level1 center"><h1>From last time: Course overview + policies</h1>
 
-</section>
-<section id="tips-for-success" class="slide level2">
-<h2>Tips for success</h2>
+</section><section id="tips-for-success" class="slide level2"><h2>Tips for success</h2>
 <ul>
 <li>Prepare: Watch videos and read before class</li>
 <li>Engage: Attend all lectures and labs actively</li>
 <li>Ask questions: Use office hours and Ed Discussion forum</li>
 <li>Start early: Don’t procrastinate on assignments</li>
 <li>Stay current: Content builds progressively</li>
-</ul>
-</section>
-<section id="support" class="slide level2">
-<h2>Support</h2>
+</ul></section><section id="support" class="slide level2"><h2>Support</h2>
 <ul>
 <li>Help from humans:
 <ul>
 <li>Attend office hours</li>
 <li>Ask and answer questions on the discussion forum</li>
-</ul></li>
+</ul>
+</li>
 <li>Help from AI: Use the course chatbot (in Canvas!)</li>
 <li>Reserve email for questions on personal matters and/or grades</li>
 <li>Read the course support page</li>
-</ul>
-</section>
-<section id="announcements" class="slide level2">
-<h2>Announcements</h2>
+</ul></section><section id="announcements" class="slide level2"><h2>Announcements</h2>
 <ul>
 <li>Posted on Canvas (Announcements tool) and sent via email, be sure to check both regularly</li>
 <li>I’ll assume that you’ve read an announcement by the next “business” day</li>
 <li>I’ll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform</li>
-</ul>
-</section>
-<section id="diversity-inclusion-and-belonging" class="slide level2 smaller">
-<h2>Diversity, inclusion, and belonging</h2>
+</ul></section><section id="diversity-inclusion-and-belonging" class="slide level2 smaller"><h2>Diversity, inclusion, and belonging</h2>
 <p>It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.</p>
 <ul>
 <li class="fragment">Fill out the Getting to know you survey.</li>
 <li class="fragment">If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.</li>
 <li class="fragment">I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.</li>
-</ul>
-</section>
-<section id="access-and-accommodations" class="slide level2">
-<h2>Access and accommodations</h2>
+</ul></section><section id="access-and-accommodations" class="slide level2"><h2>Access and accommodations</h2>
 <ul>
 <li><p>The <a href="https://access.duke.edu">Duke Access and Accommodation Services</a> is available to ensure that students are able to engage with their courses and related assignments.</p></li>
 <li><p>Accoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.</p></li>
 <li><p>I am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know.</p></li>
-</ul>
-</section>
-<section id="late-work-waivers-lecture-recordings-regrades" class="slide level2">
-<h2>Late work, waivers, lecture recordings, regrades…</h2>
+</ul></section><section id="late-work-waivers-lecture-recordings-regrades" class="slide level2"><h2>Late work, waivers, lecture recordings, regrades…</h2>
 <ul>
 <li>We have policies!</li>
 <li>Read about them on the <a href="https://sta199-f25.github.io/course-syllabus.html">course syllabus</a> and refer back to them when you need it</li>
-</ul>
-</section>
-<section id="use-of-ai-tools" class="slide level2">
-<h2>Use of AI tools</h2>
+</ul></section><section id="use-of-ai-tools" class="slide level2"><h2>Use of AI tools</h2>
 <ul>
-<li><p><i class="fa-solid fa-check" aria-label="check"></i> <strong>AI tools for code:</strong></p>
+<li>
+<p><i class="fa-solid fa-check" aria-label="check"></i> <strong>AI tools for code:</strong></p>
 <ul>
 <li>Sure, but be careful/critical! Working code <code>!=</code> correct/good code.</li>
 <li>Must explicitly cite, with <strong>at a minimum</strong> AI tool you’re using (e.g., ChatGPT) and your prompt.</li>
-</ul></li>
+</ul>
+</li>
 <li><p><i class="fa-solid fa-ban" aria-label="ban"></i> <strong>AI tools for narrative:</strong> Absolutely not!</p></li>
 <li><p><i class="fa-solid fa-check" aria-label="check"></i> <strong>AI tools for learning:</strong> Sure, but be careful/critical!</p></li>
-</ul>
-</section>
-<section id="academic-integrity" class="slide level2">
-<h2>Academic integrity</h2>
+</ul></section><section id="academic-integrity" class="slide level2"><h2>Academic integrity</h2>
 <blockquote>
 <p>To uphold the Duke Community Standard:</p>
 <ul>
@@ -395,9 +360,7 @@ experience
 <li><p>I will act if the Standard is compromised.</p></li>
 </ul>
 </blockquote>
-</section>
-<section id="a-note-on-showing-up-and-participating" class="slide level2 smaller">
-<h2>A note on showing up and participating</h2>
+</section><section id="a-note-on-showing-up-and-participating" class="slide level2 smaller"><h2>A note on showing up and participating</h2>
 <ul>
 <li><p>This is a large “lecture” but with lots of opportunities and expectations for active learning, participation, and collaboration.</p></li>
 <li><p>You are expected to show up and participate in all lectures and labs, though there are a good number of each you can miss without penalty.</p></li>
@@ -406,7 +369,7 @@ experience
 
 
 </section></section>
-    </div>
+</div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -414,23 +377,7 @@ experience
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -621,9 +568,7 @@ experience
           RevealZoom
         ]
       });
-    </script>
-    
-    <script>
+    </script><script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -658,9 +603,7 @@ experience
         }
 
       })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -827,6 +770,6 @@ experience
         }
       });
       </script>
-    
+
 
 </body></html>
