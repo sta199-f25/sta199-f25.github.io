@@ -1,0 +1,176 @@
+---
+title: "Meet the toolkit"
+subtitle: "Lecture 2"
+date: "2025-08-28"
+format: 
+  revealjs: 
+    output-file: 01-hello-world-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: "images/logo.png" 
+    toc: false
+  html: 
+    code-link: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
+```
+
+# From last time: Correction
+
+## Setup
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+#| eval: false
+survey <- read_csv("data/survey-anonymized.csv")
+```
+
+```{r}
+#| include: false
+survey <- read_csv(here::here("slides", "data/survey-anonymized.csv"))
+```
+
+## Revisit: Cleaning up programming languages with AI {.smaller}
+
+```{r}
+#| eval: false
+#| code-fold: true
+library(ellmer)
+
+chat <- chat_openai()
+
+prompts <- survey |>
+  filter(!is.na(programming_languages)) |>
+  pull(programming_languages) |>
+  list()
+
+type_language <- type_object(
+  language = type_string(),
+  experience = type_string()
+)
+
+language_experience <- parallel_chat_structured(chat, prompts, type = type_language)
+language_experience
+```
+
+```
+language
+1 Python, Java, R, C/C++, JavaScript, HTML/CSS, SQL, C#, VBA, MATLAB, Rust, Assembly, Swift, Stata, Bash, Typescript, Web3 Suite (HTML, CSS, JS), Nextflow, SAS, PsycoPy, Mathematica, React, Vue, Yaml, CourseKata, Flutter, Scratch
+
+experience
+1 Most students report a range of programming experience, from never having programmed before to being very comfortable in languages such as Python, Java, and R. Many took introductory courses (e.g., CS101, AP CS A) and are comfortable with basic programming constructs. Proficiency is generally highest in Python and Java, though some only have a little experience with languages like R, C/C++, and JavaScript. Quite a few have only used programming languages for specific classes or research projects and may not feel confident after a long break. Some students have experience with more niche or specialized tools such as MATLAB, SAS, and web technologies (HTML, CSS, JavaScript/JS frameworks). Many express a need for a refresher if not used recently. In summary, while a core group is comfortable with at least one language, especially Python or Java, many others have only basic to moderate experience and express the desire to gain more proficiency.
+```
+
+## Can it be trusted 100%? {.xsmall}
+
+**Nextflow** -- didn't show up before due to case mismatch (Netxflow vs. nextflow)
+
+```{r}
+survey |>
+  mutate(programming_languages = str_to_lower(programming_languages)) |>
+  filter(str_detect(programming_languages, "nextflow"))  |>
+  select(programming_languages)
+```
+
+**PsychoPy** -- misspelled by AI (PsycoPy vs. PsychoPy) + case mismatch
+
+```{r}
+survey |>
+  mutate(programming_languages = str_to_lower(programming_languages)) |>
+  filter(str_detect(programming_languages, "psychopy"))  |>
+  select(programming_languages)
+```
+
+**CourseKata** -- not a programming language but a learning platform
+
+```{r}
+survey |>
+  mutate(programming_languages = str_to_lower(programming_languages)) |>
+  filter(str_detect(programming_languages, "coursekata"))  |>
+  select(programming_languages)
+```
+
+# From last time: Course overview + policies
+
+## Tips for success
+
+- Prepare: Watch videos and read before class
+- Engage: Attend all lectures and labs actively
+- Ask questions: Use office hours and Ed Discussion forum
+- Start early: Don’t procrastinate on assignments
+- Stay current: Content builds progressively
+
+## Support
+
+-   Help from humans:
+    -   Attend office hours
+    -   Ask and answer questions on the discussion forum
+-   Help from AI: Use the course chatbot (in Canvas!)
+-   Reserve email for questions on personal matters and/or grades
+-   Read the course support page
+
+## Announcements
+
+-   Posted on Canvas (Announcements tool) and sent via email, be sure to check both regularly
+-   I'll assume that you've read an announcement by the next "business" day
+-   I'll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform
+
+## Diversity, inclusion, and belonging {.smaller}
+
+It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
+
+::: incremental
+-   Fill out the Getting to know you survey.
+-   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.
+-   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+:::
+
+## Access and accommodations
+
+-   The [Duke Access and Accommodation Services](https://access.duke.edu) is available to ensure that students are able to engage with their courses and related assignments.
+
+-   Accoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.
+
+-   I am committed to making all course materials accessible and I'm always learning how to do this better. If any course component is not accessible to you in any way, please don't hesitate to let me know.
+
+## Late work, waivers, lecture recordings, regrades...
+
+-   We have policies!
+-   Read about them on the [course syllabus](https://sta199-f25.github.io/course-syllabus.html) and refer back to them when you need it
+
+## Use of AI tools
+
+-   {{< fa check >}} **AI tools for code:** 
+    - Sure, but be careful/critical! Working code `!=` correct/good code.
+    - Must explicitly cite, with **at a minimum** AI tool you're using (e.g., ChatGPT) and your prompt.
+
+-   {{< fa ban >}} **AI tools for narrative:** Absolutely not!
+
+-   {{< fa check >}} **AI tools for learning:** Sure, but be careful/critical!
+
+## Academic integrity
+
+> To uphold the Duke Community Standard:
+>
+> -   I will not lie, cheat, or steal in my academic endeavors;
+>
+> -   I will conduct myself honorably in all my endeavors; and
+>
+> -   I will act if the Standard is compromised.
+
+## A note on showing up and participating {.smaller}
+
+-  This is a large "lecture" but with lots of opportunities and expectations for active learning, participation, and collaboration.
+
+-  You are expected to show up and participate in all lectures and labs, though there are a good number of each you can miss without penalty.
+
+-  It's possible to read the books and watch the videos and get an exposure to the material we cover in the course without showing up, but the experience will be much less rich and you will likely miss out on a lot of learning. That's why the assessments and workflows are designed to reward and reinforce active participation.

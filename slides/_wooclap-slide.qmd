@@ -3,7 +3,7 @@
 ![](images/wooclap-qr.png)
 :::
 ::: {.column}
-Scan the QR code or go to [wooclap.com](https://www.wooclap.com) and enter the code **STA199**. 
+Scan the QR code or go to [app.wooclap.com/sta199](https://app.wooclap.com/sta199). 
 
 Log in with your Duke NetID.
 :::

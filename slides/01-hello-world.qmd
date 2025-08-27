@@ -235,7 +235,7 @@ survey |>
 ```
 
 
-## Programming experience
+## Programming experience {.smaller}
 
 We also asked you the following multiple-choice question where you could only pick one option:
 
@@ -273,7 +273,7 @@ survey |>
   theme_minimal(base_size = 16)
 ```
 
-## Learn best {.smaller}
+## Learn best {.xsmall}
 
 We also asked you the following multiple-choice question where you could as many options as you liked:
 
@@ -489,7 +489,7 @@ All linked from the course website:
 
 -   Introduce new content and prepare for lectures by watching the videos and completing the readings
 -   Attend and actively participate in lectures (and answer questions for participation credit) and labs, office hours, team meetings
--   Practice applying statistical concepts and computing with application exercises during lecture, graded for attempting
+-   Practice applying statistical concepts and computing with application exercises during lecture
 -   Put together what you've learned to analyze real-world data
     -   Lab assignments
     -   Homework assignments
@@ -610,74 +610,6 @@ See course syllabus for how the final letter grade will be determined.
 ## Participate 💻📱
 
 {{< include _wooclap-slide.qmd >}}
-
-## Tips for success
-
-- Prepare: Watch videos and read before class
-- Engage: Attend all lectures and labs actively
-- Ask questions: Use office hours and Ed Discussion forum
-- Start early: Don’t procrastinate on assignments
-- Stay current: Content builds progressively
-
-## Support
-
--   Help from humans:
-    -   Attend office hours
-    -   Ask and answer questions on the discussion forum
--   Help from AI: Use the course chatbot (in Canvas!)
--   Reserve email for questions on personal matters and/or grades
--   Read the course support page
-
-## Announcements
-
--   Posted on Canvas (Announcements tool) and sent via email, be sure to check both regularly
--   I'll assume that you've read an announcement by the next "business" day
--   I'll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform
-
-## Diversity, inclusion, and belonging {.smaller}
-
-It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
-
-::: incremental
--   Fill out the Getting to know you survey.
--   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors, and deans are excellent resources.
--   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
-:::
-
-## Access and accommodations
-
--   The [Duke Access and Accommodation Services](https://access.duke.edu) is available to ensure that students are able to engage with their courses and related assignments.
-
--   Accoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.
-
--   I am committed to making all course materials accessible and I'm always learning how to do this better. If any course component is not accessible to you in any way, please don't hesitate to let me know.
-
-# Course policies
-
-## Late work, waivers, lecture recordings, regrades...
-
--   We have policies!
--   Read about them on the [course syllabus](https://sta199-f25.github.io/course-syllabus.html) and refer back to them when you need it
-
-## Use of AI tools
-
--   {{< fa check >}} **AI tools for code:** 
-    - Sure, but be careful/critical! Working code `!=` correct/good code.
-    - Must explicitly cite, with **at a minimum** AI tool you're using (e.g., ChatGPT) and your prompt.
-
--   {{< fa ban >}} **AI tools for narrative:** Absolutely not!
-
--   {{< fa check >}} **AI tools for learning:** Sure, but be careful/critical!
-
-## Academic integrity
-
-> To uphold the Duke Community Standard:
->
-> -   I will not lie, cheat, or steal in my academic endeavors;
->
-> -   I will conduct myself honorably in all my endeavors; and
->
-> -   I will act if the Standard is compromised.
 
 # Wrap up
 
