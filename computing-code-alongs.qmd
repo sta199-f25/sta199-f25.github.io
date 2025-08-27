@@ -4,7 +4,7 @@ title: "Code alongs"
 
 The following videos feature "code alongs" as an additional resource for getting coding practice.
 
-The files you can use to follow along with the videos can be found at <https://github.com/sta199-admin/code-alongs>.
+The files you can use to follow along with the videos can be found at <https://github.com/sta199/code-alongs>.
 
 ## Data visualization and transformation
 
