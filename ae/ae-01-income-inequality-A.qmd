@@ -1,0 +1,132 @@
+---
+title: "AE 01: Income inequality"
+author: "Mine Çetinkaya-Rundel"
+format: html
+---
+
+**Demo:** Replace "Your Name" above with your actual name.
+Then, render the document to inspect the changes.
+Once you confirm you're happy with the changes, commit your changes (with an appropriate commit message) by staging **ALL** of the changed files, and push them to GitHub.
+In your browser, navigate to your GitHub repository and confirm that the changes are reflected there.
+
+The dataset we will explore is in the data folder and it's called `income-inequality.csv`.
+It contains data on income inequality, measured by the GINI coefficient for different countries and years.
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Gini_coefficient):
+
+> A Gini coefficient of 0 reflects perfect equality, where all income or wealth values are the same.
+> In contrast, a Gini coefficient of 1 (or 100%) reflects maximal inequality among values, where a single individual has all the income while all others have none.
+
+In this dataset we have two Gini coefficients: one for income inequality before taxes and another for income inequality after taxes.
+These two values allow us to explore how much countries redistribute income.
+In addition, since we have data for multiple years, we can also explore how income inequality has changed over time.
+
+## Packages
+
+For this application exercise, we'll use the **tidyverse** package.
+
+```{r}
+#| label: load-packages
+library(tidyverse)
+```
+
+**Demo:** Run the code cell above and inspect the message printed in the Console.
+
+## Data
+
+Let's load the data.
+
+```{r}
+#| label: laod-data
+income_inequality <- read_csv("data/income-inequality.csv")
+```
+
+And take a look at the first 10 rows.
+
+```{r}
+#| label: view-data
+income_inequality
+```
+
+The variables in the dataset are:
+
+-   `country`: Country name
+-   `country_code`: Country code
+-   `year`: Year
+-   `gini_pre_tax`: Gini coefficient before taxes
+-   `gini_post_tax`: Gini coefficient after taxes
+
+**Demo:** And take a look at the structure of the data as well with the `glimpse()` function.
+
+```{r}
+#| label: glimpse-data
+glimpse(income_inequality)
+```
+
+**Demo:** Render, commit (with an appropriate commit message), and push your changes to GitHub.
+
+**Your turn:** replace the blank below with the number of rows in the `income_inequality` data frame based on the output of the chunk below.
+Then, replace it with "inline code" and render again.
+Then, commit (with an appropriate commit message) and push your changes to GitHub.
+
+The `income_inequality` data frame has `{r} nrow(income_inequality)` observations.
+Each observation represents a country in a given year.
+
+## Income inequality over time in a country
+
+Let's explore income inequality over time in a country.
+
+```{r}
+#| label: plot-single
+#| fig-width: 8
+#| fig-asp: 0.3
+income_inequality |>
+  filter(country == "Denmark") |>
+  pivot_longer(
+    cols = contains("gini"),
+    names_to = "gini_type",
+    values_to = "gini_coefficient"
+  ) |>
+  mutate(
+    gini_type = if_else(gini_type == "gini_pre_tax", "Pre-tax", "Post-tax"),
+    gini_type = fct_relevel(gini_type, "Pre-tax", "Post-tax")
+  ) |>
+  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +
+  geom_line(linewidth = 1)
+```
+
+**Your turn:** Create a similar plot for another country of your choice by by modifying the code in the code cell labeled `plot-single` above.
+Then, render, commit (with an appropriate commit message), and push your changes to GitHub.
+
+*Hint:* Open the data frame in the data viewer by clicking on its name in the Environment pane to see the list of countries.
+
+## Income inequality over time in many countries
+
+Now let's explore income inequality over time in many countries.
+
+```{r}
+#| label: plot-many
+#| fig-width: 8
+#| fig-asp: 0.8
+income_inequality |>
+  filter(country %in% c("United States", "Sweden", "South Africa")) |>
+  pivot_longer(
+    cols = contains("gini"),
+    names_to = "gini_type",
+    values_to = "gini_coefficient"
+  ) |>
+  mutate(
+    gini_type = if_else(gini_type == "gini_pre_tax", "Pre-tax", "Post-tax"),
+    gini_type = fct_relevel(gini_type, "Pre-tax", "Post-tax")
+  ) |>
+  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +
+  geom_line(linewidth = 1) +
+  facet_wrap(~country, ncol = 1)
+```
+
+**Your turn:** Change as many countries as you like except for the United States by modifying the code in the cell labeled `plot-many` above.
+You can replace country names like we did before or add or remove them.
+Then, render to see your changes.
+Discuss your findings with your neighbor -- Why did you choose those countries?
+How do the income inequalities of these countries compare?
+Finally, commit your changes (with an appropriate commit message), and push your changes to GitHub.

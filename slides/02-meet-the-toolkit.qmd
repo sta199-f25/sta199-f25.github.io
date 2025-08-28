@@ -361,6 +361,8 @@ Sit back and enjoy the show!
 
 Go to [your container](https://cmgr.oit.duke.edu/containers) and launch RStudio.
 
+![](images/02/container-link-from-course-website.png){width="310" fig-align="center"}
+
 :::
 
 ::::
@@ -620,7 +622,7 @@ with human readable messages
 
 :::
 
-## Tour: Git + GitHub {.smaller}
+## Tour: Git + GitHub {.smaller .scrollable}
 
 ::: columns
 
@@ -656,21 +658,24 @@ Go to the [course GitHub organization](https://github.com/sta199-f24) and clone 
 
 :::
 
-## Tour recap: Git + GitHub {.smaller}
+<br>
+
+<details>
+<summary>Tour recap: Git + GitHub</summary>
 
 -   Find your application repo, that will always be named using the naming convention `assignment_title-YOUR-GITHUB-NAME`, e.g., `ae-mine-cetinkaya-rundel` or `lab-1-mine-cetinkaya-rundel`.
 
 -   Click on the green "Code" button, make sure SSH is selected, copy the repo URL
 
-![](images/02/tour-git-github-1.png){fig-align="center" width="1000"}
-
-## Tour recap: Git + GitHub {.smaller}
+![](images/02/tour-git-github-1.png){fig-align="center" width="600"}
 
 -   In RStudio, File \> New Project \> From Version Control \> Git
--   Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project
--   **For one time only**, type `yes` in the pop-up dialogue
 
-![](images/02/tour-git-github-2.mov){fig-align="center" width="600"}
+-   Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project
+
+-   **If you haven't done Lab 0**, **for one time only**, type `yes` in the pop-up dialogue
+
+</details>
 
 ## What could have gone wrong?
 
@@ -690,11 +695,11 @@ Go to the [course GitHub organization](https://github.com/sta199-f24) and clone 
 
 -   Fully reproducible reports -- each time you render the analysis is ran from the beginning
 -   Code goes in cells narrative goes outside of cells
--   A visual editor for a familiar / Google docs-like editing experience
+-   Optional: A visual editor for a familiar / Google docs-like editing experience
 
 :::
 
-## Tour: Quarto {.smaller}
+## Tour: Quarto (and more Git + GitHub) {.smaller .scrollable}
 
 ::: columns
 
@@ -729,11 +734,19 @@ Go to RStudio and open the document `ae-01-income-inequality.qmd`.
 
 :::
 
-## Tour recap: Quarto
+<br>
+
+<details>
+<summary>Tour recap: Quarto</summary>
 
 ![](images/02/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell." fig-align="center"}
 
-## Tour recap: Git + GitHub {.smaller}
+</details>
+
+<br>
+
+<details>
+<summary>Tour recap: Git + GitHub</summary>
 
 Once we made changes to our Quarto document, we
 
@@ -746,6 +759,8 @@ Once we made changes to our Quarto document, we
 - pushed our changes to our application exercise repos
 
 - confirmed on GitHub that we could see our changes pushed from RStudio
+
+</details>
 
 ## How will we use Quarto?
 
