@@ -9,7 +9,7 @@ format:
     theme: slides.scss
     transition: fade
     slide-number: true
-    logo: "images/logo.png" 
+    logo: images/logo.png
     toc: false
   html: 
     code-link: true
@@ -174,3 +174,165 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 -  You are expected to show up and participate in all lectures and labs, though there are a good number of each you can miss without penalty.
 
 -  It's possible to read the books and watch the videos and get an exposure to the material we cover in the course without showing up, but the experience will be much less rich and you will likely miss out on a lot of learning. That's why the assessments and workflows are designed to reward and reinforce active participation.
+
+# Course toolkit
+
+## Course toolkit {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Course operation**
+
+-   Materials: [sta199-f25.github.io](https://sta199-f25.github.io/)
+-   Submission: Gradescope (in Canvas)
+-   Content Q&A:
+    -   Course chatbot (in Canvas)
+    -   Ed Discussion (in Canvas)
+-   Grades: Gradebook (in Canvas)
+:::
+
+::: {.column width="50%"}
+**Doing data science**
+
+-   Computing:
+    -   Language: R
+    -   IDE: RStudio
+    -   Packages: tidyverse (primarily), plus others
+    -   Authoring: Quarto
+-   Version control:
+    -   Tracking: Git
+    -   Hosting and collaboration: GitHub
+:::
+:::
+
+# Toolkit: Computing
+
+## Learning goals {.smaller}
+
+By the end of the course, you will be able to...
+
+::: incremental
+-   gain insight from data
+-   gain insight from data, **reproducibly**
+-   gain insight from data, reproducibly, **using modern programming tools and techniques**
+-   gain insight from data, reproducibly **and collaboratively**, using modern programming tools and techniques
+-   gain insight from data, reproducibly **(with literate programming and version control)** and collaboratively, using modern programming tools and techniques
+:::
+
+# Reproducible data analysis
+
+## Reproducibility checklist {.smaller}
+
+::: question
+What does it mean for a data analysis to be "reproducible"?
+:::
+
+. . .
+
+**Short-term goals:**
+
+-   Are the tables and figures reproducible from the code and data?
+-   Does the code actually do what you think it does?
+-   In addition to what was done, is it clear *why* it was done?
+
+. . .
+
+**Long-term goals:**
+
+-   Can the code be used for other data?
+-   Can you extend the code to do other things?
+
+## Toolkit for reproducibility
+
+-   Scriptability -- Coding as opposed to using a point-and-click tool $\rightarrow$ R
+-   Literate programming -- Code, narrative, output in one place, as opposed to copying and pasting code output into a document (e.g., Word or Google Doc) that contains the narrative $\rightarrow$ Quarto
+-   Version control -- Track changes with brief messages that describe those changes $\rightarrow$ Git / GitHub
+
+# R and RStudio
+
+## R and RStudio {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/02/r-logo.png){fig-alt="R logo" fig-align="center"}
+
+-   R is an open-source statistical **programming language**
+-   R is also an environment for statistical computing and graphics
+-   It's easily extensible with *packages*
+:::
+
+::: {.column .fragment width="50%"}
+![](images/02/rstudio-logo.png){fig-alt="RStudio logo"}
+
+-   RStudio is a convenient interface for R called an **IDE** (integrated development environment), e.g. *"I write R code in the RStudio IDE"*
+-   RStudio is not a requirement for programming with R, but it's very commonly used by R programmers and data scientists
+:::
+:::
+
+## R vs. RStudio
+
+[![](images/02/r_vs_rstudio.png){fig-alt="On the left: a car engine. On the right: a car dashboard. The engine is labelled R. The dashboard is labelled RStudio." fig-align="center" width="1001"}](https://moderndive.com/1-getting-started.html)
+
+::: aside
+Source: [Modern Dive](https://moderndive.com/1-getting-started.html).
+:::
+
+## R packages {.smaller}
+
+::: incremental
+-   **Packages**: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data<sup>1</sup>
+
+-   As of 27 August 2025, there are 22,578 R packages available on **CRAN** (the Comprehensive R Archive Network)<sup>2</sup>
+
+-   We're going to work with a small (but important) subset of these!
+:::
+
+::: aside
+<sup>1</sup> Wickham and Bryan, [R Packages](https://r-pkgs.org/).
+
+<sup>2</sup> [CRAN contributed packages](https://cran.r-project.org/web/packages/).
+:::
+
+## Tour: R + RStudio {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: demo
+**Option 1:**
+
+Sit back and enjoy the show!
+:::
+:::
+
+::: {.column width="50%"}
+::: appex
+**Option 2:**
+
+Go to [your container](https://cmgr.oit.duke.edu/containers) and launch RStudio.
+:::
+:::
+:::
+
+## Tour recap: R + RStudio
+
+![](images/02/tour-r-rstudio.png)
+
+# A short list<br>(for now)<br>of R essentials
+
+## Packages {.smaller}
+
+-   Installed with `install.packages()`, once per system:
+
+```{r}
+#| eval: false
+install.packages("palmerpenguins")
+```
+
+::: callout-note
+We already pre-installed many of the package you'll need for this course, so you might go the whole semester without needing to run `install.packages()`!
+:::
+
+. . .
+
+-   Loaded with `library()`, once per session:
+
