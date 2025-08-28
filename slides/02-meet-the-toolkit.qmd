@@ -62,7 +62,7 @@ language_experience <- parallel_chat_structured(chat, prompts, type = type_langu
 language_experience
 ```
 
-```
+```         
 language
 1 Python, Java, R, C/C++, JavaScript, HTML/CSS, SQL, C#, VBA, MATLAB, Rust, Assembly, Swift, Stata, Bash, Typescript, Web3 Suite (HTML, CSS, JS), Nextflow, SAS, PsycoPy, Mathematica, React, Vue, Yaml, CourseKata, Flutter, Scratch
 
@@ -103,11 +103,11 @@ survey |>
 
 ## Tips for success
 
-- Prepare: Watch videos and read before class
-- Engage: Attend all lectures and labs actively
-- Ask questions: Use office hours and Ed Discussion forum
-- Start early: Don’t procrastinate on assignments
-- Stay current: Content builds progressively
+-   Prepare: Watch videos and read before class
+-   Engage: Attend all lectures and labs actively
+-   Ask questions: Use office hours and Ed Discussion forum
+-   Start early: Don’t procrastinate on assignments
+-   Stay current: Content builds progressively
 
 ## Support
 
@@ -140,7 +140,8 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   Accoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.
 
--   I am committed to making all course materials accessible and I'm always learning how to do this better. If any course component is not accessible to you in any way, please don't hesitate to let me know.
+-   I am committed to making all course materials accessible and I'm always learning how to do this better.
+    If any course component is not accessible to you in any way, please don't hesitate to let me know.
 
 ## Late work, waivers, lecture recordings, regrades...
 
@@ -149,9 +150,10 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 ## Use of AI tools
 
--   {{< fa check >}} **AI tools for code:** 
-    - Sure, but be careful/critical! Working code `!=` correct/good code.
-    - Must explicitly cite, with **at a minimum** AI tool you're using (e.g., ChatGPT) and your prompt.
+-   {{< fa check >}} **AI tools for code:**
+
+    -   Sure, but be careful/critical! Working code `!=` correct/good code.
+    -   Must explicitly cite, with **at a minimum** AI tool you're using (e.g., ChatGPT) and your prompt.
 
 -   {{< fa ban >}} **AI tools for narrative:** Absolutely not!
 
@@ -169,17 +171,18 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 ## A note on showing up and participating {.smaller}
 
--  This is a large "lecture" but with lots of opportunities and expectations for active learning, participation, and collaboration.
+-   This is a large "lecture" but with lots of opportunities and expectations for active learning, participation, and collaboration.
 
--  You are expected to show up and participate in all lectures and labs, though there are a good number of each you can miss without penalty.
+-   You are expected to show up and participate in all lectures and labs, though there are a good number of each you can miss without penalty.
 
--  It's possible to read the books and watch the videos and get an exposure to the material we cover in the course without showing up, but the experience will be much less rich and you will likely miss out on a lot of learning. That's why the assessments and workflows are designed to reward and reinforce active participation.
+-   It's possible to read the books and watch the videos and get an exposure to the material we cover in the course without showing up, but the experience will be much less rich and you will likely miss out on a lot of learning.
+    That's why the assessments and workflows are designed to reward and reinforce active participation.
 
 # Course toolkit
 
 ## Course toolkit {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 **Course operation**
 
@@ -203,7 +206,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
     -   Tracking: Git
     -   Hosting and collaboration: GitHub
 :::
-:::
+:::::
 
 # Toolkit: Computing
 
@@ -252,7 +255,7 @@ What does it mean for a data analysis to be "reproducible"?
 
 ## R and RStudio {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](images/02/r-logo.png){fig-alt="R logo" fig-align="center"}
 
@@ -267,7 +270,7 @@ What does it mean for a data analysis to be "reproducible"?
 -   RStudio is a convenient interface for R called an **IDE** (integrated development environment), e.g. *"I write R code in the RStudio IDE"*
 -   RStudio is not a requirement for programming with R, but it's very commonly used by R programmers and data scientists
 :::
-:::
+:::::
 
 ## R vs. RStudio
 
@@ -295,23 +298,23 @@ Source: [Modern Dive](https://moderndive.com/1-getting-started.html).
 
 ## Tour: R + RStudio {.smaller}
 
-::: columns
-::: {.column width="50%"}
+::::::: columns
+:::: {.column width="50%"}
 ::: demo
 **Option 1:**
 
 Sit back and enjoy the show!
 :::
-:::
+::::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: appex
 **Option 2:**
 
 Go to [your container](https://cmgr.oit.duke.edu/containers) and launch RStudio.
 :::
-:::
-:::
+::::
+:::::::
 
 ## Tour recap: R + RStudio
 
@@ -335,4 +338,3 @@ We already pre-installed many of the package you'll need for this course, so you
 . . .
 
 -   Loaded with `library()`, once per session:
-
