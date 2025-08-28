@@ -594,8 +594,6 @@ window.Quarto = {
   <li><a href="#how-will-we-use-git-and-github-3" id="toc-how-will-we-use-git-and-github-3" class="nav-link" data-scroll-target="#how-will-we-use-git-and-github-3">How will we use Git and GitHub?</a></li>
   <li><a href="#git-and-github-tips" id="toc-git-and-github-tips" class="nav-link" data-scroll-target="#git-and-github-tips">Git and GitHub tips</a></li>
   <li><a href="#tour-git-github" id="toc-tour-git-github" class="nav-link" data-scroll-target="#tour-git-github">Tour: Git + GitHub</a></li>
-  <li><a href="#tour-recap-git-github" id="toc-tour-recap-git-github" class="nav-link" data-scroll-target="#tour-recap-git-github">Tour recap: Git + GitHub</a></li>
-  <li><a href="#tour-recap-git-github-1" id="toc-tour-recap-git-github-1" class="nav-link" data-scroll-target="#tour-recap-git-github-1">Tour recap: Git + GitHub</a></li>
   <li><a href="#what-could-have-gone-wrong" id="toc-what-could-have-gone-wrong" class="nav-link" data-scroll-target="#what-could-have-gone-wrong">What could have gone wrong?</a></li>
   </ul>
 </li>
@@ -603,9 +601,7 @@ window.Quarto = {
 <a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
   <ul class="collapse">
 <li><a href="#quarto-1" id="toc-quarto-1" class="nav-link" data-scroll-target="#quarto-1">Quarto</a></li>
-  <li><a href="#tour-quarto" id="toc-tour-quarto" class="nav-link" data-scroll-target="#tour-quarto">Tour: Quarto</a></li>
-  <li><a href="#tour-recap-quarto" id="toc-tour-recap-quarto" class="nav-link" data-scroll-target="#tour-recap-quarto">Tour recap: Quarto</a></li>
-  <li><a href="#tour-recap-git-github-2" id="toc-tour-recap-git-github-2" class="nav-link" data-scroll-target="#tour-recap-git-github-2">Tour recap: Git + GitHub</a></li>
+  <li><a href="#tour-quarto-and-more-git-github" id="toc-tour-quarto-and-more-git-github" class="nav-link" data-scroll-target="#tour-quarto-and-more-git-github">Tour: Quarto (and more Git + GitHub)</a></li>
   <li><a href="#how-will-we-use-quarto" id="toc-how-will-we-use-quarto" class="nav-link" data-scroll-target="#how-will-we-use-quarto">How will we use Quarto?</a></li>
   <li><a href="#whats-with-all-the-hexes" id="toc-whats-with-all-the-hexes" class="nav-link" data-scroll-target="#whats-with-all-the-hexes">What’s with all the hexes?</a></li>
   <li><a href="#we-have-hexes-too" id="toc-we-have-hexes-too" class="nav-link" data-scroll-target="#we-have-hexes-too">We have hexes too!</a></li>
@@ -939,6 +935,10 @@ experience
 <div class="appex">
 <p><strong>Option 2:</strong></p>
 <p>Go to <a href="https://cmgr.oit.duke.edu/containers">your container</a> and launch RStudio.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/container-link-from-course-website.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="310"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1235,7 +1235,7 @@ Attaching package: 'palmerpenguins'</code></pre>
 <li>There is a great resource for working with git and R: <a href="http://happygitwithr.com/">happygitwithr.com</a>. Some of the content in there is beyond the scope of this course, but it’s a good place to look for help.</li>
 </ul>
 </div>
-</section><section id="tour-git-github" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-git-github">Tour: Git + GitHub</h2>
+</section><section id="tour-git-github" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="tour-git-github">Tour: Git + GitHub</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="demo">
@@ -1262,27 +1262,22 @@ Note
 </div>
 </div>
 </div>
-</section><section id="tour-recap-git-github" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-recap-git-github">Tour recap: Git + GitHub</h2>
-<ul>
+<p><br></p>
+<details><summary>
+Tour recap: Git + GitHub
+</summary><ul>
 <li><p>Find your application repo, that will always be named using the naming convention <code>assignment_title-YOUR-GITHUB-NAME</code>, e.g., <code>ae-mine-cetinkaya-rundel</code> or <code>lab-1-mine-cetinkaya-rundel</code>.</p></li>
 <li><p>Click on the green “Code” button, make sure SSH is selected, copy the repo URL</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/02/tour-git-github-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
+<figure class="figure"><p><img src="images/02/tour-git-github-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
 </figure>
 </div>
-</section><section id="tour-recap-git-github-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-recap-git-github-1">Tour recap: Git + GitHub</h2>
 <ul>
-<li>In RStudio, File &gt; New Project &gt; From Version Control &gt; Git</li>
-<li>Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project</li>
-<li>
-<strong>For one time only</strong>, type <code>yes</code> in the pop-up dialogue</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><video src="images/02/tour-git-github-2.mov" class="img-fluid quarto-figure quarto-figure-center" width="600" controls=""><a href="images/02/tour-git-github-2.mov">Video</a></video></p>
-</figure>
-</div>
-</section><section id="what-could-have-gone-wrong" class="level2"><h2 class="anchored" data-anchor-id="what-could-have-gone-wrong">What could have gone wrong?</h2>
+<li><p>In RStudio, File &gt; New Project &gt; From Version Control &gt; Git</p></li>
+<li><p>Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project</p></li>
+<li><p><strong>If you haven’t done Lab 0</strong>, <strong>for one time only</strong>, type <code>yes</code> in the pop-up dialogue</p></li>
+</ul></details></section><section id="what-could-have-gone-wrong" class="level2"><h2 class="anchored" data-anchor-id="what-could-have-gone-wrong">What could have gone wrong?</h2>
 <ul>
 <li><p>Never received GitHub invite <span class="math inline">\(\rightarrow\)</span> Fill out “Getting to know you survey</p></li>
 <li><p>Never accepted GitHub invite <span class="math inline">\(\rightarrow\)</span> Look for it in your email and accept it</p></li>
@@ -1294,10 +1289,10 @@ Note
 <ul class="incremental">
 <li>Fully reproducible reports – each time you render the analysis is ran from the beginning</li>
 <li>Code goes in cells narrative goes outside of cells</li>
-<li>A visual editor for a familiar / Google docs-like editing experience</li>
+<li>Optional: A visual editor for a familiar / Google docs-like editing experience</li>
 </ul>
 </div>
-</section><section id="tour-quarto" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-quarto">Tour: Quarto</h2>
+</section><section id="tour-quarto-and-more-git-github" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="tour-quarto-and-more-git-github">Tour: Quarto (and more Git + GitHub)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="demo">
@@ -1324,20 +1319,24 @@ Note
 </div>
 </div>
 </div>
-</section><section id="tour-recap-quarto" class="level2"><h2 class="anchored" data-anchor-id="tour-recap-quarto">Tour recap: Quarto</h2>
-<div class="quarto-figure quarto-figure-center">
+<p><br></p>
+<details><summary>
+Tour recap: Quarto
+</summary><div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/02/tour-quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell."></p>
 </figure>
 </div>
-</section><section id="tour-recap-git-github-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-recap-git-github-2">Tour recap: Git + GitHub</h2>
-<p>Once we made changes to our Quarto document, we</p>
+</details><p><br></p>
+<details><summary>
+Tour recap: Git + GitHub
+</summary><p>Once we made changes to our Quarto document, we</p>
 <ul>
 <li><p>went to the Git pane in RStudio</p></li>
 <li><p>staged our changes by clicking the checkboxes next to the relevant files</p></li>
 <li><p>committed our changes with an informative commit message</p></li>
 <li><p>pushed our changes to our application exercise repos</p></li>
 <li><p>confirmed on GitHub that we could see our changes pushed from RStudio</p></li>
-</ul></section><section id="how-will-we-use-quarto" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-quarto">How will we use Quarto?</h2>
+</ul></details></section><section id="how-will-we-use-quarto" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-quarto">How will we use Quarto?</h2>
 <ul>
 <li>Every application exercise, lab, project, etc. is an Quarto document</li>
 <li>You’ll always have a template Quarto document to start with</li>

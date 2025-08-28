@@ -5,7 +5,10 @@
   },
   {
     "listing": "/ae.html",
-    "items": []
+    "items": [
+      "/ae/ae-01-income-inequality-A.html",
+      "/ae/ae-01-income-inequality.html"
+    ]
   },
   {
     "listing": "/hw.html",

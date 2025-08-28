@@ -686,11 +686,46 @@
     ]
   },
   {
+    "objectID": "ae/ae-01-income-inequality-A.html",
+    "href": "ae/ae-01-income-inequality-A.html",
+    "title": "AE 01: Income inequality",
+    "section": "",
+    "text": "Demo: Replace “Your Name” above with your actual name. Then, render the document to inspect the changes. Once you confirm you’re happy with the changes, commit your changes (with an appropriate commit message) by staging ALL of the changed files, and push them to GitHub. In your browser, navigate to your GitHub repository and confirm that the changes are reflected there.\nThe dataset we will explore is in the data folder and it’s called income-inequality.csv. It contains data on income inequality, measured by the GINI coefficient for different countries and years.\nFrom Wikipedia:\nIn this dataset we have two Gini coefficients: one for income inequality before taxes and another for income inequality after taxes. These two values allow us to explore how much countries redistribute income. In addition, since we have data for multiple years, we can also explore how income inequality has changed over time."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#packages",
+    "href": "ae/ae-01-income-inequality-A.html#packages",
+    "title": "AE 01: Income inequality",
+    "section": "Packages",
+    "text": "Packages\nFor this application exercise, we’ll use the tidyverse package.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9000\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.0.4          \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nDemo: Run the code cell above and inspect the message printed in the Console."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#data",
+    "href": "ae/ae-01-income-inequality-A.html#data",
+    "title": "AE 01: Income inequality",
+    "section": "Data",
+    "text": "Data\nLet’s load the data.\n\nincome_inequality &lt;- read_csv(\"data/income-inequality.csv\")\n\nRows: 549 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, country_code\ndbl (3): year, gini_pre_tax, gini_post_tax\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd take a look at the first 10 rows.\n\nincome_inequality\n\n# A tibble: 549 × 5\n   country   country_code  year gini_pre_tax gini_post_tax\n   &lt;chr&gt;     &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;\n 1 Australia AUS           1989        0.431         0.304\n 2 Australia AUS           1995        0.47          0.311\n 3 Australia AUS           2001        0.481         0.32 \n 4 Australia AUS           2003        0.469         0.316\n 5 Australia AUS           2004        0.467         0.316\n 6 Australia AUS           2008        0.469         0.335\n 7 Australia AUS           2010        0.47          0.333\n 8 Australia AUS           2014        0.481         0.329\n 9 Australia AUS           2016        0.467         0.326\n10 Australia AUS           2018        0.469         0.329\n# ℹ 539 more rows\n\n\nThe variables in the dataset are:\n\n\ncountry: Country name\n\ncountry_code: Country code\n\nyear: Year\n\ngini_pre_tax: Gini coefficient before taxes\n\ngini_post_tax: Gini coefficient after taxes\n\nDemo: And take a look at the structure of the data as well with the glimpse() function.\n\nglimpse(income_inequality)\n\nRows: 549\nColumns: 5\n$ country       &lt;chr&gt; \"Australia\", \"Australia\", \"Australia\", \"Australia\", \"Aus…\n$ country_code  &lt;chr&gt; \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", …\n$ year          &lt;dbl&gt; 1989, 1995, 2001, 2003, 2004, 2008, 2010, 2014, 2016, 20…\n$ gini_pre_tax  &lt;dbl&gt; 0.431, 0.470, 0.481, 0.469, 0.467, 0.469, 0.470, 0.481, …\n$ gini_post_tax &lt;dbl&gt; 0.304, 0.311, 0.320, 0.316, 0.316, 0.335, 0.333, 0.329, …\n\n\nDemo: Render, commit (with an appropriate commit message), and push your changes to GitHub.\nYour turn: replace the blank below with the number of rows in the income_inequality data frame based on the output of the chunk below. Then, replace it with “inline code” and render again. Then, commit (with an appropriate commit message) and push your changes to GitHub.\nThe income_inequality data frame has 549 observations. Each observation represents a country in a given year."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-a-country",
+    "href": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-a-country",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in a country",
+    "text": "Income inequality over time in a country\nLet’s explore income inequality over time in a country.\n\nincome_inequality |&gt;\n  filter(country == \"Denmark\") |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1)\n\n\n\n\n\n\n\nYour turn: Create a similar plot for another country of your choice by by modifying the code in the code cell labeled plot-single above. Then, render, commit (with an appropriate commit message), and push your changes to GitHub.\nHint: Open the data frame in the data viewer by clicking on its name in the Environment pane to see the list of countries."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-many-countries",
+    "href": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-many-countries",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in many countries",
+    "text": "Income inequality over time in many countries\nNow let’s explore income inequality over time in many countries.\n\nincome_inequality |&gt;\n  filter(country %in% c(\"United States\", \"Sweden\", \"South Africa\")) |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1) +\n  facet_wrap(~country, ncol = 1)\n\n\n\n\n\n\n\nYour turn: Change as many countries as you like except for the United States by modifying the code in the cell labeled plot-many above. You can replace country names like we did before or add or remove them. Then, render to see your changes. Discuss your findings with your neighbor – Why did you choose those countries? How do the income inequalities of these countries compare? Finally, commit your changes (with an appropriate commit message), and push your changes to GitHub."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n💻 lab 0\n\nLab 0 due at the end of lab session (not graded)\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n🖥️ slides 01  🗒️ notes 01\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n🖥️ slides 02  🗒️ notes 02\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\nLab 1 due at the end of the lab session\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\nSun, Sep 14\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\nLab 2 due at the end of the lab session\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\nSun, Sep 21\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\nLab 3 due at the end of the lab session\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\nSun, Sep 28\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\nLab 4 due at the end of lab session\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Oct 4\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\n\nProject milestone 1 due at the end of lab session\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\nTo be posted\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\n\nProject milestone 3 due at the end of lab session\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\n\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\nPeer evaluation 3 at 11:59 pm\n\n\n\nSun, Nov 2\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\n\nProject milestone 5 due at the end of lab session\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\nLab 6 due at the end of lab session\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Nov 22\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\nLab 7 due at the end of lab session\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\nSun, Nov 30\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\nLab 8 due at the end of lab session\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\nFri, Dec 5\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n💻 lab 0\n\nLab 0 due at the end of lab session (not graded)\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n🖥️ slides 01  🗒️ notes 01\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 01  ✅ ae 01\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\nLab 1 due at the end of the lab session\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\nSun, Sep 14\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\nLab 2 due at the end of the lab session\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\nSun, Sep 21\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\nLab 3 due at the end of the lab session\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\nSun, Sep 28\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\nLab 4 due at the end of lab session\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Oct 4\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\n\nProject milestone 1 due at the end of lab session\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\nTo be posted\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\n\nProject milestone 3 due at the end of lab session\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\n\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\nPeer evaluation 3 at 11:59 pm\n\n\n\nSun, Nov 2\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\n\nProject milestone 5 due at the end of lab session\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\nLab 6 due at the end of lab session\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Nov 22\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\nLab 7 due at the end of lab session\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\nSun, Nov 30\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\nLab 8 due at the end of lab session\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\nFri, Dec 5\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -701,7 +736,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\nTitle\nSubtitle\n\n\n\n\n\nNo matching items",
+    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Application exercises"
     ]
@@ -972,6 +1007,41 @@
       "Project",
       "Description"
     ]
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html",
+    "href": "ae/ae-01-income-inequality.html",
+    "title": "AE 01: Income inequality",
+    "section": "",
+    "text": "Demo: Replace “Your Name” above with your actual name. Then, render the document to inspect the changes. Once you confirm you’re happy with the changes, commit your changes (with an appropriate commit message) by staging ALL of the changed files, and push them to GitHub. In your browser, navigate to your GitHub repository and confirm that the changes are reflected there.\nThe dataset we will explore is in the data folder and it’s called income-inequality.csv. It contains data on income inequality, measured by the GINI coefficient for different countries and years.\nFrom Wikipedia:\nIn this dataset we have two Gini coefficients: one for income inequality before taxes and another for income inequality after taxes. These two values allow us to explore how much countries redistribute income. In addition, since we have data for multiple years, we can also explore how income inequality has changed over time."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#packages",
+    "href": "ae/ae-01-income-inequality.html#packages",
+    "title": "AE 01: Income inequality",
+    "section": "Packages",
+    "text": "Packages\nFor this application exercise, we’ll use the tidyverse package.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9000\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.0.4          \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nDemo: Run the code cell above and inspect the message printed in the Console."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#data",
+    "href": "ae/ae-01-income-inequality.html#data",
+    "title": "AE 01: Income inequality",
+    "section": "Data",
+    "text": "Data\nLet’s load the data.\n\nincome_inequality &lt;- read_csv(\"data/income-inequality.csv\")\n\nRows: 549 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, country_code\ndbl (3): year, gini_pre_tax, gini_post_tax\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd take a look at the first 10 rows.\n\nincome_inequality\n\n# A tibble: 549 × 5\n   country   country_code  year gini_pre_tax gini_post_tax\n   &lt;chr&gt;     &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;\n 1 Australia AUS           1989        0.431         0.304\n 2 Australia AUS           1995        0.47          0.311\n 3 Australia AUS           2001        0.481         0.32 \n 4 Australia AUS           2003        0.469         0.316\n 5 Australia AUS           2004        0.467         0.316\n 6 Australia AUS           2008        0.469         0.335\n 7 Australia AUS           2010        0.47          0.333\n 8 Australia AUS           2014        0.481         0.329\n 9 Australia AUS           2016        0.467         0.326\n10 Australia AUS           2018        0.469         0.329\n# ℹ 539 more rows\n\n\nThe variables in the dataset are:\n\n\ncountry: Country name\n\ncountry_code: Country code\n\nyear: Year\n\ngini_pre_tax: Gini coefficient before taxes\n\ngini_post_tax: Gini coefficient after taxes\n\nDemo: And take a look at the structure of the data as well with the glimpse() function.\n\n# add code here\n\nDemo: Render, commit (with an appropriate commit message), and push your changes to GitHub.\nYour turn: replace the blank below with the number of rows in the income_inequality data frame based on the output of the chunk below. Then, replace it with “inline code” and render again. Then, commit (with an appropriate commit message) and push your changes to GitHub.\nThe income_inequality data frame has ___ observation. Each observation represents a country in a given year."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-a-country",
+    "href": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-a-country",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in a country",
+    "text": "Income inequality over time in a country\nLet’s explore income inequality over time in a country.\n\nincome_inequality |&gt;\n  filter(country == \"United States\") |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1)\n\n\n\n\n\n\n\nYour turn: Create a similar plot for another country of your choice by by modifying the code in the code cell labeled plot-single above. Then, render, commit (with an appropriate commit message), and push your changes to GitHub.\nHint: Open the data frame in the data viewer by clicking on its name in the Environment pane to see the list of countries."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-many-countries",
+    "href": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-many-countries",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in many countries",
+    "text": "Income inequality over time in many countries\nNow let’s explore income inequality over time in many countries.\n\nincome_inequality |&gt;\n  filter(country %in% c(\"United States\", \"United Kingdom\", \"Spain\", \"Sweden\")) |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1) +\n  facet_wrap(~country, ncol = 1)\n\n\n\n\n\n\n\nYour turn: Change as many countries as you like except for the United States by modifying the code in the cell labeled plot-many above. You can replace country names like we did before or add or remove them. Then, render to see your changes. Discuss your findings with your neighbor – Why did you choose those countries? How do the income inequalities of these countries compare? Finally, commit your changes (with an appropriate commit message), and push your changes to GitHub."
   },
   {
     "objectID": "course-syllabus.html",
@@ -1509,21 +1579,7 @@
     "href": "slides/02-meet-the-toolkit.html#tour-git-github",
     "title": "Meet the toolkit",
     "section": "Tour: Git + GitHub",
-    "text": "Tour: Git + GitHub\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\n\nYou’ll need to stick to this option if you haven’t yet accepted your GitHub invite and don’t have a repo created for you.\n\n\n\n\nOption 2:\nGo to the course GitHub organization and clone ae-YOUR-GITHUB-NAME repo to your container."
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit.html#tour-recap-git-github",
-    "href": "slides/02-meet-the-toolkit.html#tour-recap-git-github",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\n\nFind your application repo, that will always be named using the naming convention assignment_title-YOUR-GITHUB-NAME, e.g., ae-mine-cetinkaya-rundel or lab-1-mine-cetinkaya-rundel.\nClick on the green “Code” button, make sure SSH is selected, copy the repo URL"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit.html#tour-recap-git-github-1",
-    "href": "slides/02-meet-the-toolkit.html#tour-recap-git-github-1",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\n\nIn RStudio, File &gt; New Project &gt; From Version Control &gt; Git\nPaste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project\n\nFor one time only, type yes in the pop-up dialogue\n\n\nVideo"
+    "text": "Tour: Git + GitHub\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\n\nYou’ll need to stick to this option if you haven’t yet accepted your GitHub invite and don’t have a repo created for you.\n\n\n\n\nOption 2:\nGo to the course GitHub organization and clone ae-YOUR-GITHUB-NAME repo to your container.\n\n\n\n\n\nTour recap: Git + GitHub\n\nFind your application repo, that will always be named using the naming convention assignment_title-YOUR-GITHUB-NAME, e.g., ae-mine-cetinkaya-rundel or lab-1-mine-cetinkaya-rundel.\nClick on the green “Code” button, make sure SSH is selected, copy the repo URL\n\n\n\n\n\n\nIn RStudio, File &gt; New Project &gt; From Version Control &gt; Git\nPaste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project\nIf you haven’t done Lab 0, for one time only, type yes in the pop-up dialogue"
   },
   {
     "objectID": "slides/02-meet-the-toolkit.html#what-could-have-gone-wrong",
@@ -1537,28 +1593,14 @@
     "href": "slides/02-meet-the-toolkit.html#quarto-1",
     "title": "Meet the toolkit",
     "section": "Quarto",
-    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in cells narrative goes outside of cells\nA visual editor for a familiar / Google docs-like editing experience"
+    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in cells narrative goes outside of cells\nOptional: A visual editor for a familiar / Google docs-like editing experience"
   },
   {
-    "objectID": "slides/02-meet-the-toolkit.html#tour-quarto",
-    "href": "slides/02-meet-the-toolkit.html#tour-quarto",
+    "objectID": "slides/02-meet-the-toolkit.html#tour-quarto-and-more-git-github",
+    "href": "slides/02-meet-the-toolkit.html#tour-quarto-and-more-git-github",
     "title": "Meet the toolkit",
-    "section": "Tour: Quarto",
-    "text": "Tour: Quarto\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd."
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit.html#tour-recap-quarto",
-    "href": "slides/02-meet-the-toolkit.html#tour-recap-quarto",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Quarto",
-    "text": "Tour recap: Quarto"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit.html#tour-recap-git-github-2",
-    "href": "slides/02-meet-the-toolkit.html#tour-recap-git-github-2",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+    "section": "Tour: Quarto (and more Git + GitHub)",
+    "text": "Tour: Quarto (and more Git + GitHub)\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/02-meet-the-toolkit.html#how-will-we-use-quarto",
@@ -1880,21 +1922,7 @@
     "href": "slides/02-meet-the-toolkit-slides.html#tour-git-github",
     "title": "Meet the toolkit",
     "section": "Tour: Git + GitHub",
-    "text": "Tour: Git + GitHub\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\nYou’ll need to stick to this option if you haven’t yet accepted your GitHub invite and don’t have a repo created for you.\n\n\n\n\n\nOption 2:\nGo to the course GitHub organization and clone ae-YOUR-GITHUB-NAME repo to your container."
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#tour-recap-git-github",
-    "href": "slides/02-meet-the-toolkit-slides.html#tour-recap-git-github",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\n\nFind your application repo, that will always be named using the naming convention assignment_title-YOUR-GITHUB-NAME, e.g., ae-mine-cetinkaya-rundel or lab-1-mine-cetinkaya-rundel.\nClick on the green “Code” button, make sure SSH is selected, copy the repo URL"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#tour-recap-git-github-1",
-    "href": "slides/02-meet-the-toolkit-slides.html#tour-recap-git-github-1",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\n\nIn RStudio, File &gt; New Project &gt; From Version Control &gt; Git\nPaste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project\n\nFor one time only, type yes in the pop-up dialogue\n\n\nVideo"
+    "text": "Tour: Git + GitHub\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\nYou’ll need to stick to this option if you haven’t yet accepted your GitHub invite and don’t have a repo created for you.\n\n\n\n\n\nOption 2:\nGo to the course GitHub organization and clone ae-YOUR-GITHUB-NAME repo to your container.\n\n\n\n\nTour recap: Git + GitHub\n\nFind your application repo, that will always be named using the naming convention assignment_title-YOUR-GITHUB-NAME, e.g., ae-mine-cetinkaya-rundel or lab-1-mine-cetinkaya-rundel.\nClick on the green “Code” button, make sure SSH is selected, copy the repo URL\n\n\n\n\n\n\nIn RStudio, File &gt; New Project &gt; From Version Control &gt; Git\nPaste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project\nIf you haven’t done Lab 0, for one time only, type yes in the pop-up dialogue"
   },
   {
     "objectID": "slides/02-meet-the-toolkit-slides.html#what-could-have-gone-wrong",
@@ -1908,28 +1936,14 @@
     "href": "slides/02-meet-the-toolkit-slides.html#quarto-1",
     "title": "Meet the toolkit",
     "section": "Quarto",
-    "text": "Quarto\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in cells narrative goes outside of cells\nA visual editor for a familiar / Google docs-like editing experience"
+    "text": "Quarto\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in cells narrative goes outside of cells\nOptional: A visual editor for a familiar / Google docs-like editing experience"
   },
   {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#tour-quarto",
-    "href": "slides/02-meet-the-toolkit-slides.html#tour-quarto",
+    "objectID": "slides/02-meet-the-toolkit-slides.html#tour-quarto-and-more-git-github",
+    "href": "slides/02-meet-the-toolkit-slides.html#tour-quarto-and-more-git-github",
     "title": "Meet the toolkit",
-    "section": "Tour: Quarto",
-    "text": "Tour: Quarto\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd."
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#tour-recap-quarto",
-    "href": "slides/02-meet-the-toolkit-slides.html#tour-recap-quarto",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Quarto",
-    "text": "Tour recap: Quarto"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#tour-recap-git-github-2",
-    "href": "slides/02-meet-the-toolkit-slides.html#tour-recap-git-github-2",
-    "title": "Meet the toolkit",
-    "section": "Tour recap: Git + GitHub",
-    "text": "Tour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+    "section": "Tour: Quarto (and more Git + GitHub)",
+    "text": "Tour: Quarto (and more Git + GitHub)\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/02-meet-the-toolkit-slides.html#how-will-we-use-quarto",

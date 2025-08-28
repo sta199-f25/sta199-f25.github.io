@@ -86,9 +86,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -554,14 +554,42 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table caption-top" data-quarto-postprocess="true">
+<table class="quarto-listing-table table">
 <thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Title</th>
-<th data-quarto-table-cell-role="th">Subtitle</th>
+<tr>
+
+<th>
+Title
+</th>
+
+<th>
+Subtitle
+</th>
+
 </tr>
 </thead>
 <tbody class="list">
+
+<tr data-index="0" data-listing-file-modified-sort="1756394378563" data-listing-reading-time-sort="4" data-listing-word-count-sort="665" data-listing-title-sort="AE 01: Income inequality" data-listing-filename-sort="ae-01-income-inequality-A.qmd">
+<td>
+<a href="./ae/ae-01-income-inequality-A.html" class="title listing-title">AE 01: Income inequality</a>
+</td>
+<td>
+<span class="listing-subtitle">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-file-modified-sort="1756394378563" data-listing-reading-time-sort="4" data-listing-word-count-sort="669" data-listing-title-sort="AE 01: Income inequality" data-listing-filename-sort="ae-01-income-inequality.qmd">
+<td>
+<a href="./ae/ae-01-income-inequality.html" class="title listing-title">AE 01: Income inequality</a>
+</td>
+<td>
+<span class="listing-subtitle">&nbsp;</span>
+</td>
+
+</tr>
+
 </tbody>
 </table>
 <div class="listing-no-matching d-none">No matching items</div>

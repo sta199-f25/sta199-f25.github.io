@@ -497,6 +497,10 @@ experience
 <div class="appex">
 <p><strong>Option 2:</strong></p>
 <p>Go to <a href="https://cmgr.oit.duke.edu/containers">your container</a> and launch RStudio.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/02/container-link-from-course-website.png" class="quarto-figure quarto-figure-center" width="310"></p>
+</figure>
+</div>
 </div>
 </div></div>
 </section><section id="tour-recap-r-rstudio" class="slide level2"><h2>Tour recap: R + RStudio</h2>
@@ -764,7 +768,7 @@ Attaching package: 'palmerpenguins'</code></pre>
 <li class="fragment">There are millions of git commands – ok, that’s an exaggeration, but there are a lot of them – and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.</li>
 <li class="fragment">We will be doing Git things and interfacing with GitHub through RStudio, but if you google for help you might come across methods for doing these things in the command line – skip that and move on to the next resource unless you feel comfortable trying it out.</li>
 <li class="fragment">There is a great resource for working with git and R: <a href="http://happygitwithr.com/">happygitwithr.com</a>. Some of the content in there is beyond the scope of this course, but it’s a good place to look for help.</li>
-</ul></section><section id="tour-git-github" class="slide level2 smaller"><h2>Tour: Git + GitHub</h2>
+</ul></section><section id="tour-git-github" class="slide level2 smaller scrollable"><h2>Tour: Git + GitHub</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="demo">
@@ -790,24 +794,22 @@ Attaching package: 'palmerpenguins'</code></pre>
 <p>Go to the <a href="https://github.com/sta199-f24">course GitHub organization</a> and clone <code>ae-YOUR-GITHUB-NAME</code> repo to <a href="https://cmgr.oit.duke.edu/containers">your container</a>.</p>
 </div>
 </div></div>
-</section><section id="tour-recap-git-github" class="slide level2 smaller"><h2>Tour recap: Git + GitHub</h2>
-<ul>
+<p><br></p>
+<details><summary>
+Tour recap: Git + GitHub
+</summary><ul>
 <li><p>Find your application repo, that will always be named using the naming convention <code>assignment_title-YOUR-GITHUB-NAME</code>, e.g., <code>ae-mine-cetinkaya-rundel</code> or <code>lab-1-mine-cetinkaya-rundel</code>.</p></li>
 <li><p>Click on the green “Code” button, make sure SSH is selected, copy the repo URL</p></li>
 </ul>
-
-<img data-src="images/02/tour-git-github-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1000"></section><section id="tour-recap-git-github-1" class="slide level2 smaller"><h2>Tour recap: Git + GitHub</h2>
-<ul>
-<li>In RStudio, File &gt; New Project &gt; From Version Control &gt; Git</li>
-<li>Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project</li>
-<li>
-<strong>For one time only</strong>, type <code>yes</code> in the pop-up dialogue</li>
-</ul>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><video data-src="images/02/tour-git-github-2.mov" class="quarto-figure quarto-figure-center" width="600" controls=""><a href="images/02/tour-git-github-2.mov">Video</a></video></p>
+<figure><p><img data-src="images/02/tour-git-github-1.png" class="quarto-figure quarto-figure-center" width="600"></p>
 </figure>
 </div>
-</section><section id="what-could-have-gone-wrong" class="slide level2"><h2>What could have gone wrong?</h2>
+<ul>
+<li><p>In RStudio, File &gt; New Project &gt; From Version Control &gt; Git</p></li>
+<li><p>Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project</p></li>
+<li><p><strong>If you haven’t done Lab 0</strong>, <strong>for one time only</strong>, type <code>yes</code> in the pop-up dialogue</p></li>
+</ul></details></section><section id="what-could-have-gone-wrong" class="slide level2"><h2>What could have gone wrong?</h2>
 <ul>
 <li><p>Never received GitHub invite <span class="math inline">\(\rightarrow\)</span> Fill out “Getting to know you survey</p></li>
 <li><p>Never accepted GitHub invite <span class="math inline">\(\rightarrow\)</span> Look for it in your email and accept it</p></li>
@@ -819,8 +821,8 @@ Attaching package: 'palmerpenguins'</code></pre>
 <ul>
 <li class="fragment">Fully reproducible reports – each time you render the analysis is ran from the beginning</li>
 <li class="fragment">Code goes in cells narrative goes outside of cells</li>
-<li class="fragment">A visual editor for a familiar / Google docs-like editing experience</li>
-</ul></section><section id="tour-quarto" class="slide level2 smaller"><h2>Tour: Quarto</h2>
+<li class="fragment">Optional: A visual editor for a familiar / Google docs-like editing experience</li>
+</ul></section><section id="tour-quarto-and-more-git-github" class="slide level2 smaller scrollable"><h2>Tour: Quarto (and more Git + GitHub)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="demo">
@@ -846,17 +848,24 @@ Attaching package: 'palmerpenguins'</code></pre>
 <p>Go to RStudio and open the document <code>ae-01-income-inequality.qmd</code>.</p>
 </div>
 </div></div>
-</section><section id="tour-recap-quarto" class="slide level2"><h2>Tour recap: Quarto</h2>
-
-<img data-src="images/02/tour-quarto.png" class="quarto-figure quarto-figure-center r-stretch" alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell."></section><section id="tour-recap-git-github-2" class="slide level2 smaller"><h2>Tour recap: Git + GitHub</h2>
-<p>Once we made changes to our Quarto document, we</p>
+<p><br></p>
+<details><summary>
+Tour recap: Quarto
+</summary><div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/02/tour-quarto.png" class="quarto-figure quarto-figure-center" alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell."></p>
+</figure>
+</div>
+</details><p><br></p>
+<details><summary>
+Tour recap: Git + GitHub
+</summary><p>Once we made changes to our Quarto document, we</p>
 <ul>
 <li><p>went to the Git pane in RStudio</p></li>
 <li><p>staged our changes by clicking the checkboxes next to the relevant files</p></li>
 <li><p>committed our changes with an informative commit message</p></li>
 <li><p>pushed our changes to our application exercise repos</p></li>
 <li><p>confirmed on GitHub that we could see our changes pushed from RStudio</p></li>
-</ul></section><section id="how-will-we-use-quarto" class="slide level2"><h2>How will we use Quarto?</h2>
+</ul></details></section><section id="how-will-we-use-quarto" class="slide level2"><h2>How will we use Quarto?</h2>
 <ul>
 <li>Every application exercise, lab, project, etc. is an Quarto document</li>
 <li>You’ll always have a template Quarto document to start with</li>
