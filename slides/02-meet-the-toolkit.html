@@ -73,9 +73,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3ba3d5147f17b5646439d5b7379703cf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-badcc228b785af3ae99339609c1b43e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3ba3d5147f17b5646439d5b7379703cf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-45e5efef9536e3a59efa0ee745ca54fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e6754615d251eb731e1a37878dd4e196.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-45e5efef9536e3a59efa0ee745ca54fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -103,12 +103,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 <meta property="og:title" content="Meet the toolkit – STA 199">
 <meta property="og:description" content="Lecture 2">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="888">
+<meta property="og:image:width" content="866">
 </head>
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -502,15 +530,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#diversity-inclusion-and-belonging" id="toc-diversity-inclusion-and-belonging" class="nav-link" data-scroll-target="#diversity-inclusion-and-belonging">Diversity, inclusion, and belonging</a></li>
   <li><a href="#access-and-accommodations" id="toc-access-and-accommodations" class="nav-link" data-scroll-target="#access-and-accommodations">Access and accommodations</a></li>
   <li><a href="#late-work-waivers-lecture-recordings-regrades" id="toc-late-work-waivers-lecture-recordings-regrades" class="nav-link" data-scroll-target="#late-work-waivers-lecture-recordings-regrades">Late work, waivers, lecture recordings, regrades…</a></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 💻📱</a></li>
   <li><a href="#use-of-ai-tools" id="toc-use-of-ai-tools" class="nav-link" data-scroll-target="#use-of-ai-tools">Use of AI tools</a></li>
   <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic integrity</a></li>
   <li><a href="#a-note-on-showing-up-and-participating" id="toc-a-note-on-showing-up-and-participating" class="nav-link" data-scroll-target="#a-note-on-showing-up-and-participating">A note on showing up and participating</a></li>
   </ul>
 </li>
+  <li>
+<a href="#course-toolkit" id="toc-course-toolkit" class="nav-link" data-scroll-target="#course-toolkit">Course toolkit</a>
+  <ul class="collapse">
+<li><a href="#course-toolkit-1" id="toc-course-toolkit-1" class="nav-link" data-scroll-target="#course-toolkit-1">Course toolkit</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#toolkit-computing" id="toc-toolkit-computing" class="nav-link" data-scroll-target="#toolkit-computing">Toolkit: Computing</a>
+  <ul class="collapse">
+<li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#reproducible-data-analysis" id="toc-reproducible-data-analysis" class="nav-link" data-scroll-target="#reproducible-data-analysis">Reproducible data analysis</a>
+  <ul class="collapse">
+<li><a href="#reproducibility-checklist" id="toc-reproducibility-checklist" class="nav-link" data-scroll-target="#reproducibility-checklist">Reproducibility checklist</a></li>
+  <li><a href="#toolkit-for-reproducibility" id="toc-toolkit-for-reproducibility" class="nav-link" data-scroll-target="#toolkit-for-reproducibility">Toolkit for reproducibility</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio">R and RStudio</a>
+  <ul class="collapse">
+<li><a href="#r-and-rstudio-1" id="toc-r-and-rstudio-1" class="nav-link" data-scroll-target="#r-and-rstudio-1">R and RStudio</a></li>
+  <li><a href="#r-vs.-rstudio" id="toc-r-vs.-rstudio" class="nav-link" data-scroll-target="#r-vs.-rstudio">R vs.&nbsp;RStudio</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
+  <li><a href="#tour-r-rstudio" id="toc-tour-r-rstudio" class="nav-link" data-scroll-target="#tour-r-rstudio">Tour: R + RStudio</a></li>
+  <li><a href="#tour-recap-r-rstudio" id="toc-tour-recap-r-rstudio" class="nav-link" data-scroll-target="#tour-recap-r-rstudio">Tour recap: R + RStudio</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#a-short-list-for-now-of-r-essentials" id="toc-a-short-list-for-now-of-r-essentials" class="nav-link" data-scroll-target="#a-short-list-for-now-of-r-essentials">A short list<br>(for now)<br>of R essentials</a>
+  <ul class="collapse">
+<li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#packages-an-analogy" id="toc-packages-an-analogy" class="nav-link" data-scroll-target="#packages-an-analogy">Packages, an analogy</a></li>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">tidyverse</a></li>
+  <li><a href="#data-frames-and-variables" id="toc-data-frames-and-variables" class="nav-link" data-scroll-target="#data-frames-and-variables">Data frames and variables</a></li>
+  <li><a href="#penguins-data-frame" id="toc-penguins-data-frame" class="nav-link" data-scroll-target="#penguins-data-frame"><code>penguins</code> data frame</a></li>
+  <li><a href="#bill_length_mm" id="toc-bill_length_mm" class="nav-link" data-scroll-target="#bill_length_mm"><code>bill_length_mm</code></a></li>
+  <li><a href="#participate-1" id="toc-participate-1" class="nav-link" data-scroll-target="#participate-1">Participate 💻📱</a></li>
+  <li><a href="#flipper_length_mm" id="toc-flipper_length_mm" class="nav-link" data-scroll-target="#flipper_length_mm"><code>flipper_length_mm</code></a></li>
+  <li><a href="#functionargument" id="toc-functionargument" class="nav-link" data-scroll-target="#functionargument"><code>function(argument)</code></a></li>
+  <li><a href="#trimmed-mean" id="toc-trimmed-mean" class="nav-link" data-scroll-target="#trimmed-mean"><code>trim</code>med <code>mean()</code></a></li>
+  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help">Help</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#toolkit-version-control-and-collaboration" id="toc-toolkit-version-control-and-collaboration" class="nav-link" data-scroll-target="#toolkit-version-control-and-collaboration">Toolkit: Version control and collaboration</a>
+  <ul class="collapse">
+<li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github">Git and GitHub</a></li>
+  <li><a href="#versioning---done-badly" id="toc-versioning---done-badly" class="nav-link" data-scroll-target="#versioning---done-badly">Versioning - done badly</a></li>
+  <li><a href="#versioning---done-better" id="toc-versioning---done-better" class="nav-link" data-scroll-target="#versioning---done-better">Versioning - done better</a></li>
+  <li><a href="#versioning---done-even-better" id="toc-versioning---done-even-better" class="nav-link" data-scroll-target="#versioning---done-even-better">Versioning - done even better</a></li>
+  <li><a href="#how-will-we-use-git-and-github" id="toc-how-will-we-use-git-and-github" class="nav-link" data-scroll-target="#how-will-we-use-git-and-github">How will we use Git and GitHub?</a></li>
+  <li><a href="#how-will-we-use-git-and-github-1" id="toc-how-will-we-use-git-and-github-1" class="nav-link" data-scroll-target="#how-will-we-use-git-and-github-1">How will we use Git and GitHub?</a></li>
+  <li><a href="#how-will-we-use-git-and-github-2" id="toc-how-will-we-use-git-and-github-2" class="nav-link" data-scroll-target="#how-will-we-use-git-and-github-2">How will we use Git and GitHub?</a></li>
+  <li><a href="#how-will-we-use-git-and-github-3" id="toc-how-will-we-use-git-and-github-3" class="nav-link" data-scroll-target="#how-will-we-use-git-and-github-3">How will we use Git and GitHub?</a></li>
+  <li><a href="#git-and-github-tips" id="toc-git-and-github-tips" class="nav-link" data-scroll-target="#git-and-github-tips">Git and GitHub tips</a></li>
+  <li><a href="#tour-git-github" id="toc-tour-git-github" class="nav-link" data-scroll-target="#tour-git-github">Tour: Git + GitHub</a></li>
+  <li><a href="#tour-recap-git-github" id="toc-tour-recap-git-github" class="nav-link" data-scroll-target="#tour-recap-git-github">Tour recap: Git + GitHub</a></li>
+  <li><a href="#tour-recap-git-github-1" id="toc-tour-recap-git-github-1" class="nav-link" data-scroll-target="#tour-recap-git-github-1">Tour recap: Git + GitHub</a></li>
+  <li><a href="#what-could-have-gone-wrong" id="toc-what-could-have-gone-wrong" class="nav-link" data-scroll-target="#what-could-have-gone-wrong">What could have gone wrong?</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
+  <ul class="collapse">
+<li><a href="#quarto-1" id="toc-quarto-1" class="nav-link" data-scroll-target="#quarto-1">Quarto</a></li>
+  <li><a href="#tour-quarto" id="toc-tour-quarto" class="nav-link" data-scroll-target="#tour-quarto">Tour: Quarto</a></li>
+  <li><a href="#tour-recap-quarto" id="toc-tour-recap-quarto" class="nav-link" data-scroll-target="#tour-recap-quarto">Tour recap: Quarto</a></li>
+  <li><a href="#tour-recap-git-github-2" id="toc-tour-recap-git-github-2" class="nav-link" data-scroll-target="#tour-recap-git-github-2">Tour recap: Git + GitHub</a></li>
+  <li><a href="#how-will-we-use-quarto" id="toc-how-will-we-use-quarto" class="nav-link" data-scroll-target="#how-will-we-use-quarto">How will we use Quarto?</a></li>
+  <li><a href="#whats-with-all-the-hexes" id="toc-whats-with-all-the-hexes" class="nav-link" data-scroll-target="#whats-with-all-the-hexes">What’s with all the hexes?</a></li>
+  <li><a href="#we-have-hexes-too" id="toc-we-have-hexes-too" class="nav-link" data-scroll-target="#we-have-hexes-too">We have hexes too!</a></li>
+  </ul>
+</li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/02-meet-the-toolkit.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02-meet-the-toolkit-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Meet the toolkit</h1>
 <p class="subtitle lead">Lecture 2</p>
 </div>
@@ -547,27 +651,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header><section id="from-last-time-correction" class="level1"><h1>From last time: Correction</h1>
 <section id="setup" class="level2"><h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<ul>
+<li>Load package we need for the analyis:</li>
+</ul>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4          ✔ readr     2.1.5     
-✔ forcats   1.0.0          ✔ stringr   1.5.1     
-✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9000
-✔ lubridate 1.9.4          ✔ tidyr     1.3.1     
-✔ purrr     1.0.4          
-── Conflicts ──────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-</div>
+<ul>
+<li>Load the data:</li>
+</ul>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/survey-anonymized.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/survey-anonymized.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="revisit-cleaning-up-programming-languages-with-ai" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="revisit-cleaning-up-programming-languages-with-ai">Revisit: Cleaning up programming languages with AI</h2>
+</section><section id="revisit-cleaning-up-programming-languages-with-ai" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="revisit-cleaning-up-programming-languages-with-ai">Revisit: Cleaning up programming languages with AI</h2>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ellmer.tidyverse.org">ellmer</a></span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ellmer.tidyverse.org">ellmer</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_openai</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -590,10 +688,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 experience
 1 Most students report a range of programming experience, from never having programmed before to being very comfortable in languages such as Python, Java, and R. Many took introductory courses (e.g., CS101, AP CS A) and are comfortable with basic programming constructs. Proficiency is generally highest in Python and Java, though some only have a little experience with languages like R, C/C++, and JavaScript. Quite a few have only used programming languages for specific classes or research projects and may not feel confident after a long break. Some students have experience with more niche or specialized tools such as MATLAB, SAS, and web technologies (HTML, CSS, JavaScript/JS frameworks). Many express a need for a refresher if not used recently. In summary, while a core group is comfortable with at least one language, especially Python or Java, many others have only basic to moderate experience and express the desire to gain more proficiency.</code></pre>
-</section><section id="can-it-be-trusted-100" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="can-it-be-trusted-100">Can it be trusted 100%?</h2>
+</section><section id="can-it-be-trusted-100" class="level2 xxxsmall"><h2 class="xxxsmall anchored" data-anchor-id="can-it-be-trusted-100">Can it be trusted 100%?</h2>
 <p><strong>Nextflow</strong> – didn’t show up before due to case mismatch (Netxflow vs.&nbsp;nextflow)</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>programming_languages <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/case.html">str_to_lower</a></span><span class="op">(</span><span class="va">programming_languages</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">programming_languages</span>, <span class="st">"nextflow"</span><span class="op">)</span><span class="op">)</span>  <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">programming_languages</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -606,7 +704,7 @@ experience
 </div>
 <p><strong>PsychoPy</strong> – misspelled by AI (PsycoPy vs.&nbsp;PsychoPy) + case mismatch</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>programming_languages <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/case.html">str_to_lower</a></span><span class="op">(</span><span class="va">programming_languages</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">programming_languages</span>, <span class="st">"psychopy"</span><span class="op">)</span><span class="op">)</span>  <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">programming_languages</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -620,7 +718,7 @@ experience
 </div>
 <p><strong>CourseKata</strong> – not a programming language but a learning platform</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">survey</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>programming_languages <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/case.html">str_to_lower</a></span><span class="op">(</span><span class="va">programming_languages</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">programming_languages</span>, <span class="st">"coursekata"</span><span class="op">)</span><span class="op">)</span>  <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">programming_languages</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -664,7 +762,7 @@ experience
 <li>I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.</li>
 </ul>
 </div>
-</section><section id="access-and-accommodations" class="level2"><h2 class="anchored" data-anchor-id="access-and-accommodations">Access and accommodations</h2>
+</section><section id="access-and-accommodations" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="access-and-accommodations">Access and accommodations</h2>
 <ul>
 <li><p>The <a href="https://access.duke.edu">Duke Access and Accommodation Services</a> is available to ensure that students are able to engage with their courses and related assignments.</p></li>
 <li><p>Accoomodations for exams must be arranged through Access and Accommodation Services and exams with accommodations must be taken in the testing center.</p></li>
@@ -673,13 +771,24 @@ experience
 <ul>
 <li>We have policies!</li>
 <li>Read about them on the <a href="https://sta199-f25.github.io/course-syllabus.html">course syllabus</a> and refer back to them when you need it</li>
-</ul></section><section id="use-of-ai-tools" class="level2"><h2 class="anchored" data-anchor-id="use-of-ai-tools">Use of AI tools</h2>
+</ul></section><section id="participate" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="participate">Participate 💻📱</h2>
+<div class="columns">
+<div class="column">
+<p><img src="images/wooclap-qr.png" class="img-fluid"></p>
+</div><div class="column">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>.</p>
+<p>Log in with your Duke NetID.</p>
+</div>
+</div>
+</section><section id="use-of-ai-tools" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="use-of-ai-tools">Use of AI tools</h2>
 <ul>
 <li>
 <p><i class="fa-solid fa-check" aria-label="check"></i> <strong>AI tools for code:</strong></p>
 <ul>
-<li>Sure, but be careful/critical! Working code <code>!=</code> correct/good code.</li>
-<li>Must explicitly cite, with <strong>at a minimum</strong> AI tool you’re using (e.g., ChatGPT) and your prompt.</li>
+<li>Check your work after you’ve done it yourself, to polish and improve, not to do it for you from scratch.</li>
+<li>Be careful/critical! Working code <code>!=</code> correct/good code.</li>
+<li>
+<strong>Must explicitly cite</strong>, with at a minimum AI tool you’re using (e.g., ChatGPT) and your prompt. More guidance to be provided with assignments.</li>
 </ul>
 </li>
 <li><p><i class="fa-solid fa-ban" aria-label="ban"></i> <strong>AI tools for narrative:</strong> Absolutely not!</p></li>
@@ -698,7 +807,553 @@ experience
 <li><p>This is a large “lecture” but with lots of opportunities and expectations for active learning, participation, and collaboration.</p></li>
 <li><p>You are expected to show up and participate in all lectures and labs, though there are a good number of each you can miss without penalty.</p></li>
 <li><p>It’s possible to read the books and watch the videos and get an exposure to the material we cover in the course without showing up, but the experience will be much less rich and you will likely miss out on a lot of learning. That’s why the assessments and workflows are designed to reward and reinforce active participation.</p></li>
+</ul></section></section><section id="course-toolkit" class="level1"><h1>Course toolkit</h1>
+<section id="course-toolkit-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="course-toolkit-1">Course toolkit</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Course operation</strong></p>
+<ul>
+<li>Materials: <a href="https://sta199-f25.github.io/">sta199-f25.github.io</a>
+</li>
+<li>Submission: Gradescope (in Canvas)</li>
+<li>Content Q&amp;A:
+<ul>
+<li>Course chatbot (in Canvas)</li>
+<li>Ed Discussion (in Canvas)</li>
 </ul>
+</li>
+<li>Grades: Gradebook (in Canvas)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Doing data science</strong></p>
+<ul>
+<li>Computing:
+<ul>
+<li>Language: R</li>
+<li>IDE: RStudio</li>
+<li>Packages: tidyverse (primarily), plus others</li>
+<li>Authoring: Quarto</li>
+</ul>
+</li>
+<li>Version control:
+<ul>
+<li>Tracking: Git</li>
+<li>Hosting and collaboration: GitHub</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section></section><section id="toolkit-computing" class="level1"><h1>Toolkit: Computing</h1>
+<section id="learning-goals" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<p>By the end of the course, you will be able to…</p>
+<div class="incremental">
+<ul class="incremental">
+<li>gain insight from data</li>
+<li>gain insight from data, <strong>reproducibly</strong>
+</li>
+<li>gain insight from data, reproducibly, <strong>using modern programming tools and techniques</strong>
+</li>
+<li>gain insight from data, reproducibly <strong>and collaboratively</strong>, using modern programming tools and techniques</li>
+<li>gain insight from data, reproducibly <strong>(with literate programming and version control)</strong> and collaboratively, using modern programming tools and techniques</li>
+</ul>
+</div>
+</section></section><section id="reproducible-data-analysis" class="level1"><h1>Reproducible data analysis</h1>
+<section id="reproducibility-checklist" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="reproducibility-checklist">Reproducibility checklist</h2>
+<div class="question">
+<p>What does it mean for a data analysis to be “reproducible”?</p>
+</div>
+<p>. . .</p>
+<p><strong>Short-term goals:</strong></p>
+<ul>
+<li>Are the tables and figures reproducible from the code and data?</li>
+<li>Does the code actually do what you think it does?</li>
+<li>In addition to what was done, is it clear <em>why</em> it was done?</li>
+</ul>
+<p>. . .</p>
+<p><strong>Long-term goals:</strong></p>
+<ul>
+<li>Can the code be used for other data?</li>
+<li>Can you extend the code to do other things?</li>
+</ul></section><section id="toolkit-for-reproducibility" class="level2"><h2 class="anchored" data-anchor-id="toolkit-for-reproducibility">Toolkit for reproducibility</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Scriptability – Coding as opposed to using a point-and-click tool <span class="math inline">\(\rightarrow\)</span> R</li>
+<li>Literate programming – Code, narrative, output in one place, as opposed to copying and pasting code output into a document (e.g., Word or Google Doc) that contains the narrative <span class="math inline">\(\rightarrow\)</span> Quarto</li>
+<li>Version control – Track changes with brief messages that describe those changes <span class="math inline">\(\rightarrow\)</span> Git / GitHub</li>
+</ul>
+</div>
+</section></section><section id="r-and-rstudio" class="level1 page-columns page-full"><h1>R and RStudio</h1>
+<section id="r-and-rstudio-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="r-and-rstudio-1">R and RStudio</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/r-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R logo"></p>
+</figure>
+</div>
+<ul>
+<li>R is an open-source statistical <strong>programming language</strong>
+</li>
+<li>R is also an environment for statistical computing and graphics</li>
+<li>It’s easily extensible with <em>packages</em>
+</li>
+</ul>
+</div>
+<div class="column fragment" style="width:50%;">
+<p><img src="images/02/rstudio-logo.png" class="img-fluid" alt="RStudio logo"></p>
+<ul>
+<li>RStudio is a convenient interface for R called an <strong>IDE</strong> (integrated development environment), e.g.&nbsp;<em>“I write R code in the RStudio IDE”</em>
+</li>
+<li>RStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists</li>
+</ul>
+</div>
+</div>
+</section><section id="r-vs.-rstudio" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="r-vs.-rstudio">R vs.&nbsp;RStudio</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="https://moderndive.com/1-getting-started.html"><img src="images/02/r_vs_rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="On the left: a car engine. On the right: a car dashboard. The engine is labelled R. The dashboard is labelled RStudio." width="1001"></a></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <a href="https://moderndive.com/1-getting-started.html">Modern Dive</a>.</p>
+</div></div></section><section id="r-packages" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="r-packages">R packages</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Packages</strong>: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data<sup>1</sup></p></li>
+<li><p>As of 27 August 2025, there are 22,578 R packages available on <strong>CRAN</strong> (the Comprehensive R Archive Network)<sup>2</sup></p></li>
+<li><p>We’re going to work with a small (but important) subset of these!</p></li>
+</ul>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><sup>1</sup> Wickham and Bryan, <a href="https://r-pkgs.org/">R Packages</a>.</p>
+<p><sup>2</sup><a href="https://cran.r-project.org/web/packages/">CRAN contributed packages</a>.</p>
+</div></div></section><section id="tour-r-rstudio" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-r-rstudio">Tour: R + RStudio</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="demo">
+<p><strong>Option 1:</strong></p>
+<p>Sit back and enjoy the show!</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="appex">
+<p><strong>Option 2:</strong></p>
+<p>Go to <a href="https://cmgr.oit.duke.edu/containers">your container</a> and launch RStudio.</p>
+</div>
+</div>
+</div>
+</section><section id="tour-recap-r-rstudio" class="level2"><h2 class="anchored" data-anchor-id="tour-recap-r-rstudio">Tour recap: R + RStudio</h2>
+<p><img src="images/02/tour-r-rstudio.png" class="img-fluid"></p>
+</section></section><section id="a-short-list-for-now-of-r-essentials" class="level1"><h1>A short list<br>(for now)<br>of R essentials</h1>
+<section id="packages" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="packages">Packages</h2>
+<ul>
+<li>Installed with <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>, once per system:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"palmerpenguins"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We already pre-installed many of the package you’ll need for this course, so you might go the whole semester without needing to run <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>!</p>
+</div>
+</div>
+<p>. . .</p>
+<ul>
+<li>Loaded with <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>, once per session:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'palmerpenguins'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:datasets':
+
+    penguins, penguins_raw</code></pre>
+</div>
+</div>
+</section><section id="packages-an-analogy" class="level2"><h2 class="anchored" data-anchor-id="packages-an-analogy">Packages, an analogy</h2>
+<p>If data analysis was cooking…</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Installing a package would be like buying ingredients from the store</p></li>
+<li><p>Loading a package would be like getting the ingredients out of your pantry and setting them on your counter top to be used</p></li>
+</ul>
+</div>
+</section><section id="tidyverse" class="level2"><h2 class="anchored" data-anchor-id="tidyverse">tidyverse</h2>
+<div class="hand">
+<p>aka the package you’ll hear about the most…</p>
+</div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><a href="https://tidyverse.org"><img src="images/02/tidyverse.png" class="img-fluid" alt="Hex logos for dplyr, ggplot2, forcats, tibble, readr, stringr, tidyr, and purrr"></a></p>
+</div>
+<div class="column fragment" style="width:60%;">
+<p><a href="https://www.tidyverse.org/">tidyverse.org</a></p>
+<ul>
+<li>The <strong>tidyverse</strong> is an opinionated collection of R packages designed for data science</li>
+<li>All packages share an underlying philosophy and a common grammar</li>
+</ul>
+</div>
+</div>
+</section><section id="data-frames-and-variables" class="level2"><h2 class="anchored" data-anchor-id="data-frames-and-variables">Data frames and variables</h2>
+<ul>
+<li>Each row of a data frame is an <strong>observation</strong>
+</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>Each column of a data frame is a <strong>variable</strong>
+</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>Columns (variables) in data frames can be accessed with <code>$</code>:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dataframe</span><span class="op">$</span><span class="va">variable_name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="penguins-data-frame" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="penguins-data-frame">
+<code>penguins</code> data frame</h2>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_length_mm
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181
+ 2 Adelie  Torgersen           39.5          17.4               186
+ 3 Adelie  Torgersen           40.3          18                 195
+ 4 Adelie  Torgersen           NA            NA                  NA
+ 5 Adelie  Torgersen           36.7          19.3               193
+ 6 Adelie  Torgersen           39.3          20.6               190
+ 7 Adelie  Torgersen           38.9          17.8               181
+ 8 Adelie  Torgersen           39.2          19.6               195
+ 9 Adelie  Torgersen           34.1          18.1               193
+10 Adelie  Torgersen           42            20.2               190
+# ℹ 334 more rows
+# ℹ 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+</section><section id="bill_length_mm" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="bill_length_mm"><code>bill_length_mm</code></h2>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span><span class="op">$</span><span class="va">bill_length_mm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] 39.1 39.5 40.3   NA 36.7 39.3 38.9 39.2 34.1 42.0 37.8 37.8 41.1
+ [14] 38.6 34.6 36.6 38.7 42.5 34.4 46.0 37.8 37.7 35.9 38.2 38.8 35.3
+ [27] 40.6 40.5 37.9 40.5 39.5 37.2 39.5 40.9 36.4 39.2 38.8 42.2 37.6
+ [40] 39.8 36.5 40.8 36.0 44.1 37.0 39.6 41.1 37.5 36.0 42.3 39.6 40.1
+ [53] 35.0 42.0 34.5 41.4 39.0 40.6 36.5 37.6 35.7 41.3 37.6 41.1 36.4
+ [66] 41.6 35.5 41.1 35.9 41.8 33.5 39.7 39.6 45.8 35.5 42.8 40.9 37.2
+ [79] 36.2 42.1 34.6 42.9 36.7 35.1 37.3 41.3 36.3 36.9 38.3 38.9 35.7
+ [92] 41.1 34.0 39.6 36.2 40.8 38.1 40.3 33.1 43.2 35.0 41.0 37.7 37.8
+[105] 37.9 39.7 38.6 38.2 38.1 43.2 38.1 45.6 39.7 42.2 39.6 42.7 38.6
+[118] 37.3 35.7 41.1 36.2 37.7 40.2 41.4 35.2 40.6 38.8 41.5 39.0 44.1
+[131] 38.5 43.1 36.8 37.5 38.1 41.1 35.6 40.2 37.0 39.7 40.2 40.6 32.1
+[144] 40.7 37.3 39.0 39.2 36.6 36.0 37.8 36.0 41.5 46.1 50.0 48.7 50.0
+[157] 47.6 46.5 45.4 46.7 43.3 46.8 40.9 49.0 45.5 48.4 45.8 49.3 42.0
+[170] 49.2 46.2 48.7 50.2 45.1 46.5 46.3 42.9 46.1 44.5 47.8 48.2 50.0
+[183] 47.3 42.8 45.1 59.6 49.1 48.4 42.6 44.4 44.0 48.7 42.7 49.6 45.3
+[196] 49.6 50.5 43.6 45.5 50.5 44.9 45.2 46.6 48.5 45.1 50.1 46.5 45.0
+[209] 43.8 45.5 43.2 50.4 45.3 46.2 45.7 54.3 45.8 49.8 46.2 49.5 43.5
+[222] 50.7 47.7 46.4 48.2 46.5 46.4 48.6 47.5 51.1 45.2 45.2 49.1 52.5
+[235] 47.4 50.0 44.9 50.8 43.4 51.3 47.5 52.1 47.5 52.2 45.5 49.5 44.5
+[248] 50.8 49.4 46.9 48.4 51.1 48.5 55.9 47.2 49.1 47.3 46.8 41.7 53.4
+[261] 43.3 48.1 50.5 49.8 43.5 51.5 46.2 55.1 44.5 48.8 47.2   NA 46.8
+[274] 50.4 45.2 49.9 46.5 50.0 51.3 45.4 52.7 45.2 46.1 51.3 46.0 51.3
+[287] 46.6 51.7 47.0 52.0 45.9 50.5 50.3 58.0 46.4 49.2 42.4 48.5 43.2
+[300] 50.6 46.7 52.0 50.5 49.5 46.4 52.8 40.9 54.2 42.5 51.0 49.7 47.5
+[313] 47.6 52.0 46.9 53.5 49.0 46.2 50.9 45.5 50.9 50.8 50.1 49.0 51.5
+[326] 49.8 48.1 51.4 45.7 50.7 42.5 52.2 45.2 49.3 50.2 45.6 51.9 46.8
+[339] 45.7 55.8 43.5 49.6 50.8 50.2</code></pre>
+</div>
+</div>
+</section><section id="participate-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="participate-1">Participate 💻📱</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="task">
+<p>Why did the error occur?</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flipper_length_mm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'flipper_length_mm' not found</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</section><section id="flipper_length_mm" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="flipper_length_mm"><code>flipper_length_mm</code></h2>
+<p>This can be fixed by using <code>penguins$flipper_length_mm</code>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span><span class="op">$</span><span class="va">flipper_length_mm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] 181 186 195  NA 193 190 181 195 193 190 186 180 182 191 198 185
+ [17] 195 197 184 194 174 180 189 185 180 187 183 187 172 180 178 178
+ [33] 188 184 195 196 190 180 181 184 182 195 186 196 185 190 182 179
+ [49] 190 191 186 188 190 200 187 191 186 193 181 194 185 195 185 192
+ [65] 184 192 195 188 190 198 190 190 196 197 190 195 191 184 187 195
+ [81] 189 196 187 193 191 194 190 189 189 190 202 205 185 186 187 208
+ [97] 190 196 178 192 192 203 183 190 193 184 199 190 181 197 198 191
+[113] 193 197 191 196 188 199 189 189 187 198 176 202 186 199 191 195
+[129] 191 210 190 197 193 199 187 190 191 200 185 193 193 187 188 190
+[145] 192 185 190 184 195 193 187 201 211 230 210 218 215 210 211 219
+[161] 209 215 214 216 214 213 210 217 210 221 209 222 218 215 213 215
+[177] 215 215 216 215 210 220 222 209 207 230 220 220 213 219 208 208
+[193] 208 225 210 216 222 217 210 225 213 215 210 220 210 225 217 220
+[209] 208 220 208 224 208 221 214 231 219 230 214 229 220 223 216 221
+[225] 221 217 216 230 209 220 215 223 212 221 212 224 212 228 218 218
+[241] 212 230 218 228 212 224 214 226 216 222 203 225 219 228 215 228
+[257] 216 215 210 219 208 209 216 229 213 230 217 230 217 222 214  NA
+[273] 215 222 212 213 192 196 193 188 197 198 178 197 195 198 193 194
+[289] 185 201 190 201 197 181 190 195 181 191 187 193 195 197 200 200
+[305] 191 205 187 201 187 203 195 199 195 210 192 205 210 187 196 196
+[321] 196 201 190 212 187 198 199 201 193 203 187 197 191 203 202 194
+[337] 206 189 195 207 202 193 210 198</code></pre>
+</div>
+</div>
+</section><section id="functionargument" class="level2"><h2 class="anchored" data-anchor-id="functionargument"><code>function(argument)</code></h2>
+<p>Functions are (most often) verbs, followed by what they will be applied to in parentheses:</p>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">do_this</span><span class="op">(</span><span class="va">to_this</span><span class="op">)</span></span>
+<span><span class="fu">do_that</span><span class="op">(</span><span class="va">to_this</span>, <span class="va">to_that</span>, <span class="va">with_those</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="trimmed-mean" class="level2"><h2 class="anchored" data-anchor-id="trimmed-mean">
+<code>trim</code>med <code>mean()</code>
+</h2>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]   1   2   3   4   5   6   7   8   9 100</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14.5</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span>, trim <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14.5</code></pre>
+</div>
+</div>
+</section><section id="help" class="level2"><h2 class="anchored" data-anchor-id="help">Help</h2>
+<p>Object documentation can be accessed with <code>?</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="va">mean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><video src="images/02/mean-docs.mov" class="img-fluid" alt="Documentation for mean function in R." controls=""><a href="images/02/mean-docs.mov">Video</a></video></p>
+</div>
+</div>
+</section></section><section id="toolkit-version-control-and-collaboration" class="level1"><h1>Toolkit: Version control and collaboration</h1>
+<section id="git-and-github" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="git-and-github">Git and GitHub</h2>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/git-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Git logo" width="150"></p>
+</figure>
+</div>
+<ul>
+<li>Git is a version control system – like “Track Changes” features from Microsoft Word, on steroids</li>
+<li>It’s not the only version control system, but it’s a very popular one</li>
+</ul>
+</div>
+<div class="column fragment" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/github-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GitHub logo" width="150"></p>
+</figure>
+</div>
+<ul>
+<li><p>GitHub is the home for your Git-based projects on the internet – like DropBox but much, much better</p></li>
+<li><p>We will use GitHub as a platform for web hosting and collaboration (and as our course management system!)</p></li>
+</ul>
+</div>
+</div>
+</section><section id="versioning---done-badly" class="level2"><h2 class="anchored" data-anchor-id="versioning---done-badly">Versioning - done badly</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/phd_comics_vc.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="versioning---done-better" class="level2"><h2 class="anchored" data-anchor-id="versioning---done-better">Versioning - done better</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/lego-steps.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="versioning---done-even-better" class="level2"><h2 class="anchored" data-anchor-id="versioning---done-even-better">Versioning - done even better</h2>
+<div class="hand">
+<p>with human readable messages</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/lego-steps-commit-messages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="how-will-we-use-git-and-github" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github">How will we use Git and GitHub?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/whole-game-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="how-will-we-use-git-and-github-1" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github-1">How will we use Git and GitHub?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/whole-game-02.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="how-will-we-use-git-and-github-2" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github-2">How will we use Git and GitHub?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/whole-game-03.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="how-will-we-use-git-and-github-3" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github-3">How will we use Git and GitHub?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/whole-game-04.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="git-and-github-tips" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="git-and-github-tips">Git and GitHub tips</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>There are millions of git commands – ok, that’s an exaggeration, but there are a lot of them – and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.</li>
+<li>We will be doing Git things and interfacing with GitHub through RStudio, but if you google for help you might come across methods for doing these things in the command line – skip that and move on to the next resource unless you feel comfortable trying it out.</li>
+<li>There is a great resource for working with git and R: <a href="http://happygitwithr.com/">happygitwithr.com</a>. Some of the content in there is beyond the scope of this course, but it’s a good place to look for help.</li>
+</ul>
+</div>
+</section><section id="tour-git-github" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-git-github">Tour: Git + GitHub</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="demo">
+<p><strong>Option 1:</strong></p>
+<p>Sit back and enjoy the show!</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll need to stick to this option if you haven’t yet accepted your GitHub invite and don’t have a repo created for you.</p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="appex">
+<p><strong>Option 2:</strong></p>
+<p>Go to the <a href="https://github.com/sta199-f24">course GitHub organization</a> and clone <code>ae-YOUR-GITHUB-NAME</code> repo to <a href="https://cmgr.oit.duke.edu/containers">your container</a>.</p>
+</div>
+</div>
+</div>
+</section><section id="tour-recap-git-github" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-recap-git-github">Tour recap: Git + GitHub</h2>
+<ul>
+<li><p>Find your application repo, that will always be named using the naming convention <code>assignment_title-YOUR-GITHUB-NAME</code>, e.g., <code>ae-mine-cetinkaya-rundel</code> or <code>lab-1-mine-cetinkaya-rundel</code>.</p></li>
+<li><p>Click on the green “Code” button, make sure SSH is selected, copy the repo URL</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/tour-git-github-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
+</figure>
+</div>
+</section><section id="tour-recap-git-github-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-recap-git-github-1">Tour recap: Git + GitHub</h2>
+<ul>
+<li>In RStudio, File &gt; New Project &gt; From Version Control &gt; Git</li>
+<li>Paste repo URL copied in previous step, then click tab to auto-fill the project name, then click Create Project</li>
+<li>
+<strong>For one time only</strong>, type <code>yes</code> in the pop-up dialogue</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><video src="images/02/tour-git-github-2.mov" class="img-fluid quarto-figure quarto-figure-center" width="600" controls=""><a href="images/02/tour-git-github-2.mov">Video</a></video></p>
+</figure>
+</div>
+</section><section id="what-could-have-gone-wrong" class="level2"><h2 class="anchored" data-anchor-id="what-could-have-gone-wrong">What could have gone wrong?</h2>
+<ul>
+<li><p>Never received GitHub invite <span class="math inline">\(\rightarrow\)</span> Fill out “Getting to know you survey</p></li>
+<li><p>Never accepted GitHub invite <span class="math inline">\(\rightarrow\)</span> Look for it in your email and accept it</p></li>
+<li><p>Cloning repo fails <span class="math inline">\(\rightarrow\)</span> Review/redo Lab 0 steps for setting up SSH key</p></li>
+<li><p>Still no luck? Stay after class today or come by my office hours tomorrow or post on Ed for help</p></li>
+</ul></section></section><section id="quarto" class="level1"><h1>Quarto</h1>
+<section id="quarto-1" class="level2"><h2 class="anchored" data-anchor-id="quarto-1">Quarto</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Fully reproducible reports – each time you render the analysis is ran from the beginning</li>
+<li>Code goes in cells narrative goes outside of cells</li>
+<li>A visual editor for a familiar / Google docs-like editing experience</li>
+</ul>
+</div>
+</section><section id="tour-quarto" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-quarto">Tour: Quarto</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="demo">
+<p><strong>Option 1:</strong></p>
+<p>Sit back and enjoy the show!</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.</p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="appex">
+<p><strong>Option 2:</strong></p>
+<p>Go to RStudio and open the document <code>ae-01-income-inequality.qmd</code>.</p>
+</div>
+</div>
+</div>
+</section><section id="tour-recap-quarto" class="level2"><h2 class="anchored" data-anchor-id="tour-recap-quarto">Tour recap: Quarto</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/tour-quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell."></p>
+</figure>
+</div>
+</section><section id="tour-recap-git-github-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-recap-git-github-2">Tour recap: Git + GitHub</h2>
+<p>Once we made changes to our Quarto document, we</p>
+<ul>
+<li><p>went to the Git pane in RStudio</p></li>
+<li><p>staged our changes by clicking the checkboxes next to the relevant files</p></li>
+<li><p>committed our changes with an informative commit message</p></li>
+<li><p>pushed our changes to our application exercise repos</p></li>
+<li><p>confirmed on GitHub that we could see our changes pushed from RStudio</p></li>
+</ul></section><section id="how-will-we-use-quarto" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-quarto">How will we use Quarto?</h2>
+<ul>
+<li>Every application exercise, lab, project, etc. is an Quarto document</li>
+<li>You’ll always have a template Quarto document to start with</li>
+<li>The amount of scaffolding in the template will decrease over the semester</li>
+</ul></section><section id="whats-with-all-the-hexes" class="level2"><h2 class="anchored" data-anchor-id="whats-with-all-the-hexes">What’s with all the hexes?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/02/hexes.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Hex logos for many packages"></p>
+</figure>
+</div>
+</section><section id="we-have-hexes-too" class="level2"><h2 class="anchored" data-anchor-id="we-have-hexes-too">We have hexes too!</h2>
+<div class="task">
+<p>Feel free to grab one before you leave!</p>
+</div>
+<div class="center-align">
+<p><img src="images/logo.png" class="img-fluid" alt="STA 199 hex logo"></p>
+</div>
 
 
 </section></section></main><!-- /main --><script>
