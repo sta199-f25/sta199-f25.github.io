@@ -1,0 +1,9 @@
+---
+title: Eduardo Vasquez
+categories:
+  - Lab leader
+description: "M 10:05 AM - 11:20 AM (Sec 3)"
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)"
+image: headshots/eduardo.png
+image-alt: Headshot of TA
+---

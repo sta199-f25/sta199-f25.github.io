@@ -1,0 +1,3 @@
+![](images/wooclap-qr.png){width="200" fig-align="center"}
+
+Scan the QR code or go to [app.wooclap.com/sta199](https://app.wooclap.com/sta199). Log in with your Duke NetID.

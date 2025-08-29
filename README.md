@@ -24,17 +24,13 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 ## Things to come back to
 
--   \_quarto.yml: see commented lines
+-   \_quarto.yml: see commented lines (just project milestones left)
 
--   course-syllabus.qmd: ed discussion link, revisit: teams, revisit: exams (language of exams vs final), update grading percentages, revisit: teams, revisit: exams, revisit: online resources (include example citation), AI tools for code (include example citation), revisit: "Any violations in academic honesty" and more clearly outline repercussions, syllabus bounty
-
-    -   question about AEs: i think it's simpler if we drop 30% of AEs for all students (instead of just those with 70%+)
+-   course-syllabus.qmd: revisit: teams, revisit: exams (language of exams vs final), revisit: teams, revisit: online resources (include example citation), AI tools for code (include example citation), revisit: "Any violations in academic honesty" and more clearly outline repercussions
 
 -   course-support.qmd: peer tutoring section (removed for now, check again), ai chatbot (removed for now; maybe link DukeGPT?)
 
--   course-team.qmd: Teaching assistants section, Mine OH times and locations, also include Mary OH times and location?
-
--   course-links.qmd: ed discussion, gradescope, gradebook
+-   course-team.qmd: Teaching assistants section (update pics)
 
 -   computing-troubleshooting:
 
@@ -50,7 +46,7 @@ Push changes to the repo to trigger the GitHub Action that publishes the website
 
 ## Things edited for axe devtools:
 
--   \_quarto.yml: replaced {{< fa heart >}}\]{style="color: `#FFBE98`;"}. with
+-   \_quarto.yml: (UNDID THIS) replaced {{< fa heart >}}\]{style="color: `#FFBE98`;"}. with
 
     <p>This page is built with [♥]{style="color: #FFBE98;"} and <a href="https://quarto.org/">Quarto</a>.</p>
 

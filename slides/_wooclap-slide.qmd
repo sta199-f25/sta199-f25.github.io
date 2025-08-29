@@ -1,0 +1,10 @@
+::: {.columns}
+::: {.column}
+![](images/wooclap-qr.png)
+:::
+::: {.column}
+Scan the QR code or go to [app.wooclap.com/sta199](https://app.wooclap.com/sta199). 
+
+Log in with your Duke NetID.
+:::
+:::

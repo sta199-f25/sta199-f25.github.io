@@ -1,0 +1,9 @@
+---
+title: Sarah Wu
+categories:
+  - Lab leader
+description: "M 11:45 AM - 1:00 PM (Sec 6)"
+subtitle: "[🔗](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)"
+image: headshots/sarah.png
+image-alt: Headshot of TA
+---

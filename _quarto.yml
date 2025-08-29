@@ -11,11 +11,6 @@ website:
   repo-actions: [edit, issue]
 
   open-graph: true
-  # twitter-card:
-  #   creator: "@minebocek"
-  #   image: "img/twitter-card.png"
-
-  # draft-mode: unlinked
 
   sidebar:
     background: "#005871"
@@ -37,22 +32,22 @@ website:
             href: https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing
           - icon: people-fill
             text: Help from humans (Ed Discussion)
-            # href: https://edstem.org/us/courses/80616/discussion/
-          # - icon: robot
-          #   text: Help from AI (Chatbot)
-          #   href: https://canvas.duke.edu/courses/39994/external_tools/5887
+            href: https://edstem.org/us/courses/80616/discussion
+          - icon: robot
+            text: Help from AI (Chatbot)
+            href: https://canvas.duke.edu/courses/61539/modules/items/647028
       - icon: file-check-fill
         text: "Canvas"
         menu:
           - icon: megaphone-fill
             text: Announcements
-            # url: https://canvas.duke.edu/courses/39994/announcements
+            url: https://canvas.duke.edu/courses/61539/announcements
           - icon: file-arrow-up-fill
             text: Gradescope
-            # url: https://canvas.duke.edu/courses/39994/external_tools/181
+            url: https://canvas.duke.edu/courses/61539/external_tools/181
           - icon: alphabet-uppercase
             text: Gradebook
-            # url: https://canvas.duke.edu/courses/39994/gradebook
+            url: https://canvas.duke.edu/courses/61539/gradebook
 
     style: docked
     search: true
@@ -101,24 +96,25 @@ website:
         #   - href: project/tips-resources.qmd
         #     text: Tips + resources
       - lab.qmd
+      - hw.qmd
       - ae.qmd
       - exam-review.qmd
             
   page-footer:
     background: "#005871"
     left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox"
-    right: |
-      <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" title="heart" aria-hidden="true" ></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
+    right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
     
 format: 
   html:
     mainfont: Atkinson Hyperlegible
     highlight-style: a11y-light
+    linkcolor: "#005871"
 
 theme:
   light: [cosmo, style/sta199.scss]
   dark: [cosmo, style/sta199.scss, style/dark.scss]
-linkcolor: "#005871"
+
 toc: true
 code-copy: hover
 code-link: true

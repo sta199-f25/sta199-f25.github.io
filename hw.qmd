@@ -1,0 +1,16 @@
+---
+title: "Homeworks"
+listing:
+  contents: hw
+  sort: title
+  sort-ui: false
+  filter-ui: false
+  type: table
+  fields: [title, subtitle, description]
+  field-display-names:
+    title: "No."
+    subtitle: "Title"
+    description: "Due date"
+---
+
+More homeworks to be added as the semester progresses.
