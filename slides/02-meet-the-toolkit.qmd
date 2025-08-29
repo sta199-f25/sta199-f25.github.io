@@ -650,7 +650,7 @@ You'll need to stick to this option if you haven't yet accepted your GitHub invi
 
 **Option 2:**
 
-Go to the [course GitHub organization](https://github.com/sta199-f24) and clone `ae-YOUR-GITHUB-NAME` repo to [your container](https://cmgr.oit.duke.edu/containers).
+Go to the [course GitHub organization](https://github.com/sta199-f25) and clone `ae-YOUR-GITHUB-NAME` repo to [your container](https://cmgr.oit.duke.edu/containers).
 
 :::
 
