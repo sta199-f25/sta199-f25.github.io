@@ -59,14 +59,16 @@ Let's first briefly review the components of the computational toolkit for the c
     Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
     :::
 
+
 ## An analogy to English
+
 
 While most of the above tools might be new to you, they have many similarities with tools you have probably seen before.
 
 Suppose you wanted to write an essay for a literature class.
 You would need to pick a language (e.g. English) and choose an interface to write your document with (such as Microsoft word with a .docx word doc).
-You also might want to use track changes to see edits you make and use a platform such as Google Drive to collaborate.
-\
+You also might want to use track changes to see edits you make and use a platform such as Google Drive to collaborate.\
+
 \
 While the computational toolkit is different than the one for a literature class, we can find many similarities between the tools, as is shown in the figure below.
 
