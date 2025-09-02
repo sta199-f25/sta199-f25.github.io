@@ -97,10 +97,10 @@ ggplot(bechdel, aes(x = clean_test))
 
 Note that the result is exactly the same.
 
--   The `geom_xx` function specifies the type of plot we want to use to represent the data. In the code below, we use `geom_point` which creates a plot where each observation is represented by a point.
+-   The `geom_xx` function specifies the type of plot we want to use to represent the data. In the code below, we use `geom_bar()` which creates a bar plot where the height of each bar shows the number of movies in each category.
 
 ```{r}
-#| label: plot-point
+#| label: plot-bar
 ggplot(bechdel, aes(x = clean_test)) +
   geom_bar()
 ```
@@ -128,7 +128,7 @@ Let's take a look at return-on-investment (ROI) for movies that do and do not pa
 Create side-by-side box plots of `roi` by `clean_test` where the boxes are colored by `binary`.
 
 ```{r}
-#| label: roi-zoom
+#| label: roi-box
 # add code here
 ```
 
@@ -146,7 +146,7 @@ bechdel |>
 Expand on your plot from the previous step to zoom in on movies with `roi < ___` to get a better view of how the medians across the categories compare.
 
 ```{r}
-#| label: roi-test-zoom
+#| label: roi-box-zoom
 # add code here
 ```
 
