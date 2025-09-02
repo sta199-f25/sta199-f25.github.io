@@ -82,6 +82,8 @@ Once we made changes to our Quarto document, we
 
 - committed our changes with an informative commit message
 
+- pulled from GitHub to make sure we had the latest version of our repo
+
 - pushed our changes to our application exercise repos
 
 - confirmed on GitHub that we could see our changes pushed from RStudio
