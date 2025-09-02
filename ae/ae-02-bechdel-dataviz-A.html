@@ -648,14 +648,14 @@ $ clean_test  &lt;chr&gt; "notalk", "ok", "notalk", "notalk", "men", "men", "not
 </div>
 <p>Note that the result is exactly the same.</p>
 <ul>
-<li>The <code>geom_xx</code> function specifies the type of plot we want to use to represent the data. In the code below, we use <code>geom_point</code> which creates a plot where each observation is represented by a point.</li>
+<li>The <code>geom_xx</code> function specifies the type of plot we want to use to represent the data. In the code below, we use <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> which creates a bar plot where the height of each bar shows the number of movies in each category.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">bechdel</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">clean_test</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="ae-02-bechdel-dataviz-A_files/figure-html/plot-point-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ae-02-bechdel-dataviz-A_files/figure-html/plot-bar-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -686,7 +686,7 @@ $ clean_test  &lt;chr&gt; "notalk", "ok", "notalk", "notalk", "men", "men", "not
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="ae-02-bechdel-dataviz-A_files/figure-html/roi-zoom-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ae-02-bechdel-dataviz-A_files/figure-html/roi-box-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -723,7 +723,7 @@ $ clean_test  &lt;chr&gt; "notalk", "ok", "notalk", "notalk", "men", "men", "not
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="ae-02-bechdel-dataviz-A_files/figure-html/roi-test-zoom-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ae-02-bechdel-dataviz-A_files/figure-html/roi-box-zoom-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
