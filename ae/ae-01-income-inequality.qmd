@@ -1,7 +1,5 @@
 ---
 title: "AE 01: Income inequality"
-author: "Your Name"
-format: html
 ---
 
 **Demo:** Replace "Your Name" above with your actual name.

@@ -4,7 +4,7 @@ subtitle: "Lecture 3"
 date: "2025-09-02"
 format: 
   revealjs: 
-    output-file: 02-meet-the-toolkit-slides.html
+    output-file: 03-grammar-of-data-visualization-slides.html
     footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
     theme: slides.scss
     transition: fade
@@ -65,7 +65,7 @@ Go to RStudio and open the document `ae-01-income-inequality.qmd`.
 <details>
 <summary>Tour recap: Quarto</summary>
 
-![](images/02/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell." fig-align="center"}
+![](images/03/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell." fig-align="center"}
 
 </details>
 
@@ -110,13 +110,27 @@ Grab one before you leave!
 
 # Data visualization
 
-## UN Votes {.smaller}
+## Participate 📱💻 {.smaller}
 
-::: question
-Remember this visualization from the code along video?
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: wooclap
+Remember this visualization from the code along video -- what was it about?
 :::
 
-![](images/02/un-data-viz.png)
+![](images/03/un-data-viz.png)
+
+:::
+
+::: {.column width="30%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
 
 ## Let' see... {.center}
 
@@ -147,26 +161,36 @@ us_uk_tr_votes <- un_votes |>
   summarize(percent_yes = mean(vote == "yes"), .groups = "drop")
 ```
 
-. . .
-
 ::: callout-note
 Let's leave these details aside for a bit, we'll revisit this code at a later point in the semester.
 For now, let's agree that we need to do some "data wrangling" to get the data into the right format for the plot we want to create.
 Just note that we called the data frame we'll visualize `us_uk_tr_votes`.
 :::
 
+## View the data {.smaller}
+
+```{r}
+#| label: un-data-view
+us_uk_tr_votes
+```
+
 ## Visualize the data
 
 ```{r}
+#| label: un-code-placeholder
+# code to visualize the data
+```
+
+```{r}
 #| label: un-data-viz
-#| output-location: slide
 #| warning: false
 #| fig-width: 9
-#| fig-height: 5
+#| fig-height: 4
 #| fig-align: center
+#| echo: false
 ggplot(
   us_uk_tr_votes, 
-  mapping = aes(x = year, y = percent_yes, color = country)
+  aes(x = year, y = percent_yes, color = country)
   ) +
   geom_point(alpha = 0.5) +
   geom_smooth(se = FALSE) +
@@ -183,6 +207,7 @@ ggplot(
 ## Step 1. Prepare a canvas for plotting
 
 ```{r}
+#| label: step-1
 #| fig-width: 9
 #| fig-height: 3
 ggplot(data = us_uk_tr_votes)
@@ -193,6 +218,7 @@ ggplot(data = us_uk_tr_votes)
 *Map* `year` to the `x` *aesthetic*
 
 ```{r}
+#| label: step-2
 #| fig-width: 9
 #| fig-height: 3
 ggplot(data = us_uk_tr_votes, mapping = aes(x = year))
@@ -203,6 +229,7 @@ ggplot(data = us_uk_tr_votes, mapping = aes(x = year))
 *Map* `percent_yes` to the `y` *aesthetic*
 
 ```{r}
+#| label: step-3
 #| fig-width: 9
 #| fig-height: 3
 ggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
@@ -222,13 +249,13 @@ It's common practice in R to omit the names of first two arguments of a function
 
 . . .
 
--   Instead of
+-   Instead of:
 
 ``` r
 ggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
 ```
 
--   Use
+-   We usually write:
 
 ``` r
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))
@@ -239,9 +266,11 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))
 with a `geom`
 
 ```{r}
+#| label: step-4
 #| fig-width: 9
 #| fig-height: 3
-ggplot(us_uk_tr_votes, mapping = aes(x = year, y = percent_yes)) +
+#| code-line-numbers: "|2"
+ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes)) +
   geom_point()
 ```
 
@@ -250,6 +279,7 @@ ggplot(us_uk_tr_votes, mapping = aes(x = year, y = percent_yes)) +
 *Map* `country` to the `color` *aesthetic*
 
 ```{r}
+#| label: step-5
 #| fig-width: 9
 #| fig-height: 3
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
@@ -261,8 +291,10 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 with another `geom`
 
 ```{r}
+#| label: step-6
 #| fig-width: 9
 #| fig-height: 3
+#| code-line-numbers: "|3"
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth()
@@ -284,12 +316,14 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 
 -   Going forward we'll suppress this warning to save some space.
 
-## Step 7. Split plot into facets {.smaller}
+## Step 7. Split plot into facets
 
 ```{r}
+#| label: step-7
 #| fig-width: 9
 #| fig-height: 3
 #| warning: false
+#| code-line-numbers: "|4"
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
@@ -299,9 +333,11 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 ## Step 8. Use a different color scale
 
 ```{r}
+#| label: step-8
 #| fig-width: 9
 #| fig-height: 3
 #| warning: false
+#| code-line-numbers: "|5"
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
@@ -309,12 +345,14 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   scale_color_colorblind()
 ```
 
-## Step 10. Apply a different theme
+## Step 9. Apply a different theme
 
 ```{r}
+#| label: step-9
 #| fig-width: 9
 #| fig-height: 3
 #| warning: false
+#| code-line-numbers: "|6"
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
@@ -323,12 +361,14 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   theme_minimal()
 ```
 
-## Step 11. Add labels
+## Step 10. Add labels
 
 ```{r}
+#| label: step-10
 #| fig-width: 9
 #| fig-height: 3
 #| warning: false
+#| code-line-numbers: "|7"
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
@@ -338,14 +378,38 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   labs(x = "Year", y = "% yes", color = "Country")
 ```
 
-## Step 12. Set transparency of points
+## Participate 📱💻 {.smaller}
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: wooclap
+Which of the following modifications will change the transparency of the points in the plot?
+:::
+
+![](images/03/un-data-viz.png)
+
+:::
+
+::: {.column width="30%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
+
+## Step 11. Set transparency of points
 
 with `alpha`
 
 ```{r}
+#| label: step-11
 #| fig-width: 9
 #| fig-height: 3
 #| warning: false
+#| code-line-numbers: "|2"
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point(alpha = 0.5) +
   geom_smooth() +
@@ -355,14 +419,16 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   labs(x = "Year", y = "% yes", color = "Country")
 ```
 
-## Step 13. Hide standard errors of curves
+## Step 12. Hide standard errors of curves
 
 with `se = FALSE`
 
 ```{r}
+#| label: step-12
 #| fig-width: 9
 #| fig-height: 3
 #| warning: false
+#| code-line-numbers: "|3"
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point(alpha = 0.5) +
   geom_smooth(se = FALSE) +
@@ -409,6 +475,7 @@ We built a plot layer-by-layer
 -   The formula is (almost) always as follows:
 
 ```{r}
+#| label: ggplot-template
 #| eval: false
 ggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +
   geom_XXX()

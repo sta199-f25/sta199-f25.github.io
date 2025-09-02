@@ -1,8 +1,12 @@
 ---
 title: "AE 01: Income inequality"
-author: "Mine Çetinkaya-Rundel"
-format: html
+subtitle: "Suggested answers"
 ---
+
+::: callout-important
+These are suggested answers.
+This document should be used as a reference only; it's not designed to be an exhaustive key.
+:::
 
 **Demo:** Replace "Your Name" above with your actual name.
 Then, render the document to inspect the changes.
