@@ -617,7 +617,7 @@
     "href": "slides/03-grammar-of-data-visualization-slides.html#tour-quarto-and-more-git-github",
     "title": "Grammar of data visualization",
     "section": "Tour: Quarto (and more Git + GitHub)",
-    "text": "Tour: Quarto (and more Git + GitHub)\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+    "text": "Tour: Quarto (and more Git + GitHub)\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npulled from GitHub to make sure we had the latest version of our repo\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/03-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
@@ -841,7 +841,7 @@
     "href": "slides/03-grammar-of-data-visualization.html#tour-quarto-and-more-git-github",
     "title": "Grammar of data visualization",
     "section": "Tour: Quarto (and more Git + GitHub)",
-    "text": "Tour: Quarto (and more Git + GitHub)\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+    "text": "Tour: Quarto (and more Git + GitHub)\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npulled from GitHub to make sure we had the latest version of our repo\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
   },
   {
     "objectID": "slides/03-grammar-of-data-visualization.html#how-will-we-use-quarto",
