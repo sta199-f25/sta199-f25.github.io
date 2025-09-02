@@ -599,449 +599,466 @@
     "text": "This week’s tasks\n\nComplete Lab 0\n\nComputational setup\nGetting to know you survey\n\n\nAccept your GitHub organization invitation\nRead the syllabus\nComplete readings and videos for next class"
   },
   {
-    "objectID": "computing-code-alongs.html",
-    "href": "computing-code-alongs.html",
-    "title": "Code alongs",
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#announcements",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#announcements",
+    "title": "Grammar of data visualization",
+    "section": "Announcements",
+    "text": "Announcements\n\nOffice hours are posted on the course website!\n\nIf you can follow along with today’s application exercise steps, great! If something doesn’t work as expected, ask me/TA during the exercise. We’ll either:\n\nhelp you on the spot and get you unstuck or\nidentify that you’re missing an earlier step, ask you to follow along with your neighbor, and visit office hours before Thursday for one-on-one help"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#outline",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#outline",
+    "title": "Grammar of data visualization",
+    "section": "Outline",
+    "text": "Outline\n\n\nLast time:\n\nWe introduced you to the course toolkit.\nYou cloned your ae repositories and started making some updates in your Quarto documents.\nYou committed and pushed your changes back – at least most of you did!\n\n\n\n\n\n\nToday:\n\nYou will wrap up that application exercis, and commit and push your final changes.\nWe will introduce data visualization.\nYou will pull to get today’s application exercise file.\nYou will work on the new application exercise on data visualization, commit your changes, and push them."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#tour-quarto-and-more-git-github",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#tour-quarto-and-more-git-github",
+    "title": "Grammar of data visualization",
+    "section": "Tour: Quarto (and more Git + GitHub)",
+    "text": "Tour: Quarto (and more Git + GitHub)\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#how-will-we-use-quarto",
+    "title": "Grammar of data visualization",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#whats-with-all-the-hexes",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#whats-with-all-the-hexes",
+    "title": "Grammar of data visualization",
+    "section": "What’s with all the hexes?",
+    "text": "What’s with all the hexes?"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#we-have-hexes-too",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#we-have-hexes-too",
+    "title": "Grammar of data visualization",
+    "section": "We have hexes too!",
+    "text": "We have hexes too!\n\nGrab one before you leave!"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#participate",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#participate",
+    "title": "Grammar of data visualization",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nRemember this visualization from the code along video – what was it about?\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#let-see",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#let-see",
+    "title": "Grammar of data visualization",
+    "section": "Let’ see…",
+    "text": "Let’ see…\n\nhow the sausage is made!"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#load-packages",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#load-packages",
+    "title": "Grammar of data visualization",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(unvotes)\nlibrary(tidyverse)\nlibrary(ggthemes)"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#prepare-the-data",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#prepare-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Prepare the data",
+    "text": "Prepare the data\n\nus_uk_tr_votes &lt;- un_votes |&gt;\n  inner_join(un_roll_calls, by = \"rcid\") |&gt;\n  inner_join(un_roll_call_issues, by = \"rcid\", relationship = \"many-to-many\") |&gt;\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n  mutate(year = year(date)) |&gt;\n  group_by(country, year, issue) |&gt;\n  summarize(percent_yes = mean(vote == \"yes\"), .groups = \"drop\")\n\n\n\n\n\n\n\nNote\n\n\nLet’s leave these details aside for a bit, we’ll revisit this code at a later point in the semester. For now, let’s agree that we need to do some “data wrangling” to get the data into the right format for the plot we want to create. Just note that we called the data frame we’ll visualize us_uk_tr_votes."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#view-the-data",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#view-the-data",
+    "title": "Grammar of data visualization",
+    "section": "View the data",
+    "text": "View the data\n\nus_uk_tr_votes\n\n# A tibble: 1,212 × 4\n   country  year issue                        percent_yes\n   &lt;chr&gt;   &lt;dbl&gt; &lt;fct&gt;                              &lt;dbl&gt;\n 1 Turkey   1946 Colonialism                        0.8  \n 2 Turkey   1946 Economic development               0.6  \n 3 Turkey   1946 Human rights                       0    \n 4 Turkey   1947 Colonialism                        0.222\n 5 Turkey   1947 Economic development               0.5  \n 6 Turkey   1947 Palestinian conflict               0.143\n 7 Turkey   1948 Colonialism                        0.417\n 8 Turkey   1948 Arms control and disarmament       0    \n 9 Turkey   1948 Economic development               0.375\n10 Turkey   1948 Human rights                       0.167\n# ℹ 1,202 more rows"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#visualize-the-data",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#visualize-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Visualize the data",
+    "text": "Visualize the data\n\n# code to visualize the data"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-1.-prepare-a-canvas-for-plotting",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-1.-prepare-a-canvas-for-plotting",
+    "title": "Grammar of data visualization",
+    "section": "Step 1. Prepare a canvas for plotting",
+    "text": "Step 1. Prepare a canvas for plotting\n\nggplot(data = us_uk_tr_votes)"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-2.-map-variables-to-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-2.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 2. Map variables to aesthetics",
+    "text": "Step 2. Map variables to aesthetics\nMap year to the x aesthetic\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year))"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-3.-map-variables-to-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-3.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 3. Map variables to aesthetics",
+    "text": "Step 3. Map variables to aesthetics\nMap percent_yes to the y aesthetic\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#mapping-and-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#mapping-and-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Mapping and aesthetics",
+    "text": "Mapping and aesthetics\n\nAesthetics are visual properties of a plot\nIn the grammar of graphics, variables from the data frame are mapped to aesthetics"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#argument-names",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#argument-names",
+    "title": "Grammar of data visualization",
+    "section": "Argument names",
+    "text": "Argument names\nIt’s common practice in R to omit the names of first two arguments of a function:\n\n\nInstead of:\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))\n\nWe usually write:\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-4.-represent-data-on-your-canvas",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-4.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 4. Represent data on your canvas",
+    "text": "Step 4. Represent data on your canvas\nwith a geom\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-5.-map-variables-to-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-5.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 5. Map variables to aesthetics",
+    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-6.-represent-data-on-your-canvas",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-6.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 6. Represent data on your canvas",
+    "text": "Step 6. Represent data on your canvas\nwith another geom\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#warnings-and-messages",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#warnings-and-messages",
+    "title": "Grammar of data visualization",
+    "section": "Warnings and messages",
+    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves that represent trends for each country.\n\n\n\n\nGoing forward we’ll suppress this warning to save some space."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-7.-split-plot-into-facets",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-7.-split-plot-into-facets",
+    "title": "Grammar of data visualization",
+    "section": "Step 7. Split plot into facets",
+    "text": "Step 7. Split plot into facets\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue)"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-8.-use-a-different-color-scale",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-8.-use-a-different-color-scale",
+    "title": "Grammar of data visualization",
+    "section": "Step 8. Use a different color scale",
+    "text": "Step 8. Use a different color scale\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-9.-apply-a-different-theme",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-9.-apply-a-different-theme",
+    "title": "Grammar of data visualization",
+    "section": "Step 9. Apply a different theme",
+    "text": "Step 9. Apply a different theme\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-10.-add-labels",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-10.-add-labels",
+    "title": "Grammar of data visualization",
+    "section": "Step 10. Add labels",
+    "text": "Step 10. Add labels\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"% yes\", color = \"Country\")"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#participate-1",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#participate-1",
+    "title": "Grammar of data visualization",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following modifications will change the transparency of the points in the plot?\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-11.-set-transparency-of-points",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-11.-set-transparency-of-points",
+    "title": "Grammar of data visualization",
+    "section": "Step 11. Set transparency of points",
+    "text": "Step 11. Set transparency of points\nwith alpha\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"% yes\", color = \"Country\")"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#step-12.-hide-standard-errors-of-curves",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#step-12.-hide-standard-errors-of-curves",
+    "title": "Grammar of data visualization",
+    "section": "Step 12. Hide standard errors of curves",
+    "text": "Step 12. Hide standard errors of curves\nwith se = FALSE\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(se = FALSE) +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"% yes\", color = \"Country\")"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#grammar-of-graphics",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#grammar-of-graphics",
+    "title": "Grammar of data visualization",
+    "section": "Grammar of graphics",
+    "text": "Grammar of graphics\n\n\nWe built a plot layer-by-layer\n\njust like described in the book The Grammar of Graphics and\nimplemented in the ggplot2 package, the data visualization package of the tidyverse."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#ae-02-bechdel-dataviz",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#ae-02-bechdel-dataviz",
+    "title": "Grammar of data visualization",
+    "section": "ae-02-bechdel-dataviz",
+    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization-slides.html#recap",
+    "href": "slides/03-grammar-of-data-visualization-slides.html#recap",
+    "title": "Grammar of data visualization",
+    "section": "Recap",
+    "text": "Recap\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html",
+    "href": "slides/03-grammar-of-data-visualization.html",
+    "title": "Grammar of data visualization",
     "section": "",
-    "text": "The following videos feature “code alongs” as an additional resource for getting coding practice.\nThe files you can use to follow along with the videos can be found at https://github.com/sta199/code-alongs.",
+    "text": "Office hours are posted on the course website!\n\nIf you can follow along with today’s application exercise steps, great! If something doesn’t work as expected, ask me/TA during the exercise. We’ll either:\n\nhelp you on the spot and get you unstuck or\nidentify that you’re missing an earlier step, ask you to follow along with your neighbor, and visit office hours before Thursday for one-on-one help\n\n\n\n\n\nLast time:\n\nWe introduced you to the course toolkit.\nYou cloned your ae repositories and started making some updates in your Quarto documents.\nYou committed and pushed your changes back – at least most of you did!\n\n\n\n. . .\n\n\nToday:\n\nYou will wrap up that application exercis, and commit and push your final changes.\nWe will introduce data visualization.\nYou will pull to get today’s application exercise file.\nYou will work on the new application exercise on data visualization, commit your changes, and push them."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#announcements",
+    "href": "slides/03-grammar-of-data-visualization.html#announcements",
+    "title": "Grammar of data visualization",
+    "section": "",
+    "text": "Office hours are posted on the course website!\n\nIf you can follow along with today’s application exercise steps, great! If something doesn’t work as expected, ask me/TA during the exercise. We’ll either:\n\nhelp you on the spot and get you unstuck or\nidentify that you’re missing an earlier step, ask you to follow along with your neighbor, and visit office hours before Thursday for one-on-one help"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#outline",
+    "href": "slides/03-grammar-of-data-visualization.html#outline",
+    "title": "Grammar of data visualization",
+    "section": "",
+    "text": "Last time:\n\nWe introduced you to the course toolkit.\nYou cloned your ae repositories and started making some updates in your Quarto documents.\nYou committed and pushed your changes back – at least most of you did!\n\n\n\n. . .\n\n\nToday:\n\nYou will wrap up that application exercis, and commit and push your final changes.\nWe will introduce data visualization.\nYou will pull to get today’s application exercise file.\nYou will work on the new application exercise on data visualization, commit your changes, and push them."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#tour-quarto-and-more-git-github",
+    "href": "slides/03-grammar-of-data-visualization.html#tour-quarto-and-more-git-github",
+    "title": "Grammar of data visualization",
+    "section": "Tour: Quarto (and more Git + GitHub)",
+    "text": "Tour: Quarto (and more Git + GitHub)\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#how-will-we-use-quarto",
+    "href": "slides/03-grammar-of-data-visualization.html#how-will-we-use-quarto",
+    "title": "Grammar of data visualization",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#whats-with-all-the-hexes",
+    "href": "slides/03-grammar-of-data-visualization.html#whats-with-all-the-hexes",
+    "title": "Grammar of data visualization",
+    "section": "What’s with all the hexes?",
+    "text": "What’s with all the hexes?"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#we-have-hexes-too",
+    "href": "slides/03-grammar-of-data-visualization.html#we-have-hexes-too",
+    "title": "Grammar of data visualization",
+    "section": "We have hexes too!",
+    "text": "We have hexes too!\n\nGrab one before you leave!"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#participate",
+    "href": "slides/03-grammar-of-data-visualization.html#participate",
+    "title": "Grammar of data visualization",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nRemember this visualization from the code along video – what was it about?\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#let-see",
+    "href": "slides/03-grammar-of-data-visualization.html#let-see",
+    "title": "Grammar of data visualization",
+    "section": "Let’ see…",
+    "text": "Let’ see…\n\nhow the sausage is made!"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#load-packages",
+    "href": "slides/03-grammar-of-data-visualization.html#load-packages",
+    "title": "Grammar of data visualization",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(unvotes)\nlibrary(tidyverse)\nlibrary(ggthemes)"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#prepare-the-data",
+    "href": "slides/03-grammar-of-data-visualization.html#prepare-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Prepare the data",
+    "text": "Prepare the data\n\nus_uk_tr_votes &lt;- un_votes |&gt;\n  inner_join(un_roll_calls, by = \"rcid\") |&gt;\n  inner_join(un_roll_call_issues, by = \"rcid\", relationship = \"many-to-many\") |&gt;\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n  mutate(year = year(date)) |&gt;\n  group_by(country, year, issue) |&gt;\n  summarize(percent_yes = mean(vote == \"yes\"), .groups = \"drop\")\n\n\n\n\n\n\n\nNote\n\n\n\nLet’s leave these details aside for a bit, we’ll revisit this code at a later point in the semester. For now, let’s agree that we need to do some “data wrangling” to get the data into the right format for the plot we want to create. Just note that we called the data frame we’ll visualize us_uk_tr_votes."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#view-the-data",
+    "href": "slides/03-grammar-of-data-visualization.html#view-the-data",
+    "title": "Grammar of data visualization",
+    "section": "View the data",
+    "text": "View the data\n\nus_uk_tr_votes\n\n# A tibble: 1,212 × 4\n   country  year issue                        percent_yes\n   &lt;chr&gt;   &lt;dbl&gt; &lt;fct&gt;                              &lt;dbl&gt;\n 1 Turkey   1946 Colonialism                        0.8  \n 2 Turkey   1946 Economic development               0.6  \n 3 Turkey   1946 Human rights                       0    \n 4 Turkey   1947 Colonialism                        0.222\n 5 Turkey   1947 Economic development               0.5  \n 6 Turkey   1947 Palestinian conflict               0.143\n 7 Turkey   1948 Colonialism                        0.417\n 8 Turkey   1948 Arms control and disarmament       0    \n 9 Turkey   1948 Economic development               0.375\n10 Turkey   1948 Human rights                       0.167\n# ℹ 1,202 more rows"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#visualize-the-data",
+    "href": "slides/03-grammar-of-data-visualization.html#visualize-the-data",
+    "title": "Grammar of data visualization",
+    "section": "Visualize the data",
+    "text": "Visualize the data\n\n# code to visualize the data"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-1.-prepare-a-canvas-for-plotting",
+    "href": "slides/03-grammar-of-data-visualization.html#step-1.-prepare-a-canvas-for-plotting",
+    "title": "Grammar of data visualization",
+    "section": "Step 1. Prepare a canvas for plotting",
+    "text": "Step 1. Prepare a canvas for plotting\n\nggplot(data = us_uk_tr_votes)"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-2.-map-variables-to-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization.html#step-2.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 2. Map variables to aesthetics",
+    "text": "Step 2. Map variables to aesthetics\nMap year to the x aesthetic\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year))"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-3.-map-variables-to-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization.html#step-3.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 3. Map variables to aesthetics",
+    "text": "Step 3. Map variables to aesthetics\nMap percent_yes to the y aesthetic\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#mapping-and-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization.html#mapping-and-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Mapping and aesthetics",
+    "text": "Mapping and aesthetics\n\nAesthetics are visual properties of a plot\nIn the grammar of graphics, variables from the data frame are mapped to aesthetics"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#argument-names",
+    "href": "slides/03-grammar-of-data-visualization.html#argument-names",
+    "title": "Grammar of data visualization",
+    "section": "Argument names",
+    "text": "Argument names\nIt’s common practice in R to omit the names of first two arguments of a function:\n. . .\n\nInstead of:\n\nggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))\n\nWe usually write:\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes))"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-4.-represent-data-on-your-canvas",
+    "href": "slides/03-grammar-of-data-visualization.html#step-4.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 4. Represent data on your canvas",
+    "text": "Step 4. Represent data on your canvas\nwith a geom\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-5.-map-variables-to-aesthetics",
+    "href": "slides/03-grammar-of-data-visualization.html#step-5.-map-variables-to-aesthetics",
+    "title": "Grammar of data visualization",
+    "section": "Step 5. Map variables to aesthetics",
+    "text": "Step 5. Map variables to aesthetics\nMap country to the color aesthetic\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-6.-represent-data-on-your-canvas",
+    "href": "slides/03-grammar-of-data-visualization.html#step-6.-represent-data-on-your-canvas",
+    "title": "Grammar of data visualization",
+    "section": "Step 6. Represent data on your canvas",
+    "text": "Step 6. Represent data on your canvas\nwith another geom\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#warnings-and-messages",
+    "href": "slides/03-grammar-of-data-visualization.html#warnings-and-messages",
+    "title": "Grammar of data visualization",
+    "section": "Warnings and messages",
+    "text": "Warnings and messages\n\nAdding geom_smooth() resulted in the following warning:\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n. . .\n\nIt tells us the type of smoothing ggplot2 does under the hood when drawing the smooth curves that represent trends for each country.\n\n. . .\n\nGoing forward we’ll suppress this warning to save some space."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-7.-split-plot-into-facets",
+    "href": "slides/03-grammar-of-data-visualization.html#step-7.-split-plot-into-facets",
+    "title": "Grammar of data visualization",
+    "section": "Step 7. Split plot into facets",
+    "text": "Step 7. Split plot into facets\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue)"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-8.-use-a-different-color-scale",
+    "href": "slides/03-grammar-of-data-visualization.html#step-8.-use-a-different-color-scale",
+    "title": "Grammar of data visualization",
+    "section": "Step 8. Use a different color scale",
+    "text": "Step 8. Use a different color scale\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-9.-apply-a-different-theme",
+    "href": "slides/03-grammar-of-data-visualization.html#step-9.-apply-a-different-theme",
+    "title": "Grammar of data visualization",
+    "section": "Step 9. Apply a different theme",
+    "text": "Step 9. Apply a different theme\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-10.-add-labels",
+    "href": "slides/03-grammar-of-data-visualization.html#step-10.-add-labels",
+    "title": "Grammar of data visualization",
+    "section": "Step 10. Add labels",
+    "text": "Step 10. Add labels\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"% yes\", color = \"Country\")"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#participate-1",
+    "href": "slides/03-grammar-of-data-visualization.html#participate-1",
+    "title": "Grammar of data visualization",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following modifications will change the transparency of the points in the plot?\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-11.-set-transparency-of-points",
+    "href": "slides/03-grammar-of-data-visualization.html#step-11.-set-transparency-of-points",
+    "title": "Grammar of data visualization",
+    "section": "Step 11. Set transparency of points",
+    "text": "Step 11. Set transparency of points\nwith alpha\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth() +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"% yes\", color = \"Country\")"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#step-12.-hide-standard-errors-of-curves",
+    "href": "slides/03-grammar-of-data-visualization.html#step-12.-hide-standard-errors-of-curves",
+    "title": "Grammar of data visualization",
+    "section": "Step 12. Hide standard errors of curves",
+    "text": "Step 12. Hide standard errors of curves\nwith se = FALSE\n\nggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(se = FALSE) +\n  facet_wrap(~issue) +\n  scale_color_colorblind() +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"% yes\", color = \"Country\")"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#grammar-of-graphics",
+    "href": "slides/03-grammar-of-data-visualization.html#grammar-of-graphics",
+    "title": "Grammar of data visualization",
+    "section": "Grammar of graphics",
+    "text": "Grammar of graphics\n\n\nWe built a plot layer-by-layer\n\njust like described in the book The Grammar of Graphics and\nimplemented in the ggplot2 package, the data visualization package of the tidyverse."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#ae-02-bechdel-dataviz",
+    "href": "slides/03-grammar-of-data-visualization.html#ae-02-bechdel-dataviz",
+    "title": "Grammar of data visualization",
+    "section": "ae-02-bechdel-dataviz",
+    "text": "ae-02-bechdel-dataviz\n\n\nGo to your ae project in RStudio.\nMake sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-visualization.html#recap",
+    "href": "slides/03-grammar-of-data-visualization.html#recap",
+    "title": "Grammar of data visualization",
+    "section": "Recap",
+    "text": "Recap\n\nConstruct plots with ggplot().\nLayers of ggplots are separated by +s.\nThe formula is (almost) always as follows:\n\n\nggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +\n  geom_XXX()"
+  },
+  {
+    "objectID": "lab.html",
+    "href": "lab.html",
+    "title": "Labs",
+    "section": "",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nEnd of lab on Mon, Aug 25\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course.",
     "crumbs": [
       "Computing",
-      "Code alongs"
+      "Access"
     ]
-  },
-  {
-    "objectID": "computing-code-alongs.html#data-visualization-and-transformation",
-    "href": "computing-code-alongs.html#data-visualization-and-transformation",
-    "title": "Code alongs",
-    "section": "Data visualization and transformation",
-    "text": "Data visualization and transformation\n\nUN Votes\nFirst look at R amd RStudio.\n\n\n\nFirst look at Palmer Penguins\nFirst look at data science with the tidyverse.\n\n\n\nFlights and pipes\nData transformation\n\n\n\nStarwars characters\nData visualization\n\n\n\nDiving deeper with Palmer Penguins\nData visualization and transformation",
-    "crumbs": [
-      "Computing",
-      "Code alongs"
-    ]
-  },
-  {
-    "objectID": "course-faq.html",
-    "href": "course-faq.html",
-    "title": "FAQ",
-    "section": "",
-    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
-    "crumbs": [
-      "Course information",
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
-    "href": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
-    "title": "FAQ",
-    "section": "",
-    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
-    "crumbs": [
-      "Course information",
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
-    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
-    "title": "FAQ",
-    "section": "How can I submit my assignment to Gradescope?",
-    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions.",
-    "crumbs": [
-      "Course information",
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
-    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
-    "title": "FAQ",
-    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
-    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nThe short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.5.1: https://cran.r-project.org/\nDownload and install RStudio: https://posit.co/download/rstudio-desktop/\nInstall Quarto 1.7.32 or higher: https://quarto.org/docs/get-started/\nInstall Git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here.",
-    "crumbs": [
-      "Course information",
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "computing-troubleshooting.html",
-    "href": "computing-troubleshooting.html",
-    "title": "Computing troubleshooting",
-    "section": "",
-    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
-    "crumbs": [
-      "Computing",
-      "Troubleshooting"
-    ]
-  },
-  {
-    "objectID": "exam-review.html",
-    "href": "exam-review.html",
-    "title": "Exam reviews",
-    "section": "",
-    "text": "Title\nSubtitle\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Exam reviews"
-    ]
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality-A.html",
-    "href": "ae/ae-01-income-inequality-A.html",
-    "title": "AE 01: Income inequality",
-    "section": "",
-    "text": "Demo: Replace “Your Name” above with your actual name. Then, render the document to inspect the changes. Once you confirm you’re happy with the changes, commit your changes (with an appropriate commit message) by staging ALL of the changed files, and push them to GitHub. In your browser, navigate to your GitHub repository and confirm that the changes are reflected there.\nThe dataset we will explore is in the data folder and it’s called income-inequality.csv. It contains data on income inequality, measured by the GINI coefficient for different countries and years.\nFrom Wikipedia:\nIn this dataset we have two Gini coefficients: one for income inequality before taxes and another for income inequality after taxes. These two values allow us to explore how much countries redistribute income. In addition, since we have data for multiple years, we can also explore how income inequality has changed over time."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality-A.html#packages",
-    "href": "ae/ae-01-income-inequality-A.html#packages",
-    "title": "AE 01: Income inequality",
-    "section": "Packages",
-    "text": "Packages\nFor this application exercise, we’ll use the tidyverse package.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9000\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.0.4          \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nDemo: Run the code cell above and inspect the message printed in the Console."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality-A.html#data",
-    "href": "ae/ae-01-income-inequality-A.html#data",
-    "title": "AE 01: Income inequality",
-    "section": "Data",
-    "text": "Data\nLet’s load the data.\n\nincome_inequality &lt;- read_csv(\"data/income-inequality.csv\")\n\nRows: 549 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, country_code\ndbl (3): year, gini_pre_tax, gini_post_tax\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd take a look at the first 10 rows.\n\nincome_inequality\n\n# A tibble: 549 × 5\n   country   country_code  year gini_pre_tax gini_post_tax\n   &lt;chr&gt;     &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;\n 1 Australia AUS           1989        0.431         0.304\n 2 Australia AUS           1995        0.47          0.311\n 3 Australia AUS           2001        0.481         0.32 \n 4 Australia AUS           2003        0.469         0.316\n 5 Australia AUS           2004        0.467         0.316\n 6 Australia AUS           2008        0.469         0.335\n 7 Australia AUS           2010        0.47          0.333\n 8 Australia AUS           2014        0.481         0.329\n 9 Australia AUS           2016        0.467         0.326\n10 Australia AUS           2018        0.469         0.329\n# ℹ 539 more rows\n\n\nThe variables in the dataset are:\n\n\ncountry: Country name\n\ncountry_code: Country code\n\nyear: Year\n\ngini_pre_tax: Gini coefficient before taxes\n\ngini_post_tax: Gini coefficient after taxes\n\nDemo: And take a look at the structure of the data as well with the glimpse() function.\n\nglimpse(income_inequality)\n\nRows: 549\nColumns: 5\n$ country       &lt;chr&gt; \"Australia\", \"Australia\", \"Australia\", \"Australia\", \"Aus…\n$ country_code  &lt;chr&gt; \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", …\n$ year          &lt;dbl&gt; 1989, 1995, 2001, 2003, 2004, 2008, 2010, 2014, 2016, 20…\n$ gini_pre_tax  &lt;dbl&gt; 0.431, 0.470, 0.481, 0.469, 0.467, 0.469, 0.470, 0.481, …\n$ gini_post_tax &lt;dbl&gt; 0.304, 0.311, 0.320, 0.316, 0.316, 0.335, 0.333, 0.329, …\n\n\nDemo: Render, commit (with an appropriate commit message), and push your changes to GitHub.\nYour turn: replace the blank below with the number of rows in the income_inequality data frame based on the output of the chunk below. Then, replace it with “inline code” and render again. Then, commit (with an appropriate commit message) and push your changes to GitHub.\nThe income_inequality data frame has 549 observations. Each observation represents a country in a given year."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-a-country",
-    "href": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-a-country",
-    "title": "AE 01: Income inequality",
-    "section": "Income inequality over time in a country",
-    "text": "Income inequality over time in a country\nLet’s explore income inequality over time in a country.\n\nincome_inequality |&gt;\n  filter(country == \"Denmark\") |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1)\n\n\n\n\n\n\n\nYour turn: Create a similar plot for another country of your choice by by modifying the code in the code cell labeled plot-single above. Then, render, commit (with an appropriate commit message), and push your changes to GitHub.\nHint: Open the data frame in the data viewer by clicking on its name in the Environment pane to see the list of countries."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-many-countries",
-    "href": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-many-countries",
-    "title": "AE 01: Income inequality",
-    "section": "Income inequality over time in many countries",
-    "text": "Income inequality over time in many countries\nNow let’s explore income inequality over time in many countries.\n\nincome_inequality |&gt;\n  filter(country %in% c(\"United States\", \"Sweden\", \"South Africa\")) |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1) +\n  facet_wrap(~country, ncol = 1)\n\n\n\n\n\n\n\nYour turn: Change as many countries as you like except for the United States by modifying the code in the cell labeled plot-many above. You can replace country names like we did before or add or remove them. Then, render to see your changes. Discuss your findings with your neighbor – Why did you choose those countries? How do the income inequalities of these countries compare? Finally, commit your changes (with an appropriate commit message), and push your changes to GitHub."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 199: Introduction to Data Science and Statistical Thinking",
-    "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n💻 lab 0\n\nLab 0 due at the end of lab session (not graded)\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n🖥️ slides 01  🗒️ notes 01\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 01  ✅ ae 01\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\nLab 1 due at the end of the lab session\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\nSun, Sep 14\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\nLab 2 due at the end of the lab session\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\nSun, Sep 21\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\nLab 3 due at the end of the lab session\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\nSun, Sep 28\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\nLab 4 due at the end of lab session\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Oct 4\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\n\nProject milestone 1 due at the end of lab session\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\nTo be posted\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\n\nProject milestone 3 due at the end of lab session\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\n\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\nPeer evaluation 3 at 11:59 pm\n\n\n\nSun, Nov 2\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\n\nProject milestone 5 due at the end of lab session\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\nLab 6 due at the end of lab session\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Nov 22\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\nLab 7 due at the end of lab session\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\nSun, Nov 30\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\nLab 8 due at the end of lab session\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\nFri, Dec 5\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "ae.html",
-    "href": "ae.html",
-    "title": "Application exercises",
-    "section": "",
-    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Application exercises"
-    ]
-  },
-  {
-    "objectID": "hw.html",
-    "href": "hw.html",
-    "title": "Homeworks",
-    "section": "",
-    "text": "More homeworks to be added as the semester progresses.\n\n\n\n\n\n\n\n\nNo.\nTitle\nDue date\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Homeworks"
-    ]
-  },
-  {
-    "objectID": "course-support.html",
-    "href": "course-support.html",
-    "title": "Course support",
-    "section": "",
-    "text": "Most of you will need help at some point, and we want to make sure you can identify where that is so that you don’t get too frustrated and feel comfortable seeking help.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#lectures-and-labs",
-    "href": "course-support.html#lectures-and-labs",
-    "title": "Course support",
-    "section": "Lectures and labs",
-    "text": "Lectures and labs\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so asking will create a learning opportunity for everyone.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#help-from-humans",
-    "href": "course-support.html#help-from-humans",
-    "title": "Course support",
-    "section": "Help from humans",
-    "text": "Help from humans\n\nOffice hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. Many questions are most effectively answered in person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by during office hours at least once during the first three weeks of class. If you have no questions, stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.\nMy office hours will start in Week 1, TA office hours will start in Week 2.\n\n\nEd Discussion\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course discussion forum, Ed Discussion, is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!\nYou can access this tool on the course website toolbar – just click on the lifesaver icon.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#email",
-    "href": "course-support.html#email",
-    "title": "Course support",
-    "section": "Email",
-    "text": "Email\nPlease refrain from emailing any course content questions (those should go to Ed Discussion), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at mc301@duke.edu.\nIf there is a question that’s not appropriate for the public forum, you are welcome to email me directly. If you email me, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#academic-support",
-    "href": "course-support.html#academic-support",
-    "title": "Course support",
-    "section": "Academic support",
-    "text": "Academic support\nThere are times you may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact theARC@duke.edu, 919-684-5917.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#mental-health-and-well-being",
-    "href": "course-support.html#mental-health-and-well-being",
-    "title": "Course support",
-    "section": "Mental health and well-being",
-    "text": "Mental health and well-being\nDuke is committed to holistic student wellbeing, which includes one’s mental, emotional, and physical health. The university offers resources to help students manage daily stress, to encourage intentional self-care, and to access just-in-time support. If you find you need support, your mental and/or emotional health concerns are impacting your day-to-day activities, your academic performance, or you need someone to talk to, the resources below are available to you:\n\nDukeReach: DukeReach provides comprehensive outreach services to support students in managing all aspects of well-being, including referrals and follow-up services for students who are experiencing significant challenges related to mental health, physical health, social adjustment, and/or a variety of other stressors. You can reach the DukeReach team at dukereach@duke.edu.\nCounseling and Psychological Services (CAPS): CAPS offers counseling services to Duke students including virtual appointments, and referrals in the community. You do not need an appointment for an initial assessment. You may walk in or call 919-660-1000 to get started. Hours: Monday-Friday 9:00am - 4:00pm. After hours counseling services are available at no additional cost to students, you can call: 919-660-1000 Option 2.\nTimelyCare1: TimelyCare is an online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling.\nDuke Student Health: Student Health offers a wide range of healthcare services for all Duke students, many of which are covered by the student health fee. To make an appointment call (919) 681-9355. Hours: Monday - Friday, 8am - 4:30pm, Thursday 9am - 4:30pm. Closed from 12-12:30 each day.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#course-costs",
-    "href": "course-support.html#course-costs",
-    "title": "Course support",
-    "section": "Course costs",
-    "text": "Course costs\n\nTextbooks: The textbooks for this course are freely available on the web.\nLaptops: Each student is expected to have a laptop they can bring to each lecture and lab.\n\nIf you are having difficulty with the costs associated with this course, here are some resources:\n\nKarsh Office of Undergraduate Support: Regardless of your aid package, Karsh offers loans and resources for connecting students with campus programs that might help alleviate course costs.\nDukeLIFE: The Course Material Assistance program offers assistance for eligible students, including through the LIFE Loaner Laptop Program. Students who are eligible for DukeLIFE benefits are notified before the start of the semester; program resources are limited.\nDuke Libraries: The library’s Top Textbook Program allows you to rent some textbooks for 3 hours at a time.\nDuke Link: You can reserve rental equipment from the Link for course-specific technology needs, such as a Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, Handheld Projector, or GoPro.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#assistance-with-zoom-or-canvas",
-    "href": "course-support.html#assistance-with-zoom-or-canvas",
-    "title": "Course support",
-    "section": "Assistance with Zoom or Canvas",
-    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas visit go.canvas.duke.edu/get-help/. For technical help with Zoom contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom and Canvas.\nNote that we will be using Canvas minimally in this course (primarily for announcements and the grade book). All assignment submissions will take place on Gradescope and GitHub, and conversations will take place on Ed Discussion.\nZoom will be used for online office hours and as a backup option should we need to hold the course online instead of in person.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#footnotes",
-    "href": "course-support.html#footnotes",
-    "title": "Course support",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nFormerly known as Blue Devils Care.↩︎",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "STA 199Fall 2025",
-    "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#overview",
-    "href": "course-overview.html#overview",
-    "title": "STA 199Fall 2025",
-    "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#meetings",
-    "href": "course-overview.html#meetings",
-    "title": "STA 199Fall 2025",
-    "section": "Meetings",
-    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "lab/lab-0.html",
-    "href": "lab/lab-0.html",
-    "title": "Lab 0",
-    "section": "",
-    "text": "Mise en place (French pronunciation: [mi zɑ̃ ˈplas]) is a French culinary phrase which means “putting in place” or “gather”. It refers to the setup required before cooking, and is often used in professional kitchens to refer to organizing and arranging the ingredients (e.g., cuts of meat, relishes, sauces, par-cooked items, spices, freshly chopped vegetables, and other components) that a cook will require for the menu items that are expected to be prepared during a shift.1\nThis lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you’ll need for the rest of the semester and it’s about getting to know each other and the teaching team.\nAnd just like the mise an place phase for cooking something that is new to you, it might not be entirely clear how everything will come together at the end. Hang in there, and it’ll all start to make sense by the end of the week. And you’ll be a pro at it all just in time for the first assignment!"
-  },
-  {
-    "objectID": "lab/lab-0.html#computational-toolkit",
-    "href": "lab/lab-0.html#computational-toolkit",
-    "title": "Lab 0",
-    "section": "Computational toolkit",
-    "text": "Computational toolkit\nYou may have heard/seen this phrase, Hello, World!, elsewhere before. It’s usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen. Things will be different in this course, as it’s not a programming, but a data science course. So, starting tomorrow in class, you’ll learn to use a computing language (called R) to work with data.\nBut today, we need to set you up for success! Let’s first briefly review the components of the computational toolkit for the course:\n\nR: The programming language you’ll learn in this course.\n\nRStudio: The piece of software (a.k.a. the integrated development environment, IDE) you’ll use to write R code in.\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\n\nQuarto: The tool you’ll use to create reproducible computational documents that contain both your narrative (i.e., words in English) and your code (i.e., code in R). Every piece of assignment you hand in will be a Quarto document.\n\n\n\n\n\n\nNote\n\n\n\nYou might be familiar with word processors like MS Word or Google Docs. We will not be using these in this class. Instead, the words you would write in such a document as well as the code will go into a Quarto document, and when you render the document (more on what this means later) you will get a document out that has your words, your code, and the output of that code. Everything in one place, beautifully formatted!\n\n\n\nGit: Version control system.\n\nGitHub: A web hosting service for the Git version control system that also allows for transparent collaboration between team members.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better)."
-  },
-  {
-    "objectID": "lab/lab-0.html#an-analogy-to-english",
-    "href": "lab/lab-0.html#an-analogy-to-english",
-    "title": "Lab 0",
-    "section": "An analogy to English",
-    "text": "An analogy to English\nWhile most of the above tools might be new to you, they have many similarities with tools you have probably seen before.\nSuppose you wanted to write an essay for a literature class. You would need to pick a language (e.g. English) and choose an interface to write your document with (such as Microsoft word with a .docx word doc). You also might want to use track changes to see edits you make and use a platform such as Google Drive to collaborate.\n\nWhile the computational toolkit is different than the one for a literature class, we can find many similarities between the tools, as is shown in the figure below."
-  },
-  {
-    "objectID": "lab/lab-0.html#access-r-and-rstudio",
-    "href": "lab/lab-0.html#access-r-and-rstudio",
-    "title": "Lab 0",
-    "section": "Access R and RStudio",
-    "text": "Access R and RStudio\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 to log into the Docker container. You should now see the RStudio environment.\n\nGo to https://cmgr.oit.duke.edu/containers and under Reservations available click on reserve STA199 to reserve a container for yourself.\n\n\n\n\n\n\nNote\n\n\n\nA container is a self-contained instance of RStudio for you, and you alone. You will do all of your computing in your container.\n\n\nOnce you’ve reserved the container you’ll see that it will show up under My reservations.\nTo launch your container click on it under My reservations, then click Login, and then Start.2"
-  },
-  {
-    "objectID": "lab/lab-0.html#create-a-github-account",
-    "href": "lab/lab-0.html#create-a-github-account",
-    "title": "Lab 0",
-    "section": "Create a GitHub account",
-    "text": "Create a GitHub account\nGo to https://github.com/ and walk through the steps for creating an account. You do not have to use your Duke email address, but I recommend doing so.3\n\n\n\n\n\n\nNote\n\n\n\nYou’ll need to choose a user name. I recommend reviewing the user name advice at https://happygitwithr.com/github-acct#username-advice before choosing a username.\n\n\n\n\n\n\n\n\nWhat if I already have a GitHub account?\n\n\n\n\n\nIf you already have a GitHub account, you do not need to create a new one for this course. Just log in to that account to make sure you still remember your username and password."
-  },
-  {
-    "objectID": "lab/lab-0.html#update-your-github-profile",
-    "href": "lab/lab-0.html#update-your-github-profile",
-    "title": "Lab 0",
-    "section": "Update your GitHub profile",
-    "text": "Update your GitHub profile\nOnce you have created your GitHub account, you should update your profile.\nTo do so, click on your profile icon in the upper right corner of the GitHub page and select Settings. Then, on the left side of the page, click on Public profile and fill out your profile information.\nOnce done, click Update profile mid-way through the page.\n\n\n\n\n\n\nAdd a profile picture\n\n\n\n\n\nThis is not required, but highly recommended. It will help us get to know you (and recognize you in class) and will also help you get to know your classmates."
-  },
-  {
-    "objectID": "lab/lab-0.html#set-up-your-ssh-key",
-    "href": "lab/lab-0.html#set-up-your-ssh-key",
-    "title": "Lab 0",
-    "section": "Set up your SSH key",
-    "text": "Set up your SSH key\nYou will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nGo back to your RStudio container and copy-and-paste or type the following in the Console.\n\n\ncredentials::ssh_setup_github()\n\n\nThis will print a message in the Console. Read it. It should say: “No SSH key found. Generate one now?” You should click 1 for yes.\nThis will generate a key (basically a really long alpha-numeric password). R will then ask “Would you like to open a browser now?” You should click 1 for yes again.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta199).\n\nYou can find more detailed instructions here if you’re interested."
-  },
-  {
-    "objectID": "lab/lab-0.html#configure-git-to-introduce-yourself",
-    "href": "lab/lab-0.html#configure-git-to-introduce-yourself",
-    "title": "Lab 0",
-    "section": "Configure Git to introduce yourself",
-    "text": "Configure Git to introduce yourself\nThere is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\n\n\n\n\n\n\nNote\n\n\n\nYou’ll hear about 📦 packages a lot in the context of R – basically they’re how developers write functions and bundle them to distribute to the community (and more on this later too!).\n\n\nType the following lines of code in the console in RStudio filling in your name and the address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n)\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Mine Çetinkaya-Rundel\", \n  user.email = \"cetinkaya.mine@gmail.com\"\n)\n\n\n\n\n\n\n\nNote\n\n\n\nI used my gmail because that is the one I used to create my GitHub account. You should also be using the email address you used to create your GitHub account, it’s ok if it isn’t your Duke email.\n\n\nYou are now ready interact with GitHub via RStudio!\nIf you don’t do this, we won’t be able to tell who you are and give you points for the work you do…\n\n\n\n\n\n\nNote\n\n\n\nWell, a more accurate statement would be that we will be reaching out to you to get things right during the first few weeks of classes. But, it’s best if you can get it right today!\n\n\n\n\n\n\n\n\nNeed a recap? Watch this video!\n\n\n\n\n\nThe following video walks you through the steps outlined in the SSH key generation and Git configuration sections above."
-  },
-  {
-    "objectID": "lab/lab-0.html#clone-your-first-repository",
-    "href": "lab/lab-0.html#clone-your-first-repository",
-    "title": "Lab 0",
-    "section": "Clone your first repository",
-    "text": "Clone your first repository\nNow that you have your GitHub account set up, you can clone your first repository.\nTo do so, follow these steps.\n\nGo to the repository for lab-0 in the course GitHub organization: https://github.com/sta199-f25/lab-0.\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\n\n\n\n\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\n\nClick Create Project.\n\n\n\n\n\n\nSince this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host. This will happen in a pop-up window like the one below. Type yes in the box and hit Enter.\n\n\n\n\n\nRStudio will now clone the repo and create a new RStudio project for you. This might take a few seconds. Once done, the files from your GitHub repo will be displayed in the Files pane in RStudio."
-  },
-  {
-    "objectID": "lab/lab-0.html#footnotes",
-    "href": "lab/lab-0.html#footnotes",
-    "title": "Lab 0",
-    "section": "Footnotes",
-    "text": "Footnotes\n\nSource: Wikipedia.↩︎\nYes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!↩︎\nGitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.↩︎"
-  },
-  {
-    "objectID": "course-team.html",
-    "href": "course-team.html",
-    "title": "Teaching team",
-    "section": "",
-    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.\n\n\n\n\n\n\n\nOffice hours\nLocation\n\n\n\n\nTuesdays and Thursdays 1-1:30 pm (after class)\nBio Sci 111\n\n\nFridays 12:45-2:15 pm.\nOld Chem 211C",
-    "crumbs": [
-      "Course information",
-      "Team"
-    ]
-  },
-  {
-    "objectID": "course-team.html#instructor",
-    "href": "course-team.html#instructor",
-    "title": "Teaching team",
-    "section": "",
-    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.\n\n\n\n\n\n\n\nOffice hours\nLocation\n\n\n\n\nTuesdays and Thursdays 1-1:30 pm (after class)\nBio Sci 111\n\n\nFridays 12:45-2:15 pm.\nOld Chem 211C",
-    "crumbs": [
-      "Course information",
-      "Team"
-    ]
-  },
-  {
-    "objectID": "course-team.html#teaching-assistants",
-    "href": "course-team.html#teaching-assistants",
-    "title": "Teaching team",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\nEach TA holds office hours. Some TAs are also leaders or helpers for lab sections. Some TAs help out in lecture.\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Name\n      \n      \n        Role(s)\n      \n      \n        Section(s)\n      \n      \n        Office hours\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nName\n\n\n\nRole(s)\n\n\n\nSection(s)\n\n\n\nOffice hours\n\n\n\n\n\n\n\n\n\n\n\nAbuzar Khudaverdiyeva\n\n\nLab helper\n\n\nM 10:05 AM - 11:20 AM (Sec 4)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nAlexa Fahrer\n\n\nLecture helper\n\n\n\n\n\n🔗\n\n\n\n\n\n\n\n\n\nAllison Yang\n\n\nLab helper\n\n\nM 1:25 PM - 2:40 PM (Sec 8)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nArijit Dey\n\n\nLab leader\n\n\nM 1:25 PM - 2:40 PM (Sec 8)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nBen Sherman\n\n\nLab helper\n\n\nM 4:40 PM - 5:55 PM (Sec 11)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nBethany Akinola\n\n\nLab helper\n\n\nM 1:25 PM - 2:40 PM (Sec 7)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nEduardo Vasquez\n\n\nLab leader\n\n\nM 10:05 AM - 11:20 AM (Sec 3)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nFederico Arboleda\n\n\nLab leader\n\n\nM 10:05 AM - 11:20 AM (Sec 4)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nJessie Ringness\n\n\nLab helper\n\n\nM 10:05 AM - 11:20 AM (Sec 3)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nKathleen Zhang\n\n\nLecture helper\n\n\n\n\n\n🔗\n\n\n\n\n\n\n\n\n\nKatie Solarz\n\n\nLab leader\n\n\nM 11:45 AM - 1:00 PM (Sec 5)M 3:05 PM - 4:20 PM (Sec 9)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nLuxman Maheswaran\n\n\nLab leader\n\n\nM 4:40 PM - 5:55 PM (Sec 11)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nMarie Neubrander\n\n\nLab leader\n\n\nM 8:30 AM - 9:45 AM (Sec 1)M 1:25 PM - 2:40 PM (Sec 7)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nMax Niu\n\n\nLab helper\n\n\nM 11:45 AM - 1:00 PM (Sec 5)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nNatasha Harris\n\n\nLab helper\n\n\nM 11:45 AM - 1:00 PM (Sec 6)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nSarah Wu\n\n\nLab leader\n\n\nM 11:45 AM - 1:00 PM (Sec 6)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nXueyan Hu\n\n\nLab helper\n\n\nM 8:30 AM - 9:45 AM (Sec 1)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nZiyan Wang\n\n\nLab helper\n\n\nM 3:05 PM - 4:20 PM (Sec 9)\n\n\n🔗\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Course information",
-      "Team"
-    ]
-  },
-  {
-    "objectID": "course-team.html#course-coordinator",
-    "href": "course-team.html#course-coordinator",
-    "title": "Teaching team",
-    "section": "Course coordinator",
-    "text": "Course coordinator\n\nDr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at mary.knox@duke.edu) with any questions regarding registration, accommodations, missed work, extensions, etc. Mary has office hours on Thursdays 10 am - 11:30 am on Zoom.",
-    "crumbs": [
-      "Course information",
-      "Team"
-    ]
-  },
-  {
-    "objectID": "project/description.html",
-    "href": "project/description.html",
-    "title": "Project description",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Project",
-      "Description"
-    ]
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality.html",
-    "href": "ae/ae-01-income-inequality.html",
-    "title": "AE 01: Income inequality",
-    "section": "",
-    "text": "Demo: Replace “Your Name” above with your actual name. Then, render the document to inspect the changes. Once you confirm you’re happy with the changes, commit your changes (with an appropriate commit message) by staging ALL of the changed files, and push them to GitHub. In your browser, navigate to your GitHub repository and confirm that the changes are reflected there.\nThe dataset we will explore is in the data folder and it’s called income-inequality.csv. It contains data on income inequality, measured by the GINI coefficient for different countries and years.\nFrom Wikipedia:\nIn this dataset we have two Gini coefficients: one for income inequality before taxes and another for income inequality after taxes. These two values allow us to explore how much countries redistribute income. In addition, since we have data for multiple years, we can also explore how income inequality has changed over time."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality.html#packages",
-    "href": "ae/ae-01-income-inequality.html#packages",
-    "title": "AE 01: Income inequality",
-    "section": "Packages",
-    "text": "Packages\nFor this application exercise, we’ll use the tidyverse package.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9000\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.0.4          \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nDemo: Run the code cell above and inspect the message printed in the Console."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality.html#data",
-    "href": "ae/ae-01-income-inequality.html#data",
-    "title": "AE 01: Income inequality",
-    "section": "Data",
-    "text": "Data\nLet’s load the data.\n\nincome_inequality &lt;- read_csv(\"data/income-inequality.csv\")\n\nRows: 549 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, country_code\ndbl (3): year, gini_pre_tax, gini_post_tax\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd take a look at the first 10 rows.\n\nincome_inequality\n\n# A tibble: 549 × 5\n   country   country_code  year gini_pre_tax gini_post_tax\n   &lt;chr&gt;     &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;\n 1 Australia AUS           1989        0.431         0.304\n 2 Australia AUS           1995        0.47          0.311\n 3 Australia AUS           2001        0.481         0.32 \n 4 Australia AUS           2003        0.469         0.316\n 5 Australia AUS           2004        0.467         0.316\n 6 Australia AUS           2008        0.469         0.335\n 7 Australia AUS           2010        0.47          0.333\n 8 Australia AUS           2014        0.481         0.329\n 9 Australia AUS           2016        0.467         0.326\n10 Australia AUS           2018        0.469         0.329\n# ℹ 539 more rows\n\n\nThe variables in the dataset are:\n\n\ncountry: Country name\n\ncountry_code: Country code\n\nyear: Year\n\ngini_pre_tax: Gini coefficient before taxes\n\ngini_post_tax: Gini coefficient after taxes\n\nDemo: And take a look at the structure of the data as well with the glimpse() function.\n\n# add code here\n\nDemo: Render, commit (with an appropriate commit message), and push your changes to GitHub.\nYour turn: replace the blank below with the number of rows in the income_inequality data frame based on the output of the chunk below. Then, replace it with “inline code” and render again. Then, commit (with an appropriate commit message) and push your changes to GitHub.\nThe income_inequality data frame has ___ observation. Each observation represents a country in a given year."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-a-country",
-    "href": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-a-country",
-    "title": "AE 01: Income inequality",
-    "section": "Income inequality over time in a country",
-    "text": "Income inequality over time in a country\nLet’s explore income inequality over time in a country.\n\nincome_inequality |&gt;\n  filter(country == \"United States\") |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1)\n\n\n\n\n\n\n\nYour turn: Create a similar plot for another country of your choice by by modifying the code in the code cell labeled plot-single above. Then, render, commit (with an appropriate commit message), and push your changes to GitHub.\nHint: Open the data frame in the data viewer by clicking on its name in the Environment pane to see the list of countries."
-  },
-  {
-    "objectID": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-many-countries",
-    "href": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-many-countries",
-    "title": "AE 01: Income inequality",
-    "section": "Income inequality over time in many countries",
-    "text": "Income inequality over time in many countries\nNow let’s explore income inequality over time in many countries.\n\nincome_inequality |&gt;\n  filter(country %in% c(\"United States\", \"United Kingdom\", \"Spain\", \"Sweden\")) |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1) +\n  facet_wrap(~country, ncol = 1)\n\n\n\n\n\n\n\nYour turn: Change as many countries as you like except for the United States by modifying the code in the cell labeled plot-many above. You can replace country names like we did before or add or remove them. Then, render to see your changes. Discuss your findings with your neighbor – Why did you choose those countries? How do the income inequalities of these countries compare? Finally, commit your changes (with an appropriate commit message), and push your changes to GitHub."
   },
   {
     "objectID": "course-syllabus.html",
@@ -1253,24 +1270,504 @@
     ]
   },
   {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
+    "objectID": "ae/ae-02-bechdel-dataviz.html",
+    "href": "ae/ae-02-bechdel-dataviz.html",
+    "title": "AE 02: Bechdel + data visualization",
     "section": "",
-    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course.",
+    "text": "In this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#getting-started",
+    "href": "ae/ae-02-bechdel-dataviz.html#getting-started",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Getting started",
+    "text": "Getting started\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\n# add code here\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a ___.\n\nHow many observations (rows) are in the data set?\n\nThere are ___ movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are ___ columns in the dataset.\nVariables of interest\nThe variables we’ll focus on are the following:\n\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\n\nclean_test: Bechdel test result:\n\n\nok = passes test\ndubious\n\nmen = women only talk about men\n\nnotalk = women don’t talk to each other\n\nnowomen = fewer than two women\n\n\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
+    "href": "ae/ae-02-bechdel-dataviz.html#bechdel-test-results",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\nVisualizing data with ggplot2\n\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
+    "href": "ae/ae-02-bechdel-dataviz.html#return-on-investment",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\n# add code here\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\n# add code here\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html",
+    "href": "ae/ae-02-bechdel-dataviz-A.html",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "",
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nIn this mini-analysis, we use the data from the FiveThirtyEight story “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.”\nThis analysis is about the Bechdel test, a measure of the representation of women in fiction."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#getting-started",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Getting started",
+    "text": "Getting started\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\nData\nThe data are stored as a CSV (comma-separated values) file in your repository’s data folder. Let’s read it from there and save it as an object called bechdel.\n\nbechdel &lt;- read_csv(\"data/bechdel.csv\")\n\nGet to know the data\nWe can use the glimpse() function to get an overview (or “glimpse”) of the data.\n\nglimpse(bechdel)\n\nRows: 1,615\nColumns: 7\n$ title       &lt;chr&gt; \"21 & Over\", \"Dredd 3D\", \"12 Years a Slave\", \"2 Guns\", \"42…\n$ year        &lt;dbl&gt; 2013, 2012, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…\n$ gross_2013  &lt;dbl&gt; 67878146, 55078343, 211714070, 208105475, 190040426, 18416…\n$ budget_2013 &lt;dbl&gt; 13000000, 45658735, 20000000, 61000000, 40000000, 22500000…\n$ roi         &lt;dbl&gt; 5.221396, 1.206305, 10.585703, 3.411565, 4.751011, 0.81851…\n$ binary      &lt;chr&gt; \"FAIL\", \"PASS\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"FAIL\", \"P…\n$ clean_test  &lt;chr&gt; \"notalk\", \"ok\", \"notalk\", \"notalk\", \"men\", \"men\", \"notalk\"…\n\n\n\nWhat does each observation (row) in the data set represent?\n\nEach observation represents a movie.\n\nHow many observations (rows) are in the data set?\n\nThere are 1615 movies in the dataset.\n\nHow many variables (columns) are in the data set?\n\nThere are 7 columns in the dataset.\nVariables of interest\nThe variables we’ll focus on are the following:\n\n\nroi: Return on investment, calculated as the ratio of the gross to budget.\n\nclean_test: Bechdel test result:\n\n\nok = passes test\ndubious\n\nmen = women only talk about men\n\nnotalk = women don’t talk to each other\n\nnowomen = fewer than two women\n\n\n\nbinary: Bechdel Test PASS vs FAIL binary\n\nWe will also use the year of release in data prep and title of movie to take a deeper look at some outliers.\nThere are a few other variables in the dataset, but we won’t be using them in this analysis."
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#bechdel-test-results",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Bechdel test results",
+    "text": "Bechdel test results\nVisualizing data with ggplot2\n\nggplot2 is the package and ggplot() is the function in this package that is used to create a plot.\n\n\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = bechdel.\n\n\nggplot(data = bechdel)\n\n\n\n\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\n\nggplot(data = bechdel, mapping = aes(x = clean_test))\n\n\n\n\n\n\n\nAs we previously mentioned, we often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(bechdel, aes(x = clean_test))\n\n\n\n\n\n\n\nNote that the result is exactly the same.\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_point which creates a plot where each observation is represented by a point.\n\n\nggplot(bechdel, aes(x = clean_test)) +\n  geom_bar()\n\n\n\n\n\n\n\nWhat types of movies are more common, those that pass or do not pass the test?\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
+    "href": "ae/ae-02-bechdel-dataviz-A.html#return-on-investment",
+    "title": "AE 02: Bechdel + data visualization",
+    "section": "Return-on-investment",
+    "text": "Return-on-investment\nLet’s take a look at return-on-investment (ROI) for movies that do and do not pass the Bechdel test.\nStep 1 - Your turn\nCreate side-by-side box plots of roi by clean_test where the boxes are colored by binary.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  )\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\nWhat are those movies with very high returns on investment?\n\nbechdel |&gt;\n  filter(roi &gt; 400) |&gt;\n  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n# A tibble: 3 × 6\n  title                     roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity      671.      505595  339424558  2007 dubious   \n2 The Blair Witch Project  648.      839077  543776715  1999 ok        \n3 El Mariachi              583.       11622    6778946  1992 nowomen   \n\n\nStep 2 - Demo\nExpand on your plot from the previous step to zoom in on movies with roi &lt; ___ to get a better view of how the medians across the categories compare.\n\nggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"Return-on-investment (gross / budget)\",\n    color = \"Bechdel\\nresult\"\n  ) +\n  coord_cartesian(ylim = c(0, 16))\n\nWarning: Removed 15 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\nWhat does this plot say about return-on-investment on movies that pass the Bechdel test?\nRender, commit, and push\n\nRender your Quarto document.\nGo to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.\nClick on push (the green arrow) to push your changes to your application exercise repo on GitHub.\nGo to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!"
+  },
+  {
+    "objectID": "project/description.html",
+    "href": "project/description.html",
+    "title": "Project description",
+    "section": "",
+    "text": "To be posted.",
     "crumbs": [
-      "Computing",
-      "Access"
+      "Project",
+      "Description"
     ]
   },
   {
-    "objectID": "lab.html",
-    "href": "lab.html",
-    "title": "Labs",
+    "objectID": "course-team.html",
+    "href": "course-team.html",
+    "title": "Teaching team",
     "section": "",
-    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nEnd of lab on Mon, Aug 25\n\n\n\n\n\n\nNo matching items",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.\n\n\n\n\n\n\n\nOffice hours\nLocation\n\n\n\n\nTuesdays and Thursdays 1-1:30 pm (after class)\nBio Sci 111\n\n\nFridays 12:45-2:15 pm.\nOld Chem 211C",
     "crumbs": [
-      "Labs"
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "course-team.html#instructor",
+    "href": "course-team.html#instructor",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education, as well as pedagogical approaches for enhancing the retention of women and underrepresented minorities in STEM.\n\n\n\n\n\n\n\nOffice hours\nLocation\n\n\n\n\nTuesdays and Thursdays 1-1:30 pm (after class)\nBio Sci 111\n\n\nFridays 12:45-2:15 pm.\nOld Chem 211C",
+    "crumbs": [
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "course-team.html#teaching-assistants",
+    "href": "course-team.html#teaching-assistants",
+    "title": "Teaching team",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\nEach TA holds office hours. Some TAs are also leaders or helpers for lab sections. Some TAs help out in lecture.\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Name\n      \n      \n        Role(s)\n      \n      \n        Section(s)\n      \n      \n        Office hours\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nName\n\n\n\nRole(s)\n\n\n\nSection(s)\n\n\n\nOffice hours\n\n\n\n\n\n\n\n\n\n\n\nAbuzar Khudaverdiyeva\n\n\nLab helper\n\n\nM 10:05 AM - 11:20 AM (Sec 4)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nAlexa Fahrer\n\n\nLecture helper\n\n\n\n\n\n🔗\n\n\n\n\n\n\n\n\n\nAllison Yang\n\n\nLab helper\n\n\nM 1:25 PM - 2:40 PM (Sec 8)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nArijit Dey\n\n\nLab leader\n\n\nM 1:25 PM - 2:40 PM (Sec 8)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nBen Sherman\n\n\nLab helper\n\n\nM 4:40 PM - 5:55 PM (Sec 11)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nBethany Akinola\n\n\nLab helper\n\n\nM 1:25 PM - 2:40 PM (Sec 7)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nEduardo Vasquez\n\n\nLab leader\n\n\nM 10:05 AM - 11:20 AM (Sec 3)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nFederico Arboleda\n\n\nLab leader\n\n\nM 10:05 AM - 11:20 AM (Sec 4)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nJessie Ringness\n\n\nLab helper\n\n\nM 10:05 AM - 11:20 AM (Sec 3)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nKathleen Zhang\n\n\nLecture helper\n\n\n\n\n\n🔗\n\n\n\n\n\n\n\n\n\nKatie Solarz\n\n\nLab leader\n\n\nM 11:45 AM - 1:00 PM (Sec 5)M 3:05 PM - 4:20 PM (Sec 9)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nLuxman Maheswaran\n\n\nLab leader\n\n\nM 4:40 PM - 5:55 PM (Sec 11)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nMarie Neubrander\n\n\nLab leader\n\n\nM 8:30 AM - 9:45 AM (Sec 1)M 1:25 PM - 2:40 PM (Sec 7)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nMax Niu\n\n\nLab helper\n\n\nM 11:45 AM - 1:00 PM (Sec 5)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nNatasha Harris\n\n\nLab helper\n\n\nM 11:45 AM - 1:00 PM (Sec 6)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nSarah Wu\n\n\nLab leader\n\n\nM 11:45 AM - 1:00 PM (Sec 6)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nXueyan Hu\n\n\nLab helper\n\n\nM 8:30 AM - 9:45 AM (Sec 1)\n\n\n🔗\n\n\n\n\n\n\n\n\n\nZiyan Wang\n\n\nLab helper\n\n\nM 3:05 PM - 4:20 PM (Sec 9)\n\n\n🔗\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "course-team.html#course-coordinator",
+    "href": "course-team.html#course-coordinator",
+    "title": "Teaching team",
+    "section": "Course coordinator",
+    "text": "Course coordinator\n\nDr. Mary Knox (she/her) is the course coordinator for this course. You can contact her (at mary.knox@duke.edu) with any questions regarding registration, accommodations, missed work, extensions, etc. Mary has office hours on Thursdays 10 am - 11:30 am on Zoom.",
+    "crumbs": [
+      "Course information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "lab/lab-0.html",
+    "href": "lab/lab-0.html",
+    "title": "Lab 0",
+    "section": "",
+    "text": "Mise en place (French pronunciation: [mi zɑ̃ ˈplas]) is a French culinary phrase which means “putting in place” or “gather”. It refers to the setup required before cooking, and is often used in professional kitchens to refer to organizing and arranging the ingredients (e.g., cuts of meat, relishes, sauces, par-cooked items, spices, freshly chopped vegetables, and other components) that a cook will require for the menu items that are expected to be prepared during a shift.1\nThis lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you’ll need for the rest of the semester and it’s about getting to know each other and the teaching team.\nAnd just like the mise an place phase for cooking something that is new to you, it might not be entirely clear how everything will come together at the end. Hang in there, and it’ll all start to make sense by the end of the week. And you’ll be a pro at it all just in time for the first assignment!"
+  },
+  {
+    "objectID": "lab/lab-0.html#computational-toolkit",
+    "href": "lab/lab-0.html#computational-toolkit",
+    "title": "Lab 0",
+    "section": "Computational toolkit",
+    "text": "Computational toolkit\nYou may have heard/seen this phrase, Hello, World!, elsewhere before. It’s usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen. Things will be different in this course, as it’s not a programming, but a data science course. So, starting tomorrow in class, you’ll learn to use a computing language (called R) to work with data.\nBut today, we need to set you up for success! Let’s first briefly review the components of the computational toolkit for the course:\n\nR: The programming language you’ll learn in this course.\n\nRStudio: The piece of software (a.k.a. the integrated development environment, IDE) you’ll use to write R code in.\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\n\nQuarto: The tool you’ll use to create reproducible computational documents that contain both your narrative (i.e., words in English) and your code (i.e., code in R). Every piece of assignment you hand in will be a Quarto document.\n\n\n\n\n\n\nNote\n\n\n\nYou might be familiar with word processors like MS Word or Google Docs. We will not be using these in this class. Instead, the words you would write in such a document as well as the code will go into a Quarto document, and when you render the document (more on what this means later) you will get a document out that has your words, your code, and the output of that code. Everything in one place, beautifully formatted!\n\n\n\nGit: Version control system.\n\nGitHub: A web hosting service for the Git version control system that also allows for transparent collaboration between team members.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better)."
+  },
+  {
+    "objectID": "lab/lab-0.html#an-analogy-to-english",
+    "href": "lab/lab-0.html#an-analogy-to-english",
+    "title": "Lab 0",
+    "section": "An analogy to English",
+    "text": "An analogy to English\nWhile most of the above tools might be new to you, they have many similarities with tools you have probably seen before.\nSuppose you wanted to write an essay for a literature class. You would need to pick a language (e.g. English) and choose an interface to write your document with (such as Microsoft word with a .docx word doc). You also might want to use track changes to see edits you make and use a platform such as Google Drive to collaborate.\n\nWhile the computational toolkit is different than the one for a literature class, we can find many similarities between the tools, as is shown in the figure below."
+  },
+  {
+    "objectID": "lab/lab-0.html#access-r-and-rstudio",
+    "href": "lab/lab-0.html#access-r-and-rstudio",
+    "title": "Lab 0",
+    "section": "Access R and RStudio",
+    "text": "Access R and RStudio\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 to log into the Docker container. You should now see the RStudio environment.\n\nGo to https://cmgr.oit.duke.edu/containers and under Reservations available click on reserve STA199 to reserve a container for yourself.\n\n\n\n\n\n\nNote\n\n\n\nA container is a self-contained instance of RStudio for you, and you alone. You will do all of your computing in your container.\n\n\nOnce you’ve reserved the container you’ll see that it will show up under My reservations.\nTo launch your container click on it under My reservations, then click Login, and then Start.2"
+  },
+  {
+    "objectID": "lab/lab-0.html#create-a-github-account",
+    "href": "lab/lab-0.html#create-a-github-account",
+    "title": "Lab 0",
+    "section": "Create a GitHub account",
+    "text": "Create a GitHub account\nGo to https://github.com/ and walk through the steps for creating an account. You do not have to use your Duke email address, but I recommend doing so.3\n\n\n\n\n\n\nNote\n\n\n\nYou’ll need to choose a user name. I recommend reviewing the user name advice at https://happygitwithr.com/github-acct#username-advice before choosing a username.\n\n\n\n\n\n\n\n\nWhat if I already have a GitHub account?\n\n\n\n\n\nIf you already have a GitHub account, you do not need to create a new one for this course. Just log in to that account to make sure you still remember your username and password."
+  },
+  {
+    "objectID": "lab/lab-0.html#update-your-github-profile",
+    "href": "lab/lab-0.html#update-your-github-profile",
+    "title": "Lab 0",
+    "section": "Update your GitHub profile",
+    "text": "Update your GitHub profile\nOnce you have created your GitHub account, you should update your profile.\nTo do so, click on your profile icon in the upper right corner of the GitHub page and select Settings. Then, on the left side of the page, click on Public profile and fill out your profile information.\nOnce done, click Update profile mid-way through the page.\n\n\n\n\n\n\nAdd a profile picture\n\n\n\n\n\nThis is not required, but highly recommended. It will help us get to know you (and recognize you in class) and will also help you get to know your classmates."
+  },
+  {
+    "objectID": "lab/lab-0.html#set-up-your-ssh-key",
+    "href": "lab/lab-0.html#set-up-your-ssh-key",
+    "title": "Lab 0",
+    "section": "Set up your SSH key",
+    "text": "Set up your SSH key\nYou will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nGo back to your RStudio container and copy-and-paste or type the following in the Console.\n\n\ncredentials::ssh_setup_github()\n\n\nThis will print a message in the Console. Read it. It should say: “No SSH key found. Generate one now?” You should click 1 for yes.\nThis will generate a key (basically a really long alpha-numeric password). R will then ask “Would you like to open a browser now?” You should click 1 for yes again.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta199).\n\nYou can find more detailed instructions here if you’re interested."
+  },
+  {
+    "objectID": "lab/lab-0.html#configure-git-to-introduce-yourself",
+    "href": "lab/lab-0.html#configure-git-to-introduce-yourself",
+    "title": "Lab 0",
+    "section": "Configure Git to introduce yourself",
+    "text": "Configure Git to introduce yourself\nThere is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\n\n\n\n\n\n\nNote\n\n\n\nYou’ll hear about 📦 packages a lot in the context of R – basically they’re how developers write functions and bundle them to distribute to the community (and more on this later too!).\n\n\nType the following lines of code in the console in RStudio filling in your name and the address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n)\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Mine Çetinkaya-Rundel\", \n  user.email = \"cetinkaya.mine@gmail.com\"\n)\n\n\n\n\n\n\n\nNote\n\n\n\nI used my gmail because that is the one I used to create my GitHub account. You should also be using the email address you used to create your GitHub account, it’s ok if it isn’t your Duke email.\n\n\nYou are now ready interact with GitHub via RStudio!\nIf you don’t do this, we won’t be able to tell who you are and give you points for the work you do…\n\n\n\n\n\n\nNote\n\n\n\nWell, a more accurate statement would be that we will be reaching out to you to get things right during the first few weeks of classes. But, it’s best if you can get it right today!\n\n\n\n\n\n\n\n\nNeed a recap? Watch this video!\n\n\n\n\n\nThe following video walks you through the steps outlined in the SSH key generation and Git configuration sections above."
+  },
+  {
+    "objectID": "lab/lab-0.html#clone-your-first-repository",
+    "href": "lab/lab-0.html#clone-your-first-repository",
+    "title": "Lab 0",
+    "section": "Clone your first repository",
+    "text": "Clone your first repository\nNow that you have your GitHub account set up, you can clone your first repository.\nTo do so, follow these steps.\n\nGo to the repository for lab-0 in the course GitHub organization: https://github.com/sta199-f25/lab-0.\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\n\n\n\n\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\n\nClick Create Project.\n\n\n\n\n\n\nSince this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host. This will happen in a pop-up window like the one below. Type yes in the box and hit Enter.\n\n\n\n\n\nRStudio will now clone the repo and create a new RStudio project for you. This might take a few seconds. Once done, the files from your GitHub repo will be displayed in the Files pane in RStudio."
+  },
+  {
+    "objectID": "lab/lab-0.html#footnotes",
+    "href": "lab/lab-0.html#footnotes",
+    "title": "Lab 0",
+    "section": "Footnotes",
+    "text": "Footnotes\n\nSource: Wikipedia.↩︎\nYes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!↩︎\nGitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.↩︎"
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#overview",
+    "href": "course-overview.html#overview",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#meetings",
+    "href": "course-overview.html#meetings",
+    "title": "STA 199Fall 2025",
+    "section": "Meetings",
+    "text": "Meetings\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-support.html",
+    "href": "course-support.html",
+    "title": "Course support",
+    "section": "",
+    "text": "Most of you will need help at some point, and we want to make sure you can identify where that is so that you don’t get too frustrated and feel comfortable seeking help.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#lectures-and-labs",
+    "href": "course-support.html#lectures-and-labs",
+    "title": "Course support",
+    "section": "Lectures and labs",
+    "text": "Lectures and labs\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so asking will create a learning opportunity for everyone.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#help-from-humans",
+    "href": "course-support.html#help-from-humans",
+    "title": "Course support",
+    "section": "Help from humans",
+    "text": "Help from humans\n\nOffice hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. Many questions are most effectively answered in person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by during office hours at least once during the first three weeks of class. If you have no questions, stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.\nMy office hours will start in Week 1, TA office hours will start in Week 2.\n\n\nEd Discussion\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course discussion forum, Ed Discussion, is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!\nYou can access this tool on the course website toolbar – just click on the lifesaver icon.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#email",
+    "href": "course-support.html#email",
+    "title": "Course support",
+    "section": "Email",
+    "text": "Email\nPlease refrain from emailing any course content questions (those should go to Ed Discussion), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at mc301@duke.edu.\nIf there is a question that’s not appropriate for the public forum, you are welcome to email me directly. If you email me, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#academic-support",
+    "href": "course-support.html#academic-support",
+    "title": "Course support",
+    "section": "Academic support",
+    "text": "Academic support\nThere are times you may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact theARC@duke.edu, 919-684-5917.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#mental-health-and-well-being",
+    "href": "course-support.html#mental-health-and-well-being",
+    "title": "Course support",
+    "section": "Mental health and well-being",
+    "text": "Mental health and well-being\nDuke is committed to holistic student wellbeing, which includes one’s mental, emotional, and physical health. The university offers resources to help students manage daily stress, to encourage intentional self-care, and to access just-in-time support. If you find you need support, your mental and/or emotional health concerns are impacting your day-to-day activities, your academic performance, or you need someone to talk to, the resources below are available to you:\n\nDukeReach: DukeReach provides comprehensive outreach services to support students in managing all aspects of well-being, including referrals and follow-up services for students who are experiencing significant challenges related to mental health, physical health, social adjustment, and/or a variety of other stressors. You can reach the DukeReach team at dukereach@duke.edu.\nCounseling and Psychological Services (CAPS): CAPS offers counseling services to Duke students including virtual appointments, and referrals in the community. You do not need an appointment for an initial assessment. You may walk in or call 919-660-1000 to get started. Hours: Monday-Friday 9:00am - 4:00pm. After hours counseling services are available at no additional cost to students, you can call: 919-660-1000 Option 2.\nTimelyCare1: TimelyCare is an online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling.\nDuke Student Health: Student Health offers a wide range of healthcare services for all Duke students, many of which are covered by the student health fee. To make an appointment call (919) 681-9355. Hours: Monday - Friday, 8am - 4:30pm, Thursday 9am - 4:30pm. Closed from 12-12:30 each day.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#course-costs",
+    "href": "course-support.html#course-costs",
+    "title": "Course support",
+    "section": "Course costs",
+    "text": "Course costs\n\nTextbooks: The textbooks for this course are freely available on the web.\nLaptops: Each student is expected to have a laptop they can bring to each lecture and lab.\n\nIf you are having difficulty with the costs associated with this course, here are some resources:\n\nKarsh Office of Undergraduate Support: Regardless of your aid package, Karsh offers loans and resources for connecting students with campus programs that might help alleviate course costs.\nDukeLIFE: The Course Material Assistance program offers assistance for eligible students, including through the LIFE Loaner Laptop Program. Students who are eligible for DukeLIFE benefits are notified before the start of the semester; program resources are limited.\nDuke Libraries: The library’s Top Textbook Program allows you to rent some textbooks for 3 hours at a time.\nDuke Link: You can reserve rental equipment from the Link for course-specific technology needs, such as a Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, Handheld Projector, or GoPro.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#assistance-with-zoom-or-canvas",
+    "href": "course-support.html#assistance-with-zoom-or-canvas",
+    "title": "Course support",
+    "section": "Assistance with Zoom or Canvas",
+    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas visit go.canvas.duke.edu/get-help/. For technical help with Zoom contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom and Canvas.\nNote that we will be using Canvas minimally in this course (primarily for announcements and the grade book). All assignment submissions will take place on Gradescope and GitHub, and conversations will take place on Ed Discussion.\nZoom will be used for online office hours and as a backup option should we need to hold the course online instead of in person.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#footnotes",
+    "href": "course-support.html#footnotes",
+    "title": "Course support",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFormerly known as Blue Devils Care.↩︎",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "hw.html",
+    "href": "hw.html",
+    "title": "Homeworks",
+    "section": "",
+    "text": "More homeworks to be added as the semester progresses.\n\n\n\n\n\n\n\n\nNo.\nTitle\nDue date\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homeworks"
+    ]
+  },
+  {
+    "objectID": "ae.html",
+    "href": "ae.html",
+    "title": "Application exercises",
+    "section": "",
+    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\n\n\n\n\n\nAE 01: Income inequality\n\n\nSuggested answers\n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Application exercises"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 199: Introduction to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n💻 lab 0\n\nLab 0 due at the end of lab session (not graded)\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n🖥️ slides 01  🗒️ notes 01\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 01  ✅ ae 01\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 02  ✅ ae 02\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\n\n3\nMon, Sep 8\nLab 1: From the Midwest to North Carolina\nTo be posted\n\nLab 1 due at the end of the lab session\n\n\n\nTue, Sep 9\nExploratory data analysis I\nTo be posted\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\nTo be posted\n\n\n\n\n\nSun, Sep 14\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Revisiting the Midwest\nTo be posted\n\nLab 2 due at the end of the lab session\n\n\n\nTue, Sep 16\nTidying data\nTo be posted\n\n\n\n\n\nThu, Sep 18\nJoining data\nTo be posted\n\n\n\n\n\nSun, Sep 21\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\nTo be posted\n\nLab 3 due at the end of the lab session\n\n\n\nTue, Sep 23\nData types and classes\nTo be posted\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\nTo be posted\n\n\n\n\n\nSun, Sep 28\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Everything so far I\nTo be posted\n\nLab 4 due at the end of lab session\n\n\n\nTue, Sep 30\nExam 1 review\nTo be posted\n📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Oct 4\n\n\n\nExam 1 take-home due at 12 pm\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\nTo be posted\n📓 project milestone 1  📓 project milestone 2\n\nProject milestone 1 due at the end of lab session\n\n\n\nTue, Oct 7\nWeb scraping\nTo be posted\n\n\n\n\n\nThu, Oct 9\nData science ethics\nTo be posted\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\nTo be posted\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\nTo be posted\n\n\n\n\n\nThu, Oct 16\n\n\nEssential data science skills potpourri:\nWorking with generative AI tools\n\nCommunicating data science results effectively\n\nCustomizing Quarto reports and presentations\n\n\nTo be posted\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\nTo be posted\n📓 project milestone 3\n\nProject milestone 3 due at the end of lab session\n\n\n\nTue, Oct 21\nThe language of models\nTo be posted\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\nTo be posted\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Visualize, model, interpret [45 minutes]\nTo be posted\n📓 project milestone 4\n\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors I\nTo be posted\n\n\n\n\n\nThu, Oct 30\nLinear regression with multiple predictors II\nTo be posted\n\nPeer evaluation 3 at 11:59 pm\n\n\n\nSun, Nov 2\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\nTo be posted\n📓 project milestone 5\n\nProject milestone 5 due at the end of lab session\n\n\n\nTue, Nov 4\nModel selection and overfitting\nTo be posted\n\n\n\n\n\nThu, Nov 6\nLogistic regression I\nTo be posted\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Present and turn in write-up!\nTo be posted\n\n\n\n\n\nTue, Nov 11\nLogistic regression II\nTo be posted\n\n\n\n\n\nThu, Nov 13\nEvaluating models\nTo be posted\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\nTo be posted\n\nLab 6 due at the end of lab session\n\n\n\nTue, Nov 18\nExam 2 review\nTo be posted\n📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\nTo be posted\n\n\n\n\n\nSat, Nov 22\n\n\n\nExam 2 take-home due at 12 pm\n\n\n14\nMon, Nov 24\nLab 7: Explore and classify\nTo be posted\n\nLab 7 due at the end of lab session\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\nTo be posted\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\nTo be posted\n\n\n\n\n\nSun, Nov 30\n\n\n\nHW 5 due at 11:59 pm\n\n\n15\nMon, Dec 1\nLab 8: Inference\nTo be posted\n\nLab 8 due at the end of lab session\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\nTo be posted\n\n\n\n\n\nThu, Dec 4\nLooking further\nTo be posted\n\n\n\n\n\nFri, Dec 5\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)\nTo be posted",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html",
+    "href": "ae/ae-01-income-inequality-A.html",
+    "title": "AE 01: Income inequality",
+    "section": "",
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key.\nDemo: Replace “Your Name” above with your actual name. Then, render the document to inspect the changes. Once you confirm you’re happy with the changes, commit your changes (with an appropriate commit message) by staging ALL of the changed files, and push them to GitHub. In your browser, navigate to your GitHub repository and confirm that the changes are reflected there.\nThe dataset we will explore is in the data folder and it’s called income-inequality.csv. It contains data on income inequality, measured by the GINI coefficient for different countries and years.\nFrom Wikipedia:\nIn this dataset we have two Gini coefficients: one for income inequality before taxes and another for income inequality after taxes. These two values allow us to explore how much countries redistribute income. In addition, since we have data for multiple years, we can also explore how income inequality has changed over time."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#packages",
+    "href": "ae/ae-01-income-inequality-A.html#packages",
+    "title": "AE 01: Income inequality",
+    "section": "Packages",
+    "text": "Packages\nFor this application exercise, we’ll use the tidyverse package.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nDemo: Run the code cell above and inspect the message printed in the Console."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#data",
+    "href": "ae/ae-01-income-inequality-A.html#data",
+    "title": "AE 01: Income inequality",
+    "section": "Data",
+    "text": "Data\nLet’s load the data.\n\nincome_inequality &lt;- read_csv(\"data/income-inequality.csv\")\n\nRows: 549 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, country_code\ndbl (3): year, gini_pre_tax, gini_post_tax\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd take a look at the first 10 rows.\n\nincome_inequality\n\n# A tibble: 549 × 5\n   country   country_code  year gini_pre_tax gini_post_tax\n   &lt;chr&gt;     &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;\n 1 Australia AUS           1989        0.431         0.304\n 2 Australia AUS           1995        0.47          0.311\n 3 Australia AUS           2001        0.481         0.32 \n 4 Australia AUS           2003        0.469         0.316\n 5 Australia AUS           2004        0.467         0.316\n 6 Australia AUS           2008        0.469         0.335\n 7 Australia AUS           2010        0.47          0.333\n 8 Australia AUS           2014        0.481         0.329\n 9 Australia AUS           2016        0.467         0.326\n10 Australia AUS           2018        0.469         0.329\n# ℹ 539 more rows\n\n\nThe variables in the dataset are:\n\n\ncountry: Country name\n\ncountry_code: Country code\n\nyear: Year\n\ngini_pre_tax: Gini coefficient before taxes\n\ngini_post_tax: Gini coefficient after taxes\n\nDemo: And take a look at the structure of the data as well with the glimpse() function.\n\nglimpse(income_inequality)\n\nRows: 549\nColumns: 5\n$ country       &lt;chr&gt; \"Australia\", \"Australia\", \"Australia\", \"Australia\", \"Aus…\n$ country_code  &lt;chr&gt; \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", \"AUS\", …\n$ year          &lt;dbl&gt; 1989, 1995, 2001, 2003, 2004, 2008, 2010, 2014, 2016, 20…\n$ gini_pre_tax  &lt;dbl&gt; 0.431, 0.470, 0.481, 0.469, 0.467, 0.469, 0.470, 0.481, …\n$ gini_post_tax &lt;dbl&gt; 0.304, 0.311, 0.320, 0.316, 0.316, 0.335, 0.333, 0.329, …\n\n\nDemo: Render, commit (with an appropriate commit message), and push your changes to GitHub.\nYour turn: replace the blank below with the number of rows in the income_inequality data frame based on the output of the chunk below. Then, replace it with “inline code” and render again. Then, commit (with an appropriate commit message) and push your changes to GitHub.\nThe income_inequality data frame has 549 observations. Each observation represents a country in a given year."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-a-country",
+    "href": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-a-country",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in a country",
+    "text": "Income inequality over time in a country\nLet’s explore income inequality over time in a country.\n\nincome_inequality |&gt;\n  filter(country == \"Denmark\") |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1)\n\n\n\n\n\n\n\nYour turn: Create a similar plot for another country of your choice by by modifying the code in the code cell labeled plot-single above. Then, render, commit (with an appropriate commit message), and push your changes to GitHub.\nHint: Open the data frame in the data viewer by clicking on its name in the Environment pane to see the list of countries."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-many-countries",
+    "href": "ae/ae-01-income-inequality-A.html#income-inequality-over-time-in-many-countries",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in many countries",
+    "text": "Income inequality over time in many countries\nNow let’s explore income inequality over time in many countries.\n\nincome_inequality |&gt;\n  filter(country %in% c(\"United States\", \"Sweden\", \"South Africa\")) |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1) +\n  facet_wrap(~country, ncol = 1)\n\n\n\n\n\n\n\nYour turn: Change as many countries as you like except for the United States by modifying the code in the cell labeled plot-many above. You can replace country names like we did before or add or remove them. Then, render to see your changes. Discuss your findings with your neighbor – Why did you choose those countries? How do the income inequalities of these countries compare? Finally, commit your changes (with an appropriate commit message), and push your changes to GitHub."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html",
+    "href": "ae/ae-01-income-inequality.html",
+    "title": "AE 01: Income inequality",
+    "section": "",
+    "text": "Demo: Replace “Your Name” above with your actual name. Then, render the document to inspect the changes. Once you confirm you’re happy with the changes, commit your changes (with an appropriate commit message) by staging ALL of the changed files, and push them to GitHub. In your browser, navigate to your GitHub repository and confirm that the changes are reflected there.\nThe dataset we will explore is in the data folder and it’s called income-inequality.csv. It contains data on income inequality, measured by the GINI coefficient for different countries and years.\nFrom Wikipedia:\nIn this dataset we have two Gini coefficients: one for income inequality before taxes and another for income inequality after taxes. These two values allow us to explore how much countries redistribute income. In addition, since we have data for multiple years, we can also explore how income inequality has changed over time."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#packages",
+    "href": "ae/ae-01-income-inequality.html#packages",
+    "title": "AE 01: Income inequality",
+    "section": "Packages",
+    "text": "Packages\nFor this application exercise, we’ll use the tidyverse package.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nDemo: Run the code cell above and inspect the message printed in the Console."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#data",
+    "href": "ae/ae-01-income-inequality.html#data",
+    "title": "AE 01: Income inequality",
+    "section": "Data",
+    "text": "Data\nLet’s load the data.\n\nincome_inequality &lt;- read_csv(\"data/income-inequality.csv\")\n\nRows: 549 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, country_code\ndbl (3): year, gini_pre_tax, gini_post_tax\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nAnd take a look at the first 10 rows.\n\nincome_inequality\n\n# A tibble: 549 × 5\n   country   country_code  year gini_pre_tax gini_post_tax\n   &lt;chr&gt;     &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;\n 1 Australia AUS           1989        0.431         0.304\n 2 Australia AUS           1995        0.47          0.311\n 3 Australia AUS           2001        0.481         0.32 \n 4 Australia AUS           2003        0.469         0.316\n 5 Australia AUS           2004        0.467         0.316\n 6 Australia AUS           2008        0.469         0.335\n 7 Australia AUS           2010        0.47          0.333\n 8 Australia AUS           2014        0.481         0.329\n 9 Australia AUS           2016        0.467         0.326\n10 Australia AUS           2018        0.469         0.329\n# ℹ 539 more rows\n\n\nThe variables in the dataset are:\n\n\ncountry: Country name\n\ncountry_code: Country code\n\nyear: Year\n\ngini_pre_tax: Gini coefficient before taxes\n\ngini_post_tax: Gini coefficient after taxes\n\nDemo: And take a look at the structure of the data as well with the glimpse() function.\n\n# add code here\n\nDemo: Render, commit (with an appropriate commit message), and push your changes to GitHub.\nYour turn: replace the blank below with the number of rows in the income_inequality data frame based on the output of the chunk below. Then, replace it with “inline code” and render again. Then, commit (with an appropriate commit message) and push your changes to GitHub.\nThe income_inequality data frame has ___ observation. Each observation represents a country in a given year."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-a-country",
+    "href": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-a-country",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in a country",
+    "text": "Income inequality over time in a country\nLet’s explore income inequality over time in a country.\n\nincome_inequality |&gt;\n  filter(country == \"United States\") |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1)\n\n\n\n\n\n\n\nYour turn: Create a similar plot for another country of your choice by by modifying the code in the code cell labeled plot-single above. Then, render, commit (with an appropriate commit message), and push your changes to GitHub.\nHint: Open the data frame in the data viewer by clicking on its name in the Environment pane to see the list of countries."
+  },
+  {
+    "objectID": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-many-countries",
+    "href": "ae/ae-01-income-inequality.html#income-inequality-over-time-in-many-countries",
+    "title": "AE 01: Income inequality",
+    "section": "Income inequality over time in many countries",
+    "text": "Income inequality over time in many countries\nNow let’s explore income inequality over time in many countries.\n\nincome_inequality |&gt;\n  filter(country %in% c(\"United States\", \"United Kingdom\", \"Spain\", \"Sweden\")) |&gt;\n  pivot_longer(\n    cols = contains(\"gini\"),\n    names_to = \"gini_type\",\n    values_to = \"gini_coefficient\"\n  ) |&gt;\n  mutate(\n    gini_type = if_else(gini_type == \"gini_pre_tax\", \"Pre-tax\", \"Post-tax\"),\n    gini_type = fct_relevel(gini_type, \"Pre-tax\", \"Post-tax\")\n  ) |&gt;\n  ggplot(aes(x = year, y = gini_coefficient, color = gini_type)) +\n  geom_line(linewidth = 1) +\n  facet_wrap(~country, ncol = 1)\n\n\n\n\n\n\n\nYour turn: Change as many countries as you like except for the United States by modifying the code in the cell labeled plot-many above. You can replace country names like we did before or add or remove them. Then, render to see your changes. Discuss your findings with your neighbor – Why did you choose those countries? How do the income inequalities of these countries compare? Finally, commit your changes (with an appropriate commit message), and push your changes to GitHub."
+  },
+  {
+    "objectID": "exam-review.html",
+    "href": "exam-review.html",
+    "title": "Exam reviews",
+    "section": "",
+    "text": "Title\nSubtitle\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Exam reviews"
+    ]
+  },
+  {
+    "objectID": "computing-troubleshooting.html",
+    "href": "computing-troubleshooting.html",
+    "title": "Computing troubleshooting",
+    "section": "",
+    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
+    "crumbs": [
+      "Computing",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "href": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder).",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "title": "FAQ",
+    "section": "How can I submit my assignment to Gradescope?",
+    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions.",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "title": "FAQ",
+    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
+    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nThe short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.5.1: https://cran.r-project.org/\nDownload and install RStudio: https://posit.co/download/rstudio-desktop/\nInstall Quarto 1.7.32 or higher: https://quarto.org/docs/get-started/\nInstall Git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here.",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "computing-code-alongs.html",
+    "href": "computing-code-alongs.html",
+    "title": "Code alongs",
+    "section": "",
+    "text": "The following videos feature “code alongs” as an additional resource for getting coding practice.\nThe files you can use to follow along with the videos can be found at https://github.com/sta199/code-alongs.",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
+    ]
+  },
+  {
+    "objectID": "computing-code-alongs.html#data-visualization-and-transformation",
+    "href": "computing-code-alongs.html#data-visualization-and-transformation",
+    "title": "Code alongs",
+    "section": "Data visualization and transformation",
+    "text": "Data visualization and transformation\n\nUN Votes\nFirst look at R amd RStudio.\n\n\n\nFirst look at Palmer Penguins\nFirst look at data science with the tidyverse.\n\n\n\nFlights and pipes\nData transformation\n\n\n\nStarwars characters\nData visualization\n\n\n\nDiving deeper with Palmer Penguins\nData visualization and transformation",
+    "crumbs": [
+      "Computing",
+      "Code alongs"
     ]
   },
   {
@@ -1596,34 +2093,6 @@
     "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in cells narrative goes outside of cells\nOptional: A visual editor for a familiar / Google docs-like editing experience"
   },
   {
-    "objectID": "slides/02-meet-the-toolkit.html#tour-quarto-and-more-git-github",
-    "href": "slides/02-meet-the-toolkit.html#tour-quarto-and-more-git-github",
-    "title": "Meet the toolkit",
-    "section": "Tour: Quarto (and more Git + GitHub)",
-    "text": "Tour: Quarto (and more Git + GitHub)\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit.html#how-will-we-use-quarto",
-    "href": "slides/02-meet-the-toolkit.html#how-will-we-use-quarto",
-    "title": "Meet the toolkit",
-    "section": "How will we use Quarto?",
-    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit.html#whats-with-all-the-hexes",
-    "href": "slides/02-meet-the-toolkit.html#whats-with-all-the-hexes",
-    "title": "Meet the toolkit",
-    "section": "What’s with all the hexes?",
-    "text": "What’s with all the hexes?"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit.html#we-have-hexes-too",
-    "href": "slides/02-meet-the-toolkit.html#we-have-hexes-too",
-    "title": "Meet the toolkit",
-    "section": "We have hexes too!",
-    "text": "We have hexes too!\n\nFeel free to grab one before you leave!"
-  },
-  {
     "objectID": "slides/02-meet-the-toolkit-slides.html#setup",
     "href": "slides/02-meet-the-toolkit-slides.html#setup",
     "title": "Meet the toolkit",
@@ -1937,34 +2406,6 @@
     "title": "Meet the toolkit",
     "section": "Quarto",
     "text": "Quarto\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in cells narrative goes outside of cells\nOptional: A visual editor for a familiar / Google docs-like editing experience"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#tour-quarto-and-more-git-github",
-    "href": "slides/02-meet-the-toolkit-slides.html#tour-quarto-and-more-git-github",
-    "title": "Meet the toolkit",
-    "section": "Tour: Quarto (and more Git + GitHub)",
-    "text": "Tour: Quarto (and more Git + GitHub)\n\n\n\nOption 1:\nSit back and enjoy the show!\n\n\n\n\n\n\n\nNote\n\n\nIf you chose (or had to choose) this option for the previous tour, or if you couldn’t clone your repo for any reason, you’ll need to stick to this option.\n\n\n\n\n\nOption 2:\nGo to RStudio and open the document ae-01-income-inequality.qmd.\n\n\n\n\nTour recap: Quarto\n\n\n\n\n\n\nTour recap: Git + GitHub\nOnce we made changes to our Quarto document, we\n\nwent to the Git pane in RStudio\nstaged our changes by clicking the checkboxes next to the relevant files\ncommitted our changes with an informative commit message\npushed our changes to our application exercise repos\nconfirmed on GitHub that we could see our changes pushed from RStudio"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#how-will-we-use-quarto",
-    "href": "slides/02-meet-the-toolkit-slides.html#how-will-we-use-quarto",
-    "title": "Meet the toolkit",
-    "section": "How will we use Quarto?",
-    "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#whats-with-all-the-hexes",
-    "href": "slides/02-meet-the-toolkit-slides.html#whats-with-all-the-hexes",
-    "title": "Meet the toolkit",
-    "section": "What’s with all the hexes?",
-    "text": "What’s with all the hexes?"
-  },
-  {
-    "objectID": "slides/02-meet-the-toolkit-slides.html#we-have-hexes-too",
-    "href": "slides/02-meet-the-toolkit-slides.html#we-have-hexes-too",
-    "title": "Meet the toolkit",
-    "section": "We have hexes too!",
-    "text": "We have hexes too!\n\nFeel free to grab one before you leave!"
   },
   {
     "objectID": "course-links.html",
