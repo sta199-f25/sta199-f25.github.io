@@ -23,9 +23,41 @@ ggplot2::theme_set(ggplot2::theme_minimal(base_size = 24))
 
 # Warm-up
 
-## Participate 📱💻 {.smaller}
+## While you wait: Participate 📱💻 {.smaller}
 
+::: {.columns}
 
+::: {.column width="75%"}
+
+::: wooclap
+Which of the following is **true** about the code below?
+
+```{r}
+#| eval: false
+#| message: false
+ggplot(mtcars, _[blank]_(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth()
+```
+
+::: small
+- `mtcars` is the name of the variable being plotted on the x-axis
+- The function that goes in the blank is `map()`
+- The data are being visualized with a scatterplot and a smooth line
+- Some points on the plot will be colored differently than others
+:::
+
+:::
+
+:::
+
+::: {.column width="25%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
 
 ## Announcements {.smaller}
 
@@ -156,6 +188,34 @@ bechdel |> # <1>
 2.  Filter for movies with `roi` greater than 400 (gross is more than 400 times budget)
 3.  Select the columns `title`, `roi`, `budget_2013`, `gross_2013`, `year`, and `clean_test`
 
+## Participate 📱💻 {.smaller}
+
+::: {.columns}
+
+::: {.column width="75%"}
+
+::: wooclap
+In data transformation with the pipe operator `|>`, what does the operator do?
+
+::: small
+- It ends a pipeline and prints the result.
+- It joins two data frames together.
+- It passes the output from the previous command into the first argument of the function in the next command.
+- It is equivalent to the "or" operator.
+:::
+
+:::
+
+:::
+
+::: {.column width="25%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
+
 ## The pipe `|>` {.smaller}
 
 The pipe operator passes what comes before it into the function that comes after it as the first argument in that function.
@@ -282,6 +342,31 @@ Source: [Cake by Anirban Sengupta on Unsplash](https://unsplash.com/photos/white
 :::      
 
 # Looking forward: Describing distributions and relationships
+
+## Participate 📱💻 {.smaller}
+
+::: {.columns}
+
+::: {.column width="75%"}
+
+::: wooclap
+Which type of visualization is useful for comparing distributions across groups?
+
+- Histogram
+- Line plot
+- Scatterplot
+- Side-by-side boxplots
+:::
+
+:::
+
+::: {.column width="25%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
 
 ## One numerical variable {.smaller}
 
