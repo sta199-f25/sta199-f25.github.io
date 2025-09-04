@@ -2398,7 +2398,7 @@
     "href": "slides/04-grammar-of-data-transformation.html",
     "title": "Grammar of data transformation",
     "section": "",
-    "text": "Which of the following is true about the code below?\n\nggplot(mtcars, _[blank]_(x = wt, y = mpg)) +\n  geom_point() +\n  geom_smooth()\n\n\n\nmtcars is the name of the variable being plotted on the x-axis\nThe function that goes in the blank is map()\nThe data are being visualized with a scatterplot and a smooth line\nSome points on the plot will be colored differently than others\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nContinue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nLab 1 is on Monday, HW 1 is due next Sunday."
+    "text": "Which of the following is true about the code below?\n\nggplot(mtcars, _[blank]_(x = wt, y = mpg)) +\n  geom_point() +\n  geom_smooth()\n\n\n\nmtcars is the name of the variable being plotted on the x-axis\nThe function that goes in the blank is map()\nThe data are being visualized with a scatterplot and a smooth line\nSome points on the plot will be colored differently than others\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nContinue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nFollowing along with code along videos: See https://sta199-f25.github.io/computing-code-alongs.html – Clone the code-alongs repository and work throgh the relevant .qmd files as you watch the videos. Use the project navigator in RStudio to switch between your code-alongs project and your other projects (ae, labs, HWs, etc.).\nLab 1 is on Monday, HW 1 is due next Sunday."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation.html#while-you-wait-participate",
@@ -2412,7 +2412,7 @@
     "href": "slides/04-grammar-of-data-transformation.html#announcements",
     "title": "Grammar of data transformation",
     "section": "",
-    "text": "Continue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nLab 1 is on Monday, HW 1 is due next Sunday."
+    "text": "Continue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nFollowing along with code along videos: See https://sta199-f25.github.io/computing-code-alongs.html – Clone the code-alongs repository and work throgh the relevant .qmd files as you watch the videos. Use the project navigator in RStudio to switch between your code-alongs project and your other projects (ae, labs, HWs, etc.).\nLab 1 is on Monday, HW 1 is due next Sunday."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation.html#bechdel-test",
@@ -2594,7 +2594,7 @@
     "href": "slides/04-grammar-of-data-transformation-slides.html#announcements",
     "title": "Grammar of data transformation",
     "section": "Announcements",
-    "text": "Announcements\n\nContinue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nLab 1 is on Monday, HW 1 is due next Sunday."
+    "text": "Announcements\n\nContinue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nFollowing along with code along videos: See https://sta199-f25.github.io/computing-code-alongs.html – Clone the code-alongs repository and work throgh the relevant .qmd files as you watch the videos. Use the project navigator in RStudio to switch between your code-alongs project and your other projects (ae, labs, HWs, etc.).\nLab 1 is on Monday, HW 1 is due next Sunday."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation-slides.html#bechdel-test",
