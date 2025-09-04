@@ -1,0 +1,394 @@
+---
+title: "Grammar of data transformation"
+subtitle: "Lecture 4"
+date: "2025-09-04"
+format: 
+  revealjs: 
+    output-file: 04-grammar-of-data-transformation-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    toc: false
+  html: 
+    code-link: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 24))
+```
+
+# Warm-up
+
+## Participate 📱💻 {.smaller}
+
+
+
+## Announcements {.smaller}
+
+-   Continue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade -- if we haven't gotten any responses from you yet, and you didn't just add the class, you've already heard from us!
+
+-   Lab 1 is on Monday, HW 1 is due next Sunday.
+
+# From last time
+
+## Bechdel test {.smaller}
+
+::: {.columns}
+
+::: {.column width="70%"}
+The **Bechdel test** (or the **Bechdel-Wallace test**), named after cartoonist Alison Bechdel,
+
+> is a measure of the representation of women in film and other fiction. The test asks whether a work features at least two women who have a conversation about something other than a man. Some versions of the test also require that those two women have names.
+:::
+
+::: {.column width="30%"}
+
+![](images/04/alison-bechdel.png)
+
+:::
+
+::: 
+
+::: aside
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Bechdel_test)
+:::
+
+## The origin of the Bechdel test 
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+![](images/04/bechdel-test.png)
+
+*Dykes to Watch Out For* - 1985
+
+:::
+
+::: {.column width="30%"}
+
+Film passes if…
+
+1. two female characters;
+2. talk to each other;
+3. about something besides a man.
+
+:::
+
+:::
+
+## How did some of my favorite movies do? {.smaller}
+
+::: incremental
+- The Big Lebowski ❌
+- In the Mood for Love ✅
+- Trainspotting ❌
+- Love Actually ✅
+- Eternal Sunshine of the Spotless Mind ❌
+- Before Sunrise ❌
+- When Harry Met Sally ✅
+- Garden State ✅
+- Empire Records ✅
+- Amélie ✅
+:::
+
+## Data story {.smaller}
+
+![](images/04/bechdel-538.png)
+
+> We did a statistical analysis of films to test two claims: first, that films that pass the Bechdel test — featuring women in stronger roles — see a lower return on investment, and second, that they see lower gross profits. We found no evidence to support either claim.
+
+::: aside
+Source: [The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/), by Walt Hickey, FiveThirtyEight, April 1, 2014.
+:::
+
+## `ae-02-bechdel-dataviz` {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+-   If you haven't done so during the last class, click **Pull** to get today's application exercise file.
+-   Work through the application exercise in class, and **render, commit, and push** your edits by the end of class.
+:::
+
+## Recap {.smaller}
+
+-   Construct plots with `ggplot()`.
+-   Layers of ggplots are separated by `+`s.
+-   The formula is (almost) always as follows:
+
+```{r}
+#| label: ggplot-template
+#| eval: false
+ggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +
+  geom_XXX()
+```
+
+## Recap: Code cells (aka code chunks) {.smaller}
+
+![](images/04/code-cell.png)
+
+-   Cell `label`s are helpful for describing what the code is doing, for jumping between code cells in the editor, and for troubleshooting
+
+-   `message: false` hides any messages emitted by the code in your rendered document
+
+# Data transformation
+
+## A quick reminder {.smaller}
+
+```{r}
+#| include: false
+library(tidyverse)
+bechdel <- read_csv("data/bechdel.csv")
+```
+
+```{r}
+bechdel |> # <1>
+  filter(roi > 400) |> # <2>
+  select(title, roi, budget_2013, gross_2013, year, clean_test) # <3>
+```
+
+1.  Start with the `bechdel` data frame
+2.  Filter for movies with `roi` greater than 400 (gross is more than 400 times budget)
+3.  Select the columns `title`, `roi`, `budget_2013`, `gross_2013`, `year`, and `clean_test`
+
+## The pipe `|>` {.smaller}
+
+The pipe operator passes what comes before it into the function that comes after it as the first argument in that function.
+
+::: columns
+::: {.column .fragment width="55%"}
+```{r}
+sum(1, 2)
+```
+:::
+
+::: {.column .fragment width="45%"}
+```{r}
+1 |> 
+  sum(2)
+```
+:::
+:::
+
+<br>
+
+::: columns
+::: {.column .fragment width="55%"}
+```{r}
+select(filter(bechdel, roi > 400), title)
+```
+:::
+
+::: {.column .fragment width="45%"}
+```{r}
+bechdel |>
+  filter(roi > 400) |>
+  select(title)
+```
+:::
+:::
+
+## Code style tip {{< fa lightbulb >}} {.smaller}
+
+-   In data transformation pipelines, always use a
+    -   space before `|>`
+    -   line break after `|>`
+    -   indent the next line of code
+
+. . .
+
+-   In data visualization layers, always use a
+    -   space before `+`
+    -   line break after `+`
+    -   indent the next line of code
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+. . .
+
+Start with the `bechdel` data frame:
+
+```{r}
+bechdel
+```
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Filter for rows where `binary` is equal to `"PASS"`:
+
+```{r}
+bechdel |>
+  filter(binary == "PASS")
+```
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Arrange the rows in `desc`ending order of `roi`:
+
+```{r}
+bechdel |>
+  filter(binary == "PASS") |>
+  arrange(desc(roi))
+```
+
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Select columns `title` and `roi`:
+
+```{r}
+bechdel |>
+  filter(binary == "PASS") |>
+  arrange(desc(roi)) |>
+  select(title, roi)
+```
+
+## In this class, you will... {.smaller}
+
+::: columns
+::: {.column width="50%"}
+Build cakes (`ggplot`) ![](images/04/cake.png)
+:::
+
+::: {.column width="50%"}
+Stack dolls (pipe `|>`) ![](images/04/matryoshka.png)
+:::
+:::
+
+Master these constructs, and everything will be A-Ok!
+
+::: aside
+Source: [Cake by Anirban Sengupta on Unsplash](https://unsplash.com/photos/white-pink-and-yellow-cake-GQvNc4bDRYw) and [Matryoshka dolls by Julia Kadel  on Unsplash](https://unsplash.com/photos/a-group-of-russian-nesting-dolls-sitting-on-a-table-YmULswIbc3I).
+:::      
+
+# Looking forward: Describing distributions and relationships
+
+## One numerical variable {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+ggplot(bechdel, aes(x = budget_2013)) + 
+  geom_histogram() + 
+  labs(
+    x = "Budget (2013 USD)",
+    title = "Histogram of film budgets (1990 - 2013)"
+  ) + 
+  geom_vline(xintercept = mean(bechdel$budget_2013, na.rm = T), color = "red") + 
+  geom_vline(xintercept = median(bechdel$budget_2013, na.rm = T), color = "blue")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+ggplot(bechdel, aes(x = budget_2013)) + 
+  geom_boxplot() + 
+  labs(
+    x = "Budget (2013 USD)",
+    title = "Boxplot of film budgets (1990 - 2013)"
+  )
+```
+:::
+:::
+
+- **Center**: What is the "typical" value (mean, median, mode) the data are concentrating around?
+- **Spread**: How concentrated are the data around a typical value?
+- **Shape**: Does the distribution have one peak, or many? is it symmetric or skewed?
+
+## Shape vs. center
+
+![](images/04/mean-median-mode.png)
+
+## Histograms provide more detail...
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+set.seed(12345)
+df <- tibble(x = c(rnorm(500, -3, 1), rnorm(200, 1, 1)))
+
+ggplot(df, aes(x = x)) + 
+  geom_histogram()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+ggplot(df, aes(x = x)) + 
+  geom_boxplot()
+```
+:::
+:::
+
+
+## ...but boxplots are nice for side-by-side comparisons
+
+```{r}
+#| echo: false
+#| warning: false
+ggplot(bechdel, aes(x = clean_test, y = roi, color = binary)) +
+  geom_boxplot() +
+  labs(
+    title = "Return on investment (ROI) vs. Bechdel test result",
+    x = "Detailed Bechdel result",
+    y = "ROI (gross / budget)",
+    color = "Bechdel\nresult"
+  ) +
+  coord_cartesian(ylim = c(0, 15))
+```
+
+## Talking about two numerical variables
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 4
+ggplot(bechdel, aes(x = budget_2013, y = gross_2013)) + 
+  geom_point() + 
+  labs(
+    x = "Budget (2013 USD)",
+    y = "Gross (2013 USD)",
+    title = "Finances of films (1990 - 2013)"
+  )
+```
+
+- **Direction**: Positive or negative
+- **Shape**: Linear or nonlinear
+- **Strength**: How close are points to the "trend"
+
+## Strength and direction of linear relationships
+
+![](images/04/corr.png)
+
+## Nonlinear relationships
+
+![](images/04/un-data-viz.png)

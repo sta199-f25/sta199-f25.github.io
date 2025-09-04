@@ -28,6 +28,28 @@ format:
     -   help you on the spot and get you unstuck or
     -   identify that you're missing an earlier step, ask you to follow along with your neighbor, and visit office hours before Thursday for one-on-one help
 
+## Participate 📱💻 {.smaller}
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: wooclap
+What is this a visualization of?
+:::
+
+![](images/03/unknown-plot.png)
+
+:::
+
+::: {.column width="30%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
+
 ## Outline {.smaller}
 
 -   Last time:
@@ -458,27 +480,3 @@ We built a plot layer-by-layer
 ![](images/03/gg-layers.png)
 :::
 :::
-
-# Application exercise
-
-## `ae-02-bechdel-dataviz` {.smaller}
-
-::: appex
--   Go to your `ae` project in RStudio.
--   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
--   If you haven't yet done so, click **Pull** to get today's application exercise file.
--   Work through the application exercise in class, and **render, commit, and push** your edits by the end of class.
-:::
-
-## Recap {.smaller}
-
--   Construct plots with `ggplot()`.
--   Layers of ggplots are separated by `+`s.
--   The formula is (almost) always as follows:
-
-```{r}
-#| label: ggplot-template
-#| eval: false
-ggplot(DATA, aes(x = X-VAR, y = Y-VAR, ...)) +
-  geom_XXX()
-```
