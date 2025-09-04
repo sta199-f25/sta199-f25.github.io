@@ -2398,7 +2398,14 @@
     "href": "slides/04-grammar-of-data-transformation.html",
     "title": "Grammar of data transformation",
     "section": "",
-    "text": "Continue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nLab 1 is on Monday, HW 1 is due next Sunday."
+    "text": "Which of the following is true about the code below?\n\nggplot(mtcars, _[blank]_(x = wt, y = mpg)) +\n  geom_point() +\n  geom_smooth()\n\n\n\nmtcars is the name of the variable being plotted on the x-axis\nThe function that goes in the blank is map()\nThe data are being visualized with a scatterplot and a smooth line\nSome points on the plot will be colored differently than others\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nContinue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade – if we haven’t gotten any responses from you yet, and you didn’t just add the class, you’ve already heard from us!\nLab 1 is on Monday, HW 1 is due next Sunday."
+  },
+  {
+    "objectID": "slides/04-grammar-of-data-transformation.html#while-you-wait-participate",
+    "href": "slides/04-grammar-of-data-transformation.html#while-you-wait-participate",
+    "title": "Grammar of data transformation",
+    "section": "",
+    "text": "Which of the following is true about the code below?\n\nggplot(mtcars, _[blank]_(x = wt, y = mpg)) +\n  geom_point() +\n  geom_smooth()\n\n\n\nmtcars is the name of the variable being plotted on the x-axis\nThe function that goes in the blank is map()\nThe data are being visualized with a scatterplot and a smooth line\nSome points on the plot will be colored differently than others\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation.html#announcements",
@@ -2464,6 +2471,13 @@
     "text": "A quick reminder\n\n1bechdel |&gt;\n2  filter(roi &gt; 400) |&gt;\n3  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n\n1\n\nStart with the bechdel data frame\n\n2\n\nFilter for movies with roi greater than 400 (gross is more than 400 times budget)\n\n3\n\nSelect the columns title, roi, budget_2013, gross_2013, year, and clean_test\n\n\n\n\n# A tibble: 3 × 6\n  title                    roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                  &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity     671.      505595  339424558  2007 dubious   \n2 The Blair Witch Proje…  648.      839077  543776715  1999 ok        \n3 El Mariachi             583.       11622    6778946  1992 nowomen"
   },
   {
+    "objectID": "slides/04-grammar-of-data-transformation.html#participate",
+    "href": "slides/04-grammar-of-data-transformation.html#participate",
+    "title": "Grammar of data transformation",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nIn data transformation with the pipe operator |&gt;, what does the operator do?\n\n\nIt ends a pipeline and prints the result.\nIt joins two data frames together.\nIt passes the output from the previous command into the first argument of the function in the next command.\nIt is equivalent to the “or” operator.\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/04-grammar-of-data-transformation.html#the-pipe",
     "href": "slides/04-grammar-of-data-transformation.html#the-pipe",
     "title": "Grammar of data transformation",
@@ -2511,6 +2525,13 @@
     "title": "Grammar of data transformation",
     "section": "In this class, you will…",
     "text": "In this class, you will…\n\n\nBuild cakes (ggplot) \n\nStack dolls (pipe |&gt;) \n\n\nMaster these constructs, and everything will be A-Ok!\n\n\nSource: Cake by Anirban Sengupta on Unsplash and Matryoshka dolls by Julia Kadel on Unsplash."
+  },
+  {
+    "objectID": "slides/04-grammar-of-data-transformation.html#participate-1",
+    "href": "slides/04-grammar-of-data-transformation.html#participate-1",
+    "title": "Grammar of data transformation",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich type of visualization is useful for comparing distributions across groups?\n\nHistogram\nLine plot\nScatterplot\nSide-by-side boxplots\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation.html#one-numerical-variable",
@@ -2562,11 +2583,11 @@
     "text": "Nonlinear relationships"
   },
   {
-    "objectID": "slides/04-grammar-of-data-transformation-slides.html#participate",
-    "href": "slides/04-grammar-of-data-transformation-slides.html#participate",
+    "objectID": "slides/04-grammar-of-data-transformation-slides.html#while-you-wait-participate",
+    "href": "slides/04-grammar-of-data-transformation-slides.html#while-you-wait-participate",
     "title": "Grammar of data transformation",
-    "section": "Participate 📱💻",
-    "text": "Participate 📱💻"
+    "section": "While you wait: Participate 📱💻",
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhich of the following is true about the code below?\n\nggplot(mtcars, _[blank]_(x = wt, y = mpg)) +\n  geom_point() +\n  geom_smooth()\n\n\n\nmtcars is the name of the variable being plotted on the x-axis\nThe function that goes in the blank is map()\nThe data are being visualized with a scatterplot and a smooth line\nSome points on the plot will be colored differently than others\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation-slides.html#announcements",
@@ -2632,6 +2653,13 @@
     "text": "A quick reminder\n\n1bechdel |&gt;\n2  filter(roi &gt; 400) |&gt;\n3  select(title, roi, budget_2013, gross_2013, year, clean_test)\n\n\n1\n\nStart with the bechdel data frame\n\n2\n\nFilter for movies with roi greater than 400 (gross is more than 400 times budget)\n\n3\n\nSelect the columns title, roi, budget_2013, gross_2013, year, and clean_test\n\n\n\n\n# A tibble: 3 × 6\n  title                    roi budget_2013 gross_2013  year clean_test\n  &lt;chr&gt;                  &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     \n1 Paranormal Activity     671.      505595  339424558  2007 dubious   \n2 The Blair Witch Proje…  648.      839077  543776715  1999 ok        \n3 El Mariachi             583.       11622    6778946  1992 nowomen"
   },
   {
+    "objectID": "slides/04-grammar-of-data-transformation-slides.html#participate",
+    "href": "slides/04-grammar-of-data-transformation-slides.html#participate",
+    "title": "Grammar of data transformation",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nIn data transformation with the pipe operator |&gt;, what does the operator do?\n\n\nIt ends a pipeline and prints the result.\nIt joins two data frames together.\nIt passes the output from the previous command into the first argument of the function in the next command.\nIt is equivalent to the “or” operator.\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/04-grammar-of-data-transformation-slides.html#the-pipe",
     "href": "slides/04-grammar-of-data-transformation-slides.html#the-pipe",
     "title": "Grammar of data transformation",
@@ -2679,6 +2707,13 @@
     "title": "Grammar of data transformation",
     "section": "In this class, you will…",
     "text": "In this class, you will…\n\n\nBuild cakes (ggplot) \n\nStack dolls (pipe |&gt;) \n\nMaster these constructs, and everything will be A-Ok!\n\n\nSource: Cake by Anirban Sengupta on Unsplash and Matryoshka dolls by Julia Kadel on Unsplash."
+  },
+  {
+    "objectID": "slides/04-grammar-of-data-transformation-slides.html#participate-1",
+    "href": "slides/04-grammar-of-data-transformation-slides.html#participate-1",
+    "title": "Grammar of data transformation",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich type of visualization is useful for comparing distributions across groups?\n\nHistogram\nLine plot\nScatterplot\nSide-by-side boxplots\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation-slides.html#one-numerical-variable",

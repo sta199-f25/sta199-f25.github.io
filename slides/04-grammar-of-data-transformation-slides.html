@@ -220,8 +220,36 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <h1>Warm-up</h1>
 
 </section>
-<section id="participate" class="slide level2 smaller">
-<h2>Participate 📱💻</h2>
+<section id="while-you-wait-participate" class="slide level2 smaller">
+<h2>While you wait: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="wooclap">
+<p>Which of the following is <strong>true</strong> about the code below?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(mtcars, _[blank]<span class="fu">_</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="small">
+<ul>
+<li><code>mtcars</code> is the name of the variable being plotted on the x-axis</li>
+<li>The function that goes in the blank is <code>map()</code></li>
+<li>The data are being visualized with a scatterplot and a smooth line</li>
+<li>Some points on the plot will be colored differently than others</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
 </section>
 <section id="announcements" class="slide level2 smaller">
 <h2>Announcements</h2>
@@ -309,8 +337,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <li>The formula is (almost) always as follows:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> X<span class="sc">-</span>VAR, <span class="at">y =</span> Y<span class="sc">-</span>VAR, ...)) <span class="sc">+</span></span>
-<span id="cb1-2"><a></a>  <span class="fu">geom_XXX</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> X<span class="sc">-</span>VAR, <span class="at">y =</span> Y<span class="sc">-</span>VAR, ...)) <span class="sc">+</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">geom_XXX</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="recap-code-cells-aka-code-chunks" class="slide level2 smaller">
@@ -358,21 +386,47 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </section>
+<section id="participate" class="slide level2 smaller">
+<h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="wooclap">
+<p>In data transformation with the pipe operator <code>|&gt;</code>, what does the operator do?</p>
+<div class="small">
+<ul>
+<li>It ends a pipeline and prints the result.</li>
+<li>It joins two data frames together.</li>
+<li>It passes the output from the previous command into the first argument of the function in the next command.</li>
+<li>It is equivalent to the “or” operator.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section>
 <section id="the-pipe" class="slide level2 smaller">
 <h2>The pipe <code>|&gt;</code></h2>
 <p>The pipe operator passes what comes before it into the function that comes after it as the first argument in that function.</p>
 <div class="columns">
 <div class="column fragment" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 </div><div class="column fragment" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="dv">1</span> <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">sum</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="dv">1</span> <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">sum</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -382,7 +436,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column fragment" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">select</span>(<span class="fu">filter</span>(bechdel, roi <span class="sc">&gt;</span> <span class="dv">400</span>), title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">select</span>(<span class="fu">filter</span>(bechdel, roi <span class="sc">&gt;</span> <span class="dv">400</span>), title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 1
   title                  
@@ -394,9 +448,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column fragment" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">filter</span>(roi <span class="sc">&gt;</span> <span class="dv">400</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a></a>  <span class="fu">select</span>(title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">filter</span>(roi <span class="sc">&gt;</span> <span class="dv">400</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">select</span>(title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 1
   title                  
@@ -437,7 +491,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="fragment">
 <p>Start with the <code>bechdel</code> data frame:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 7
    title          year gross_2013 budget_2013    roi binary clean_test
@@ -464,8 +518,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <p>Filter for rows where <code>binary</code> is equal to <code>"PASS"</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 753 × 7
    title           year gross_2013 budget_2013   roi binary clean_test
@@ -491,9 +545,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <p>Arrange the rows in <code>desc</code>ending order of <code>roi</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 753 × 7
    title           year gross_2013 budget_2013   roi binary clean_test
@@ -519,10 +573,10 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <p>Select columns <code>title</code> and <code>roi</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb17-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi)) <span class="sc">|&gt;</span></span>
-<span id="cb17-4"><a></a>  <span class="fu">select</span>(title, roi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi)) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">select</span>(title, roi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 753 × 2
    title                      roi
@@ -559,6 +613,30 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <h1>Looking forward: Describing distributions and relationships</h1>
 
 </section>
+<section id="participate-1" class="slide level2 smaller">
+<h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="wooclap">
+<p>Which type of visualization is useful for comparing distributions across groups?</p>
+<ul>
+<li>Histogram</li>
+<li>Line plot</li>
+<li>Scatterplot</li>
+<li>Side-by-side boxplots</li>
+</ul>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section>
 <section id="one-numerical-variable" class="slide level2 smaller">
 <h2>One numerical variable</h2>
 <div class="columns">
@@ -567,7 +645,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -577,7 +655,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -601,7 +679,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -611,7 +689,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+<p><img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -621,11 +699,11 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <section id="but-boxplots-are-nice-for-side-by-side-comparisons" class="slide level2">
 <h2>…but boxplots are nice for side-by-side comparisons</h2>
 
-<img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
 <section id="talking-about-two-numerical-variables" class="slide level2">
 <h2>Talking about two numerical variables</h2>
 
-<img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-16-1.png" width="864" class="r-stretch"><ul>
+<img data-src="04-grammar-of-data-transformation_files/figure-revealjs/unnamed-chunk-17-1.png" width="864" class="r-stretch"><ul>
 <li><strong>Direction</strong>: Positive or negative</li>
 <li><strong>Shape</strong>: Linear or nonlinear</li>
 <li><strong>Strength</strong>: How close are points to the “trend”</li>
