@@ -63,6 +63,8 @@ ggplot(mtcars, _[blank]_(x = wt, y = mpg)) +
 
 -   Continue to respond to Wooclap questions during class and remember that attendance and participation are part of your grade -- if we haven't gotten any responses from you yet, and you didn't just add the class, you've already heard from us!
 
+-   Following along with code along videos: See https://sta199-f25.github.io/computing-code-alongs.html -- Clone the `code-alongs` repository and work throgh the relevant `.qmd` files as you watch the videos. Use the project navigator in RStudio to switch between your `code-alongs` project and your other projects (ae, labs, HWs, etc.).
+
 -   Lab 1 is on Monday, HW 1 is due next Sunday.
 
 # From last time
