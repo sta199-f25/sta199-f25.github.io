@@ -222,13 +222,15 @@ The variables in the dataset and their descriptions are as follows:
 -   `population`: Population of county, based on the 2020 census.
 -   `density`: Population density calculated as population divided by land area in miles-squared (people per mile-squared).
 
-# Question
+# Questions
 
 ::: callout-warning
 ## TO DO in lab meeting
 
 Discuss how to prompt interaction/discussion with teammates.
 :::
+
+## Question 1
 
 a. How many counties are in the dataset? How many variables are there?
 
@@ -278,7 +280,9 @@ Render, commit, and push your changes to GitHub with the commit message "Added a
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-c. Guess what the relationship between population density and land area might be – positive?
+## Question 2
+
+a. Guess what the relationship between population density and land area might be – positive?
 negative?
 no relationship?
 Explain your reasoning.
@@ -289,7 +293,7 @@ Render, commit, and push your changes to GitHub with a meaningful commit message
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-d. Make a scatter plot of population density (`density` on the y-axis) vs. land area in miles-squared (`land_area_mi2` on the x-axis).
+b. Make a scatter plot of population density (`density` on the y-axis) vs. land area in miles-squared (`land_area_mi2` on the x-axis).
 Make sure to set an informative title and axis labels for your plot.
 Describe the relationship.
 Was your guess correct?
@@ -315,7 +319,7 @@ Now is another good time to render, commit, and push your all your changes to Gi
 Discuss if we should take out part (e) for time.
 :::
 
-e. Now make a scatter plot of population density (`density` on the y-axis) vs. land area in meters-squared (`land_area_m2` on the x-axis).
+c. Now make a scatter plot of population density (`density` on the y-axis) vs. land area in meters-squared (`land_area_m2` on the x-axis).
 Make sure to set an informative title and axis labels for your plot.
 Comment on how this scatterplot compares to the one in Exercise 8 — is the relationship displayed same or different.
 Explain why.
@@ -371,11 +375,11 @@ Make sure you have:
 
 -   This lab is worth 30 points:
     - 10 points for being in lab and turning in _something_ -- no partial credit for this part.
-    - 15 points for answering the questions correctly -- there is partial credit for this part.
-    - 5 points for following the workflow -- there is partial credit for this part.
+    - 20 points for:
+      - answering the questions correctly -- there is partial credit for this part.
+      - following the workflow -- there is partial credit for this part.
 
 -   The workflow points are for:
-    - coding style,
     - committing at least three times as you work through your lab,
     - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
     - overall organization.
