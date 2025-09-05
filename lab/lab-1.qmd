@@ -1,0 +1,385 @@
+---
+title: Lab 1
+subtitle: NC Counties
+description: "Due: End of lab on Mon, Sep 8"
+categories: Lab
+draft: true
+---
+
+# Introduction
+
+This lab will introduce you to the course computing workflow.
+The main goal is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
+
+::: callout-note
+R is the name of the programming language itself and RStudio is a convenient interface, commonly referred to as an integrated development environment or an IDE, for short.
+:::
+
+An additional goal is to reinforce Git and GitHub, the version control, web hosting, and collaboration systems that we will be using throughout the course.
+
+::: callout-note
+Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
+:::
+
+As the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer.
+Before we get to that stage, however, you need to build some basic fluency in R.
+Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.
+
+::: callout-warning
+This lab assumes that you have already completed [Lab 0](lab-0.html).
+If you have not, please
+
+-   go back and do that first before proceeding and
+-   let your TA know as they will need to set up a Lab 1 repository for you before you can complete this lab.
+:::
+
+## Learning objectives
+
+By the end of the lab, you will...
+
+-   Be familiar with the workflow using R, RStudio, Git, and GitHub
+-   Gain practice writing a reproducible report using Quarto
+-   Practice version control using Git and GitHub
+-   Be able to create data visualizations with the `tidyverse`, specifically using `ggplot2`
+-   Be able to write a simple data transformation pipeline with the `tidyverse`, specifically using `dplyr`
+
+## Getting started
+
+### Step 1: Log in to RStudio
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+
+#### Refresher: R and R Studio
+
+Below are the components of the RStudio IDE.
+
+![](images/lab-1/rstudio.png){fig-alt="RStudio IDE"}
+
+Below are the components of a Quarto (.qmd) file.
+
+![](images/lab-1/quarto.png){fig-alt="Quarto document"}
+
+### Step 2: Clone the repo & start new RStudio project
+
+-   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
+    Click on the repo with the prefix **lab-1**.
+    It contains the starter documents you need to complete the lab.
+
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
+    Click on the clipboard icon to copy the repo URL.
+
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+-   Click *lab-1.qmd* to open the template Quarto file.
+    This is where you will write up your code and narrative for the lab.
+
+### Step 3: Update the YAML
+
+The top portion of your Quarto file (between the three dashed lines) is called **YAML**.
+It stands for "YAML Ain't Markup Language".
+It is a human-friendly data representation for all programming languages.
+All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
+
+-   Open the Quarto (`.qmd`) file in your project, change the `author` name to your name (first and last) and add the names (first and last) of your teammates to the `description` field and render the document.
+
+-   If you get a popup window error, click "Try again".
+
+-   Examine the rendered document and make sure your name is updated in the document.
+
+### Step 4: Commit your changes
+
+-   Go to the Git pane in RStudio.
+    This will be in the top right hand corner in a separate tab.
+
+    If you have made changes to your Quarto (.qmd) file, you should see it listed here.
+    If you have rendered the document, you should also see its output, a PDF file, listed there.
+
+-   Click on it to select it in this list and then click on **Diff**.
+
+    This shows you the *diff*erence between the last committed state of the document and its current state including changes.
+    You should see deletions in red and additions in green.
+
+-   If you're happy with these changes, prepare the changes to be pushed to your remote repository.
+
+    -   First, **stage** your changes by checking the appropriate box on the files you want to prepare.
+
+    -   Next, write a meaningful commit message (for instance, "Updated author name") in the **Commit message** box.
+
+    -   Finally, click **Commit**.
+        Note that every commit needs to have a commit message associated with it.
+
+::: callout-note
+You don't have to commit after every change, as this would get quite tedious.
+You should commit states that are *meaningful to you* for inspection, comparison, or restoration (e.g., restoring a previous version of your document).
+
+In the first few assignments, we will tell you exactly when to commit and, in some cases, what commit message to use.
+As the semester progresses, we will let you make these decisions.
+:::
+
+### Step 5: Push your changes
+
+Now that you have made an update and committed this change, it's time to push these changes to your repo on GitHub.
+
+-   In the Git pane, click on Push.
+
+-   Then, make sure all the changes went to GitHub.
+    Go to your GitHub repo in your browser and refresh the page.
+    You should see your commit message next to the updated files.
+    If you see this, all your changes are on GitHub, and you're good to go!
+
+::: callout-warning
+If you don't see your update, go back to Step 4.
+Remember that in order to push your changes to GitHub, you must have **staged** (checked boxes) your **commit** (with a commit message) to be pushed and then click on **Push**.
+:::
+
+## Guidelines
+
+Your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.
+
+Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
+Particularly,
+
+-   there should be spaces before and line breaks after each `+` when building a `ggplot`,
+
+-   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
+
+-   code should be properly indented,
+
+-   there should be spaces around `=` signs and spaces after commas.
+
+Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
+Long lines that run off the page should be split across multiple lines with line breaks.[^1]
+
+[^1]: Remember, haikus not novellas when writing code!
+
+Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
+There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
+
+::: callout-important
+You should have at least 3 commits with meaningful commit messages by the end of the assignment.
+:::
+
+# Packages
+
+In this lab we will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+```
+
+-   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package to make its features (the functions and datasets in it) be accessible from your *Console*.
+-   Then, **render** the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.
+
+## Refresher: tidyverse
+
+The tidyverse is a meta-package.
+When you load it you get nine packages loaded for you:
+
+-   **dplyr**: for data wrangling
+-   **forcats**: for dealing with factors
+-   **ggplot2**: for data visualization
+-   **lubridate**: for dealing with dates
+-   **purrr**: for iteration with functional programming
+-   **readr**: for reading and writing data
+-   **stringr**: for string manipulation
+-   **tibble**: for modern, tidy data frames
+-   **tidyr**: for data tidying and rectangling
+
+# Data
+
+For this lab you will use a dataset on counties in North Carolina.
+
+This dataset is stored in a file called `nc-county.csv` in the `data` folder of your project/repository.
+
+You can read this file into R with the following code:
+
+```{r}
+#| eval: false
+nc_county <- read_csv("data/nc-county.csv")
+```
+
+```{r}
+#| include: false
+nc_county <- read_csv(here::here("lab", "data/nc-county.csv"))
+```
+
+This will read the CSV (comma separated values) file from the `data` folder and store the dataset as a data frame called `nc_county` in R.
+
+The variables in the dataset and their descriptions are as follows:
+
+-   `county`: Name of county.
+-   `state_abb`: State abbreviation (NC).
+-   `state_name`: State name (North Carolina).
+-   `land_area_m2`: Land area of county in meters-squared, based on the 2020 census.
+-   `land_area_mi2`: Land area of county in miles-squared, based on the 2020 census.
+-   `population`: Population of county, based on the 2020 census.
+-   `density`: Population density calculated as population divided by land area in miles-squared (people per mile-squared).
+
+# Question
+
+::: callout-warning
+## TO DO in lab meeting
+
+Discuss how to prompt interaction/discussion with teammates.
+:::
+
+a. How many counties are in the dataset? How many variables are there?
+
+Use inline code to answer this question.
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Added answer for part a".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+b. Make two plots: a histogram and a boxplot of the population variable. 
+
+- Is the distribution of population in NC counties right-skewed, left-skewed, or approximately symmetric? Which plot(s) helped you determine this?
+
+- Is the distribution of population in NC counties unimodal, bimodal, multimodal or uniform? Which plot(s) helped you determine this?
+
+- In a single pipeline, identify the counties with unusually high populations (according to the boxplot) and display their names and populations in descending order of population.
+
+```{r}
+#| include: false
+ggplot(nc_county, aes(x = population)) +
+  geom_boxplot() +
+  labs(
+    title = "Population in NC Counties",
+    x = "Population",
+    y = NULL
+  )
+
+ggplot(nc_county, aes(x = population)) +
+  geom_histogram() +
+  labs(
+    title = "Population in NC Counties",
+    x = "Population",
+    y = NULL
+  )
+
+nc_county |>
+  filter(population > 250000) |>
+  select(county, population) |>
+  arrange(desc(population))
+```
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Added answer for part b".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+c. Guess what the relationship between population density and land area might be – positive?
+negative?
+no relationship?
+Explain your reasoning.
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with a meaningful commit message.
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+d. Make a scatter plot of population density (`density` on the y-axis) vs. land area in miles-squared (`land_area_mi2` on the x-axis).
+Make sure to set an informative title and axis labels for your plot.
+Describe the relationship.
+Was your guess correct?
+
+```{r}
+#| include: false
+ggplot(nc_county, aes(x = land_area_mi2, y = density)) +
+  geom_point() +
+  labs(
+    title = "Population density vs. land area in NC Counties",
+    x = "Land area (miles-squared)",
+    y = "Population density (people per mile-squared)"
+  )
+```
+
+::: render-commit-push
+Now is another good time to render, commit, and push your all your changes to GitHub with a meaningful commit message.
+:::
+
+::: callout-warning
+## TO DO in lab meeting
+
+Discuss if we should take out part (e) for time.
+:::
+
+e. Now make a scatter plot of population density (`density` on the y-axis) vs. land area in meters-squared (`land_area_m2` on the x-axis).
+Make sure to set an informative title and axis labels for your plot.
+Comment on how this scatterplot compares to the one in Exercise 8 — is the relationship displayed same or different.
+Explain why.
+
+```{r}
+#| include: false
+ggplot(nc_county, aes(x = land_area_m2, y = density)) +
+  geom_point() +
+  labs(
+    title = "Population density vs. land area in NC Counties",
+    x = "Land area (meters-squared)",
+    y = "Population density (people per meter-squared)"
+  )
+```
+
+::: render-commit-push
+Render, commit, and push your all your changes to GitHub with the commit message with a meaningful commit message.
+:::
+
+# Wrap-up
+
+## Submission
+
+Once you are finished with the lab, you will submit your final PDF document to Gradescope.
+
+::: callout-warning
+Before you wrap up the assignment, make sure all of your documents are updated on your GitHub repo.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+
+You must turn in a PDF file to the Gradescope page by the end of the lab to be considered "on time".
+:::
+
+To submit your assignment:
+
+-   Go to <http://www.gradescope.com> and click *Log in* in the top right corner.
+-   Click *School Credentials* $\rightarrow$ *Duke NetID* and log in using your NetID credentials.
+-   Click on your *STA 199* course.
+-   Click on the assignment, and you'll be prompted to submit it.
+-   Mark all the pages associated with question. All the pages of your lab should be associated with at least one question (i.e., should be "checked").
+
+::: callout-important
+## Checklist
+
+Make sure you have:
+
+-   attempted all questions
+-   rendered your Quarto document
+-   committed and pushed everything to your GitHub repository such that the Git pane in RStudio is empty
+-   uploaded your PDF to Gradescope
+:::
+
+## Grading and feedback
+
+-   This lab is worth 30 points:
+    - 10 points for being in lab and turning in _something_ -- no partial credit for this part.
+    - 15 points for answering the questions correctly -- there is partial credit for this part.
+    - 5 points for following the workflow -- there is partial credit for this part.
+
+-   The workflow points are for:
+    - coding style,
+    - committing at least three times as you work through your lab,
+    - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+    - overall organization.
+
+-   You'll receive feedback on your lab on Gradescope within a week.
+
+Good luck, and have fun with it!
