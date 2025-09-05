@@ -224,12 +224,6 @@ The variables in the dataset and their descriptions are as follows:
 
 # Questions
 
-::: callout-warning
-## TO DO in lab meeting
-
-Discuss how to prompt interaction/discussion with teammates.
-:::
-
 ## Question 1
 
 a. How many counties are in the dataset? How many variables are there?
@@ -237,7 +231,7 @@ a. How many counties are in the dataset? How many variables are there?
 Use inline code to answer this question.
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for part a".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Q1, part a".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
@@ -275,7 +269,7 @@ nc_county |>
 ```
 
 ::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for part b".
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Q1, part b".
 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
@@ -311,12 +305,6 @@ ggplot(nc_county, aes(x = land_area_mi2, y = density)) +
 
 ::: render-commit-push
 Now is another good time to render, commit, and push your all your changes to GitHub with a meaningful commit message.
-:::
-
-::: callout-warning
-## TO DO in lab meeting
-
-Discuss if we should take out part (e) for time.
 :::
 
 c. Now make a scatter plot of population density (`density` on the y-axis) vs. land area in meters-squared (`land_area_m2` on the x-axis).
