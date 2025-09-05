@@ -1,13 +1,10 @@
 ---
 title: "Lab 0"
 subtitle: "Mise en place"
-description: "End of lab on Mon, Aug 25"
+description: "Due: End of lab on Mon, Aug 25"
 categories: "Lab"
 execute:
   eval: false
-editor: 
-  markdown: 
-    wrap: sentence
 ---
 
 *Mise en place* (French pronunciation: [mi zɑ̃ ˈplas]) is a French culinary phrase which means "putting in place" or "gather". 
