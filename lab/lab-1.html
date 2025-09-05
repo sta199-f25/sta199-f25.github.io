@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="description" content="Due: End of lab on Mon, Aug 25">
-<title>Lab 0 – STA 199</title>
+<meta name="description" content="Due: End of lab on Mon, Sep 8">
+<title>Lab 1 – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,12 +102,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<meta property="og:title" content="Lab 0 – STA 199">
-<meta property="og:description" content="Due: End of lab on Mon, Aug 25">
-<meta property="og:image" content="https://sta199-f25.github.io/lab/images/lab-0/mise-en-place.jpg">
+}</script><meta name="quarto:status" content="draft">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+<meta property="og:title" content="Lab 1 – STA 199">
+<meta property="og:description" content="Due: End of lab on Mon, Sep 8">
+<meta property="og:image" content="https://sta199-f25.github.io/lab/images/lab-1/rstudio.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:alt" content="A photo of a kitchen counter with various ingredients and tools arranged neatly, ready for cooking.">
+<meta property="og:image:alt" content="RStudio IDE">
+<meta property="og:image:height" content="1832">
+<meta property="og:image:width" content="3064">
 </head>
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -274,11 +302,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 0</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -487,25 +515,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#hello-world" id="toc-hello-world" class="nav-link active" data-scroll-target="#hello-world"><code>Hello, World!</code></a>
+<a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-<li><a href="#computational-toolkit" id="toc-computational-toolkit" class="nav-link" data-scroll-target="#computational-toolkit">Computational toolkit</a></li>
-  <li><a href="#an-analogy-to-english" id="toc-an-analogy-to-english" class="nav-link" data-scroll-target="#an-analogy-to-english">An analogy to English</a></li>
-  <li><a href="#access-r-and-rstudio" id="toc-access-r-and-rstudio" class="nav-link" data-scroll-target="#access-r-and-rstudio">Access R and RStudio</a></li>
-  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">Create a GitHub account</a></li>
-  <li><a href="#update-your-github-profile" id="toc-update-your-github-profile" class="nav-link" data-scroll-target="#update-your-github-profile">Update your GitHub profile</a></li>
-  <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">Set up your SSH key</a></li>
-  <li><a href="#configure-git-to-introduce-yourself" id="toc-configure-git-to-introduce-yourself" class="nav-link" data-scroll-target="#configure-git-to-introduce-yourself">Configure Git to introduce yourself</a></li>
-  <li><a href="#clone-your-first-repository" id="toc-clone-your-first-repository" class="nav-link" data-scroll-target="#clone-your-first-repository">Clone your first repository</a></li>
+<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li>
+<a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+<li><a href="#step-1-log-in-to-rstudio" id="toc-step-1-log-in-to-rstudio" class="nav-link" data-scroll-target="#step-1-log-in-to-rstudio">Step 1: Log in to RStudio</a></li>
+  <li><a href="#step-2-clone-the-repo-start-new-rstudio-project" id="toc-step-2-clone-the-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</a></li>
+  <li><a href="#step-3-update-the-yaml" id="toc-step-3-update-the-yaml" class="nav-link" data-scroll-target="#step-3-update-the-yaml">Step 3: Update the YAML</a></li>
+  <li><a href="#step-4-commit-your-changes" id="toc-step-4-commit-your-changes" class="nav-link" data-scroll-target="#step-4-commit-your-changes">Step 4: Commit your changes</a></li>
+  <li><a href="#step-5-push-your-changes" id="toc-step-5-push-your-changes" class="nav-link" data-scroll-target="#step-5-push-your-changes">Step 5: Push your changes</a></li>
   </ul>
 </li>
-  <li><a href="#hello-sta-199" id="toc-hello-sta-199" class="nav-link" data-scroll-target="#hello-sta-199">Hello STA 199!</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-0.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
+  <ul class="collapse">
+<li><a href="#refresher-tidyverse" id="toc-refresher-tidyverse" class="nav-link" data-scroll-target="#refresher-tidyverse">Refresher: tidyverse</a></li>
+  </ul>
+</li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
+  <li>
+<a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap-up</a>
+  <ul class="collapse">
+<li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-and-feedback" id="toc-grading-and-feedback" class="nav-link" data-scroll-target="#grading-and-feedback">Grading and feedback</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Lab 0</h1>
-<p class="subtitle lead">Mise en place</p>
+<h1 class="title">Lab 1</h1>
+<p class="subtitle lead">NC Counties</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -513,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Due: End of lab on Mon, Aug 25
+    Due: End of lab on Mon, Sep 8
   </div>
 </div>
 
@@ -527,21 +573,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p><em>Mise en place</em> (French pronunciation: [mi zɑ̃ ˈplas]) is a French culinary phrase which means “putting in place” or “gather”. It refers to the setup required before cooking, and is often used in professional kitchens to refer to organizing and arranging the ingredients (e.g., cuts of meat, relishes, sauces, par-cooked items, spices, freshly chopped vegetables, and other components) that a cook will require for the menu items that are expected to be prepared during a shift.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-0/mise-en-place.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A photo of a kitchen counter with various ingredients and tools arranged neatly, ready for cooking."></p>
-</figure>
-</div>
-<p>This lab is all about setting up your computing environment for the course and putting in place all the bits and bobbles you’ll need for the rest of the semester and it’s about getting to know each other and the teaching team.</p>
-<p>And just like the <em>mise an place</em> phase for cooking something that is new to you, it might not be entirely clear how everything will come together at the end. Hang in there, and it’ll all start to make sense by the end of the week. And you’ll be a pro at it all just in time for the first assignment!</p>
-<section id="hello-world" class="level1"><h1><code>Hello, World!</code></h1>
-<section id="computational-toolkit" class="level2"><h2 class="anchored" data-anchor-id="computational-toolkit">Computational toolkit</h2>
-<p>You may have heard/seen this phrase, <code>Hello, World!</code>, elsewhere before. It’s usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen. Things will be different in this course, as it’s not a programming, but a data science course. So, starting tomorrow in class, you’ll learn to use a computing language (called R) to work with data.</p>
-<p>But today, we need to set you up for success! Let’s first briefly review the components of the computational toolkit for the course:</p>
-<ol type="1">
-<li><p>R: The programming language you’ll learn in this course.</p></li>
-<li>
-<p>RStudio: The piece of software (a.k.a. the integrated development environment, IDE) you’ll use to write R code in.</p>
+</header><section id="introduction" class="level1"><h1>Introduction</h1>
+<p>This lab will introduce you to the course computing workflow. The main goal is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -552,29 +585,10 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>R is the name of the programming language itself and RStudio is a convenient interface.</p>
+<p>R is the name of the programming language itself and RStudio is a convenient interface, commonly referred to as an integrated development environment or an IDE, for short.</p>
 </div>
 </div>
-</li>
-<li>
-<p>Quarto: The tool you’ll use to create reproducible computational documents that contain both your narrative (i.e., words in English) and your code (i.e., code in R). Every piece of assignment you hand in will be a Quarto document.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You might be familiar with word processors like MS Word or Google Docs. We will not be using these in this class. Instead, the words you would write in such a document as well as the code will go into a Quarto document, and when you <em>render</em> the document (more on what this means later) you will get a document out that has your words, your code, and the output of that code. Everything in one place, beautifully formatted!</p>
-</div>
-</div>
-</li>
-<li><p>Git: Version control system.</p></li>
-<li>
-<p>GitHub: A web hosting service for the Git version control system that also allows for transparent collaboration between team members.</p>
+<p>An additional goal is to reinforce Git and GitHub, the version control, web hosting, and collaboration systems that we will be using throughout the course.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -588,229 +602,325 @@ Note
 <p>Git is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</p>
 </div>
 </div>
-</li>
-</ol></section><section id="an-analogy-to-english" class="level2"><h2 class="anchored" data-anchor-id="an-analogy-to-english">An analogy to English</h2>
-<p>While most of the above tools might be new to you, they have many similarities with tools you have probably seen before.</p>
-<p>Suppose you wanted to write an essay for a literature class. You would need to pick a language (e.g.&nbsp;English) and choose an interface to write your document with (such as Microsoft word with a .docx word doc). You also might want to use track changes to see edits you make and use a platform such as Google Drive to collaborate.<br></p>
-<p><br>
-While the computational toolkit is different than the one for a literature class, we can find many similarities between the tools, as is shown in the figure below.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-0/r-english-analogy.jpg" class="quarto-figure quarto-figure-center figure-img" width="624" height="327"></p>
-</figure>
+<p>As the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer. Before we get to that stage, however, you need to build some basic fluency in R. Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section><section id="access-r-and-rstudio" class="level2"><h2 class="anchored" data-anchor-id="access-r-and-rstudio">Access R and RStudio</h2>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lab assumes that you have already completed <a href="lab-0.html">Lab 0</a>. If you have not, please</p>
+<ul>
+<li>go back and do that first before proceeding and</li>
+<li>let your TA know as they will need to set up a Lab 1 repository for you before you can complete this lab.</li>
+</ul>
+</div>
+</div>
+<section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>Be familiar with the workflow using R, RStudio, Git, and GitHub</li>
+<li>Gain practice writing a reproducible report using Quarto</li>
+<li>Practice version control using Git and GitHub</li>
+<li>Be able to create data visualizations with the <code>tidyverse</code>, specifically using <code>ggplot2</code>
+</li>
+<li>Be able to write a simple data transformation pipeline with the <code>tidyverse</code>, specifically using <code>dplyr</code>
+</li>
+</ul></section><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<section id="step-1-log-in-to-rstudio" class="level3"><h3 class="anchored" data-anchor-id="step-1-log-in-to-rstudio">Step 1: Log in to RStudio</h3>
 <ul>
 <li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and login with your Duke NetID and Password.</li>
-<li>Click <code>STA199</code> to log into the Docker container. You should now see the RStudio environment.</li>
+<li>Click <code>STA199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
 </ul>
-<p>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and under <em>Reservations available</em> click on <em>reserve STA199</em> to reserve a container for yourself.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A container is a self-contained instance of RStudio for you, and you alone. You will do all of your computing in your container.</p>
-</div>
-</div>
-<p>Once you’ve reserved the container you’ll see that it will show up under <em>My reservations</em>.</p>
-<p>To launch your container click on it under My reservations, then click <em>Login</em>, and then <em>Start</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-</section><section id="create-a-github-account" class="level2"><h2 class="anchored" data-anchor-id="create-a-github-account">Create a GitHub account</h2>
-<p>Go to <a href="https://github.com/" class="uri">https://github.com/</a> and walk through the steps for creating an account. You do not have to use your Duke email address, but I recommend doing so.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You’ll need to choose a user name. I recommend reviewing the user name advice at <a href="https://happygitwithr.com/github-acct#username-advice" class="uri">https://happygitwithr.com/github-acct#username-advice</a> before choosing a username.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-What if I already have a GitHub account?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>If you already have a GitHub account, you do not need to create a new one for this course. Just log in to that account to make sure you still remember your username and password.</p>
-</div>
-</div>
-</div>
-</section><section id="update-your-github-profile" class="level2"><h2 class="anchored" data-anchor-id="update-your-github-profile">Update your GitHub profile</h2>
-<p>Once you have created your GitHub account, you should update your profile.</p>
-<p>To do so, click on your profile icon in the upper right corner of the GitHub page and select <em>Settings</em>. Then, on the left side of the page, click on <em>Public profile</em> and fill out your profile information.</p>
-<p>Once done, click <em>Update profile</em> mid-way through the page.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Add a profile picture
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This is not required, but highly recommended. It will help us get to know you (and recognize you in class) and will also help you get to know your classmates.</p>
-</div>
-</div>
-</div>
-</section><section id="set-up-your-ssh-key" class="level2"><h2 class="anchored" data-anchor-id="set-up-your-ssh-key">Set up your SSH key</h2>
-<p>You will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You only need to do this authentication process one time on a single system.</p>
-</div>
-</div>
+<section id="refresher-r-and-r-studio" class="level4"><h4 class="anchored" data-anchor-id="refresher-r-and-r-studio">Refresher: R and R Studio</h4>
+<p>Below are the components of the RStudio IDE.</p>
+<p><img src="images/lab-1/rstudio.png" class="img-fluid" alt="RStudio IDE"></p>
+<p>Below are the components of a Quarto (.qmd) file.</p>
+<p><img src="images/lab-1/quarto.png" class="img-fluid" alt="Quarto document"></p>
+</section></section><section id="step-2-clone-the-repo-start-new-rstudio-project" class="level3"><h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</h3>
 <ul>
-<li>Go back to your RStudio container and copy-and-paste or type the following in the Console.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">credentials</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/credentials/reference/ssh_credentials.html">ssh_setup_github</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>This will print a message in the Console. Read it. It should say: “No SSH key found. Generate one now?” You should click 1 for yes.</li>
-<li>This will generate a key (basically a really long alpha-numeric password). R will then ask “Would you like to open a browser now?” You should click 1 for yes again.</li>
-<li>You may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., <code>sta199</code>).</li>
-</ul>
-<p>You can find more detailed instructions <a href="https://github.com/DukeStatSci/github_auth_guide">here</a> if you’re interested.</p>
-</section><section id="configure-git-to-introduce-yourself" class="level2"><h2 class="anchored" data-anchor-id="configure-git-to-introduce-yourself">Configure Git to introduce yourself</h2>
-<p>There is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.</p>
-<p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You’ll hear about 📦 packages a lot in the context of R – basically they’re how developers write functions and bundle them to distribute to the community (and more on this later too!).</p>
-</div>
-</div>
-<p>Type the following lines of code in the <strong>console</strong> in RStudio filling in your name and the address associated with your GitHub account.</p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_git_config.html">use_git_config</a></span><span class="op">(</span></span>
-<span>  user.name <span class="op">=</span> <span class="st">"Your name"</span>, </span>
-<span>  user.email <span class="op">=</span> <span class="st">"Email associated with your GitHub account"</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For example, mine would be</p>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_git_config.html">use_git_config</a></span><span class="op">(</span></span>
-<span>  user.name <span class="op">=</span> <span class="st">"Mine Çetinkaya-Rundel"</span>, </span>
-<span>  user.email <span class="op">=</span> <span class="st">"cetinkaya.mine@gmail.com"</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I used my gmail because that is the one I used to create my GitHub account. You should also be using the email address you used to create your GitHub account, it’s ok if it isn’t your Duke email.</p>
-</div>
-</div>
-<p>You are now ready interact with GitHub via RStudio!</p>
-<p>If you don’t do this, we won’t be able to tell who you are and give you points for the work you do…</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Well, a more accurate statement would be that we will be reaching out to you to get things right during the first few weeks of classes. But, it’s best if you can get it right today!</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Need a recap? Watch this video!
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The following video walks you through the steps outlined in the SSH key generation and Git configuration sections above.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3lONVzFw680" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-</div>
-</div>
-</section><section id="clone-your-first-repository" class="level2"><h2 class="anchored" data-anchor-id="clone-your-first-repository">Clone your first repository</h2>
-<p>Now that you have your GitHub account set up, you can clone your first repository.</p>
-<p>To do so, follow these steps.</p>
-<ul>
-<li><p>Go to the repository for <strong>lab-0</strong> in the course GitHub organization: <a href="https://github.com/sta199-f25/lab-0" class="uri">https://github.com/sta199-f25/lab-0</a>.</p></li>
-<li>
-<p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-0/lab-0-repo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Clone with SSH button in GitHub repository page." width="600"></p>
-</figure>
-</div>
-</li>
+<li><p>Go to the course organization at <a href="https://github.com/sta199-f25">github.com/sta199-f25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-1</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
 <li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
 <li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
+<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
+<li><p>Click <em>lab-1.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
+</ul></section><section id="step-3-update-the-yaml" class="level3"><h3 class="anchored" data-anchor-id="step-3-update-the-yaml">Step 3: Update the YAML</h3>
+<p>The top portion of your Quarto file (between the three dashed lines) is called <strong>YAML</strong>. It stands for “YAML Ain’t Markup Language”. It is a human-friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</p>
+<ul>
+<li><p>Open the Quarto (<code>.qmd</code>) file in your project, change the <code>author</code> name to your name (first and last) and add the names (first and last) of your teammates to the <code>description</code> field and render the document.</p></li>
+<li><p>If you get a popup window error, click “Try again”.</p></li>
+<li><p>Examine the rendered document and make sure your name is updated in the document.</p></li>
+</ul></section><section id="step-4-commit-your-changes" class="level3"><h3 class="anchored" data-anchor-id="step-4-commit-your-changes">Step 4: Commit your changes</h3>
+<ul>
 <li>
-<p>Click <em>Create Project</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-0/lab-0-clone.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Cloning a GitHub repository in RStudio." width="600"></p>
-</figure>
-</div>
+<p>Go to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.</p>
+<p>If you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there.</p>
 </li>
 <li>
-<p>Since this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host. This will happen in a pop-up window like the one below. Type <strong>yes</strong> in the box and hit <em>Enter</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-0/authenticity-of-host.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Authenticity of host pop-up window asking to confirm the authenticity of the host. Type 'yes' in the box and hit Enter." width="400"></p>
-</figure>
-</div>
+<p>Click on it to select it in this list and then click on <strong>Diff</strong>.</p>
+<p>This shows you the <em>diff</em>erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.</p>
 </li>
-<li><p>RStudio will now clone the repo and create a new RStudio project for you. This might take a few seconds. Once done, the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
-</ul></section></section><section id="hello-sta-199" class="level1"><h1>Hello STA 199!</h1>
-<p>Fill out the course “Getting to know you” survey on Canvas: <a href="https://canvas.duke.edu/courses/61539/quizzes/37441" class="uri">https://canvas.duke.edu/courses/61539/quizzes/37441</a>.</p>
-<p>We will use the information collected in this survey for a variety of goals, from inviting you to the course GitHub organization (and you should accept that invite soon as you see it in your mailbox!) to getting to know you as a person and your course goals and concerns.</p>
+<li>
+<p>If you’re happy with these changes, prepare the changes to be pushed to your remote repository.</p>
+<ul>
+<li><p>First, <strong>stage</strong> your changes by checking the appropriate box on the files you want to prepare.</p></li>
+<li><p>Next, write a meaningful commit message (for instance, “Updated author name”) in the <strong>Commit message</strong> box.</p></li>
+<li><p>Finally, click <strong>Commit</strong>. Note that every commit needs to have a commit message associated with it.</p></li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You don’t have to commit after every change, as this would get quite tedious. You should commit states that are <em>meaningful to you</em> for inspection, comparison, or restoration (e.g., restoring a previous version of your document).</p>
+<p>In the first few assignments, we will tell you exactly when to commit and, in some cases, what commit message to use. As the semester progresses, we will let you make these decisions.</p>
+</div>
+</div>
+</section><section id="step-5-push-your-changes" class="level3"><h3 class="anchored" data-anchor-id="step-5-push-your-changes">Step 5: Push your changes</h3>
+<p>Now that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.</p>
+<ul>
+<li><p>In the Git pane, click on Push.</p></li>
+<li><p>Then, make sure all the changes went to GitHub. Go to your GitHub repo in your browser and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub, and you’re good to go!</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you don’t see your update, go back to Step 4. Remember that in order to push your changes to GitHub, you must have <strong>staged</strong> (checked boxes) your <strong>commit</strong> (with a commit message) to be pushed and then click on <strong>Push</strong>.</p>
+</div>
+</div>
+</section></section><section id="guidelines" class="level2"><h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
+<p>Your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.</p>
+<p>Additionally, code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a>. Particularly,</p>
+<ul>
+<li><p>there should be spaces before and line breaks after each <code>+</code> when building a <code>ggplot</code>,</p></li>
+<li><p>there should also be spaces before and line breaks after each <code>|&gt;</code> in a data transformation pipeline,</p></li>
+<li><p>code should be properly indented,</p></li>
+<li><p>there should be spaces around <code>=</code> signs and spaces after commas.</p></li>
+</ul>
+<p>Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
+</div>
+</div>
+</section></section><section id="packages" class="level1"><h1>Packages</h1>
+<p>In this lab we will work with the <strong>tidyverse</strong> package, which is a collection of packages for doing data analysis in a “tidy” way.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>
+<strong>Run</strong> the code cell by clicking on the green triangle (play) button for the code cell labeled <code>load-packages</code>. This loads the package to make its features (the functions and datasets in it) be accessible from your <em>Console</em>.</li>
+<li>Then, <strong>render</strong> the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.</li>
+</ul>
+<section id="refresher-tidyverse" class="level2"><h2 class="anchored" data-anchor-id="refresher-tidyverse">Refresher: tidyverse</h2>
+<p>The tidyverse is a meta-package. When you load it you get nine packages loaded for you:</p>
+<ul>
+<li>
+<strong>dplyr</strong>: for data wrangling</li>
+<li>
+<strong>forcats</strong>: for dealing with factors</li>
+<li>
+<strong>ggplot2</strong>: for data visualization</li>
+<li>
+<strong>lubridate</strong>: for dealing with dates</li>
+<li>
+<strong>purrr</strong>: for iteration with functional programming</li>
+<li>
+<strong>readr</strong>: for reading and writing data</li>
+<li>
+<strong>stringr</strong>: for string manipulation</li>
+<li>
+<strong>tibble</strong>: for modern, tidy data frames</li>
+<li>
+<strong>tidyr</strong>: for data tidying and rectangling</li>
+</ul></section></section><section id="data" class="level1"><h1>Data</h1>
+<p>For this lab you will use a dataset on counties in North Carolina.</p>
+<p>This dataset is stored in a file called <code>nc-county.csv</code> in the <code>data</code> folder of your project/repository.</p>
+<p>You can read this file into R with the following code:</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nc_county</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/nc-county.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will read the CSV (comma separated values) file from the <code>data</code> folder and store the dataset as a data frame called <code>nc_county</code> in R.</p>
+<p>The variables in the dataset and their descriptions are as follows:</p>
+<ul>
+<li>
+<code>county</code>: Name of county.</li>
+<li>
+<code>state_abb</code>: State abbreviation (NC).</li>
+<li>
+<code>state_name</code>: State name (North Carolina).</li>
+<li>
+<code>land_area_m2</code>: Land area of county in meters-squared, based on the 2020 census.</li>
+<li>
+<code>land_area_mi2</code>: Land area of county in miles-squared, based on the 2020 census.</li>
+<li>
+<code>population</code>: Population of county, based on the 2020 census.</li>
+<li>
+<code>density</code>: Population density calculated as population divided by land area in miles-squared (people per mile-squared).</li>
+</ul></section><section id="question" class="level1"><h1>Question</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO in lab meeting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Discuss how to prompt interaction/discussion with teammates.</p>
+</div>
+</div>
+<ol type="a">
+<li>How many counties are in the dataset? How many variables are there?</li>
+</ol>
+<p>Use inline code to answer this question.</p>
+<div class="render-commit-push">
+<p>Render, commit, and push your changes to GitHub with the commit message “Added answer for part a”.</p>
+<p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
+</div>
+<ol start="2" type="a">
+<li>Make two plots: a histogram and a boxplot of the population variable.</li>
+</ol>
+<ul>
+<li><p>Is the distribution of population in NC counties right-skewed, left-skewed, or approximately symmetric? Which plot(s) helped you determine this?</p></li>
+<li><p>Is the distribution of population in NC counties unimodal, bimodal, multimodal or uniform? Which plot(s) helped you determine this?</p></li>
+<li><p>In a single pipeline, identify the counties with unusually high populations (according to the boxplot) and display their names and populations in descending order of population.</p></li>
+</ul>
+<div class="render-commit-push">
+<p>Render, commit, and push your changes to GitHub with the commit message “Added answer for part b”.</p>
+<p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
+</div>
+<ol start="3" type="a">
+<li>Guess what the relationship between population density and land area might be – positive? negative? no relationship? Explain your reasoning.</li>
+</ol>
+<div class="render-commit-push">
+<p>Render, commit, and push your changes to GitHub with a meaningful commit message.</p>
+<p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
+</div>
+<ol start="4" type="a">
+<li>Make a scatter plot of population density (<code>density</code> on the y-axis) vs.&nbsp;land area in miles-squared (<code>land_area_mi2</code> on the x-axis). Make sure to set an informative title and axis labels for your plot. Describe the relationship. Was your guess correct?</li>
+</ol>
+<div class="render-commit-push">
+<p>Now is another good time to render, commit, and push your all your changes to GitHub with a meaningful commit message.</p>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO in lab meeting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Discuss if we should take out part (e) for time.</p>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Now make a scatter plot of population density (<code>density</code> on the y-axis) vs.&nbsp;land area in meters-squared (<code>land_area_m2</code> on the x-axis). Make sure to set an informative title and axis labels for your plot. Comment on how this scatterplot compares to the one in Exercise 8 — is the relationship displayed same or different. Explain why.</li>
+</ol>
+<div class="render-commit-push">
+<p>Render, commit, and push your all your changes to GitHub with the commit message with a meaningful commit message.</p>
+</div>
+</section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
+<section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Once you are finished with the lab, you will submit your final PDF document to Gradescope.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all of your documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>You must turn in a PDF file to the Gradescope page by the end of the lab to be considered “on time”.</p>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li>Go to <a href="http://www.gradescope.com" class="uri">http://www.gradescope.com</a> and click <em>Log in</em> in the top right corner.</li>
+<li>Click <em>School Credentials</em> <span class="math inline">\(\rightarrow\)</span> <em>Duke NetID</em> and log in using your NetID credentials.</li>
+<li>Click on your <em>STA 199</em> course.</li>
+<li>Click on the assignment, and you’ll be prompted to submit it.</li>
+<li>Mark all the pages associated with question. All the pages of your lab should be associated with at least one question (i.e., should be “checked”).</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Checklist
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure you have:</p>
+<ul>
+<li>attempted all questions</li>
+<li>rendered your Quarto document</li>
+<li>committed and pushed everything to your GitHub repository such that the Git pane in RStudio is empty</li>
+<li>uploaded your PDF to Gradescope</li>
+</ul>
+</div>
+</div>
+</section><section id="grading-and-feedback" class="level2"><h2 class="anchored" data-anchor-id="grading-and-feedback">Grading and feedback</h2>
+<ul>
+<li>This lab is worth 30 points:
+<ul>
+<li>10 points for being in lab and turning in <em>something</em> – no partial credit for this part.</li>
+<li>15 points for answering the questions correctly – there is partial credit for this part.</li>
+<li>5 points for following the workflow – there is partial credit for this part.</li>
+</ul>
+</li>
+<li>The workflow points are for:
+<ul>
+<li>coding style,</li>
+<li>committing at least three times as you work through your lab,</li>
+<li>having your final version of <code>.qmd</code> and <code>.pdf</code> files in your GitHub repository, and</li>
+<li>overall organization.</li>
+</ul>
+</li>
+<li>You’ll receive feedback on your lab on Gradescope within a week.</li>
+</ul>
+<p>Good luck, and have fun with it!</p>
 
 
-</section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
-<li id="fn1"><p>Source: <a href="https://en.wikipedia.org/wiki/Mise_en_place">Wikipedia</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Yes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>GitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Remember, haikus not novellas when writing code!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1230,7 +1340,7 @@ Need a recap? Watch this video!
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-0.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
