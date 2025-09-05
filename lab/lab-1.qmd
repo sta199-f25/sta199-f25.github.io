@@ -85,7 +85,7 @@ It stands for "YAML Ain't Markup Language".
 It is a human-friendly data representation for all programming languages.
 All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
 
--   Open the Quarto (`.qmd`) file in your project, change the `author` name to your name (first and last) and add the names (first and last) of your teammates to the `description` field and render the document.
+-   Open the Quarto (`.qmd`) file in your project, update the `authors` field to add your name first (first and last) and then your teammates' names (first and last). Then, render the document.
 
 -   If you get a popup window error, click "Try again".
 
