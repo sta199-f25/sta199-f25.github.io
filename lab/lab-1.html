@@ -538,7 +538,13 @@ window.Quarto = {
   </ul>
 </li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
+  <li>
+<a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  </ul>
+</li>
   <li>
 <a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap-up</a>
   <ul class="collapse">
@@ -786,7 +792,7 @@ Important
 <code>population</code>: Population of county, based on the 2020 census.</li>
 <li>
 <code>density</code>: Population density calculated as population divided by land area in miles-squared (people per mile-squared).</li>
-</ul></section><section id="question" class="level1"><h1>Question</h1>
+</ul></section><section id="questions" class="level1"><h1>Questions</h1>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -800,6 +806,7 @@ TO DO in lab meeting
 <p>Discuss how to prompt interaction/discussion with teammates.</p>
 </div>
 </div>
+<section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ol type="a">
 <li>How many counties are in the dataset? How many variables are there?</li>
 </ol>
@@ -820,14 +827,15 @@ TO DO in lab meeting
 <p>Render, commit, and push your changes to GitHub with the commit message “Added answer for part b”.</p>
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
-<ol start="3" type="a">
+</section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<ol type="a">
 <li>Guess what the relationship between population density and land area might be – positive? negative? no relationship? Explain your reasoning.</li>
 </ol>
 <div class="render-commit-push">
 <p>Render, commit, and push your changes to GitHub with a meaningful commit message.</p>
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
-<ol start="4" type="a">
+<ol start="2" type="a">
 <li>Make a scatter plot of population density (<code>density</code> on the y-axis) vs.&nbsp;land area in miles-squared (<code>land_area_mi2</code> on the x-axis). Make sure to set an informative title and axis labels for your plot. Describe the relationship. Was your guess correct?</li>
 </ol>
 <div class="render-commit-push">
@@ -846,13 +854,13 @@ TO DO in lab meeting
 <p>Discuss if we should take out part (e) for time.</p>
 </div>
 </div>
-<ol start="5" type="a">
+<ol start="3" type="a">
 <li>Now make a scatter plot of population density (<code>density</code> on the y-axis) vs.&nbsp;land area in meters-squared (<code>land_area_m2</code> on the x-axis). Make sure to set an informative title and axis labels for your plot. Comment on how this scatterplot compares to the one in Exercise 8 — is the relationship displayed same or different. Explain why.</li>
 </ol>
 <div class="render-commit-push">
 <p>Render, commit, and push your all your changes to GitHub with the commit message with a meaningful commit message.</p>
 </div>
-</section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
+</section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
 <section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
 <p>Once you are finished with the lab, you will submit your final PDF document to Gradescope.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -901,13 +909,16 @@ Checklist
 <li>This lab is worth 30 points:
 <ul>
 <li>10 points for being in lab and turning in <em>something</em> – no partial credit for this part.</li>
-<li>15 points for answering the questions correctly – there is partial credit for this part.</li>
-<li>5 points for following the workflow – there is partial credit for this part.</li>
+<li>20 points for:
+<ul>
+<li>answering the questions correctly – there is partial credit for this part.</li>
+<li>following the workflow – there is partial credit for this part.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>The workflow points are for:
 <ul>
-<li>coding style,</li>
 <li>committing at least three times as you work through your lab,</li>
 <li>having your final version of <code>.qmd</code> and <code>.pdf</code> files in your GitHub repository, and</li>
 <li>overall organization.</li>
