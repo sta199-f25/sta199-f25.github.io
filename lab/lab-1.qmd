@@ -54,11 +54,11 @@ If you have not, please
 
 Below are the components of the RStudio IDE.
 
-![](images/lab-1/rstudio.png){fig-alt="RStudio IDE"}
+![](images/lab-1/rstudio.png){fig-alt="RStudio IDE" width="700" fig-align="center"}
 
 Below are the components of a Quarto (.qmd) file.
 
-![](images/lab-1/quarto.png){fig-alt="Quarto document"}
+![](images/lab-1/quarto.png){fig-alt="Quarto document" width="700" fig-align="center"}
 
 ### Step 2: Clone the repo & start new RStudio project
 
@@ -113,7 +113,7 @@ All you need to know is that this area is called the YAML (we will refer to it a
     -   Finally, click **Commit**.
         Note that every commit needs to have a commit message associated with it.
 
-::: callout-note
+::: callout-tip
 You don't have to commit after every change, as this would get quite tedious.
 You should commit states that are *meaningful to you* for inspection, comparison, or restoration (e.g., restoring a previous version of your document).
 
