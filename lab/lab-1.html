@@ -528,7 +528,14 @@ window.Quarto = {
   <li><a href="#step-5-push-your-changes" id="toc-step-5-push-your-changes" class="nav-link" data-scroll-target="#step-5-push-your-changes">Step 5: Push your changes</a></li>
   </ul>
 </li>
-  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a></li>
+  <li>
+<a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a>
+  <ul class="collapse">
+<li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  </ul>
+</li>
   </ul>
 </li>
   <li>
@@ -557,7 +564,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 1</h1>
-<p class="subtitle lead">NC Counties</p>
+<p class="subtitle lead">Exploring NC Counties</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -580,7 +587,7 @@ window.Quarto = {
 
 
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
-<p>This lab will introduce you to the course computing workflow. The main goal is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.</p>
+<p>This lab will introduce you to the course computing workflow. One of the mail goals of this lab is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. The other main goal is meet other students in the class, get to know them, and work together with them.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -627,15 +634,16 @@ Warning
 </div>
 </div>
 <section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of the lab, you will…</p>
 <ul>
-<li>Be familiar with the workflow using R, RStudio, Git, and GitHub</li>
-<li>Gain practice writing a reproducible report using Quarto</li>
-<li>Practice version control using Git and GitHub</li>
-<li>Be able to create data visualizations with the <code>tidyverse</code>, specifically using <code>ggplot2</code>
+<li>Gain practice with
+<ul>
+<li>the data science workflow using R, RStudio, Git, and GitHub,</li>
+<li>writing a reproducible report using Quarto, and</li>
+<li>version control using Git and GitHub.</li>
+</ul>
 </li>
-<li>Be able to write a simple data transformation pipeline with the <code>tidyverse</code>, specifically using <code>dplyr</code>
-</li>
+<li>Create data visualizations with the <code>tidyverse</code>, specifically using <code>ggplot2</code>.</li>
+<li>Write a simple data transformation pipeline with the <code>tidyverse</code>, specifically using <code>dplyr</code>.</li>
 </ul></section><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <section id="step-1-log-in-to-rstudio" class="level3"><h3 class="anchored" data-anchor-id="step-1-log-in-to-rstudio">Step 1: Log in to RStudio</h3>
 <ul>
@@ -714,30 +722,26 @@ Warning
 </div>
 </div>
 </section></section><section id="guidelines" class="level2"><h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
-<p>Your plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.</p>
-<p>Additionally, code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a>. Particularly,</p>
+<section id="code" class="level3"><h3 class="anchored" data-anchor-id="code">Code</h3>
+<p>Code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a>. Particularly,</p>
 <ul>
 <li><p>there should be spaces before and line breaks after each <code>+</code> when building a <code>ggplot</code>,</p></li>
 <li><p>there should also be spaces before and line breaks after each <code>|&gt;</code> in a data transformation pipeline,</p></li>
 <li><p>code should be properly indented,</p></li>
 <li><p>there should be spaces around <code>=</code> signs and spaces after commas.</p></li>
 </ul>
-<p>Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
-</div>
-</div>
-</section></section><section id="packages" class="level1"><h1>Packages</h1>
+<p>Additionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section><section id="plots" class="level3"><h3 class="anchored" data-anchor-id="plots">Plots</h3>
+<ul>
+<li><p>Plots should have an informative title and, if needed, also a subtitle.</p></li>
+<li><p>Axes and legends should be labeled with both the variable name and its units (if applicable).</p></li>
+<li><p>Careful consideration should be given to aesthetic choices.</p></li>
+</ul></section><section id="workflow" class="level3"><h3 class="anchored" data-anchor-id="workflow">Workflow</h3>
+<p>Continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.</p>
+<ul>
+<li><p>You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p></li>
+<li><p>Final versions of both your <code>.qmd</code> file and the rendered PDF should be pushed to GitHub.</p></li>
+</ul></section></section></section><section id="packages" class="level1"><h1>Packages</h1>
 <p>In this lab we will work with the <strong>tidyverse</strong> package, which is a collection of packages for doing data analysis in a “tidy” way.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -795,9 +799,8 @@ Important
 </ul></section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ol type="a">
-<li>How many counties are in the dataset? How many variables are there?</li>
+<li>How many counties are in the dataset? How many variables are there? Use inline code to answer this question.</li>
 </ol>
-<p>Use inline code to answer this question.</p>
 <div class="render-commit-push">
 <p>Render, commit, and push your changes to GitHub with the commit message “Added answer for Q1, part a”.</p>
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
@@ -835,8 +838,6 @@ Important
 <p>Render, commit, and push your all your changes to GitHub with the commit message with a meaningful commit message.</p>
 </div>
 </section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
-<section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>Once you are finished with the lab, you will submit your final PDF document to Gradescope.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -847,11 +848,11 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Before you wrap up the assignment, make sure all of your documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
-<p>You must turn in a PDF file to the Gradescope page by the end of the lab to be considered “on time”.</p>
+<p>Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your <code>.qmd</code> file and the rendered PDF are pushed to GitHub and your Git pane is empty. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
 </div>
 </div>
-<p>To submit your assignment:</p>
+<section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Submit your PDF document to Gradescope by the end of the lab to be considered “on time”:</p>
 <ul>
 <li>Go to <a href="http://www.gradescope.com" class="uri">http://www.gradescope.com</a> and click <em>Log in</em> in the top right corner.</li>
 <li>Click <em>School Credentials</em> <span class="math inline">\(\rightarrow\)</span> <em>Duke NetID</em> and log in using your NetID credentials.</li>
