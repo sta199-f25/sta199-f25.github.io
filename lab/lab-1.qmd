@@ -1,6 +1,6 @@
 ---
 title: Lab 1
-subtitle: NC Counties
+subtitle: Exploring NC Counties
 description: "Due: End of lab on Mon, Sep 8"
 categories: Lab
 draft: true
