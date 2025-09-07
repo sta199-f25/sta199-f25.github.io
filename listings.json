@@ -1,20 +1,9 @@
 [
   {
-    "listing": "/exam-review.html",
-    "items": []
-  },
-  {
-    "listing": "/ae.html",
+    "listing": "/lab.html",
     "items": [
-      "/ae/ae-01-income-inequality-A.html",
-      "/ae/ae-01-income-inequality.html",
-      "/ae/ae-02-bechdel-dataviz-A.html",
-      "/ae/ae-02-bechdel-dataviz.html"
+      "/lab/lab-0.html"
     ]
-  },
-  {
-    "listing": "/hw.html",
-    "items": []
   },
   {
     "listing": "/course-team.html",
@@ -40,9 +29,20 @@
     ]
   },
   {
-    "listing": "/lab.html",
+    "listing": "/hw.html",
+    "items": []
+  },
+  {
+    "listing": "/ae.html",
     "items": [
-      "/lab/lab-0.html"
+      "/ae/ae-01-income-inequality-A.html",
+      "/ae/ae-01-income-inequality.html",
+      "/ae/ae-02-bechdel-dataviz-A.html",
+      "/ae/ae-02-bechdel-dataviz.html"
     ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": []
   }
 ]
