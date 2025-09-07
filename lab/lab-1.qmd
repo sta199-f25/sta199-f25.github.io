@@ -236,37 +236,13 @@ Render, commit, and push your changes to GitHub with the commit message "Added a
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-b. Make two plots: a histogram and a boxplot of the population variable. 
+b. Make two plots: a histogram and a boxplot of the `population` variable. 
 
 - Is the distribution of population in NC counties right-skewed, left-skewed, or approximately symmetric? Which plot(s) helped you determine this?
 
 - Is the distribution of population in NC counties unimodal, bimodal, multimodal or uniform? Which plot(s) helped you determine this?
 
 - In a single pipeline, identify the counties with unusually high populations (according to the boxplot) and display their names and populations in descending order of population.
-
-```{r}
-#| include: false
-ggplot(nc_county, aes(x = population)) +
-  geom_boxplot() +
-  labs(
-    title = "Population in NC Counties",
-    x = "Population",
-    y = NULL
-  )
-
-ggplot(nc_county, aes(x = population)) +
-  geom_histogram() +
-  labs(
-    title = "Population in NC Counties",
-    x = "Population",
-    y = NULL
-  )
-
-nc_county |>
-  filter(population > 250000) |>
-  select(county, population) |>
-  arrange(desc(population))
-```
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Q1, part b".
