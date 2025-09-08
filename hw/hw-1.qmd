@@ -1,6 +1,6 @@
 ---
 title: HW 1
-subtitle: Exploring NC Counties
+subtitle: Exploring Midwest and NC Counties
 description: "Due: Sun, Sep 14, 11:59 pm"
 categories: HW
 draft: false
