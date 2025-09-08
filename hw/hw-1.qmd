@@ -3,7 +3,7 @@ title: HW 1
 subtitle: Exploring NC Counties
 description: "Due: Sun, Sep 14, 11:59 pm"
 categories: HW
-draft: true
+draft: false
 ---
 
 # Introduction
@@ -172,3 +172,122 @@ So take a moment to make sure you're following along with the version control in
 :::
 
 # Part 2 -- Feedback from Humans
+
+## Question 6 -- Reflection
+
+In the first part of this homework assignment, you were given a set of data analysis questions. 
+You used an AI-powered feedback tool to receive immediate feedback on your answers based on a rubric designed by the course instructor.
+
+Write a short reflection (100-200 words, 5-10 sentences) addressing the following prompts:
+
+- Use of the Tool: Describe how you interacted with the AI tool. What type of feedback did it provide on your code, your interpretation of results, or your written explanation? How did you respond to this feedback (e.g., revising code, clarifying your narrative)?
+
+- Quality of Feedback: Evaluate the usefulness and clarity of the AI tool’s feedback. Did it help you identify errors, gaps in reasoning, or ways to improve communication of your results? Did the feedback align with your expectations of instructor-style feedback?
+
+- Critical Reflection: What are the limitations of using AI-generated feedback in place of instructor feedback? How might it support your learning, and in what ways might it fall short?
+
+Your reflection should demonstrate critical thinking, not just description. Where possible, connect your observations to course concepts such as reproducibility, clarity in communication, or the iterative nature of data analysis.
+
+## Questions 7-10 -- Exploring NC Counties
+
+For the remaining questions on the homework, you will continue use data on counties in North Carolina that you used in Lab 1.
+
+As a reminder, the dataset contains information on North Carolina counties retrieved from the 2020 Census as well as from [myFutureNC Dashboard](https://dashboard.myfuturenc.org/county-data-and-resources/) maintained by Carolina Demography at the University of North Carolina at Chapel Hill.
+
+This dataset is stored in a file called `nc-county.csv` in the `data` folder of your project/repository.
+
+The variables in the dataset and their descriptions are as follows:
+
+-   `county`: Name of county.
+-   `land_area_m2`: Land area of county in meters-squared, based on the 2020 census.
+-   `land_area_mi2`: Land area of county in miles-squared, based on the 2020 census.
+-   `pop_2020`: Population of county, based on the 2020 Census.
+-   `pop_dens_2020`: Population density calculated as population (`pop_2020`) divided by land area in miles-squared (people per mile-squared).
+-   `county_type`: Peer county type classification based on population characteristics, socioeconomic status, and geographic features used for grouping counties with similar demographic, social, and economic characteristics, allowing them to be compared and benchmarked against one another.
+-   `median_hh_income`: Median household income.
+-   `p_foreign_born`: Percentage of population that is foreign-born.
+-   `p_child_poverty`: Percentage of children living in poverty.
+-   `p_single_parent_hh`: Percentage of households with children that are single-parent households.
+-   `p_broadband`: Percentage of households with broadband internet access.
+-   `p_home_ownership`: Percentage of homes that are owner-occupied.
+-   `p_family_sustaining_wage`: Percentage of adults that earn a family-sustaining wage -- typically a wage that covers essential costs like housing, food, childcare, transportation, and healthcare for a family's basic needs within a specific geographic area
+-   `p_edu_lths`: Percentage of 25-44-year-olds with less than a high school diploma.
+-   `p_edu_hsged`: Percentage of 25-44-year-olds with a high school diploma or equivalent.
+-   `p_edu_scnd`: Percentage of 25-44-year-olds with some college or an associate degree.
+-   `p_edu_ndc`: Percentage of 25-44-year-olds with non-degree credentials -- certifications, licenses, or other credentials that demonstrate specific skills or knowledge but do not confer a formal academic degree.
+-   `p_edu_assoc`: Percentage of 25-44-year-olds with an associate degree.
+-   `p_edu_ba`: Percentage of 25-44-year-olds with a bachelor's degree.
+-   `p_edu_mapl`: Percentage of 25-44-year-olds with a master's, professional, or doctoral degree.
+-   `p_edu_hs_grad_rate`: High school graduation rate.
+-   `p_edu_chronic_absent_rate`: Chronic absenteeism rate.
+
+Just like in lab, you can read this file into R with the following code:
+
+```{r}
+#| eval: false
+nc_county <- read_csv("data/nc-county.csv")
+```
+
+```{r}
+#| include: false
+nc_county <- read_csv(here::here("data/nc-county.csv"))
+```
+
+### Question 7
+
+a. Make a bar plot of the number of counties by `county_type`. What type of county is most common in North Carolina? What type of county is least common?
+
+b. What type of county is Durham County? Answer this question with a single pipeline where you `filter()` for Durham County and then `select()` the `county` and `county_type` variables.
+
+### Question 8
+
+a. Make a boxplot of median household income (`median_hh_income`) by `county_type`. In 2-3 sentences, compare the distributions of median household income across the three county types touching on shape, center, spread, and any potential outliers.
+
+b. In a single pipeline, identidy all rural non-metro counties that appear as outliers in the boxplot you created in part (a). Your result should be a data frame with columns `county`, `county_type`, and `median_hh_income`.  (Hint: Use `filter()` with two conditions connected by the `&` operator.)
+
+   Then, fill in the blanks in the following sentence:
+
+   > There are `_____` rural non-metro counties that appear as outliers with median household incomes above $`_____`. The county with the highest median household income among these outliers is `_____` County, with a median household income of $`_____`.
+
+   ::: callout-tip
+   ## Hint
+
+   You will need to use two conditions connected by the `&` operator in your `filter()` call to filter for counties with rural non-metro type _and_ (`&`) with median household income beyond a certain threshold.
+   :::
+
+c. Figure out where the counties you identified in part (b) are located in North Carolina, e.g., on the coast, on the northwest, etc. Include in your answer where you found this information with links to your references, e.g., Wikipedia, Google Maps, etc.
+
+### Question 9
+
+a. Make a boxplot of the proportion of 25-44-year-olds with a master's, professional, or doctoral degree (`p_edu_mapl`) by `county_type`. How do the median proportions compare across the three county types?
+
+b. In a single pipeline, identify all counties that appear as outliers in the boxplot you created in part (a). Your result should be a data frame with columns `county`, `county_type`, and `p_edu_mapl`, where rows are ordered by `county_type` and then in descending order of `p_edu_mapl`.
+
+   ::: callout-tip
+   ## Hint
+
+   You will need to use three conditions connected by the `|` operator in your `filter()` call, one for each county type.
+   :::
+
+### Question 10
+
+Recreate the following visualization that compares the distribution of home ownership (`p_home_ownership`) by `county_type`. Then, highlight one feature of home ownership that this plot reveals in 1-2 sentences.
+
+![](images/hw-1/plot-to-recreate.png)
+
+::: callout-tip
+## Hints
+
+- x-axis: You can modify the x-axis labels to be percentages in a `scale_x_continuous()` layer. The **scales** package offers a handy function for formatting percentages, `label_percent()`. You can use this in the `labels` argument of `scale_x_continuous()`.
+
+- Color palette: The `scale_color_colorblind()` and `scale_fill_colorblind()` functions from the **ggthemes** package provide a color palette that is friendly for individuals with color vision deficiencies.
+
+- Transparancy: You should adjust the transparency of the filled density curves. You don't have to worry about the exact transparency value, but you should try a few to get close.
+
+- Theme: This plot uses a non-default theme. See [theme options documentation](https://ggplot2.tidyverse.org/reference/ggtheme.html) for options.
+
+- Legend: You should move the legend to the top of the plot. You can do this in a `theme()` layer. See [theme documentation](https://ggplot2.tidyverse.org/reference/theme.html) to identify the argument you need to change to move the legend.
+
+- Aspect ratio: You can adjust the aspect ratio by setting the `fig-asp` option in the code cell. A smaller (closer to 0) value makes the plot shorter and wider, while a larger (closer to 1) value makes the plot square-ish.
+:::
+
