@@ -229,7 +229,7 @@ Render, commit, and push your changes to GitHub with the commit message "Added a
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-b. Make two plots: a histogram and a boxplot of the `population` variable. 
+b. Make two plots: a histogram and a boxplot of the `pop_2020` variable. 
 
 - Is the distribution of population in NC counties right-skewed, left-skewed, or approximately symmetric? Which plot(s) helped you determine this?
 
