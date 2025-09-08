@@ -186,7 +186,7 @@ nc_county <- read_csv("data/nc-county.csv")
 
 ```{r}
 #| include: false
-nc_county <- read_csv(here::here("lab", "data/nc-county.csv"))
+nc_county <- read_csv(here::here("data/nc-county.csv"))
 ```
 
 This will read the CSV (comma separated values) file from the `data` folder and store the dataset as a data frame called `nc_county` in R.
