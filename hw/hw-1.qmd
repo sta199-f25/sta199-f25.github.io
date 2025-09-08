@@ -10,7 +10,7 @@ draft: false
 
 This is a two-part homework assignment:
 
-- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI. Complete in `hw-1-part-1.qmd`, no submission required.
+- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-1-part-1.qmd`, no submission required.
 
 - **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team within a week. Complete in `hw-1-part-2.qmd`, submit on Gradescope.
 
@@ -39,7 +39,17 @@ Your answers to the questions in this part should go in the file `hw-1-part-1.qm
 
 ## Instructions
 
-[TO DO: Add instructions for AI feedback tool.]
+Write your answer to each question in the appropriate section of the `hw-1-part-1.qmd` file.
+Then, highlight your answer to a question, click on _Addins > AIFEEDR > Get feedback_.
+In the app that opens, select the appropriate homework number (1) and question number.
+Then click on _Get Feedback_.
+Please be patient, feedback generation can take a few seconds. 
+Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. 
+You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.
+
+The video below demonstrates how to use the AI feedback tool.
+
+{{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
 
 ## Packages
 
@@ -132,7 +142,7 @@ How do variabilities of county sizes compare across states?
 Which state has the single largest county? Identify the name of this county. You can use the data viewer to identify it interactively, you do not have to write code.
 
 ::: render-commit-push
-Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.
+Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
 
 Once again, make sure to commit and push all changed files so that your Git pane is empty afterwards.
 :::
@@ -164,7 +174,7 @@ midwest <- midwest |>
 :::
 
 ::: render-commit-push
-Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.
+Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
 
 And once again, make sure to commit and push all changed files so that your Git pane is empty afterward.
 We keep repeating this because it's important and because we see students forget to do this.
@@ -172,6 +182,8 @@ So take a moment to make sure you're following along with the version control in
 :::
 
 # Part 2 -- Feedback from Humans
+
+Your answers to the questions in this part should go in the file `hw-1-part-2.qmd`.
 
 ## Question 6 -- Reflection
 
@@ -188,7 +200,27 @@ Write a short reflection (100-200 words, 5-10 sentences) addressing the followin
 
 Your reflection should demonstrate critical thinking, not just description. Where possible, connect your observations to course concepts such as reproducibility, clarity in communication, or the iterative nature of data analysis.
 
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 6".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
 ## Questions 7-10 -- Exploring NC Counties
+
+### Packages
+
+You will use the **tidyverse** package for data wrangling and visualization, **scales** for better axis labels, and **ggthemes** for additional color palettes.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(scales)
+library(ggthemes)
+```
+
+### Data
 
 For the remaining questions on the homework, you will continue use data on counties in North Carolina that you used in Lab 1.
 
@@ -239,6 +271,12 @@ a. Make a bar plot of the number of counties by `county_type`. What type of coun
 
 b. What type of county is Durham County? Answer this question with a single pipeline where you `filter()` for Durham County and then `select()` the `county` and `county_type` variables.
 
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 7".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
 ### Question 8
 
 a. Make a boxplot of median household income (`median_hh_income`) by `county_type`. In 2-3 sentences, compare the distributions of median household income across the three county types touching on shape, center, spread, and any potential outliers.
@@ -257,6 +295,10 @@ b. In a single pipeline, identidy all rural non-metro counties that appear as ou
 
 c. Figure out where the counties you identified in part (b) are located in North Carolina, e.g., on the coast, on the northwest, etc. Include in your answer where you found this information with links to your references, e.g., Wikipedia, Google Maps, etc.
 
+::: render-commit-push
+Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
+:::
+
 ### Question 9
 
 a. Make a boxplot of the proportion of 25-44-year-olds with a master's, professional, or doctoral degree (`p_edu_mapl`) by `county_type`. How do the median proportions compare across the three county types?
@@ -268,6 +310,10 @@ b. In a single pipeline, identify all counties that appear as outliers in the bo
 
    You will need to use three conditions connected by the `|` operator in your `filter()` call, one for each county type.
    :::
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with an informative and concise commit message.
+:::
 
 ### Question 10
 
@@ -291,3 +337,30 @@ Recreate the following visualization that compares the distribution of home owne
 - Aspect ratio: You can adjust the aspect ratio by setting the `fig-asp` option in the code cell. A smaller (closer to 0) value makes the plot shorter and wider, while a larger (closer to 1) value makes the plot square-ish.
 :::
 
+::: render-commit-push
+Render, commit, and push your changes to GitHub with an informative and concise commit message.
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+{{< include _submission.qmd >}}
+
+## Grading and feedback
+
+-   Questions 1-5 are not graded, but you should complete them to get practice.
+
+-   Questions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.
+    -   Questions will be graded for accuracy and completeness.
+    -   Partial credit will be given where appropriate.
+    -   There are also workflow points for:
+        - committing at least three times as you work through your lab,
+        - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+        - overall organization.
