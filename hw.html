@@ -86,9 +86,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-description',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-subtitle','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -554,15 +554,39 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table caption-top" data-quarto-postprocess="true">
+<table class="quarto-listing-table table">
 <thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">No.</th>
-<th data-quarto-table-cell-role="th">Title</th>
-<th data-quarto-table-cell-role="th">Due date</th>
+<tr>
+
+<th>
+No.
+</th>
+
+<th>
+Title
+</th>
+
+<th>
+Due date
+</th>
+
 </tr>
 </thead>
 <tbody class="list">
+
+<tr data-index="0" data-categories="SFc=" data-listing-file-modified-sort="1757307255837" data-listing-reading-time-sort="13" data-listing-word-count-sort="2441" data-listing-title-sort="HW 1" data-listing-filename-sort="hw-1.qmd">
+<td>
+<a href="./hw/hw-1.html" class="title listing-title">HW 1</a>
+</td>
+<td>
+<span class="listing-subtitle">Exploring NC Counties</span>
+</td>
+<td>
+<span class="listing-description">Due: Sun, Sep 14, 11:59 pm</span>
+</td>
+
+</tr>
+
 </tbody>
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
