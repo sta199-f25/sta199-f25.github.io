@@ -151,7 +151,7 @@ Once again, make sure to commit and push all changed files so that your Git pane
 
 *Do some states have a higher percentage of their counties located in a metropolitan area?*
 
-Create a segmented bar chart with one bar per state and the bar filled with colors according to the value of `metro` – one color indicating `Yes` and the other color indicating `No` for whether a county is considered to be a metro area.
+Create a segmented bar plot with one bar per state and the bar filled with colors according to the value of `metro` – one color indicating `Yes` and the other color indicating `No` for whether a county is considered to be a metro area.
 The y-axis of the segmented barplot should range from 0 to 1, indicating proportions.
 Compare the percentage of counties in metro areas across the states based on this plot.
 Make sure to supplement your narrative with rough estimates of these percentages.
@@ -192,11 +192,11 @@ You used an AI-powered feedback tool to receive immediate feedback on your answe
 
 Write a short reflection (100-200 words, 5-10 sentences) addressing the following prompts:
 
-- Use of the Tool: Describe how you interacted with the AI tool. What type of feedback did it provide on your code, your interpretation of results, or your written explanation? How did you respond to this feedback (e.g., revising code, clarifying your narrative)?
+- Use of the tool: Describe how you interacted with the AI tool. What type of feedback did it provide on your code, your interpretation of results, or your written explanation? How did you respond to this feedback (e.g., revising code, clarifying your narrative)?
 
-- Quality of Feedback: Evaluate the usefulness and clarity of the AI tool’s feedback. Did it help you identify errors, gaps in reasoning, or ways to improve communication of your results? Did the feedback align with your expectations of instructor-style feedback?
+- Quality of feedback: Evaluate the usefulness and clarity of the AI tool’s feedback. Did it help you identify errors, gaps in reasoning, or ways to improve communication of your results? Did the feedback align with your expectations of instructor-style feedback?
 
-- Critical Reflection: What are the limitations of using AI-generated feedback in place of instructor feedback? How might it support your learning, and in what ways might it fall short?
+- Critical reflection: What are the limitations of using AI-generated feedback in place of instructor feedback? How might it support your learning, and in what ways might it fall short?
 
 Your reflection should demonstrate critical thinking, not just description. Where possible, connect your observations to course concepts such as reproducibility, clarity in communication, or the iterative nature of data analysis.
 
