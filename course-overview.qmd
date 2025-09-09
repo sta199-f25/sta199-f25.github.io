@@ -21,15 +21,15 @@ Intro to data science and statistical thinking. Learn to explore, visualize, and
 
 ## Meetings
 
-| Meeting | Location                       | Time                          |
-|---------|--------------------------------|-------------------------------|
-| Lecture | Biological Sciences 111        | Tue & Thur 11:45 am - 1:00 pm |
-| Lab 01  | Perkins LINK 071 (Classroom 5) | Mon 8:30 - 9:45 am            |
-| Lab 03  | Allen 326                      | Mon 10:05 - 11:20 am          |
-| Lab 04  | Perkins LINK 087 (Classroom 3) | Mon 10:05 - 11:20 am          |
-| Lab 05  | Perkins LINK 087 (Classroom 3) | Mon 11:45 am - 1:00 pm        |
-| Lab 06  | Perkins LINK 071 (Classroom 5) | Mon 11:45 am - 1:00 pm        |
-| Lab 07  | Perkins LINK 087 (Classroom 3) | Mon 1:25 - 2:40 pm            |
-| Lab 08  | Perkins LINK 071 (Classroom 5) | Mon 1:25 - 2:40 pm            |
-| Lab 09  | Perkins LINK 087 (Classroom 3) | Mon 3:05 - 4:20 pm            |
-| Lab 11  | Perkins LINK 071 (Classroom 5) | Mon 4:40 - 5:55 pm            |
+| Meeting | Location                       | Time                          | Instructor / TAs               |
+|---------|--------------------------------|-------------------------------| -------------------------------|
+| Lecture | Biological Sciences 111        | Tue & Thur 11:45 am - 1:00 pm | Dr. Mine Çetinkaya-Rundel      |
+| Lab 01  | Perkins LINK 071 (Classroom 5) | Mon 8:30 - 9:45 am            | Marie + Xueyan                 |
+| Lab 03  | Allen 326                      | Mon 10:05 - 11:20 am          | Eduardo + Jesse                |
+| Lab 04  | Perkins LINK 087 (Classroom 3) | Mon 10:05 - 11:20 am          | Federico + Abuzar              |
+| Lab 05  | Perkins LINK 087 (Classroom 3) | Mon 11:45 am - 1:00 pm        | Katie + Max                    |
+| Lab 06  | Perkins LINK 071 (Classroom 5) | Mon 11:45 am - 1:00 pm        | Sarah + Natasha                |
+| Lab 07  | Perkins LINK 087 (Classroom 3) | Mon 1:25 - 2:40 pm            | Marie + Bethany                |
+| Lab 08  | Perkins LINK 071 (Classroom 5) | Mon 1:25 - 2:40 pm            | Arijit + Allison               |
+| Lab 09  | Perkins LINK 087 (Classroom 3) | Mon 3:05 - 4:20 pm            | Katie + Ziyang                 |
+| Lab 11  | Perkins LINK 071 (Classroom 5) | Mon 4:40 - 5:55 pm            | Luxman + Ben                   |
