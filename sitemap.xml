@@ -2,198 +2,214 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sta199-f25.github.io/computing-cheatsheets.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.140Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/01-hello-world-slides.html</loc>
-    <lastmod>2025-09-08T21:55:32.437Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.183Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/01-hello-world.html</loc>
-    <lastmod>2025-09-08T21:55:32.437Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.183Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/02-meet-the-toolkit-slides.html</loc>
-    <lastmod>2025-09-08T21:55:32.437Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.183Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/02-meet-the-toolkit.html</loc>
-    <lastmod>2025-09-08T21:55:32.437Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.183Z</lastmod>
   </url>
   <url>
-    <loc>https://sta199-f25.github.io/hw/hw-1.html</loc>
-    <lastmod>2025-09-08T21:55:32.398Z</lastmod>
+    <loc>https://sta199-f25.github.io/slides/05-exploratory-data-analysis-I-slides.html</loc>
+    <lastmod>2025-09-09T03:58:02.196Z</lastmod>
   </url>
   <url>
-    <loc>https://sta199-f25.github.io/lab.html</loc>
-    <lastmod>2025-09-08T21:55:32.417Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/xueyan.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/kathleen.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/alexa.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/ben.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/katie.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/arijit.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/sarah.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/allison.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/marie.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/computing-access.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-syllabus.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ae/ae-02-bechdel-dataviz.html</loc>
-    <lastmod>2025-09-08T21:55:32.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ae/ae-02-bechdel-dataviz-A.html</loc>
-    <lastmod>2025-09-08T21:55:32.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/project/description.html</loc>
-    <lastmod>2025-09-08T21:55:32.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-team.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/lab/lab-0.html</loc>
-    <lastmod>2025-09-08T21:55:32.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/hw.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-support.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-overview.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/lab/lab-1.html</loc>
-    <lastmod>2025-09-08T21:55:32.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ae.html</loc>
-    <lastmod>2025-09-08T21:55:32.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/index.html</loc>
-    <lastmod>2025-09-08T21:55:32.417Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ae/ae-01-income-inequality-A.html</loc>
-    <lastmod>2025-09-08T21:55:32.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ae/ae-01-income-inequality.html</loc>
-    <lastmod>2025-09-08T21:55:32.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/exam-review.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/computing-troubleshooting.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/course-faq.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/natasha.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/federico.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/bethany.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/eduardo.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/jessie.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/ziyan.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/max.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/luxman.html</loc>
-    <lastmod>2025-09-08T21:55:32.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta199-f25.github.io/ta/abuzar.html</loc>
-    <lastmod>2025-09-08T21:55:32.505Z</lastmod>
+    <loc>https://sta199-f25.github.io/slides/05-exploratory-data-analysis-I.html</loc>
+    <lastmod>2025-09-09T03:58:02.196Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/computing-code-alongs.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/abuzar.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/luxman.html</loc>
+    <lastmod>2025-09-09T03:58:02.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/max.html</loc>
+    <lastmod>2025-09-09T03:58:02.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/ziyan.html</loc>
+    <lastmod>2025-09-09T03:58:02.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/jessie.html</loc>
+    <lastmod>2025-09-09T03:58:02.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/eduardo.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/bethany.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/federico.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/natasha.html</loc>
+    <lastmod>2025-09-09T03:58:02.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-faq.html</loc>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/computing-troubleshooting.html</loc>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/exam-review.html</loc>
+    <lastmod>2025-09-09T03:58:02.142Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae/ae-02-bechdel-dataviz.html</loc>
+    <lastmod>2025-09-09T03:58:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae/ae-02-bechdel-dataviz-A.html</loc>
+    <lastmod>2025-09-09T03:58:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae/ae-03-gerrymander-explore-I.html</loc>
+    <lastmod>2025-09-09T03:58:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/index.html</loc>
+    <lastmod>2025-09-09T03:58:02.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae.html</loc>
+    <lastmod>2025-09-09T03:58:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/lab/lab-1.html</loc>
+    <lastmod>2025-09-09T03:58:02.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-overview.html</loc>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-support.html</loc>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/hw.html</loc>
+    <lastmod>2025-09-09T03:58:02.142Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/lab/lab-0.html</loc>
+    <lastmod>2025-09-09T03:58:02.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-team.html</loc>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/project/description.html</loc>
+    <lastmod>2025-09-09T03:58:02.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae/ae-01-income-inequality-A.html</loc>
+    <lastmod>2025-09-09T03:58:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae/ae-01-income-inequality.html</loc>
+    <lastmod>2025-09-09T03:58:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ae/ae-03-gerrymander-explore-I-A.html</loc>
+    <lastmod>2025-09-09T03:58:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/course-syllabus.html</loc>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/computing-access.html</loc>
+    <lastmod>2025-09-09T03:58:02.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/marie.html</loc>
+    <lastmod>2025-09-09T03:58:02.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/allison.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/sarah.html</loc>
+    <lastmod>2025-09-09T03:58:02.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/arijit.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/katie.html</loc>
+    <lastmod>2025-09-09T03:58:02.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/ben.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/alexa.html</loc>
+    <lastmod>2025-09-09T03:58:02.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/kathleen.html</loc>
+    <lastmod>2025-09-09T03:58:02.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/ta/xueyan.html</loc>
+    <lastmod>2025-09-09T03:58:02.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/lab.html</loc>
+    <lastmod>2025-09-09T03:58:02.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f25.github.io/hw/hw-1.html</loc>
+    <lastmod>2025-09-09T03:58:02.142Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/03-grammar-of-data-visualization.html</loc>
-    <lastmod>2025-09-08T21:55:32.437Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.183Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/03-grammar-of-data-visualization-slides.html</loc>
-    <lastmod>2025-09-08T21:55:32.437Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.183Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/04-grammar-of-data-transformation.html</loc>
-    <lastmod>2025-09-08T21:55:32.450Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.196Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/slides/04-grammar-of-data-transformation-slides.html</loc>
-    <lastmod>2025-09-08T21:55:32.450Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.196Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f25.github.io/course-links.html</loc>
-    <lastmod>2025-09-08T21:55:32.397Z</lastmod>
+    <lastmod>2025-09-09T03:58:02.141Z</lastmod>
   </url>
 </urlset>
