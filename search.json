@@ -1635,11 +1635,11 @@
     "text": "Multivariate analysis\nAnalyzing the relationship between multiple variables:\n\nIn general, one variable is identified as the outcome of interest\nThe remaining variables are predictors or explanatory variables\n\nPlots for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via faceting or aesthetic mappings (e.g., scatterplot of y vs. x1, colored by x2, faceted by x3)\n\n\n\nSummary statistics for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via grouping (e.g., correlation between y and x1, grouped by levels of x2 and x3)"
   },
   {
-    "objectID": "slides/05-exploratory-data-analysis-I-slides.html#section",
-    "href": "slides/05-exploratory-data-analysis-I-slides.html#section",
+    "objectID": "slides/05-exploratory-data-analysis-I-slides.html#ae-03-gerrymander-explore-i",
+    "href": "slides/05-exploratory-data-analysis-I-slides.html#ae-03-gerrymander-explore-i",
     "title": "Exploratory data analysis I",
-    "section": "",
-    "text": "Go to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: .qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+    "section": "ae-03-gerrymander-explore-I",
+    "text": "ae-03-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-03-gerrymander-explore-I.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
     "objectID": "slides/05-exploratory-data-analysis-I.html",
@@ -2048,11 +2048,11 @@
     "text": "Multivariate analysis\nAnalyzing the relationship between multiple variables:\n\n\nIn general, one variable is identified as the outcome of interest\nThe remaining variables are predictors or explanatory variables\n\nPlots for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via faceting or aesthetic mappings (e.g., scatterplot of y vs. x1, colored by x2, faceted by x3)\n\n\n\nSummary statistics for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via grouping (e.g., correlation between y and x1, grouped by levels of x2 and x3)"
   },
   {
-    "objectID": "slides/05-exploratory-data-analysis-I.html#section",
-    "href": "slides/05-exploratory-data-analysis-I.html#section",
+    "objectID": "slides/05-exploratory-data-analysis-I.html#ae-03-gerrymander-explore-i",
+    "href": "slides/05-exploratory-data-analysis-I.html#ae-03-gerrymander-explore-i",
     "title": "Exploratory data analysis I",
-    "section": "",
-    "text": "Go to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: .qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+    "section": "ae-03-gerrymander-explore-I",
+    "text": "ae-03-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-03-gerrymander-explore-I.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
     "objectID": "computing-code-alongs.html",
