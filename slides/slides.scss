@@ -62,14 +62,6 @@ details>summary {
   background: #00587150;
 }
 
-.reveal .slide .wooclap {
-  border-left: 3px solid #6B4140;
-  padding-left: 0.5em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  background: #6B414050;
-}
-
 .reveal .slide .poll {
   border-left: 3px solid #6b4140;
   padding-left: 0.5em;
@@ -100,6 +92,31 @@ details>summary {
   margin-bottom: 0.5em;
   padding: 0.5em;
   background: #9AA06750;
+}
+
+.reveal .slide .wooclap {
+  border-left: 3px solid #6B4140;
+  padding-left: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.05em;
+  background: #6B414050;
+}
+
+.reveal .slide .wooclap-choices ul {
+  list-style: none;       /* remove default bullets */
+  padding-left: 1em;    /* space for custom bullets */
+}
+
+.reveal .slide .wooclap-choices li {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+.reveal .slide .wooclap-choices li::before {
+  content: "◯";          /* hollow circle (\25CB / &#9675;) */
+  position: absolute;
+  left: -1.5em;          /* align circles nicely */
+  font-size: 1em;
 }
 
 .reveal pre code {
