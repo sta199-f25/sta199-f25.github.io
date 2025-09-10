@@ -279,7 +279,7 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 8
 
-a. Make a boxplot of median household income (`median_hh_income`) by `county_type`. In 2-3 sentences, compare the distributions of median household income across the three county types touching on shape, center, spread, and any potential outliers.
+a. Make a boxplot of median household income (`median_hh_income`) by `county_type`. In 2-3 sentences, compare the distributions of median household income across the four county types touching on shape, center, spread, and any potential outliers.
 
 b. In a single pipeline, identify all rural non-metro counties that appear as outliers in the boxplot you created in part (a). Your result should be a data frame with columns `county`, `county_type`, and `median_hh_income`.  (Hint: Use `filter()` with two conditions connected by the `&` operator.)
 
@@ -301,7 +301,7 @@ Now is another good time to render, commit, and push your changes to GitHub with
 
 ### Question 9
 
-a. Make a boxplot of the proportion of 25-44-year-olds with a master's, professional, or doctoral degree (`p_edu_mapl`) by `county_type`. How do the median proportions compare across the three county types?
+a. Make a boxplot of the proportion of 25-44-year-olds with a master's, professional, or doctoral degree (`p_edu_mapl`) by `county_type`. How do the median proportions compare across the four county types?
 
 b. In a single pipeline, identify _all_ counties that appear as outliers in the boxplot you created in part (a). Your result should be a data frame with columns `county`, `county_type`, and `p_edu_mapl`, where rows are ordered by `county_type` and then in descending order of `p_edu_mapl`.
 
