@@ -812,7 +812,7 @@ Hint
 </div>
 </section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
 <ol type="a">
-<li><p>Make a boxplot of median household income (<code>median_hh_income</code>) by <code>county_type</code>. In 2-3 sentences, compare the distributions of median household income across the three county types touching on shape, center, spread, and any potential outliers.</p></li>
+<li><p>Make a boxplot of median household income (<code>median_hh_income</code>) by <code>county_type</code>. In 2-3 sentences, compare the distributions of median household income across the four county types touching on shape, center, spread, and any potential outliers.</p></li>
 <li>
 <p>In a single pipeline, identify all rural non-metro counties that appear as outliers in the boxplot you created in part (a). Your result should be a data frame with columns <code>county</code>, <code>county_type</code>, and <code>median_hh_income</code>. (Hint: Use <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> with two conditions connected by the <code>&amp;</code> operator.)</p>
 <p>Then, fill in the blanks in the following sentence:</p>
@@ -840,7 +840,7 @@ Hint
 </div>
 </section><section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
 <ol type="a">
-<li><p>Make a boxplot of the proportion of 25-44-year-olds with a master’s, professional, or doctoral degree (<code>p_edu_mapl</code>) by <code>county_type</code>. How do the median proportions compare across the three county types?</p></li>
+<li><p>Make a boxplot of the proportion of 25-44-year-olds with a master’s, professional, or doctoral degree (<code>p_edu_mapl</code>) by <code>county_type</code>. How do the median proportions compare across the four county types?</p></li>
 <li>
 <p>In a single pipeline, identify <em>all</em> counties that appear as outliers in the boxplot you created in part (a). Your result should be a data frame with columns <code>county</code>, <code>county_type</code>, and <code>p_edu_mapl</code>, where rows are ordered by <code>county_type</code> and then in descending order of <code>p_edu_mapl</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
