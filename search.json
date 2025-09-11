@@ -1261,28 +1261,28 @@
     "href": "slides/06-exploratory-data-analysis-II-slides.html#from-the-ae",
     "title": "Exploratory data analysis II",
     "section": "From the AE",
-    "text": "From the AE\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = flip18, fill = gerry)\n  ) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
+    "text": "From the AE\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat flipped the seat in the 2018 election? (flip18 = 1: Democrat flipped the seat, 0: No flip, -1: Republican flipped the seat.)\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = flip18, fill = gerry)\n  ) +\n  geom_bar(position = \"fill\") +\n  scale_fill_colorblind()\n\n\n\n\n\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#what-does-group_by-do",
-    "href": "slides/06-exploratory-data-analysis-II-slides.html#what-does-group_by-do",
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#spot-the-difference",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#spot-the-difference",
     "title": "Exploratory data analysis II",
-    "section": "What does group_by() do?",
-    "text": "What does group_by() do?\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
+    "section": "Spot the difference",
+    "text": "Spot the difference\n\nWhat does group_by() do?\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry)\n\n# A tibble: 8 × 3\n  flip18 gerry     n\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;\n1     -1 low       2\n2     -1 mid       3\n3      0 low      52\n4      0 mid     242\n5      0 high     98\n6      1 low       8\n7      1 mid      25\n8      1 high      5\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18)\n\n# A tibble: 8 × 3\n# Groups:   flip18 [3]\n  flip18 gerry     n\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;\n1     -1 low       2\n2     -1 mid       3\n3      0 low      52\n4      0 mid     242\n5      0 high     98\n6      1 low       8\n7      1 mid      25\n8      1 high      5"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#lets-simplify",
     "href": "slides/06-exploratory-data-analysis-II-slides.html#lets-simplify",
     "title": "Exploratory data analysis II",
     "section": "Let’s simplify!",
-    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 50 × 2\n   state mean_trump16\n   &lt;chr&gt;        &lt;dbl&gt;\n 1 AK            52.8\n 2 AL            62.6\n 3 AR            60.9\n 4 AZ            46.9\n 5 CA            31.7\n 6 CO            43.6\n 7 CT            41.0\n 8 DE            41.9\n 9 FL            47.9\n10 GA            51.3\n# ℹ 40 more rows"
+    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\n\n\ngerrymander |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 1 × 1\n  mean_trump16\n         &lt;dbl&gt;\n1         45.9\n\n\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 50 × 2\n   state mean_trump16\n   &lt;chr&gt;        &lt;dbl&gt;\n 1 AK            52.8\n 2 AL            62.6\n 3 AR            60.9\n 4 AZ            46.9\n 5 CA            31.7\n 6 CO            43.6\n 7 CT            41.0\n 8 DE            41.9\n 9 FL            47.9\n10 GA            51.3\n# ℹ 40 more rows"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#group_by",
     "href": "slides/06-exploratory-data-analysis-II-slides.html#group_by",
     "title": "Exploratory data analysis II",
     "section": "group_by()",
-    "text": "group_by()\n\nGroup by converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  ungroup()\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
+    "text": "group_by()\n\nGroup by converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\n\n\ngerrymander |&gt;\n  select(state, district, party16, party18) |&gt;\n  group_by(state)\n\n# A tibble: 435 × 4\n# Groups:   state [50]\n   state district party16 party18\n   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;  \n 1 AK    AK-AL    R       R      \n 2 AL    AL-01    R       R      \n 3 AL    AL-02    R       R      \n 4 AL    AL-03    R       R      \n 5 AL    AL-04    R       R      \n 6 AL    AL-05    R       R      \n 7 AL    AL-06    R       R      \n 8 AL    AL-07    D       D      \n 9 AR    AR-01    R       R      \n10 AR    AR-02    R       R      \n# ℹ 425 more rows\n\n\n\n\ngerrymander |&gt;\n  select(state, district, party16, party18) |&gt;\n  group_by(state) |&gt;\n  ungroup()\n\n# A tibble: 435 × 4\n   state district party16 party18\n   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;  \n 1 AK    AK-AL    R       R      \n 2 AL    AL-01    R       R      \n 3 AL    AL-02    R       R      \n 4 AL    AL-03    R       R      \n 5 AL    AL-04    R       R      \n 6 AL    AL-05    R       R      \n 7 AL    AL-06    R       R      \n 8 AL    AL-07    D       D      \n 9 AR    AR-01    R       R      \n10 AR    AR-02    R       R      \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#group_by-summarize",
@@ -1303,11 +1303,11 @@
     "href": "slides/06-exploratory-data-analysis-II-slides.html#summarize",
     "title": "Exploratory data analysis II",
     "section": "summarize()",
-    "text": "summarize()\n\n... |&gt;\n  summarize(\n    name_of_summary_statistic = summary_function(variable)\n  )\n\n\n\n\nname_of_summary_statistic: Anything you want to call it!\n\nRecommendation: Keep it short and evocative\n\n\n\nsummary_function():\n\n\nn(): number of observations\n\nmean(): mean\n\nmedian(): median\n…"
+    "text": "summarize()\n\n... |&gt;\n  summarize(\n    name_of_summary_statistic = summary_function(variable)\n  )\n\n\n\n\nname_of_summary_statistic: Anything you want to call it!\n\nRecommendation: Keep it short and evocative\n\n\n\nsummary_function():\n\n\nn(): number of observations\n\nmean(): mean\n\nmedian(): median\n\nsd(): standard deviation\n\nmin(): minimum\n\nmax(): maximum\n\nIQR(): inter-quartile range\n\nquantile(): quantile (e.g., 0.25, 0.75, etc.)"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#spot-the-difference",
-    "href": "slides/06-exploratory-data-analysis-II-slides.html#spot-the-difference",
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#spot-the-difference-1",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#spot-the-difference-1",
     "title": "Exploratory data analysis II",
     "section": "Spot the difference",
     "text": "Spot the difference\n\nWhat’s the difference between the following two pipelines?\n\n\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n())\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt;\n  count(state)\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows"
@@ -1320,25 +1320,25 @@
     "text": "count()\n\n\n... |&gt;\n  count(variable)\n\n\n... |&gt;\n  count(variable1, variable2)\n\n\n\nCount the number of observations in each level of variable(s)\nPlace the counts in a variable called n"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#count-and-sort",
-    "href": "slides/06-exploratory-data-analysis-II-slides.html#count-and-sort",
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#participate",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#participate",
     "title": "Exploratory data analysis II",
-    "section": "\ncount() and sort\n",
-    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nHow would you write the following pipeline with count() instead?\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt; arrange(state) |&gt; count()\n\ngerrymander |&gt; count(state) |&gt; arrange(desc(n)) [*]\ngerrymander |&gt; count(state) |&gt; sort(n)\n\ngerrymander |&gt; count(state, sort = TRUE) [*]\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#flip-the-question",
     "href": "slides/06-exploratory-data-analysis-II-slides.html#flip-the-question",
     "title": "Exploratory data analysis II",
     "section": "Flip the question",
-    "text": "Flip the question\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?\n\nvs.\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?"
+    "text": "Flip the question\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat flipped the seat in the 2018 election?\n\nvs.\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#flipping-vs.-gerrymandering-prevalence",
-    "href": "slides/06-exploratory-data-analysis-II-slides.html#flipping-vs.-gerrymandering-prevalence",
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#whats-going-on",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#whats-going-on",
     "title": "Exploratory data analysis II",
-    "section": "Flipping vs. gerrymandering prevalence",
-    "text": "Flipping vs. gerrymandering prevalence\n\nThe following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?” However, it produces a warning and an unexpected plot. What’s going on?\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = gerry, fill = flip18)\n  ) +\n  geom_bar(position = \"fill\")\n\nWarning: The following aesthetics were dropped during statistical\ntransformation: fill.\nℹ This can happen when ggplot fails to infer the correct grouping\n  structure in the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a\n  numerical variable into a factor?"
+    "section": "What’s going on?",
+    "text": "What’s going on?\n\nThe following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?” However, it produces a warning and an unexpected plot. What’s going on?\n\n\nggplot(gerrymander, aes(x = gerry, fill = flip18)) +\n  geom_bar(position = \"fill\")\n\nWarning: The following aesthetics were dropped during statistical\ntransformation: fill.\nℹ This can happen when ggplot fails to infer the correct grouping\n  structure in the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a\n  numerical variable into a factor?"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#another-glimpse-at-gerrymander",
@@ -1359,14 +1359,14 @@
     "href": "slides/06-exploratory-data-analysis-II-slides.html#mutate-in-action",
     "title": "Exploratory data analysis II",
     "section": "\nmutate() in action",
-    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18 = as.factor(flip18))\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;fct&gt;,\n#   gerry &lt;fct&gt;"
+    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  relocate(district, flip18, flip18_cat)\n\n# A tibble: 435 × 13\n   district flip18 flip18_cat last_name first_name party16 clinton16\n   &lt;chr&gt;     &lt;dbl&gt; &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n 1 AK-AL         0 0          Young     Don        R            37.6\n 2 AL-01         0 0          Byrne     Bradley    R            34.1\n 3 AL-02         0 0          Roby      Martha     R            33  \n 4 AL-03         0 0          Rogers    Mike D.    R            32.3\n 5 AL-04         0 0          Aderholt  Rob        R            17.4\n 6 AL-05         0 0          Brooks    Mo         R            31.3\n 7 AL-06         0 0          Palmer    Gary       R            26.1\n 8 AL-07         0 0          Sewell    Terri      D            69.8\n 9 AR-01         0 0          Crawford  Rick       R            30.2\n10 AR-02         0 0          Hill      French     R            41.7\n# ℹ 425 more rows\n# ℹ 6 more variables: trump16 &lt;dbl&gt;, dem16 &lt;dbl&gt;, state &lt;chr&gt;,\n#   party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#revisit-the-plot",
     "href": "slides/06-exploratory-data-analysis-II-slides.html#revisit-the-plot",
     "title": "Exploratory data analysis II",
     "section": "Revisit the plot",
-    "text": "Revisit the plot\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?\n\n\n\ngerrymander |&gt;\n  mutate(flip18 = as.factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18)) +\n  geom_bar(position = \"fill\")"
+    "text": "Revisit the plot\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?\n\n\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18_cat)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_colorblind()"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#ae-04-gerrymander-explore-ii",
@@ -1415,28 +1415,28 @@
     "href": "slides/06-exploratory-data-analysis-II.html#from-the-ae",
     "title": "Exploratory data analysis II",
     "section": "From the AE",
-    "text": "From the AE\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = flip18, fill = gerry)\n  ) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
+    "text": "From the AE\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat flipped the seat in the 2018 election? (flip18 = 1: Democrat flipped the seat, 0: No flip, -1: Republican flipped the seat.)\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = flip18, fill = gerry)\n  ) +\n  geom_bar(position = \"fill\") +\n  scale_fill_colorblind()\n\n\n\n\n\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II.html#what-does-group_by-do",
-    "href": "slides/06-exploratory-data-analysis-II.html#what-does-group_by-do",
+    "objectID": "slides/06-exploratory-data-analysis-II.html#spot-the-difference",
+    "href": "slides/06-exploratory-data-analysis-II.html#spot-the-difference",
     "title": "Exploratory data analysis II",
-    "section": "What does group_by() do?",
-    "text": "What does group_by() do?\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
+    "section": "Spot the difference",
+    "text": "Spot the difference\n\nWhat does group_by() do?\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry)\n\n# A tibble: 8 × 3\n  flip18 gerry     n\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;\n1     -1 low       2\n2     -1 mid       3\n3      0 low      52\n4      0 mid     242\n5      0 high     98\n6      1 low       8\n7      1 mid      25\n8      1 high      5\n\n\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18)\n\n# A tibble: 8 × 3\n# Groups:   flip18 [3]\n  flip18 gerry     n\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;\n1     -1 low       2\n2     -1 mid       3\n3      0 low      52\n4      0 mid     242\n5      0 high     98\n6      1 low       8\n7      1 mid      25\n8      1 high      5"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#lets-simplify",
     "href": "slides/06-exploratory-data-analysis-II.html#lets-simplify",
     "title": "Exploratory data analysis II",
     "section": "Let’s simplify!",
-    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 50 × 2\n   state mean_trump16\n   &lt;chr&gt;        &lt;dbl&gt;\n 1 AK            52.8\n 2 AL            62.6\n 3 AR            60.9\n 4 AZ            46.9\n 5 CA            31.7\n 6 CO            43.6\n 7 CT            41.0\n 8 DE            41.9\n 9 FL            47.9\n10 GA            51.3\n# ℹ 40 more rows"
+    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\n\n\ngerrymander |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 1 × 1\n  mean_trump16\n         &lt;dbl&gt;\n1         45.9\n\n\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 50 × 2\n   state mean_trump16\n   &lt;chr&gt;        &lt;dbl&gt;\n 1 AK            52.8\n 2 AL            62.6\n 3 AR            60.9\n 4 AZ            46.9\n 5 CA            31.7\n 6 CO            43.6\n 7 CT            41.0\n 8 DE            41.9\n 9 FL            47.9\n10 GA            51.3\n# ℹ 40 more rows"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#group_by",
     "href": "slides/06-exploratory-data-analysis-II.html#group_by",
     "title": "Exploratory data analysis II",
     "section": "group_by()",
-    "text": "group_by()\n\nGroup by converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  ungroup()\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
+    "text": "group_by()\n\nGroup by converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\n\n\ngerrymander |&gt;\n  select(state, district, party16, party18) |&gt;\n  group_by(state)\n\n# A tibble: 435 × 4\n# Groups:   state [50]\n   state district party16 party18\n   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;  \n 1 AK    AK-AL    R       R      \n 2 AL    AL-01    R       R      \n 3 AL    AL-02    R       R      \n 4 AL    AL-03    R       R      \n 5 AL    AL-04    R       R      \n 6 AL    AL-05    R       R      \n 7 AL    AL-06    R       R      \n 8 AL    AL-07    D       D      \n 9 AR    AR-01    R       R      \n10 AR    AR-02    R       R      \n# ℹ 425 more rows\n\n\n\n\n\ngerrymander |&gt;\n  select(state, district, party16, party18) |&gt;\n  group_by(state) |&gt;\n  ungroup()\n\n# A tibble: 435 × 4\n   state district party16 party18\n   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;  \n 1 AK    AK-AL    R       R      \n 2 AL    AL-01    R       R      \n 3 AL    AL-02    R       R      \n 4 AL    AL-03    R       R      \n 5 AL    AL-04    R       R      \n 6 AL    AL-05    R       R      \n 7 AL    AL-06    R       R      \n 8 AL    AL-07    D       D      \n 9 AR    AR-01    R       R      \n10 AR    AR-02    R       R      \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#group_by-summarize",
@@ -1457,11 +1457,11 @@
     "href": "slides/06-exploratory-data-analysis-II.html#summarize",
     "title": "Exploratory data analysis II",
     "section": "summarize()",
-    "text": "summarize()\n\n... |&gt;\n  summarize(\n    name_of_summary_statistic = summary_function(variable)\n  )\n\n. . .\n\n\nname_of_summary_statistic: Anything you want to call it!\n\nRecommendation: Keep it short and evocative\n\n\n\nsummary_function():\n\n\nn(): number of observations\n\nmean(): mean\n\nmedian(): median\n…"
+    "text": "summarize()\n\n... |&gt;\n  summarize(\n    name_of_summary_statistic = summary_function(variable)\n  )\n\n. . .\n\n\nname_of_summary_statistic: Anything you want to call it!\n\nRecommendation: Keep it short and evocative\n\n\n\nsummary_function():\n\n\nn(): number of observations\n\nmean(): mean\n\nmedian(): median\n\nsd(): standard deviation\n\nmin(): minimum\n\nmax(): maximum\n\nIQR(): inter-quartile range\n\nquantile(): quantile (e.g., 0.25, 0.75, etc.)"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II.html#spot-the-difference",
-    "href": "slides/06-exploratory-data-analysis-II.html#spot-the-difference",
+    "objectID": "slides/06-exploratory-data-analysis-II.html#spot-the-difference-1",
+    "href": "slides/06-exploratory-data-analysis-II.html#spot-the-difference-1",
     "title": "Exploratory data analysis II",
     "section": "Spot the difference",
     "text": "Spot the difference\n\nWhat’s the difference between the following two pipelines?\n\n\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n())\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt;\n  count(state)\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows"
@@ -1474,25 +1474,25 @@
     "text": "count()\n\n\n... |&gt;\n  count(variable)\n\n\n... |&gt;\n  count(variable1, variable2)\n\n\n\n\nCount the number of observations in each level of variable(s)\nPlace the counts in a variable called n"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II.html#count-and-sort",
-    "href": "slides/06-exploratory-data-analysis-II.html#count-and-sort",
+    "objectID": "slides/06-exploratory-data-analysis-II.html#participate",
+    "href": "slides/06-exploratory-data-analysis-II.html#participate",
     "title": "Exploratory data analysis II",
-    "section": "\ncount() and sort\n",
-    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nHow would you write the following pipeline with count() instead?\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt; arrange(state) |&gt; count()\n\ngerrymander |&gt; count(state) |&gt; arrange(desc(n)) [*]\ngerrymander |&gt; count(state) |&gt; sort(n)\n\ngerrymander |&gt; count(state, sort = TRUE) [*]\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#flip-the-question",
     "href": "slides/06-exploratory-data-analysis-II.html#flip-the-question",
     "title": "Exploratory data analysis II",
     "section": "Flip the question",
-    "text": "Flip the question\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?\n\nvs.\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?"
+    "text": "Flip the question\n\nIs a Congressional District more likely to have high prevalence of gerrymandering if a Democrat flipped the seat in the 2018 election?\n\nvs.\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?"
   },
   {
-    "objectID": "slides/06-exploratory-data-analysis-II.html#flipping-vs.-gerrymandering-prevalence",
-    "href": "slides/06-exploratory-data-analysis-II.html#flipping-vs.-gerrymandering-prevalence",
+    "objectID": "slides/06-exploratory-data-analysis-II.html#whats-going-on",
+    "href": "slides/06-exploratory-data-analysis-II.html#whats-going-on",
     "title": "Exploratory data analysis II",
-    "section": "Flipping vs. gerrymandering prevalence",
-    "text": "Flipping vs. gerrymandering prevalence\n\nThe following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?” However, it produces a warning and an unexpected plot. What’s going on?\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = gerry, fill = flip18)\n  ) +\n  geom_bar(position = \"fill\")\n\nWarning: The following aesthetics were dropped during statistical\ntransformation: fill.\nℹ This can happen when ggplot fails to infer the correct grouping\n  structure in the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a\n  numerical variable into a factor?"
+    "section": "What’s going on?",
+    "text": "What’s going on?\n\nThe following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?” However, it produces a warning and an unexpected plot. What’s going on?\n\n\nggplot(gerrymander, aes(x = gerry, fill = flip18)) +\n  geom_bar(position = \"fill\")\n\nWarning: The following aesthetics were dropped during statistical\ntransformation: fill.\nℹ This can happen when ggplot fails to infer the correct grouping\n  structure in the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a\n  numerical variable into a factor?"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#another-glimpse-at-gerrymander",
@@ -1513,14 +1513,14 @@
     "href": "slides/06-exploratory-data-analysis-II.html#mutate-in-action",
     "title": "Exploratory data analysis II",
     "section": "\nmutate() in action",
-    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18 = as.factor(flip18))\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;fct&gt;,\n#   gerry &lt;fct&gt;"
+    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  relocate(district, flip18, flip18_cat)\n\n# A tibble: 435 × 13\n   district flip18 flip18_cat last_name first_name party16 clinton16\n   &lt;chr&gt;     &lt;dbl&gt; &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n 1 AK-AL         0 0          Young     Don        R            37.6\n 2 AL-01         0 0          Byrne     Bradley    R            34.1\n 3 AL-02         0 0          Roby      Martha     R            33  \n 4 AL-03         0 0          Rogers    Mike D.    R            32.3\n 5 AL-04         0 0          Aderholt  Rob        R            17.4\n 6 AL-05         0 0          Brooks    Mo         R            31.3\n 7 AL-06         0 0          Palmer    Gary       R            26.1\n 8 AL-07         0 0          Sewell    Terri      D            69.8\n 9 AR-01         0 0          Crawford  Rick       R            30.2\n10 AR-02         0 0          Hill      French     R            41.7\n# ℹ 425 more rows\n# ℹ 6 more variables: trump16 &lt;dbl&gt;, dem16 &lt;dbl&gt;, state &lt;chr&gt;,\n#   party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#revisit-the-plot",
     "href": "slides/06-exploratory-data-analysis-II.html#revisit-the-plot",
     "title": "Exploratory data analysis II",
     "section": "Revisit the plot",
-    "text": "Revisit the plot\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?\n\n\ngerrymander |&gt;\n  mutate(flip18 = as.factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18)) +\n  geom_bar(position = \"fill\")"
+    "text": "Revisit the plot\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?\n\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18_cat)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_colorblind()"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#ae-04-gerrymander-explore-ii",
