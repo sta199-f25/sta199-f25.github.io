@@ -569,75 +569,17 @@ window.Quarto = {
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
 <p>This lab is a deep dive into <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code>!</p>
 <section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<ol type="1">
-<li>
-<p><strong>Log in to RStudio:</strong></p>
+<p>To get started, follow the instructions below.</p>
 <ul>
 <li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and login with your Duke NetID and Password.</li>
 <li>Click <code>STA199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
+<li>Go to the course organization at <a href="https://github.com/sta199-f25">github.com/sta199-f25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-2</strong>. It contains the starter documents you need to complete the homework.</li>
+<li>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong>. Click on the clipboard icon to copy the repo URL.</li>
+<li>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</li>
+<li>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</li>
+<li>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</li>
 </ul>
-</li>
-<li>
-<p><strong>Clone the repo &amp; start new RStudio project:</strong></p>
-<ul>
-<li><p>Go to the course organization at <a href="https://github.com/sta199-f25">github.com/sta199-f25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-2</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
-<li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
-<li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
-<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
-<li><p>Click <em>lab-2.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
-</ul>
-</li>
-<li>
-<p><strong>Update the YAML:</strong></p>
-<ul>
-<li><p>Open the Quarto (<code>.qmd</code>) file in your project, update the <code>authors</code> field to add your name first (first and last) and then your teammates’ names (first and last). Then, render the document.</p></li>
-<li><p>If you get a popup window error, click “Try again”.</p></li>
-<li><p>Examine the rendered document and make sure your name is updated in the document.</p></li>
-</ul>
-</li>
-<li>
-<p><strong>Commit your changes:</strong></p>
-<ul>
-<li>Go to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.</li>
-</ul>
-<p>If you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there.</p>
-<ul>
-<li>Click on it to select it in this list and then click on <strong>Diff</strong>.</li>
-</ul>
-<p>This shows you the <em>diff</em>erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.</p>
-<ul>
-<li>
-<p>If you’re happy with these changes, prepare the changes to be pushed to your remote repository.</p>
-<ul>
-<li><p>First, <strong>stage</strong> your changes by checking the appropriate box on the files you want to prepare.</p></li>
-<li><p>Next, write a meaningful commit message (for instance, “Updated author name”) in the <strong>Commit message</strong> box.</p></li>
-<li><p>Finally, click <strong>Commit</strong>. Note that every commit needs to have a commit message associated with it.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Push your changes:</strong></p>
-<ul>
-<li><p>In the Git pane, click on Push.</p></li>
-<li><p>Then, make sure all the changes went to GitHub. Go to your GitHub repo in your browser and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub, and you’re good to go!</p></li>
-</ul>
-</li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you don’t see your update, go back to Step 4. Remember that in order to push your changes to GitHub, you must have <strong>staged</strong> (checked boxes) your <strong>commit</strong> (with a commit message) to be pushed and then click on <strong>Push</strong>.</p>
-</div>
-</div>
+<p>Then, click <em>lab-2.qmd</em> to open the template Quarto file and update the <code>authors</code> field to add your name first (first and last) and then your teammates’ names (first and last). Render the document. If you get a popup window error, click “Try again”. Examine the rendered document and make sure your name is updated in the document. Commit and push your changes with a meaningful commit message and push to GitHub.</p>
 </section><section id="guidelines" class="level2"><h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
 <section id="code" class="level3"><h3 class="anchored" data-anchor-id="code">Code</h3>
 <p>Code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a>. Particularly,</p>
