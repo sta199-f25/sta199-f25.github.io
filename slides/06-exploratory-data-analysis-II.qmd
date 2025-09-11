@@ -124,7 +124,7 @@ library(ggthemes)
 ## From the AE {.smaller}
 
 ::: question
-Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?
+Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat flipped the seat in the 2018 election? (`flip18` = 1: Democrat flipped the seat, 0: No flip, -1: Republican flipped the seat.)
 :::
 
 ::: {.columns}
@@ -135,7 +135,8 @@ ggplot(
   gerrymander, 
   aes(x = flip18, fill = gerry)
   ) +
-  geom_bar(position = "fill")
+  geom_bar(position = "fill") +
+  scale_fill_colorblind()
 ```
 
 :::
@@ -153,24 +154,48 @@ gerrymander |>
 
 # `group_by()`, `summarize()`, `count()`
 
-## What does `group_by()` do? {.scrollable}
+## Spot the difference {.smaller}
 
 ::: question
-What does `group_by()` do in the following pipeline?
+What does `group_by()` do?
 :::
+
+::: columns
+::: column
+
+```{r}
+gerrymander |>
+  count(flip18, gerry)
+```
+
+:::
+::: column
 
 ```{r}
 gerrymander |>
   count(flip18, gerry) |>
-  group_by(flip18) |>
-  mutate(prop = n / sum(n))
+  group_by(flip18)
 ```
 
-## Let's simplify! {.scrollable}
+:::
+:::
+
+## Let's simplify! {.smaller}
 
 ::: question
 What does `group_by()` do in the following pipeline?
 :::
+
+::: columns
+::: column
+
+```{r}
+gerrymander |>
+  summarize(mean_trump16 = mean(trump16))
+```
+
+:::
+::: column
 
 ```{r}
 gerrymander |>
@@ -178,17 +203,37 @@ gerrymander |>
   summarize(mean_trump16 = mean(trump16))
 ```
 
+:::
+:::
+
 ## `group_by()` {.smaller}
 
 -   Group by converts a data frame to a grouped data frame, where subsequent operations are performed once per group
 
 -   `ungroup()` removes grouping
 
+::: columns
+::: column
+
 ```{r}
 gerrymander |>
+  select(state, district, party16, party18) |>
+  group_by(state)
+```
+
+:::
+::: {.column .fragment}
+
+```{r}
+#| code-line-numbers: "4"
+gerrymander |>
+  select(state, district, party16, party18) |>
   group_by(state) |>
   ungroup()
 ```
+
+:::
+:::
 
 ## `group_by() |> summarize()` {.smaller}
 
@@ -231,7 +276,11 @@ gerrymander |>
     -   `n()`: number of observations
     -   `mean()`: mean
     -   `median()`: median
-    -   ...
+    -   `sd()`: standard deviation
+    -   `min()`: minimum
+    -   `max()`: maximum
+    -   `IQR()`: inter-quartile range
+    -   `quantile()`: quantile (e.g., 0.25, 0.75, etc.)
 
 ## Spot the difference {.smaller}
 
@@ -281,67 +330,73 @@ gerrymander |>
 
 -   Place the counts in a variable called `n`
 
-## `count()` and `sort` {.scrollable}
+## Participate 📱💻 {.xsmall}
 
-::: question
-What does the following pipeline do?
-Rewrite it with `count()` instead.
-:::
+::: {.columns}
+
+::: {.column width="80%"}
+
+::: wooclap
+How would you write the following pipeline with `count()` instead?
 
 ```{r}
+#| output-location: column
 gerrymander |>
   group_by(state) |>
   summarize(n = n()) |>
   arrange(desc(n))
 ```
 
+::: wooclap-choices
+- `gerrymander |> arrange(state) |> count()`
+- `gerrymander |> count(state) |> arrange(desc(n))` [*]
+- `gerrymander |> count(state) |> sort(n)`
+- `gerrymander |> count(state, sort = TRUE)` [*]
+:::
+
+:::
+
+:::
+
+::: {.column width="20%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
+
+
+
+
+
 # `mutate()`
 
 ## Flip the question
 
 ::: question
-Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?
+Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat flipped the seat in the 2018 election?
 :::
 
 vs.
 
 ::: question
-Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?
 :::
 
-## Flipping vs. gerrymandering prevalence {.smaller}
+## What's going on? {.smaller}
 
 ::: {.question .xsmall}
-The following code should produce a visualization that answers the question "Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?" However, it produces a `warning` and an unexpected plot.
+The following code should produce a visualization that answers the question "Is a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?" However, it produces a `warning` and an unexpected plot.
 What's going on?
 :::
-
-::: columns
-::: column
 
 ```{r}
 #| label: fill-warning
 #| warning: true
-#| fig-show: hide
-ggplot(
-  gerrymander, 
-  aes(x = gerry, fill = flip18)
-  ) +
+ggplot(gerrymander, aes(x = gerry, fill = flip18)) +
   geom_bar(position = "fill")
 ```
-
-:::
-
-::: column
-
-```{r}
-#| ref.label: fill-warning
-#| warning: false
-#| echo: false
-```
-
-:::
-:::
 
 ## Another glimpse at `gerrymander` {.smaller}
 
@@ -363,21 +418,23 @@ glimpse(gerrymander)
 
 ```{r}
 gerrymander |>
-  mutate(flip18 = as.factor(flip18))
+  mutate(flip18_cat = as.factor(flip18)) |>
+  relocate(district, flip18, flip18_cat)
 ```
 
 ## Revisit the plot {.smaller}
 
 ::: question
-Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?
 :::
 
 ```{r}
 #| output-location: column
 gerrymander |>
-  mutate(flip18 = as.factor(flip18)) |>
-  ggplot(aes(x = gerry, fill = flip18)) +
-  geom_bar(position = "fill")
+  mutate(flip18_cat = as.factor(flip18)) |>
+  ggplot(aes(x = gerry, fill = flip18_cat)) +
+  geom_bar(position = "fill") +
+  scale_fill_colorblind()
 ```
 
 # Application exercise
