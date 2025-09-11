@@ -63,7 +63,7 @@ library(tidyverse)
 
 ## Data
 
-We will use the `midwest` data frame for this lab.
+We will use the `midwest` data frame for this homework.
 It is part of the **ggplot2** R package, so the `midwest` data set is automatically loaded when you load the tidyverse package.
 
 The data contains demographic characteristics of counties in the Midwest region of the United States.
@@ -361,6 +361,6 @@ We will be checking these to make sure you have been practicing how to commit an
     -   Questions will be graded for accuracy and completeness.
     -   Partial credit will be given where appropriate.
     -   There are also workflow points for:
-        - committing at least three times as you work through your lab,
+        - committing at least three times as you work through your homework,
         - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
         - overall organization.
