@@ -78,7 +78,7 @@ penguins |>
 - There are no Chinstrap or Gentoo penguins on Torgersen Island.
 - `legend.position = "bottom"` is set in the `theme()` layer.
 - The same variable is mapped to both `color` and `fill`.
-- `group_by(species)` is used to create the boxplots. [*]
+- `group_by(species)` is used to create the boxplots.
 - A Biscoe island penguin with a flipper length of 190 mm must be an Adélie.
 :::
 :::
@@ -349,9 +349,9 @@ gerrymander |>
 
 ::: wooclap-choices
 - `gerrymander |> arrange(state) |> count()`
-- `gerrymander |> count(state) |> arrange(desc(n))` [*]
+- `gerrymander |> count(state) |> arrange(desc(n))`
 - `gerrymander |> count(state) |> sort(n)`
-- `gerrymander |> count(state, sort = TRUE)` [*]
+- `gerrymander |> count(state, sort = TRUE)`
 :::
 
 :::
@@ -365,9 +365,6 @@ gerrymander |>
 :::
 
 ::: 
-
-
-
 
 
 # `mutate()`
@@ -416,10 +413,13 @@ glimpse(gerrymander)
 
 ## `mutate()` in action {.smaller}
 
+You can create a new variable with `mutate()`:
+
 ```{r}
+#| code-line-numbers: "|2|3"
 gerrymander |>
   mutate(flip18_cat = as.factor(flip18)) |>
-  relocate(district, flip18, flip18_cat)
+  relocate(district, flip18, flip18_cat) # relocate to the beginning for easier viewing
 ```
 
 ## Revisit the plot {.smaller}
@@ -430,12 +430,95 @@ Is a Congressional District more likely to be flipped to a Democratic seat if it
 
 ```{r}
 #| output-location: column
+#| code-line-numbers: "|2|3"
 gerrymander |>
   mutate(flip18_cat = as.factor(flip18)) |>
   ggplot(aes(x = gerry, fill = flip18_cat)) +
   geom_bar(position = "fill") +
   scale_fill_colorblind()
 ```
+
+## `mutate()` and overwrite
+
+You can overwrite an existing variable with `mutate()`:
+
+```{r}
+gerrymander |>
+  mutate(flip18 = as.factor(flip18)) |>
+  select(district, flip18)
+```
+
+## `mutate()` and `if_else()` {.smaller}
+
+Use `mutate()` with `if_else()` to recode with an either/or logic: 
+
+> If `party16` is "D", recode it as "Democrat", otherwise recode it as "Republican".
+
+```{r}
+#| code-line-numbers: "|2"
+gerrymander |>
+  mutate(party16_expanded = if_else(party16 == "D", "Democrat", "Republican")) |>
+  select(district, party16, party16_expanded)
+```
+
+## `mutate()` and `case_when()` {.smaller}
+
+Use `mutate()` with `case_when()` to recode with a more complex logic:
+
+> If `flip18` is 1, recode it as "Democrat flipped", if `flip18` is 0, recode it as "No flip", and if `flip18` is -1, recode it as "Republican flipped".
+
+```{r}
+gerrymander |>
+  mutate(
+    flip18_expanded = case_when(
+      flip18 == 1 ~ "Democrat flipped",
+      flip18 == 0 ~ "No flip",
+      flip18 == -1 ~ "Republican flipped"
+    )
+  ) |>
+  select(district, flip18, flip18_expanded) |>
+  group_by(flip18) |> # group by flip type
+  slice_head(n = 1) # show top row per group
+```
+
+## `mutate()` and store {.smaller}
+
+If you want to keep your changes, you need to store the data frame after `mutate()`:
+
+::: {.columns}
+::: {.column}
+
+```{r}
+#| error: true
+gerrymander |>
+  mutate(
+    p16 = if_else(party16 == "D", "Dem", "Rep")
+  ) |>
+  select(district, p16) |>
+  slice_head(n = 3) # show top 3 rows
+
+gerrymander |>
+  select(district, p16)
+```
+
+:::
+::: {.column .fragment}
+
+```{r}
+#| error: true
+gerrymander <- gerrymander |>
+  mutate(
+    p16 = if_else(party16 == "D", "Dem", "Rep")
+  ) |>
+  select(district, p16)
+
+gerrymander |>
+  select(district, p16)  |>
+  slice_head(n = 3) # show top 3 rows
+```
+
+:::
+:::
 
 # Application exercise
 
