@@ -12,72 +12,24 @@ This lab is a deep dive into `group_by()`!
 
 ## Getting started
 
-1.  **Log in to RStudio:**
+To get started, follow the instructions below.
 
-    -   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
-    -   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
+    Click on the repo with the prefix **lab-2**.
+    It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**.
+    Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
 
-2.  **Clone the repo & start new RStudio project:**
-
-    -   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
-        Click on the repo with the prefix **lab-2**.
-        It contains the starter documents you need to complete the lab.
-
-    -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
-        Click on the clipboard icon to copy the repo URL.
-
-    -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
-
-    -   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
-
-    -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
-
-    -   Click *lab-2.qmd* to open the template Quarto file.
-        This is where you will write up your code and narrative for the lab.
-
-3.  **Update the YAML:**
-
-    -   Open the Quarto (`.qmd`) file in your project, update the `authors` field to add your name first (first and last) and then your teammates' names (first and last).
-        Then, render the document.
-
-    -   If you get a popup window error, click "Try again".
-
-    -   Examine the rendered document and make sure your name is updated in the document.
-
-4.  **Commit your changes:**
-
-    -   Go to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.
-
-    If you have made changes to your Quarto (.qmd) file, you should see it listed here.
-    If you have rendered the document, you should also see its output, a PDF file, listed there.
-
-    -   Click on it to select it in this list and then click on **Diff**.
-
-    This shows you the *diff*erence between the last committed state of the document and its current state including changes.
-    You should see deletions in red and additions in green.
-
-    -   If you're happy with these changes, prepare the changes to be pushed to your remote repository.
-
-        -   First, **stage** your changes by checking the appropriate box on the files you want to prepare.
-
-        -   Next, write a meaningful commit message (for instance, "Updated author name") in the **Commit message** box.
-
-        -   Finally, click **Commit**.
-            Note that every commit needs to have a commit message associated with it.
-
-5.  **Push your changes:**
-
-    -   In the Git pane, click on Push.
-
-    -   Then, make sure all the changes went to GitHub.
-        Go to your GitHub repo in your browser and refresh the page.
-        You should see your commit message next to the updated files.
-        If you see this, all your changes are on GitHub, and you're good to go!
-
-::: callout-warning
-If you don't see your update, go back to Step 4.
-Remember that in order to push your changes to GitHub, you must have **staged** (checked boxes) your **commit** (with a commit message) to be pushed and then click on **Push**.
-:::
+Then, click *lab-2.qmd* to open the template Quarto file and update the `authors` field to add your name first (first and last) and then your teammates' names (first and last).
+Render the document.
+If you get a popup window error, click "Try again".
+Examine the rendered document and make sure your name is updated in the document.
+Commit and push your changes with a meaningful commit message and push to GitHub.
 
 ## Guidelines
 
