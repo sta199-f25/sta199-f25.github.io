@@ -1,23 +1,9 @@
 [
   {
-    "listing": "/exam-review.html",
-    "items": []
-  },
-  {
-    "listing": "/ae.html",
+    "listing": "/lab.html",
     "items": [
-      "/ae/ae-01-income-inequality-A.html",
-      "/ae/ae-01-income-inequality.html",
-      "/ae/ae-02-bechdel-dataviz-A.html",
-      "/ae/ae-02-bechdel-dataviz.html",
-      "/ae/ae-03-gerrymander-explore-I-A.html",
-      "/ae/ae-03-gerrymander-explore-I.html"
-    ]
-  },
-  {
-    "listing": "/hw.html",
-    "items": [
-      "/hw/hw-1.html"
+      "/lab/lab-0.html",
+      "/lab/lab-1.html"
     ]
   },
   {
@@ -44,10 +30,26 @@
     ]
   },
   {
-    "listing": "/lab.html",
+    "listing": "/hw.html",
     "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html"
+      "/hw/hw-1.html"
     ]
+  },
+  {
+    "listing": "/ae.html",
+    "items": [
+      "/ae/ae-01-income-inequality-A.html",
+      "/ae/ae-01-income-inequality.html",
+      "/ae/ae-02-bechdel-dataviz-A.html",
+      "/ae/ae-02-bechdel-dataviz.html",
+      "/ae/ae-03-gerrymander-explore-I-A.html",
+      "/ae/ae-03-gerrymander-explore-I.html",
+      "/ae/ae-04-gerrymander-explore-II-A.html",
+      "/ae/ae-04-gerrymander-explore-II.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": []
   }
 ]

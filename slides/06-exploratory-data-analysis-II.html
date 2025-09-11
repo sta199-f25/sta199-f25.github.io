@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
+<meta name="dcterms.date" content="2025-09-11">
+<title>Exploratory data analysis II – STA 199</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-45e5efef9536e3a59efa0ee745ca54fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e6754615d251eb731e1a37878dd4e196.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-45e5efef9536e3a59efa0ee745ca54fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+<meta property="og:title" content="Exploratory data analysis II – STA 199">
+<meta property="og:description" content="Lecture 6">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-1-1.png">
+<meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="336">
+<meta property="og:image:width" content="1344">
+</head>
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exploratory data analysis II</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
+    <div class="dropdown">
+      <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+<li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing">
+              <i class="bi bi-person-raised-hand pe-1"></i>
+            Office hours
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://edstem.org/us/courses/80616/discussion">
+              <i class="bi bi-people-fill pe-1"></i>
+            Help from humans (Ed Discussion)
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/modules/items/647028">
+              <i class="bi bi-robot pe-1"></i>
+            Help from AI (Chatbot)
+            </a>
+          </li>
+      </ul>
+</div>
+    <div class="dropdown">
+      <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+<li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/announcements">
+              <i class="bi bi-megaphone-fill pe-1"></i>
+            Announcements
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/external_tools/181">
+              <i class="bi bi-file-arrow-up-fill pe-1"></i>
+            Gradescope
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/gradebook">
+              <i class="bi bi-alphabet-uppercase pe-1"></i>
+            Gradebook
+            </a>
+          </li>
+      </ul>
+</div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-code-alongs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code alongs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homeworks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application exercises</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam reviews</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
+  <ul class="collapse">
+<li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
+  <li><a href="#reminder-code-style-and-readability" id="toc-reminder-code-style-and-readability" class="nav-link" data-scroll-target="#reminder-code-style-and-readability">Reminder: Code style and readability</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#gerrymander" id="toc-gerrymander" class="nav-link" data-scroll-target="#gerrymander"><code>gerrymander</code></a>
+  <ul class="collapse">
+<li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#from-the-ae" id="toc-from-the-ae" class="nav-link" data-scroll-target="#from-the-ae">From the AE</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#group_by-summarize-count" id="toc-group_by-summarize-count" class="nav-link" data-scroll-target="#group_by-summarize-count"><code>group_by()</code>, <code>summarize()</code>, <code>count()</code></a>
+  <ul class="collapse">
+<li><a href="#what-does-group_by-do" id="toc-what-does-group_by-do" class="nav-link" data-scroll-target="#what-does-group_by-do">What does <code>group_by()</code> do?</a></li>
+  <li><a href="#lets-simplify" id="toc-lets-simplify" class="nav-link" data-scroll-target="#lets-simplify">Let’s simplify!</a></li>
+  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><code>group_by()</code></a></li>
+  <li><a href="#group_by-summarize" id="toc-group_by-summarize" class="nav-link" data-scroll-target="#group_by-summarize"><code>group_by() |&gt; summarize()</code></a></li>
+  <li><a href="#group_by-summarize-1" id="toc-group_by-summarize-1" class="nav-link" data-scroll-target="#group_by-summarize-1"><code>group_by() |&gt; summarize()</code></a></li>
+  <li><a href="#summarize" id="toc-summarize" class="nav-link" data-scroll-target="#summarize"><code>summarize()</code></a></li>
+  <li><a href="#spot-the-difference" id="toc-spot-the-difference" class="nav-link" data-scroll-target="#spot-the-difference">Spot the difference</a></li>
+  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><code>count()</code></a></li>
+  <li><a href="#count-and-sort" id="toc-count-and-sort" class="nav-link" data-scroll-target="#count-and-sort"><code>count()</code> and <code>sort</code></a></li>
+  </ul>
+</li>
+  <li>
+<a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><code>mutate()</code></a>
+  <ul class="collapse">
+<li><a href="#flip-the-question" id="toc-flip-the-question" class="nav-link" data-scroll-target="#flip-the-question">Flip the question</a></li>
+  <li><a href="#flipping-vs.-gerrymandering-prevalence" id="toc-flipping-vs.-gerrymandering-prevalence" class="nav-link" data-scroll-target="#flipping-vs.-gerrymandering-prevalence">Flipping vs.&nbsp;gerrymandering prevalence</a></li>
+  <li><a href="#another-glimpse-at-gerrymander" id="toc-another-glimpse-at-gerrymander" class="nav-link" data-scroll-target="#another-glimpse-at-gerrymander">Another glimpse at <code>gerrymander</code></a></li>
+  <li><a href="#mutate-1" id="toc-mutate-1" class="nav-link" data-scroll-target="#mutate-1"><code>mutate()</code></a></li>
+  <li><a href="#mutate-in-action" id="toc-mutate-in-action" class="nav-link" data-scroll-target="#mutate-in-action"><code>mutate()</code> in action</a></li>
+  <li><a href="#revisit-the-plot" id="toc-revisit-the-plot" class="nav-link" data-scroll-target="#revisit-the-plot">Revisit the plot</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
+  <ul class="collapse">
+<li><a href="#ae-04-gerrymander-explore-ii" id="toc-ae-04-gerrymander-explore-ii" class="nav-link" data-scroll-target="#ae-04-gerrymander-explore-ii">ae-04-gerrymander-explore-II</a></li>
+  <li><a href="#recap-aesthetic-mappings" id="toc-recap-aesthetic-mappings" class="nav-link" data-scroll-target="#recap-aesthetic-mappings">Recap: aesthetic mappings</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/06-exploratory-data-analysis-II.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="06-exploratory-data-analysis-II-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Exploratory data analysis II</h1>
+<p class="subtitle lead">Lecture 6</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Mine Çetinkaya-Rundel </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Duke University <br> STA 199 - Fall 2025
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 11, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header><section id="warm-up" class="level1"><h1>Warm-up</h1>
+<section id="while-you-wait-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate">While you wait: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:85%;">
+<div class="wooclap">
+<p>Which of the following is <strong>false</strong> about the following plot and the code that produced it?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+<div class="wooclap">
+<div class="wooclap-choices">
+<ul>
+<li>There are no Chinstrap or Gentoo penguins on Torgersen Island.</li>
+<li>
+<code>legend.position = "bottom"</code> is set in the <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme()</a></code> layer.</li>
+<li>The same variable is mapped to both <code>color</code> and <code>fill</code>.</li>
+<li>
+<code>group_by(species)</code> is used to create the boxplots. [*]</li>
+<li>A Biscoe island penguin with a flipper length of 190 mm must be an Adélie.</li>
+</ul>
+</div>
+</div>
+</section><section id="reminder-code-style-and-readability" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="reminder-code-style-and-readability">Reminder: Code style and readability</h2>
+<div class="incremental xsmall">
+<ul class="incremental">
+<li><p>Plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.</p></li>
+<li>
+<p>Code should follow the <a href="https://style.tidyverse.org/">tidyverse style</a> (<a href="https://style.tidyverse.org/">style.tidyverse.org</a>) Particularly,</p>
+<ul class="incremental">
+<li>space before and line breaks after each <code>+</code> when building a <code>ggplot</code>
+</li>
+<li>space before and line breaks after each <code>|&gt;</code> in a data transformation pipeline</li>
+<li>code should be properly indented</li>
+<li>spaces around <code>=</code> signs and spaces after commas</li>
+</ul>
+</li>
+<li><p>All code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. <strong>Tip:</strong> Haikus not novellas when writing code!</p></li>
+<li><p>Whydowecareaboutthestyleandreadabilityofyourcode? <span class="fragment"><span class="math inline">\(\rightarrow\)</span> Why do we care about the style and readability of your code?</span></p></li>
+<li><p>Je voudrais un cafe <span class="fragment"><span class="math inline">\(\rightarrow\)</span> Je voudrais un café</span></p></li>
+</ul>
+</div>
+</section></section><section id="gerrymander" class="level1"><h1><code>gerrymander</code></h1>
+<section id="packages" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="packages">Packages</h2>
+<ul>
+<li>For the data: <a href="https://openintrostat.github.io/usdata/"><strong>usdata</strong></a>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/OpenIntroStat/usdata">usdata</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>For the analysis: <a href="https://www.tidyverse.org/packages/"><strong>tidyverse</strong></a> and <a href="https://jrnold.github.io/ggthemes/"><strong>ggthemes</strong></a>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="from-the-ae" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="from-the-ae">From the AE</h2>
+<div class="question">
+<p>Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?</p>
+</div>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  <span class="va">gerrymander</span>, </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flip18</span>, fill <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">flip18</span>, <span class="va">gerry</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 4
+# Groups:   flip18 [3]
+  flip18 gerry     n  prop
+   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
+1     -1 low       2 0.4  
+2     -1 mid       3 0.6  
+3      0 low      52 0.133
+4      0 mid     242 0.617
+5      0 high     98 0.25 
+6      1 low       8 0.211
+7      1 mid      25 0.658
+8      1 high      5 0.132</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section></section><section id="group_by-summarize-count" class="level1"><h1>
+<code>group_by()</code>, <code>summarize()</code>, <code>count()</code>
+</h1>
+<section id="what-does-group_by-do" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="what-does-group_by-do">What does <code>group_by()</code> do?</h2>
+<div class="question">
+<p>What does <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> do in the following pipeline?</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">flip18</span>, <span class="va">gerry</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 4
+# Groups:   flip18 [3]
+  flip18 gerry     n  prop
+   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
+1     -1 low       2 0.4  
+2     -1 mid       3 0.6  
+3      0 low      52 0.133
+4      0 mid     242 0.617
+5      0 high     98 0.25 
+6      1 low       8 0.211
+7      1 mid      25 0.658
+8      1 high      5 0.132</code></pre>
+</div>
+</div>
+</section><section id="lets-simplify" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="lets-simplify">Let’s simplify!</h2>
+<div class="question">
+<p>What does <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> do in the following pipeline?</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_trump16 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">trump16</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 2
+   state mean_trump16
+   &lt;chr&gt;        &lt;dbl&gt;
+ 1 AK            52.8
+ 2 AL            62.6
+ 3 AR            60.9
+ 4 AZ            46.9
+ 5 CA            31.7
+ 6 CO            43.6
+ 7 CT            41.0
+ 8 DE            41.9
+ 9 FL            47.9
+10 GA            51.3
+# ℹ 40 more rows</code></pre>
+</div>
+</div>
+</section><section id="group_by" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="group_by"><code>group_by()</code></h2>
+<ul>
+<li><p>Group by converts a data frame to a grouped data frame, where subsequent operations are performed once per group</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup()</a></code> removes grouping</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 435 × 12
+   district last_name first_name party16 clinton16 trump16 dem16 state
+   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;
+ 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   
+ 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   
+ 3 AL-02    Roby      Martha     R            33      64.9     0 AL   
+ 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   
+ 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   
+ 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   
+ 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   
+ 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   
+ 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   
+10 AR-02    Hill      French     R            41.7    52.4     0 AR   
+# ℹ 425 more rows
+# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,
+#   gerry &lt;fct&gt;</code></pre>
+</div>
+</div>
+</section><section id="group_by-summarize" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="group_by-summarize"><code>group_by() |&gt; summarize()</code></h2>
+<p>A common pipeline is <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and then <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize()</a></code> to <strong>calculate</strong> summary statistics for each group:</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
+<span>    mean_trump16 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">trump16</span><span class="op">)</span>,</span>
+<span>    median_trump16 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">trump16</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 3
+   state mean_trump16 median_trump16
+   &lt;chr&gt;        &lt;dbl&gt;          &lt;dbl&gt;
+ 1 AK            52.8           52.8
+ 2 AL            62.6           64.9
+ 3 AR            60.9           63.0
+ 4 AZ            46.9           47.7
+ 5 CA            31.7           28.4
+ 6 CO            43.6           41.3
+ 7 CT            41.0           40.4
+ 8 DE            41.9           41.9
+ 9 FL            47.9           49.6
+10 GA            51.3           56.6
+# ℹ 40 more rows</code></pre>
+</div>
+</div>
+</section><section id="group_by-summarize-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="group_by-summarize-1"><code>group_by() |&gt; summarize()</code></h2>
+<p>This pipeline can also be used to <strong>count</strong> number of observations for each group:</p>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 2
+   state     n
+   &lt;chr&gt; &lt;int&gt;
+ 1 AK        1
+ 2 AL        7
+ 3 AR        4
+ 4 AZ        9
+ 5 CA       53
+ 6 CO        7
+ 7 CT        5
+ 8 DE        1
+ 9 FL       27
+10 GA       14
+# ℹ 40 more rows</code></pre>
+</div>
+</div>
+</section><section id="summarize" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize"><code>summarize()</code></h2>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">...</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
+<span>    name_of_summary_statistic <span class="op">=</span> <span class="fu">summary_function</span><span class="op">(</span><span class="va">variable</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>. . .</p>
+<ul>
+<li>
+<code>name_of_summary_statistic</code>: Anything you want to call it!
+<ul>
+<li>Recommendation: Keep it short and evocative</li>
+</ul>
+</li>
+<li>
+<code>summary_function()</code>:
+<ul>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/context.html">n()</a></code>: number of observations</li>
+<li>
+<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>: mean</li>
+<li>
+<code><a href="https://rdrr.io/r/stats/median.html">median()</a></code>: median</li>
+<li>…</li>
+</ul>
+</li>
+</ul></section><section id="spot-the-difference" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="spot-the-difference">Spot the difference</h2>
+<div class="question">
+<p>What’s the difference between the following two pipelines?</p>
+</div>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 2
+   state     n
+   &lt;chr&gt; &lt;int&gt;
+ 1 AK        1
+ 2 AL        7
+ 3 AR        4
+ 4 AZ        9
+ 5 CA       53
+ 6 CO        7
+ 7 CT        5
+ 8 DE        1
+ 9 FL       27
+10 GA       14
+# ℹ 40 more rows</code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 2
+   state     n
+   &lt;chr&gt; &lt;int&gt;
+ 1 AK        1
+ 2 AL        7
+ 3 AR        4
+ 4 AZ        9
+ 5 CA       53
+ 6 CO        7
+ 7 CT        5
+ 8 DE        1
+ 9 FL       27
+10 GA       14
+# ℹ 40 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="count" class="level2"><h2 class="anchored" data-anchor-id="count"><code>count()</code></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">...</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">variable</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">...</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">variable1</span>, <span class="va">variable2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Count the number of observations in each level of variable(s)</p></li>
+<li><p>Place the counts in a variable called <code>n</code></p></li>
+</ul></section><section id="count-and-sort" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="count-and-sort">
+<code>count()</code> and <code>sort</code>
+</h2>
+<div class="question">
+<p>What does the following pipeline do? Rewrite it with <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> instead.</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 2
+   state     n
+   &lt;chr&gt; &lt;int&gt;
+ 1 CA       53
+ 2 TX       36
+ 3 FL       27
+ 4 NY       27
+ 5 IL       18
+ 6 PA       18
+ 7 OH       16
+ 8 GA       14
+ 9 MI       14
+10 NC       13
+# ℹ 40 more rows</code></pre>
+</div>
+</div>
+</section></section><section id="mutate" class="level1"><h1><code>mutate()</code></h1>
+<section id="flip-the-question" class="level2"><h2 class="anchored" data-anchor-id="flip-the-question">Flip the question</h2>
+<div class="question">
+<p>Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?</p>
+</div>
+<p>vs.</p>
+<div class="question">
+<p>Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?</p>
+</div>
+</section><section id="flipping-vs.-gerrymandering-prevalence" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="flipping-vs.-gerrymandering-prevalence">Flipping vs.&nbsp;gerrymandering prevalence</h2>
+<div class="question xsmall">
+<p>The following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?” However, it produces a <code>warning</code> and an unexpected plot. What’s going on?</p>
+</div>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  <span class="va">gerrymander</span>, </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, fill <span class="op">=</span> <span class="va">flip18</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical
+transformation: fill.
+ℹ This can happen when ggplot fails to infer the correct grouping
+  structure in the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a
+  numerical variable into a factor?</code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="another-glimpse-at-gerrymander" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="another-glimpse-at-gerrymander">Another glimpse at <code>gerrymander</code>
+</h2>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">gerrymander</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 435
+Columns: 12
+$ district   &lt;chr&gt; "AK-AL", "AL-01", "AL-02", "AL-03", "AL-04", "AL-…
+$ last_name  &lt;chr&gt; "Young", "Byrne", "Roby", "Rogers", "Aderholt", "…
+$ first_name &lt;chr&gt; "Don", "Bradley", "Martha", "Mike D.", "Rob", "Mo…
+$ party16    &lt;chr&gt; "R", "R", "R", "R", "R", "R", "R", "D", "R", "R",…
+$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 3…
+$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 6…
+$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0…
+$ state      &lt;chr&gt; "AK", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "…
+$ party18    &lt;chr&gt; "R", "R", "R", "R", "R", "R", "R", "D", "R", "R",…
+$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0…
+$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…
+$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</code></pre>
+</div>
+</div>
+</section><section id="mutate-1" class="level2"><h2 class="anchored" data-anchor-id="mutate-1"><code>mutate()</code></h2>
+<ul>
+<li><p>We want to use <code>flip18</code> as a categorical variable</p></li>
+<li><p>But it’s stored as a numeric</p></li>
+<li><p>So we need to change its type first, before we can use it as a categorical variable</p></li>
+<li><p>The <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function transforms (<em>mutates</em>) a data frame by creating a new column or updating an existing one</p></li>
+</ul></section><section id="mutate-in-action" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="mutate-in-action">
+<code>mutate()</code> in action</h2>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>flip18 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 435 × 12
+   district last_name first_name party16 clinton16 trump16 dem16 state
+   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;
+ 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   
+ 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   
+ 3 AL-02    Roby      Martha     R            33      64.9     0 AL   
+ 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   
+ 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   
+ 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   
+ 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   
+ 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   
+ 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   
+10 AR-02    Hill      French     R            41.7    52.4     0 AR   
+# ℹ 425 more rows
+# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;fct&gt;,
+#   gerry &lt;fct&gt;</code></pre>
+</div>
+</div>
+</section><section id="revisit-the-plot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="revisit-the-plot">Revisit the plot</h2>
+<div class="question">
+<p>Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?</p>
+</div>
+<div class="cell" data-output-location="column">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>flip18 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, fill <span class="op">=</span> <span class="va">flip18</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
+<section id="ae-04-gerrymander-explore-ii" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-04-gerrymander-explore-ii">ae-04-gerrymander-explore-II</h2>
+<div class="appex">
+<ul>
+<li><p>Go to your ae project in RStudio.</p></li>
+<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-04-gerrymander-explore-II.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
+</ul>
+</div>
+</section><section id="recap-aesthetic-mappings" class="level2"><h2 class="anchored" data-anchor-id="recap-aesthetic-mappings">Recap: aesthetic mappings</h2>
+<ul>
+<li><p><strong>Local</strong> aesthetic mappings for a given <code>geom</code></p></li>
+<li><p><strong>Global</strong> aesthetic mappings for all <code>geom</code>s</p></li>
+</ul>
+
+
+</section></section></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sta199-f25\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/06-exploratory-data-analysis-II.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+</body></html>
