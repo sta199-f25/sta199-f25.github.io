@@ -244,7 +244,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <code>legend.position = "bottom"</code> is set in the <code>theme()</code> layer.</li>
 <li>The same variable is mapped to both <code>color</code> and <code>fill</code>.</li>
 <li>
-<code>group_by(species)</code> is used to create the boxplots. [*]</li>
+<code>group_by(species)</code> is used to create the boxplots.</li>
 <li>A Biscoe island penguin with a flipper length of 190 mm must be an Adélie.</li>
 </ul>
 </div>
@@ -650,11 +650,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="wooclap-choices">
 <ul>
 <li><code>gerrymander |&gt; arrange(state) |&gt; count()</code></li>
-<li>
-<code>gerrymander |&gt; count(state) |&gt; arrange(desc(n))</code> [*]</li>
+<li><code>gerrymander |&gt; count(state) |&gt; arrange(desc(n))</code></li>
 <li><code>gerrymander |&gt; count(state) |&gt; sort(n)</code></li>
-<li>
-<code>gerrymander |&gt; count(state, sort = TRUE)</code> [*]</li>
+<li><code>gerrymander |&gt; count(state, sort = TRUE)</code></li>
 </ul>
 </div>
 </div>
@@ -723,10 +721,11 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <li><p>The <code>mutate()</code> function transforms (<em>mutates</em>) a data frame by creating a new column or updating an existing one</p></li>
 </ul></section><section id="mutate-in-action" class="slide level2 smaller"><h2>
 <code>mutate()</code> in action</h2>
+<p>You can create a new variable with <code>mutate()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb35-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18_cat =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
-<span id="cb35-3"><a></a>  <span class="fu">relocate</span>(district, flip18, flip18_cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-3"><a></a>  <span class="fu">relocate</span>(district, flip18, flip18_cat) <span class="co"># relocate to the beginning for easier viewing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 435 × 13
    district flip18 flip18_cat last_name first_name party16 clinton16
@@ -752,7 +751,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </div>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb37-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18_cat =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
 <span id="cb37-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18_cat)) <span class="sc">+</span></span>
 <span id="cb37-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
@@ -762,6 +761,136 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <div>
 <figure><p><img data-src="06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
 </figure>
+</div>
+</div>
+</div></div>
+</section><section id="mutate-and-overwrite" class="slide level2"><h2>
+<code>mutate()</code> and overwrite</h2>
+<p>You can overwrite an existing variable with <code>mutate()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
+<span id="cb38-3"><a></a>  <span class="fu">select</span>(district, flip18)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 435 × 2
+   district flip18
+   &lt;chr&gt;    &lt;fct&gt; 
+ 1 AK-AL    0     
+ 2 AL-01    0     
+ 3 AL-02    0     
+ 4 AL-03    0     
+ 5 AL-04    0     
+ 6 AL-05    0     
+ 7 AL-06    0     
+ 8 AL-07    0     
+ 9 AR-01    0     
+10 AR-02    0     
+# ℹ 425 more rows</code></pre>
+</div>
+</div>
+</section><section id="mutate-and-if_else" class="slide level2 smaller"><h2>
+<code>mutate()</code> and <code>if_else()</code>
+</h2>
+<p>Use <code>mutate()</code> with <code>if_else()</code> to recode with an either/or logic:</p>
+<blockquote>
+<p>If <code>party16</code> is “D”, recode it as “Democrat”, otherwise recode it as “Republican”.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a></a>  <span class="fu">mutate</span>(<span class="at">party16_expanded =</span> <span class="fu">if_else</span>(party16 <span class="sc">==</span> <span class="st">"D"</span>, <span class="st">"Democrat"</span>, <span class="st">"Republican"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb40-3"><a></a>  <span class="fu">select</span>(district, party16, party16_expanded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 435 × 3
+   district party16 party16_expanded
+   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;           
+ 1 AK-AL    R       Republican      
+ 2 AL-01    R       Republican      
+ 3 AL-02    R       Republican      
+ 4 AL-03    R       Republican      
+ 5 AL-04    R       Republican      
+ 6 AL-05    R       Republican      
+ 7 AL-06    R       Republican      
+ 8 AL-07    D       Democrat        
+ 9 AR-01    R       Republican      
+10 AR-02    R       Republican      
+# ℹ 425 more rows</code></pre>
+</div>
+</div>
+</section><section id="mutate-and-case_when" class="slide level2 smaller"><h2>
+<code>mutate()</code> and <code>case_when()</code>
+</h2>
+<p>Use <code>mutate()</code> with <code>case_when()</code> to recode with a more complex logic:</p>
+<blockquote>
+<p>If <code>flip18</code> is 1, recode it as “Democrat flipped”, if <code>flip18</code> is 0, recode it as “No flip”, and if <code>flip18</code> is -1, recode it as “Republican flipped”.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb42-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb42-3"><a></a>    <span class="at">flip18_expanded =</span> <span class="fu">case_when</span>(</span>
+<span id="cb42-4"><a></a>      flip18 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Democrat flipped"</span>,</span>
+<span id="cb42-5"><a></a>      flip18 <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"No flip"</span>,</span>
+<span id="cb42-6"><a></a>      flip18 <span class="sc">==</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">~</span> <span class="st">"Republican flipped"</span></span>
+<span id="cb42-7"><a></a>    )</span>
+<span id="cb42-8"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb42-9"><a></a>  <span class="fu">select</span>(district, flip18, flip18_expanded) <span class="sc">|&gt;</span></span>
+<span id="cb42-10"><a></a>  <span class="fu">group_by</span>(flip18) <span class="sc">|&gt;</span> <span class="co"># group by flip type</span></span>
+<span id="cb42-11"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="co"># show top row per group</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+# Groups:   flip18 [3]
+  district flip18 flip18_expanded   
+  &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;             
+1 MN-01        -1 Republican flipped
+2 AK-AL         0 No flip           
+3 AZ-02         1 Democrat flipped  </code></pre>
+</div>
+</div>
+</section><section id="mutate-and-store" class="slide level2 smaller"><h2>
+<code>mutate()</code> and store</h2>
+<p>If you want to keep your changes, you need to store the data frame after <code>mutate()</code>:</p>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb44-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb44-3"><a></a>    <span class="at">p16 =</span> <span class="fu">if_else</span>(party16 <span class="sc">==</span> <span class="st">"D"</span>, <span class="st">"Dem"</span>, <span class="st">"Rep"</span>)</span>
+<span id="cb44-4"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb44-5"><a></a>  <span class="fu">select</span>(district, p16) <span class="sc">|&gt;</span></span>
+<span id="cb44-6"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="co"># show top 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  district p16  
+  &lt;chr&gt;    &lt;chr&gt;
+1 AK-AL    Rep  
+2 AL-01    Rep  
+3 AL-02    Rep  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb46-2"><a></a>  <span class="fu">select</span>(district, p16)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `select()`:
+! Can't select columns that don't exist.
+✖ Column `p16` doesn't exist.</code></pre>
+</div>
+</div>
+</div><div class="column fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>gerrymander <span class="ot">&lt;-</span> gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb48-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb48-3"><a></a>    <span class="at">p16 =</span> <span class="fu">if_else</span>(party16 <span class="sc">==</span> <span class="st">"D"</span>, <span class="st">"Dem"</span>, <span class="st">"Rep"</span>)</span>
+<span id="cb48-4"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb48-5"><a></a>  <span class="fu">select</span>(district, p16)</span>
+<span id="cb48-6"><a></a></span>
+<span id="cb48-7"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb48-8"><a></a>  <span class="fu">select</span>(district, p16)  <span class="sc">|&gt;</span></span>
+<span id="cb48-9"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="co"># show top 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  district p16  
+  &lt;chr&gt;    &lt;chr&gt;
+1 AK-AL    Rep  
+2 AL-01    Rep  
+3 AL-02    Rep  </code></pre>
 </div>
 </div>
 </div></div>

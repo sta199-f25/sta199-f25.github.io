@@ -1240,7 +1240,7 @@
     "href": "slides/06-exploratory-data-analysis-II-slides.html#while-you-wait-participate",
     "title": "Exploratory data analysis II",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\nWhich of the following is false about the following plot and the code that produced it?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nThere are no Chinstrap or Gentoo penguins on Torgersen Island.\n\nlegend.position = \"bottom\" is set in the theme() layer.\nThe same variable is mapped to both color and fill.\n\ngroup_by(species) is used to create the boxplots. [*]\nA Biscoe island penguin with a flipper length of 190 mm must be an Adélie."
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhich of the following is false about the following plot and the code that produced it?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nThere are no Chinstrap or Gentoo penguins on Torgersen Island.\n\nlegend.position = \"bottom\" is set in the theme() layer.\nThe same variable is mapped to both color and fill.\n\ngroup_by(species) is used to create the boxplots.\nA Biscoe island penguin with a flipper length of 190 mm must be an Adélie."
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#reminder-code-style-and-readability",
@@ -1324,7 +1324,7 @@
     "href": "slides/06-exploratory-data-analysis-II-slides.html#participate",
     "title": "Exploratory data analysis II",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nHow would you write the following pipeline with count() instead?\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt; arrange(state) |&gt; count()\n\ngerrymander |&gt; count(state) |&gt; arrange(desc(n)) [*]\ngerrymander |&gt; count(state) |&gt; sort(n)\n\ngerrymander |&gt; count(state, sort = TRUE) [*]\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nHow would you write the following pipeline with count() instead?\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt; arrange(state) |&gt; count()\ngerrymander |&gt; count(state) |&gt; arrange(desc(n))\ngerrymander |&gt; count(state) |&gt; sort(n)\ngerrymander |&gt; count(state, sort = TRUE)\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#flip-the-question",
@@ -1359,7 +1359,7 @@
     "href": "slides/06-exploratory-data-analysis-II-slides.html#mutate-in-action",
     "title": "Exploratory data analysis II",
     "section": "\nmutate() in action",
-    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  relocate(district, flip18, flip18_cat)\n\n# A tibble: 435 × 13\n   district flip18 flip18_cat last_name first_name party16 clinton16\n   &lt;chr&gt;     &lt;dbl&gt; &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n 1 AK-AL         0 0          Young     Don        R            37.6\n 2 AL-01         0 0          Byrne     Bradley    R            34.1\n 3 AL-02         0 0          Roby      Martha     R            33  \n 4 AL-03         0 0          Rogers    Mike D.    R            32.3\n 5 AL-04         0 0          Aderholt  Rob        R            17.4\n 6 AL-05         0 0          Brooks    Mo         R            31.3\n 7 AL-06         0 0          Palmer    Gary       R            26.1\n 8 AL-07         0 0          Sewell    Terri      D            69.8\n 9 AR-01         0 0          Crawford  Rick       R            30.2\n10 AR-02         0 0          Hill      French     R            41.7\n# ℹ 425 more rows\n# ℹ 6 more variables: trump16 &lt;dbl&gt;, dem16 &lt;dbl&gt;, state &lt;chr&gt;,\n#   party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
+    "text": "mutate() in action\nYou can create a new variable with mutate():\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  relocate(district, flip18, flip18_cat) # relocate to the beginning for easier viewing\n\n# A tibble: 435 × 13\n   district flip18 flip18_cat last_name first_name party16 clinton16\n   &lt;chr&gt;     &lt;dbl&gt; &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n 1 AK-AL         0 0          Young     Don        R            37.6\n 2 AL-01         0 0          Byrne     Bradley    R            34.1\n 3 AL-02         0 0          Roby      Martha     R            33  \n 4 AL-03         0 0          Rogers    Mike D.    R            32.3\n 5 AL-04         0 0          Aderholt  Rob        R            17.4\n 6 AL-05         0 0          Brooks    Mo         R            31.3\n 7 AL-06         0 0          Palmer    Gary       R            26.1\n 8 AL-07         0 0          Sewell    Terri      D            69.8\n 9 AR-01         0 0          Crawford  Rick       R            30.2\n10 AR-02         0 0          Hill      French     R            41.7\n# ℹ 425 more rows\n# ℹ 6 more variables: trump16 &lt;dbl&gt;, dem16 &lt;dbl&gt;, state &lt;chr&gt;,\n#   party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#revisit-the-plot",
@@ -1367,6 +1367,34 @@
     "title": "Exploratory data analysis II",
     "section": "Revisit the plot",
     "text": "Revisit the plot\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?\n\n\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18_cat)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_colorblind()"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-overwrite",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-overwrite",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and overwrite",
+    "text": "mutate() and overwrite\nYou can overwrite an existing variable with mutate():\n\ngerrymander |&gt;\n  mutate(flip18 = as.factor(flip18)) |&gt;\n  select(district, flip18)\n\n# A tibble: 435 × 2\n   district flip18\n   &lt;chr&gt;    &lt;fct&gt; \n 1 AK-AL    0     \n 2 AL-01    0     \n 3 AL-02    0     \n 4 AL-03    0     \n 5 AL-04    0     \n 6 AL-05    0     \n 7 AL-06    0     \n 8 AL-07    0     \n 9 AR-01    0     \n10 AR-02    0     \n# ℹ 425 more rows"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-if_else",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-if_else",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and if_else()\n",
+    "text": "mutate() and if_else()\n\nUse mutate() with if_else() to recode with an either/or logic:\n\nIf party16 is “D”, recode it as “Democrat”, otherwise recode it as “Republican”.\n\n\ngerrymander |&gt;\n  mutate(party16_expanded = if_else(party16 == \"D\", \"Democrat\", \"Republican\")) |&gt;\n  select(district, party16, party16_expanded)\n\n# A tibble: 435 × 3\n   district party16 party16_expanded\n   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;           \n 1 AK-AL    R       Republican      \n 2 AL-01    R       Republican      \n 3 AL-02    R       Republican      \n 4 AL-03    R       Republican      \n 5 AL-04    R       Republican      \n 6 AL-05    R       Republican      \n 7 AL-06    R       Republican      \n 8 AL-07    D       Democrat        \n 9 AR-01    R       Republican      \n10 AR-02    R       Republican      \n# ℹ 425 more rows"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-case_when",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-case_when",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and case_when()\n",
+    "text": "mutate() and case_when()\n\nUse mutate() with case_when() to recode with a more complex logic:\n\nIf flip18 is 1, recode it as “Democrat flipped”, if flip18 is 0, recode it as “No flip”, and if flip18 is -1, recode it as “Republican flipped”.\n\n\ngerrymander |&gt;\n  mutate(\n    flip18_expanded = case_when(\n      flip18 == 1 ~ \"Democrat flipped\",\n      flip18 == 0 ~ \"No flip\",\n      flip18 == -1 ~ \"Republican flipped\"\n    )\n  ) |&gt;\n  select(district, flip18, flip18_expanded) |&gt;\n  group_by(flip18) |&gt; # group by flip type\n  slice_head(n = 1) # show top row per group\n\n# A tibble: 3 × 3\n# Groups:   flip18 [3]\n  district flip18 flip18_expanded   \n  &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;             \n1 MN-01        -1 Republican flipped\n2 AK-AL         0 No flip           \n3 AZ-02         1 Democrat flipped"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-store",
+    "href": "slides/06-exploratory-data-analysis-II-slides.html#mutate-and-store",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and store",
+    "text": "mutate() and store\nIf you want to keep your changes, you need to store the data frame after mutate():\n\n\n\ngerrymander |&gt;\n  mutate(\n    p16 = if_else(party16 == \"D\", \"Dem\", \"Rep\")\n  ) |&gt;\n  select(district, p16) |&gt;\n  slice_head(n = 3) # show top 3 rows\n\n# A tibble: 3 × 2\n  district p16  \n  &lt;chr&gt;    &lt;chr&gt;\n1 AK-AL    Rep  \n2 AL-01    Rep  \n3 AL-02    Rep  \n\ngerrymander |&gt;\n  select(district, p16)\n\nError in `select()`:\n! Can't select columns that don't exist.\n✖ Column `p16` doesn't exist.\n\n\n\n\ngerrymander &lt;- gerrymander |&gt;\n  mutate(\n    p16 = if_else(party16 == \"D\", \"Dem\", \"Rep\")\n  ) |&gt;\n  select(district, p16)\n\ngerrymander |&gt;\n  select(district, p16)  |&gt;\n  slice_head(n = 3) # show top 3 rows\n\n# A tibble: 3 × 2\n  district p16  \n  &lt;chr&gt;    &lt;chr&gt;\n1 AK-AL    Rep  \n2 AL-01    Rep  \n3 AL-02    Rep"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#ae-04-gerrymander-explore-ii",
@@ -1387,14 +1415,14 @@
     "href": "slides/06-exploratory-data-analysis-II.html",
     "title": "Exploratory data analysis II",
     "section": "",
-    "text": "Which of the following is false about the following plot and the code that produced it?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\nThere are no Chinstrap or Gentoo penguins on Torgersen Island.\n\nlegend.position = \"bottom\" is set in the theme() layer.\nThe same variable is mapped to both color and fill.\n\ngroup_by(species) is used to create the boxplots. [*]\nA Biscoe island penguin with a flipper length of 190 mm must be an Adélie.\n\n\n\n\n\n\nPlots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\n\nCode should follow the tidyverse style (style.tidyverse.org) Particularly,\n\nspace before and line breaks after each + when building a ggplot\n\nspace before and line breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\n\nAll code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. Tip: Haikus not novellas when writing code!\nWhydowecareaboutthestyleandreadabilityofyourcode? \\(\\rightarrow\\) Why do we care about the style and readability of your code?\nJe voudrais un cafe \\(\\rightarrow\\) Je voudrais un café"
+    "text": "Which of the following is false about the following plot and the code that produced it?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\nThere are no Chinstrap or Gentoo penguins on Torgersen Island.\n\nlegend.position = \"bottom\" is set in the theme() layer.\nThe same variable is mapped to both color and fill.\n\ngroup_by(species) is used to create the boxplots.\nA Biscoe island penguin with a flipper length of 190 mm must be an Adélie.\n\n\n\n\n\n\nPlots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.\n\nCode should follow the tidyverse style (style.tidyverse.org) Particularly,\n\nspace before and line breaks after each + when building a ggplot\n\nspace before and line breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\n\nAll code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks. Tip: Haikus not novellas when writing code!\nWhydowecareaboutthestyleandreadabilityofyourcode? \\(\\rightarrow\\) Why do we care about the style and readability of your code?\nJe voudrais un cafe \\(\\rightarrow\\) Je voudrais un café"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#while-you-wait-participate",
     "href": "slides/06-exploratory-data-analysis-II.html#while-you-wait-participate",
     "title": "Exploratory data analysis II",
     "section": "",
-    "text": "Which of the following is false about the following plot and the code that produced it?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\nThere are no Chinstrap or Gentoo penguins on Torgersen Island.\n\nlegend.position = \"bottom\" is set in the theme() layer.\nThe same variable is mapped to both color and fill.\n\ngroup_by(species) is used to create the boxplots. [*]\nA Biscoe island penguin with a flipper length of 190 mm must be an Adélie."
+    "text": "Which of the following is false about the following plot and the code that produced it?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\nThere are no Chinstrap or Gentoo penguins on Torgersen Island.\n\nlegend.position = \"bottom\" is set in the theme() layer.\nThe same variable is mapped to both color and fill.\n\ngroup_by(species) is used to create the boxplots.\nA Biscoe island penguin with a flipper length of 190 mm must be an Adélie."
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#reminder-code-style-and-readability",
@@ -1478,7 +1506,7 @@
     "href": "slides/06-exploratory-data-analysis-II.html#participate",
     "title": "Exploratory data analysis II",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nHow would you write the following pipeline with count() instead?\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt; arrange(state) |&gt; count()\n\ngerrymander |&gt; count(state) |&gt; arrange(desc(n)) [*]\ngerrymander |&gt; count(state) |&gt; sort(n)\n\ngerrymander |&gt; count(state, sort = TRUE) [*]\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nHow would you write the following pipeline with count() instead?\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt; arrange(state) |&gt; count()\ngerrymander |&gt; count(state) |&gt; arrange(desc(n))\ngerrymander |&gt; count(state) |&gt; sort(n)\ngerrymander |&gt; count(state, sort = TRUE)\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#flip-the-question",
@@ -1513,7 +1541,7 @@
     "href": "slides/06-exploratory-data-analysis-II.html#mutate-in-action",
     "title": "Exploratory data analysis II",
     "section": "\nmutate() in action",
-    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  relocate(district, flip18, flip18_cat)\n\n# A tibble: 435 × 13\n   district flip18 flip18_cat last_name first_name party16 clinton16\n   &lt;chr&gt;     &lt;dbl&gt; &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n 1 AK-AL         0 0          Young     Don        R            37.6\n 2 AL-01         0 0          Byrne     Bradley    R            34.1\n 3 AL-02         0 0          Roby      Martha     R            33  \n 4 AL-03         0 0          Rogers    Mike D.    R            32.3\n 5 AL-04         0 0          Aderholt  Rob        R            17.4\n 6 AL-05         0 0          Brooks    Mo         R            31.3\n 7 AL-06         0 0          Palmer    Gary       R            26.1\n 8 AL-07         0 0          Sewell    Terri      D            69.8\n 9 AR-01         0 0          Crawford  Rick       R            30.2\n10 AR-02         0 0          Hill      French     R            41.7\n# ℹ 425 more rows\n# ℹ 6 more variables: trump16 &lt;dbl&gt;, dem16 &lt;dbl&gt;, state &lt;chr&gt;,\n#   party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
+    "text": "mutate() in action\nYou can create a new variable with mutate():\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  relocate(district, flip18, flip18_cat) # relocate to the beginning for easier viewing\n\n# A tibble: 435 × 13\n   district flip18 flip18_cat last_name first_name party16 clinton16\n   &lt;chr&gt;     &lt;dbl&gt; &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n 1 AK-AL         0 0          Young     Don        R            37.6\n 2 AL-01         0 0          Byrne     Bradley    R            34.1\n 3 AL-02         0 0          Roby      Martha     R            33  \n 4 AL-03         0 0          Rogers    Mike D.    R            32.3\n 5 AL-04         0 0          Aderholt  Rob        R            17.4\n 6 AL-05         0 0          Brooks    Mo         R            31.3\n 7 AL-06         0 0          Palmer    Gary       R            26.1\n 8 AL-07         0 0          Sewell    Terri      D            69.8\n 9 AR-01         0 0          Crawford  Rick       R            30.2\n10 AR-02         0 0          Hill      French     R            41.7\n# ℹ 425 more rows\n# ℹ 6 more variables: trump16 &lt;dbl&gt;, dem16 &lt;dbl&gt;, state &lt;chr&gt;,\n#   party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#revisit-the-plot",
@@ -1521,6 +1549,34 @@
     "title": "Exploratory data analysis II",
     "section": "Revisit the plot",
     "text": "Revisit the plot\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?\n\n\ngerrymander |&gt;\n  mutate(flip18_cat = as.factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18_cat)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_colorblind()"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II.html#mutate-and-overwrite",
+    "href": "slides/06-exploratory-data-analysis-II.html#mutate-and-overwrite",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and overwrite",
+    "text": "mutate() and overwrite\nYou can overwrite an existing variable with mutate():\n\ngerrymander |&gt;\n  mutate(flip18 = as.factor(flip18)) |&gt;\n  select(district, flip18)\n\n# A tibble: 435 × 2\n   district flip18\n   &lt;chr&gt;    &lt;fct&gt; \n 1 AK-AL    0     \n 2 AL-01    0     \n 3 AL-02    0     \n 4 AL-03    0     \n 5 AL-04    0     \n 6 AL-05    0     \n 7 AL-06    0     \n 8 AL-07    0     \n 9 AR-01    0     \n10 AR-02    0     \n# ℹ 425 more rows"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II.html#mutate-and-if_else",
+    "href": "slides/06-exploratory-data-analysis-II.html#mutate-and-if_else",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and if_else()\n",
+    "text": "mutate() and if_else()\n\nUse mutate() with if_else() to recode with an either/or logic:\n\nIf party16 is “D”, recode it as “Democrat”, otherwise recode it as “Republican”.\n\n\ngerrymander |&gt;\n  mutate(party16_expanded = if_else(party16 == \"D\", \"Democrat\", \"Republican\")) |&gt;\n  select(district, party16, party16_expanded)\n\n# A tibble: 435 × 3\n   district party16 party16_expanded\n   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;           \n 1 AK-AL    R       Republican      \n 2 AL-01    R       Republican      \n 3 AL-02    R       Republican      \n 4 AL-03    R       Republican      \n 5 AL-04    R       Republican      \n 6 AL-05    R       Republican      \n 7 AL-06    R       Republican      \n 8 AL-07    D       Democrat        \n 9 AR-01    R       Republican      \n10 AR-02    R       Republican      \n# ℹ 425 more rows"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II.html#mutate-and-case_when",
+    "href": "slides/06-exploratory-data-analysis-II.html#mutate-and-case_when",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and case_when()\n",
+    "text": "mutate() and case_when()\n\nUse mutate() with case_when() to recode with a more complex logic:\n\nIf flip18 is 1, recode it as “Democrat flipped”, if flip18 is 0, recode it as “No flip”, and if flip18 is -1, recode it as “Republican flipped”.\n\n\ngerrymander |&gt;\n  mutate(\n    flip18_expanded = case_when(\n      flip18 == 1 ~ \"Democrat flipped\",\n      flip18 == 0 ~ \"No flip\",\n      flip18 == -1 ~ \"Republican flipped\"\n    )\n  ) |&gt;\n  select(district, flip18, flip18_expanded) |&gt;\n  group_by(flip18) |&gt; # group by flip type\n  slice_head(n = 1) # show top row per group\n\n# A tibble: 3 × 3\n# Groups:   flip18 [3]\n  district flip18 flip18_expanded   \n  &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;             \n1 MN-01        -1 Republican flipped\n2 AK-AL         0 No flip           \n3 AZ-02         1 Democrat flipped"
+  },
+  {
+    "objectID": "slides/06-exploratory-data-analysis-II.html#mutate-and-store",
+    "href": "slides/06-exploratory-data-analysis-II.html#mutate-and-store",
+    "title": "Exploratory data analysis II",
+    "section": "\nmutate() and store",
+    "text": "mutate() and store\nIf you want to keep your changes, you need to store the data frame after mutate():\n\n\n\ngerrymander |&gt;\n  mutate(\n    p16 = if_else(party16 == \"D\", \"Dem\", \"Rep\")\n  ) |&gt;\n  select(district, p16) |&gt;\n  slice_head(n = 3) # show top 3 rows\n\n# A tibble: 3 × 2\n  district p16  \n  &lt;chr&gt;    &lt;chr&gt;\n1 AK-AL    Rep  \n2 AL-01    Rep  \n3 AL-02    Rep  \n\ngerrymander |&gt;\n  select(district, p16)\n\nError in `select()`:\n! Can't select columns that don't exist.\n✖ Column `p16` doesn't exist.\n\n\n\n\n\ngerrymander &lt;- gerrymander |&gt;\n  mutate(\n    p16 = if_else(party16 == \"D\", \"Dem\", \"Rep\")\n  ) |&gt;\n  select(district, p16)\n\ngerrymander |&gt;\n  select(district, p16)  |&gt;\n  slice_head(n = 3) # show top 3 rows\n\n# A tibble: 3 × 2\n  district p16  \n  &lt;chr&gt;    &lt;chr&gt;\n1 AK-AL    Rep  \n2 AL-01    Rep  \n3 AL-02    Rep"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II.html#ae-04-gerrymander-explore-ii",

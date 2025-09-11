@@ -550,6 +550,10 @@ window.Quarto = {
   <li><a href="#mutate-1" id="toc-mutate-1" class="nav-link" data-scroll-target="#mutate-1"><code>mutate()</code></a></li>
   <li><a href="#mutate-in-action" id="toc-mutate-in-action" class="nav-link" data-scroll-target="#mutate-in-action"><code>mutate()</code> in action</a></li>
   <li><a href="#revisit-the-plot" id="toc-revisit-the-plot" class="nav-link" data-scroll-target="#revisit-the-plot">Revisit the plot</a></li>
+  <li><a href="#mutate-and-overwrite" id="toc-mutate-and-overwrite" class="nav-link" data-scroll-target="#mutate-and-overwrite"><code>mutate()</code> and overwrite</a></li>
+  <li><a href="#mutate-and-if_else" id="toc-mutate-and-if_else" class="nav-link" data-scroll-target="#mutate-and-if_else"><code>mutate()</code> and <code>if_else()</code></a></li>
+  <li><a href="#mutate-and-case_when" id="toc-mutate-and-case_when" class="nav-link" data-scroll-target="#mutate-and-case_when"><code>mutate()</code> and <code>case_when()</code></a></li>
+  <li><a href="#mutate-and-store" id="toc-mutate-and-store" class="nav-link" data-scroll-target="#mutate-and-store"><code>mutate()</code> and store</a></li>
   </ul>
 </li>
   <li>
@@ -630,7 +634,7 @@ window.Quarto = {
 <code>legend.position = "bottom"</code> is set in the <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme()</a></code> layer.</li>
 <li>The same variable is mapped to both <code>color</code> and <code>fill</code>.</li>
 <li>
-<code>group_by(species)</code> is used to create the boxplots. [*]</li>
+<code>group_by(species)</code> is used to create the boxplots.</li>
 <li>A Biscoe island penguin with a flipper length of 190 mm must be an Adélie.</li>
 </ul>
 </div>
@@ -1037,11 +1041,9 @@ window.Quarto = {
 <div class="wooclap-choices">
 <ul>
 <li><code>gerrymander |&gt; arrange(state) |&gt; count()</code></li>
-<li>
-<code>gerrymander |&gt; count(state) |&gt; arrange(desc(n))</code> [*]</li>
+<li><code>gerrymander |&gt; count(state) |&gt; arrange(desc(n))</code></li>
 <li><code>gerrymander |&gt; count(state) |&gt; sort(n)</code></li>
-<li>
-<code>gerrymander |&gt; count(state, sort = TRUE)</code> [*]</li>
+<li><code>gerrymander |&gt; count(state, sort = TRUE)</code></li>
 </ul>
 </div>
 </div>
@@ -1115,10 +1117,11 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <li><p>The <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function transforms (<em>mutates</em>) a data frame by creating a new column or updating an existing one</p></li>
 </ul></section><section id="mutate-in-action" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="mutate-in-action">
 <code>mutate()</code> in action</h2>
+<p>You can create a new variable with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>flip18_cat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span><span class="va">district</span>, <span class="va">flip18</span>, <span class="va">flip18_cat</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">flip18_cat =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">relocate</span>(district, flip18, flip18_cat) <span class="co"># relocate to the beginning for easier viewing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 435 × 13
    district flip18 flip18_cat last_name first_name party16 clinton16
@@ -1143,15 +1146,147 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <p>Is a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?</p>
 </div>
 <div class="cell" data-output-location="column">
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>flip18_cat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, fill <span class="op">=</span> <span class="va">flip18_cat</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="http://jrnold.github.io/ggthemes/reference/colorblind.html">scale_fill_colorblind</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">mutate</span>(<span class="at">flip18_cat =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18_cat)) <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
+</div>
+</div>
+</div>
+</section><section id="mutate-and-overwrite" class="level2"><h2 class="anchored" data-anchor-id="mutate-and-overwrite">
+<code>mutate()</code> and overwrite</h2>
+<p>You can overwrite an existing variable with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>flip18 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">district</span>, <span class="va">flip18</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 435 × 2
+   district flip18
+   &lt;chr&gt;    &lt;fct&gt; 
+ 1 AK-AL    0     
+ 2 AL-01    0     
+ 3 AL-02    0     
+ 4 AL-03    0     
+ 5 AL-04    0     
+ 6 AL-05    0     
+ 7 AL-06    0     
+ 8 AL-07    0     
+ 9 AR-01    0     
+10 AR-02    0     
+# ℹ 425 more rows</code></pre>
+</div>
+</div>
+</section><section id="mutate-and-if_else" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="mutate-and-if_else">
+<code>mutate()</code> and <code>if_else()</code>
+</h2>
+<p>Use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> with <code><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else()</a></code> to recode with an either/or logic:</p>
+<blockquote class="blockquote">
+<p>If <code>party16</code> is “D”, recode it as “Democrat”, otherwise recode it as “Republican”.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">mutate</span>(<span class="at">party16_expanded =</span> <span class="fu">if_else</span>(party16 <span class="sc">==</span> <span class="st">"D"</span>, <span class="st">"Democrat"</span>, <span class="st">"Republican"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">select</span>(district, party16, party16_expanded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 435 × 3
+   district party16 party16_expanded
+   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;           
+ 1 AK-AL    R       Republican      
+ 2 AL-01    R       Republican      
+ 3 AL-02    R       Republican      
+ 4 AL-03    R       Republican      
+ 5 AL-04    R       Republican      
+ 6 AL-05    R       Republican      
+ 7 AL-06    R       Republican      
+ 8 AL-07    D       Democrat        
+ 9 AR-01    R       Republican      
+10 AR-02    R       Republican      
+# ℹ 425 more rows</code></pre>
+</div>
+</div>
+</section><section id="mutate-and-case_when" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="mutate-and-case_when">
+<code>mutate()</code> and <code>case_when()</code>
+</h2>
+<p>Use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> with <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code> to recode with a more complex logic:</p>
+<blockquote class="blockquote">
+<p>If <code>flip18</code> is 1, recode it as “Democrat flipped”, if <code>flip18</code> is 0, recode it as “No flip”, and if <code>flip18</code> is -1, recode it as “Republican flipped”.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    flip18_expanded <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>      <span class="va">flip18</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">~</span> <span class="st">"Democrat flipped"</span>,</span>
+<span>      <span class="va">flip18</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="st">"No flip"</span>,</span>
+<span>      <span class="va">flip18</span> <span class="op">==</span> <span class="op">-</span><span class="fl">1</span> <span class="op">~</span> <span class="st">"Republican flipped"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">district</span>, <span class="va">flip18</span>, <span class="va">flip18_expanded</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">flip18</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co"># group by flip type</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="co"># show top row per group</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+# Groups:   flip18 [3]
+  district flip18 flip18_expanded   
+  &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;             
+1 MN-01        -1 Republican flipped
+2 AK-AL         0 No flip           
+3 AZ-02         1 Democrat flipped  </code></pre>
+</div>
+</div>
+</section><section id="mutate-and-store" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="mutate-and-store">
+<code>mutate()</code> and store</h2>
+<p>If you want to keep your changes, you need to store the data frame after <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>:</p>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    p16 <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">party16</span> <span class="op">==</span> <span class="st">"D"</span>, <span class="st">"Dem"</span>, <span class="st">"Rep"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">district</span>, <span class="va">p16</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="co"># show top 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  district p16  
+  &lt;chr&gt;    &lt;chr&gt;
+1 AK-AL    Rep  
+2 AL-01    Rep  
+3 AL-02    Rep  </code></pre>
+</div>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">district</span>, <span class="va">p16</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `select()`:
+! Can't select columns that don't exist.
+✖ Column `p16` doesn't exist.</code></pre>
+</div>
+</div>
+</div>
+<div class="column fragment">
+<div class="cell">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gerrymander</span> <span class="op">&lt;-</span> <span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    p16 <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">party16</span> <span class="op">==</span> <span class="st">"D"</span>, <span class="st">"Dem"</span>, <span class="st">"Rep"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">district</span>, <span class="va">p16</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gerrymander</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">district</span>, <span class="va">p16</span><span class="op">)</span>  <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="co"># show top 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  district p16  
+  &lt;chr&gt;    &lt;chr&gt;
+1 AK-AL    Rep  
+2 AL-01    Rep  
+3 AL-02    Rep  </code></pre>
+</div>
 </div>
 </div>
 </div>
