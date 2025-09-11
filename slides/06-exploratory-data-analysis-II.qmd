@@ -1,0 +1,401 @@
+---
+title: "Exploratory data analysis II"
+subtitle: "Lecture 6"
+date: "2025-09-11"
+format: 
+  revealjs: 
+    output-file: 06-exploratory-data-analysis-II-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    toc: false
+  html: 
+    code-link: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-04-gerrymander-explore-II"
+```
+
+# Warm-up
+
+## While you wait: Participate 📱💻 {.xsmall}
+
+::: {.columns}
+
+::: {.column width="85%"}
+
+::: wooclap
+Which of the following is **false** about the following plot and the code that produced it?
+
+```{r}
+#| echo: false
+#| warning: false
+#| out-width: 100%
+#| fig-width: 7
+#| fig-asp: 0.25
+library(tidyverse)
+library(palmerpenguins)
+library(ggthemes)
+penguins |>
+  ggplot(aes(x = species, y = flipper_length_mm, color = island, fill = island)) +
+  geom_boxplot(alpha = 0.5) +
+  scale_color_colorblind() +
+  scale_fill_colorblind() +
+  scale_y_continuous(breaks = seq(170, 230, by = 20)) +
+  labs(
+    title = NULL,
+    x = "Species",
+    y = "Flipper length (mm)",
+    color = "Island", fill = "Island"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    plot.margin = margin(t = 0, r = 0, b = 5, l = 5, unit = "pt")
+  )
+```
+
+:::
+
+:::
+
+::: {.column width="15%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+::: 
+
+::: wooclap
+::: wooclap-choices
+- There are no Chinstrap or Gentoo penguins on Torgersen Island.
+- `legend.position = "bottom"` is set in the `theme()` layer.
+- The same variable is mapped to both `color` and `fill`.
+- `group_by(species)` is used to create the boxplots. [*]
+- A Biscoe island penguin with a flipper length of 190 mm must be an Adélie.
+:::
+:::
+
+## Reminder: Code style and readability {.smaller}
+
+::: {.incremental .xsmall}
+-   Plots should include an informative title, axes and legends should have human-readable labels, and careful consideration should be given to aesthetic choices.
+
+-   Code should follow the [tidyverse style](https://style.tidyverse.org/) ([style.tidyverse.org](https://style.tidyverse.org/)) Particularly,
+
+    -   space before and line breaks after each `+` when building a `ggplot`
+    -   space before and line breaks after each `|>` in a data transformation pipeline
+    -   code should be properly indented
+    -   spaces around `=` signs and spaces after commas
+
+-   All code should be visible in the PDF output, i.e., should not run off the page on the PDF.
+    Long lines that run off the page should be split across multiple lines with line breaks.
+    **Tip:** Haikus not novellas when writing code!
+
+-   Whydowecareaboutthestyleandreadabilityofyourcode? [$\rightarrow$ Why do we care about the style and readability of your code?]{.fragment}
+
+-   Je voudrais un cafe [$\rightarrow$ Je voudrais un café]{.fragment}
+:::
+
+# `gerrymander` 
+
+## Packages {.smaller}
+
+-   For the data: [**usdata**](https://openintrostat.github.io/usdata/)
+
+```{r}
+library(usdata)
+```
+
+-   For the analysis: [**tidyverse**](https://www.tidyverse.org/packages/) and [**ggthemes**](https://jrnold.github.io/ggthemes/)
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+```
+
+## From the AE {.smaller}
+
+::: question
+Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?
+:::
+
+::: {.columns}
+::: {.column}
+
+```{r}
+ggplot(
+  gerrymander, 
+  aes(x = flip18, fill = gerry)
+  ) +
+  geom_bar(position = "fill")
+```
+
+:::
+::: {.column}
+
+```{r}
+gerrymander |>
+  count(flip18, gerry) |>
+  group_by(flip18) |>
+  mutate(prop = n / sum(n))
+```
+
+:::
+:::
+
+# `group_by()`, `summarize()`, `count()`
+
+## What does `group_by()` do? {.scrollable}
+
+::: question
+What does `group_by()` do in the following pipeline?
+:::
+
+```{r}
+gerrymander |>
+  count(flip18, gerry) |>
+  group_by(flip18) |>
+  mutate(prop = n / sum(n))
+```
+
+## Let's simplify! {.scrollable}
+
+::: question
+What does `group_by()` do in the following pipeline?
+:::
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(mean_trump16 = mean(trump16))
+```
+
+## `group_by()` {.smaller}
+
+-   Group by converts a data frame to a grouped data frame, where subsequent operations are performed once per group
+
+-   `ungroup()` removes grouping
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  ungroup()
+```
+
+## `group_by() |> summarize()` {.smaller}
+
+A common pipeline is `group_by()` and then `summarize()` to **calculate** summary statistics for each group:
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(
+    mean_trump16 = mean(trump16),
+    median_trump16 = median(trump16)
+  )
+```
+
+## `group_by() |> summarize()` {.smaller}
+
+This pipeline can also be used to **count** number of observations for each group:
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(n = n())
+```
+
+## `summarize()` {.smaller}
+
+```{r}
+#| eval: false
+... |>
+  summarize(
+    name_of_summary_statistic = summary_function(variable)
+  )
+```
+
+. . .
+
+-   `name_of_summary_statistic`: Anything you want to call it!
+    -   Recommendation: Keep it short and evocative
+-   `summary_function()`:
+    -   `n()`: number of observations
+    -   `mean()`: mean
+    -   `median()`: median
+    -   ...
+
+## Spot the difference {.smaller}
+
+::: question
+What's the difference between the following two pipelines?
+:::
+
+::: columns
+::: column
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(n = n())
+```
+:::
+
+::: column
+```{r}
+gerrymander |>
+  count(state)
+```
+:::
+:::
+
+## `count()`
+
+::: columns
+::: {.column width="40%"}
+``` r
+... |>
+  count(variable)
+```
+:::
+
+::: {.column width="60%"}
+
+```{r}
+#| eval: false
+... |>
+  count(variable1, variable2)
+```
+
+:::
+:::
+
+-   Count the number of observations in each level of variable(s)
+
+-   Place the counts in a variable called `n`
+
+## `count()` and `sort` {.scrollable}
+
+::: question
+What does the following pipeline do?
+Rewrite it with `count()` instead.
+:::
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(n = n()) |>
+  arrange(desc(n))
+```
+
+# `mutate()`
+
+## Flip the question
+
+::: question
+Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?
+:::
+
+vs.
+
+::: question
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+:::
+
+## Flipping vs. gerrymandering prevalence {.smaller}
+
+::: {.question .xsmall}
+The following code should produce a visualization that answers the question "Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?" However, it produces a `warning` and an unexpected plot.
+What's going on?
+:::
+
+::: columns
+::: column
+
+```{r}
+#| label: fill-warning
+#| warning: true
+#| fig-show: hide
+ggplot(
+  gerrymander, 
+  aes(x = gerry, fill = flip18)
+  ) +
+  geom_bar(position = "fill")
+```
+
+:::
+
+::: column
+
+```{r}
+#| ref.label: fill-warning
+#| warning: false
+#| echo: false
+```
+
+:::
+:::
+
+## Another glimpse at `gerrymander` {.smaller}
+
+```{r}
+glimpse(gerrymander)
+```
+
+## `mutate()`
+
+-   We want to use `flip18` as a categorical variable
+
+-   But it's stored as a numeric
+
+-   So we need to change its type first, before we can use it as a categorical variable
+
+-   The `mutate()` function transforms (*mutates*) a data frame by creating a new column or updating an existing one
+
+## `mutate()` in action {.smaller}
+
+```{r}
+gerrymander |>
+  mutate(flip18 = as.factor(flip18))
+```
+
+## Revisit the plot {.smaller}
+
+::: question
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+:::
+
+```{r}
+#| output-location: column
+gerrymander |>
+  mutate(flip18 = as.factor(flip18)) |>
+  ggplot(aes(x = gerry, fill = flip18)) +
+  geom_bar(position = "fill")
+```
+
+# Application exercise
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits by the end of class.
+:::
+
+## Recap: aesthetic mappings
+
+-   **Local** aesthetic mappings for a given `geom`
+
+-   **Global** aesthetic mappings for all `geom`s

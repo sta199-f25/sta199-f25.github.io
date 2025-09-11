@@ -1,0 +1,89 @@
+---
+title: "AE 04: Gerrymandering + data exploration II"
+subtitle: "Suggested answers"
+---
+
+::: callout-important
+These are suggested answers.
+This document should be used as a reference only; it's not designed to be an exhaustive key.
+:::
+
+## Getting started
+
+### Packages
+
+We'll use the **tidyverse** package for this analysis.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(usdata)
+library(ggbeeswarm)
+library(ggthemes)
+library(scales)
+```
+
+### Data
+
+The data are availale in the **usdata** package.
+
+```{r}
+#| label: gerrymander
+glimpse(gerrymander)
+```
+
+## Congressional districts per state
+
+Which state has the most congressional districts?
+How many congressional districts are there in this state?
+
+```{r}
+#| label: districts
+gerrymander |>
+  count(state, sort = TRUE)
+```
+
+## Gerrymandering and flipping
+
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+Support your answer with a visualization and summary statistics.
+
+```{r}
+#| label: flips
+#| fig-asp: 0.4
+gerrymander |>
+  mutate(flip18 = as.factor(flip18)) |>
+  ggplot(aes(y = gerry, fill = flip18)) +
+  geom_bar(position = "fill")
+
+gerrymander |>
+  count(gerry, dem18) |>
+  group_by(gerry) |>
+  mutate(p = n / sum(n))
+```
+
+## Aesthetic mappings
+
+Recreate the following visualization, and then improve it.
+
+![](images/gerrymander-recreate.png)
+
+```{r}
+#| label: recreate
+#| fig-asp: 0.4
+ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
+  geom_beeswarm(color = "gray50", alpha = 0.5) +
+  geom_boxplot(
+    aes(color = gerry), 
+    alpha = 0.5, 
+    show.legend = FALSE
+  ) +
+  scale_color_colorblind() +
+  scale_y_continuous(labels = label_percent(scale = 1)) +
+  theme_minimal() +
+  labs(
+    x = "Gerrymandering prevalence",
+    y = "Clinton vote share, 2016 (%)",
+  )
+```
