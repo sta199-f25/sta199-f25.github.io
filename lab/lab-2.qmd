@@ -1,0 +1,236 @@
+---
+title: Lab 1
+subtitle: Get in teams then `group_by()`
+description: "Due: End of lab on Mon, Sep 15"
+categories: Lab
+draft: true
+---
+
+# Introduction
+
+This lab is a deep dive into `group_by()`!
+
+## Getting started
+
+1.  **Log in to RStudio:**
+
+    -   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+    -   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+
+2.  **Clone the repo & start new RStudio project:**
+
+    -   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
+        Click on the repo with the prefix **lab-2**.
+        It contains the starter documents you need to complete the lab.
+
+    -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
+        Click on the clipboard icon to copy the repo URL.
+
+    -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+
+    -   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+
+    -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+    -   Click *lab-2.qmd* to open the template Quarto file.
+        This is where you will write up your code and narrative for the lab.
+
+3.  **Update the YAML:**
+
+    -   Open the Quarto (`.qmd`) file in your project, update the `authors` field to add your name first (first and last) and then your teammates' names (first and last).
+        Then, render the document.
+
+    -   If you get a popup window error, click "Try again".
+
+    -   Examine the rendered document and make sure your name is updated in the document.
+
+4.  **Commit your changes:**
+
+    -   Go to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.
+
+    If you have made changes to your Quarto (.qmd) file, you should see it listed here.
+    If you have rendered the document, you should also see its output, a PDF file, listed there.
+
+    -   Click on it to select it in this list and then click on **Diff**.
+
+    This shows you the *diff*erence between the last committed state of the document and its current state including changes.
+    You should see deletions in red and additions in green.
+
+    -   If you're happy with these changes, prepare the changes to be pushed to your remote repository.
+
+        -   First, **stage** your changes by checking the appropriate box on the files you want to prepare.
+
+        -   Next, write a meaningful commit message (for instance, "Updated author name") in the **Commit message** box.
+
+        -   Finally, click **Commit**.
+            Note that every commit needs to have a commit message associated with it.
+
+5.  **Push your changes:**
+
+    -   In the Git pane, click on Push.
+
+    -   Then, make sure all the changes went to GitHub.
+        Go to your GitHub repo in your browser and refresh the page.
+        You should see your commit message next to the updated files.
+        If you see this, all your changes are on GitHub, and you're good to go!
+
+::: callout-warning
+If you don't see your update, go back to Step 4.
+Remember that in order to push your changes to GitHub, you must have **staged** (checked boxes) your **commit** (with a commit message) to be pushed and then click on **Push**.
+:::
+
+## Guidelines
+
+{{< include _guidelines.qmd >}}
+
+# Packages
+
+In this lab we will work with the **tidyverse** package.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+```
+
+-   **Run** the code cell by clicking on the green triangle (play) button for the code cell labeled `load-packages`. This loads the package to make its features (the functions and datasets in it) be accessible from your *Console*.
+-   Then, **render** the document which loads this package to make its features (the functions and datasets in it) be available for other code cells in your Quarto document.
+
+# Questions
+
+## Question 1
+
+Grouping by one variable.
+
+The following dataframe is used:
+
+```{r}
+df <- tibble(
+  var_1 = c(50, 20, 70, 10, 100, 30, 40, 80, 120, 60, 90, 110),
+  var_2 = c("Pizza", "Burger", "Pizza", "Pizza", "Burger", "Burger",
+            "Burger", "Pizza", "Burger", "Pizza", "Pizza", "Burger"),
+  var_3 = c("Apple", "Apple", "Pear", "Banana", "Pear", "Banana",
+            "Apple", "Apple", "Pear", "Pear", "Banana", "Banana")
+)
+
+df
+```
+
+a.  What does the following code chunk do? Run it, analyze the result, and articulate in words what `arrange()` does.
+
+```{r}
+#| eval: false
+df |>
+  arrange(var_2)
+```
+
+b.  What does the following code chunk do? Run it and analyze the result and articulate in words what `group_by()` does.
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2)
+```
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Q1, parts a and b".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+c.  What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does.
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2) |>
+  summarize(mean_var_1 = mean(var_1))
+```
+
+d.  Compare this behavior to the following code chunk. Run it, analyze the result, and articulate in words what the pipeline does, and how it's behavior is different from part (c).
+
+```{r}
+#| eval: false
+df |>
+  summarize(mean_var_1 = mean(var_1))
+```
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Finished Q1".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+## Question 2
+
+Grouping by two variables.
+
+a.  How many levels does `var_2` have?
+    How many levels does `var_3`have?
+    How many possible combinations are there of the levels of `var_2` and `var_3`?
+
+b.  What does the following code chunk do?
+    Run it and analyze the result and articulate in words what the pipeline does.
+    Then, comment on what the message says.
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2, var_3) |>
+  summarize(mean_var_1 = mean(var_1))
+```
+
+c.  What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does. How is the output different from the one in part (a)?
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2, var_3) |>
+  summarize(mean_var_1 = mean(var_1), .groups = "drop")
+```
+
+d.  What do the following pipelines do? Run both and analyze their results and articulate in words what each pipeline does. How are the outputs of the two pipelines different?
+
+```{r}
+#| eval: false
+df |>
+  group_by(var_2, var_3) |>
+  summarize(mean_var_1 = mean(var_1), .groups = "drop")
+
+df |>
+  group_by(var_2, var_3) |>
+  mutate(mean_var_1 = mean(var_1))
+```
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with a meaningful commit message.
+&nbsp;
+<br>
+<br>
+:::
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+{{< include _submission.qmd >}}
+
+## Grading and feedback
+
+-   This lab is worth 30 points:
+    -   10 points for being in lab and turning in *something* -- no partial credit for this part.
+    -   20 points for:
+        -   answering the questions correctly -- there is partial credit for this part.
+        -   following the workflow -- there is partial credit for this part.
+-   The workflow points are for:
+    -   committing at least three times as you work through your lab,
+    -   having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+    -   overall organization.
+-   You'll receive feedback on your lab on Gradescope within a week.
+
+Good luck, and have fun with it!
