@@ -1569,7 +1569,7 @@
     "href": "hw/hw-1.html#data",
     "title": "HW 1",
     "section": "Data",
-    "text": "Data\nWe will use the midwest data frame for this lab. It is part of the ggplot2 R package, so the midwest data set is automatically loaded when you load the tidyverse package.\nThe data contains demographic characteristics of counties in the Midwest region of the United States.\nBecause the data set is part of the ggplot2 package, you can read documentation for the data set, including variable definitions by typing ?midwest in the Console or searching for midwest in the Help pane."
+    "text": "Data\nWe will use the midwest data frame for this homework. It is part of the ggplot2 R package, so the midwest data set is automatically loaded when you load the tidyverse package.\nThe data contains demographic characteristics of counties in the Midwest region of the United States.\nBecause the data set is part of the ggplot2 package, you can read documentation for the data set, including variable definitions by typing ?midwest in the Console or searching for midwest in the Help pane."
   },
   {
     "objectID": "hw/hw-1.html#questions",
@@ -1604,7 +1604,7 @@
     "href": "hw/hw-1.html#grading-and-feedback",
     "title": "HW 1",
     "section": "Grading and feedback",
-    "text": "Grading and feedback\n\nQuestions 1-5 are not graded, but you should complete them to get practice.\n\nQuestions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.\n\nQuestions will be graded for accuracy and completeness.\nPartial credit will be given where appropriate.\nThere are also workflow points for:\n\ncommitting at least three times as you work through your lab,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization."
+    "text": "Grading and feedback\n\nQuestions 1-5 are not graded, but you should complete them to get practice.\n\nQuestions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.\n\nQuestions will be graded for accuracy and completeness.\nPartial credit will be given where appropriate.\nThere are also workflow points for:\n\ncommitting at least three times as you work through your homework,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization."
   },
   {
     "objectID": "lab.html",
