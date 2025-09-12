@@ -335,6 +335,8 @@ Recreate the following visualization that compares the distribution of home owne
 - Legend: You should move the legend to the top of the plot. You can do this in a `theme()` layer. See [theme documentation](https://ggplot2.tidyverse.org/reference/theme.html) to identify the argument you need to change to move the legend.
 
 - Aspect ratio: You can adjust the aspect ratio by setting the `fig-asp` option in the code cell. A smaller (closer to 0) value makes the plot shorter and wider, while a larger (closer to 1) value makes the plot square-ish.
+
+- Width: You can also adjust the width of the plot by setting the `fig-width` option in the code cell. A larger value makes the plot wider.
 :::
 
 ::: render-commit-push
