@@ -131,7 +131,10 @@ window.Quarto = {
 </script>
 <meta property="og:title" content="Lab 2 – STA 199">
 <meta property="og:description" content="Due: End of lab on Mon, Sep 15">
+<meta property="og:image" content="https://sta199-f25.github.io/lab/images/lab-2/group_by.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="840">
+<meta property="og:image:width" content="1496">
 </head>
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -622,14 +625,14 @@ window.Quarto = {
 <span><span class="va">df_1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
-<li>What does the following code chunk do? Run it and analyze the result and articulate in words what <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> does.</li>
+<li>What does the following pipeline do? Run it and analyze the result and articulate in words what <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> does.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_1</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">member</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
-<li>What does the following code chunk do? Run it and analyze the result and articulate in words what <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> does.</li>
+<li>What does the following pipeline do? Run it and analyze the result and articulate in words what <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> does.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_1</span> <span class="op">|&gt;</span></span>
@@ -652,6 +655,22 @@ window.Quarto = {
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_1</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">member</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>total_hours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">hours</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/lab-2/group_by.png" class="img-fluid figure-img"></p>
+<figcaption>A visual representation of what <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> does</figcaption></figure>
+</div>
+</div>
 </div>
 <ol start="4" type="a">
 <li>Run the following code cell and analyze the result.
