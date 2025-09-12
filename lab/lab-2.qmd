@@ -55,7 +55,8 @@ library(tidyverse)
 **Grouping by one variable.**
 
 For this question, you will work with the following dataset called `df_1.
-The `tibble()` function creates the data frame (the `tibble` object) `df_1` with two variables: `team` and `score`.
+The `tibble()` function creates the data frame (the `tibble` object) `df_1` with two variables: `member` and `hours`.
+The following code is already included in your lab document.
 
 ```{r}
 df_1 <- tibble(
@@ -125,8 +126,11 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ## Question 2
 
-For the two questions in this lab, you will work with the following dataset called `df_2`.
-This code is already included in your lab document.
+**Grouping by two variables.**
+
+For this question, you will work with the following dataset called `df_1.
+The `tibble()` function creates the data frame (the `tibble` object) `df_2` with three variables: `shift`, `member` and `hours`.
+The following code is already included in your lab document.
 
 ```{r}
 df_2 <- tibble(
@@ -138,7 +142,6 @@ df_2 <- tibble(
 df_2
 ```
 
-Grouping by two variables.
 
 a.  How many levels does `member` have?
     How many levels does `shift`have?
