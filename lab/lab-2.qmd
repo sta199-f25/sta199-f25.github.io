@@ -66,7 +66,7 @@ df_1 <- tibble(
 df_1
 ```
 
-a.  What does the following code chunk do? Run it and analyze the result and articulate in words what `arrange()` does.
+a.  What does the following pipeline do? Run it and analyze the result and articulate in words what `arrange()` does.
 
 ```{r}
 #| results: false
@@ -74,7 +74,7 @@ df_1 |>
   arrange(member)
 ```
 
-b.  What does the following code chunk do? Run it and analyze the result and articulate in words what `group_by()` does.
+b.  What does the following pipeline do? Run it and analyze the result and articulate in words what `group_by()` does.
 
 ```{r}
 #| results: false
@@ -99,6 +99,12 @@ df_1 |>
   group_by(member) |>
   summarize(total_hours = sum(hours))
 ```
+
+::: callout-tip
+
+![A visual representation of what `group_by()` does](images/lab-2/group_by.png)
+
+:::
 
 d.  Run the following code cell and analyze the result.
     - How many rows does the output have?
