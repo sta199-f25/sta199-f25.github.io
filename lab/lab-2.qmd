@@ -52,36 +52,34 @@ library(tidyverse)
 
 ## Question 1
 
-Grouping by one variable.
+**Grouping by one variable.**
 
-The following dataframe is used:
+For this question, you will work with the following dataset called `df_1.
+The `tibble()` function creates the data frame (the `tibble` object) `df_1` with two variables: `team` and `score`.
 
 ```{r}
-df <- tibble(
-  var_1 = c(50, 20, 70, 10, 100, 30, 40, 80, 120, 60, 90, 110),
-  var_2 = c("Pizza", "Burger", "Pizza", "Pizza", "Burger", "Burger",
-            "Burger", "Pizza", "Burger", "Pizza", "Pizza", "Burger"),
-  var_3 = c("Apple", "Apple", "Pear", "Banana", "Pear", "Banana",
-            "Apple", "Apple", "Pear", "Pear", "Banana", "Banana")
+df_1 <- tibble(
+  member = c("A", "B", "B", "A", "B"),
+  hours  = c(10, 5, 2, 7, 6)
 )
 
-df
+df_1
 ```
 
-a.  What does the following code chunk do? Run it, analyze the result, and articulate in words what `arrange()` does.
+a.  What does the following code chunk do? Run it and analyze the result and articulate in words what `arrange()` does.
 
 ```{r}
-#| eval: false
-df |>
-  arrange(var_2)
+#| results: false
+df_1 |>
+  arrange(member)
 ```
 
 b.  What does the following code chunk do? Run it and analyze the result and articulate in words what `group_by()` does.
 
 ```{r}
-#| eval: false
-df |>
-  group_by(var_2)
+#| results: false
+df_1 |>
+  group_by(member)
 ```
 
 ::: render-commit-push
@@ -90,21 +88,27 @@ Render, commit, and push your changes to GitHub with the commit message "Added a
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-c.  What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does.
+c.  Run the following code cell and analyze the result.
+    - How many rows does the output have?
+    - How many columns does the output have?
+    - Is the output grouped? If so, how many groups does it have?
 
 ```{r}
-#| eval: false
-df |>
-  group_by(var_2) |>
-  summarize(mean_var_1 = mean(var_1))
+#| results: false
+df_1 |>
+  group_by(member) |>
+  summarize(total_hours = sum(hours))
 ```
 
-d.  Compare this behavior to the following code chunk. Run it, analyze the result, and articulate in words what the pipeline does, and how it's behavior is different from part (c).
+d.  Run the following code cell and analyze the result.
+    - How many rows does the output have?
+    - How many columns does the output have?
+    - Is the output grouped? If so, how many groups does it have?
 
 ```{r}
-#| eval: false
-df |>
-  summarize(mean_var_1 = mean(var_1))
+#| results: false
+df_1 |>
+  summarize(total_hours = sum(hours))
 ```
 
 ::: render-commit-push
@@ -115,43 +119,61 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ## Question 2
 
+For the two questions in this lab, you will work with the following dataset called `df_2`.
+This code is already included in your lab document.
+
+```{r}
+df_2 <- tibble(
+  shift  = c("day", "day", "night", "day", "night", "day", "night", "night", "day", "night"),
+  member = c("A", "B", "B", "A", "B", "B", "B", "A", "A", "B"),
+  hours  = c(10, 5, 2, 7, 6, 5, 4, 2, 3, 5),
+)
+
+df_2
+```
+
 Grouping by two variables.
 
-a.  How many levels does `var_2` have?
-    How many levels does `var_3`have?
-    How many possible combinations are there of the levels of `var_2` and `var_3`?
+a.  How many levels does `member` have?
+    How many levels does `shift`have?
+    How many possible combinations are there of the levels of `member` and `shift`?
 
-b.  What does the following code chunk do?
-    Run it and analyze the result and articulate in words what the pipeline does.
-    Then, comment on what the message says.
+b.  Run the following code cell and analyze the result.
+    - How many rows does the output have?
+    - How many columns does the output have?
+    - Is the output grouped? If so, how many groups does it have?
+    - What does the message mean?
 
 ```{r}
-#| eval: false
-df |>
-  group_by(var_2, var_3) |>
-  summarize(mean_var_1 = mean(var_1))
+#| results: false
+df_2 |>
+  group_by(shift, member) |>
+  summarize(mean_hours = mean(hours))
 ```
 
-c.  What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does. How is the output different from the one in part (b)?
+c.  Run the following code cell and analyze the result.
+    - How many rows does the output have?
+    - How many columns does the output have?
+    - Is the output grouped? If so, how many groups does it have?
 
 ```{r}
-#| eval: false
-df |>
-  group_by(var_2, var_3) |>
-  summarize(mean_var_1 = mean(var_1), .groups = "drop")
+#| results: false
+df_2 |>
+  group_by(shift, member) |>
+  summarize(mean_hours = mean(hours), .groups = "drop")
 ```
 
-d.  What do the following pipelines do? Run both and analyze their results and articulate in words what each pipeline does. How are the outputs of the two pipelines different?
+e.  Run the following code cell and analyze the result.
+    - How many rows does the output have?
+    - How many columns does the output have?
+    - Is the output grouped? If so, how many groups does it have?
+    - Articulate the difference between `summarize()` and `mutate()`.
 
 ```{r}
-#| eval: false
-df |>
-  group_by(var_2, var_3) |>
-  summarize(mean_var_1 = mean(var_1), .groups = "drop")
-
-df |>
-  group_by(var_2, var_3) |>
-  mutate(mean_var_1 = mean(var_1))
+df_2 |>
+  group_by(shift, member) |>
+  mutate(mean_hours = mean(hours)) |>
+  arrange(shift, member)
 ```
 
 ::: render-commit-push
