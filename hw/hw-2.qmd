@@ -221,10 +221,10 @@ Your answers to the questions in this part should go in the file `hw-2-part-2.qm
 
 ## Packages
 
-You will use the **tidyverse** package for data wrangling and visualization, **scales** for better axis labels, and **ggthemes** for additional color palettes.
+You will use the **tidyverse** package for data wrangling and visualization, **scales** for better axis labels, and **ggbeeswarm** for additional geoms.
 
 ```{r}
-#| eval: true
+#| eval: false
 #| message: false
 library(tidyverse)
 library(scales)
