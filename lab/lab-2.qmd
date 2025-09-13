@@ -172,7 +172,7 @@ df_2 |>
   summarize(mean_hours = mean(hours), .groups = "drop")
 ```
 
-e.  Run the following code cell and analyze the result.
+d.  Run the following code cell and analyze the result.
     - How many rows does the output have?
     - How many columns does the output have?
     - Is the output grouped? If so, how many groups does it have?
