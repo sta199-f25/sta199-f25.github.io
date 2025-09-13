@@ -10,46 +10,53 @@ draft: true
 
 This is a two-part homework assignment:
 
-- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-1-part-1.qmd`, no submission required.
+- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-2-part-1.qmd`, no submission required.
 
-- **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team within a week. Complete in `hw-1-part-2.qmd`, submit on Gradescope.
+- **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team within a week. Complete in `hw-2-part-2.qmd`, submit on Gradescope.
 
-To get started, follow the instructions below.
+By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.
+
+<details>
+<summary>Click to expand if you need a refresher on how to get started with a homework assignment.</summary>
 
 -   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
 -   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
 -   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
-    Click on the repo with the prefix **hw-1**.
+    Click on the repo with the prefix **hw-2**.
     It contains the starter documents you need to complete the homework.
 -   Click on the green **CODE** button, select **Use SSH**.
     Click on the clipboard icon to copy the repo URL.
 -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
 -   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
 -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+</details>
 
-## Guidelines
+By now you should also be familiar with guidelines for formatting your code and plots as well as your Git and Gradescope workflow.
 
-The guidelines should feel familiar, as they are the same ones from the lab! They are included below as a reminder.
-
+<details>
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
 {{< include _guidelines.qmd >}}
+</details>
+
 
 # Part 1 -- Feedback from AI
 
-Your answers to the questions in this part should go in the file `hw-1-part-1.qmd`.
+Your answers to the questions in this part should go in the file `hw-2-part-1.qmd`.
 
 ## Instructions
 
-Write your answer to each question in the appropriate section of the `hw-1-part-1.qmd` file.
+Write your answer to each question in the appropriate section of the `hw-2-part-1.qmd` file.
 Then, highlight your answer to a question, click on _Addins > AIFEEDR > Get feedback_.
-In the app that opens, select the appropriate homework number (1) and question number.
+In the app that opens, select the appropriate homework number (2) and question number.
 Then click on _Get Feedback_.
 Please be patient, feedback generation can take a few seconds. 
 Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. 
 You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.
 
-The video below demonstrates how to use the AI feedback tool.
-
+<details>
+<summary>Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.</summary>
 {{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
+</details>
 
 ## Packages
 
@@ -71,7 +78,11 @@ Because the data set is part of the **ggplot2** package, you can read documentat
 
 ### Question 1
 
-TO DO: Add Q.
+Calculate the number of counties in each state and display your results in descending order of number of counties. 
+
+Which state has the highest number of counties, and how many? 
+
+Which state has the lowest number, and how many?
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 1".
@@ -81,7 +92,30 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 2
 
-TO DO: Add Q.
+While two counties in a given state can’t have the same name, some county names might be shared across states. A classmate says “Look at that, there is a county called `___` in each state in this dataset!” In a single pipeline, discover all counties that could fill in the blanks. Your response should be a data frame with only the county names that could fill in the blank and the number of times they appear in the data, and narrative stating the county names that could fill in this blank. 
+
+::: callout-tip
+You will want to use the `filter()` function in your answer, which requires a logical condition to describe what you want to filter for.
+For example, `filter(x > 2)` means filter for values of `x` greater than 2, and `filter(y <= 3)` means filter for values of y less than or equal to 3.
+
+The table below is a summary of logical operators and how to articulate them in R.
+
+| operator      | definition                |
+|---------------|---------------------------|
+| `<`           | less than                 |
+| `<=`          | less than or equal to     |
+| `>`           | greater than              |
+| `>=`          | greater than or equal to  |
+| `==`          | exactly equal to          |
+| `!=`          | not equal to              |
+| `x & y`       | `x` AND `y`               |
+| `x` \| `y`    | `x` OR `y`                |
+| `is.na(x)`    | test if `x` is `NA`       |
+| `!is.na(x)`   | test if `x` is not `NA`   |
+| `x %in% y`    | test if `x` is in `y`     |
+| `!(x %in% y)` | test if `x` is not in `y` |
+| `!x`          | not `x`                   |
+:::
 
 ::: callout-important
 In describing a distribution, make sure to mention shape, center, spread, and any unusual observations.
@@ -95,7 +129,30 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 3
 
-TO DO: Add Q.
+Return to the following box plot of population densities where you were asked to identify at least one outlier.
+
+```{r}
+#| label: popdensity-boxplot
+#| fig-width: 5
+#| fig-height: 3
+#| echo: false
+#| eval: true
+
+ggplot(midwest, aes(x = popdensity)) +
+  geom_boxplot() +
+  labs(
+    title = "Population densities of midwest counties",
+    x = "Population density"
+  )
+```
+
+In this question, we want you to revisit this box plot and identify the counties described in each section.
+
+a. The counties with a population density higher than 25,000. Your code must use the `filter()` function.
+
+b. The county with the highest population density. Your code must use the `max()` function.
+
+Answer using a single data wrangling pipeline for each part. Your response should be a data frame with five columns: county name, state name, population density, total population, and area, in this order. If your response has multiple rows, the data frame should be arranged in descending order of population density.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 3".
@@ -105,7 +162,15 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 4
 
-TO DO: Add Q.
+In HW 1 you were also asked to describe the distribution of population densities.
+The following is one acceptable description that touches on the shape, center, and spread of this distribution.
+Calculate the values that should go into the blanks.
+
+> The distribution of population density of counties is unimodal and extremely right-skewed. A typical Midwestern county has population density of `____` people per unit area. The middle 50% of the counties have population densities between `____` to `____` people per unit area.
+
+::: callout-tip
+Think about which measures of center and spread are appropriate for skewed distributions.
+:::
 
 ::: render-commit-push
 Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
@@ -115,7 +180,33 @@ Once again, make sure to commit and push all changed files so that your Git pane
 
 ### Question 5
 
-TO DO: Add Q.
+Another visualization from HW 1 was the following, which showed the proportion of urban counties in each state.
+
+```{r}
+#| label: metro-barplot
+#| fig-width: 7
+#| fig-height: 3
+#| echo: false
+#| eval: true
+midwest <- midwest |>
+  mutate(metro = if_else(inmetro == 1, "Yes", "No"))
+
+ggplot(midwest, aes(x = state, fill = metro)) +
+  geom_bar(position = "fill") +
+  labs(
+    title = "Do some states have more urban counties than others?",
+    x = "State",
+    y = "Proportion in metro area",
+    fill = "In metro area?"
+  )
+```
+
+Calculate these proportions in a single data pipeline.
+
+::: callout-tip
+Remember, you'll first need to create a new variable called `metro` which takes on the value `Yes` if the value of `inmetro` is 1, and `No` otherwise.
+You can refer to [HW 1](/hw/hw-1.html#question-5) if you need a refresher on how to do this.
+:::
 
 ::: render-commit-push
 Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
@@ -155,7 +246,7 @@ library(ggthemes)
 
 ### Data
 
-For the remaining questions on the homework, you will continue use data on counties in North Carolina that you used in Lab 1.
+For the remaining questions on the homework, you will continue use data on counties in North Carolina that you used in HW 1.
 
 As a reminder, the dataset contains information on North Carolina counties retrieved from the 2020 Census as well as from [myFutureNC Dashboard](https://dashboard.myfuturenc.org/county-data-and-resources/) maintained by Carolina Demography at the University of North Carolina at Chapel Hill.
 
