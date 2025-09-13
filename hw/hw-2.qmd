@@ -301,6 +301,34 @@ c.  In a single pipeline, calculate the
 
 d.  In a single pipeline, calculate the same statistics as in part (b) but for each `county_type`.
 
+::: callout-warning
+If you don't create the new variable `p_edu_he` in part (b), you will not be able to answer the remaining parts of this question or any of the remaining questions on the homework.
+
+Therefore, here is a quick check to make sure you created the variable correctly -- after creating the variable, run the following code:
+
+```{r}
+#| eval: false
+nc_county |> 
+  select(p_edu_he) |> 
+  slice_head(n = 3)
+```
+
+You should see the following output:
+
+```
+# A tibble: 5 × 1
+  p_edu_he
+     <dbl>
+1    0.615
+2    0.525
+3    0.525
+```
+
+If you do not see this output, please revisit part (b) of this question and make sure you created the variable correctly. 
+Ask for help on Ed or in office hours if you need assistance.
+
+:::
+
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 6".
 
