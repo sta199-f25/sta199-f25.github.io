@@ -54,7 +54,7 @@ library(tidyverse)
 
 **Grouping by one variable.**
 
-For this question, you will work with the following dataset called `df_1.
+For this question, you will work with the following dataset called `df_1`.
 The `tibble()` function creates the data frame (the `tibble` object) `df_1` with two variables: `member` and `hours`.
 The following code is already included in your lab document.
 
@@ -128,7 +128,7 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 **Grouping by two variables.**
 
-For this question, you will work with the following dataset called `df_1.
+For this question, you will work with the following dataset called `df_2`.
 The `tibble()` function creates the data frame (the `tibble` object) `df_2` with three variables: `shift`, `member` and `hours`.
 The following code is already included in your lab document.
 
