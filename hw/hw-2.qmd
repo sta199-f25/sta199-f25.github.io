@@ -137,7 +137,6 @@ Return to the following box plot of population densities where you were asked to
 #| fig-height: 3
 #| echo: false
 #| eval: true
-
 ggplot(midwest, aes(x = popdensity)) +
   geom_boxplot() +
   labs(
@@ -220,19 +219,7 @@ So take a moment to make sure you're following along with the version control in
 
 Your answers to the questions in this part should go in the file `hw-2-part-2.qmd`.
 
-## Question 6
-
-TO DO: Add Q.
-
-::: render-commit-push
-Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 6".
-
-Make sure to commit and push all changed files so that your Git pane is empty afterward.
-:::
-
-## Questions 7-10 -- Exploring NC Counties
-
-### Packages
+## Packages
 
 You will use the **tidyverse** package for data wrangling and visualization, **scales** for better axis labels, and **ggthemes** for additional color palettes.
 
@@ -241,10 +228,10 @@ You will use the **tidyverse** package for data wrangling and visualization, **s
 #| message: false
 library(tidyverse)
 library(scales)
-library(ggthemes)
+library(ggbeeswarm)
 ```
 
-### Data
+## Data
 
 For the remaining questions on the homework, you will continue use data on counties in North Carolina that you used in HW 1.
 
@@ -252,7 +239,7 @@ As a reminder, the dataset contains information on North Carolina counties retri
 
 This dataset is stored in a file called `nc-county.csv` in the `data` folder of your project/repository.
 
-The variables in the dataset and their descriptions are as follows:
+The variables in the dataset and their descriptions are the same as in HW 1:
 
 -   `county`: Name of county.
 -   `land_area_m2`: Land area of county in meters-squared, based on the 2020 census.
@@ -277,21 +264,70 @@ The variables in the dataset and their descriptions are as follows:
 -   `p_edu_hs_grad_rate`: High school graduation rate.
 -   `p_edu_chronic_absent_rate`: Chronic absenteeism rate.
 
-Just like in lab, you can read this file into R with the following code:
+You can read this file into R with the following code:
 
 ```{r}
-#| eval: false
 nc_county <- read_csv("data/nc-county.csv")
 ```
 
-```{r}
-#| include: false
-nc_county <- read_csv(here::here("data/nc-county.csv"))
-```
+## Questions
+
+### Question 6
+
+a.  Report the number of rows and columns in `nc_county`.
+
+b.  Create a new variable called `p_edu_he` (short for "percentage of population with higher education") that is the sum of the percentages of 
+
+    - 25-44-year-olds with some college or an associate degree (`p_edu_scnd`), 
+    - non-degree credentials (`p_edu_ndc`), 
+    - an associate degree (`p_edu_assoc`), 
+    - a bachelor's degree (`p_edu_ba`), and
+    - a master's, professional, or doctoral degree (`p_edu_mapl`).
+
+    and store this variable in the `nc_county` data frame.
+
+    Then, report the number of rows and columns in `nc_county` after adding this variable.
+
+c.  In a single pipeline, calculate the 
+
+    - minimum,
+    - first quartile (25th percentile),
+    - median (50th percentile),
+    - mean,
+    - third quartile (75th percentile), and
+    - maximum
+
+    of `p_edu_he`.
+
+d.  In a single pipeline, calculate the same statistics as in part (b) but for each `county_type`.
+
+::: render-commit-push
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 6".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
 
 ### Question 7
 
-TO DO: Add Q.
+Using the variable you created in Question 6, re-create the following plot that shows the distribution of `p_edu_he` by `county_type`.
+
+![](images/hw-2/plot-to-recreate.png)
+
+::: callout-tip
+- x-axis: You learned how to format the x-axis as percentages in class and had a hint about it in your previous homework assignment. You can use the same approach here.
+
+- Points: The points are drawn with the `geom_beeswarm()` function from the **ggbeeswarm** package.
+
+- Outliers: The outliers in the box plots are drawn as _open circles_. You can specify this with the `outlier.shape` argument in `geom_boxplot()`. You can also adjust the size of the outliers with the `outlier.size` argument. The ggplot2 [aesthetic specifications documentation](https://ggplot2.tidyverse.org/articles/ggplot2-specs.html#point) has a list of shape names you can use for help.
+
+- Color palette: The colors for the box plots are manually specified in a `scale_color_manual()` layer. You do not need to worry about the exact colors, but you should try to get close, e.g., use blue-ish colors for Rural counties, red-ish for Suburban, and brown-ish for Urban. You can use HEX codes for colors or look up named colors in R in the [R colors cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf)
+
+- Transparancy: You should adjust the transparency of the box plots. You don't have to worry about the exact transparency value, but you should try to get close.
+
+- Theme: This plot uses a non-default theme. See [theme options documentation](https://ggplot2.tidyverse.org/reference/ggtheme.html) for options.
+
+- Aspect ratio and width: You can adjust the aspect ratio and width of your plot in your _rendered document_ by setting `fig-asp` and `fig-width` options in the code cell.
+:::
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 7".
@@ -301,15 +337,22 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 8
 
-TO DO: Add Q.
+In a single pipeline, identify the outliers in the plot in Question 7, and return a data frame with the county name, county type, percentage with higher education, and percentage of children living in poverty.
 
 ::: render-commit-push
-Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
+Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 8".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
 ### Question 9
 
-TO DO: Add Q.
+Create a scatter plot with percentage of 25-44 year olds with higher education (`p_edu_he`) on the x-axis and median household income (`median_hh_income`) on the y-axis. Describe the relationship between these two variables. In your description, make sure to comment on the direction, form, strength, and any unusual observations. For unusual observations, identify the counties that correspond to these observations, and make sure to include the code you used to identify them as part of your answer.
+
+Requirements for the plot (in addition to the requirements in the overall assignment [guidelines](/guidelines.html#plots)):
+
+- The x-axis should be formatted as percentages, e.g., 30%, not 0.3.
+- The y-axis should be formatted as dollar amounts, e.g., \$40,000, not 4e+04.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with an informative and concise commit message.
@@ -317,7 +360,8 @@ Render, commit, and push your changes to GitHub with an informative and concise 
 
 ### Question 10
 
-TO DO: Add Q.
+Come up with a question that you could answer with the `nc_county` data frame and the new `p_edu_he` variable you created in Question 6 and state it explicitly.
+Then, answer your question with an appropriate data visualization and/or data transformation pipeline and a brief description of your findings.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with an informative and concise commit message.
