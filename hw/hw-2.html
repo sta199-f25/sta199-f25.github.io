@@ -911,6 +911,33 @@ Tip
 </li>
 <li><p>In a single pipeline, calculate the same statistics as in part (b) but for each <code>county_type</code>.</p></li>
 </ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you don’t create the new variable <code>p_edu_he</code> in part (b), you will not be able to answer the remaining parts of this question or any of the remaining questions on the homework.</p>
+<p>Therefore, here is a quick check to make sure you created the variable correctly – after creating the variable, run the following code:</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nc_county</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">p_edu_he</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You should see the following output:</p>
+<pre><code># A tibble: 5 × 1
+  p_edu_he
+     &lt;dbl&gt;
+1    0.615
+2    0.525
+3    0.525</code></pre>
+<p>If you do not see this output, please revisit part (b) of this question and make sure you created the variable correctly. Ask for help on Ed or in office hours if you need assistance.</p>
+</div>
+</div>
 <div class="render-commit-push">
 <p>Render, commit, and push your changes to GitHub with the commit message “Added answer for Question 6”.</p>
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
