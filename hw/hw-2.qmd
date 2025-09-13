@@ -92,7 +92,11 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 2
 
-While two counties in a given state can’t have the same name, some county names might be shared across states. A classmate says “Look at that, there is a county called `___` in each state in this dataset!” In a single pipeline, discover all counties that could fill in the blanks. Your response should be a data frame with only the county names that could fill in the blank and the number of times they appear in the data, and narrative stating the county names that could fill in this blank. 
+While two counties in a given state can’t have the same name, some county names might be shared across states. A classmate says 
+
+> “Look at that, there is a county called `___` in each state in this dataset!” 
+
+In a single pipeline, discover all counties that could fill in the blanks. Your response should be a data frame with only the county names that could fill in the blank and the number of times they appear in the data, and narrative stating the county names that could fill in this blank. 
 
 ::: callout-tip
 You will want to use the `filter()` function in your answer, which requires a logical condition to describe what you want to filter for.
@@ -115,10 +119,6 @@ The table below is a summary of logical operators and how to articulate them in 
 | `x %in% y`    | test if `x` is in `y`     |
 | `!(x %in% y)` | test if `x` is not in `y` |
 | `!x`          | not `x`                   |
-:::
-
-::: callout-important
-In describing a distribution, make sure to mention shape, center, spread, and any unusual observations.
 :::
 
 ::: render-commit-push
