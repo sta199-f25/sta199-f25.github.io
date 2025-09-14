@@ -10,6 +10,8 @@ draft: false
 
 This lab is a deep dive into `group_by()`!
 
+Make sure to upload your completed lab to Gradescope **by the end of your lab session** and commit and push your final version to GitHub.
+
 ## Getting started
 
 To get started, follow the instructions below.
