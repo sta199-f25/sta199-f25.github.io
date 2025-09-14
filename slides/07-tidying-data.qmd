@@ -2,6 +2,7 @@
 title: "Tidying data"
 subtitle: "Lecture 7"
 date: "2025-09-16"
+author: "Guest lecture by Marie Neubrander <br><br>Dr. Mine Çetinkaya-Rundel"
 format: 
   revealjs: 
     output-file: 07-tidying-data-slides.html
