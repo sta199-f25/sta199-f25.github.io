@@ -386,15 +386,125 @@ print(statsci |>
 
 ## `pivot_longer()` {.smaller .scrollable}
 
-::: task
-Pivot the `statsci` data frame *longer* such that each row represents a degree type / year combination and `year` and `n`umber of graduates for that year are columns in the data frame.
-:::
+::: {.columns}
+
+::: {.column width="65%"}
 
 ```{r}
-# add code here
+#| echo: false
+cat("# A tibble: 4 x 16")
+statsci |> 
+  select(1:10) |> 
+  as.data.frame()
 ```
 
-## `year`
+::: {.task .fragment}
+Pivot the `statsci` data frame *longer* such that each row represents a degree type / year combination.
+
+`year` and `n`umber of graduates for that year are columns in the result data frame.
+:::
+
+:::
+
+::: {.column width="5%"}
+$$ \to $$
+:::
+
+
+::: {.column width="30%"}
+
+
+```{r}
+#| echo: false
+cat("# A tibble: 60 x 3")
+print(statsci |>
+        pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric) |>
+      slice_head(n = 17) |>
+        as.data.frame())
+```
+::: 
+:::
+
+
+## `pivot_longer()` {.smaller .scrollable}
+
+::: {.columns}
+
+::: {.column width="65%"}
+
+```{r}
+#| echo: false
+cat("# A tibble: 4 x 16")
+statsci |> 
+  select(1:10) |> 
+  as.data.frame()
+```
+
+::: {.task .fragment}
+```{r}
+#| eval: false
+
+statsci |>
+  pivot_longer(
+    
+    cols = ___________________ ,
+    
+    names_to = _______________ ,
+    
+    values_to = ______________
+  )
+```
+
+:::
+
+:::
+
+::: {.column width="5%"}
+$$ \to $$
+:::
+
+
+::: {.column width="30%"}
+
+
+```{r}
+#| echo: false
+cat("# A tibble: 60 x 3")
+print(statsci |>
+        pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric) |>
+      slice_head(n = 17) |>
+        as.data.frame())
+```
+::: 
+:::
+
+
+## `year` {.smaller}
+
+::: {.columns}
+
+
+::: {.column width="50%"}
+```{r}
+statsci |> 
+  pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year"
+  )
+```
+
+:::
+
+::: {.column width="50%"}
 
 ::: question
 What is the type of the `year` variable?
@@ -402,103 +512,89 @@ Why?
 What should it be?
 :::
 
-. . .
-
+::: {.fragment}
 It's a character (`chr`) variable since the information came from the columns of the original data frame and R cannot know that these character strings represent years.
+
+
 The variable type should be numeric.
+
+::: 
+:::
+:::
+
 
 ## `pivot_longer()` again {.smaller .scrollable}
 
 ::: question
-Start over with pivoting, and this time also make sure `year` is a numerical variable in the resulting data frame.
+This time, also make sure `year` is a numerical variable in the resulting data frame.
 :::
+
+::: {.columns}
+
+::: {.column width = "50%"}
 
 ```{r}
 #| eval: false
 statsci |>
   pivot_longer(
-    cols = -degree,
-    names_to = "year",
-    names_transform = as.numeric,
-    # ???
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year"
   )
 ```
 
-## `NA` counts
+:::
+
+::: {.column width = "50%" }
+
+:::
+
+:::
+
+## `pivot_longer()` again {.smaller .scrollable}
 
 ::: question
-What does an `NA` mean in this context?
-*Hint:* The data come from the university registrar, and they have records on every single graduates, there shouldn't be anything "unknown" to them about who graduated when.
+This time, also make sure `year` is a numerical variable in the resulting data frame.
 :::
 
-. . .
+::: {.columns}
 
-`NA`s should actually be 0s.
-
-## Clean-up {.smaller .scrollable}
-
-::: task
-Add on to your pipeline that you started with pivoting and convert `NA`s in `n` to `0`s.
-:::
+::: {.column width = "50%"}
 
 ```{r}
 #| eval: false
+#| code-line-numbers: "|6"
 statsci |>
   pivot_longer(
-    cols = -degree,
+    cols = -degree_type,
+    values_to = "n",
     names_to = "year",
-    names_transform = as.numeric,
-    values_to = "n"
-  ) |>
-  # ???
-```
-
-## More clean-up {.smaller .scrollable}
-
-::: task
-In our plot the degree types are BS, BS2, AB, and AB2.
-This information is in our dataset, in the `degree` column, but this column also has additional characters we don't need.
-Create a new column called `degree_type` with levels BS, BS2, AB, and AB2 (in this order) based on `degree`.
-Do this by adding on to your pipeline from earlier.
-:::
-
-```{r}
-#| eval: false
-statsci |>
-  pivot_longer(
-    cols = -degree,
-    names_to = "year",
-    names_transform = as.numeric,
-    values_to = "n"
-  ) |>
-  mutate(n = if_else(is.na(n), 0, n)) |>
-  # ???
-```
-
-## Finish {.smaller .scrollable}
-
-::: task
-Now that you have your data pivoting and cleaning pipeline figured out, save the resulting data frame as `statsci_longer`.
-:::
-
-```{r}
-#| eval: false
-statsci |>
-  pivot_longer(
-    cols = -degree,
-    names_to = "year",
-    names_transform = as.numeric,
-    values_to = "n"
-  ) |>
-  mutate(n = if_else(is.na(n), 0, n)) |>
-  separate(degree, sep = " \\(", into = c("major", "degree_type")) |>
-  mutate(
-    degree_type = str_remove(degree_type, "\\)"),
-    degree_type = fct_relevel(degree_type, "BS", "BS2", "AB", "AB2")
+    names_transform = as.numeric
   )
 ```
 
+:::
+
+::: {.column width = "50%" .fragment}
+```{r}
+#| echo: false
+statsci |>
+  pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric
+  )
+```
+:::
+
+:::
+
 # Application exercise
+
+## `{r} Goal: recreate this plot` {.smaller}
+
+add image
 
 ## `{r} todays_ae` {.smaller}
 
