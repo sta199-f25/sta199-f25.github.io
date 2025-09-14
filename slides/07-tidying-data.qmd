@@ -33,6 +33,27 @@ library(usdata)
 library(ggbeeswarm)
 ```
 
+```{r}
+#| include: false
+
+#code used for saving statsci_clean
+statsci <- read_csv("data/statsci.csv")
+
+statsci_clean <- statsci |>
+  separate(degree, sep = " \\(", into = c("major", "degree_type")) |>
+  mutate(
+    degree_type = str_remove(degree_type, "\\)"),
+    degree_type = fct_relevel(degree_type, "BS", "BS2", "AB", "AB2")
+  )
+
+
+statsci_clean <- statsci_clean |> select(-major)
+statsci_clean <- replace(statsci_clean, is.na(statsci_clean), 0)
+#write_csv(statsci_clean, "data/statsci_clean.csv")
+
+
+```
+
 ::: {.columns}
 
 ::: {.column width="85%"}
@@ -182,7 +203,7 @@ Generally useful in a `filter()` but will come up in various other places as wel
 | operator      | definition                                                            |
 |:--------------|:----------------------------------------------------------------------|
 | `x & y`       | [is x AND y?]{.fragment}                                              |
-| `x \| y`      | [is x OR y?]{.fragment}                                               |
+| `x | y`      | [is x OR y?]{.fragment}                                               |
 | `is.na(x)`    | [is x NA?]{.fragment}                                                 |
 | `!is.na(x)`   | [is x not NA?]{.fragment}                                             |
 | `x %in% y`    | [is x in y?]{.fragment}                                               |
@@ -196,14 +217,15 @@ Generally useful in a `filter()` but will come up in various other places as wel
 Let's make a tiny data frame to use as an example:
 
 ```{r}
-df <- tibble(x = c(1, 2, 3, 4, 5), y = c("a", "a", "b", "c", "c"))
+df <- tibble(x = c(1, 2, 3, 4, 5),
+             y = c("a", "a", "b", "c", "c"))
 df
 ```
 
 ## Recap: assignment {.smaller}
 
 ::: question
-Suppose you run the following and **then** you inspect `df`, will the `x` variable has values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?
+Suppose you run the following and **then** you inspect `df`.  Will the `x` variable have values `1, 2, 3, 4, 5` **or** `2, 4, 6, 8, 10`?
 :::
 
 ::: columns
@@ -214,7 +236,7 @@ df |>
 ```
 :::
 
-::: column
+::: {.column .fragment}
 ```{r}
 df
 ```
@@ -228,7 +250,7 @@ df
 ## Recap: assignment {.smaller}
 
 ::: question
-Suppose you run the following and **then** you inspect `df`, will the `x` variable has values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?
+Suppose you run the following and **then** you inspect `df`.  Will the `x` variable have values `1, 2, 3, 4, 5` **or** `2, 4, 6, 8, 10`?
 :::
 
 ::: columns
@@ -239,7 +261,7 @@ df <- df |>
 ```
 :::
 
-::: column
+::: {.column .fragment}
 ```{r}
 df
 ```
@@ -384,23 +406,102 @@ Visualize StatSci majors over the years!
 
 ```{r}
 #| include: false
-statsci <- read_csv("data/statsci.csv")
+statsci <- read_csv("data/statsci_clean.csv")
+```
+```{r}
+#| label: statsci-display
+
 statsci
 ```
 
--   The first column (variable) is the `degree`, and there are 4 possible degrees: BS (Bachelor of Science), BS2 (Bachelor of Science, 2nd major), AB (Bachelor of Arts), AB2 (Bachelor of Arts, 2nd major).
+. . . 
 
+::: incremental
+-   The first column (variable) is the `degree`: 
+
+    ::: {.small}
+    - BS (Bachelor of Science)
+    - BS2 (Bachelor of Science, 2nd major)
+    - AB (Bachelor of Arts)
+    - AB2 (Bachelor of Arts, 2nd major)
+    :::
+    
 -   The remaining columns show the number of students graduating with that major in a given academic year from 2011 to 2025.
+:::
 
 ## Let's plan! {.smaller .nostretch}
 
-::: question
-Review the goal plot and sketch the data frame needed to make the plot.
-Determine rows and columns of the data frame.
-*Hint:* Data need to be in columns to map to `aes`thetic elements of the plot.
-:::
+Review the goal plot and sketch the data frame needed to create it.
+What would go inside `aes` when we call `ggplot`?
+
 
 ![](images/07/statsci-majors.png){width="500"}
+
+## The Goal {.smaller .nostretch}
+
+We want to write code that starts something like this:
+
+```{r}
+#| eval: false
+
+ggplot(statsci, aes(x = year, y = n, color = degree_type)) + 
+  ...
+
+```
+
+
+. . . 
+
+
+<br>
+
+
+But our data are not in the right format :(
+
+```{r}
+statsci
+```
+
+## The Challenge {.smaller .nostretch}
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+***How do we go from this ....***
+
+```{r}
+#| echo: false
+cat("# A tibble: 4 x 16")
+statsci |> 
+  select(1:10) |> 
+  as.data.frame()
+```
+
+:::
+
+
+::: {.column .fragment width="30%"}
+
+***.... to this??***
+
+
+
+```{r}
+#| echo: false
+cat("# A tibble: 60 x 3")
+print(statsci |>
+        pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric) |>
+      slice_head(n = 17) |>
+        as.data.frame())
+```
+::: 
+:::
+
 
 # Pivot
 
