@@ -3,7 +3,8 @@
     "listing": "/lab.html",
     "items": [
       "/lab/lab-0.html",
-      "/lab/lab-1.html"
+      "/lab/lab-1.html",
+      "/lab/lab-2.html"
     ]
   },
   {
@@ -32,7 +33,8 @@
   {
     "listing": "/hw.html",
     "items": [
-      "/hw/hw-1.html"
+      "/hw/hw-1.html",
+      "/hw/hw-2.html"
     ]
   },
   {
