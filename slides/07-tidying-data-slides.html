@@ -263,7 +263,7 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>Update the following code to create the visualization on the right.</p>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/07/gerrymander-recreate.png"></p>
+<p><img data-src="images/07/gerrymander-recreate-2.png"></p>
 </div></div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
@@ -277,36 +277,46 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </section><section id="recap-layering-geoms-1" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
+<ol start="0" type="1">
+<li>Original Code:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry)) <span class="sc">+</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">geom_beeswarm</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-2" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
 <ol type="1">
 <li>Swap the order of the two geoms.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-2" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
+<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-3" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
 <ol start="2" type="1">
 <li>Make the boxplots semi-transparent.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
-<span id="cb4-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-3" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
+<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-4" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
 <ol start="3" type="1">
 <li>Remove the legend.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section id="recap-logical-operators" class="slide level2 smaller"><h2>Recap: logical operators</h2>
+<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="recap-logical-operators" class="slide level2 smaller"><h2>Recap: logical operators</h2>
 <p>Generally useful in a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> but will come up in various other places as well…</p>
 <table class="caption-top">
 <colgroup>
@@ -411,10 +421,10 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="goal" class="slide level2"><h2>Goal</h2>
 <p>Visualize StatSci majors over the years!</p>
 
-<img data-src="images/07/statsci-majors.png" class="r-stretch"><p><strong>TO DO:</strong> Update with plot from end of AE</p>
+<img data-src="images/07/statsci-majors-2025.png" class="r-stretch"><p><strong>TO DO:</strong> Update with plot from end of AE</p>
 </section><section id="data" class="slide level2 smaller"><h2>Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -443,20 +453,20 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <li class="fragment"><p>The remaining columns show the number of students graduating with that major in a given academic year from 2011 to 2025.</p></li>
 </ul>
 </div>
-</section><section id="lets-plan" class="slide level2 smaller nostretch"><h2>Let’s plan!</h2>
+</section><section id="lets-plan" class="slide level2 smaller"><h2>Let’s plan!</h2>
 <p>Review the goal plot and sketch the data frame needed to create it. What would go inside <code>aes</code> when we call <code>ggplot</code>?</p>
-<p><img data-src="images/07/statsci-majors.png" width="500"></p>
-</section><section id="the-goal" class="slide level2 smaller nostretch"><h2>The Goal</h2>
+
+<img data-src="images/07/statsci-majors-2025.png" width="500" class="r-stretch"></section><section id="the-goal" class="slide level2 smaller nostretch"><h2>The Goal</h2>
 <p>We want to write code that starts something like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(statsci, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type)) <span class="sc">+</span> </span>
-<span id="cb8-2"><a></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(statsci, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type)) <span class="sc">+</span> </span>
+<span id="cb9-2"><a></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><br></p>
 <p>But our data are not in the right format :(</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -536,7 +546,7 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <p><code>year</code> and <code>n</code>umber of graduates for that year are columns in the result data frame.</p>
 </div>
 </div><div class="column" style="width:5%;">
-<p><span class="math display">\[ \to \]</span></p>
+<p>⟶</p>
 </div><div class="column" style="width:30%;">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -581,19 +591,19 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="task fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb21-3"><a></a>    </span>
-<span id="cb21-4"><a></a>    <span class="at">cols =</span> ___________________ ,</span>
-<span id="cb21-5"><a></a>    </span>
-<span id="cb21-6"><a></a>    <span class="at">names_to =</span> _______________ ,</span>
-<span id="cb21-7"><a></a>    </span>
-<span id="cb21-8"><a></a>    <span class="at">values_to =</span> ______________</span>
-<span id="cb21-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb22-3"><a></a>    </span>
+<span id="cb22-4"><a></a>    <span class="at">cols =</span> ___________________ ,</span>
+<span id="cb22-5"><a></a>    </span>
+<span id="cb22-6"><a></a>    <span class="at">names_to =</span> _______________ ,</span>
+<span id="cb22-7"><a></a>    </span>
+<span id="cb22-8"><a></a>    <span class="at">values_to =</span> ______________</span>
+<span id="cb22-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
-<p><span class="math display">\[ \to \]</span></p>
+<p>⟶</p>
 </div><div class="column" style="width:30%;">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -625,12 +635,12 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>statsci <span class="sc">|&gt;</span> </span>
-<span id="cb24-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb24-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb24-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb24-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
-<span id="cb24-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>statsci <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb25-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
+<span id="cb25-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
+<span id="cb25-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
+<span id="cb25-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
    degree_type year      n
@@ -668,12 +678,12 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb26-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb26-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb26-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb26-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
-<span id="cb26-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb27-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
+<span id="cb27-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
+<span id="cb27-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
+<span id="cb27-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 
@@ -686,13 +696,13 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb27-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb27-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb27-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb27-6"><a></a>    <span class="at">names_transform =</span> as.numeric</span>
-<span id="cb27-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28" data-code-line-numbers="|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb28-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
+<span id="cb28-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
+<span id="cb28-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb28-6"><a></a>    <span class="at">names_transform =</span> as.numeric</span>
+<span id="cb28-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column fragment" style="width:50%;">
 <div class="cell">
@@ -717,8 +727,8 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 </section></section><section><section id="application-exercise" class="title-slide slide level1 center"><h1>Application exercise</h1>
 
 </section><section id="goal-recreate-this-plot" class="slide level2 smaller"><h2>Goal: recreate this plot</h2>
-<p>add image</p>
-</section><section id="ae-05-majors-tidy" class="slide level2 smaller"><h2>ae-05-majors-tidy</h2>
+
+<img data-src="images/07/statsci-majors-2025.png" class="r-stretch"></section><section id="ae-05-majors-tidy" class="slide level2 smaller"><h2>ae-05-majors-tidy</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
@@ -727,11 +737,121 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
 </ul>
 </div>
-</section><section id="recap-pivoting" class="slide level2 smaller"><h2>Recap: pivoting</h2>
+</section></section><section><section id="pivot-wider" class="title-slide slide level1 center"><h1>Pivot Wider</h1>
+
+</section><section id="we-pivotted-longer-what-about-wider" class="slide level2 smaller"><h2>We pivotted longer… what about wider?</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 16</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
+1         AB2    0    1    0    0    4    4    1    0    0
+2          AB    2    2    4    1    3    6    3    4    4
+3         BS2    2    6    1    0    5    6    6    8    8
+4          BS    5    9    4   13   10   17   24   21   26</code></pre>
+</div>
+</div>
+<div class="task fragment">
+<p>Can we go the other direction?</p>
+</div>
+</div><div class="column" style="width:5%;">
+<p>⟵</p>
+</div><div class="column" style="width:30%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 x 3</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   degree_type year n
+1          AB2 2011 0
+2          AB2 2012 1
+3          AB2 2013 0
+4          AB2 2014 0
+5          AB2 2015 4
+6          AB2 2016 4
+7          AB2 2017 1
+8          AB2 2018 0
+9          AB2 2019 0
+10         AB2 2020 1
+11         AB2 2021 2
+12         AB2 2022 0
+13         AB2 2023 3
+14         AB2 2024 1
+15         AB2 2025 0
+16          AB 2011 2
+17          AB 2012 2</code></pre>
+</div>
+</div>
+</div></div>
+</section><section id="we-pivotted-longer-what-about-wider-1" class="slide level2 smaller"><h2>We pivotted longer… what about wider?</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 16</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
+1         AB2    0    1    0    0    4    4    1    0    0
+2          AB    2    2    4    1    3    6    3    4    4
+3         BS2    2    6    1    0    5    6    6    8    8
+4          BS    5    9    4   13   10   17   24   21   26</code></pre>
+</div>
+</div>
+<div class="task">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>statsci_longer <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb36-3"><a></a>    <span class="at">names_from =</span> ____________ ,</span>
+<span id="cb36-4"><a></a>    </span>
+<span id="cb36-5"><a></a>    <span class="at">values_from =</span> ___________ , </span>
+<span id="cb36-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+<p>⟵</p>
+</div><div class="column" style="width:30%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 x 3</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   degree_type year n
+1          AB2 2011 0
+2          AB2 2012 1
+3          AB2 2013 0
+4          AB2 2014 0
+5          AB2 2015 4
+6          AB2 2016 4
+7          AB2 2017 1
+8          AB2 2018 0
+9          AB2 2019 0
+10         AB2 2020 1
+11         AB2 2021 2
+12         AB2 2022 0
+13         AB2 2023 3
+14         AB2 2024 1
+15         AB2 2025 0
+16          AB 2011 2
+17          AB 2012 2</code></pre>
+</div>
+</div>
+</div></div>
+</section><section id="recap-pivot" class="slide level2 smaller"><h2>Recap: Pivot</h2>
 <ul>
-<li class="fragment">Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
-<li class="fragment">When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
-<li class="fragment">You can tweak a plot forever, but at some point the tweaks are likely not very productive. However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate.</li>
+<li class="fragment">
+<strong><em>When should you pivot?</em></strong> If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!</li>
+<li class="fragment">
+<strong><em>Wide and long:</em></strong> Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
+<li class="fragment">
+<strong><em>Pivot longer - data type:</em></strong> When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
+</ul></section><section id="recap-plotting" class="slide level2 smaller"><h2>Recap: Plotting</h2>
+<ul>
+<li class="fragment"><p>You can tweak a plot forever, but at some point the tweaks are likely not very productive.</p></li>
+<li class="fragment"><p>However, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate.</p></li>
 </ul>
 
 
@@ -751,7 +871,7 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'pdfSeparateFragments': false,
+'pdfSeparateFragments': true,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,

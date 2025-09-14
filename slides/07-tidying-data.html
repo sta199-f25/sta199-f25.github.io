@@ -103,32 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+}</script>
 <meta property="og:title" content="Tidying data – STA 199">
 <meta property="og:description" content="Lecture 7">
 <meta property="og:image" content="https://sta199-f25.github.io/slides/07-tidying-data_files/figure-revealjs/unnamed-chunk-5-1.png">
@@ -522,6 +497,7 @@ window.Quarto = {
   <li><a href="#recap-layering-geoms-1" id="toc-recap-layering-geoms-1" class="nav-link" data-scroll-target="#recap-layering-geoms-1">Recap: layering geoms</a></li>
   <li><a href="#recap-layering-geoms-2" id="toc-recap-layering-geoms-2" class="nav-link" data-scroll-target="#recap-layering-geoms-2">Recap: layering geoms</a></li>
   <li><a href="#recap-layering-geoms-3" id="toc-recap-layering-geoms-3" class="nav-link" data-scroll-target="#recap-layering-geoms-3">Recap: layering geoms</a></li>
+  <li><a href="#recap-layering-geoms-4" id="toc-recap-layering-geoms-4" class="nav-link" data-scroll-target="#recap-layering-geoms-4">Recap: layering geoms</a></li>
   <li><a href="#recap-logical-operators" id="toc-recap-logical-operators" class="nav-link" data-scroll-target="#recap-logical-operators">Recap: logical operators</a></li>
   <li><a href="#recap-participate" id="toc-recap-participate" class="nav-link" data-scroll-target="#recap-participate">Recap: Participate 📱💻</a></li>
   <li><a href="#recap-participate-1" id="toc-recap-participate-1" class="nav-link" data-scroll-target="#recap-participate-1">Recap: Participate 📱💻</a></li>
@@ -554,7 +530,15 @@ window.Quarto = {
   <ul class="collapse">
 <li><a href="#goal-recreate-this-plot" id="toc-goal-recreate-this-plot" class="nav-link" data-scroll-target="#goal-recreate-this-plot">Goal: recreate this plot</a></li>
   <li><a href="#ae-05-majors-tidy" id="toc-ae-05-majors-tidy" class="nav-link" data-scroll-target="#ae-05-majors-tidy">ae-05-majors-tidy</a></li>
-  <li><a href="#recap-pivoting" id="toc-recap-pivoting" class="nav-link" data-scroll-target="#recap-pivoting">Recap: pivoting</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#pivot-wider" id="toc-pivot-wider" class="nav-link" data-scroll-target="#pivot-wider">Pivot Wider</a>
+  <ul class="collapse">
+<li><a href="#we-pivotted-longer-what-about-wider" id="toc-we-pivotted-longer-what-about-wider" class="nav-link" data-scroll-target="#we-pivotted-longer-what-about-wider">We pivotted longer… what about wider?</a></li>
+  <li><a href="#we-pivotted-longer-what-about-wider-1" id="toc-we-pivotted-longer-what-about-wider-1" class="nav-link" data-scroll-target="#we-pivotted-longer-what-about-wider-1">We pivotted longer… what about wider?</a></li>
+  <li><a href="#recap-pivot" id="toc-recap-pivot" class="nav-link" data-scroll-target="#recap-pivot">Recap: Pivot</a></li>
+  <li><a href="#recap-plotting" id="toc-recap-plotting" class="nav-link" data-scroll-target="#recap-plotting">Recap: Plotting</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/07-tidying-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="07-tidying-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -647,7 +631,7 @@ window.Quarto = {
 <p>Update the following code to create the visualization on the right.</p>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img src="images/07/gerrymander-recreate.png" class="img-fluid"></p>
+<p><img src="images/07/gerrymander-recreate-2.png" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell">
@@ -662,13 +646,13 @@ window.Quarto = {
 </div>
 </div>
 </section><section id="recap-layering-geoms-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-1">Recap: layering geoms</h2>
-<ol type="1">
-<li>Swap the order of the two geoms.</li>
+<ol start="0" type="1">
+<li>Original Code:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
@@ -677,13 +661,13 @@ window.Quarto = {
 </div>
 </div>
 </section><section id="recap-layering-geoms-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-2">Recap: layering geoms</h2>
-<ol start="2" type="1">
-<li>Make the boxplots semi-transparent.</li>
+<ol type="1">
+<li>Swap the order of the two geoms.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
@@ -692,16 +676,31 @@ window.Quarto = {
 </div>
 </div>
 </section><section id="recap-layering-geoms-3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-3">Recap: layering geoms</h2>
+<ol start="2" type="1">
+<li>Make the boxplots semi-transparent.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="recap-layering-geoms-4" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-4">Recap: layering geoms</h2>
 <ol start="3" type="1">
 <li>Remove the legend.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -810,11 +809,11 @@ window.Quarto = {
 <p><strong>Note:</strong> “easy to manipulate” = “straightforward to manipulate”</p>
 </section><section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <p>Visualize StatSci majors over the years!</p>
-<p><img src="images/07/statsci-majors.png" class="img-fluid"></p>
+<p><img src="images/07/statsci-majors-2025.png" class="img-fluid"></p>
 <p><strong>TO DO:</strong> Update with plot from end of AE</p>
 </section><section id="data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data">Data</h2>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -844,20 +843,20 @@ window.Quarto = {
 <li><p>The remaining columns show the number of students graduating with that major in a given academic year from 2011 to 2025.</p></li>
 </ul>
 </div>
-</section><section id="lets-plan" class="level2 smaller nostretch"><h2 class="smaller nostretch anchored" data-anchor-id="lets-plan">Let’s plan!</h2>
+</section><section id="lets-plan" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lets-plan">Let’s plan!</h2>
 <p>Review the goal plot and sketch the data frame needed to create it. What would go inside <code>aes</code> when we call <code>ggplot</code>?</p>
-<p><img src="images/07/statsci-majors.png" class="img-fluid" width="500"></p>
+<p><img src="images/07/statsci-majors-2025.png" class="img-fluid" width="500"></p>
 </section><section id="the-goal" class="level2 smaller nostretch"><h2 class="smaller nostretch anchored" data-anchor-id="the-goal">The Goal</h2>
 <p>We want to write code that starts something like this:</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">statsci</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">degree_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">statsci</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">degree_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="va">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>. . .</p>
 <p><br></p>
 <p>But our data are not in the right format :(</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -937,7 +936,7 @@ window.Quarto = {
 <p><code>year</code> and <code>n</code>umber of graduates for that year are columns in the result data frame.</p>
 </div>
 </div><div class="column" style="width:5%;">
-<p><span class="math display">\[ \to \]</span></p>
+<p>⟶</p>
 </div><div class="column" style="width:30%;">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -983,19 +982,19 @@ window.Quarto = {
 </div>
 <div class="task fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> ___________________ ,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> _______________ ,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> ______________</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> ___________________ ,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> _______________ ,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> ______________</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
-<p><span class="math display">\[ \to \]</span></p>
+<p>⟶</p>
 </div><div class="column" style="width:30%;">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1028,7 +1027,7 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span> <span class="op">|&gt;</span> </span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="op">-</span><span class="va">degree_type</span>,</span>
 <span>    values_to <span class="op">=</span> <span class="st">"n"</span>,</span>
@@ -1074,7 +1073,7 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="op">-</span><span class="va">degree_type</span>,</span>
 <span>    values_to <span class="op">=</span> <span class="st">"n"</span>,</span>
@@ -1093,13 +1092,13 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb27-3"><a href="#cb27-3"></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb27-4"><a href="#cb27-4"></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb27-5"><a href="#cb27-5"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb27-6"><a href="#cb27-6"></a>    <span class="at">names_transform =</span> as.numeric</span>
-<span id="cb27-7"><a href="#cb27-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb28-3"><a href="#cb28-3"></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
+<span id="cb28-4"><a href="#cb28-4"></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
+<span id="cb28-5"><a href="#cb28-5"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb28-6"><a href="#cb28-6"></a>    <span class="at">names_transform =</span> as.numeric</span>
+<span id="cb28-7"><a href="#cb28-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="column fragment" style="width:50%;">
@@ -1125,7 +1124,7 @@ window.Quarto = {
 </div>
 </section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
 <section id="goal-recreate-this-plot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="goal-recreate-this-plot">Goal: recreate this plot</h2>
-<p>add image</p>
+<p><img src="images/07/statsci-majors-2025.png" class="img-fluid"></p>
 </section><section id="ae-05-majors-tidy" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-05-majors-tidy">ae-05-majors-tidy</h2>
 <div class="appex">
 <ul>
@@ -1135,12 +1134,126 @@ window.Quarto = {
 <li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
 </ul>
 </div>
-</section><section id="recap-pivoting" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-pivoting">Recap: pivoting</h2>
+</section></section><section id="pivot-wider" class="level1"><h1>Pivot Wider</h1>
+<section id="we-pivotted-longer-what-about-wider" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="we-pivotted-longer-what-about-wider">We pivotted longer… what about wider?</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 16</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
+1         AB2    0    1    0    0    4    4    1    0    0
+2          AB    2    2    4    1    3    6    3    4    4
+3         BS2    2    6    1    0    5    6    6    8    8
+4          BS    5    9    4   13   10   17   24   21   26</code></pre>
+</div>
+</div>
+<div class="task fragment">
+<p>Can we go the other direction?</p>
+</div>
+</div><div class="column" style="width:5%;">
+<p>⟵</p>
+</div><div class="column" style="width:30%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 x 3</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   degree_type year n
+1          AB2 2011 0
+2          AB2 2012 1
+3          AB2 2013 0
+4          AB2 2014 0
+5          AB2 2015 4
+6          AB2 2016 4
+7          AB2 2017 1
+8          AB2 2018 0
+9          AB2 2019 0
+10         AB2 2020 1
+11         AB2 2021 2
+12         AB2 2022 0
+13         AB2 2023 3
+14         AB2 2024 1
+15         AB2 2025 0
+16          AB 2011 2
+17          AB 2012 2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="we-pivotted-longer-what-about-wider-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="we-pivotted-longer-what-about-wider-1">We pivotted longer… what about wider?</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 16</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
+1         AB2    0    1    0    0    4    4    1    0    0
+2          AB    2    2    4    1    3    6    3    4    4
+3         BS2    2    6    1    0    5    6    6    8    8
+4          BS    5    9    4   13   10   17   24   21   26</code></pre>
+</div>
+</div>
+<div class="task">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>statsci_longer <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ____________ ,</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> ___________ , </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+<p>⟵</p>
+</div><div class="column" style="width:30%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 x 3</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   degree_type year n
+1          AB2 2011 0
+2          AB2 2012 1
+3          AB2 2013 0
+4          AB2 2014 0
+5          AB2 2015 4
+6          AB2 2016 4
+7          AB2 2017 1
+8          AB2 2018 0
+9          AB2 2019 0
+10         AB2 2020 1
+11         AB2 2021 2
+12         AB2 2022 0
+13         AB2 2023 3
+14         AB2 2024 1
+15         AB2 2025 0
+16          AB 2011 2
+17          AB 2012 2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="recap-pivot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-pivot">Recap: Pivot</h2>
 <div class="incremental">
 <ul class="incremental">
-<li>Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
-<li>When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
-<li>You can tweak a plot forever, but at some point the tweaks are likely not very productive. However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate.</li>
+<li>
+<strong><em>When should you pivot?</em></strong> If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!</li>
+<li>
+<strong><em>Wide and long:</em></strong> Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
+<li>
+<strong><em>Pivot longer - data type:</em></strong> When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
+</ul>
+</div>
+</section><section id="recap-plotting" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-plotting">Recap: Plotting</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>You can tweak a plot forever, but at some point the tweaks are likely not very productive.</p></li>
+<li><p>However, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate.</p></li>
 </ul>
 </div>
 

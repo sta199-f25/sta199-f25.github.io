@@ -36,18 +36,25 @@
     "href": "slides/07-tidying-data-slides.html#recap-layering-geoms-1",
     "title": "Tidying data",
     "section": "Recap: layering geoms",
-    "text": "Recap: layering geoms\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))"
+    "text": "Recap: layering geoms\n\nOriginal Code:\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#recap-layering-geoms-2",
     "href": "slides/07-tidying-data-slides.html#recap-layering-geoms-2",
     "title": "Tidying data",
     "section": "Recap: layering geoms",
-    "text": "Recap: layering geoms\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)"
+    "text": "Recap: layering geoms\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#recap-layering-geoms-3",
     "href": "slides/07-tidying-data-slides.html#recap-layering-geoms-3",
+    "title": "Tidying data",
+    "section": "Recap: layering geoms",
+    "text": "Recap: layering geoms\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)"
+  },
+  {
+    "objectID": "slides/07-tidying-data-slides.html#recap-layering-geoms-4",
+    "href": "slides/07-tidying-data-slides.html#recap-layering-geoms-4",
     "title": "Tidying data",
     "section": "Recap: layering geoms",
     "text": "Recap: layering geoms\n\nRemove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)"
@@ -127,14 +134,14 @@
     "href": "slides/07-tidying-data-slides.html#pivot_longer",
     "title": "Tidying data",
     "section": "pivot_longer()",
-    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\nPivot the statsci data frame longer such that each row represents a degree type / year combination.\nyear and number of graduates for that year are columns in the result data frame.\n\n\n\\[ \\to \\]\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\nPivot the statsci data frame longer such that each row represents a degree type / year combination.\nyear and number of graduates for that year are columns in the result data frame.\n\n\n⟶\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#pivot_longer-1",
     "href": "slides/07-tidying-data-slides.html#pivot_longer-1",
     "title": "Tidying data",
     "section": "pivot_longer()",
-    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\n\nstatsci |&gt;\n  pivot_longer(\n    \n    cols = ___________________ ,\n    \n    names_to = _______________ ,\n    \n    values_to = ______________\n  )\n\n\n\n\\[ \\to \\]\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\n\nstatsci |&gt;\n  pivot_longer(\n    \n    cols = ___________________ ,\n    \n    names_to = _______________ ,\n    \n    values_to = ______________\n  )\n\n\n\n⟶\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#year",
@@ -162,7 +169,7 @@
     "href": "slides/07-tidying-data-slides.html#goal-recreate-this-plot",
     "title": "Tidying data",
     "section": "Goal: recreate this plot",
-    "text": "Goal: recreate this plot\nadd image"
+    "text": "Goal: recreate this plot"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#ae-05-majors-tidy",
@@ -172,18 +179,39 @@
     "text": "ae-05-majors-tidy\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-05-majors-tidy.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
-    "objectID": "slides/07-tidying-data-slides.html#recap-pivoting",
-    "href": "slides/07-tidying-data-slides.html#recap-pivoting",
+    "objectID": "slides/07-tidying-data-slides.html#we-pivotted-longer-what-about-wider",
+    "href": "slides/07-tidying-data-slides.html#we-pivotted-longer-what-about-wider",
     "title": "Tidying data",
-    "section": "Recap: pivoting",
-    "text": "Recap: pivoting\n\nData sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\nWhen pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function.\nYou can tweak a plot forever, but at some point the tweaks are likely not very productive. However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate."
+    "section": "We pivotted longer… what about wider?",
+    "text": "We pivotted longer… what about wider?\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\nCan we go the other direction?\n\n\n⟵\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+  },
+  {
+    "objectID": "slides/07-tidying-data-slides.html#we-pivotted-longer-what-about-wider-1",
+    "href": "slides/07-tidying-data-slides.html#we-pivotted-longer-what-about-wider-1",
+    "title": "Tidying data",
+    "section": "We pivotted longer… what about wider?",
+    "text": "We pivotted longer… what about wider?\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\n\nstatsci_longer |&gt; \n  pivot_wider(\n    names_from = ____________ ,\n    \n    values_from = ___________ , \n  )\n\n\n\n⟵\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+  },
+  {
+    "objectID": "slides/07-tidying-data-slides.html#recap-pivot",
+    "href": "slides/07-tidying-data-slides.html#recap-pivot",
+    "title": "Tidying data",
+    "section": "Recap: Pivot",
+    "text": "Recap: Pivot\n\n\nWhen should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\n\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\n\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function."
+  },
+  {
+    "objectID": "slides/07-tidying-data-slides.html#recap-plotting",
+    "href": "slides/07-tidying-data-slides.html#recap-plotting",
+    "title": "Tidying data",
+    "section": "Recap: Plotting",
+    "text": "Recap: Plotting\n\nYou can tweak a plot forever, but at some point the tweaks are likely not very productive.\nHowever, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate."
   },
   {
     "objectID": "slides/07-tidying-data.html",
     "href": "slides/07-tidying-data.html",
     "title": "Tidying data",
     "section": "",
-    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n1\n2\n…\n\n\n\n\nUpdate the following code to create the visualization on the right.\n\n\n\n\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))\n\n\n\n\n\n\n\n\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)\n\n\n\n\n\n\n\n\n\nRemove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)\n\n\n\n\n\n\n\n\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&gt;\nis greater than?\n\n\n\n\n\n\nMatch the following logical operators to their definitions.\n\n\n&lt;=\n&gt;=\n==\n!=\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nMatch the following definitions to their logical operators.\n\n\nis x AND y?\nis x OR y?\nis x NA?\nis x not NA?\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\nOther useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n1\n2\n…\n\n\n\n\nUpdate the following code to create the visualization on the right.\n\n\n\n\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\nOriginal Code:\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm() \n\n\n\n\n\n\n\n\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))\n\n\n\n\n\n\n\n\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)\n\n\n\n\n\n\n\n\n\nRemove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)\n\n\n\n\n\n\n\n\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&gt;\nis greater than?\n\n\n\n\n\n\nMatch the following logical operators to their definitions.\n\n\n&lt;=\n&gt;=\n==\n!=\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nMatch the following definitions to their logical operators.\n\n\nis x AND y?\nis x OR y?\nis x NA?\nis x not NA?\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\nOther useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
   },
   {
     "objectID": "slides/07-tidying-data.html#while-you-wait-participate",
@@ -211,18 +239,25 @@
     "href": "slides/07-tidying-data.html#recap-layering-geoms-1",
     "title": "Tidying data",
     "section": "",
-    "text": "Swap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))"
+    "text": "Original Code:\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()"
   },
   {
     "objectID": "slides/07-tidying-data.html#recap-layering-geoms-2",
     "href": "slides/07-tidying-data.html#recap-layering-geoms-2",
     "title": "Tidying data",
     "section": "",
-    "text": "Make the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)"
+    "text": "Swap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))"
   },
   {
     "objectID": "slides/07-tidying-data.html#recap-layering-geoms-3",
     "href": "slides/07-tidying-data.html#recap-layering-geoms-3",
+    "title": "Tidying data",
+    "section": "",
+    "text": "Make the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)"
+  },
+  {
+    "objectID": "slides/07-tidying-data.html#recap-layering-geoms-4",
+    "href": "slides/07-tidying-data.html#recap-layering-geoms-4",
     "title": "Tidying data",
     "section": "",
     "text": "Remove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)"
@@ -302,14 +337,14 @@
     "href": "slides/07-tidying-data.html#pivot_longer",
     "title": "Tidying data",
     "section": "pivot_longer()",
-    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\nPivot the statsci data frame longer such that each row represents a degree type / year combination.\nyear and number of graduates for that year are columns in the result data frame.\n\n\n\\[ \\to \\]\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\nPivot the statsci data frame longer such that each row represents a degree type / year combination.\nyear and number of graduates for that year are columns in the result data frame.\n\n\n⟶\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
   },
   {
     "objectID": "slides/07-tidying-data.html#pivot_longer-1",
     "href": "slides/07-tidying-data.html#pivot_longer-1",
     "title": "Tidying data",
     "section": "pivot_longer()",
-    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\n\nstatsci |&gt;\n  pivot_longer(\n    \n    cols = ___________________ ,\n    \n    names_to = _______________ ,\n    \n    values_to = ______________\n  )\n\n\n\n\\[ \\to \\]\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+    "text": "pivot_longer()\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\n\nstatsci |&gt;\n  pivot_longer(\n    \n    cols = ___________________ ,\n    \n    names_to = _______________ ,\n    \n    values_to = ______________\n  )\n\n\n\n⟶\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
   },
   {
     "objectID": "slides/07-tidying-data.html#year",
@@ -337,7 +372,7 @@
     "href": "slides/07-tidying-data.html#goal-recreate-this-plot",
     "title": "Tidying data",
     "section": "Goal: recreate this plot",
-    "text": "Goal: recreate this plot\nadd image"
+    "text": "Goal: recreate this plot"
   },
   {
     "objectID": "slides/07-tidying-data.html#ae-05-majors-tidy",
@@ -347,11 +382,32 @@
     "text": "ae-05-majors-tidy\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-05-majors-tidy.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
-    "objectID": "slides/07-tidying-data.html#recap-pivoting",
-    "href": "slides/07-tidying-data.html#recap-pivoting",
+    "objectID": "slides/07-tidying-data.html#we-pivotted-longer-what-about-wider",
+    "href": "slides/07-tidying-data.html#we-pivotted-longer-what-about-wider",
     "title": "Tidying data",
-    "section": "Recap: pivoting",
-    "text": "Recap: pivoting\n\n\nData sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\nWhen pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function.\nYou can tweak a plot forever, but at some point the tweaks are likely not very productive. However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate."
+    "section": "We pivotted longer… what about wider?",
+    "text": "We pivotted longer… what about wider?\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\nCan we go the other direction?\n\n\n⟵\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+  },
+  {
+    "objectID": "slides/07-tidying-data.html#we-pivotted-longer-what-about-wider-1",
+    "href": "slides/07-tidying-data.html#we-pivotted-longer-what-about-wider-1",
+    "title": "Tidying data",
+    "section": "We pivotted longer… what about wider?",
+    "text": "We pivotted longer… what about wider?\n\n\n\n\n# A tibble: 4 x 16\n\n\n  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019\n1         AB2    0    1    0    0    4    4    1    0    0\n2          AB    2    2    4    1    3    6    3    4    4\n3         BS2    2    6    1    0    5    6    6    8    8\n4          BS    5    9    4   13   10   17   24   21   26\n\n\n\n\nstatsci_longer |&gt; \n  pivot_wider(\n    names_from = ____________ ,\n    \n    values_from = ___________ , \n  )\n\n\n\n⟵\n\n\n\n# A tibble: 60 x 3\n\n\n   degree_type year n\n1          AB2 2011 0\n2          AB2 2012 1\n3          AB2 2013 0\n4          AB2 2014 0\n5          AB2 2015 4\n6          AB2 2016 4\n7          AB2 2017 1\n8          AB2 2018 0\n9          AB2 2019 0\n10         AB2 2020 1\n11         AB2 2021 2\n12         AB2 2022 0\n13         AB2 2023 3\n14         AB2 2024 1\n15         AB2 2025 0\n16          AB 2011 2\n17          AB 2012 2"
+  },
+  {
+    "objectID": "slides/07-tidying-data.html#recap-pivot",
+    "href": "slides/07-tidying-data.html#recap-pivot",
+    "title": "Tidying data",
+    "section": "Recap: Pivot",
+    "text": "Recap: Pivot\n\n\n\nWhen should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\n\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\n\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function."
+  },
+  {
+    "objectID": "slides/07-tidying-data.html#recap-plotting",
+    "href": "slides/07-tidying-data.html#recap-plotting",
+    "title": "Tidying data",
+    "section": "Recap: Plotting",
+    "text": "Recap: Plotting\n\n\nYou can tweak a plot forever, but at some point the tweaks are likely not very productive.\nHowever, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate."
   },
   {
     "objectID": "slides/04-grammar-of-data-transformation-slides.html#while-you-wait-participate",
@@ -2857,14 +2913,14 @@
     "href": "ae/ae-05-majors.html",
     "title": "AE 05: Tidying Stat Sci",
     "section": "",
-    "text": "Our ultimate goal in this application exercise is to make the following data visualization."
+    "text": "Our ultimate goal in this application exercise is to make the following data visualization.\n{fig-alt=“Line plot of numbers of Statistical Science majors over the years (2011 - 2025). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees.” fig-align=“center”}"
   },
   {
     "objectID": "ae/ae-05-majors.html#goal",
     "href": "ae/ae-05-majors.html#goal",
     "title": "AE 05: Tidying Stat Sci",
     "section": "",
-    "text": "Our ultimate goal in this application exercise is to make the following data visualization."
+    "text": "Our ultimate goal in this application exercise is to make the following data visualization.\n{fig-alt=“Line plot of numbers of Statistical Science majors over the years (2011 - 2025). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees.” fig-align=“center”}"
   },
   {
     "objectID": "ae/ae-05-majors.html#data",
@@ -2885,7 +2941,7 @@
     "href": "ae/ae-05-majors.html#plotting",
     "title": "AE 05: Tidying Stat Sci",
     "section": "Plotting",
-    "text": "Plotting\n\n\nYour turn: Now we will start making our plot, but let’s not get too fancy right away. Create the following plot, which will serve as the “first draft” on the way to our Goal. Do this by adding on to your pipeline from earlier.\n\n\n\n\n\n\n# add your code here\n\n\n\nQuestion: Why was the pivot necessary in order to create this plot?\n\nAdd your response here!\n\n\nQuestion: What aspects of the plot need to be updated to go from the draft you created above to the Goal plot at the beginning of this application exercise.\n\nAdd your response here.\n\n\nDemo: Update x-axis scale such that the years displayed go from 2011 to 2023 in increments of 2 years. Do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Update line colors using the following level / color assignments. Once again, do this by adding on to your pipeline from earlier.\n\n“BS” = “cadetblue4”\n“BS2” = “cadetblue3”\n“AB” = “lightgoldenrod4”\n“AB2” = “lightgoldenrod3”\n\n\n\n\n# add your code here\n\n\n\nYour turn: Update the plot labels (title, subtitle, x, y, and caption) and use theme_minimal(). Once again, do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Finally, adding to your pipeline you’ve developed so far, move the legend into the plot, make its background white, and its border gray. Set fig-width: 7 and fig-height: 5 for your plot in the chunk options.\n\n\n# add your code here"
+    "text": "Plotting\n\n\nYour turn: Now we will start making our plot, but let’s not get too fancy right away. Create the following plot, which will serve as the “first draft” on the way to our Goal. Do this by adding on to your pipeline from earlier.\n\n\n\n\n\n\n# add your code here\n\n\n\nQuestion: Why was the pivot necessary in order to create this plot?\n\nAdd your response here!\n\n\nQuestion: What aspects of the plot need to be updated to go from the draft you created above to the Goal plot at the beginning of this application exercise.\n\nAdd your response here.\n\n\nDemo: Update x-axis scale such that the years displayed go from 2011 to 2025 in increments of 2 years. Do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Update line colors using the following level / color assignments. Once again, do this by adding on to your pipeline from earlier.\n\n“BS” = “cadetblue4”\n“BS2” = “cadetblue3”\n“AB” = “lightgoldenrod4”\n“AB2” = “lightgoldenrod3”\n\n\n\n\n# add your code here\n\n\n\nYour turn: Update the plot labels (title, subtitle, x, y, and caption) and use theme_minimal(). Once again, do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Finally, adding to your pipeline you’ve developed so far, move the legend into the plot, make its background white, and its border gray. Set fig-width: 7 and fig-height: 5 for your plot in the chunk options.\n\n\n# add your code here"
   },
   {
     "objectID": "ae/ae-05-majors.html#lets-now-pivot-wider",
