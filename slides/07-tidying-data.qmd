@@ -513,10 +513,15 @@ What should it be?
 :::
 
 ::: {.fragment}
-It's a character (`chr`) variable since the information came from the columns of the original data frame and R cannot know that these character strings represent years.
 
+::: incremental
+- It's a character (`chr`) variable since the information came from the columns of the original data frame.
 
-The variable type should be numeric.
+- R cannot know that these character strings represent years.
+
+- The variable type should be numeric.
+
+:::
 
 ::: 
 :::
@@ -592,7 +597,7 @@ statsci |>
 
 # Application exercise
 
-## `{r} Goal: recreate this plot` {.smaller}
+## Goal: recreate this plot {.smaller}
 
 add image
 
