@@ -179,7 +179,7 @@ Once again, make sure to commit and push all changed files so that your Git pane
 
 ### Question 5
 
-Another visualization from HW 1 was the following, which showed the proportion of urban counties in each state.
+Another visualization from HW 1 was the following, which showed the proportion of urban (located in metropolitan area) counties in each state.
 
 ```{r}
 #| label: metro-barplot
