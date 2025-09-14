@@ -140,7 +140,7 @@ The following code is already included in your lab document.
 df_2 <- tibble(
   shift  = c("day", "day", "night", "day", "night", "day", "night", "night", "day", "night"),
   member = c("A", "B", "B", "A", "B", "B", "B", "A", "A", "B"),
-  hours  = c(10, 5, 2, 7, 6, 5, 4, 2, 3, 5),
+  hours  = c(10, 5, 2, 7, 6, 5, 4, 2, 3, 5)
 )
 
 df_2
