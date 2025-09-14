@@ -180,13 +180,13 @@ d.  In the following code cell, we add one more step to the data pipelines from 
 
 ```{r}
 #| results: false
-# pipeline from part c + slice_head()
+# pipeline from part b + slice_head()
 df_2 |>
   group_by(shift, member) |>
   summarize(mean_hours = mean(hours)) |>
   slice_head(n = 1)
 
-# pipeline from part d + slice_head()
+# pipeline from part c + slice_head()
 df_2 |>
   group_by(shift, member) |>
   summarize(mean_hours = mean(hours), .groups = "drop") |>
