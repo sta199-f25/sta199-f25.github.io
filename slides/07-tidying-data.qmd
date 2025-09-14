@@ -50,8 +50,7 @@ ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
 #| fig.show: hide
 ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_boxplot(aes(color = gerry)) +
-  geom_beeswarm() +
-  labs(title = "O")
+  geom_beeswarm()
 ```
 
 ```{r}
@@ -168,24 +167,72 @@ Generally useful in a `filter()` but will come up in various other places as wel
 | operator | definition                                |
 |:---------|:------------------------------------------|
 | `<`      | [is less than?]{.fragment}                |
-| `<=`     | [is less than or equal to?]{.fragment}    |
 | `>`      | [is greater than?]{.fragment}             |
-| `>=`     | [is greater than or equal to?]{.fragment} |
-| `==`     | [is exactly equal to?]{.fragment}         |
-| `!=`     | [is not equal to?]{.fragment}             |
 
 : {tbl-colwidths="\[25,75\]"}
 
+## Recap: Participate 📱💻 {.xsmall}
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: wooclap
+Match the following logical operators to their definitions.
+
+::: wooclap-choices
+- `<=`
+- `>=`
+- `==`
+- `!=`
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+:::
+
+## Recap: Participate 📱💻 {.xsmall}
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: wooclap
+Match the following definitions to their logical operators.
+
+::: wooclap-choices
+- is x AND y?
+- is x OR y?
+- is x NA?
+- is x not NA?
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+:::
+
 ## Recap: logical operators (cont.) {.smaller}
 
-Generally useful in a `filter()` but will come up in various other places as well...
+Other useful logical operators:
 
 | operator      | definition                                                            |
 |:--------------|:----------------------------------------------------------------------|
-| `x & y`       | [is x AND y?]{.fragment}                                              |
-| `x \| y`      | [is x OR y?]{.fragment}                                               |
-| `is.na(x)`    | [is x NA?]{.fragment}                                                 |
-| `!is.na(x)`   | [is x not NA?]{.fragment}                                             |
 | `x %in% y`    | [is x in y?]{.fragment}                                               |
 | `!(x %in% y)` | [is x not in y?]{.fragment}                                           |
 | `!x`          | [is not x? (only makes sense if `x` is `TRUE` or `FALSE`)]{.fragment} |
