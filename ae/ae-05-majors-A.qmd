@@ -9,13 +9,11 @@ format:
 
 Our ultimate goal in this application exercise is to make the following data visualization.
 
-
+![](/slides/images/07/statsci-majors-2025.png){fig-align="center"}
 
 ## Data
 
-The data come from the [Office of the University Registrar](https://registrar.duke.edu/registration/enrollment-statistics).
-They make the data available as a table that you can download as a PDF, but I've put the data exported in a CSV file for you.
-Let's load that in.
+The data come from the [Office of the University Registrar](https://registrar.duke.edu/registration/enrollment-statistics). They make the data available as a table that you can download as a PDF, but I've put the data exported in a CSV file for you. Let's load that in.
 
 ```{r}
 #| label: load-packages-data
@@ -34,11 +32,11 @@ statsci
 
 ## Pivoting
 
-- **Demo:** Pivot the `statsci` data frame *longer* such that: 
+-   **Demo:** Pivot the `statsci` data frame *longer* such that:
 
-  - Each row represents a degree type / year combination
-  - `year` and `n`umber of graduates for that year are columns in the data frame
-  - The resulting `year` column is numeric
+    -   Each row represents a degree type / year combination
+    -   `year` and `n`umber of graduates for that year are columns in the data frame
+    -   The resulting `year` column is numeric
 
 ```{r}
 #| label: pivot
@@ -52,9 +50,7 @@ statsci |>
   )
 ```
 
-
-
--   **Your Turn:** Now, repeat your code from above, but this time **save the result** to a **new** variable name. 
+-   **Your Turn:** Now, repeat your code from above, but this time **save the result** to a **new** variable name.
 
 ```{r}
 #| label: pivot-with-transform-name
@@ -68,12 +64,11 @@ statsci_longer <- statsci |>
   )
 ```
 
-
 ## Plotting
 
--  **Your turn:** Now we will start making our plot, but let's not get too fancy right away. Create the following plot, which will serve as the "first draft" on the way to our [Goal]. Do this by adding on to your pipeline from earlier.
+-   **Your turn:** Now we will start making our plot, but let's not get too fancy right away. Create the following plot, which will serve as the "first draft" on the way to our [Goal]. Do this by adding on to your pipeline from earlier.
 
-![](https://sta199-s24.github.io/images/statsci-plot-draft.png){fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2021). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
+![](/slides/images/07/stats-intermediate-plot.png){fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2021). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
 
 ```{r}
 #| label: plot-draft
@@ -84,7 +79,7 @@ statsci_longer |>
   geom_line()
 ```
 
-- **Question**:  Why was the pivot necessary in order to create this plot?
+-   **Question**: Why was the pivot necessary in order to create this plot?
 
 *Add your response here!*
 
@@ -154,7 +149,7 @@ statsci_longer |>
   theme_minimal()
 ```
 
--   **Demo:** Move the legend into the plot, make its background white, and its border gray. 
+-   **Demo:** Move the legend into the plot, make its background white, and its border gray.
 
 ```{r}
 #| label: plot-improve-4
@@ -217,14 +212,16 @@ statsci_longer |>
   )
 ```
 
-
-
 ## Let's now pivot wider!
 
--   **Demo**Just like you can pivot longer, you can pivot wider. Let's convert our longer data frame back into the  wider one in a single pipeline.
+-   **Demo:** Just like you can pivot longer, you can pivot wider. Let's convert our longer data frame back into the wider one in a single pipeline.
 
 ```{r}
 #| label: wider
 
-# add your code here
+statsci_wider <- statsci_longer |>
+  pivot_wider(
+    names_from = "year", 
+    values_from = "n"
+  )
 ```
