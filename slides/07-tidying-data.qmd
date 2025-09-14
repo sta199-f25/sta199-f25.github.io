@@ -2,6 +2,7 @@
 title: "Tidying data"
 subtitle: "Lecture 7"
 date: "2025-09-16"
+author: "Guest lecture by Marie Neubrander <br><br>Dr. Mine Çetinkaya-Rundel"
 format: 
   revealjs: 
     output-file: 07-tidying-data-slides.html
@@ -70,8 +71,7 @@ ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
 #| fig.show: hide
 ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_boxplot(aes(color = gerry)) +
-  geom_beeswarm() +
-  labs(title = "O")
+  geom_beeswarm()
 ```
 
 ```{r}
@@ -188,201 +188,78 @@ Generally useful in a `filter()` but will come up in various other places as wel
 | operator | definition                                |
 |:---------|:------------------------------------------|
 | `<`      | [is less than?]{.fragment}                |
-| `<=`     | [is less than or equal to?]{.fragment}    |
 | `>`      | [is greater than?]{.fragment}             |
-| `>=`     | [is greater than or equal to?]{.fragment} |
-| `==`     | [is exactly equal to?]{.fragment}         |
-| `!=`     | [is not equal to?]{.fragment}             |
 
 : {tbl-colwidths="\[25,75\]"}
 
+## Recap: Participate 📱💻 {.xsmall}
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: wooclap
+Match the following logical operators to their definitions.
+
+::: wooclap-choices
+- `<=`
+- `>=`
+- `==`
+- `!=`
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+:::
+
+## Recap: Participate 📱💻 {.xsmall}
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: wooclap
+Match the following definitions to their logical operators.
+
+::: wooclap-choices
+- is x AND y?
+- is x OR y?
+- is x NA?
+- is x not NA?
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+
+{{< include _wooclap-column.qmd >}}
+
+:::
+
+:::
+
 ## Recap: logical operators (cont.) {.smaller}
 
-Generally useful in a `filter()` but will come up in various other places as well...
+Other useful logical operators:
 
 | operator      | definition                                                            |
 |:--------------|:----------------------------------------------------------------------|
-| `x & y`       | [is x AND y?]{.fragment}                                              |
-| `x | y`      | [is x OR y?]{.fragment}                                               |
-| `is.na(x)`    | [is x NA?]{.fragment}                                                 |
-| `!is.na(x)`   | [is x not NA?]{.fragment}                                             |
 | `x %in% y`    | [is x in y?]{.fragment}                                               |
 | `!(x %in% y)` | [is x not in y?]{.fragment}                                           |
 | `!x`          | [is not x? (only makes sense if `x` is `TRUE` or `FALSE`)]{.fragment} |
 
 : {tbl-colwidths="\[25,75\]"}
 
-## Recap: assignment {.smaller}
-
-Let's make a tiny data frame to use as an example:
-
-```{r}
-df <- tibble(x = c(1, 2, 3, 4, 5),
-             y = c("a", "a", "b", "c", "c"))
-df
-```
-
-## Recap: assignment {.smaller}
-
-::: question
-Suppose you run the following and **then** you inspect `df`.  Will the `x` variable have values `1, 2, 3, 4, 5` **or** `2, 4, 6, 8, 10`?
-:::
-
-::: columns
-::: column
-```{r}
-df |>
-  mutate(x = x * 2)
-```
-:::
-
-::: {.column .fragment}
-```{r}
-df
-```
-:::
-:::
-
-. . .
-
-> **Do something and show me**
-
-## Recap: assignment {.smaller}
-
-::: question
-Suppose you run the following and **then** you inspect `df`.  Will the `x` variable have values `1, 2, 3, 4, 5` **or** `2, 4, 6, 8, 10`?
-:::
-
-::: columns
-::: column
-```{r}
-df <- df |>
-  mutate(x = x * 2)
-```
-:::
-
-::: {.column .fragment}
-```{r}
-df
-```
-:::
-:::
-
-. . .
-
-> **Do something and save result**
-
-## Recap: assignment {.smaller}
-
-::: columns
-::: {.column .fragment width="50%"}
-> **Do something, save result, overwriting original**
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  mutate(x = x * 2)
-df
-```
-:::
-
-::: {.column .fragment width="50%"}
-> **Do something, save result, *not* overwriting original**
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df_new <- df |>
-  mutate(x = x * 2)
-df_new
-```
-:::
-:::
-
-## Recap: assignment {.smaller}
-
-::: columns
-::: {.column .fragment width="50%"}
-> **Do something, save result, overwriting original *when you shouldn't***
-
-```{r}
-#| code-line-numbers: "5-8"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  group_by(y) |>
-  summarize(mean_x = mean(x))
-df
-```
-:::
-
-::: {.column .fragment width="50%"}
-> **Do something, save result, *not* overwriting original *when you shouldn't***
-
-```{r}
-#| code-line-numbers: "5-8"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df_summary <- df |>
-  group_by(y) |>
-  summarize(mean_x = mean(x))
-df_summary
-```
-:::
-:::
-
-## Recap: assignment {.smaller}
-
-::: columns
-::: {.column .fragment width="50%"}
-> **Do something, save result, overwriting original**\
-> ***data frame***
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  mutate(z = x + 2)
-df
-```
-:::
-
-::: {.column .fragment width="50%"}
-> **Do something, save result, overwriting original**\
-> ***column***
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  mutate(x = x + 2)
-df
-```
-:::
-:::
 
 # Data tidying
 
@@ -401,6 +278,8 @@ df
 Visualize StatSci majors over the years!
 
 ![](images/07/statsci-majors.png)
+
+**TO DO:** Update with plot from end of AE
 
 ## Data {.smaller}
 

@@ -50,6 +50,10 @@ library(tidyverse)
 
 # Questions
 
+For each part of each question below, copy and paste the code cell(s) provided into your Quarto document. 
+Run and analyze the output.
+Then, answer the questions.
+
 ## Question 1
 
 **Grouping by one variable.**
@@ -136,7 +140,7 @@ The following code is already included in your lab document.
 df_2 <- tibble(
   shift  = c("day", "day", "night", "day", "night", "day", "night", "night", "day", "night"),
   member = c("A", "B", "B", "A", "B", "B", "B", "A", "A", "B"),
-  hours  = c(10, 5, 2, 7, 6, 5, 4, 2, 3, 5),
+  hours  = c(10, 5, 2, 7, 6, 5, 4, 2, 3, 5)
 )
 
 df_2
@@ -170,6 +174,23 @@ c.  Run the following code cell and analyze the result.
 df_2 |>
   group_by(shift, member) |>
   summarize(mean_hours = mean(hours), .groups = "drop")
+```
+
+d.  In the following code cell, we add one more step to the data pipelines from the previous two parts. The new step uses `slice_head(n = 1)`, which is designed to give the first row of the output. Run each and analyze the result. You will notice the results are different. Why?
+
+```{r}
+#| results: false
+# pipeline from part b + slice_head()
+df_2 |>
+  group_by(shift, member) |>
+  summarize(mean_hours = mean(hours)) |>
+  slice_head(n = 1)
+
+# pipeline from part c + slice_head()
+df_2 |>
+  group_by(shift, member) |>
+  summarize(mean_hours = mean(hours), .groups = "drop") |>
+  slice_head(n = 1)
 ```
 
 e.  Run the following code cell and analyze the result.
