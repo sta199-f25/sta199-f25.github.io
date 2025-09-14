@@ -15,7 +15,7 @@
     "href": "slides/07-tidying-data-slides.html#while-you-wait-participate",
     "title": "Tidying data",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\nWhich of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm() +\n  labs(title = \"O\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhich of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#announcements",
@@ -57,14 +57,28 @@
     "href": "slides/07-tidying-data-slides.html#recap-logical-operators",
     "title": "Tidying data",
     "section": "Recap: logical operators",
-    "text": "Recap: logical operators\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&lt;=\nis less than or equal to?\n\n\n&gt;\nis greater than?\n\n\n&gt;=\nis greater than or equal to?\n\n\n==\nis exactly equal to?\n\n\n!=\nis not equal to?"
+    "text": "Recap: logical operators\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&gt;\nis greater than?"
+  },
+  {
+    "objectID": "slides/07-tidying-data-slides.html#recap-participate",
+    "href": "slides/07-tidying-data-slides.html#recap-participate",
+    "title": "Tidying data",
+    "section": "Recap: Participate 📱💻",
+    "text": "Recap: Participate 📱💻\n\n\n\nMatch the following logical operators to their definitions.\n\n\n&lt;=\n&gt;=\n==\n!=\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/07-tidying-data-slides.html#recap-participate-1",
+    "href": "slides/07-tidying-data-slides.html#recap-participate-1",
+    "title": "Tidying data",
+    "section": "Recap: Participate 📱💻",
+    "text": "Recap: Participate 📱💻\n\n\n\nMatch the following definitions to their logical operators.\n\n\nis x AND y?\nis x OR y?\nis x NA?\nis x not NA?\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#recap-logical-operators-cont.",
     "href": "slides/07-tidying-data-slides.html#recap-logical-operators-cont.",
     "title": "Tidying data",
     "section": "Recap: logical operators (cont.)",
-    "text": "Recap: logical operators (cont.)\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx & y\nis x AND y?\n\n\nx \\| y\nis x OR y?\n\n\nis.na(x)\nis x NA?\n\n\n!is.na(x)\nis x not NA?\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+    "text": "Recap: logical operators (cont.)\nOther useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#tidy-data",
@@ -162,14 +176,14 @@
     "href": "slides/07-tidying-data.html",
     "title": "Tidying data",
     "section": "",
-    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm() +\n  labs(title = \"O\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n1\n2\n…\n\n\n\n\nUpdate the following code to create the visualization on the right.\n\n\n\n\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))\n\n\n\n\n\n\n\n\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)\n\n\n\n\n\n\n\n\n\nRemove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)\n\n\n\n\n\n\n\n\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&lt;=\nis less than or equal to?\n\n\n&gt;\nis greater than?\n\n\n&gt;=\nis greater than or equal to?\n\n\n==\nis exactly equal to?\n\n\n!=\nis not equal to?\n\n\n\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx & y\nis x AND y?\n\n\nx \\| y\nis x OR y?\n\n\nis.na(x)\nis x NA?\n\n\n!is.na(x)\nis x not NA?\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n1\n2\n…\n\n\n\n\nUpdate the following code to create the visualization on the right.\n\n\n\n\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))\n\n\n\n\n\n\n\n\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)\n\n\n\n\n\n\n\n\n\nRemove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)\n\n\n\n\n\n\n\n\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&gt;\nis greater than?\n\n\n\n\n\n\nMatch the following logical operators to their definitions.\n\n\n&lt;=\n&gt;=\n==\n!=\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nMatch the following definitions to their logical operators.\n\n\nis x AND y?\nis x OR y?\nis x NA?\nis x not NA?\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\nOther useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
   },
   {
     "objectID": "slides/07-tidying-data.html#while-you-wait-participate",
     "href": "slides/07-tidying-data.html#while-you-wait-participate",
     "title": "Tidying data",
     "section": "",
-    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm() +\n  labs(title = \"O\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/07-tidying-data.html#announcements",
@@ -211,14 +225,28 @@
     "href": "slides/07-tidying-data.html#recap-logical-operators",
     "title": "Tidying data",
     "section": "",
-    "text": "Generally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&lt;=\nis less than or equal to?\n\n\n&gt;\nis greater than?\n\n\n&gt;=\nis greater than or equal to?\n\n\n==\nis exactly equal to?\n\n\n!=\nis not equal to?"
+    "text": "Generally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&gt;\nis greater than?"
+  },
+  {
+    "objectID": "slides/07-tidying-data.html#recap-participate",
+    "href": "slides/07-tidying-data.html#recap-participate",
+    "title": "Tidying data",
+    "section": "",
+    "text": "Match the following logical operators to their definitions.\n\n\n&lt;=\n&gt;=\n==\n!=\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/07-tidying-data.html#recap-participate-1",
+    "href": "slides/07-tidying-data.html#recap-participate-1",
+    "title": "Tidying data",
+    "section": "",
+    "text": "Match the following definitions to their logical operators.\n\n\nis x AND y?\nis x OR y?\nis x NA?\nis x not NA?\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/07-tidying-data.html#recap-logical-operators-cont.",
     "href": "slides/07-tidying-data.html#recap-logical-operators-cont.",
     "title": "Tidying data",
     "section": "",
-    "text": "Generally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx & y\nis x AND y?\n\n\nx \\| y\nis x OR y?\n\n\nis.na(x)\nis x NA?\n\n\n!is.na(x)\nis x not NA?\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+    "text": "Other useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
   },
   {
     "objectID": "slides/07-tidying-data.html#tidy-data",

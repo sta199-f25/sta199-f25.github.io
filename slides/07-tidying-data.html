@@ -498,6 +498,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#recap-layering-geoms-2" id="toc-recap-layering-geoms-2" class="nav-link" data-scroll-target="#recap-layering-geoms-2">Recap: layering geoms</a></li>
   <li><a href="#recap-layering-geoms-3" id="toc-recap-layering-geoms-3" class="nav-link" data-scroll-target="#recap-layering-geoms-3">Recap: layering geoms</a></li>
   <li><a href="#recap-logical-operators" id="toc-recap-logical-operators" class="nav-link" data-scroll-target="#recap-logical-operators">Recap: logical operators</a></li>
+  <li><a href="#recap-participate" id="toc-recap-participate" class="nav-link" data-scroll-target="#recap-participate">Recap: Participate 📱💻</a></li>
+  <li><a href="#recap-participate-1" id="toc-recap-participate-1" class="nav-link" data-scroll-target="#recap-participate-1">Recap: Participate 📱💻</a></li>
   <li><a href="#recap-logical-operators-cont." id="toc-recap-logical-operators-cont." class="nav-link" data-scroll-target="#recap-logical-operators-cont.">Recap: logical operators (cont.)</a></li>
   </ul>
 </li>
@@ -576,8 +578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"O"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -696,28 +697,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;"><span class="fragment">is less than?</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>&lt;=</code></td>
-<td style="text-align: left;"><span class="fragment">is less than or equal to?</span></td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;"><code>&gt;</code></td>
 <td style="text-align: left;"><span class="fragment">is greater than?</span></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>&gt;=</code></td>
-<td style="text-align: left;"><span class="fragment">is greater than or equal to?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>==</code></td>
-<td style="text-align: left;"><span class="fragment">is exactly equal to?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>!=</code></td>
-<td style="text-align: left;"><span class="fragment">is not equal to?</span></td>
-</tr>
 </tbody>
-</table></section><section id="recap-logical-operators-cont." class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-logical-operators-cont.">Recap: logical operators (cont.)</h2>
-<p>Generally useful in a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> but will come up in various other places as well…</p>
+</table></section><section id="recap-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="recap-participate">Recap: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Match the following logical operators to their definitions.</p>
+<div class="wooclap-choices">
+<ul>
+<li><code>&lt;=</code></li>
+<li><code>&gt;=</code></li>
+<li><code>==</code></li>
+<li><code>!=</code></li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="recap-participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="recap-participate-1">Recap: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Match the following definitions to their logical operators.</p>
+<div class="wooclap-choices">
+<ul>
+<li>is x AND y?</li>
+<li>is x OR y?</li>
+<li>is x NA?</li>
+<li>is x not NA?</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="recap-logical-operators-cont." class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-logical-operators-cont.">Recap: logical operators (cont.)</h2>
+<p>Other useful logical operators:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -728,22 +761,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: left;">definition</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>x &amp; y</code></td>
-<td style="text-align: left;"><span class="fragment">is x AND y?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>x \| y</code></td>
-<td style="text-align: left;"><span class="fragment">is x OR y?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>is.na(x)</code></td>
-<td style="text-align: left;"><span class="fragment">is x NA?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>!is.na(x)</code></td>
-<td style="text-align: left;"><span class="fragment">is x not NA?</span></td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;"><code>x %in% y</code></td>
 <td style="text-align: left;"><span class="fragment">is x in y?</span></td>
