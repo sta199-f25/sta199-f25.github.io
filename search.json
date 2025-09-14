@@ -2296,7 +2296,7 @@
     "href": "ae/ae-05-majors-A.html#lets-now-pivot-wider",
     "title": "AE 05: Tidying Stat Sci",
     "section": "Let’s now pivot wider!",
-    "text": "Let’s now pivot wider!\n\n\nDemoJust like you can pivot longer, you can pivot wider. Let’s convert our longer data frame back into the wider one in a single pipeline.\n\n\n# add your code here"
+    "text": "Let’s now pivot wider!\n\n\nDemo: Just like you can pivot longer, you can pivot wider. Let’s convert our longer data frame back into the wider one in a single pipeline.\n\n\nstatsci_wider &lt;- statsci_longer |&gt;\n  pivot_wider(\n    names_from = \"year\", \n    values_from = \"n\"\n  )"
   },
   {
     "objectID": "ae/ae-02-bechdel-dataviz-A.html",
