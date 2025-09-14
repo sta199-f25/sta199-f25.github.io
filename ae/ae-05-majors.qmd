@@ -9,7 +9,7 @@ format:
 
 Our ultimate goal in this application exercise is to make the following data visualization.
 
-![](https://sta199-s24.github.io/images/statsci-plot.png){fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2021). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
+![](/slides/images/07/statsci-majors-2025.png){fig-align="center"}{fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2025). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
 
 ## Data
 
@@ -61,7 +61,7 @@ statsci
 
 -  **Your turn:** Now we will start making our plot, but let's not get too fancy right away. Create the following plot, which will serve as the "first draft" on the way to our [Goal]. Do this by adding on to your pipeline from earlier.
 
-![](https://sta199-s24.github.io/images/statsci-plot-draft.png){fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2021). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
+![](/slides/images/07/stats-intermediate-plot.png){fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2025). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
 
 ```{r}
 #| label: plot-draft
@@ -77,7 +77,7 @@ statsci
 
 *Add your response here.*
 
--   **Demo:** Update x-axis scale such that the years displayed go from 2011 to 2023 in increments of 2 years. Do this by adding on to your pipeline from earlier.
+-   **Demo:** Update x-axis scale such that the years displayed go from 2011 to 2025 in increments of 2 years. Do this by adding on to your pipeline from earlier.
 
 ```{r}
 #| label: plot-improve-1
