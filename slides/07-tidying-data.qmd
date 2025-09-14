@@ -11,6 +11,7 @@ format:
     transition: fade
     slide-number: true
     logo: images/logo.png
+    pdf-separate-fragments: true
     toc: false
   html: 
     code-link: true
@@ -55,10 +56,8 @@ statsci_clean <- replace(statsci_clean, is.na(statsci_clean), 0)
 
 ```
 
-::: {.columns}
-
+::: columns
 ::: {.column width="85%"}
-
 ::: wooclap
 Which of the following plots does this code produce?
 
@@ -99,25 +98,19 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16, color = gerry)) +
   geom_beeswarm() +
   labs(title = "o D")
 ```
-
 :::
-
 :::
 
 ::: {.column width="15%"}
-
 {{< include _wooclap-column.qmd >}}
-
 :::
-
-::: 
-
+:::
 
 ## Announcements
 
-- 1
-- 2
-- ...
+-   1
+-   2
+-   ...
 
 ## Recap: layering geoms {.scrollable .smaller}
 
@@ -126,11 +119,10 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16, color = gerry)) +
 ::: task
 Update the following code to create the visualization on the right.
 :::
-
 :::
 
 ::: {.column width="40%"}
-![](images/07/gerrymander-recreate.png)
+![](images/07/gerrymander-recreate-2.png)
 :::
 :::
 
@@ -144,12 +136,23 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
 
 ## Recap: layering geoms {.smaller}
 
-1. Swap the order of the two geoms.
+0.  Original Code:
 
 ```{r}
 #| message: false
 #| fig-asp: 0.4
-#| code-line-numbers: "|2,3"
+ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
+  geom_boxplot(aes(color = gerry)) +
+  geom_beeswarm() 
+```
+
+## Recap: layering geoms {.smaller}
+
+1.  Swap the order of the two geoms.
+
+```{r}
+#| message: false
+#| fig-asp: 0.4
 ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() +
   geom_boxplot(aes(color = gerry))
@@ -157,12 +160,11 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
 
 ## Recap: layering geoms {.smaller}
 
-2. Make the boxplots semi-transparent.
+2.  Make the boxplots semi-transparent.
 
 ```{r}
 #| message: false
 #| fig-asp: 0.4
-#| code-line-numbers: "|3"
 ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() +
   geom_boxplot(aes(color = gerry), alpha = 0.5)
@@ -170,12 +172,11 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
 
 ## Recap: layering geoms {.smaller}
 
-3. Remove the legend.
+3.  Remove the legend.
 
 ```{r}
 #| message: false
 #| fig-asp: 0.4
-#| code-line-numbers: "|3"
 ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() +
   geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)
@@ -185,67 +186,53 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
 
 Generally useful in a `filter()` but will come up in various other places as well...
 
-| operator | definition                                |
-|:---------|:------------------------------------------|
-| `<`      | [is less than?]{.fragment}                |
-| `>`      | [is greater than?]{.fragment}             |
+| operator | definition                    |
+|:---------|:------------------------------|
+| `<`      | [is less than?]{.fragment}    |
+| `>`      | [is greater than?]{.fragment} |
 
 : {tbl-colwidths="\[25,75\]"}
 
 ## Recap: Participate 📱💻 {.xsmall}
 
-::: {.columns}
-
+::: columns
 ::: {.column width="70%"}
-
 ::: wooclap
 Match the following logical operators to their definitions.
 
 ::: wooclap-choices
-- `<=`
-- `>=`
-- `==`
-- `!=`
+-   `<=`
+-   `>=`
+-   `==`
+-   `!=`
 :::
-
 :::
-
 :::
 
 ::: {.column width="30%"}
-
 {{< include _wooclap-column.qmd >}}
-
 :::
-
 :::
 
 ## Recap: Participate 📱💻 {.xsmall}
 
-::: {.columns}
-
+::: columns
 ::: {.column width="70%"}
-
 ::: wooclap
 Match the following definitions to their logical operators.
 
 ::: wooclap-choices
-- is x AND y?
-- is x OR y?
-- is x NA?
-- is x not NA?
+-   is x AND y?
+-   is x OR y?
+-   is x NA?
+-   is x not NA?
 :::
-
 :::
-
 :::
 
 ::: {.column width="30%"}
-
 {{< include _wooclap-column.qmd >}}
-
 :::
-
 :::
 
 ## Recap: logical operators (cont.) {.smaller}
@@ -253,13 +240,12 @@ Match the following definitions to their logical operators.
 Other useful logical operators:
 
 | operator      | definition                                                            |
-|:--------------|:----------------------------------------------------------------------|
+|:---------------|:-------------------------------------------------------|
 | `x %in% y`    | [is x in y?]{.fragment}                                               |
 | `!(x %in% y)` | [is x not in y?]{.fragment}                                           |
 | `!x`          | [is not x? (only makes sense if `x` is `TRUE` or `FALSE`)]{.fragment} |
 
 : {tbl-colwidths="\[25,75\]"}
-
 
 # Data tidying
 
@@ -277,7 +263,7 @@ Other useful logical operators:
 
 Visualize StatSci majors over the years!
 
-![](images/07/statsci-majors.png)
+![](images/07/statsci-majors-2025.png)
 
 **TO DO:** Update with plot from end of AE
 
@@ -287,34 +273,33 @@ Visualize StatSci majors over the years!
 #| include: false
 statsci <- read_csv("data/statsci_clean.csv")
 ```
+
 ```{r}
 #| label: statsci-display
 
 statsci
 ```
 
-. . . 
+. . .
 
 ::: incremental
--   The first column (variable) is the `degree`: 
+-   The first column (variable) is the `degree`:
 
-    ::: {.small}
-    - BS (Bachelor of Science)
-    - BS2 (Bachelor of Science, 2nd major)
-    - AB (Bachelor of Arts)
-    - AB2 (Bachelor of Arts, 2nd major)
+    ::: small
+    -   BS (Bachelor of Science)
+    -   BS2 (Bachelor of Science, 2nd major)
+    -   AB (Bachelor of Arts)
+    -   AB2 (Bachelor of Arts, 2nd major)
     :::
-    
+
 -   The remaining columns show the number of students graduating with that major in a given academic year from 2011 to 2025.
 :::
 
-## Let's plan! {.smaller .nostretch}
+## Let's plan! {.smaller}
 
-Review the goal plot and sketch the data frame needed to create it.
-What would go inside `aes` when we call `ggplot`?
+Review the goal plot and sketch the data frame needed to create it. What would go inside `aes` when we call `ggplot`?
 
-
-![](images/07/statsci-majors.png){width="500"}
+![](images/07/statsci-majors-2025.png){width="500"}
 
 ## The Goal {.smaller .nostretch}
 
@@ -328,12 +313,9 @@ ggplot(statsci, aes(x = year, y = n, color = degree_type)) +
 
 ```
 
-
-. . . 
-
+. . .
 
 <br>
-
 
 But our data are not in the right format :(
 
@@ -343,10 +325,8 @@ statsci
 
 ## The Challenge {.smaller .nostretch}
 
-::: {.columns}
-
+::: columns
 ::: {.column width="70%"}
-
 ***How do we go from this ....***
 
 ```{r}
@@ -356,15 +336,10 @@ statsci |>
   select(1:10) |> 
   as.data.frame()
 ```
-
 :::
 
-
 ::: {.column .fragment width="30%"}
-
 ***.... to this??***
-
-
 
 ```{r}
 #| echo: false
@@ -378,18 +353,15 @@ print(statsci |>
       slice_head(n = 17) |>
         as.data.frame())
 ```
-::: 
 :::
-
+:::
 
 # Pivot
 
 ## `pivot_longer()` {.smaller .scrollable}
 
-::: {.columns}
-
+::: columns
 ::: {.column width="65%"}
-
 ```{r}
 #| echo: false
 cat("# A tibble: 4 x 16")
@@ -403,17 +375,13 @@ Pivot the `statsci` data frame *longer* such that each row represents a degree t
 
 `year` and `n`umber of graduates for that year are columns in the result data frame.
 :::
-
 :::
 
 ::: {.column width="5%"}
-$$ \to $$
+⟶
 :::
 
-
 ::: {.column width="30%"}
-
-
 ```{r}
 #| echo: false
 cat("# A tibble: 60 x 3")
@@ -426,16 +394,13 @@ print(statsci |>
       slice_head(n = 17) |>
         as.data.frame())
 ```
-::: 
 :::
-
+:::
 
 ## `pivot_longer()` {.smaller .scrollable}
 
-::: {.columns}
-
+::: columns
 ::: {.column width="65%"}
-
 ```{r}
 #| echo: false
 cat("# A tibble: 4 x 16")
@@ -458,19 +423,14 @@ statsci |>
     values_to = ______________
   )
 ```
-
 :::
-
 :::
 
 ::: {.column width="5%"}
-$$ \to $$
+⟶
 :::
 
-
 ::: {.column width="30%"}
-
-
 ```{r}
 #| echo: false
 cat("# A tibble: 60 x 3")
@@ -483,15 +443,12 @@ print(statsci |>
       slice_head(n = 17) |>
         as.data.frame())
 ```
-::: 
 :::
-
+:::
 
 ## `year` {.smaller}
 
-::: {.columns}
-
-
+::: columns
 ::: {.column width="50%"}
 ```{r}
 statsci |> 
@@ -501,32 +458,24 @@ statsci |>
     names_to = "year"
   )
 ```
-
 :::
 
 ::: {.column width="50%"}
-
 ::: question
-What is the type of the `year` variable?
-Why?
-What should it be?
+What is the type of the `year` variable? Why? What should it be?
 :::
 
-::: {.fragment}
-
+::: fragment
 ::: incremental
-- It's a character (`chr`) variable since the information came from the columns of the original data frame.
+-   It's a character (`chr`) variable since the information came from the columns of the original data frame.
 
-- R cannot know that these character strings represent years.
+-   R cannot know that these character strings represent years.
 
-- The variable type should be numeric.
-
-:::
-
-::: 
+-   The variable type should be numeric.
 :::
 :::
-
+:::
+:::
 
 ## `pivot_longer()` again {.smaller .scrollable}
 
@@ -534,8 +483,7 @@ What should it be?
 This time, also make sure `year` is a numerical variable in the resulting data frame.
 :::
 
-::: {.columns}
-
+::: columns
 ::: {.column width = "50%"}
 
 ```{r}
@@ -547,7 +495,6 @@ statsci |>
     names_to = "year"
   )
 ```
-
 :::
 
 ::: {.column width = "50%" }
@@ -562,8 +509,7 @@ statsci |>
 This time, also make sure `year` is a numerical variable in the resulting data frame.
 :::
 
-::: {.columns}
-
+::: columns
 ::: {.column width = "50%"}
 
 ```{r}
@@ -577,10 +523,10 @@ statsci |>
     names_transform = as.numeric
   )
 ```
-
 :::
 
 ::: {.column width = "50%" .fragment}
+
 ```{r}
 #| echo: false
 statsci |>
@@ -591,6 +537,7 @@ statsci |>
     names_transform = as.numeric
   )
 ```
+
 :::
 
 :::
@@ -599,7 +546,7 @@ statsci |>
 
 ## Goal: recreate this plot {.smaller}
 
-add image
+![](images/07/statsci-majors-2025.png)
 
 ## `{r} todays_ae` {.smaller}
 
@@ -613,10 +560,102 @@ add image
 -   Work through the application exercise in class, and render, commit, and push your edits by the end of class.
 :::
 
-## Recap: pivoting {.smaller}
+# Pivot Wider
+
+## We pivotted longer... what about wider? {.smaller}
+
+::: columns
+::: {.column width="65%"}
+```{r}
+#| echo: false
+cat("# A tibble: 4 x 16")
+statsci |> 
+  select(1:10) |> 
+  as.data.frame()
+```
+
+::: {.task .fragment}
+Can we go the other direction?
+:::
+:::
+
+::: {.column width="5%"}
+⟵
+:::
+
+::: {.column width="30%"}
+```{r}
+#| echo: false
+cat("# A tibble: 60 x 3")
+print(statsci |>
+        pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric) |>
+      slice_head(n = 17) |>
+        as.data.frame())
+```
+:::
+:::
+
+## We pivotted longer... what about wider? {.smaller}
+
+::: columns
+::: {.column width="65%"}
+```{r}
+#| echo: false
+cat("# A tibble: 4 x 16")
+statsci |> 
+  select(1:10) |> 
+  as.data.frame()
+```
+
+::: task
+```{r}
+#| eval: false
+statsci_longer |> 
+  pivot_wider(
+    names_from = ____________ ,
+    
+    values_from = ___________ , 
+  )
+```
+:::
+:::
+
+::: {.column width="5%"}
+⟵
+:::
+
+::: {.column width="30%"}
+```{r}
+#| echo: false
+cat("# A tibble: 60 x 3")
+print(statsci |>
+        pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric) |>
+      slice_head(n = 17) |>
+        as.data.frame())
+```
+:::
+:::
+
+## Recap: Pivot {.smaller}
 
 ::: incremental
--   Data sets can't be labeled as *wide* or *long* but they can be made *wider* or *longer* for a certain analysis that requires a certain format
--   When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the `pivot_longer()` function.
--   You can tweak a plot forever, but at some point the tweaks are likely not very productive. However, you should always be critical of defaults (however pretty they might be) and see if you can improve the plot to better portray your data / results / what you want to communicate.
+-   ***When should you pivot?*** If all of the data you need is in your data frame, but the columns you need don't exist, there is a good chance it's time to pivot!
+-   ***Wide and long:*** Data sets can't be labeled as *wide* or *long* but they can be made *wider* or *longer* for a certain analysis that requires a certain format
+-   ***Pivot longer - data type:*** When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the `pivot_longer()` function.
+:::
+
+## Recap: Plotting {.smaller}
+
+::: incremental
+-   You can tweak a plot forever, but at some point the tweaks are likely not very productive.
+
+-   However, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate.
 :::
