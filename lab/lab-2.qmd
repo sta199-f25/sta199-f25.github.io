@@ -3,7 +3,7 @@ title: Lab 2
 subtitle: Get in teams then `group_by()`
 description: "Due: End of lab on Mon, Sep 15"
 categories: Lab
-draft: true
+draft: false
 ---
 
 # Introduction
