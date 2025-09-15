@@ -179,7 +179,7 @@ statsci_longer |>
   )
 ```
 
--   **Demo:** Finally, set `fig-width: 7` and `fig-height: 5` for your plot in the chunk options.
+-   **Demo:** Finally, set `fig-width: 10` and `fig-height: 5` for your plot in the chunk options.
 
 ```{r}
 #| label: plot-improve-5
