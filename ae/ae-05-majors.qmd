@@ -119,7 +119,7 @@ statsci
 
 ## Let's now pivot wider!
 
--   **Demo**Just like you can pivot longer, you can pivot wider. Let's convert our longer data frame back into the  wider one in a single pipeline.
+-   **Demo:** Just like you can pivot longer, you can pivot wider. Let's convert our longer data frame back into the  wider one in a single pipeline.
 
 ```{r}
 #| label: wider
