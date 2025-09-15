@@ -284,9 +284,24 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry)) <span class="sc">+</span></span>
 <span id="cb3-3"><a></a>  <span class="fu">geom_beeswarm</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-2" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
+</div>
+</div>
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
+</div>
+</section><section id="recap-layering-geoms-2" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
 <ol type="1">
 <li>Swap the order of the two geoms.</li>
 </ol>
@@ -294,9 +309,24 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb4-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
 <span id="cb4-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-3" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
+</div>
+</div>
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
+</div>
+</section><section id="recap-layering-geoms-3" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
 <ol start="2" type="1">
 <li>Make the boxplots semi-transparent.</li>
 </ol>
@@ -304,9 +334,24 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb5-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
 <span id="cb5-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section id="recap-layering-geoms-4" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
+</div>
+</div>
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
+</div>
+</section><section id="recap-layering-geoms-4" class="slide level2 smaller"><h2>Recap: layering geoms</h2>
 <ol start="3" type="1">
 <li>Remove the legend.</li>
 </ol>
@@ -314,9 +359,24 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb6-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
 <span id="cb6-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="recap-logical-operators" class="slide level2 smaller"><h2>Recap: logical operators</h2>
+</div>
+</div>
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
+</div>
+</section><section id="recap-logical-operators" class="slide level2 smaller"><h2>Recap: logical operators</h2>
 <p>Generally useful in a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> but will come up in various other places as well…</p>
 <table class="caption-top">
 <colgroup>
