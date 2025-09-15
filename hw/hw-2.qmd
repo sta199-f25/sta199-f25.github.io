@@ -3,7 +3,7 @@ title: HW 2
 subtitle: Deeper dive into Midwest and NC Counties
 description: "Due: Sun, Sep 21, 11:59 pm"
 categories: HW
-draft: true
+draft: false
 ---
 
 # Introduction

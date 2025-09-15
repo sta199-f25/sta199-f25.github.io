@@ -3,12 +3,14 @@ title: Lab 2
 subtitle: Get in teams then `group_by()`
 description: "Due: End of lab on Mon, Sep 15"
 categories: Lab
-draft: true
+draft: false
 ---
 
 # Introduction
 
 This lab is a deep dive into `group_by()`!
+
+Make sure to upload your completed lab to Gradescope **by the end of your lab session** and commit and push your final version to GitHub.
 
 ## Getting started
 
