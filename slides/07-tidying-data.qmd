@@ -146,6 +146,17 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() 
 ```
 
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+  <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
+</div>
+
 ## Recap: layering geoms {.smaller}
 
 1.  Swap the order of the two geoms.
@@ -157,6 +168,16 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() +
   geom_boxplot(aes(color = gerry))
 ```
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+  <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
+</div>
 
 ## Recap: layering geoms {.smaller}
 
@@ -169,6 +190,16 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() +
   geom_boxplot(aes(color = gerry), alpha = 0.5)
 ```
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+  <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
+</div>
 
 ## Recap: layering geoms {.smaller}
 
@@ -181,6 +212,16 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() +
   geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)
 ```
+<!-- small Venn diagram in the bottom-right -->
+<div style="
+  position: absolute;
+  bottom: 460px;
+  right: -150px;
+  width: 500px;           /* adjust to taste */
+  pointer-events: none;  /* so it never steals clicks */
+">
+  <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
+</div>
 
 ## Recap: logical operators {.smaller}
 
