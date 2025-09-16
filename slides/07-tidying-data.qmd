@@ -106,11 +106,17 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16, color = gerry)) +
 :::
 :::
 
-## Announcements
+## Announcements {.smaller}
 
--   1
--   2
--   ...
+::: incremental
+-   If you haven't turned in HW 1, you received an email reminding you that you homework may be submitted up to 72 hours after the deadline, with a 5% deduction for each 24-hour period it is late. More info on late policy on syllabus.
+
+-   Don't forget to review your Lab 1 feedback on Gradescope, even if you didn't miss any points on it.
+
+-   Great job with questions on Ed and office hours, keep it up!
+
+-   I will hold office hours today after class!
+:::
 
 ## Recap: layering geoms {.scrollable .smaller}
 
@@ -149,13 +155,14 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
   <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
 </div>
+
 
 ## Recap: layering geoms {.smaller}
 
@@ -171,13 +178,14 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
   <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
 </div>
+
 
 ## Recap: layering geoms {.smaller}
 
@@ -193,13 +201,14 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
   <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
 </div>
+
 
 ## Recap: layering geoms {.smaller}
 
@@ -212,16 +221,18 @@ ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm() +
   geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)
 ```
+
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
   <img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;" />
 </div>
+
 
 ## Recap: logical operators {.smaller}
 
@@ -281,12 +292,59 @@ Match the following definitions to their logical operators.
 Other useful logical operators:
 
 | operator      | definition                                                            |
-|:---------------|:-------------------------------------------------------|
+|:-----------------|:-----------------------------------------------------|
 | `x %in% y`    | [is x in y?]{.fragment}                                               |
 | `!(x %in% y)` | [is x not in y?]{.fragment}                                           |
 | `!x`          | [is not x? (only makes sense if `x` is `TRUE` or `FALSE`)]{.fragment} |
 
 : {tbl-colwidths="\[25,75\]"}
+
+## Recap: logical operators (cont.) {.smaller}
+
+<br>
+
+
+::: columns
+
+::: {.column width = "30%"}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| 1    | A    |50    |
+| 2    | B    |40    |    
+| 3    | A    |30    |
+| 4    | B    |NA    |
+| 5    | C    |10    |
+
+:::
+
+::: {.column width = "10%"}
+
+:::
+
+::: {.column width = "60%"}
+
+:::question
+For which rows are the following true?
+:::
+
+::: incremental
+
+- `Col1 < 3 | Col3 < 20 `
+
+- `Col2 == "C"`
+
+- `Col2 %in% c("C", "A")`
+
+- `is.na(Col3)`
+
+- `!is.na(Col3)`
+
+
+
+:::
+:::
+
+:::
 
 # Data tidying
 

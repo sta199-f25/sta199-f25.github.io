@@ -116,7 +116,7 @@ statsci
 # add your code here
 ```
 
--   **Demo:** Set `fig-width: 10` hi `fig-height: 5` for your plot in the chunk options.
+-   **Demo:** Set `fig-width: 10` and `fig-height: 5` for your plot in the chunk options.
 
 ```{r}
 #| label: plot-improve-5
