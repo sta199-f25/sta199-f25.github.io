@@ -251,11 +251,12 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="announcements" class="slide level2"><h2>Announcements</h2>
+</section><section id="announcements" class="slide level2 smaller"><h2>Announcements</h2>
 <ul>
-<li>1</li>
-<li>2</li>
-<li>…</li>
+<li class="fragment"><p>If you haven’t turned in HW 1, you received an email reminding you that you homework may be submitted up to 72 hours after the deadline, with a 5% deduction for each 24-hour period it is late. More info on late policy on syllabus.</p></li>
+<li class="fragment"><p>Don’t forget to review your Lab 1 feedback on Gradescope, even if you didn’t miss any points on it.</p></li>
+<li class="fragment"><p>Great job with questions on Ed and office hours, keep it up!</p></li>
+<li class="fragment"><p>I will hold office hours today after class!</p></li>
 </ul></section><section id="recap-layering-geoms" class="slide level2 scrollable smaller"><h2>Recap: layering geoms</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -294,9 +295,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -319,9 +320,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -344,9 +345,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -369,9 +370,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -468,7 +469,59 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <td style="text-align: left;"><span class="fragment">is not x? (only makes sense if <code>x</code> is <code>TRUE</code> or <code>FALSE</code>)</span></td>
 </tr>
 </tbody>
-</table></section></section><section><section id="data-tidying" class="title-slide slide level1 center"><h1>Data tidying</h1>
+</table></section><section id="recap-logical-operators-cont.-1" class="slide level2 smaller"><h2>Recap: logical operators (cont.)</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<table class="caption-top">
+<thead><tr class="header">
+<th>Col1</th>
+<th>Col2</th>
+<th>Col3</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>B</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>A</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>B</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>C</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:60%;">
+<div class="question">
+<p>For which rows are the following true?</p>
+</div>
+<ul>
+<li class="fragment"><p><code>Col1 &lt; 3 | Col3 &lt; 20</code></p></li>
+<li class="fragment"><p><code>Col2 == "C"</code></p></li>
+<li class="fragment"><p><code>Col2 %in% c("C", "A")</code></p></li>
+<li class="fragment"><p><code>is.na(Col3)</code></p></li>
+<li class="fragment"><p><code>!is.na(Col3)</code></p></li>
+</ul>
+</div></div>
+</section></section><section><section id="data-tidying" class="title-slide slide level1 center"><h1>Data tidying</h1>
 
 </section><section id="tidy-data" class="slide level2"><h2>Tidy data</h2>
 <blockquote>

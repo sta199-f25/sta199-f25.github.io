@@ -22,7 +22,7 @@
     "href": "slides/07-tidying-data-slides.html#announcements",
     "title": "Tidying data",
     "section": "Announcements",
-    "text": "Announcements\n\n1\n2\n…"
+    "text": "Announcements\n\nIf you haven’t turned in HW 1, you received an email reminding you that you homework may be submitted up to 72 hours after the deadline, with a 5% deduction for each 24-hour period it is late. More info on late policy on syllabus.\nDon’t forget to review your Lab 1 feedback on Gradescope, even if you didn’t miss any points on it.\nGreat job with questions on Ed and office hours, keep it up!\nI will hold office hours today after class!"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#recap-layering-geoms",
@@ -86,6 +86,13 @@
     "title": "Tidying data",
     "section": "Recap: logical operators (cont.)",
     "text": "Recap: logical operators (cont.)\nOther useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+  },
+  {
+    "objectID": "slides/07-tidying-data-slides.html#recap-logical-operators-cont.-1",
+    "href": "slides/07-tidying-data-slides.html#recap-logical-operators-cont.-1",
+    "title": "Tidying data",
+    "section": "Recap: logical operators (cont.)",
+    "text": "Recap: logical operators (cont.)\n\n\n\n\n\nCol1\nCol2\nCol3\n\n\n\n1\nA\n50\n\n\n2\nB\n40\n\n\n3\nA\n30\n\n\n4\nB\nNA\n\n\n5\nC\n10\n\n\n\n\n\n\n\nFor which rows are the following true?\n\n\nCol1 &lt; 3 | Col3 &lt; 20\nCol2 == \"C\"\nCol2 %in% c(\"C\", \"A\")\nis.na(Col3)\n!is.na(Col3)"
   },
   {
     "objectID": "slides/07-tidying-data-slides.html#tidy-data",
@@ -211,7 +218,7 @@
     "href": "slides/07-tidying-data.html",
     "title": "Tidying data",
     "section": "",
-    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n1\n2\n…\n\n\n\n\nUpdate the following code to create the visualization on the right.\n\n\n\n\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\nOriginal Code:\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm() \n\n\n\n\n\n\n\n\n\n\n\n\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))\n\n\n\n\n\n\n\n\n\n\n\n\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)\n\n\n\n\n\n\n\n\n\n\n\n\n\nRemove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)\n\n\n\n\n\n\n\n\n\n\n\n\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&gt;\nis greater than?\n\n\n\n\n\n\nMatch the following logical operators to their definitions.\n\n\n&lt;=\n&gt;=\n==\n!=\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nMatch the following definitions to their logical operators.\n\n\nis x AND y?\nis x OR y?\nis x NA?\nis x not NA?\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\nOther useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+    "text": "Which of the following plots does this code produce?\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\nIf you haven’t turned in HW 1, you received an email reminding you that you homework may be submitted up to 72 hours after the deadline, with a 5% deduction for each 24-hour period it is late. More info on late policy on syllabus.\nDon’t forget to review your Lab 1 feedback on Gradescope, even if you didn’t miss any points on it.\nGreat job with questions on Ed and office hours, keep it up!\nI will hold office hours today after class!\n\n\n\n\n\n\nUpdate the following code to create the visualization on the right.\n\n\n\n\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm()\n\n\n\n\n\n\n\n\n\nOriginal Code:\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_boxplot(aes(color = gerry)) +\n  geom_beeswarm() \n\n\n\n\n\n\n\n\n\n\n\n\n\nSwap the order of the two geoms.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry))\n\n\n\n\n\n\n\n\n\n\n\n\n\nMake the boxplots semi-transparent.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5)\n\n\n\n\n\n\n\n\n\n\n\n\n\nRemove the legend.\n\n\nggplot(gerrymander, aes(x = gerry, y = clinton16)) +\n  geom_beeswarm() +\n  geom_boxplot(aes(color = gerry), alpha = 0.5, show.legend = FALSE)\n\n\n\n\n\n\n\n\n\n\n\n\nGenerally useful in a filter() but will come up in various other places as well…\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&gt;\nis greater than?\n\n\n\n\n\n\nMatch the following logical operators to their definitions.\n\n\n&lt;=\n&gt;=\n==\n!=\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nMatch the following definitions to their logical operators.\n\n\nis x AND y?\nis x OR y?\nis x NA?\nis x not NA?\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\nOther useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)\n\n\n\n\n\n\n\n\nCol1\nCol2\nCol3\n\n\n\n1\nA\n50\n\n\n2\nB\n40\n\n\n3\nA\n30\n\n\n4\nB\nNA\n\n\n5\nC\n10\n\n\n\n\n\n\n\nFor which rows are the following true?\n\n\n\nCol1 &lt; 3 | Col3 &lt; 20\nCol2 == \"C\"\nCol2 %in% c(\"C\", \"A\")\nis.na(Col3)\n!is.na(Col3)"
   },
   {
     "objectID": "slides/07-tidying-data.html#while-you-wait-participate",
@@ -225,7 +232,7 @@
     "href": "slides/07-tidying-data.html#announcements",
     "title": "Tidying data",
     "section": "",
-    "text": "1\n2\n…"
+    "text": "If you haven’t turned in HW 1, you received an email reminding you that you homework may be submitted up to 72 hours after the deadline, with a 5% deduction for each 24-hour period it is late. More info on late policy on syllabus.\nDon’t forget to review your Lab 1 feedback on Gradescope, even if you didn’t miss any points on it.\nGreat job with questions on Ed and office hours, keep it up!\nI will hold office hours today after class!"
   },
   {
     "objectID": "slides/07-tidying-data.html#recap-layering-geoms",
@@ -289,6 +296,13 @@
     "title": "Tidying data",
     "section": "",
     "text": "Other useful logical operators:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+  },
+  {
+    "objectID": "slides/07-tidying-data.html#recap-logical-operators-cont.-1",
+    "href": "slides/07-tidying-data.html#recap-logical-operators-cont.-1",
+    "title": "Tidying data",
+    "section": "",
+    "text": "Col1\nCol2\nCol3\n\n\n\n1\nA\n50\n\n\n2\nB\n40\n\n\n3\nA\n30\n\n\n4\nB\nNA\n\n\n5\nC\n10\n\n\n\n\n\n\n\nFor which rows are the following true?\n\n\n\nCol1 &lt; 3 | Col3 &lt; 20\nCol2 == \"C\"\nCol2 %in% c(\"C\", \"A\")\nis.na(Col3)\n!is.na(Col3)"
   },
   {
     "objectID": "slides/07-tidying-data.html#tidy-data",
@@ -3067,7 +3081,7 @@
     "href": "ae/ae-05-majors.html#plotting",
     "title": "AE 05: Tidying Stat Sci",
     "section": "Plotting",
-    "text": "Plotting\n\n\nYour turn: Now we will start making our plot, but let’s not get too fancy right away. Create the following plot, which will serve as the “first draft” on the way to our Goal. Do this by adding on to your pipeline from earlier.\n\n\n\n\n\n\n# add your code here\n\n\n\nQuestion: Why was the pivot necessary in order to create this plot?\n\nAdd your response here!\n\n\nQuestion: What aspects of the plot need to be updated to go from the draft you created above to the Goal plot at the beginning of this application exercise.\n\nAdd your response here.\n\n\nDemo: Update x-axis scale such that the years displayed go from 2011 to 2025 in increments of 2 years. Do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Update line colors using the following level / color assignments. Once again, do this by adding on to your pipeline from earlier.\n\n“BS” = “cadetblue4”\n“BS2” = “cadetblue3”\n“AB” = “lightgoldenrod4”\n“AB2” = “lightgoldenrod3”\n\n\n\n\n# add your code here\n\n\n\nYour turn: Update the plot labels (title, subtitle, x, y, and caption) and use theme_minimal(). Once again, do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Finally, adding to your pipeline you’ve developed so far, move the legend into the plot, make its background white, and its border gray.\n\n\n# add your code here\n\n\n\nDemo: Set fig-width: 10 hi fig-height: 5 for your plot in the chunk options.\n\n\n# add your code here"
+    "text": "Plotting\n\n\nYour turn: Now we will start making our plot, but let’s not get too fancy right away. Create the following plot, which will serve as the “first draft” on the way to our Goal. Do this by adding on to your pipeline from earlier.\n\n\n\n\n\n\n# add your code here\n\n\n\nQuestion: Why was the pivot necessary in order to create this plot?\n\nAdd your response here!\n\n\nQuestion: What aspects of the plot need to be updated to go from the draft you created above to the Goal plot at the beginning of this application exercise.\n\nAdd your response here.\n\n\nDemo: Update x-axis scale such that the years displayed go from 2011 to 2025 in increments of 2 years. Do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Update line colors using the following level / color assignments. Once again, do this by adding on to your pipeline from earlier.\n\n“BS” = “cadetblue4”\n“BS2” = “cadetblue3”\n“AB” = “lightgoldenrod4”\n“AB2” = “lightgoldenrod3”\n\n\n\n\n# add your code here\n\n\n\nYour turn: Update the plot labels (title, subtitle, x, y, and caption) and use theme_minimal(). Once again, do this by adding on to your pipeline from earlier.\n\n\n# add your code here\n\n\n\nDemo: Finally, adding to your pipeline you’ve developed so far, move the legend into the plot, make its background white, and its border gray.\n\n\n# add your code here\n\n\n\nDemo: Set fig-width: 10 and fig-height: 5 for your plot in the chunk options.\n\n\n# add your code here"
   },
   {
     "objectID": "ae/ae-05-majors.html#lets-now-pivot-wider",

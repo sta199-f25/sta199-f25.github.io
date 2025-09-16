@@ -502,6 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#recap-participate" id="toc-recap-participate" class="nav-link" data-scroll-target="#recap-participate">Recap: Participate 📱💻</a></li>
   <li><a href="#recap-participate-1" id="toc-recap-participate-1" class="nav-link" data-scroll-target="#recap-participate-1">Recap: Participate 📱💻</a></li>
   <li><a href="#recap-logical-operators-cont." id="toc-recap-logical-operators-cont." class="nav-link" data-scroll-target="#recap-logical-operators-cont.">Recap: logical operators (cont.)</a></li>
+  <li><a href="#recap-logical-operators-cont.-1" id="toc-recap-logical-operators-cont.-1" class="nav-link" data-scroll-target="#recap-logical-operators-cont.-1">Recap: logical operators (cont.)</a></li>
   </ul>
 </li>
   <li>
@@ -619,12 +620,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="announcements" class="level2"><h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
-<ul>
-<li>1</li>
-<li>2</li>
-<li>…</li>
-</ul></section><section id="recap-layering-geoms" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="recap-layering-geoms">Recap: layering geoms</h2>
+</section><section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>If you haven’t turned in HW 1, you received an email reminding you that you homework may be submitted up to 72 hours after the deadline, with a 5% deduction for each 24-hour period it is late. More info on late policy on syllabus.</p></li>
+<li><p>Don’t forget to review your Lab 1 feedback on Gradescope, even if you didn’t miss any points on it.</p></li>
+<li><p>Great job with questions on Ed and office hours, keep it up!</p></li>
+<li><p>I will hold office hours today after class!</p></li>
+</ul>
+</div>
+</section><section id="recap-layering-geoms" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="recap-layering-geoms">Recap: layering geoms</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="task">
@@ -663,9 +668,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -688,9 +693,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -713,9 +718,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -738,9 +743,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- small Venn diagram in the bottom-right -->
 <div style="
   position: absolute;
-  bottom: 460px;
-  right: -150px;
-  width: 500px;           /* adjust to taste */
+  bottom: 500px;
+  right: -15px;
+  width: 413px;           /* adjust to taste */
   pointer-events: none;  /* so it never steals clicks */
 ">
 <p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
@@ -839,7 +844,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;"><span class="fragment">is not x? (only makes sense if <code>x</code> is <code>TRUE</code> or <code>FALSE</code>)</span></td>
 </tr>
 </tbody>
-</table></section></section><section id="data-tidying" class="level1"><h1>Data tidying</h1>
+</table></section><section id="recap-logical-operators-cont.-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-logical-operators-cont.-1">Recap: logical operators (cont.)</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Col1</th>
+<th>Col2</th>
+<th>Col3</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>B</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>A</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>B</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>C</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:60%;">
+<div class="question">
+<p>For which rows are the following true?</p>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li><p><code>Col1 &lt; 3 | Col3 &lt; 20</code></p></li>
+<li><p><code>Col2 == "C"</code></p></li>
+<li><p><code>Col2 %in% c("C", "A")</code></p></li>
+<li><p><code>is.na(Col3)</code></p></li>
+<li><p><code>!is.na(Col3)</code></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section></section><section id="data-tidying" class="level1"><h1>Data tidying</h1>
 <section id="tidy-data" class="level2"><h2 class="anchored" data-anchor-id="tidy-data">Tidy data</h2>
 <blockquote class="blockquote">
 <p>“Tidy datasets are easy to manipulate, model and visualise, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table.”</p>
