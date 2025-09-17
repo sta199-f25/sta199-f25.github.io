@@ -265,8 +265,6 @@ Visualize StatSci majors over the years!
 
 ![](images/07/statsci-majors-2025.png)
 
-**TO DO:** Update with plot from end of AE
-
 ## Data {.smaller}
 
 ```{r}
