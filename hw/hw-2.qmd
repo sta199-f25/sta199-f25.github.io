@@ -303,7 +303,7 @@ nc_county |>
 You should see the following output:
 
 ```
-# A tibble: 5 × 1
+# A tibble: 3 × 1
   p_edu_he
      <dbl>
 1    0.615
