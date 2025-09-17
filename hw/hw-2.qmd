@@ -327,7 +327,7 @@ c.  In a single pipeline, calculate the
 
     of `p_edu_he`.
 
-d.  In a single pipeline, calculate the same statistics as in part (b) but for each `county_type`.
+d.  In a single pipeline, calculate the same statistics as in the previous part, but for each `county_type`.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 6".

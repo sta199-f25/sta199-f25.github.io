@@ -179,7 +179,7 @@ statsci_longer |>
   )
 ```
 
--   **Demo:** Finally, set `fig-width: 7` and `fig-height: 5` for your plot in the chunk options.
+-   **Demo:** Finally, set `fig-width: 10` and `fig-height: 5` for your plot in the chunk options.
 
 ```{r}
 #| label: plot-improve-5
@@ -214,7 +214,7 @@ statsci_longer |>
 
 ## Let's now pivot wider!
 
--   **Demo:** Just like you can pivot longer, you can pivot wider. Let's convert our longer data frame back into the wider one in a single pipeline.
+-   **Demo**:  Just like you can pivot longer, you can pivot wider. Let's convert our longer data frame back into the wider one in a single pipeline.
 
 ```{r}
 #| label: wider
