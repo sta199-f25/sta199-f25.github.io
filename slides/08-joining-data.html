@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="Guest lecture by Marie Neubrander  Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2025-09-16">
-<title>Tidying data – STA 199</title>
+<meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
+<meta name="dcterms.date" content="2025-09-18">
+<title>Joining data – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,12 +104,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta property="og:title" content="Tidying data – STA 199">
-<meta property="og:description" content="Lecture 7">
-<meta property="og:image" content="https://sta199-f25.github.io/slides/07-tidying-data_files/figure-revealjs/unnamed-chunk-4-1.png">
+<meta property="og:title" content="Joining data – STA 199">
+<meta property="og:description" content="Lecture 8">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:height" content="384">
-<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="888">
+<meta property="og:image:width" content="866">
 </head>
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tidying data</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Joining data</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -492,62 +492,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
   <ul class="collapse">
 <li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
+  <li><a href="#pivot-wider" id="toc-pivot-wider" class="nav-link" data-scroll-target="#pivot-wider">Pivot wider</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#recap-layering-geoms" id="toc-recap-layering-geoms" class="nav-link" data-scroll-target="#recap-layering-geoms">Recap: layering geoms</a></li>
-  <li><a href="#recap-layering-geoms-1" id="toc-recap-layering-geoms-1" class="nav-link" data-scroll-target="#recap-layering-geoms-1">Recap: layering geoms</a></li>
-  <li><a href="#recap-layering-geoms-2" id="toc-recap-layering-geoms-2" class="nav-link" data-scroll-target="#recap-layering-geoms-2">Recap: layering geoms</a></li>
-  <li><a href="#recap-layering-geoms-3" id="toc-recap-layering-geoms-3" class="nav-link" data-scroll-target="#recap-layering-geoms-3">Recap: layering geoms</a></li>
-  <li><a href="#recap-layering-geoms-4" id="toc-recap-layering-geoms-4" class="nav-link" data-scroll-target="#recap-layering-geoms-4">Recap: layering geoms</a></li>
-  <li><a href="#recap-logical-operators" id="toc-recap-logical-operators" class="nav-link" data-scroll-target="#recap-logical-operators">Recap: logical operators</a></li>
-  <li><a href="#recap-participate" id="toc-recap-participate" class="nav-link" data-scroll-target="#recap-participate">Recap: Participate 📱💻</a></li>
-  <li><a href="#recap-participate-1" id="toc-recap-participate-1" class="nav-link" data-scroll-target="#recap-participate-1">Recap: Participate 📱💻</a></li>
-  <li><a href="#recap-logical-operators-cont." id="toc-recap-logical-operators-cont." class="nav-link" data-scroll-target="#recap-logical-operators-cont.">Recap: logical operators (cont.)</a></li>
-  <li><a href="#recap-logical-operators-cont.-1" id="toc-recap-logical-operators-cont.-1" class="nav-link" data-scroll-target="#recap-logical-operators-cont.-1">Recap: logical operators (cont.)</a></li>
+  <li><a href="#recap-pivot" id="toc-recap-pivot" class="nav-link" data-scroll-target="#recap-pivot">Recap: Pivot</a></li>
+  <li><a href="#recap-plotting" id="toc-recap-plotting" class="nav-link" data-scroll-target="#recap-plotting">Recap: Plotting</a></li>
   </ul>
 </li>
   <li>
-<a href="#data-tidying" id="toc-data-tidying" class="nav-link" data-scroll-target="#data-tidying">Data tidying</a>
+<a href="#recoding-data" id="toc-recoding-data" class="nav-link" data-scroll-target="#recoding-data">Recoding data</a>
   <ul class="collapse">
-<li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data">Tidy data</a></li>
-  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#lets-plan" id="toc-lets-plan" class="nav-link" data-scroll-target="#lets-plan">Let’s plan!</a></li>
-  <li><a href="#the-goal" id="toc-the-goal" class="nav-link" data-scroll-target="#the-goal">The Goal</a></li>
-  <li><a href="#the-challenge" id="toc-the-challenge" class="nav-link" data-scroll-target="#the-challenge">The Challenge</a></li>
+<li><a href="#whats-going-on-in-this-plot" id="toc-whats-going-on-in-this-plot" class="nav-link" data-scroll-target="#whats-going-on-in-this-plot">What’s going on in this plot?</a></li>
+  <li><a href="#sales-taxes-in-us-states" id="toc-sales-taxes-in-us-states" class="nav-link" data-scroll-target="#sales-taxes-in-us-states">Sales taxes in US states</a></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
+  <li><a href="#participate-1" id="toc-participate-1" class="nav-link" data-scroll-target="#participate-1">Participate 📱💻</a></li>
+  <li><a href="#recap-if_else" id="toc-recap-if_else" class="nav-link" data-scroll-target="#recap-if_else">Recap: <code>if_else()</code></a></li>
+  <li><a href="#participate-2" id="toc-participate-2" class="nav-link" data-scroll-target="#participate-2">Participate 📱💻</a></li>
+  <li><a href="#sales-tax-in-swing-states" id="toc-sales-tax-in-swing-states" class="nav-link" data-scroll-target="#sales-tax-in-swing-states">Sales tax in swing states</a></li>
+  <li><a href="#sales-tax-in-coastal-states" id="toc-sales-tax-in-coastal-states" class="nav-link" data-scroll-target="#sales-tax-in-coastal-states">Sales tax in coastal states</a></li>
+  <li><a href="#participate-3" id="toc-participate-3" class="nav-link" data-scroll-target="#participate-3">Participate 📱💻</a></li>
+  <li><a href="#recap-case_when" id="toc-recap-case_when" class="nav-link" data-scroll-target="#recap-case_when">Recap: <code>case_when()</code></a></li>
+  <li><a href="#sales-tax-in-coastal-states-1" id="toc-sales-tax-in-coastal-states-1" class="nav-link" data-scroll-target="#sales-tax-in-coastal-states-1">Sales tax in coastal states</a></li>
+  <li><a href="#sales-tax-in-us-regions" id="toc-sales-tax-in-us-regions" class="nav-link" data-scroll-target="#sales-tax-in-us-regions">Sales tax in US regions</a></li>
+  <li><a href="#mutate-with-case_when" id="toc-mutate-with-case_when" class="nav-link" data-scroll-target="#mutate-with-case_when"><code>mutate()</code> with <code>case_when()</code></a></li>
   </ul>
 </li>
   <li>
-<a href="#pivot" id="toc-pivot" class="nav-link" data-scroll-target="#pivot">Pivot</a>
+<a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data">Joining data</a>
   <ul class="collapse">
-<li><a href="#pivot_longer" id="toc-pivot_longer" class="nav-link" data-scroll-target="#pivot_longer"><code>pivot_longer()</code></a></li>
-  <li><a href="#pivot_longer-1" id="toc-pivot_longer-1" class="nav-link" data-scroll-target="#pivot_longer-1"><code>pivot_longer()</code></a></li>
-  <li><a href="#year" id="toc-year" class="nav-link" data-scroll-target="#year"><code>year</code></a></li>
-  <li><a href="#pivot_longer-again" id="toc-pivot_longer-again" class="nav-link" data-scroll-target="#pivot_longer-again"><code>pivot_longer()</code> again</a></li>
-  <li><a href="#pivot_longer-again-1" id="toc-pivot_longer-again-1" class="nav-link" data-scroll-target="#pivot_longer-again-1"><code>pivot_longer()</code> again</a></li>
+<li><a href="#why-join" id="toc-why-join" class="nav-link" data-scroll-target="#why-join">Why join?</a></li>
+  <li><a href="#why-join-1" id="toc-why-join-1" class="nav-link" data-scroll-target="#why-join-1">Why join?</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#left_join" id="toc-left_join" class="nav-link" data-scroll-target="#left_join"><code>left_join()</code></a></li>
+  <li><a href="#right_join" id="toc-right_join" class="nav-link" data-scroll-target="#right_join"><code>right_join()</code></a></li>
+  <li><a href="#full_join" id="toc-full_join" class="nav-link" data-scroll-target="#full_join"><code>full_join()</code></a></li>
+  <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><code>inner_join()</code></a></li>
+  <li><a href="#semi_join" id="toc-semi_join" class="nav-link" data-scroll-target="#semi_join"><code>semi_join()</code></a></li>
+  <li><a href="#anti_join" id="toc-anti_join" class="nav-link" data-scroll-target="#anti_join"><code>anti_join()</code></a></li>
   </ul>
 </li>
   <li>
 <a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
   <ul class="collapse">
-<li><a href="#goal-recreate-this-plot" id="toc-goal-recreate-this-plot" class="nav-link" data-scroll-target="#goal-recreate-this-plot">Goal: recreate this plot</a></li>
-  <li><a href="#ae-05-majors-tidy" id="toc-ae-05-majors-tidy" class="nav-link" data-scroll-target="#ae-05-majors-tidy">ae-05-majors-tidy</a></li>
+<li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#ae-06-taxes-join" id="toc-ae-06-taxes-join" class="nav-link" data-scroll-target="#ae-06-taxes-join">ae-06-taxes-join</a></li>
   </ul>
 </li>
-  <li>
-<a href="#pivot-wider" id="toc-pivot-wider" class="nav-link" data-scroll-target="#pivot-wider">Pivot Wider</a>
-  <ul class="collapse">
-<li><a href="#we-pivotted-longer-what-about-wider" id="toc-we-pivotted-longer-what-about-wider" class="nav-link" data-scroll-target="#we-pivotted-longer-what-about-wider">We pivotted longer… what about wider?</a></li>
-  <li><a href="#we-pivotted-longer-what-about-wider-1" id="toc-we-pivotted-longer-what-about-wider-1" class="nav-link" data-scroll-target="#we-pivotted-longer-what-about-wider-1">We pivotted longer… what about wider?</a></li>
-  <li><a href="#recap-pivot" id="toc-recap-pivot" class="nav-link" data-scroll-target="#recap-pivot">Recap: Pivot</a></li>
-  <li><a href="#recap-plotting" id="toc-recap-plotting" class="nav-link" data-scroll-target="#recap-plotting">Recap: Plotting</a></li>
-  </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/07-tidying-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="07-tidying-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/08-joining-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-joining-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Tidying data</h1>
-<p class="subtitle lead">Lecture 7</p>
+<h1 class="title">Joining data</h1>
+<p class="subtitle lead">Lecture 8</p>
 </div>
 
 
@@ -556,7 +551,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel </p>
+    <p class="author">Dr.&nbsp;Mine Çetinkaya-Rundel </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -571,7 +566,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2025</p>
+      <p class="date">September 18, 2025</p>
     </div>
   </div>
   
@@ -585,27 +580,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
-<p>Which of the following plots does this code produce?</p>
+<div class="columns">
+<div class="column" style="width:35%;">
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci_longer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 17 × 3
+   degree_type  year     n
+   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+ 1 AB2          2011     0
+ 2 AB2          2012     1
+ 3 AB2          2013     0
+ 4 AB2          2014     0
+ 5 AB2          2015     4
+ 6 AB2          2016     4
+ 7 AB2          2017     1
+ 8 AB2          2018     0
+ 9 AB2          2019     0
+10 AB2          2020     1
+11 AB2          2021     2
+12 AB2          2022     0
+13 AB2          2023     3
+14 AB2          2024     1
+15 AB2          2025     0
+16 AB           2011     2
+17 AB           2012     2</code></pre>
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid" width="480"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-4-2.png" class="img-fluid" width="480"></p>
+</div><div class="column" style="width:5%;">
+<p>⟶</p>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 16
+  degree_type `2011` `2012` `2013` `2014` `2015`
+  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 AB2              0      1      0      0      4
+2 AB               2      2      4      1      3
+3 BS2              2      6      1      0      5
+4 BS               5      9      4     13     10
+# ℹ 10 more variables: `2016` &lt;dbl&gt;,
+#   `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,
+#   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;,
+#   `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-4-3.png" class="img-fluid" width="480"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-4-4.png" class="img-fluid" width="480"></p>
+<p>Fill in the blanks to pivot <code>statsci_longer</code> wider.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>statsci_longer <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> __BLANK_1__,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> __BLANK_2__,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -620,590 +646,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>If you haven’t turned in HW 1, you received an email reminding you that you homework may be submitted up to 72 hours after the deadline, with a 5% deduction for each 24-hour period it is late. More info on late policy on syllabus.</p></li>
-<li><p>Don’t forget to review your Lab 1 feedback on Gradescope, even if you didn’t miss any points on it.</p></li>
-<li><p>Great job with questions on Ed and office hours, keep it up!</p></li>
-<li><p>I will hold office hours today after class!</p></li>
-</ul>
-</div>
-</section><section id="recap-layering-geoms" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="recap-layering-geoms">Recap: layering geoms</h2>
+</section><section id="pivot-wider" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="pivot-wider">Pivot wider</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<div class="task">
-<p>Update the following code to create the visualization on the right.</p>
-</div>
-</div><div class="column" style="width:40%;">
-<p><img src="images/07/gerrymander-recreate-2.png" class="img-fluid"></p>
-</div>
-</div>
+<div class="column" style="width:27%;">
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="recap-layering-geoms-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-1">Recap: layering geoms</h2>
-<ol start="0" type="1">
-<li>Original Code:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 500px;
-  right: -15px;
-  width: 413px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
-</div>
-</section><section id="recap-layering-geoms-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-2">Recap: layering geoms</h2>
-<ol type="1">
-<li>Swap the order of the two geoms.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 500px;
-  right: -15px;
-  width: 413px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
-</div>
-</section><section id="recap-layering-geoms-3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-3">Recap: layering geoms</h2>
-<ol start="2" type="1">
-<li>Make the boxplots semi-transparent.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 500px;
-  right: -15px;
-  width: 413px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
-</div>
-</section><section id="recap-layering-geoms-4" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-layering-geoms-4">Recap: layering geoms</h2>
-<ol start="3" type="1">
-<li>Remove the legend.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">gerrymander</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gerry</span>, y <span class="op">=</span> <span class="va">clinton16</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_beeswarm</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">gerry</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 500px;
-  right: -15px;
-  width: 413px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-<p><img src="images/07/gerrymander-recreate-2.png" style="width: 100%; height: auto;"></p>
-</div>
-</section><section id="recap-logical-operators" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-logical-operators">Recap: logical operators</h2>
-<p>Generally useful in a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> but will come up in various other places as well…</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
-</colgroup>
-<thead><tr class="header">
-<th style="text-align: left;">operator</th>
-<th style="text-align: left;">definition</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>&lt;</code></td>
-<td style="text-align: left;"><span class="fragment">is less than?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>&gt;</code></td>
-<td style="text-align: left;"><span class="fragment">is greater than?</span></td>
-</tr>
-</tbody>
-</table></section><section id="recap-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="recap-participate">Recap: Participate 📱💻</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="wooclap">
-<p>Match the following logical operators to their definitions.</p>
-<div class="wooclap-choices">
-<ul>
-<li><code>&lt;=</code></li>
-<li><code>&gt;=</code></li>
-<li><code>==</code></li>
-<li><code>!=</code></li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
-</figure>
-</div>
-<div class="small">
-<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
-</div>
-</div>
-</div>
-</section><section id="recap-participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="recap-participate-1">Recap: Participate 📱💻</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="wooclap">
-<p>Match the following definitions to their logical operators.</p>
-<div class="wooclap-choices">
-<ul>
-<li>is x AND y?</li>
-<li>is x OR y?</li>
-<li>is x NA?</li>
-<li>is x not NA?</li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
-</figure>
-</div>
-<div class="small">
-<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
-</div>
-</div>
-</div>
-</section><section id="recap-logical-operators-cont." class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-logical-operators-cont.">Recap: logical operators (cont.)</h2>
-<p>Other useful logical operators:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
-</colgroup>
-<thead><tr class="header">
-<th style="text-align: left;">operator</th>
-<th style="text-align: left;">definition</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>x %in% y</code></td>
-<td style="text-align: left;"><span class="fragment">is x in y?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>!(x %in% y)</code></td>
-<td style="text-align: left;"><span class="fragment">is x not in y?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>!x</code></td>
-<td style="text-align: left;"><span class="fragment">is not x? (only makes sense if <code>x</code> is <code>TRUE</code> or <code>FALSE</code>)</span></td>
-</tr>
-</tbody>
-</table></section><section id="recap-logical-operators-cont.-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-logical-operators-cont.-1">Recap: logical operators (cont.)</h2>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:30%;">
-<table class="caption-top table">
-<thead><tr class="header">
-<th>Col1</th>
-<th>Col2</th>
-<th>Col3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>A</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>NA</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>C</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column" style="width:60%;">
-<div class="question">
-<p>For which rows are the following true?</p>
-</div>
-<div class="incremental">
-<ul class="incremental">
-<li><p><code>Col1 &lt; 3 | Col3 &lt; 20</code></p></li>
-<li><p><code>Col2 == "C"</code></p></li>
-<li><p><code>Col2 %in% c("C", "A")</code></p></li>
-<li><p><code>is.na(Col3)</code></p></li>
-<li><p><code>!is.na(Col3)</code></p></li>
-</ul>
-</div>
-</div>
-</div>
-</section></section><section id="data-tidying" class="level1"><h1>Data tidying</h1>
-<section id="tidy-data" class="level2"><h2 class="anchored" data-anchor-id="tidy-data">Tidy data</h2>
-<blockquote class="blockquote">
-<p>“Tidy datasets are easy to manipulate, model and visualise, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table.”</p>
-<p>Tidy Data, <a href="https://vita.had.co.nz/papers/tidy-data.pdf" class="uri">https://vita.had.co.nz/papers/tidy-data.pdf</a></p>
-</blockquote>
-<p>. . .</p>
-<p><strong>Note:</strong> “easy to manipulate” = “straightforward to manipulate”</p>
-</section><section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
-<p>Visualize StatSci majors over the years!</p>
-<p><img src="images/07/statsci-majors-2025.png" class="img-fluid"></p>
-</section><section id="data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data">Data</h2>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci_longer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 16
-  degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
-  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-1 AB2              0      1      0      0      4      4      1      0
-2 AB               2      2      4      1      3      6      3      4
-3 BS2              2      6      1      0      5      6      6      8
-4 BS               5      9      4     13     10     17     24     21
-# ℹ 7 more variables: `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;,
-#   `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<p>. . .</p>
-<div class="incremental">
-<ul class="incremental">
-<li>
-<p>The first column (variable) is the <code>degree</code>:</p>
-<div class="small">
-<ul class="incremental">
-<li>BS (Bachelor of Science)</li>
-<li>BS2 (Bachelor of Science, 2nd major)</li>
-<li>AB (Bachelor of Arts)</li>
-<li>AB2 (Bachelor of Arts, 2nd major)</li>
-</ul>
-</div>
-</li>
-<li><p>The remaining columns show the number of students graduating with that major in a given academic year from 2011 to 2025.</p></li>
-</ul>
-</div>
-</section><section id="lets-plan" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lets-plan">Let’s plan!</h2>
-<p>Review the goal plot and sketch the data frame needed to create it. What would go inside <code>aes</code> when we call <code>ggplot</code>?</p>
-<p><img src="images/07/statsci-majors-2025.png" class="img-fluid" width="500"></p>
-</section><section id="the-goal" class="level2 smaller nostretch"><h2 class="smaller nostretch anchored" data-anchor-id="the-goal">The Goal</h2>
-<p>We want to write code that starts something like this:</p>
-<div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">statsci</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">degree_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="va">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>. . .</p>
-<p><br></p>
-<p>But our data are not in the right format :(</p>
-<div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 16
-  degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
-  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-1 AB2              0      1      0      0      4      4      1      0
-2 AB               2      2      4      1      3      6      3      4
-3 BS2              2      6      1      0      5      6      6      8
-4 BS               5      9      4     13     10     17     24     21
-# ℹ 7 more variables: `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;,
-#   `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;</code></pre>
-</div>
-</div>
-</section><section id="the-challenge" class="level2 smaller nostretch"><h2 class="smaller nostretch anchored" data-anchor-id="the-challenge">The Challenge</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p><strong><em>How do we go from this ….</em></strong></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 x 16</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
-1         AB2    0    1    0    0    4    4    1    0    0
-2          AB    2    2    4    1    3    6    3    4    4
-3         BS2    2    6    1    0    5    6    6    8    8
-4          BS    5    9    4   13   10   17   24   21   26</code></pre>
-</div>
-</div>
-</div>
-<div class="column fragment" style="width:30%;">
-<p><strong><em>…. to this??</em></strong></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 x 3</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   degree_type year n
-1          AB2 2011 0
-2          AB2 2012 1
-3          AB2 2013 0
-4          AB2 2014 0
-5          AB2 2015 4
-6          AB2 2016 4
-7          AB2 2017 1
-8          AB2 2018 0
-9          AB2 2019 0
-10         AB2 2020 1
-11         AB2 2021 2
-12         AB2 2022 0
-13         AB2 2023 3
-14         AB2 2024 1
-15         AB2 2025 0
-16          AB 2011 2
-17          AB 2012 2</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section></section><section id="pivot" class="level1"><h1>Pivot</h1>
-<section id="pivot_longer" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="pivot_longer"><code>pivot_longer()</code></h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 x 16</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
-1         AB2    0    1    0    0    4    4    1    0    0
-2          AB    2    2    4    1    3    6    3    4    4
-3         BS2    2    6    1    0    5    6    6    8    8
-4          BS    5    9    4   13   10   17   24   21   26</code></pre>
-</div>
-</div>
-<div class="task fragment">
-<p>Pivot the <code>statsci</code> data frame <em>longer</em> such that each row represents a degree type / year combination.</p>
-<p><code>year</code> and <code>n</code>umber of graduates for that year are columns in the result data frame.</p>
-</div>
-</div><div class="column" style="width:5%;">
-<p>⟶</p>
-</div><div class="column" style="width:30%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 x 3</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   degree_type year n
-1          AB2 2011 0
-2          AB2 2012 1
-3          AB2 2013 0
-4          AB2 2014 0
-5          AB2 2015 4
-6          AB2 2016 4
-7          AB2 2017 1
-8          AB2 2018 0
-9          AB2 2019 0
-10         AB2 2020 1
-11         AB2 2021 2
-12         AB2 2022 0
-13         AB2 2023 3
-14         AB2 2024 1
-15         AB2 2025 0
-16          AB 2011 2
-17          AB 2012 2</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section><section id="pivot_longer-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="pivot_longer-1"><code>pivot_longer()</code></h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 x 16</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
-1         AB2    0    1    0    0    4    4    1    0    0
-2          AB    2    2    4    1    3    6    3    4    4
-3         BS2    2    6    1    0    5    6    6    8    8
-4          BS    5    9    4   13   10   17   24   21   26</code></pre>
-</div>
-</div>
-<div class="task fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> ___________________ ,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> _______________ ,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> ______________</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div><div class="column" style="width:5%;">
-<p>⟶</p>
-</div><div class="column" style="width:30%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 x 3</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   degree_type year n
-1          AB2 2011 0
-2          AB2 2012 1
-3          AB2 2013 0
-4          AB2 2014 0
-5          AB2 2015 4
-6          AB2 2016 4
-7          AB2 2017 1
-8          AB2 2018 0
-9          AB2 2019 0
-10         AB2 2020 1
-11         AB2 2021 2
-12         AB2 2022 0
-13         AB2 2023 3
-14         AB2 2024 1
-15         AB2 2025 0
-16          AB 2011 2
-17          AB 2012 2</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section><section id="year" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="year"><code>year</code></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
-<span>    cols <span class="op">=</span> <span class="op">-</span><span class="va">degree_type</span>,</span>
-<span>    values_to <span class="op">=</span> <span class="st">"n"</span>,</span>
-<span>    names_to <span class="op">=</span> <span class="st">"year"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 × 3
-   degree_type year      n
-   &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;
- 1 AB2         2011      0
- 2 AB2         2012      1
- 3 AB2         2013      0
- 4 AB2         2014      0
- 5 AB2         2015      4
- 6 AB2         2016      4
- 7 AB2         2017      1
- 8 AB2         2018      0
- 9 AB2         2019      0
-10 AB2         2020      1
-# ℹ 50 more rows</code></pre>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="question">
-<p>What is the type of the <code>year</code> variable? Why? What should it be?</p>
-</div>
-<div class="fragment">
-<div class="incremental">
-<ul class="incremental">
-<li><p>It’s a character (<code>chr</code>) variable since the information came from the columns of the original data frame.</p></li>
-<li><p>R cannot know that these character strings represent years.</p></li>
-<li><p>The variable type should be numeric.</p></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section><section id="pivot_longer-again" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="pivot_longer-again">
-<code>pivot_longer()</code> again</h2>
-<div class="question">
-<p>This time, also make sure <code>year</code> is a numerical variable in the resulting data frame.</p>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
-<span>    cols <span class="op">=</span> <span class="op">-</span><span class="va">degree_type</span>,</span>
-<span>    values_to <span class="op">=</span> <span class="st">"n"</span>,</span>
-<span>    names_to <span class="op">=</span> <span class="st">"year"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:50%;">
-
-</div>
-</div>
-</section><section id="pivot_longer-again-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="pivot_longer-again-1">
-<code>pivot_longer()</code> again</h2>
-<div class="question">
-<p>This time, also make sure <code>year</code> is a numerical variable in the resulting data frame.</p>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb28-3"><a href="#cb28-3"></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb28-4"><a href="#cb28-4"></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb28-5"><a href="#cb28-5"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb28-6"><a href="#cb28-6"></a>    <span class="at">names_transform =</span> as.numeric</span>
-<span id="cb28-7"><a href="#cb28-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="column fragment" style="width:50%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 × 3
+<pre><code># A tibble: 17 × 3
    degree_type  year     n
    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
  1 AB2          2011     0
@@ -1216,128 +665,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  8 AB2          2018     0
  9 AB2          2019     0
 10 AB2          2020     1
-# ℹ 50 more rows</code></pre>
+11 AB2          2021     2
+12 AB2          2022     0
+13 AB2          2023     3
+14 AB2          2024     1
+15 AB2          2025     0
+16 AB           2011     2
+17 AB           2012     2</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:3%;">
+<p>⟶</p>
+</div><div class="column" style="width:70%;">
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci_longer</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">pivot_wider</span><span class="op">(</span></span>
+<span>    names_from <span class="op">=</span> <span class="va">year</span>,</span>
+<span>    values_from <span class="op">=</span> <span class="va">n</span>,</span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 16
+  degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
+  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 AB2              0      1      0      0      4      4      1      0
+2 AB               2      2     NA     NA     NA     NA     NA     NA
+# ℹ 7 more variables: `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;,
+#   `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
-</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
-<section id="goal-recreate-this-plot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="goal-recreate-this-plot">Goal: recreate this plot</h2>
-<p><img src="images/07/statsci-majors-2025.png" class="img-fluid"></p>
-</section><section id="ae-05-majors-tidy" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-05-majors-tidy">ae-05-majors-tidy</h2>
-<div class="appex">
+</section><section id="announcements" class="level2"><h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li><p>Go to your ae project in RStudio.</p></li>
-<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-05-majors-tidy.qmd</em>.</p></li>
-<li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
-</ul>
-</div>
-</section></section><section id="pivot-wider" class="level1"><h1>Pivot Wider</h1>
-<section id="we-pivotted-longer-what-about-wider" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="we-pivotted-longer-what-about-wider">We pivotted longer… what about wider?</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 x 16</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
-1         AB2    0    1    0    0    4    4    1    0    0
-2          AB    2    2    4    1    3    6    3    4    4
-3         BS2    2    6    1    0    5    6    6    8    8
-4          BS    5    9    4   13   10   17   24   21   26</code></pre>
-</div>
-</div>
-<div class="task fragment">
-<p>Can we go the other direction?</p>
-</div>
-</div><div class="column" style="width:5%;">
-<p>⟵</p>
-</div><div class="column" style="width:30%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 x 3</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   degree_type year n
-1          AB2 2011 0
-2          AB2 2012 1
-3          AB2 2013 0
-4          AB2 2014 0
-5          AB2 2015 4
-6          AB2 2016 4
-7          AB2 2017 1
-8          AB2 2018 0
-9          AB2 2019 0
-10         AB2 2020 1
-11         AB2 2021 2
-12         AB2 2022 0
-13         AB2 2023 3
-14         AB2 2024 1
-15         AB2 2025 0
-16          AB 2011 2
-17          AB 2012 2</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section><section id="we-pivotted-longer-what-about-wider-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="we-pivotted-longer-what-about-wider-1">We pivotted longer… what about wider?</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 x 16</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  degree_type 2011 2012 2013 2014 2015 2016 2017 2018 2019
-1         AB2    0    1    0    0    4    4    1    0    0
-2          AB    2    2    4    1    3    6    3    4    4
-3         BS2    2    6    1    0    5    6    6    8    8
-4          BS    5    9    4   13   10   17   24   21   26</code></pre>
-</div>
-</div>
-<div class="task">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>statsci_longer <span class="sc">|&gt;</span> </span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ____________ ,</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> ___________ , </span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div><div class="column" style="width:5%;">
-<p>⟵</p>
-</div><div class="column" style="width:30%;">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 x 3</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   degree_type year n
-1          AB2 2011 0
-2          AB2 2012 1
-3          AB2 2013 0
-4          AB2 2014 0
-5          AB2 2015 4
-6          AB2 2016 4
-7          AB2 2017 1
-8          AB2 2018 0
-9          AB2 2019 0
-10         AB2 2020 1
-11         AB2 2021 2
-12         AB2 2022 0
-13         AB2 2023 3
-14         AB2 2024 1
-15         AB2 2025 0
-16          AB 2011 2
-17          AB 2012 2</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section><section id="recap-pivot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-pivot">Recap: Pivot</h2>
+<li>1</li>
+<li>2</li>
+<li>…</li>
+</ul></section><section id="recap-pivot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-pivot">Recap: Pivot</h2>
 <div class="incremental">
 <ul class="incremental">
 <li>
@@ -1353,6 +716,479 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="incremental">
 <li><p>You can tweak a plot forever, but at some point the tweaks are likely not very productive.</p></li>
 <li><p>However, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate.</p></li>
+</ul>
+</div>
+</section></section><section id="recoding-data" class="level1"><h1>Recoding data</h1>
+<section id="whats-going-on-in-this-plot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="whats-going-on-in-this-plot">What’s going on in this plot?</h2>
+<div class="question">
+<p>Can you guess the variable plotted here?</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="08-joining-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="sales-taxes-in-us-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-taxes-in-us-states">Sales taxes in US states</h2>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 51 × 7
+   state    state_tax_rate state_tax_rank avg_local_tax_rate max_local
+   &lt;chr&gt;             &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Alabama            4                40               5.44     11   
+ 2 Alaska             0                46               1.82      7.85
+ 3 Arizona            5.6              28               2.92      5.3 
+ 4 Arkansas           6.5               9               2.98      6.12
+ 5 Califor…           7.25              1               1.73      5.25
+ 6 Colorado           2.9              45               4.96      8.3 
+ 7 Connect…           6.35             12               0         0   
+ 8 Delaware           0                46               0         0   
+ 9 Florida            6                17               1.02      2   
+10 Georgia            4                40               3.44      5   
+# ℹ 41 more rows
+# ℹ 2 more variables: combined_tax_rate &lt;dbl&gt;, combined_rank &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:85%;">
+<div class="wooclap">
+<p>Put the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs.&nbsp;non-swing states:</p>
+<div class="wooclap-choices">
+<ul>
+<li>Group by <code>swing_state</code>
+</li>
+<li>Summarize to find the mean sales tax in each type of state</li>
+<li>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate-1">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:85%;">
+<div class="wooclap">
+<p>First, create a vector called <code>list_of_swing_states</code> that contains the names of the swing states.</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">list_of_swing_states</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>  <span class="st">"Arizona"</span>, <span class="st">"Georgia"</span>, <span class="st">"Michigan"</span>, <span class="st">"Nevada"</span>, <span class="st">"North Carolina"</span>,</span>
+<span>  <span class="st">"Pennsylvania"</span>, <span class="st">"Wisconsin"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, fill in the blanks to create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sales_taxes <span class="ot">&lt;-</span> sales_taxes <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">__BLANK_1__</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">swing_state =</span> <span class="fu">__BLANK_2__</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      state __BLANK_3__ list_of_swing_states, <span class="st">"Swing"</span>, <span class="st">"Non-swing"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="recap-if_else" class="level2"><h2 class="anchored" data-anchor-id="recap-if_else">Recap: <code>if_else()</code>
+</h2>
+<div class="sourceCode" id="annotated-cell-2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">if_else</span><span class="op">(</span></span>
+<span>  <span class="va">x</span> <span class="op">==</span> <span class="va">y</span>,</span>
+<span>  <span class="st">"x is equal to y"</span>,</span>
+<span>  <span class="st">"x is not equal to y"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="1">Condition</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="2">Value if condition is <code>TRUE</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="3">Value if condition is <code>FALSE</code></span>
+</dd>
+</dl></section><section id="participate-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="participate-2">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:85%;">
+<div class="wooclap">
+<p>Fill in the blank to compare the average state sales tax rates of swing states vs.&nbsp;non-swing states.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sales_taxes <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  __BLANK__ <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_state_tax =</span> <span class="fu">mean</span>(state_tax_rate))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="wooclap-choices">
+<ul>
+<li><code>group_by(swing_state)</code></li>
+<li><code>group_by(list_of_swing_states)</code></li>
+<li><code>filter(swing_state == "Swing")</code></li>
+<li><code>arrange(swing_state)</code></li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="sales-tax-in-swing-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-swing-states">Sales tax in swing states</h2>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">swing_state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span>mean_state_tax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">state_tax_rate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  swing_state mean_state_tax
+  &lt;chr&gt;                &lt;dbl&gt;
+1 Non-swing             5.05
+2 Swing                 5.46</code></pre>
+</div>
+</div>
+</section><section id="sales-tax-in-coastal-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-coastal-states">Sales tax in coastal states</h2>
+<div class="question">
+<p>Suppose you’re tasked with the following:</p>
+<blockquote class="blockquote">
+<p>Compare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.</p>
+</blockquote>
+<p>How would you approach this task?</p>
+</div>
+<p>. . .</p>
+<ul>
+<li>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code>
+</li>
+<li>Group by <code>coast</code>
+</li>
+<li>Summarize to find the mean sales tax in each type of state</li>
+</ul></section><section id="participate-3" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate-3">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:85%;">
+<div class="wooclap">
+<p>First, create two vectors called <code>pacific_coast</code> and <code>atlantic_coast</code> that contain the respective states.</p>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pacific_coast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Alaska"</span>, <span class="st">"Washington"</span>, <span class="st">"Oregon"</span>, <span class="st">"California"</span>, <span class="st">"Hawaii"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">atlantic_coast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>  <span class="st">"Connecticut"</span>, <span class="st">"Delaware"</span>, <span class="st">"Georgia"</span>, <span class="st">"Florida"</span>, <span class="st">"Maine"</span>, <span class="st">"Maryland"</span>, <span class="st">"Massachusetts"</span>,</span>
+<span>  <span class="st">"New Hampshire"</span>, <span class="st">"New Jersey"</span>, <span class="st">"New York"</span>, <span class="st">"North Carolina"</span>, <span class="st">"Rhode Island"</span>, </span>
+<span>  <span class="st">"South Carolina"</span>, <span class="st">"Virginia"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, fill in the blank to create a new variable called <code>coast</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sales_taxes <span class="ot">&lt;-</span> sales_taxes <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">coast =</span> <span class="fu">__BLANK__</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>      state <span class="sc">%in%</span> atlantic_coast <span class="sc">~</span> <span class="st">"Atlantic"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>      state <span class="sc">%in%</span> pacific_coast  <span class="sc">~</span> <span class="st">"Pacific"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="st">"Neither"</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="recap-case_when" class="level2"><h2 class="anchored" data-anchor-id="recap-case_when">Recap: <code>case_when()</code>
+</h2>
+<div class="sourceCode" id="annotated-cell-4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">case_when</span><span class="op">(</span></span>
+<span>  <span class="va">x</span> <span class="op">&gt;</span> <span class="va">y</span>  <span class="op">~</span> <span class="st">"x is greater than y"</span>,</span>
+<span>  <span class="va">x</span> <span class="op">&lt;</span> <span class="va">y</span>  <span class="op">~</span> <span class="st">"x is less than y"</span>,</span>
+<span>  .default <span class="op">=</span> <span class="st">"x is equal to y"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">Value if first condition is <code>TRUE</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">Value if second condition is <code>TRUE</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3">Value if neither condition is <code>TRUE</code>, i.e., default value</span>
+</dd>
+</dl></section><section id="sales-tax-in-coastal-states-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="sales-tax-in-coastal-states-1">Sales tax in coastal states</h2>
+<div class="question">
+<p>Compare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">coast</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span>mean_state_tax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">state_tax_rate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  coast    mean_state_tax
+  &lt;chr&gt;             &lt;dbl&gt;
+1 Atlantic           4.65
+2 Neither            5.50
+3 Pacific            2.17</code></pre>
+</div>
+</div>
+</section><section id="sales-tax-in-us-regions" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-us-regions">Sales tax in US regions</h2>
+<div class="question">
+<p>Suppose you’re tasked with the following:</p>
+<blockquote class="blockquote">
+<p>Compare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).</p>
+</blockquote>
+<p>How would you approach this task?</p>
+</div>
+<p>. . .</p>
+<ul>
+<li>Create a new variable called <code>region</code> with levels <code>"Midwest"</code>, <code>"Northeast"</code>, <code>"South"</code>, and <code>"West"</code>.</li>
+<li>Group by <code>region</code>
+</li>
+<li>Summarize to find the mean sales tax in each type of state</li>
+</ul></section><section id="mutate-with-case_when" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-case_when">
+<code>mutate()</code> with <code>case_when()</code>
+</h2>
+<div class="question">
+<p>Who feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>list_of_midwest_states <span class="ot">&lt;-</span> <span class="fu">c</span>(___)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>list_of_northeast_states <span class="ot">&lt;-</span> <span class="fu">c</span>(___)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>list_of_south_states <span class="ot">&lt;-</span> <span class="fu">c</span>(___)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>list_of_west_states <span class="ot">&lt;-</span> <span class="fu">c</span>(___)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>sales_taxes <span class="ot">&lt;-</span> sales_taxes <span class="sc">|&gt;</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">coast =</span> <span class="fu">case_when</span>(</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>      state <span class="sc">%in%</span> list_of_west_states <span class="sc">~</span> <span class="st">"Midwest"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>      state <span class="sc">%in%</span> list_of_northeast_states <span class="sc">~</span> <span class="st">"Northeast"</span>,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>      state <span class="sc">%in%</span> list_of_south_states <span class="sc">~</span> <span class="st">"South"</span>,</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>      state <span class="sc">%in%</span> list_of_west_states <span class="sc">~</span> <span class="st">"West"</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="joining-data" class="level1"><h1>Joining data</h1>
+<section id="why-join" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-join">Why join?</h2>
+<p>Suppose we want to answer questions like:</p>
+<blockquote class="blockquote">
+<p>Is there a relationship between<br>
+- number of QS courses taken<br>
+- having scored a 4 or 5 on the AP stats exam<br>
+- motivation for taking course<br>
+- …<br>
+and performance in this course?</p>
+</blockquote>
+<p>. . .</p>
+<p>Each of these would require <em>join</em>ing class performance data with an outside data source so we can have all relevant information (columns) in a single data frame.</p>
+</section><section id="why-join-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-join-1">Why join?</h2>
+<p>Suppose we want to answer questions like:</p>
+<blockquote class="blockquote">
+<p>Compare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).</p>
+</blockquote>
+<p>. . .</p>
+<p>This can also be solved with <em>join</em>ing region information with the state-level sales tax data.</p>
+</section><section id="setup" class="level2"><h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>For the next few slides…</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
+<span>  value_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+     id value_x
+  &lt;dbl&gt; &lt;chr&gt;  
+1     1 x1     
+2     2 x2     
+3     3 x3     </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span>,</span>
+<span>  value_y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y4"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+     id value_y
+  &lt;dbl&gt; &lt;chr&gt;  
+1     1 y1     
+2     2 y2     
+3     4 y4     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="left_join" class="level2"><h2 class="anchored" data-anchor-id="left_join"><code>left_join()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/08/left-join.gif" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">left_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+     id value_x value_y
+  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
+1     1 x1      y1     
+2     2 x2      y2     
+3     3 x3      &lt;NA&gt;   </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="right_join" class="level2"><h2 class="anchored" data-anchor-id="right_join"><code>right_join()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/08/right-join.gif" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">right_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+     id value_x value_y
+  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
+1     1 x1      y1     
+2     2 x2      y2     
+3     4 &lt;NA&gt;    y4     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="full_join" class="level2"><h2 class="anchored" data-anchor-id="full_join"><code>full_join()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/08/full-join.gif" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">full_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+     id value_x value_y
+  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
+1     1 x1      y1     
+2     2 x2      y2     
+3     3 x3      &lt;NA&gt;   
+4     4 &lt;NA&gt;    y4     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="inner_join" class="level2"><h2 class="anchored" data-anchor-id="inner_join"><code>inner_join()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/08/inner-join.gif" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">inner_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+     id value_x value_y
+  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
+1     1 x1      y1     
+2     2 x2      y2     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="semi_join" class="level2"><h2 class="anchored" data-anchor-id="semi_join"><code>semi_join()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/08/semi-join.gif" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">semi_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+     id value_x
+  &lt;dbl&gt; &lt;chr&gt;  
+1     1 x1     
+2     2 x2     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="anti_join" class="level2"><h2 class="anchored" data-anchor-id="anti_join"><code>anti_join()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/08/anti-join.gif" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">anti_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+     id value_x
+  &lt;dbl&gt; &lt;chr&gt;  
+1     3 x3     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
+<section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<p>Compare the average state sales tax rates of states in various regions (Midwest, Northeast, South, West), where the input data are:</p>
+<ol type="1">
+<li>States and sales taxes</li>
+<li>States and regions</li>
+</ol></section><section id="ae-06-taxes-join" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-06-taxes-join">ae-06-taxes-join</h2>
+<div class="appex">
+<ul>
+<li><p>Go to your ae project in RStudio.</p></li>
+<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-06-taxes-join.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
 </ul>
 </div>
 
@@ -1811,7 +1647,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/07-tidying-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/08-joining-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
