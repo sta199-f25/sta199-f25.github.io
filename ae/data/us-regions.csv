@@ -1,0 +1,51 @@
+state_name,region
+Maine,Northeast
+New Hampshire,Northeast
+Vermont,Northeast
+Massachusetts,Northeast
+Rhode Island,Northeast
+Connecticut,Northeast
+New York,Northeast
+New Jersey,Northeast
+Pennsylvania,Northeast
+Delaware,South
+Maryland,South
+Virginia,South
+West Virginia,South
+North Carolina,South
+South Carolina,South
+Georgia,South
+Florida,South
+Kentucky,South
+Tennessee,South
+Alabama,South
+Mississippi,South
+Arkansas,South
+Louisiana,South
+Texas,South
+Oklahoma,South
+Ohio,Midwest
+Michigan,Midwest
+Indiana,Midwest
+Illinois,Midwest
+Wisconsin,Midwest
+Minnesota,Midwest
+Iowa,Midwest
+Missouri,Midwest
+North Dakota,Midwest
+South Dakota,Midwest
+Nebraska,Midwest
+Kansas,Midwest
+Montana,West
+Idaho,West
+Wyoming,West
+Colorado,West
+New Mexico,West
+Arizona,West
+Utah,West
+Nevada,West
+Washington,West
+Oregon,West
+California,West
+Alaska,West
+Hawaii,West

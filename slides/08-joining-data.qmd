@@ -20,7 +20,7 @@ format:
 #| label: setup
 #| include: false
 ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
-todays_ae <- "ae-05-majors-tidy"
+todays_ae <- "ae-06-taxes-join"
 ```
 
 # Warm-up
@@ -34,22 +34,28 @@ todays_ae <- "ae-05-majors-tidy"
 -   2
 -   ...
 
+
+
 # From last time: Pivot wider
 
+## Setup {.smaller}
+
 ```{r}
+#| message: false
 library(tidyverse)
-statsci <- read_csv("slides/data/statsci_clean.csv")
+statsci <- read_csv("data/statsci_clean.csv")
+statsci
 ```
 
 ## We pivotted longer... what about wider? {.smaller}
 
 ::: columns
-::: {.column width="65%"}
+::: {.column width="60%"}
 
 ```{r}
 #| echo: false
-statsci |>
-  select(1:10)
+options(width = 50)
+statsci
 ```
 
 ::: {.task .fragment}
@@ -61,7 +67,7 @@ Can we go the other direction?
 ⟵
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 
 ```{r}
 #| echo: false
@@ -81,12 +87,12 @@ statsci |>
 ## We pivotted longer... what about wider? {.smaller}
 
 ::: columns
-::: {.column width="65%"}
+::: {.column width="60%"}
 
 ```{r}
 #| echo: false
-statsci |>
-  select(1:10)
+options(width = 50)
+statsci
 ```
 
 ::: task
@@ -107,7 +113,7 @@ statsci_longer |>
 ⟵
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 
 ```{r}
 #| echo: false
@@ -168,14 +174,14 @@ ggplot(states_sales_taxes) +
   geom_sf(aes(fill = state_tax_rate)) +
   scale_fill_scico(
     palette = "oslo",
-    labels = label_percent(accuracy = 0.01)
+    labels = label_percent(scale = 1)
   ) +
   theme_void() +
   coord_sf() +
   labs(fill = NULL)
 ```
 
-## Sales taxes in US states
+## Sales taxes in US states {.smaller}
 
 ```{r}
 sales_taxes
@@ -197,7 +203,7 @@ How would you approach this task?
 -   Group by `swing_state`
 -   Summarize to find the mean sales tax in each type of state
 
-## `mutate()` with `if_else()` {.smaller .scrollable}
+## `mutate()` with `if_else()` {.smaller}
 
 ::: task
 Create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing"`.
@@ -205,7 +211,15 @@ Create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing
 
 ```{r}
 #| eval: false
-list_of_swing_states <- c(___)
+list_of_swing_states <- c(
+  "Arizona",
+  "Georgia",
+  "Michigan",
+  "Nevada",
+  "North Carolina",
+  "Pennsylvania",
+  "Wisconsin"
+)
 
 sales_taxes <- sales_taxes |>
   ___
@@ -364,7 +378,7 @@ Suppose we want to answer questions like:
 > - having scored a 4 or 5 on the AP stats exam\
 > - motivation for taking course\
 > - ...\
-> and performance in this course?"
+> and performance in this course?
 
 . . .
 
@@ -417,7 +431,7 @@ y
 ::: columns
 ::: {.column width="50%"}
 
-![](images/07/left-join.gif)
+![](images/08/left-join.gif)
 
 :::
 
@@ -435,7 +449,7 @@ left_join(x, y)
 ::: columns
 ::: {.column width="50%"}
 
-![](images/07/right-join.gif)
+![](images/08/right-join.gif)
 
 :::
 
@@ -452,7 +466,7 @@ right_join(x, y)
 
 ::: columns
 ::: {.column width="50%"}
-![](images/07/full-join.gif)
+![](images/08/full-join.gif)
 :::
 
 ::: {.column width="50%"}
@@ -464,13 +478,11 @@ full_join(x, y)
 :::
 :::
 
-## `
-inner_join()
-`
+## `inner_join()`
 
 ::: columns
 ::: {.column width="50%"}
-![](images/07/inner-join.gif)
+![](images/08/inner-join.gif)
 :::
 
 ::: {.column width="50%"}
@@ -487,7 +499,7 @@ inner_join(x, y)
 ::: columns
 ::: {.column width="50%"}
 
-![](images/07/semi-join.gif)
+![](images/08/semi-join.gif)
 
 :::
 
@@ -495,29 +507,23 @@ inner_join(x, y)
 
 ```{r}
 semi_join(x, y)
-``
-`
+```
+
 :::
 :::
 
-## `
-anti_join()
-`
+## `anti_join()`
 
 ::: columns
 ::: {.column width="50%"}
 
-![](images/07/anti-join.gif)
+![](images/08/anti-join.gif)
 
 :::
 
 ::: {.column width="50%"}
 
-`
-``
-{
-  r
-}
+```{r}
 anti_join(x, y)
 ```
 

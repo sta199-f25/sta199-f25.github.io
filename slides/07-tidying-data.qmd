@@ -35,27 +35,6 @@ library(usdata)
 library(ggbeeswarm)
 ```
 
-```{r}
-#| include: false
-
-#code used for saving statsci_clean
-statsci <- read_csv("data/statsci.csv")
-
-statsci_clean <- statsci |>
-  separate(degree, sep = " \\(", into = c("major", "degree_type")) |>
-  mutate(
-    degree_type = str_remove(degree_type, "\\)"),
-    degree_type = fct_relevel(degree_type, "BS", "BS2", "AB", "AB2")
-  )
-
-
-statsci_clean <- statsci_clean |> select(-major)
-statsci_clean <- replace(statsci_clean, is.na(statsci_clean), 0)
-#write_csv(statsci_clean, "data/statsci_clean.csv")
-
-
-```
-
 ::: columns
 ::: {.column width="85%"}
 ::: wooclap
