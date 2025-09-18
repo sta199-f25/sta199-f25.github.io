@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>AE 07: Sales taxes + data joining – STA 199</title>
+<title>AE 06: Sales taxes + data joining – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta property="og:title" content="AE 07: Sales taxes + data joining – STA 199">
+<meta property="og:title" content="AE 06: Sales taxes + data joining – STA 199">
 <meta property="og:description" content="Suggested answers">
 <meta property="og:site_name" content="STA 199">
 </head>
@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 07: Sales taxes + data joining</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 06: Sales taxes + data joining</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -491,12 +491,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li><a href="#joining" id="toc-joining" class="nav-link" data-scroll-target="#joining">Joining</a></li>
-  <li><a href="#render-commit-and-push" id="toc-render-commit-and-push" class="nav-link" data-scroll-target="#render-commit-and-push">Render, commit, and push</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/ae/ae-06-taxes-join-A.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">AE 07: Sales taxes + data joining</h1>
+<h1 class="title">AE 06: Sales taxes + data joining</h1>
 <p class="subtitle lead">Suggested answers</p>
 </div>
 
@@ -533,31 +532,12 @@ Important
 </section><section id="data" class="level3"><h3 class="anchored" data-anchor-id="data">Data</h3>
 <p>The data are available in the <code>data</code> folder.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/sales-taxes.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 51 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): state
-dbl (4): state_tax_rate, avg_local_tax_rate, combined_rate, max_local_tax_rate
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_regions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/us-regions.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 50 Columns: 2
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (2): state_name, region
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/sales-taxes.csv"</span><span class="op">)</span></span>
+<span><span class="va">us_regions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/us-regions.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And let’s take a look at the data.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">sales_taxes</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">sales_taxes</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 51
 Columns: 5
@@ -567,7 +547,7 @@ $ avg_local_tax_rate &lt;dbl&gt; 0.0529, 0.0182, 0.0278, 0.0295, 0.0160, 0.0491,
 $ combined_rate      &lt;dbl&gt; 0.0929, 0.0182, 0.0838, 0.0945, 0.0885, 0.0781, 0.0…
 $ max_local_tax_rate &lt;dbl&gt; 0.0750, 0.0785, 0.0530, 0.0613, 0.0475, 0.0830, 0.0…</code></pre>
 </div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">us_regions</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">us_regions</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 50
 Columns: 2
@@ -578,15 +558,15 @@ $ region     &lt;chr&gt; "Northeast", "Northeast", "Northeast", "Northeast", "No
 </section></section><section id="joining" class="level2"><h2 class="anchored" data-anchor-id="joining">Joining</h2>
 <p>Join the sales tax data with region data and save the joined data frame as a new data frame, not overwriting either data frame that goes into the join.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span></span>
-<span>  <span class="va">sales_taxes</span>, </span>
-<span>  <span class="va">us_regions</span>, </span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span></span>
+<span>  <span class="va">sales_taxes</span>,</span>
+<span>  <span class="va">us_regions</span>,</span>
 <span>  by <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by</a></span><span class="op">(</span><span class="va">state</span> <span class="op">==</span> <span class="va">state_name</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Calculate the average sales tax of states in each region. What is surprising in the output?</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">region</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_state_tax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">state_tax_rate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -602,7 +582,7 @@ $ region     &lt;chr&gt; "Northeast", "Northeast", "Northeast", "Northeast", "No
 </div>
 <p>Identify the state with <code>NA</code> for region.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">state</span>, <span class="va">region</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -614,7 +594,7 @@ $ region     &lt;chr&gt; "Northeast", "Northeast", "Northeast", "Northeast", "No
 </div>
 <p>Apply a fix for the <code>NA</code> in region, and calculate the mean sales taxes for regions again. Display the results in ascending order of mean sales tax.</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">&lt;-</span> <span class="va">sales_taxes_regions</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes_regions</span> <span class="op">&lt;-</span> <span class="va">sales_taxes_regions</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    region <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">state</span> <span class="op">==</span> <span class="st">"District of Columbia"</span>, <span class="st">"Northeast"</span>, <span class="va">region</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
@@ -633,13 +613,6 @@ $ region     &lt;chr&gt; "Northeast", "Northeast", "Northeast", "Northeast", "No
 4 Midwest           0.0569</code></pre>
 </div>
 </div>
-</section><section id="render-commit-and-push" class="level2"><h2 class="anchored" data-anchor-id="render-commit-and-push">Render, commit, and push</h2>
-<ol type="1">
-<li><p>Render your Quarto document.</p></li>
-<li><p>Go to the Git pane and check the box next to each file listed, i.e., stage your changes. Commit your staged changes using a simple and informative message.</p></li>
-<li><p>Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.</p></li>
-<li><p>Go to your repo on GitHub and confirm that you can see the updated files. Once your updated files are in your repo on GitHub, you’re good to go!</p></li>
-</ol>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
