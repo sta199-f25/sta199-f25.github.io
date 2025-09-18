@@ -136,7 +136,7 @@ statsci_longer |>
   - Do Part 1 first, render, commit, and push
   - Do Part 2 second, render, commit, and push + upload to Gradescope
 
-- Feedback on the AI **feedbak** tool
+- Feedback on the AI **feedback** tool
 
 ## Recap: Pivot {.smaller}
 
