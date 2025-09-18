@@ -2349,14 +2349,14 @@
     "href": "ae/ae-06-taxes-join.html",
     "title": "AE 06: Sales taxes + data joining",
     "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\n# add code here\n\n\nThe data are available in the data folder:\n\nsales-taxes.csv\nus-regions.csv\n\n\n# add code here\n\nAnd let’s take a look at the data.\n\n# add code here"
+    "text": "We’ll use the tidyverse package for this analysis.\n\n# add code here\n\n\nThe data are available in the data folder:\n\nsales-taxes-25.csv\nus-regions.csv\n\n\n# add code here\n\nAnd let’s take a look at the data.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-06-taxes-join.html#getting-started",
     "href": "ae/ae-06-taxes-join.html#getting-started",
     "title": "AE 06: Sales taxes + data joining",
     "section": "",
-    "text": "We’ll use the tidyverse package for this analysis.\n\n# add code here\n\n\nThe data are available in the data folder:\n\nsales-taxes.csv\nus-regions.csv\n\n\n# add code here\n\nAnd let’s take a look at the data.\n\n# add code here"
+    "text": "We’ll use the tidyverse package for this analysis.\n\n# add code here\n\n\nThe data are available in the data folder:\n\nsales-taxes-25.csv\nus-regions.csv\n\n\n# add code here\n\nAnd let’s take a look at the data.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-06-taxes-join.html#joining",
@@ -2819,14 +2819,14 @@
     "href": "ae/ae-06-taxes-join-A.html#getting-started",
     "title": "AE 06: Sales taxes + data joining",
     "section": "Getting started",
-    "text": "Getting started\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\nData\nThe data are available in the data folder.\n\nsales_taxes &lt;- read_csv(\"data/sales-taxes.csv\")\nus_regions &lt;- read_csv(\"data/us-regions.csv\")\n\nAnd let’s take a look at the data.\n\nglimpse(sales_taxes)\n\nRows: 51\nColumns: 5\n$ state              &lt;chr&gt; \"Alabama\", \"Alaska\", \"Arizona\", \"Arkansas\", \"Califo…\n$ state_tax_rate     &lt;dbl&gt; 0.0400, 0.0000, 0.0560, 0.0650, 0.0725, 0.0290, 0.0…\n$ avg_local_tax_rate &lt;dbl&gt; 0.0529, 0.0182, 0.0278, 0.0295, 0.0160, 0.0491, 0.0…\n$ combined_rate      &lt;dbl&gt; 0.0929, 0.0182, 0.0838, 0.0945, 0.0885, 0.0781, 0.0…\n$ max_local_tax_rate &lt;dbl&gt; 0.0750, 0.0785, 0.0530, 0.0613, 0.0475, 0.0830, 0.0…\n\nglimpse(us_regions)\n\nRows: 50\nColumns: 2\n$ state_name &lt;chr&gt; \"Maine\", \"New Hampshire\", \"Vermont\", \"Massachusetts\", \"Rhod…\n$ region     &lt;chr&gt; \"Northeast\", \"Northeast\", \"Northeast\", \"Northeast\", \"Northe…"
+    "text": "Getting started\nPackages\nWe’ll use the tidyverse package for this analysis.\n\nlibrary(tidyverse)\n\nData\nThe data are available in the data folder.\n\nsales_taxes &lt;- read_csv(\"data/sales-taxes-25.csv\")\nus_regions &lt;- read_csv(\"data/us-regions.csv\")\n\nAnd let’s take a look at the data.\n\nglimpse(sales_taxes)\n\nRows: 51\nColumns: 7\n$ state              &lt;chr&gt; \"Alabama\", \"Alaska\", \"Arizona\", \"Arkansas\", \"Califo…\n$ state_tax_rate     &lt;dbl&gt; 4.000, 0.000, 5.600, 6.500, 7.250, 2.900, 6.350, 0.…\n$ state_tax_rank     &lt;dbl&gt; 40, 46, 28, 9, 1, 45, 12, 46, 17, 40, 40, 17, 13, 2…\n$ avg_local_tax_rate &lt;dbl&gt; 5.44, 1.82, 2.92, 2.98, 1.73, 4.96, 0.00, 0.00, 1.0…\n$ max_local          &lt;dbl&gt; 11.000, 7.850, 5.300, 6.125, 5.250, 8.300, 0.000, 0…\n$ combined_tax_rate  &lt;dbl&gt; 9.44, 1.82, 8.52, 9.48, 8.98, 7.86, 6.35, 0.00, 7.0…\n$ combined_rank      &lt;dbl&gt; 5, 46, 11, 3, 7, 16, 33, 47, 24, 19, 45, 37, 8, 25,…\n\nglimpse(us_regions)\n\nRows: 50\nColumns: 2\n$ state_name &lt;chr&gt; \"Maine\", \"New Hampshire\", \"Vermont\", \"Massachusetts\", \"Rhod…\n$ region     &lt;chr&gt; \"Northeast\", \"Northeast\", \"Northeast\", \"Northeast\", \"Northe…"
   },
   {
     "objectID": "ae/ae-06-taxes-join-A.html#joining",
     "href": "ae/ae-06-taxes-join-A.html#joining",
     "title": "AE 06: Sales taxes + data joining",
     "section": "Joining",
-    "text": "Joining\nJoin the sales tax data with region data and save the joined data frame as a new data frame, not overwriting either data frame that goes into the join.\n\nsales_taxes_regions &lt;- left_join(\n  sales_taxes,\n  us_regions,\n  by = join_by(state == state_name)\n)\n\nCalculate the average sales tax of states in each region. What is surprising in the output?\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 5 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 Midwest           0.0569\n2 Northeast         0.0530\n3 South             0.0523\n4 West              0.0416\n5 &lt;NA&gt;              0.06  \n\n\nIdentify the state with NA for region.\n\nsales_taxes_regions |&gt;\n  filter(is.na(region)) |&gt;\n  select(state, region)\n\n# A tibble: 1 × 2\n  state                region\n  &lt;chr&gt;                &lt;chr&gt; \n1 District of Columbia &lt;NA&gt;  \n\n\nApply a fix for the NA in region, and calculate the mean sales taxes for regions again. Display the results in ascending order of mean sales tax.\n\nsales_taxes_regions &lt;- sales_taxes_regions |&gt;\n  mutate(\n    region = if_else(state == \"District of Columbia\", \"Northeast\", region)\n  )\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate)) |&gt;\n  arrange(mean_state_tax)\n\n# A tibble: 4 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 West              0.0416\n2 South             0.0523\n3 Northeast         0.0537\n4 Midwest           0.0569"
+    "text": "Joining\nJoin the sales tax data with region data and save the joined data frame as a new data frame, not overwriting either data frame that goes into the join.\n\nsales_taxes_regions &lt;- left_join(\n  sales_taxes,\n  us_regions,\n  by = join_by(state == state_name)\n)\n\nCalculate the average sales tax of states in each region. What is surprising in the output?\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 5 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 Midwest             5.69\n2 Northeast           5.30\n3 South               5.27\n4 West                4.16\n5 &lt;NA&gt;                6   \n\n\nIdentify the state with NA for region.\n\nsales_taxes_regions |&gt;\n  filter(is.na(region)) |&gt;\n  select(state, region)\n\n# A tibble: 1 × 2\n  state                region\n  &lt;chr&gt;                &lt;chr&gt; \n1 District of Columbia &lt;NA&gt;  \n\n\nApply a fix for the NA in region, and calculate the mean sales taxes for regions again. Display the results in ascending order of mean sales tax.\n\nsales_taxes_regions &lt;- sales_taxes_regions |&gt;\n  mutate(\n    region = if_else(state == \"District of Columbia\", \"Northeast\", region)\n  )\n\nsales_taxes_regions |&gt;\n  group_by(region) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate)) |&gt;\n  arrange(mean_state_tax)\n\n# A tibble: 4 × 2\n  region    mean_state_tax\n  &lt;chr&gt;              &lt;dbl&gt;\n1 West                4.16\n2 South               5.27\n3 Northeast           5.37\n4 Midwest             5.69"
   },
   {
     "objectID": "ae/ae-04-gerrymander-explore-II-A.html",
@@ -3406,7 +3406,7 @@
     "href": "slides/08-joining-data.html#sales-tax-in-coastal-states-1",
     "title": "Joining data",
     "section": "Sales tax in coastal states",
-    "text": "Sales tax in coastal states\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\n\nsales_taxes |&gt;\n  group_by(coast) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 3 × 2\n  coast    mean_state_tax\n  &lt;chr&gt;             &lt;dbl&gt;\n1 Atlantic           4.65\n2 Neither            5.50\n3 Pacific            2.17"
+    "text": "Sales tax in coastal states\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\n\nsales_taxes |&gt;\n  group_by(coast) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 3 × 2\n  coast    mean_state_tax\n  &lt;chr&gt;             &lt;dbl&gt;\n1 Atlantic           4.84\n2 Neither            5.46\n3 Pacific            3.55"
   },
   {
     "objectID": "slides/08-joining-data.html#sales-tax-in-us-regions",
@@ -3609,7 +3609,7 @@
     "href": "slides/08-joining-data-slides.html#sales-tax-in-coastal-states-1",
     "title": "Joining data",
     "section": "Sales tax in coastal states",
-    "text": "Sales tax in coastal states\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\n\nsales_taxes |&gt;\n  group_by(coast) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 3 × 2\n  coast    mean_state_tax\n  &lt;chr&gt;             &lt;dbl&gt;\n1 Atlantic           4.65\n2 Neither            5.50\n3 Pacific            2.17"
+    "text": "Sales tax in coastal states\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\n\nsales_taxes |&gt;\n  group_by(coast) |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n# A tibble: 3 × 2\n  coast    mean_state_tax\n  &lt;chr&gt;             &lt;dbl&gt;\n1 Atlantic           4.84\n2 Neither            5.46\n3 Pacific            3.55"
   },
   {
     "objectID": "slides/08-joining-data-slides.html#sales-tax-in-us-regions",
