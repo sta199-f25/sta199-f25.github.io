@@ -582,24 +582,6 @@ inner_join(x, y)
 :::
 :::
 
-## `semi_join()`
-
-::: columns
-::: {.column width="50%"}
-
-![](images/08/semi-join.gif)
-
-:::
-
-::: {.column width="50%"}
-
-```{r}
-semi_join(x, y)
-```
-
-:::
-:::
-
 ## `anti_join()`
 
 ::: columns
@@ -617,6 +599,10 @@ anti_join(x, y)
 
 :::
 :::
+
+## Summary of joins
+
+![](images/08/joins-summary.svg){fig-align="center"}
 
 # Application exercise
 
