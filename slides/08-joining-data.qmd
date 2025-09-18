@@ -294,10 +294,10 @@ sales_taxes |>
 ```
 
 ::: wooclap-choices
+- `arrange(swing_state)`
+- `filter(swing_state == "Swing")`
 - `group_by(swing_state)`
 - `group_by(list_of_swing_states)`
-- `filter(swing_state == "Swing")`
-- `arrange(swing_state)`
 :::
 
 :::
