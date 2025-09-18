@@ -27,7 +27,7 @@ The data are available in the `data` folder.
 ```{r}
 #| label: load-data
 #| message: false
-sales_taxes <- read_csv("data/sales-taxes.csv")
+sales_taxes <- read_csv("data/sales-taxes-25.csv")
 us_regions <- read_csv("data/us-regions.csv")
 ```
 

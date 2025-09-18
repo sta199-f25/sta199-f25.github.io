@@ -18,7 +18,7 @@ We'll use the **tidyverse** package for this analysis.
 
 The data are available in the `data` folder:
 
--   `sales-taxes.csv`
+-   `sales-taxes-25.csv`
 
 -   `us-regions.csv`
 

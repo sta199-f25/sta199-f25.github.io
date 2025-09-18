@@ -10,7 +10,8 @@ sales_taxes_raw <- read_csv(
 sales_taxes <- sales_taxes_raw |>
   clean_names() |>
   mutate(across(where(is.character), str_remove, "%")) |>
-  mutate(across(contains("tax"), as.numeric))
+  mutate(across(contains("tax"), as.numeric)) |>
+  mutate(state = str_remove(state, " \\([^)]*\\)"))
 
 sales_taxes |>
   write_csv(here::here("slides/data/sales-taxes-25.csv"))
