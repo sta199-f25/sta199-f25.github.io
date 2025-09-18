@@ -265,7 +265,8 @@ sales_taxes <- sales_taxes |>
 
 ## Recap: `if_else()`
 
-``` r
+```{r}
+#| eval: false
 if_else(
   x == y,               #<1>
   "x is equal to y",    #<2>
@@ -388,7 +389,8 @@ sales_taxes <- sales_taxes |>
 
 ## Recap: `case_when()`
 
-``` r
+```{r}
+#| eval: false
 case_when(
   x > y  ~ "x is greater than y", #<1>
   x < y  ~ "x is less than y",    #<2>
@@ -428,7 +430,7 @@ How would you approach this task?
 -   Group by `region`
 -   Summarize to find the mean sales tax in each type of state
 
-## `mutate()` with `case_when()` {.smaller .scrollable}
+## `mutate()` with `case_when()` {.smaller}
 
 ::: question
 Who feels like filling in the blanks lists of states in each region?
