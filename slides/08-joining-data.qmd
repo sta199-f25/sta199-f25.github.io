@@ -132,9 +132,11 @@ statsci_longer |>
 
 ## Announcements
 
--   1
--   2
--   ...
+- HW 2 due Sunday at 11:59pm
+  - Do Part 1 first, render, commit, and push
+  - Do Part 2 second, render, commit, and push + upload to Gradescope
+
+- Feedback on the AI **feedbak** tool
 
 ## Recap: Pivot {.smaller}
 
