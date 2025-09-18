@@ -1,5 +1,5 @@
 ---
-title: "AE 07: Sales taxes + data joining"
+title: "AE 06: Sales taxes + data joining"
 subtitle: "Suggested answers"
 ---
 
@@ -26,6 +26,7 @@ The data are available in the `data` folder.
 
 ```{r}
 #| label: load-data
+#| message: false
 sales_taxes <- read_csv("data/sales-taxes.csv")
 us_regions <- read_csv("data/us-regions.csv")
 ```
@@ -45,8 +46,8 @@ Join the sales tax data with region data and save the joined data frame as a new
 ```{r}
 #| label: join
 sales_taxes_regions <- left_join(
-  sales_taxes, 
-  us_regions, 
+  sales_taxes,
+  us_regions,
   by = join_by(state == state_name)
 )
 ```
@@ -85,15 +86,3 @@ sales_taxes_regions |>
   summarize(mean_state_tax = mean(state_tax_rate)) |>
   arrange(mean_state_tax)
 ```
-
-## Render, commit, and push
-
-1.  Render your Quarto document.
-
-2.  Go to the Git pane and check the box next to each file listed, i.e., stage your changes.
-    Commit your staged changes using a simple and informative message.
-
-3.  Click on push (the green arrow) to push your changes to your application exercise repo on GitHub.
-
-4.  Go to your repo on GitHub and confirm that you can see the updated files.
-    Once your updated files are in your repo on GitHub, you're good to go!
