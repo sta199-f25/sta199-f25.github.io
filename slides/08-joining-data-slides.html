@@ -6,18 +6,18 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
-<meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2025-09-18">
-<title>STA 199 – Joining data</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
+  <meta name="dcterms.date" content="2025-09-18">
+  <title>STA 199 – Joining data</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -96,12 +96,12 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-db9897f273744c3befa725f76235e105.css">
-<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-db9897f273744c3befa725f76235e105.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -196,7 +196,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Joining data</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Joining data</h1>
   <p class="subtitle">Lecture 8</p>
 
 <div class="quarto-title-authors">
@@ -211,9 +212,14 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 
   <p class="date">September 18, 2025</p>
-</section><section><section id="warm-up" class="title-slide slide level1 center"><h1>Warm-up</h1>
+</section>
+<section>
+<section id="warm-up" class="title-slide slide level1 center">
+<h1>Warm-up</h1>
 
-</section><section id="while-you-wait-participate" class="slide level2 xsmall"><h2>While you wait: Participate 📱💻</h2>
+</section>
+<section id="while-you-wait-participate" class="slide level2 xsmall">
+<h2>While you wait: Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
@@ -274,14 +280,17 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
 </figure>
 </div>
 <div class="small">
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="pivot-wider" class="slide level2 xsmall"><h2>Pivot wider</h2>
+</section>
+<section id="pivot-wider" class="slide level2 xsmall">
+<h2>Pivot wider</h2>
 <div class="columns">
 <div class="column" style="width:27%;">
 <div class="cell">
@@ -329,31 +338,44 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </div></div>
-</section><section id="announcements" class="slide level2"><h2>Announcements</h2>
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
 <ul>
 <li>1</li>
 <li>2</li>
 <li>…</li>
-</ul></section><section id="recap-pivot" class="slide level2 smaller"><h2>Recap: Pivot</h2>
+</ul>
+</section>
+<section id="recap-pivot" class="slide level2 smaller">
+<h2>Recap: Pivot</h2>
 <ul>
-<li class="fragment">
-<strong><em>When should you pivot?</em></strong> If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!</li>
-<li class="fragment">
-<strong><em>Wide and long:</em></strong> Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
-<li class="fragment">
-<strong><em>Pivot longer - data type:</em></strong> When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
-</ul></section><section id="recap-plotting" class="slide level2 smaller"><h2>Recap: Plotting</h2>
+<li class="fragment"><strong><em>When should you pivot?</em></strong> If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!</li>
+<li class="fragment"><strong><em>Wide and long:</em></strong> Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
+<li class="fragment"><strong><em>Pivot longer - data type:</em></strong> When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
+</ul>
+</section>
+<section id="recap-plotting" class="slide level2 smaller">
+<h2>Recap: Plotting</h2>
 <ul>
 <li class="fragment"><p>You can tweak a plot forever, but at some point the tweaks are likely not very productive.</p></li>
 <li class="fragment"><p>However, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate.</p></li>
-</ul></section></section><section><section id="recoding-data" class="title-slide slide level1 center"><h1>Recoding data</h1>
+</ul>
+</section></section>
+<section>
+<section id="recoding-data" class="title-slide slide level1 center">
+<h1>Recoding data</h1>
 
-</section><section id="whats-going-on-in-this-plot" class="slide level2 smaller"><h2>What’s going on in this plot?</h2>
+</section>
+<section id="whats-going-on-in-this-plot" class="slide level2 smaller">
+<h2>What’s going on in this plot?</h2>
 <div class="question">
 <p>Can you guess the variable plotted here?</p>
 </div>
 
-<img data-src="08-joining-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="sales-taxes-in-us-states" class="slide level2 smaller"><h2>Sales taxes in US states</h2>
+<img data-src="08-joining-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="sales-taxes-in-us-states" class="slide level2 smaller">
+<h2>Sales taxes in US states</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>sales_taxes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -374,31 +396,34 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 # ℹ 2 more variables: combined_tax_rate &lt;dbl&gt;, combined_rank &lt;dbl&gt;</code></pre>
 </div>
 </div>
-</section><section id="participate" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+</section>
+<section id="participate" class="slide level2 xsmall">
+<h2>Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
 <p>Put the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs.&nbsp;non-swing states:</p>
 <div class="wooclap-choices">
 <ul>
-<li>Group by <code>swing_state</code>
-</li>
+<li>Group by <code>swing_state</code></li>
 <li>Summarize to find the mean sales tax in each type of state</li>
-<li>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code>
-</li>
+<li>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code></li>
 </ul>
 </div>
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
 </figure>
 </div>
 <div class="small">
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="participate-1" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+</section>
+<section id="participate-1" class="slide level2 xsmall">
+<h2>Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
@@ -421,20 +446,24 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
 </figure>
 </div>
 <div class="small">
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="recap-if_else" class="slide level2"><h2>Recap: <code>if_else()</code>
-</h2>
-<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="fu">if_else</span>(</span>
+</section>
+<section id="recap-if_else" class="slide level2">
+<h2>Recap: <code>if_else()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="fu">if_else</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2"></a>  x <span class="sc">==</span> y,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3"></a>  <span class="st">"x is equal to y"</span>,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4"></a>  <span class="st">"x is not equal to y"</span></span>
 <span id="annotated-cell-2-5"><a href="#annotated-cell-2-5"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
@@ -448,7 +477,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <dd>
 <span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="3">Value if condition is <code>FALSE</code></span>
 </dd>
-</dl></section><section id="participate-2" class="slide level2 smaller"><h2>Participate 📱💻</h2>
+</dl>
+</div>
+</div>
+</section>
+<section id="participate-2" class="slide level2 smaller">
+<h2>Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
@@ -469,14 +503,17 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
 </figure>
 </div>
 <div class="small">
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="sales-tax-in-swing-states" class="slide level2 smaller"><h2>Sales tax in swing states</h2>
+</section>
+<section id="sales-tax-in-swing-states" class="slide level2 smaller">
+<h2>Sales tax in swing states</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>sales_taxes <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a></a>  <span class="fu">group_by</span>(swing_state) <span class="sc">|&gt;</span></span>
@@ -489,7 +526,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 2 Swing                 5.46</code></pre>
 </div>
 </div>
-</section><section id="sales-tax-in-coastal-states" class="slide level2 smaller"><h2>Sales tax in coastal states</h2>
+</section>
+<section id="sales-tax-in-coastal-states" class="slide level2 smaller">
+<h2>Sales tax in coastal states</h2>
 <div class="question">
 <p>Suppose you’re tasked with the following:</p>
 <blockquote>
@@ -499,14 +538,14 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="fragment">
 <ul>
-<li>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code>
-</li>
-<li>Group by <code>coast</code>
-</li>
+<li>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code></li>
+<li>Group by <code>coast</code></li>
 <li>Summarize to find the mean sales tax in each type of state</li>
 </ul>
 </div>
-</section><section id="participate-3" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+</section>
+<section id="participate-3" class="slide level2 xsmall">
+<h2>Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
@@ -534,20 +573,24 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+<figure>
+<p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
 </figure>
 </div>
 <div class="small">
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="recap-case_when" class="slide level2"><h2>Recap: <code>case_when()</code>
-</h2>
-<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="fu">case_when</span>(</span>
+</section>
+<section id="recap-case_when" class="slide level2">
+<h2>Recap: <code>case_when()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="fu">case_when</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2"></a>  x <span class="sc">&gt;</span> y  <span class="sc">~</span> <span class="st">"x is greater than y"</span>,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3"></a>  x <span class="sc">&lt;</span> y  <span class="sc">~</span> <span class="st">"x is less than y"</span>,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4"></a>  <span class="at">.default =</span> <span class="st">"x is equal to y"</span></span>
 <span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
@@ -561,7 +604,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <dd>
 <span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3">Value if neither condition is <code>TRUE</code>, i.e., default value</span>
 </dd>
-</dl></section><section id="sales-tax-in-coastal-states-1" class="slide level2 smaller scrollable"><h2>Sales tax in coastal states</h2>
+</dl>
+</div>
+</div>
+</section>
+<section id="sales-tax-in-coastal-states-1" class="slide level2 smaller scrollable">
+<h2>Sales tax in coastal states</h2>
 <div class="question">
 <p>Compare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.</p>
 </div>
@@ -578,7 +626,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 3 Pacific            3.55</code></pre>
 </div>
 </div>
-</section><section id="sales-tax-in-us-regions" class="slide level2 smaller"><h2>Sales tax in US regions</h2>
+</section>
+<section id="sales-tax-in-us-regions" class="slide level2 smaller">
+<h2>Sales tax in US regions</h2>
 <div class="question">
 <p>Suppose you’re tasked with the following:</p>
 <blockquote>
@@ -589,14 +639,13 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="fragment">
 <ul>
 <li>Create a new variable called <code>region</code> with levels <code>"Midwest"</code>, <code>"Northeast"</code>, <code>"South"</code>, and <code>"West"</code>.</li>
-<li>Group by <code>region</code>
-</li>
+<li>Group by <code>region</code></li>
 <li>Summarize to find the mean sales tax in each type of state</li>
 </ul>
 </div>
-</section><section id="mutate-with-case_when" class="slide level2 smaller scrollable"><h2>
-<code>mutate()</code> with <code>case_when()</code>
-</h2>
+</section>
+<section id="mutate-with-case_when" class="slide level2 smaller">
+<h2><code>mutate()</code> with <code>case_when()</code></h2>
 <div class="question">
 <p>Who feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?</p>
 </div>
@@ -616,9 +665,14 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb20-13"><a></a>    )</span>
 <span id="cb20-14"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section><section id="joining-data" class="title-slide slide level1 center"><h1>Joining data</h1>
+</section></section>
+<section>
+<section id="joining-data" class="title-slide slide level1 center">
+<h1>Joining data</h1>
 
-</section><section id="why-join" class="slide level2 smaller"><h2>Why join?</h2>
+</section>
+<section id="why-join" class="slide level2 smaller">
+<h2>Why join?</h2>
 <p>Suppose we want to answer questions like:</p>
 <blockquote>
 <p>Is there a relationship between<br>
@@ -631,7 +685,9 @@ and performance in this course?</p>
 <div class="fragment">
 <p>Each of these would require <em>join</em>ing class performance data with an outside data source so we can have all relevant information (columns) in a single data frame.</p>
 </div>
-</section><section id="why-join-1" class="slide level2 smaller"><h2>Why join?</h2>
+</section>
+<section id="why-join-1" class="slide level2 smaller">
+<h2>Why join?</h2>
 <p>Suppose we want to answer questions like:</p>
 <blockquote>
 <p>Compare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).</p>
@@ -639,7 +695,9 @@ and performance in this course?</p>
 <div class="fragment">
 <p>This can also be solved with <em>join</em>ing region information with the state-level sales tax data.</p>
 </div>
-</section><section id="setup" class="slide level2"><h2>Setup</h2>
+</section>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
 <p>For the next few slides…</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -677,7 +735,9 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section><section id="left_join" class="slide level2"><h2><code>left_join()</code></h2>
+</section>
+<section id="left_join" class="slide level2">
+<h2><code>left_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/08/left-join.gif"></p>
@@ -697,7 +757,9 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section><section id="right_join" class="slide level2"><h2><code>right_join()</code></h2>
+</section>
+<section id="right_join" class="slide level2">
+<h2><code>right_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/08/right-join.gif"></p>
@@ -717,7 +779,9 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section><section id="full_join" class="slide level2"><h2><code>full_join()</code></h2>
+</section>
+<section id="full_join" class="slide level2">
+<h2><code>full_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/08/full-join.gif"></p>
@@ -738,7 +802,9 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section><section id="inner_join" class="slide level2"><h2><code>inner_join()</code></h2>
+</section>
+<section id="inner_join" class="slide level2">
+<h2><code>inner_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/08/inner-join.gif"></p>
@@ -757,7 +823,9 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section><section id="semi_join" class="slide level2"><h2><code>semi_join()</code></h2>
+</section>
+<section id="semi_join" class="slide level2">
+<h2><code>semi_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/08/semi-join.gif"></p>
@@ -776,7 +844,9 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section><section id="anti_join" class="slide level2"><h2><code>anti_join()</code></h2>
+</section>
+<section id="anti_join" class="slide level2">
+<h2><code>anti_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/08/anti-join.gif"></p>
@@ -794,14 +864,22 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section></section><section><section id="application-exercise" class="title-slide slide level1 center"><h1>Application exercise</h1>
+</section></section>
+<section>
+<section id="application-exercise" class="title-slide slide level1 center">
+<h1>Application exercise</h1>
 
-</section><section id="goal" class="slide level2"><h2>Goal</h2>
+</section>
+<section id="goal" class="slide level2">
+<h2>Goal</h2>
 <p>Compare the average state sales tax rates of states in various regions (Midwest, Northeast, South, West), where the input data are:</p>
 <ol type="1">
 <li>States and sales taxes</li>
 <li>States and regions</li>
-</ol></section><section id="ae-06-taxes-join" class="slide level2 smaller"><h2>ae-06-taxes-join</h2>
+</ol>
+</section>
+<section id="ae-06-taxes-join" class="slide level2 smaller">
+<h2>ae-06-taxes-join</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
@@ -813,7 +891,7 @@ and performance in this course?</p>
 
 
 </section></section>
-</div>
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -821,7 +899,23 @@ and performance in this course?</p>
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1012,7 +1106,9 @@ and performance in this course?</p>
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1047,7 +1143,9 @@ and performance in this course?</p>
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1214,6 +1312,6 @@ and performance in this course?</p>
         }
       });
       </script>
-
+    
 
 </body></html>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
 <meta name="dcterms.date" content="2025-09-18">
+
 <title>Joining data – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -56,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -77,7 +81,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-dark-e6754615d251eb731e1a37878dd4e196.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-45e5efef9536e3a59efa0ee745ca54fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -104,6 +109,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 <meta property="og:title" content="Joining data – STA 199">
 <meta property="og:description" content="Lecture 8">
 <meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
@@ -111,6 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:height" content="888">
 <meta property="og:image:width" content="866">
 </head>
+
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -276,7 +284,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -287,18 +297,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
     <div class="dropdown">
       <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
+          <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing">
               <i class="bi bi-person-raised-hand pe-1"></i>
             Office hours
@@ -317,11 +332,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             </a>
           </li>
       </ul>
-</div>
+    </div>
     <div class="dropdown">
       <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-<li>
+          <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/announcements">
               <i class="bi bi-megaphone-fill pe-1"></i>
             Announcements
@@ -340,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             </a>
           </li>
       </ul>
-</div>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -351,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -359,8 +374,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -403,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -412,8 +427,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
@@ -438,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -447,15 +462,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Description</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab.html" class="sidebar-item-text sidebar-link">
@@ -481,27 +496,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li>
-<a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
   <ul class="collapse">
-<li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
+  <li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
   <li><a href="#pivot-wider" id="toc-pivot-wider" class="nav-link" data-scroll-target="#pivot-wider">Pivot wider</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
   <li><a href="#recap-pivot" id="toc-recap-pivot" class="nav-link" data-scroll-target="#recap-pivot">Recap: Pivot</a></li>
   <li><a href="#recap-plotting" id="toc-recap-plotting" class="nav-link" data-scroll-target="#recap-plotting">Recap: Plotting</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#recoding-data" id="toc-recoding-data" class="nav-link" data-scroll-target="#recoding-data">Recoding data</a>
+  </ul></li>
+  <li><a href="#recoding-data" id="toc-recoding-data" class="nav-link" data-scroll-target="#recoding-data">Recoding data</a>
   <ul class="collapse">
-<li><a href="#whats-going-on-in-this-plot" id="toc-whats-going-on-in-this-plot" class="nav-link" data-scroll-target="#whats-going-on-in-this-plot">What’s going on in this plot?</a></li>
+  <li><a href="#whats-going-on-in-this-plot" id="toc-whats-going-on-in-this-plot" class="nav-link" data-scroll-target="#whats-going-on-in-this-plot">What’s going on in this plot?</a></li>
   <li><a href="#sales-taxes-in-us-states" id="toc-sales-taxes-in-us-states" class="nav-link" data-scroll-target="#sales-taxes-in-us-states">Sales taxes in US states</a></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
   <li><a href="#participate-1" id="toc-participate-1" class="nav-link" data-scroll-target="#participate-1">Participate 📱💻</a></li>
@@ -514,12 +528,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sales-tax-in-coastal-states-1" id="toc-sales-tax-in-coastal-states-1" class="nav-link" data-scroll-target="#sales-tax-in-coastal-states-1">Sales tax in coastal states</a></li>
   <li><a href="#sales-tax-in-us-regions" id="toc-sales-tax-in-us-regions" class="nav-link" data-scroll-target="#sales-tax-in-us-regions">Sales tax in US regions</a></li>
   <li><a href="#mutate-with-case_when" id="toc-mutate-with-case_when" class="nav-link" data-scroll-target="#mutate-with-case_when"><code>mutate()</code> with <code>case_when()</code></a></li>
-  </ul>
-</li>
-  <li>
-<a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data">Joining data</a>
+  </ul></li>
+  <li><a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data">Joining data</a>
   <ul class="collapse">
-<li><a href="#why-join" id="toc-why-join" class="nav-link" data-scroll-target="#why-join">Why join?</a></li>
+  <li><a href="#why-join" id="toc-why-join" class="nav-link" data-scroll-target="#why-join">Why join?</a></li>
   <li><a href="#why-join-1" id="toc-why-join-1" class="nav-link" data-scroll-target="#why-join-1">Why join?</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#left_join" id="toc-left_join" class="nav-link" data-scroll-target="#left_join"><code>left_join()</code></a></li>
@@ -528,19 +540,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><code>inner_join()</code></a></li>
   <li><a href="#semi_join" id="toc-semi_join" class="nav-link" data-scroll-target="#semi_join"><code>semi_join()</code></a></li>
   <li><a href="#anti_join" id="toc-anti_join" class="nav-link" data-scroll-target="#anti_join"><code>anti_join()</code></a></li>
-  </ul>
-</li>
-  <li>
-<a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
+  </ul></li>
+  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
   <ul class="collapse">
-<li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
   <li><a href="#ae-06-taxes-join" id="toc-ae-06-taxes-join" class="nav-link" data-scroll-target="#ae-06-taxes-join">ae-06-taxes-join</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/08-joining-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-joining-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/08-joining-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-joining-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">Joining data</h1>
 <p class="subtitle lead">Lecture 8</p>
 </div>
@@ -575,15 +589,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="warm-up" class="level1"><h1>Warm-up</h1>
-<section id="while-you-wait-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate">While you wait: Participate 📱💻</h2>
+</header>
+
+
+<section id="warm-up" class="level1">
+<h1>Warm-up</h1>
+<section id="while-you-wait-participate" class="level2 xsmall">
+<h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate">While you wait: Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
 <div class="columns">
 <div class="column" style="width:35%;">
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci_longer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>statsci_longer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 17 × 3
    degree_type  year     n
@@ -638,7 +657,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+<figure class="figure">
+<p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
 </figure>
 </div>
 <div class="small">
@@ -646,11 +666,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="pivot-wider" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="pivot-wider">Pivot wider</h2>
+</section>
+<section id="pivot-wider" class="level2 xsmall">
+<h2 class="xsmall anchored" data-anchor-id="pivot-wider">Pivot wider</h2>
 <div class="columns">
 <div class="column" style="width:27%;">
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci_longer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>statsci_longer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 17 × 3
    degree_type  year     n
@@ -678,11 +700,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>⟶</p>
 </div><div class="column" style="width:70%;">
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">statsci_longer</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">pivot_wider</span><span class="op">(</span></span>
-<span>    names_from <span class="op">=</span> <span class="va">year</span>,</span>
-<span>    values_from <span class="op">=</span> <span class="va">n</span>,</span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>statsci_longer <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> year,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> n,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -695,45 +717,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="announcements" class="level2"><h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
+</section>
+<section id="announcements" class="level2">
+<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
 <li>1</li>
 <li>2</li>
 <li>…</li>
-</ul></section><section id="recap-pivot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-pivot">Recap: Pivot</h2>
+</ul>
+</section>
+<section id="recap-pivot" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="recap-pivot">Recap: Pivot</h2>
 <div class="incremental">
 <ul class="incremental">
-<li>
-<strong><em>When should you pivot?</em></strong> If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!</li>
-<li>
-<strong><em>Wide and long:</em></strong> Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
-<li>
-<strong><em>Pivot longer - data type:</em></strong> When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
+<li><strong><em>When should you pivot?</em></strong> If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!</li>
+<li><strong><em>Wide and long:</em></strong> Data sets can’t be labeled as <em>wide</em> or <em>long</em> but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
+<li><strong><em>Pivot longer - data type:</em></strong> When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the <code>pivot_longer()</code> function.</li>
 </ul>
 </div>
-</section><section id="recap-plotting" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap-plotting">Recap: Plotting</h2>
+</section>
+<section id="recap-plotting" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="recap-plotting">Recap: Plotting</h2>
 <div class="incremental">
 <ul class="incremental">
 <li><p>You can tweak a plot forever, but at some point the tweaks are likely not very productive.</p></li>
 <li><p>However, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate.</p></li>
 </ul>
 </div>
-</section></section><section id="recoding-data" class="level1"><h1>Recoding data</h1>
-<section id="whats-going-on-in-this-plot" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="whats-going-on-in-this-plot">What’s going on in this plot?</h2>
+</section>
+</section>
+<section id="recoding-data" class="level1">
+<h1>Recoding data</h1>
+<section id="whats-going-on-in-this-plot" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="whats-going-on-in-this-plot">What’s going on in this plot?</h2>
 <div class="question">
 <p>Can you guess the variable plotted here?</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="08-joining-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure">
+<p><img src="08-joining-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="sales-taxes-in-us-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-taxes-in-us-states">Sales taxes in US states</h2>
+</section>
+<section id="sales-taxes-in-us-states" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="sales-taxes-in-us-states">Sales taxes in US states</h2>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sales_taxes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 51 × 7
    state    state_tax_rate state_tax_rank avg_local_tax_rate max_local
@@ -752,24 +785,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 2 more variables: combined_tax_rate &lt;dbl&gt;, combined_rank &lt;dbl&gt;</code></pre>
 </div>
 </div>
-</section><section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
+</section>
+<section id="participate" class="level2 xsmall">
+<h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
 <p>Put the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs.&nbsp;non-swing states:</p>
 <div class="wooclap-choices">
 <ul>
-<li>Group by <code>swing_state</code>
-</li>
+<li>Group by <code>swing_state</code></li>
 <li>Summarize to find the mean sales tax in each type of state</li>
-<li>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code>
-</li>
+<li>Create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code></li>
 </ul>
 </div>
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+<figure class="figure">
+<p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
 </figure>
 </div>
 <div class="small">
@@ -777,16 +811,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate-1">Participate 📱💻</h2>
+</section>
+<section id="participate-1" class="level2 xsmall">
+<h2 class="xsmall anchored" data-anchor-id="participate-1">Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
 <p>First, create a vector called <code>list_of_swing_states</code> that contains the names of the swing states.</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">list_of_swing_states</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
-<span>  <span class="st">"Arizona"</span>, <span class="st">"Georgia"</span>, <span class="st">"Michigan"</span>, <span class="st">"Nevada"</span>, <span class="st">"North Carolina"</span>,</span>
-<span>  <span class="st">"Pennsylvania"</span>, <span class="st">"Wisconsin"</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>list_of_swing_states <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Arizona"</span>, <span class="st">"Georgia"</span>, <span class="st">"Michigan"</span>, <span class="st">"Nevada"</span>, <span class="st">"North Carolina"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pennsylvania"</span>, <span class="st">"Wisconsin"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then, fill in the blanks to create a new variable called <code>swing_state</code> with levels <code>"Swing"</code> and <code>"Non-swing"</code>:</p>
 <div class="cell">
@@ -800,7 +836,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+<figure class="figure">
+<p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
 </figure>
 </div>
 <div class="small">
@@ -808,14 +845,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="recap-if_else" class="level2"><h2 class="anchored" data-anchor-id="recap-if_else">Recap: <code>if_else()</code>
-</h2>
-<div class="sourceCode" id="annotated-cell-2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">if_else</span><span class="op">(</span></span>
-<span>  <span class="va">x</span> <span class="op">==</span> <span class="va">y</span>,</span>
-<span>  <span class="st">"x is equal to y"</span>,</span>
-<span>  <span class="st">"x is not equal to y"</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl>
+</section>
+<section id="recap-if_else" class="level2">
+<h2 class="anchored" data-anchor-id="recap-if_else">Recap: <code>if_else()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">if_else</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">==</span> y,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"x is equal to y"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"x is not equal to y"</span></span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
 <span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="1">Condition</span>
@@ -828,7 +868,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dd>
 <span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="3">Value if condition is <code>FALSE</code></span>
 </dd>
-</dl></section><section id="participate-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="participate-2">Participate 📱💻</h2>
+</dl>
+</div>
+</div>
+</section>
+<section id="participate-2" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="participate-2">Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
@@ -849,7 +894,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+<figure class="figure">
+<p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
 </figure>
 </div>
 <div class="small">
@@ -857,11 +903,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="sales-tax-in-swing-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-swing-states">Sales tax in swing states</h2>
+</section>
+<section id="sales-tax-in-swing-states" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="sales-tax-in-swing-states">Sales tax in swing states</h2>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">swing_state</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">summarize</span><span class="op">(</span>mean_state_tax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">state_tax_rate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sales_taxes <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(swing_state) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_state_tax =</span> <span class="fu">mean</span>(state_tax_rate))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   swing_state mean_state_tax
@@ -870,7 +918,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 2 Swing                 5.46</code></pre>
 </div>
 </div>
-</section><section id="sales-tax-in-coastal-states" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-coastal-states">Sales tax in coastal states</h2>
+</section>
+<section id="sales-tax-in-coastal-states" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="sales-tax-in-coastal-states">Sales tax in coastal states</h2>
 <div class="question">
 <p>Suppose you’re tasked with the following:</p>
 <blockquote class="blockquote">
@@ -880,24 +930,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>. . .</p>
 <ul>
-<li>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code>
-</li>
-<li>Group by <code>coast</code>
-</li>
+<li>Create a new variable called <code>coast</code> with levels <code>"Pacific"</code>, <code>"Atlantic"</code>, and <code>"Neither"</code></li>
+<li>Group by <code>coast</code></li>
 <li>Summarize to find the mean sales tax in each type of state</li>
-</ul></section><section id="participate-3" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate-3">Participate 📱💻</h2>
+</ul>
+</section>
+<section id="participate-3" class="level2 xsmall">
+<h2 class="xsmall anchored" data-anchor-id="participate-3">Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:85%;">
 <div class="wooclap">
 <p>First, create two vectors called <code>pacific_coast</code> and <code>atlantic_coast</code> that contain the respective states.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pacific_coast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Alaska"</span>, <span class="st">"Washington"</span>, <span class="st">"Oregon"</span>, <span class="st">"California"</span>, <span class="st">"Hawaii"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">atlantic_coast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
-<span>  <span class="st">"Connecticut"</span>, <span class="st">"Delaware"</span>, <span class="st">"Georgia"</span>, <span class="st">"Florida"</span>, <span class="st">"Maine"</span>, <span class="st">"Maryland"</span>, <span class="st">"Massachusetts"</span>,</span>
-<span>  <span class="st">"New Hampshire"</span>, <span class="st">"New Jersey"</span>, <span class="st">"New York"</span>, <span class="st">"North Carolina"</span>, <span class="st">"Rhode Island"</span>, </span>
-<span>  <span class="st">"South Carolina"</span>, <span class="st">"Virginia"</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>pacific_coast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alaska"</span>, <span class="st">"Washington"</span>, <span class="st">"Oregon"</span>, <span class="st">"California"</span>, <span class="st">"Hawaii"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>atlantic_coast <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Connecticut"</span>, <span class="st">"Delaware"</span>, <span class="st">"Georgia"</span>, <span class="st">"Florida"</span>, <span class="st">"Maine"</span>, <span class="st">"Maryland"</span>, <span class="st">"Massachusetts"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"New Hampshire"</span>, <span class="st">"New Jersey"</span>, <span class="st">"New York"</span>, <span class="st">"North Carolina"</span>, <span class="st">"Rhode Island"</span>, </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"South Carolina"</span>, <span class="st">"Virginia"</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then, fill in the blank to create a new variable called <code>coast</code>:</p>
 <div class="cell">
@@ -913,7 +964,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div><div class="column" style="width:15%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+<figure class="figure">
+<p><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
 </figure>
 </div>
 <div class="small">
@@ -921,14 +973,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="recap-case_when" class="level2"><h2 class="anchored" data-anchor-id="recap-case_when">Recap: <code>case_when()</code>
-</h2>
-<div class="sourceCode" id="annotated-cell-4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">case_when</span><span class="op">(</span></span>
-<span>  <span class="va">x</span> <span class="op">&gt;</span> <span class="va">y</span>  <span class="op">~</span> <span class="st">"x is greater than y"</span>,</span>
-<span>  <span class="va">x</span> <span class="op">&lt;</span> <span class="va">y</span>  <span class="op">~</span> <span class="st">"x is less than y"</span>,</span>
-<span>  .default <span class="op">=</span> <span class="st">"x is equal to y"</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl>
+</section>
+<section id="recap-case_when" class="level2">
+<h2 class="anchored" data-anchor-id="recap-case_when">Recap: <code>case_when()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">case_when</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">&gt;</span> y  <span class="sc">~</span> <span class="st">"x is greater than y"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">&lt;</span> y  <span class="sc">~</span> <span class="st">"x is less than y"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.default =</span> <span class="st">"x is equal to y"</span></span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
 <span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">Value if first condition is <code>TRUE</code></span>
@@ -941,14 +996,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dd>
 <span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3">Value if neither condition is <code>TRUE</code>, i.e., default value</span>
 </dd>
-</dl></section><section id="sales-tax-in-coastal-states-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="sales-tax-in-coastal-states-1">Sales tax in coastal states</h2>
+</dl>
+</div>
+</div>
+</section>
+<section id="sales-tax-in-coastal-states-1" class="level2 smaller scrollable">
+<h2 class="smaller scrollable anchored" data-anchor-id="sales-tax-in-coastal-states-1">Sales tax in coastal states</h2>
 <div class="question">
 <p>Compare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.</p>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_taxes</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">coast</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">summarize</span><span class="op">(</span>mean_state_tax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">state_tax_rate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sales_taxes <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(coast) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_state_tax =</span> <span class="fu">mean</span>(state_tax_rate))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   coast    mean_state_tax
@@ -958,7 +1018,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3 Pacific            3.55</code></pre>
 </div>
 </div>
-</section><section id="sales-tax-in-us-regions" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sales-tax-in-us-regions">Sales tax in US regions</h2>
+</section>
+<section id="sales-tax-in-us-regions" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="sales-tax-in-us-regions">Sales tax in US regions</h2>
 <div class="question">
 <p>Suppose you’re tasked with the following:</p>
 <blockquote class="blockquote">
@@ -969,12 +1031,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>. . .</p>
 <ul>
 <li>Create a new variable called <code>region</code> with levels <code>"Midwest"</code>, <code>"Northeast"</code>, <code>"South"</code>, and <code>"West"</code>.</li>
-<li>Group by <code>region</code>
-</li>
+<li>Group by <code>region</code></li>
 <li>Summarize to find the mean sales tax in each type of state</li>
-</ul></section><section id="mutate-with-case_when" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="mutate-with-case_when">
-<code>mutate()</code> with <code>case_when()</code>
-</h2>
+</ul>
+</section>
+<section id="mutate-with-case_when" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="mutate-with-case_when"><code>mutate()</code> with <code>case_when()</code></h2>
 <div class="question">
 <p>Who feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?</p>
 </div>
@@ -994,8 +1056,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section id="joining-data" class="level1"><h1>Joining data</h1>
-<section id="why-join" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-join">Why join?</h2>
+</section>
+</section>
+<section id="joining-data" class="level1">
+<h1>Joining data</h1>
+<section id="why-join" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="why-join">Why join?</h2>
 <p>Suppose we want to answer questions like:</p>
 <blockquote class="blockquote">
 <p>Is there a relationship between<br>
@@ -1007,24 +1073,28 @@ and performance in this course?</p>
 </blockquote>
 <p>. . .</p>
 <p>Each of these would require <em>join</em>ing class performance data with an outside data source so we can have all relevant information (columns) in a single data frame.</p>
-</section><section id="why-join-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-join-1">Why join?</h2>
+</section>
+<section id="why-join-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="why-join-1">Why join?</h2>
 <p>Suppose we want to answer questions like:</p>
 <blockquote class="blockquote">
 <p>Compare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).</p>
 </blockquote>
 <p>. . .</p>
 <p>This can also be solved with <em>join</em>ing region information with the state-level sales tax data.</p>
-</section><section id="setup" class="level2"><h2 class="anchored" data-anchor-id="setup">Setup</h2>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>For the next few slides…</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
-<span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
-<span>  value_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">value_x =</span> <span class="fu">c</span>(<span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
      id value_x
@@ -1036,12 +1106,12 @@ and performance in this course?</p>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
-<span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span>,</span>
-<span>  value_y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y4"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>),</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">value_y =</span> <span class="fu">c</span>(<span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y4"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
      id value_y
@@ -1053,13 +1123,15 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
-</section><section id="left_join" class="level2"><h2 class="anchored" data-anchor-id="left_join"><code>left_join()</code></h2>
+</section>
+<section id="left_join" class="level2">
+<h2 class="anchored" data-anchor-id="left_join"><code>left_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/08/left-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">left_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1074,13 +1146,15 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
-</section><section id="right_join" class="level2"><h2 class="anchored" data-anchor-id="right_join"><code>right_join()</code></h2>
+</section>
+<section id="right_join" class="level2">
+<h2 class="anchored" data-anchor-id="right_join"><code>right_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/08/right-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">right_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1095,13 +1169,15 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
-</section><section id="full_join" class="level2"><h2 class="anchored" data-anchor-id="full_join"><code>full_join()</code></h2>
+</section>
+<section id="full_join" class="level2">
+<h2 class="anchored" data-anchor-id="full_join"><code>full_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/08/full-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">full_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1117,13 +1193,15 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
-</section><section id="inner_join" class="level2"><h2 class="anchored" data-anchor-id="inner_join"><code>inner_join()</code></h2>
+</section>
+<section id="inner_join" class="level2">
+<h2 class="anchored" data-anchor-id="inner_join"><code>inner_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/08/inner-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">inner_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1137,13 +1215,15 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
-</section><section id="semi_join" class="level2"><h2 class="anchored" data-anchor-id="semi_join"><code>semi_join()</code></h2>
+</section>
+<section id="semi_join" class="level2">
+<h2 class="anchored" data-anchor-id="semi_join"><code>semi_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/08/semi-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">semi_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semi_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1157,13 +1237,15 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
-</section><section id="anti_join" class="level2"><h2 class="anchored" data-anchor-id="anti_join"><code>anti_join()</code></h2>
+</section>
+<section id="anti_join" class="level2">
+<h2 class="anchored" data-anchor-id="anti_join"><code>anti_join()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img src="images/08/anti-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">anti_join</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anti_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1176,13 +1258,20 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
-</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
-<section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
+</section>
+</section>
+<section id="application-exercise" class="level1">
+<h1>Application exercise</h1>
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <p>Compare the average state sales tax rates of states in various regions (Midwest, Northeast, South, West), where the input data are:</p>
 <ol type="1">
 <li>States and sales taxes</li>
 <li>States and regions</li>
-</ol></section><section id="ae-06-taxes-join" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-06-taxes-join">ae-06-taxes-join</h2>
+</ol>
+</section>
+<section id="ae-06-taxes-join" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="ae-06-taxes-join">ae-06-taxes-join</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
@@ -1193,7 +1282,12 @@ and performance in this course?</p>
 </div>
 
 
-</section></section></main><!-- /main --><script>
+</section>
+</section>
+
+</main> <!-- /main -->
+
+<script>
   // htmlwidgets need to know to resize themselves when slides are shown/hidden.
   // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
   // slide changes (different for each slide format).
@@ -1228,7 +1322,9 @@ and performance in this course?</p>
     }
 
   })();
-</script><script id="quarto-html-after-body" type="application/javascript">
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1641,7 +1737,8 @@ and performance in this course?</p>
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox</p>
 </div>   
@@ -1653,6 +1750,8 @@ and performance in this course?</p>
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

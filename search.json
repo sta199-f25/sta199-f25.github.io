@@ -3294,14 +3294,14 @@
     "href": "slides/08-joining-data.html",
     "title": "Joining data",
     "section": "",
-    "text": "statsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\n\n# A tibble: 4 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4\n2 AB               2      2      4      1      3\n3 BS2              2      6      1      0      5\n4 BS               5      9      4     13     10\n# ℹ 10 more variables: `2016` &lt;dbl&gt;,\n#   `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,\n#   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;,\n#   `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\nFill in the blanks to pivot statsci_longer wider.\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = __BLANK_1__,\n    values_from = __BLANK_2__,\n  )\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\nstatsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = year,\n    values_from = n,\n  )\n\n# A tibble: 2 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4      4      1      0\n2 AB               2      2     NA     NA     NA     NA     NA     NA\n# ℹ 7 more variables: `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;,\n#   `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\n\n\n\n\n1\n2\n…\n\n\n\n\nWhen should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\n\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\n\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function.\n\n\n\n\n\nYou can tweak a plot forever, but at some point the tweaks are likely not very productive.\nHowever, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate."
+    "text": "statsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\n\n# A tibble: 4 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4\n2 AB               2      2      4      1      3\n3 BS2              2      6      1      0      5\n4 BS               5      9      4     13     10\n# ℹ 10 more variables: `2016` &lt;dbl&gt;,\n#   `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,\n#   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;,\n#   `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\nFill in the blanks to pivot statsci_longer wider.\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = __BLANK_1__,\n    values_from = __BLANK_2__,\n  )\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\n\n\n\nstatsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = year,\n    values_from = n,\n  )\n\n# A tibble: 2 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4      4      1      0\n2 AB               2      2     NA     NA     NA     NA     NA     NA\n# ℹ 7 more variables: `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;,\n#   `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\n\n\n\n\n\n\n1\n2\n…\n\n\n\n\n\n\nWhen should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function.\n\n\n\n\n\n\n\nYou can tweak a plot forever, but at some point the tweaks are likely not very productive.\nHowever, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate."
   },
   {
     "objectID": "slides/08-joining-data.html#while-you-wait-participate",
     "href": "slides/08-joining-data.html#while-you-wait-participate",
     "title": "Joining data",
     "section": "",
-    "text": "statsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\n\n# A tibble: 4 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4\n2 AB               2      2      4      1      3\n3 BS2              2      6      1      0      5\n4 BS               5      9      4     13     10\n# ℹ 10 more variables: `2016` &lt;dbl&gt;,\n#   `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,\n#   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;,\n#   `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\nFill in the blanks to pivot statsci_longer wider.\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = __BLANK_1__,\n    values_from = __BLANK_2__,\n  )\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "statsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\n\n# A tibble: 4 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4\n2 AB               2      2      4      1      3\n3 BS2              2      6      1      0      5\n4 BS               5      9      4     13     10\n# ℹ 10 more variables: `2016` &lt;dbl&gt;,\n#   `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,\n#   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;,\n#   `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\nFill in the blanks to pivot statsci_longer wider.\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = __BLANK_1__,\n    values_from = __BLANK_2__,\n  )\n\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data.html#pivot-wider",
@@ -3322,7 +3322,7 @@
     "href": "slides/08-joining-data.html#recap-pivot",
     "title": "Joining data",
     "section": "",
-    "text": "When should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\n\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\n\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function."
+    "text": "When should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function."
   },
   {
     "objectID": "slides/08-joining-data.html#recap-plotting",
@@ -3350,28 +3350,28 @@
     "href": "slides/08-joining-data.html#participate",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nPut the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs. non-swing states:\n\n\nGroup by swing_state\n\nSummarize to find the mean sales tax in each type of state\nCreate a new variable called swing_state with levels \"Swing\" and \"Non-swing\"\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nPut the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs. non-swing states:\n\n\nGroup by swing_state\nSummarize to find the mean sales tax in each type of state\nCreate a new variable called swing_state with levels \"Swing\" and \"Non-swing\"\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data.html#participate-1",
     "href": "slides/08-joining-data.html#participate-1",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFirst, create a vector called list_of_swing_states that contains the names of the swing states.\n\nlist_of_swing_states &lt;- c(\n  \"Arizona\", \"Georgia\", \"Michigan\", \"Nevada\", \"North Carolina\",\n  \"Pennsylvania\", \"Wisconsin\"\n)\n\nThen, fill in the blanks to create a new variable called swing_state with levels \"Swing\" and \"Non-swing\":\n\nsales_taxes &lt;- sales_taxes |&gt;\n  __BLANK_1__(\n    swing_state = __BLANK_2__(\n      state __BLANK_3__ list_of_swing_states, \"Swing\", \"Non-swing\"\n    )\n  )\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFirst, create a vector called list_of_swing_states that contains the names of the swing states.\n\nlist_of_swing_states &lt;- c(\n  \"Arizona\", \"Georgia\", \"Michigan\", \"Nevada\", \"North Carolina\",\n  \"Pennsylvania\", \"Wisconsin\"\n)\n\nThen, fill in the blanks to create a new variable called swing_state with levels \"Swing\" and \"Non-swing\":\n\nsales_taxes &lt;- sales_taxes |&gt;\n  __BLANK_1__(\n    swing_state = __BLANK_2__(\n      state __BLANK_3__ list_of_swing_states, \"Swing\", \"Non-swing\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data.html#recap-if_else",
     "href": "slides/08-joining-data.html#recap-if_else",
     "title": "Joining data",
-    "section": "Recap: if_else()\n",
-    "text": "Recap: if_else()\n\nif_else(\n  x == y,\n  \"x is equal to y\",\n  \"x is not equal to y\"\n)\n\n1\n\nCondition\n\n2\n\nValue if condition is TRUE\n\n3\n\nValue if condition is FALSE"
+    "section": "Recap: if_else()",
+    "text": "Recap: if_else()\n\nif_else(\n1  x == y,\n2  \"x is equal to y\",\n3  \"x is not equal to y\"\n)\n\n\n1\n\nCondition\n\n2\n\nValue if condition is TRUE\n\n3\n\nValue if condition is FALSE"
   },
   {
     "objectID": "slides/08-joining-data.html#participate-2",
     "href": "slides/08-joining-data.html#participate-2",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\nfilter(swing_state == \"Swing\")\narrange(swing_state)\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\nfilter(swing_state == \"Swing\")\narrange(swing_state)\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data.html#sales-tax-in-swing-states",
@@ -3385,21 +3385,21 @@
     "href": "slides/08-joining-data.html#sales-tax-in-coastal-states",
     "title": "Joining data",
     "section": "Sales tax in coastal states",
-    "text": "Sales tax in coastal states\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\nHow would you approach this task?\n\n. . .\n\nCreate a new variable called coast with levels \"Pacific\", \"Atlantic\", and \"Neither\"\n\nGroup by coast\n\nSummarize to find the mean sales tax in each type of state"
+    "text": "Sales tax in coastal states\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\nHow would you approach this task?\n\n. . .\n\nCreate a new variable called coast with levels \"Pacific\", \"Atlantic\", and \"Neither\"\nGroup by coast\nSummarize to find the mean sales tax in each type of state"
   },
   {
     "objectID": "slides/08-joining-data.html#participate-3",
     "href": "slides/08-joining-data.html#participate-3",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFirst, create two vectors called pacific_coast and atlantic_coast that contain the respective states.\n\npacific_coast &lt;- c(\"Alaska\", \"Washington\", \"Oregon\", \"California\", \"Hawaii\")\n\natlantic_coast &lt;- c(\n  \"Connecticut\", \"Delaware\", \"Georgia\", \"Florida\", \"Maine\", \"Maryland\", \"Massachusetts\",\n  \"New Hampshire\", \"New Jersey\", \"New York\", \"North Carolina\", \"Rhode Island\", \n  \"South Carolina\", \"Virginia\"\n)\n\nThen, fill in the blank to create a new variable called coast:\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = __BLANK__(\n      state %in% atlantic_coast ~ \"Atlantic\",\n      state %in% pacific_coast  ~ \"Pacific\",\n      .default = \"Neither\"\n    )\n  )\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFirst, create two vectors called pacific_coast and atlantic_coast that contain the respective states.\n\npacific_coast &lt;- c(\"Alaska\", \"Washington\", \"Oregon\", \"California\", \"Hawaii\")\n\natlantic_coast &lt;- c(\n  \"Connecticut\", \"Delaware\", \"Georgia\", \"Florida\", \"Maine\", \"Maryland\", \"Massachusetts\",\n  \"New Hampshire\", \"New Jersey\", \"New York\", \"North Carolina\", \"Rhode Island\", \n  \"South Carolina\", \"Virginia\"\n)\n\nThen, fill in the blank to create a new variable called coast:\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = __BLANK__(\n      state %in% atlantic_coast ~ \"Atlantic\",\n      state %in% pacific_coast  ~ \"Pacific\",\n      .default = \"Neither\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data.html#recap-case_when",
     "href": "slides/08-joining-data.html#recap-case_when",
     "title": "Joining data",
-    "section": "Recap: case_when()\n",
-    "text": "Recap: case_when()\n\ncase_when(\n  x &gt; y  ~ \"x is greater than y\",\n  x &lt; y  ~ \"x is less than y\",\n  .default = \"x is equal to y\"\n)\n\n1\n\nValue if first condition is TRUE\n\n2\n\nValue if second condition is TRUE\n\n3\n\nValue if neither condition is TRUE, i.e., default value"
+    "section": "Recap: case_when()",
+    "text": "Recap: case_when()\n\ncase_when(\n1  x &gt; y  ~ \"x is greater than y\",\n2  x &lt; y  ~ \"x is less than y\",\n3  .default = \"x is equal to y\"\n)\n\n\n1\n\nValue if first condition is TRUE\n\n2\n\nValue if second condition is TRUE\n\n3\n\nValue if neither condition is TRUE, i.e., default value"
   },
   {
     "objectID": "slides/08-joining-data.html#sales-tax-in-coastal-states-1",
@@ -3413,14 +3413,14 @@
     "href": "slides/08-joining-data.html#sales-tax-in-us-regions",
     "title": "Joining data",
     "section": "Sales tax in US regions",
-    "text": "Sales tax in US regions\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).\n\nHow would you approach this task?\n\n. . .\n\nCreate a new variable called region with levels \"Midwest\", \"Northeast\", \"South\", and \"West\".\nGroup by region\n\nSummarize to find the mean sales tax in each type of state"
+    "text": "Sales tax in US regions\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).\n\nHow would you approach this task?\n\n. . .\n\nCreate a new variable called region with levels \"Midwest\", \"Northeast\", \"South\", and \"West\".\nGroup by region\nSummarize to find the mean sales tax in each type of state"
   },
   {
     "objectID": "slides/08-joining-data.html#mutate-with-case_when",
     "href": "slides/08-joining-data.html#mutate-with-case_when",
     "title": "Joining data",
-    "section": "\nmutate() with case_when()\n",
-    "text": "mutate() with case_when()\n\n\nWho feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?\n\n\nlist_of_midwest_states &lt;- c(___)\nlist_of_northeast_states &lt;- c(___)\nlist_of_south_states &lt;- c(___)\nlist_of_west_states &lt;- c(___)\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = case_when(\n      state %in% list_of_west_states ~ \"Midwest\",\n      state %in% list_of_northeast_states ~ \"Northeast\",\n      state %in% list_of_south_states ~ \"South\",\n      state %in% list_of_west_states ~ \"West\"\n    )\n  )"
+    "section": "mutate() with case_when()",
+    "text": "mutate() with case_when()\n\nWho feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?\n\n\nlist_of_midwest_states &lt;- c(___)\nlist_of_northeast_states &lt;- c(___)\nlist_of_south_states &lt;- c(___)\nlist_of_west_states &lt;- c(___)\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = case_when(\n      state %in% list_of_west_states ~ \"Midwest\",\n      state %in% list_of_northeast_states ~ \"Northeast\",\n      state %in% list_of_south_states ~ \"South\",\n      state %in% list_of_west_states ~ \"West\"\n    )\n  )"
   },
   {
     "objectID": "slides/08-joining-data.html#why-join",
@@ -3504,7 +3504,7 @@
     "href": "slides/08-joining-data-slides.html#while-you-wait-participate",
     "title": "Joining data",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\n\n\n\nstatsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\n\n# A tibble: 4 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4\n2 AB               2      2      4      1      3\n3 BS2              2      6      1      0      5\n4 BS               5      9      4     13     10\n# ℹ 10 more variables: `2016` &lt;dbl&gt;,\n#   `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,\n#   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;,\n#   `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\nFill in the blanks to pivot statsci_longer wider.\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = __BLANK_1__,\n    values_from = __BLANK_2__,\n  )\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\n\n\n\nstatsci_longer\n\n# A tibble: 17 × 3\n   degree_type  year     n\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 AB2          2011     0\n 2 AB2          2012     1\n 3 AB2          2013     0\n 4 AB2          2014     0\n 5 AB2          2015     4\n 6 AB2          2016     4\n 7 AB2          2017     1\n 8 AB2          2018     0\n 9 AB2          2019     0\n10 AB2          2020     1\n11 AB2          2021     2\n12 AB2          2022     0\n13 AB2          2023     3\n14 AB2          2024     1\n15 AB2          2025     0\n16 AB           2011     2\n17 AB           2012     2\n\n\n\n⟶\n\n\n\n# A tibble: 4 × 16\n  degree_type `2011` `2012` `2013` `2014` `2015`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 AB2              0      1      0      0      4\n2 AB               2      2      4      1      3\n3 BS2              2      6      1      0      5\n4 BS               5      9      4     13     10\n# ℹ 10 more variables: `2016` &lt;dbl&gt;,\n#   `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,\n#   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;,\n#   `2023` &lt;dbl&gt;, `2024` &lt;dbl&gt;, `2025` &lt;dbl&gt;\n\n\nFill in the blanks to pivot statsci_longer wider.\n\nstatsci_longer |&gt;\n  pivot_wider(\n    names_from = __BLANK_1__,\n    values_from = __BLANK_2__,\n  )\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data-slides.html#pivot-wider",
@@ -3525,7 +3525,7 @@
     "href": "slides/08-joining-data-slides.html#recap-pivot",
     "title": "Joining data",
     "section": "Recap: Pivot",
-    "text": "Recap: Pivot\n\n\nWhen should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\n\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\n\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function."
+    "text": "Recap: Pivot\n\nWhen should you pivot? If all of the data you need is in your data frame, but the columns you need don’t exist, there is a good chance it’s time to pivot!\nWide and long: Data sets can’t be labeled as wide or long but they can be made wider or longer for a certain analysis that requires a certain format\nPivot longer - data type: When pivoting longer, variable names that turn into values are characters by default. If you need them to be in another format, you need to explicitly make that transformation, which you can do so within the pivot_longer() function."
   },
   {
     "objectID": "slides/08-joining-data-slides.html#recap-plotting",
@@ -3553,28 +3553,28 @@
     "href": "slides/08-joining-data-slides.html#participate",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nPut the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs. non-swing states:\n\n\nGroup by swing_state\n\nSummarize to find the mean sales tax in each type of state\nCreate a new variable called swing_state with levels \"Swing\" and \"Non-swing\"\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nPut the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs. non-swing states:\n\n\nGroup by swing_state\nSummarize to find the mean sales tax in each type of state\nCreate a new variable called swing_state with levels \"Swing\" and \"Non-swing\"\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data-slides.html#participate-1",
     "href": "slides/08-joining-data-slides.html#participate-1",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFirst, create a vector called list_of_swing_states that contains the names of the swing states.\n\nlist_of_swing_states &lt;- c(\n  \"Arizona\", \"Georgia\", \"Michigan\", \"Nevada\", \"North Carolina\",\n  \"Pennsylvania\", \"Wisconsin\"\n)\n\nThen, fill in the blanks to create a new variable called swing_state with levels \"Swing\" and \"Non-swing\":\n\nsales_taxes &lt;- sales_taxes |&gt;\n  __BLANK_1__(\n    swing_state = __BLANK_2__(\n      state __BLANK_3__ list_of_swing_states, \"Swing\", \"Non-swing\"\n    )\n  )\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFirst, create a vector called list_of_swing_states that contains the names of the swing states.\n\nlist_of_swing_states &lt;- c(\n  \"Arizona\", \"Georgia\", \"Michigan\", \"Nevada\", \"North Carolina\",\n  \"Pennsylvania\", \"Wisconsin\"\n)\n\nThen, fill in the blanks to create a new variable called swing_state with levels \"Swing\" and \"Non-swing\":\n\nsales_taxes &lt;- sales_taxes |&gt;\n  __BLANK_1__(\n    swing_state = __BLANK_2__(\n      state __BLANK_3__ list_of_swing_states, \"Swing\", \"Non-swing\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data-slides.html#recap-if_else",
     "href": "slides/08-joining-data-slides.html#recap-if_else",
     "title": "Joining data",
-    "section": "Recap: if_else()\n",
-    "text": "Recap: if_else()\n\nif_else(\n1  x == y,\n2  \"x is equal to y\",\n3  \"x is not equal to y\"\n)\n\n1\n\nCondition\n\n2\n\nValue if condition is TRUE\n\n3\n\nValue if condition is FALSE"
+    "section": "Recap: if_else()",
+    "text": "Recap: if_else()\n\nif_else(\n1  x == y,\n2  \"x is equal to y\",\n3  \"x is not equal to y\"\n)\n\n\n1\n\nCondition\n\n2\n\nValue if condition is TRUE\n\n3\n\nValue if condition is FALSE"
   },
   {
     "objectID": "slides/08-joining-data-slides.html#participate-2",
     "href": "slides/08-joining-data-slides.html#participate-2",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\nfilter(swing_state == \"Swing\")\narrange(swing_state)\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\nfilter(swing_state == \"Swing\")\narrange(swing_state)\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data-slides.html#sales-tax-in-swing-states",
@@ -3588,21 +3588,21 @@
     "href": "slides/08-joining-data-slides.html#sales-tax-in-coastal-states",
     "title": "Joining data",
     "section": "Sales tax in coastal states",
-    "text": "Sales tax in coastal states\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\nHow would you approach this task?\n\n\n\nCreate a new variable called coast with levels \"Pacific\", \"Atlantic\", and \"Neither\"\n\nGroup by coast\n\nSummarize to find the mean sales tax in each type of state"
+    "text": "Sales tax in coastal states\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.\n\nHow would you approach this task?\n\n\n\nCreate a new variable called coast with levels \"Pacific\", \"Atlantic\", and \"Neither\"\nGroup by coast\nSummarize to find the mean sales tax in each type of state"
   },
   {
     "objectID": "slides/08-joining-data-slides.html#participate-3",
     "href": "slides/08-joining-data-slides.html#participate-3",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFirst, create two vectors called pacific_coast and atlantic_coast that contain the respective states.\n\npacific_coast &lt;- c(\"Alaska\", \"Washington\", \"Oregon\", \"California\", \"Hawaii\")\n\natlantic_coast &lt;- c(\n  \"Connecticut\", \"Delaware\", \"Georgia\", \"Florida\", \"Maine\", \"Maryland\", \"Massachusetts\",\n  \"New Hampshire\", \"New Jersey\", \"New York\", \"North Carolina\", \"Rhode Island\", \n  \"South Carolina\", \"Virginia\"\n)\n\nThen, fill in the blank to create a new variable called coast:\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = __BLANK__(\n      state %in% atlantic_coast ~ \"Atlantic\",\n      state %in% pacific_coast  ~ \"Pacific\",\n      .default = \"Neither\"\n    )\n  )\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFirst, create two vectors called pacific_coast and atlantic_coast that contain the respective states.\n\npacific_coast &lt;- c(\"Alaska\", \"Washington\", \"Oregon\", \"California\", \"Hawaii\")\n\natlantic_coast &lt;- c(\n  \"Connecticut\", \"Delaware\", \"Georgia\", \"Florida\", \"Maine\", \"Maryland\", \"Massachusetts\",\n  \"New Hampshire\", \"New Jersey\", \"New York\", \"North Carolina\", \"Rhode Island\", \n  \"South Carolina\", \"Virginia\"\n)\n\nThen, fill in the blank to create a new variable called coast:\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = __BLANK__(\n      state %in% atlantic_coast ~ \"Atlantic\",\n      state %in% pacific_coast  ~ \"Pacific\",\n      .default = \"Neither\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data-slides.html#recap-case_when",
     "href": "slides/08-joining-data-slides.html#recap-case_when",
     "title": "Joining data",
-    "section": "Recap: case_when()\n",
-    "text": "Recap: case_when()\n\ncase_when(\n1  x &gt; y  ~ \"x is greater than y\",\n2  x &lt; y  ~ \"x is less than y\",\n3  .default = \"x is equal to y\"\n)\n\n1\n\nValue if first condition is TRUE\n\n2\n\nValue if second condition is TRUE\n\n3\n\nValue if neither condition is TRUE, i.e., default value"
+    "section": "Recap: case_when()",
+    "text": "Recap: case_when()\n\ncase_when(\n1  x &gt; y  ~ \"x is greater than y\",\n2  x &lt; y  ~ \"x is less than y\",\n3  .default = \"x is equal to y\"\n)\n\n\n1\n\nValue if first condition is TRUE\n\n2\n\nValue if second condition is TRUE\n\n3\n\nValue if neither condition is TRUE, i.e., default value"
   },
   {
     "objectID": "slides/08-joining-data-slides.html#sales-tax-in-coastal-states-1",
@@ -3616,14 +3616,14 @@
     "href": "slides/08-joining-data-slides.html#sales-tax-in-us-regions",
     "title": "Joining data",
     "section": "Sales tax in US regions",
-    "text": "Sales tax in US regions\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).\n\nHow would you approach this task?\n\n\n\nCreate a new variable called region with levels \"Midwest\", \"Northeast\", \"South\", and \"West\".\nGroup by region\n\nSummarize to find the mean sales tax in each type of state"
+    "text": "Sales tax in US regions\n\nSuppose you’re tasked with the following:\n\nCompare the average state sales tax rates of states in various regions (Midwest - 12 states, Northeast - 9 states, South - 16 states, West - 13 states).\n\nHow would you approach this task?\n\n\n\nCreate a new variable called region with levels \"Midwest\", \"Northeast\", \"South\", and \"West\".\nGroup by region\nSummarize to find the mean sales tax in each type of state"
   },
   {
     "objectID": "slides/08-joining-data-slides.html#mutate-with-case_when",
     "href": "slides/08-joining-data-slides.html#mutate-with-case_when",
     "title": "Joining data",
-    "section": "\nmutate() with case_when()\n",
-    "text": "mutate() with case_when()\n\n\nWho feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?\n\n\nlist_of_midwest_states &lt;- c(___)\nlist_of_northeast_states &lt;- c(___)\nlist_of_south_states &lt;- c(___)\nlist_of_west_states &lt;- c(___)\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = case_when(\n      state %in% list_of_west_states ~ \"Midwest\",\n      state %in% list_of_northeast_states ~ \"Northeast\",\n      state %in% list_of_south_states ~ \"South\",\n      state %in% list_of_west_states ~ \"West\"\n    )\n  )"
+    "section": "mutate() with case_when()",
+    "text": "mutate() with case_when()\n\nWho feels like filling in the blanks lists of states in each region? Who feels like it’s simply too tedious to write out names of all states?\n\n\nlist_of_midwest_states &lt;- c(___)\nlist_of_northeast_states &lt;- c(___)\nlist_of_south_states &lt;- c(___)\nlist_of_west_states &lt;- c(___)\n\nsales_taxes &lt;- sales_taxes |&gt;\n  mutate(\n    coast = case_when(\n      state %in% list_of_west_states ~ \"Midwest\",\n      state %in% list_of_northeast_states ~ \"Northeast\",\n      state %in% list_of_south_states ~ \"South\",\n      state %in% list_of_west_states ~ \"West\"\n    )\n  )"
   },
   {
     "objectID": "slides/08-joining-data-slides.html#why-join",
