@@ -538,8 +538,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#right_join" id="toc-right_join" class="nav-link" data-scroll-target="#right_join"><code>right_join()</code></a></li>
   <li><a href="#full_join" id="toc-full_join" class="nav-link" data-scroll-target="#full_join"><code>full_join()</code></a></li>
   <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><code>inner_join()</code></a></li>
-  <li><a href="#semi_join" id="toc-semi_join" class="nav-link" data-scroll-target="#semi_join"><code>semi_join()</code></a></li>
   <li><a href="#anti_join" id="toc-anti_join" class="nav-link" data-scroll-target="#anti_join"><code>anti_join()</code></a></li>
+  <li><a href="#summary-of-joins" id="toc-summary-of-joins" class="nav-link" data-scroll-target="#summary-of-joins">Summary of joins</a></li>
   </ul></li>
   <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
   <ul class="collapse">
@@ -1216,28 +1216,6 @@ and performance in this course?</p>
 </div>
 </div>
 </section>
-<section id="semi_join" class="level2">
-<h2 class="anchored" data-anchor-id="semi_join"><code>semi_join()</code></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img src="images/08/semi-join.gif" class="img-fluid"></p>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semi_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(id)`</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-     id value_x
-  &lt;dbl&gt; &lt;chr&gt;  
-1     1 x1     
-2     2 x2     </code></pre>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section id="anti_join" class="level2">
 <h2 class="anchored" data-anchor-id="anti_join"><code>anti_join()</code></h2>
 <div class="columns">
@@ -1245,7 +1223,7 @@ and performance in this course?</p>
 <p><img src="images/08/anti-join.gif" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anti_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anti_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1257,6 +1235,14 @@ and performance in this course?</p>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="summary-of-joins" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-joins">Summary of joins</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/08/joins-summary.svg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
 </div>
 </section>
 </section>

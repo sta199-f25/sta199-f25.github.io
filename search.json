@@ -3472,18 +3472,18 @@
     "text": "inner_join()\n\n\n\n\n\ninner_join(x, y)\n\nJoining with `by = join_by(id)`\n\n\n# A tibble: 2 × 3\n     id value_x value_y\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n1     1 x1      y1     \n2     2 x2      y2"
   },
   {
-    "objectID": "slides/08-joining-data.html#semi_join",
-    "href": "slides/08-joining-data.html#semi_join",
-    "title": "Joining data",
-    "section": "semi_join()",
-    "text": "semi_join()\n\n\n\n\n\nsemi_join(x, y)\n\nJoining with `by = join_by(id)`\n\n\n# A tibble: 2 × 2\n     id value_x\n  &lt;dbl&gt; &lt;chr&gt;  \n1     1 x1     \n2     2 x2"
-  },
-  {
     "objectID": "slides/08-joining-data.html#anti_join",
     "href": "slides/08-joining-data.html#anti_join",
     "title": "Joining data",
     "section": "anti_join()",
     "text": "anti_join()\n\n\n\n\n\nanti_join(x, y)\n\nJoining with `by = join_by(id)`\n\n\n# A tibble: 1 × 2\n     id value_x\n  &lt;dbl&gt; &lt;chr&gt;  \n1     3 x3"
+  },
+  {
+    "objectID": "slides/08-joining-data.html#summary-of-joins",
+    "href": "slides/08-joining-data.html#summary-of-joins",
+    "title": "Joining data",
+    "section": "Summary of joins",
+    "text": "Summary of joins"
   },
   {
     "objectID": "slides/08-joining-data.html#goal",
@@ -3675,18 +3675,18 @@
     "text": "inner_join()\n\n\n\n\n\ninner_join(x, y)\n\nJoining with `by = join_by(id)`\n\n\n# A tibble: 2 × 3\n     id value_x value_y\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n1     1 x1      y1     \n2     2 x2      y2"
   },
   {
-    "objectID": "slides/08-joining-data-slides.html#semi_join",
-    "href": "slides/08-joining-data-slides.html#semi_join",
-    "title": "Joining data",
-    "section": "semi_join()",
-    "text": "semi_join()\n\n\n\n\n\nsemi_join(x, y)\n\nJoining with `by = join_by(id)`\n\n\n# A tibble: 2 × 2\n     id value_x\n  &lt;dbl&gt; &lt;chr&gt;  \n1     1 x1     \n2     2 x2"
-  },
-  {
     "objectID": "slides/08-joining-data-slides.html#anti_join",
     "href": "slides/08-joining-data-slides.html#anti_join",
     "title": "Joining data",
     "section": "anti_join()",
     "text": "anti_join()\n\n\n\n\n\nanti_join(x, y)\n\nJoining with `by = join_by(id)`\n\n\n# A tibble: 1 × 2\n     id value_x\n  &lt;dbl&gt; &lt;chr&gt;  \n1     3 x3"
+  },
+  {
+    "objectID": "slides/08-joining-data-slides.html#summary-of-joins",
+    "href": "slides/08-joining-data-slides.html#summary-of-joins",
+    "title": "Joining data",
+    "section": "Summary of joins",
+    "text": "Summary of joins"
   },
   {
     "objectID": "slides/08-joining-data-slides.html#goal",

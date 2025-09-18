@@ -824,27 +824,6 @@ and performance in this course?</p>
 </div>
 </div></div>
 </section>
-<section id="semi_join" class="slide level2">
-<h2><code>semi_join()</code></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/08/semi-join.gif"></p>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">semi_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(id)`</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-     id value_x
-  &lt;dbl&gt; &lt;chr&gt;  
-1     1 x1     
-2     2 x2     </code></pre>
-</div>
-</div>
-</div></div>
-</section>
 <section id="anti_join" class="slide level2">
 <h2><code>anti_join()</code></h2>
 <div class="columns">
@@ -852,7 +831,7 @@ and performance in this course?</p>
 <p><img data-src="images/08/anti-join.gif"></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">anti_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">anti_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -864,7 +843,11 @@ and performance in this course?</p>
 </div>
 </div>
 </div></div>
-</section></section>
+</section>
+<section id="summary-of-joins" class="slide level2">
+<h2>Summary of joins</h2>
+
+<img data-src="images/08/joins-summary.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
