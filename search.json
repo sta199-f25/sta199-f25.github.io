@@ -3371,7 +3371,7 @@
     "href": "slides/08-joining-data.html#participate-2",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\nfilter(swing_state == \"Swing\")\narrange(swing_state)\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\narrange(swing_state)\nfilter(swing_state == \"Swing\")\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data.html#sales-tax-in-swing-states",
@@ -3574,7 +3574,7 @@
     "href": "slides/08-joining-data-slides.html#participate-2",
     "title": "Joining data",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\nfilter(swing_state == \"Swing\")\narrange(swing_state)\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nFill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.\n\nsales_taxes |&gt;\n  __BLANK__ |&gt;\n  summarize(mean_state_tax = mean(state_tax_rate))\n\n\n\narrange(swing_state)\nfilter(swing_state == \"Swing\")\ngroup_by(swing_state)\ngroup_by(list_of_swing_states)\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/08-joining-data-slides.html#sales-tax-in-swing-states",
