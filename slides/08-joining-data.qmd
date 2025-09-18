@@ -14,6 +14,8 @@ format:
     toc: false
   html: 
     code-link: true
+filters: 
+  - remove-fmt-skip.lua
 ---
 
 ```{r}
@@ -27,108 +29,112 @@ todays_ae <- "ae-06-taxes-join"
 
 ## While you wait: Participate 📱💻 {.xsmall}
 
+```{r}
+#| include: false
+library(tidyverse)
+statsci <- read_csv("data/statsci_clean.csv")
+statsci_longer <- statsci |>
+  pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric
+  ) |>
+  slice_head(n = 17)
+```
+
+::: columns
+::: {.column width="85%"}
+
+::: wooclap
+
+::: columns
+
+::: {.column width="35%"}
+
+```{r}
+statsci_longer
+```
+
+:::
+
+::: {.column width="5%"}
+⟶
+:::
+
+::: {.column width="60%"}
+
+```{r}
+#| echo: false
+options(width = 50)
+statsci
+```
+
+Fill in the blanks to pivot `statsci_longer` wider.
+
+```{r}
+#| eval: false
+statsci_longer |>
+  pivot_wider(
+    names_from = __BLANK_1__,
+    values_from = __BLANK_2__,
+  )
+```
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: {.column width="15%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Pivot wider {.xsmall}
+
+::: columns
+
+::: {.column width="27%"}
+
+```{r}
+statsci_longer
+```
+
+:::
+
+::: {.column width="3%"}
+⟶
+:::
+
+::: {.column width="70%"}
+
+```{r}
+#| echo: false
+options(width = 30)
+```
+
+```{r}
+statsci_longer |>
+  pivot_wider(
+    names_from = year,
+    values_from = n,
+  )
+```
+
+:::
+
+:::
 
 ## Announcements
 
 -   1
 -   2
 -   ...
-
-
-
-# From last time: Pivot wider
-
-## Setup {.smaller}
-
-```{r}
-#| message: false
-library(tidyverse)
-statsci <- read_csv("data/statsci_clean.csv")
-statsci
-```
-
-## We pivotted longer... what about wider? {.smaller}
-
-::: columns
-::: {.column width="60%"}
-
-```{r}
-#| echo: false
-options(width = 50)
-statsci
-```
-
-::: {.task .fragment}
-Can we go the other direction?
-:::
-:::
-
-::: {.column width="5%"}
-⟵
-:::
-
-::: {.column width="35%"}
-
-```{r}
-#| echo: false
-statsci |>
-  pivot_longer(
-    cols = -degree_type,
-    values_to = "n",
-    names_to = "year",
-    names_transform = as.numeric
-  ) |>
-  slice_head(n = 17)
-```
-
-:::
-:::
-
-## We pivotted longer... what about wider? {.smaller}
-
-::: columns
-::: {.column width="60%"}
-
-```{r}
-#| echo: false
-options(width = 50)
-statsci
-```
-
-::: task
-
-```{r}
-#| eval: false
-statsci_longer |>
-  pivot_wider(
-    names_from = ____________,
-    values_from = ___________,
-  )
-```
-
-:::
-:::
-
-::: {.column width="5%"}
-⟵
-:::
-
-::: {.column width="35%"}
-
-```{r}
-#| echo: false
-statsci |>
-  pivot_longer(
-    cols = -degree_type,
-    values_to = "n",
-    names_to = "year",
-    names_transform = as.numeric
-  ) |>
-  slice_head(n = 17)
-```
-
-:::
-:::
 
 ## Recap: Pivot {.smaller}
 
@@ -187,42 +193,74 @@ ggplot(states_sales_taxes) +
 sales_taxes
 ```
 
-## Sales tax in swing states {.smaller}
+## Participate 📱💻 {.xsmall}
 
-::: question
-Suppose you're tasked with the following:
+::: columns
+::: {.column width="85%"}
 
-> Compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs. non-swing states.
+::: wooclap
+Put the following steps in order to compare the average state sales tax rates of swing states (Arizona, Georgia, Michigan, Nevada, North Carolina, Pennsylvania, and Wisconsin) vs. non-swing states:
 
-How would you approach this task?
-:::
-
-. . .
-
--   Create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing"`
+::: wooclap-choices
 -   Group by `swing_state`
 -   Summarize to find the mean sales tax in each type of state
-
-## `mutate()` with `if_else()` {.smaller}
-
-::: task
-Create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing"`.
+-   Create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing"`
 :::
+
+:::
+
+:::
+
+::: {.column width="15%"}
+{{< include _wooclap-column.qmd >}}
+:::
+:::
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+::: {.column width="85%"}
+
+::: wooclap
+First, create a vector called `list_of_swing_states` that contains the names of the swing states.
+
+```{r}
+# fmt: skip
+list_of_swing_states <- c(
+  "Arizona", "Georgia", "Michigan", "Nevada", "North Carolina",
+  "Pennsylvania", "Wisconsin"
+)
+```
+
+Then, fill in the blanks to create a new variable called `swing_state` with levels `"Swing"` and `"Non-swing"`:
 
 ```{r}
 #| eval: false
-list_of_swing_states <- c(
-  "Arizona",
-  "Georgia",
-  "Michigan",
-  "Nevada",
-  "North Carolina",
-  "Pennsylvania",
-  "Wisconsin"
-)
-
 sales_taxes <- sales_taxes |>
-  ___
+  __BLANK_1__(
+    swing_state = __BLANK_2__(
+      state __BLANK_3__ list_of_swing_states, "Swing", "Non-swing"
+    )
+  )
+```
+
+:::
+
+:::
+
+::: {.column width="15%"}
+{{< include _wooclap-column.qmd >}}
+:::
+:::
+
+```{r}
+#| echo: false
+sales_taxes <- sales_taxes |>
+  mutate(
+    swing_state = if_else(
+      state %in% list_of_swing_states, "Swing", "Non-swing"
+    )
+  )
 ```
 
 ## Recap: `if_else()`
@@ -239,17 +277,43 @@ if_else(
 2.  Value if condition is `TRUE`
 3.  Value if condition is `FALSE`
 
-## Sales tax in swing states {.smaller .scrollable}
+## Participate 📱💻 {.smaller}
 
-::: task
-Compare the average state sales tax rates of swing states vs. non-swing states.
-:::
+::: columns
+::: {.column width="85%"}
+
+::: wooclap
+Fill in the blank to compare the average state sales tax rates of swing states vs. non-swing states.
 
 ```{r}
 #| eval: false
 sales_taxes |>
-  ___ |>
-  ___
+  __BLANK__ |>
+  summarize(mean_state_tax = mean(state_tax_rate))
+```
+
+::: wooclap-choices
+- `group_by(swing_state)`
+- `group_by(list_of_swing_states)`
+- `filter(swing_state == "Swing")`
+- `arrange(swing_state)`
+:::
+
+:::
+
+:::
+
+::: {.column width="15%"}
+{{< include _wooclap-column.qmd >}}
+:::
+:::
+
+## Sales tax in swing states {.smaller}
+
+```{r}
+sales_taxes |>
+  group_by(swing_state) |>
+  summarize(mean_state_tax = mean(state_tax_rate))
 ```
 
 ## Sales tax in coastal states {.smaller}
@@ -268,35 +332,58 @@ How would you approach this task?
 -   Group by `coast`
 -   Summarize to find the mean sales tax in each type of state
 
-## `mutate()` with `case_when()` {.smaller .scrollable}
+## Participate 📱💻 {.xsmall}
 
-::: task
-Create a new variable called `coast` with levels `"Pacific"`, `"Atlantic"`, and `"Neither"`.
-:::
+::: columns
+::: {.column width="85%"}
+
+::: wooclap
+First, create two vectors called `pacific_coast` and `atlantic_coast` that contain the respective states.
+
+```{r}
+pacific_coast <- c("Alaska", "Washington", "Oregon", "California", "Hawaii")
+
+# fmt: skip
+atlantic_coast <- c(
+  "Connecticut", "Delaware", "Georgia", "Florida", "Maine", "Maryland", "Massachusetts",
+  "New Hampshire", "New Jersey", "New York", "North Carolina", "Rhode Island", 
+  "South Carolina", "Virginia"
+)
+```
+
+Then, fill in the blank to create a new variable called `coast`:
 
 ```{r}
 #| eval: false
-pacific_coast <- c("Alaska", "Washington", "Oregon", "California", "Hawaii")
-
-atlantic_coast <- c(
-  "Connecticut",
-  "Delaware",
-  "Georgia",
-  "Florida",
-  "Maine",
-  "Maryland",
-  "Massachusetts",
-  "New Hampshire",
-  "New Jersey",
-  "New York",
-  "North Carolina",
-  "Rhode Island",
-  "South Carolina",
-  "Virginia"
-)
-
 sales_taxes <- sales_taxes |>
-  ___
+  mutate(
+    coast = __BLANK__(
+      state %in% atlantic_coast ~ "Atlantic",
+      state %in% pacific_coast  ~ "Pacific",
+      .default = "Neither"
+    )
+  )
+```
+
+:::
+
+:::
+
+::: {.column width="15%"}
+{{< include _wooclap-column.qmd >}}
+:::
+:::
+
+```{r}
+#| echo: false
+sales_taxes <- sales_taxes |>
+  mutate(
+    coast = case_when(
+      state %in% atlantic_coast ~ "Atlantic",
+      state %in% pacific_coast  ~ "Pacific",
+      .default = "Neither"
+    )
+  )
 ```
 
 ## Recap: `case_when()`
@@ -315,12 +402,11 @@ case_when(
 
 ## Sales tax in coastal states {.smaller .scrollable}
 
-::: task
+::: question
 Compare the average state sales tax rates of states on the Pacific Coast, states on the Atlantic Coast, and the rest of the states.
 :::
 
 ```{r}
-#| eval: false
 sales_taxes |>
   group_by(coast) |>
   summarize(mean_state_tax = mean(state_tax_rate))
