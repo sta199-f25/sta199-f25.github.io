@@ -59,12 +59,12 @@ library(tidyverse)
 
 **Pivot longer and wider.**
 
-a.  For this part, you will work with the following dataset called `df_1a`.
+a.  For this part, you will work with the following dataset called `scores`.
 
 ```{r}
 #| eval: true
 # fmt: skip
-df_1a <- tribble(
+scores <- tribble(
   ~student_id, ~math_score, ~english_score,
   "S1",        90,          92,
   "S2",        85,          80,
@@ -72,8 +72,12 @@ df_1a <- tribble(
   "S4",        95,          74
 )
 
-df_1a
+scores
 ```
+
+::: callout-note
+The `tribble()` function is helpful for creating small data frames (`tibble`s) with an easier to read row-by-row layout.
+:::
 
 It has three variables (`student_id`, `math_score`, and `english_score`) and four rows (one for each student).
 
@@ -94,21 +98,21 @@ Render, commit, and push your changes to GitHub with a succinct and informative 
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-b.  For this part, you will work with the following dataset called `df_1b`.
+b.  For this part, you will work with the following dataset called `patients`.
 
 ```{r}
 #| eval: true
 # fmt: skip
-df_1b <- tribble(
+patients <- tribble(
   ~patient_id, ~measurement_time_, ~systolic_bp,
-  "P1", "Morning", 120,
-  "P1", "Noon", 115,
-  "P1", "Evening", 123,
-  "P2", "Morning", 118,
-  "P2", "Evening", 121
+  "P1",        "Morning",          120,
+  "P1",        "Noon",             115,
+  "P1",        "Evening",          123,
+  "P2",        "Morning",          118,
+  "P2",        "Evening",          121
 )
 
-df_1b
+patients
 ```
 
 It has three variables (`patient_id`, `measurement_time_`, and `systolic_bp` -- short for systolic blood pressure) and five rows (one per patient per measurement time).
@@ -132,34 +136,48 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ## Question 2
 
-For this question, you will work with the following dataset called `df_2` as well as the student scores dataset from Question 1a (`df_1a`), and join them with various join functions.
-Since both data frames have a variable called `student_id`, that is the variable that will be used to join the two data frames.
+For this question, you will work with the following dataset called `grad_years` as well as the student scores dataset from Question 1a (`scores`), and join them with various join functions.
 
 ```{r}
 #| eval: true
 # fmt: skip
-df_2 <- tribble(
-  ~student_id, ~graduation_year,
+grad_years <- tribble(
+  ~id, ~graduation_year,
   "S1",        2023,
   "S3",        2023,
   "S5",        2025,
   "S6",        2024
 )
 
-df_2
+grad_years
 ```
 
-a.  Don't write any code yet: Suppose you run `left_join(df_1a, df_2)`. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
+a.  Your friend writes the following code to join the `scores` and `grad_years` data frames and gets an error message:
 
-b.  Don't write any code yet: Suppose you run `right_join(df_1a, df_2)`. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
+```{r}
+#| eval: true
+#| error: true
+scores |>
+  left_join(grad_years)
+```
 
-c.  Start with the code this time. Run `inner_join(df_1a, df_2)`. How many rows and columns does the resulting data frame have? Explain why.
+What does the error message mean and why does it occur? How would you fix the code?
 
-d.  Start with the code this time. Run `anti_join(df_1a, df_2)`. How many rows and columns does the resulting data frame have? Explain why.
+b.  How many rows and columns does the resulting data frame from part(a) have? Explain why.
 
-e.  Don't write any code yet: Suppose you run `anti_join(df_2, df_1a)` -- note the different order of data frames. Which observation(s) would be in the resulting data frame? Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
+c.  Don't write any code yet: Suppose you join the two data frames, `scores` and `grad_years` with a `right_join()`, in that order. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
 
-f.  Don't write any code yet: Suppose you run `full_join(df_1a, df_2)`. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
+d.  Start with the code this time. Join the two data frames, `scores` and `grad_years` with an `inner_join()`, in that order. How many rows and columns does the resulting data frame have? Explain why.
+
+e.  Don't write any code yet: Suppose you join the two data frames, `grad_years` and `scores` with an `inner_join()` again, but in the reverse order (`grad_years` first, then `scores`). Would you expect the resulting data frame to have the same number of rows as the previous part or a different number of rows? Explain your reasoning. Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
+
+f.  Don't write any code yet: Suppose you join the two data frames, `scores` and `grad_years` with an `anti_join()`. Which observation(s) would be in the resulting data frame? Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
+
+g.  Don't write any code yet: Suppose you join the two data frames, `grad_years` and `scores` with an `anti_join()` again, but in the reverse order (`grad_years` first, then `scores`). Which observation(s) would be in the resulting data frame? Then, write the code to perform the join. If your guess wasn't correct, discuss with your teammates before proceeding.
+
+h.  Start with the code this time. Join the two data frames, `scores` and `grad_years` with a `full_join()`, in that order. How many rows and columns does the resulting data frame have? Explain why.
+
+i.  You're interested in all students who are in the `scores` data frame and you also need their graduation years. You want to find out which students are missing graduation years. Which join function would you use to achieve this? Write the code to perform the join to confirm your answer.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with a succinct and informative commit message.
