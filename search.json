@@ -2485,13 +2485,106 @@
     "text": "Footnotes\n\nSource: Wikipedia.↩︎\nYes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!↩︎\nGitHub has some perks for students you can take advantage of later in the course or in your future work, and it helps to have a .edu address to get verified as a student.↩︎"
   },
   {
-    "objectID": "hw.html",
-    "href": "hw.html",
-    "title": "Homeworks",
+    "objectID": "lab/lab-1.html",
+    "href": "lab/lab-1.html",
+    "title": "Lab 1",
     "section": "",
-    "text": "More homeworks to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nHW 1\n\n\nExploring Midwest and NC Counties\n\n\nDue: Sun, Sep 14, 11:59 pm\n\n\n\n\n\n\nHW 2\n\n\nDeeper dive into Midwest and NC Counties\n\n\nDue: Sun, Sep 21, 11:59 pm\n\n\n\n\n\n\nNo matching items",
+    "text": "This lab will introduce you to the course computing workflow. One of the mail goals of this lab is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. The other main goal is meet other students in the class, get to know them, and work together with them.\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface, commonly referred to as an integrated development environment or an IDE, for short.\n\n\nAn additional goal is to reinforce Git and GitHub, the version control, web hosting, and collaboration systems that we will be using throughout the course.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\nAs the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer. Before we get to that stage, however, you need to build some basic fluency in R. Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.\n\n\n\n\n\n\nWarning\n\n\n\nThis lab assumes that you have already completed Lab 0. If you have not, please\n\ngo back and do that first before proceeding and\nlet your TA know as they will need to set up a Lab 1 repository for you before you can complete this lab.\n\n\n\n\n\nGain practice with\n\nthe data science workflow using R, RStudio, Git, and GitHub,\nwriting a reproducible report using Quarto, and\nversion control using Git and GitHub.\n\n\nCreate data visualizations with the tidyverse, specifically using ggplot2.\nWrite a simple data transformation pipeline with the tidyverse, specifically using dplyr.\n\n\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nBelow are the components of the RStudio IDE.\n\n\n\n\nBelow are the components of a Quarto (.qmd) file.\n\n\n\n\n\n\nGo to the course organization at github.com/sta199-f25 organization on GitHub. Click on the repo with the prefix lab-1. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-1.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human-friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\nOpen the Quarto (.qmd) file in your project, update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Then, render the document.\nIf you get a popup window error, click “Try again”.\nExamine the rendered document and make sure your name is updated in the document.\n\n\n\nGo to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there.\n\n\nClick on it to select it in this list and then click on Diff.\nThis shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\n\n\nIf you’re happy with these changes, prepare the changes to be pushed to your remote repository.\n\nFirst, stage your changes by checking the appropriate box on the files you want to prepare.\nNext, write a meaningful commit message (for instance, “Updated author name”) in the Commit message box.\nFinally, click Commit. Note that every commit needs to have a commit message associated with it.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration (e.g., restoring a previous version of your document).\nIn the first few assignments, we will tell you exactly when to commit and, in some cases, what commit message to use. As the semester progresses, we will let you make these decisions.\n\n\n\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\n\nIn the Git pane, click on Push.\nThen, make sure all the changes went to GitHub. Go to your GitHub repo in your browser and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub, and you’re good to go!\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you don’t see your update, go back to Step 4. Remember that in order to push your changes to GitHub, you must have staged (checked boxes) your commit (with a commit message) to be pushed and then click on Push.\n\n\n\n\nCode should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
+  },
+  {
+    "objectID": "lab/lab-1.html#learning-objectives",
+    "href": "lab/lab-1.html#learning-objectives",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Gain practice with\n\nthe data science workflow using R, RStudio, Git, and GitHub,\nwriting a reproducible report using Quarto, and\nversion control using Git and GitHub.\n\n\nCreate data visualizations with the tidyverse, specifically using ggplot2.\nWrite a simple data transformation pipeline with the tidyverse, specifically using dplyr."
+  },
+  {
+    "objectID": "lab/lab-1.html#getting-started",
+    "href": "lab/lab-1.html#getting-started",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Go to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nBelow are the components of the RStudio IDE.\n\n\n\n\nBelow are the components of a Quarto (.qmd) file.\n\n\n\n\n\n\nGo to the course organization at github.com/sta199-f25 organization on GitHub. Click on the repo with the prefix lab-1. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-1.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human-friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\nOpen the Quarto (.qmd) file in your project, update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Then, render the document.\nIf you get a popup window error, click “Try again”.\nExamine the rendered document and make sure your name is updated in the document.\n\n\n\nGo to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there.\n\n\nClick on it to select it in this list and then click on Diff.\nThis shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\n\n\nIf you’re happy with these changes, prepare the changes to be pushed to your remote repository.\n\nFirst, stage your changes by checking the appropriate box on the files you want to prepare.\nNext, write a meaningful commit message (for instance, “Updated author name”) in the Commit message box.\nFinally, click Commit. Note that every commit needs to have a commit message associated with it.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration (e.g., restoring a previous version of your document).\nIn the first few assignments, we will tell you exactly when to commit and, in some cases, what commit message to use. As the semester progresses, we will let you make these decisions.\n\n\n\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\n\nIn the Git pane, click on Push.\nThen, make sure all the changes went to GitHub. Go to your GitHub repo in your browser and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub, and you’re good to go!\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you don’t see your update, go back to Step 4. Remember that in order to push your changes to GitHub, you must have staged (checked boxes) your commit (with a commit message) to be pushed and then click on Push."
+  },
+  {
+    "objectID": "lab/lab-1.html#guidelines",
+    "href": "lab/lab-1.html#guidelines",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Code should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
+  },
+  {
+    "objectID": "lab/lab-1.html#refresher-tidyverse",
+    "href": "lab/lab-1.html#refresher-tidyverse",
+    "title": "Lab 1",
+    "section": "Refresher: tidyverse",
+    "text": "Refresher: tidyverse\nThe tidyverse is a meta-package. When you load it you get nine packages loaded for you:\n\n\ndplyr: for data wrangling\n\nforcats: for dealing with factors\n\nggplot2: for data visualization\n\nlubridate: for dealing with dates\n\npurrr: for iteration with functional programming\n\nreadr: for reading and writing data\n\nstringr: for string manipulation\n\ntibble: for modern, tidy data frames\n\ntidyr: for data tidying and rectangling"
+  },
+  {
+    "objectID": "lab/lab-1.html#question-1",
+    "href": "lab/lab-1.html#question-1",
+    "title": "Lab 1",
+    "section": "Question 1",
+    "text": "Question 1\n\nHow many counties are in the dataset? How many variables are there? Use inline code to answer this question.\n\n\nRender, commit, and push your changes to GitHub with the commit message “Added answer for Q1, part a”.\nMake sure to commit and push all changed files so that your Git pane is empty afterward.\n\n\nMake two plots: a histogram and a boxplot of the pop_2020 variable.\n\n\nIs the distribution of population in NC counties right-skewed, left-skewed, or approximately symmetric? Which plot(s) helped you determine this?\nIs the distribution of population in NC counties unimodal, bimodal, multimodal or uniform? Which plot(s) helped you determine this?\nIn a single pipeline, identify the counties with unusually high populations (according to the boxplot) and display their names and populations in descending order of population.\n\n\nRender, commit, and push your changes to GitHub with the commit message “Added answer for Q1, part b”.\nMake sure to commit and push all changed files so that your Git pane is empty afterward."
+  },
+  {
+    "objectID": "lab/lab-1.html#question-2",
+    "href": "lab/lab-1.html#question-2",
+    "title": "Lab 1",
+    "section": "Question 2",
+    "text": "Question 2\n\nGuess what the relationship between population density and land area might be – positive? negative? no relationship? Explain your reasoning.\n\n\nRender, commit, and push your changes to GitHub with a meaningful commit message.\nMake sure to commit and push all changed files so that your Git pane is empty afterward.\n\n\nMake a scatter plot of population density (density on the y-axis) vs. land area in miles-squared (land_area_mi2 on the x-axis). Make sure to set an informative title and axis labels for your plot. Describe the relationship. Was your guess correct?\n\n\nNow is another good time to render, commit, and push your all your changes to GitHub with a meaningful commit message.\n\n\nNow make a scatter plot of population density (density on the y-axis) vs. land area in meters-squared (land_area_m2 on the x-axis). Make sure to set an informative title and axis labels for your plot. Comment on how this scatterplot compares to the one in the previous part — is the relationship displayed same or different. Explain why.\n\n\nRender, commit, and push your all your changes to GitHub with the commit message with a meaningful commit message."
+  },
+  {
+    "objectID": "lab/lab-1.html#submission",
+    "href": "lab/lab-1.html#submission",
+    "title": "Lab 1",
+    "section": "Submission",
+    "text": "Submission\nSubmit your PDF document to Gradescope by the end of the lab to be considered “on time”:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials \\(\\rightarrow\\) Duke NetID and log in using your NetID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with question. All the pages of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nChecklist\n\n\n\nMake sure you have:\n\nattempted all questions\nrendered your Quarto document\ncommitted and pushed everything to your GitHub repository such that the Git pane in RStudio is empty\nuploaded your PDF to Gradescope"
+  },
+  {
+    "objectID": "lab/lab-1.html#grading-and-feedback",
+    "href": "lab/lab-1.html#grading-and-feedback",
+    "title": "Lab 1",
+    "section": "Grading and feedback",
+    "text": "Grading and feedback\n\nThis lab is worth 30 points:\n\n10 points for being in lab and turning in something – no partial credit for this part.\n20 points for:\n\nanswering the questions correctly – there is partial credit for this part.\nfollowing the workflow – there is partial credit for this part.\n\n\n\n\nThe workflow points are for:\n\ncommitting at least three times as you work through your lab,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization.\n\n\nYou’ll receive feedback on your lab on Gradescope within a week.\n\nGood luck, and have fun with it!"
+  },
+  {
+    "objectID": "lab/lab-1.html#footnotes",
+    "href": "lab/lab-1.html#footnotes",
+    "title": "Lab 1",
+    "section": "Footnotes",
+    "text": "Footnotes\n\nRemember, haikus not novellas when writing code!↩︎"
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
     "crumbs": [
-      "Homeworks"
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#overview",
+    "href": "course-overview.html#overview",
+    "title": "STA 199Fall 2025",
+    "section": "",
+    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#meetings",
+    "href": "course-overview.html#meetings",
+    "title": "STA 199Fall 2025",
+    "section": "Meetings",
+    "text": "Meetings\n\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\nInstructor / TAs\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\nDr. Mine Çetinkaya-Rundel\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\nMarie + Xueyan\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\nEduardo + Jesse\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\nFederico + Abuzar\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\nKatie + Max\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\nSarah + Natasha\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\nMarie + Bethany\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\nArijit + Allison\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\nKatie + Ziyang\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm\nLuxman + Ben",
+    "crumbs": [
+      "Course information",
+      "Overview"
     ]
   },
   {
@@ -2594,107 +2687,14 @@
     ]
   },
   {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "STA 199Fall 2025",
+    "objectID": "hw.html",
+    "href": "hw.html",
+    "title": "Homeworks",
     "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
+    "text": "More homeworks to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nHW 1\n\n\nExploring Midwest and NC Counties\n\n\nDue: Sun, Sep 14, 11:59 pm\n\n\n\n\n\n\nHW 2\n\n\nDeeper dive into Midwest and NC Counties\n\n\nDue: Sun, Sep 21, 11:59 pm\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Course information",
-      "Overview"
+      "Homeworks"
     ]
-  },
-  {
-    "objectID": "course-overview.html#overview",
-    "href": "course-overview.html#overview",
-    "title": "STA 199Fall 2025",
-    "section": "",
-    "text": "Intro to data science and statistical thinking. Learn to explore, visualize, and analyze data to understand natural phenomena, investigate patterns, model outcomes, and make predictions, all in a reproducible and shareable manner. Gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, data visualization, and effective communication of results. Work on problems and case studies inspired by and based on real-world questions and data. The course will focus on the R statistical computing language. No statistical or computing background is necessary. Not open to students who have taken a 100-level Statistical Science course, Statistical Science 210, or a Statistical Science course numbered 300 or above.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#meetings",
-    "href": "course-overview.html#meetings",
-    "title": "STA 199Fall 2025",
-    "section": "Meetings",
-    "text": "Meetings\n\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\nInstructor / TAs\n\n\n\n\nLecture\nBiological Sciences 111\nTue & Thur 11:45 am - 1:00 pm\nDr. Mine Çetinkaya-Rundel\n\n\nLab 01\nPerkins LINK 071 (Classroom 5)\nMon 8:30 - 9:45 am\nMarie + Xueyan\n\n\nLab 03\nAllen 326\nMon 10:05 - 11:20 am\nEduardo + Jesse\n\n\nLab 04\nPerkins LINK 087 (Classroom 3)\nMon 10:05 - 11:20 am\nFederico + Abuzar\n\n\nLab 05\nPerkins LINK 087 (Classroom 3)\nMon 11:45 am - 1:00 pm\nKatie + Max\n\n\nLab 06\nPerkins LINK 071 (Classroom 5)\nMon 11:45 am - 1:00 pm\nSarah + Natasha\n\n\nLab 07\nPerkins LINK 087 (Classroom 3)\nMon 1:25 - 2:40 pm\nMarie + Bethany\n\n\nLab 08\nPerkins LINK 071 (Classroom 5)\nMon 1:25 - 2:40 pm\nArijit + Allison\n\n\nLab 09\nPerkins LINK 087 (Classroom 3)\nMon 3:05 - 4:20 pm\nKatie + Ziyang\n\n\nLab 11\nPerkins LINK 071 (Classroom 5)\nMon 4:40 - 5:55 pm\nLuxman + Ben",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "lab/lab-1.html",
-    "href": "lab/lab-1.html",
-    "title": "Lab 1",
-    "section": "",
-    "text": "This lab will introduce you to the course computing workflow. One of the mail goals of this lab is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. The other main goal is meet other students in the class, get to know them, and work together with them.\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface, commonly referred to as an integrated development environment or an IDE, for short.\n\n\nAn additional goal is to reinforce Git and GitHub, the version control, web hosting, and collaboration systems that we will be using throughout the course.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\nAs the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer. Before we get to that stage, however, you need to build some basic fluency in R. Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.\n\n\n\n\n\n\nWarning\n\n\n\nThis lab assumes that you have already completed Lab 0. If you have not, please\n\ngo back and do that first before proceeding and\nlet your TA know as they will need to set up a Lab 1 repository for you before you can complete this lab.\n\n\n\n\n\nGain practice with\n\nthe data science workflow using R, RStudio, Git, and GitHub,\nwriting a reproducible report using Quarto, and\nversion control using Git and GitHub.\n\n\nCreate data visualizations with the tidyverse, specifically using ggplot2.\nWrite a simple data transformation pipeline with the tidyverse, specifically using dplyr.\n\n\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nBelow are the components of the RStudio IDE.\n\n\n\n\nBelow are the components of a Quarto (.qmd) file.\n\n\n\n\n\n\nGo to the course organization at github.com/sta199-f25 organization on GitHub. Click on the repo with the prefix lab-1. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-1.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human-friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\nOpen the Quarto (.qmd) file in your project, update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Then, render the document.\nIf you get a popup window error, click “Try again”.\nExamine the rendered document and make sure your name is updated in the document.\n\n\n\nGo to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there.\n\n\nClick on it to select it in this list and then click on Diff.\nThis shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\n\n\nIf you’re happy with these changes, prepare the changes to be pushed to your remote repository.\n\nFirst, stage your changes by checking the appropriate box on the files you want to prepare.\nNext, write a meaningful commit message (for instance, “Updated author name”) in the Commit message box.\nFinally, click Commit. Note that every commit needs to have a commit message associated with it.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration (e.g., restoring a previous version of your document).\nIn the first few assignments, we will tell you exactly when to commit and, in some cases, what commit message to use. As the semester progresses, we will let you make these decisions.\n\n\n\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\n\nIn the Git pane, click on Push.\nThen, make sure all the changes went to GitHub. Go to your GitHub repo in your browser and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub, and you’re good to go!\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you don’t see your update, go back to Step 4. Remember that in order to push your changes to GitHub, you must have staged (checked boxes) your commit (with a commit message) to be pushed and then click on Push.\n\n\n\n\nCode should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
-  },
-  {
-    "objectID": "lab/lab-1.html#learning-objectives",
-    "href": "lab/lab-1.html#learning-objectives",
-    "title": "Lab 1",
-    "section": "",
-    "text": "Gain practice with\n\nthe data science workflow using R, RStudio, Git, and GitHub,\nwriting a reproducible report using Quarto, and\nversion control using Git and GitHub.\n\n\nCreate data visualizations with the tidyverse, specifically using ggplot2.\nWrite a simple data transformation pipeline with the tidyverse, specifically using dplyr."
-  },
-  {
-    "objectID": "lab/lab-1.html#getting-started",
-    "href": "lab/lab-1.html#getting-started",
-    "title": "Lab 1",
-    "section": "",
-    "text": "Go to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nBelow are the components of the RStudio IDE.\n\n\n\n\nBelow are the components of a Quarto (.qmd) file.\n\n\n\n\n\n\nGo to the course organization at github.com/sta199-f25 organization on GitHub. Click on the repo with the prefix lab-1. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-1.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human-friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\nOpen the Quarto (.qmd) file in your project, update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Then, render the document.\nIf you get a popup window error, click “Try again”.\nExamine the rendered document and make sure your name is updated in the document.\n\n\n\nGo to the Git pane in RStudio. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. If you have rendered the document, you should also see its output, a PDF file, listed there.\n\n\nClick on it to select it in this list and then click on Diff.\nThis shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\n\n\nIf you’re happy with these changes, prepare the changes to be pushed to your remote repository.\n\nFirst, stage your changes by checking the appropriate box on the files you want to prepare.\nNext, write a meaningful commit message (for instance, “Updated author name”) in the Commit message box.\nFinally, click Commit. Note that every commit needs to have a commit message associated with it.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration (e.g., restoring a previous version of your document).\nIn the first few assignments, we will tell you exactly when to commit and, in some cases, what commit message to use. As the semester progresses, we will let you make these decisions.\n\n\n\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\n\nIn the Git pane, click on Push.\nThen, make sure all the changes went to GitHub. Go to your GitHub repo in your browser and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub, and you’re good to go!\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you don’t see your update, go back to Step 4. Remember that in order to push your changes to GitHub, you must have staged (checked boxes) your commit (with a commit message) to be pushed and then click on Push."
-  },
-  {
-    "objectID": "lab/lab-1.html#guidelines",
-    "href": "lab/lab-1.html#guidelines",
-    "title": "Lab 1",
-    "section": "",
-    "text": "Code should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
-  },
-  {
-    "objectID": "lab/lab-1.html#refresher-tidyverse",
-    "href": "lab/lab-1.html#refresher-tidyverse",
-    "title": "Lab 1",
-    "section": "Refresher: tidyverse",
-    "text": "Refresher: tidyverse\nThe tidyverse is a meta-package. When you load it you get nine packages loaded for you:\n\n\ndplyr: for data wrangling\n\nforcats: for dealing with factors\n\nggplot2: for data visualization\n\nlubridate: for dealing with dates\n\npurrr: for iteration with functional programming\n\nreadr: for reading and writing data\n\nstringr: for string manipulation\n\ntibble: for modern, tidy data frames\n\ntidyr: for data tidying and rectangling"
-  },
-  {
-    "objectID": "lab/lab-1.html#question-1",
-    "href": "lab/lab-1.html#question-1",
-    "title": "Lab 1",
-    "section": "Question 1",
-    "text": "Question 1\n\nHow many counties are in the dataset? How many variables are there? Use inline code to answer this question.\n\n\nRender, commit, and push your changes to GitHub with the commit message “Added answer for Q1, part a”.\nMake sure to commit and push all changed files so that your Git pane is empty afterward.\n\n\nMake two plots: a histogram and a boxplot of the pop_2020 variable.\n\n\nIs the distribution of population in NC counties right-skewed, left-skewed, or approximately symmetric? Which plot(s) helped you determine this?\nIs the distribution of population in NC counties unimodal, bimodal, multimodal or uniform? Which plot(s) helped you determine this?\nIn a single pipeline, identify the counties with unusually high populations (according to the boxplot) and display their names and populations in descending order of population.\n\n\nRender, commit, and push your changes to GitHub with the commit message “Added answer for Q1, part b”.\nMake sure to commit and push all changed files so that your Git pane is empty afterward."
-  },
-  {
-    "objectID": "lab/lab-1.html#question-2",
-    "href": "lab/lab-1.html#question-2",
-    "title": "Lab 1",
-    "section": "Question 2",
-    "text": "Question 2\n\nGuess what the relationship between population density and land area might be – positive? negative? no relationship? Explain your reasoning.\n\n\nRender, commit, and push your changes to GitHub with a meaningful commit message.\nMake sure to commit and push all changed files so that your Git pane is empty afterward.\n\n\nMake a scatter plot of population density (density on the y-axis) vs. land area in miles-squared (land_area_mi2 on the x-axis). Make sure to set an informative title and axis labels for your plot. Describe the relationship. Was your guess correct?\n\n\nNow is another good time to render, commit, and push your all your changes to GitHub with a meaningful commit message.\n\n\nNow make a scatter plot of population density (density on the y-axis) vs. land area in meters-squared (land_area_m2 on the x-axis). Make sure to set an informative title and axis labels for your plot. Comment on how this scatterplot compares to the one in the previous part — is the relationship displayed same or different. Explain why.\n\n\nRender, commit, and push your all your changes to GitHub with the commit message with a meaningful commit message."
-  },
-  {
-    "objectID": "lab/lab-1.html#submission",
-    "href": "lab/lab-1.html#submission",
-    "title": "Lab 1",
-    "section": "Submission",
-    "text": "Submission\nSubmit your PDF document to Gradescope by the end of the lab to be considered “on time”:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials \\(\\rightarrow\\) Duke NetID and log in using your NetID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with question. All the pages of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nChecklist\n\n\n\nMake sure you have:\n\nattempted all questions\nrendered your Quarto document\ncommitted and pushed everything to your GitHub repository such that the Git pane in RStudio is empty\nuploaded your PDF to Gradescope"
-  },
-  {
-    "objectID": "lab/lab-1.html#grading-and-feedback",
-    "href": "lab/lab-1.html#grading-and-feedback",
-    "title": "Lab 1",
-    "section": "Grading and feedback",
-    "text": "Grading and feedback\n\nThis lab is worth 30 points:\n\n10 points for being in lab and turning in something – no partial credit for this part.\n20 points for:\n\nanswering the questions correctly – there is partial credit for this part.\nfollowing the workflow – there is partial credit for this part.\n\n\n\n\nThe workflow points are for:\n\ncommitting at least three times as you work through your lab,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization.\n\n\nYou’ll receive feedback on your lab on Gradescope within a week.\n\nGood luck, and have fun with it!"
-  },
-  {
-    "objectID": "lab/lab-1.html#footnotes",
-    "href": "lab/lab-1.html#footnotes",
-    "title": "Lab 1",
-    "section": "Footnotes",
-    "text": "Footnotes\n\nRemember, haikus not novellas when writing code!↩︎"
   },
   {
     "objectID": "lab/lab-2.html",
