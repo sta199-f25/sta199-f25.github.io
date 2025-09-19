@@ -611,10 +611,10 @@ Click to expand if you need a refresher on assignment guidelines.
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p><strong>Pivot longer and wider.</strong></p>
 <ol type="a">
-<li>For this part, you will work with the following dataset called <code>df_1a</code>.</li>
+<li>For this part, you will work with the following dataset called <code>scores</code>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_1a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">student_id</span>, <span class="op">~</span><span class="va">math_score</span>, <span class="op">~</span><span class="va">english_score</span>,</span>
 <span>  <span class="st">"S1"</span>,        <span class="fl">90</span>,          <span class="fl">92</span>,</span>
 <span>  <span class="st">"S2"</span>,        <span class="fl">85</span>,          <span class="fl">80</span>,</span>
@@ -622,7 +622,7 @@ Click to expand if you need a refresher on assignment guidelines.
 <span>  <span class="st">"S4"</span>,        <span class="fl">95</span>,          <span class="fl">74</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_1a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">scores</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   student_id math_score english_score
@@ -631,6 +631,19 @@ Click to expand if you need a refresher on assignment guidelines.
 2 S2                 85            80
 3 S3                 88            85
 4 S4                 95            74</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble()</a></code> function is helpful for creating small data frames (<code>tibble</code>s) with an easier to read row-by-row layout.</p>
 </div>
 </div>
 <p>It has three variables (<code>student_id</code>, <code>math_score</code>, and <code>english_score</code>) and four rows (one for each student).</p>
@@ -651,19 +664,19 @@ Click to expand if you need a refresher on assignment guidelines.
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
 <ol start="2" type="a">
-<li>For this part, you will work with the following dataset called <code>df_1b</code>.</li>
+<li>For this part, you will work with the following dataset called <code>patients</code>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_1b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">patients</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">patient_id</span>, <span class="op">~</span><span class="va">measurement_time_</span>, <span class="op">~</span><span class="va">systolic_bp</span>,</span>
-<span>  <span class="st">"P1"</span>, <span class="st">"Morning"</span>, <span class="fl">120</span>,</span>
-<span>  <span class="st">"P1"</span>, <span class="st">"Noon"</span>, <span class="fl">115</span>,</span>
-<span>  <span class="st">"P1"</span>, <span class="st">"Evening"</span>, <span class="fl">123</span>,</span>
-<span>  <span class="st">"P2"</span>, <span class="st">"Morning"</span>, <span class="fl">118</span>,</span>
-<span>  <span class="st">"P2"</span>, <span class="st">"Evening"</span>, <span class="fl">121</span></span>
+<span>  <span class="st">"P1"</span>,        <span class="st">"Morning"</span>,          <span class="fl">120</span>,</span>
+<span>  <span class="st">"P1"</span>,        <span class="st">"Noon"</span>,             <span class="fl">115</span>,</span>
+<span>  <span class="st">"P1"</span>,        <span class="st">"Evening"</span>,          <span class="fl">123</span>,</span>
+<span>  <span class="st">"P2"</span>,        <span class="st">"Morning"</span>,          <span class="fl">118</span>,</span>
+<span>  <span class="st">"P2"</span>,        <span class="st">"Evening"</span>,          <span class="fl">121</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_1b</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">patients</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   patient_id measurement_time_ systolic_bp
@@ -693,34 +706,49 @@ Click to expand if you need a refresher on assignment guidelines.
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
 </section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>For this question, you will work with the following dataset called <code>df_2</code> as well as the student scores dataset from Question 1a (<code>df_1a</code>), and join them with various join functions. Since both data frames have a variable called <code>student_id</code>, that is the variable that will be used to join the two data frames.</p>
+<p>For this question, you will work with the following dataset called <code>grad_years</code> as well as the student scores dataset from Question 1a (<code>scores</code>), and join them with various join functions.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
-<span>  <span class="op">~</span><span class="va">student_id</span>, <span class="op">~</span><span class="va">graduation_year</span>,</span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">grad_years</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
+<span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">graduation_year</span>,</span>
 <span>  <span class="st">"S1"</span>,        <span class="fl">2023</span>,</span>
 <span>  <span class="st">"S3"</span>,        <span class="fl">2023</span>,</span>
 <span>  <span class="st">"S5"</span>,        <span class="fl">2025</span>,</span>
 <span>  <span class="st">"S6"</span>,        <span class="fl">2024</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">grad_years</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
-  student_id graduation_year
-  &lt;chr&gt;                &lt;dbl&gt;
-1 S1                    2023
-2 S3                    2023
-3 S5                    2025
-4 S6                    2024</code></pre>
+  id    graduation_year
+  &lt;chr&gt;           &lt;dbl&gt;
+1 S1               2023
+2 S3               2023
+3 S5               2025
+4 S6               2024</code></pre>
 </div>
 </div>
 <ol type="a">
-<li><p>Don’t write any code yet: Suppose you run <code>left_join(df_1a, df_2)</code>. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
-<li><p>Don’t write any code yet: Suppose you run <code>right_join(df_1a, df_2)</code>. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
-<li><p>Start with the code this time. Run <code>inner_join(df_1a, df_2)</code>. How many rows and columns does the resulting data frame have? Explain why.</p></li>
-<li><p>Start with the code this time. Run <code>anti_join(df_1a, df_2)</code>. How many rows and columns does the resulting data frame have? Explain why.</p></li>
-<li><p>Don’t write any code yet: Suppose you run <code>anti_join(df_2, df_1a)</code> – note the different order of data frames. Which observation(s) would be in the resulting data frame? Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
-<li><p>Don’t write any code yet: Suppose you run <code>full_join(df_1a, df_2)</code>. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
+<li>Your friend writes the following code to join the <code>scores</code> and <code>grad_years</code> data frames and gets an error message:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">scores</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">grad_years</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `left_join()`:
+! `by` must be supplied when `x` and `y` have no common variables.
+ℹ Use `cross_join()` to perform a cross-join.</code></pre>
+</div>
+</div>
+<p>What does the error message mean and why does it occur? How would you fix the code?</p>
+<ol start="2" type="a">
+<li><p>How many rows and columns does the resulting data frame from part(a) have? Explain why.</p></li>
+<li><p>Don’t write any code yet: Suppose you join the two data frames, <code>scores</code> and <code>grad_years</code> with a <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">right_join()</a></code>, in that order. How many rows and columns would the resulting data frame have? Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
+<li><p>Start with the code this time. Join the two data frames, <code>scores</code> and <code>grad_years</code> with an <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join()</a></code>, in that order. How many rows and columns does the resulting data frame have? Explain why.</p></li>
+<li><p>Don’t write any code yet: Suppose you join the two data frames, <code>grad_years</code> and <code>scores</code> with an <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join()</a></code> again, but in the reverse order (<code>grad_years</code> first, then <code>scores</code>). Would you expect the resulting data frame to have the same number of rows as the previous part or a different number of rows? Explain your reasoning. Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
+<li><p>Don’t write any code yet: Suppose you join the two data frames, <code>scores</code> and <code>grad_years</code> with an <code><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join()</a></code>. Which observation(s) would be in the resulting data frame? Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
+<li><p>Don’t write any code yet: Suppose you join the two data frames, <code>grad_years</code> and <code>scores</code> with an <code><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join()</a></code> again, but in the reverse order (<code>grad_years</code> first, then <code>scores</code>). Which observation(s) would be in the resulting data frame? Then, write the code to perform the join. If your guess wasn’t correct, discuss with your teammates before proceeding.</p></li>
+<li><p>Start with the code this time. Join the two data frames, <code>scores</code> and <code>grad_years</code> with a <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">full_join()</a></code>, in that order. How many rows and columns does the resulting data frame have? Explain why.</p></li>
+<li><p>You’re interested in all students who are in the <code>scores</code> data frame and you also need their graduation years. You want to find out which students are missing graduation years. Which join function would you use to achieve this? Write the code to perform the join to confirm your answer.</p></li>
 </ol>
 <div class="render-commit-push">
 <p>Render, commit, and push your changes to GitHub with a succinct and informative commit message.</p>
