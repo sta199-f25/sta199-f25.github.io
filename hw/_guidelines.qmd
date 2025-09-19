@@ -1,5 +1,3 @@
-## Guidelines
-
 ### Code
 
 Code should follow the [tidyverse style](https://style.tidyverse.org/).
