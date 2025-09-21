@@ -65,11 +65,11 @@ a.  For this part, you will work with the following dataset called `scores`.
 #| eval: true
 # fmt: skip
 scores <- tribble(
-  ~student_id, ~math_score, ~english_score,
-  "S1",        90,          92,
-  "S2",        85,          80,
-  "S3",        88,          85,
-  "S4",        95,          74
+  ~student_id, ~math, ~english,
+  "S1",        90,    92,
+  "S2",        85,    80,
+  "S3",        88,    85,
+  "S4",        95,    74
 )
 
 scores
@@ -79,7 +79,7 @@ scores
 The `tribble()` function is helpful for creating small data frames (`tibble`s) with an easier to read row-by-row layout.
 :::
 
-It has three variables (`student_id`, `math_score`, and `english_score`) and four rows (one for each student).
+It has three variables (`student_id`, `math`, and `english`) and four rows (one for each student).
 
 Before writing any code, answer the following questions:
 
@@ -142,11 +142,11 @@ For this question, you will work with the following dataset called `grad_years` 
 #| eval: true
 # fmt: skip
 grad_years <- tribble(
-  ~id, ~graduation_year,
-  "S1",        2023,
-  "S3",        2023,
-  "S5",        2025,
-  "S6",        2024
+  ~id,  ~graduation_year,
+  "S1", 2023,
+  "S3", 2023,
+  "S5", 2025,
+  "S6", 2024
 )
 
 grad_years
@@ -198,7 +198,9 @@ By now you should also be familiar with how to submit your assignment in Gradesc
 
 <details>
 <summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
 {{< include _submission.qmd >}}
+
 </details>
 
 ## Grading and feedback
