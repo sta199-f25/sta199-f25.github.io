@@ -615,22 +615,22 @@ Click to expand if you need a refresher on assignment guidelines.
 </ol>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
-<span>  <span class="op">~</span><span class="va">student_id</span>, <span class="op">~</span><span class="va">math_score</span>, <span class="op">~</span><span class="va">english_score</span>,</span>
-<span>  <span class="st">"S1"</span>,        <span class="fl">90</span>,          <span class="fl">92</span>,</span>
-<span>  <span class="st">"S2"</span>,        <span class="fl">85</span>,          <span class="fl">80</span>,</span>
-<span>  <span class="st">"S3"</span>,        <span class="fl">88</span>,          <span class="fl">85</span>,</span>
-<span>  <span class="st">"S4"</span>,        <span class="fl">95</span>,          <span class="fl">74</span></span>
+<span>  <span class="op">~</span><span class="va">student_id</span>, <span class="op">~</span><span class="va">math</span>, <span class="op">~</span><span class="va">english</span>,</span>
+<span>  <span class="st">"S1"</span>,        <span class="fl">90</span>,    <span class="fl">92</span>,</span>
+<span>  <span class="st">"S2"</span>,        <span class="fl">85</span>,    <span class="fl">80</span>,</span>
+<span>  <span class="st">"S3"</span>,        <span class="fl">88</span>,    <span class="fl">85</span>,</span>
+<span>  <span class="st">"S4"</span>,        <span class="fl">95</span>,    <span class="fl">74</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">scores</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
-  student_id math_score english_score
-  &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;
-1 S1                 90            92
-2 S2                 85            80
-3 S3                 88            85
-4 S4                 95            74</code></pre>
+  student_id  math english
+  &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;
+1 S1            90      92
+2 S2            85      80
+3 S3            88      85
+4 S4            95      74</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -646,7 +646,7 @@ Note
 <p>The <code><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble()</a></code> function is helpful for creating small data frames (<code>tibble</code>s) with an easier to read row-by-row layout.</p>
 </div>
 </div>
-<p>It has three variables (<code>student_id</code>, <code>math_score</code>, and <code>english_score</code>) and four rows (one for each student).</p>
+<p>It has three variables (<code>student_id</code>, <code>math</code>, and <code>english</code>) and four rows (one for each student).</p>
 <p>Before writing any code, answer the following questions:</p>
 <ul>
 <li><p>Suppose you want to reshape the data frame so that there is one row per student per subject. What function would you use to do this?</p></li>
@@ -709,11 +709,11 @@ Note
 <p>For this question, you will work with the following dataset called <code>grad_years</code> as well as the student scores dataset from Question 1a (<code>scores</code>), and join them with various join functions.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">grad_years</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
-<span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">graduation_year</span>,</span>
-<span>  <span class="st">"S1"</span>,        <span class="fl">2023</span>,</span>
-<span>  <span class="st">"S3"</span>,        <span class="fl">2023</span>,</span>
-<span>  <span class="st">"S5"</span>,        <span class="fl">2025</span>,</span>
-<span>  <span class="st">"S6"</span>,        <span class="fl">2024</span></span>
+<span>  <span class="op">~</span><span class="va">id</span>,  <span class="op">~</span><span class="va">graduation_year</span>,</span>
+<span>  <span class="st">"S1"</span>, <span class="fl">2023</span>,</span>
+<span>  <span class="st">"S3"</span>, <span class="fl">2023</span>,</span>
+<span>  <span class="st">"S5"</span>, <span class="fl">2025</span>,</span>
+<span>  <span class="st">"S6"</span>, <span class="fl">2024</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">grad_years</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
