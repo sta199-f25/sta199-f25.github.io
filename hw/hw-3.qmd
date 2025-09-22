@@ -106,7 +106,7 @@ a.  `glimpse()` at the `country_inflation` data frame and answer the following q
 b.  Display the names of the countries included in the dataset. How many distinct countries are there?
 
 ::: callout-tip
-Find distinct countries with `distinct()` and print all countries with `print_n(n = ___)` added to your pipeline, where the blank is the number of distinct countries.
+Find distinct countries with `distinct()` and print all countries with `print(n = ___)` added to your pipeline, where the blank is the number of distinct countries.
 :::
 
 ### Question 2
