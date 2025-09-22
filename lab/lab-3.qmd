@@ -177,7 +177,7 @@ g.  Don't write any code yet: Suppose you join the two data frames, `grad_years`
 
 h.  Start with the code this time. Join the two data frames, `scores` and `grad_years` with a `full_join()`, in that order. How many rows and columns does the resulting data frame have? Explain why.
 
-i.  You're interested in all students who are in the `scores` data frame and you also need their graduation years. You want to find out which students are missing graduation years. Which join function would you use to achieve this? Write the code to perform the join to confirm your answer.
+i.  Your ultimate goal is to construct a dataset where you have all students who are in the `scores` data frame and their subject scores and graduation years. In order to accomplish this, you will need to look up some students' graduation years in an alternate resource, since they're not all in the `grad_years` data frame. Which join function would you use to find out whose graduation years you need to look up in an alternate resource? Write the code to perform the join to confirm your answer.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with a succinct and informative commit message.
