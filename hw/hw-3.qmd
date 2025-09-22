@@ -60,7 +60,7 @@ You will then need to click the red X on the top left corner of the Viewer pane 
 {{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
 </details>
 
-::: callout-note
+::: {.callout-note title="Extra credit opportunity" icon=false}
 Catch the AI making a mistake? Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to get extra credit.
 
 Your bug report must include screenshots of the relevant parts of your Quarto document as well as the "incorrect" feedback you received.
