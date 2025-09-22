@@ -16,8 +16,11 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/1rWhVJd5JXvHKpsUkXz8I4dRr1E6_u8__GgTS-Ir0sq8/edit?gid=675503730#gid=675503730", sheet = "Schedule")
-prepare_cutoff_date <- as.Date("2025-09-21")
+d <- read_sheet(
+  "https://docs.google.com/spreadsheets/d/1rWhVJd5JXvHKpsUkXz8I4dRr1E6_u8__GgTS-Ir0sq8/edit?gid=675503730#gid=675503730",
+  sheet = "Schedule"
+)
+prepare_cutoff_date <- as.Date("2025-09-28")
 ```
 
 ```{r}
@@ -27,27 +30,32 @@ d |>
   filter(!is.na(session)) |>
   mutate(
     date = as.Date(as.Date(map_chr(date, as.character))), #modified this as date is a list of dttm variables
-    prepare = if_else(date > prepare_cutoff_date & (!(session == "-" & is.na(topic) & is.na(prepare))), "_To be posted_", prepare) #added the other & statements so that deadlines don't have "To be posted" language
+    prepare = if_else(
+      date > prepare_cutoff_date &
+        (!(session == "-" & is.na(topic) & is.na(prepare))),
+      "_To be posted_",
+      prepare
+    ) #added the other & statements so that deadlines don't have "To be posted" language
     #prepare = if_else(date > prepare_cutoff_date, "*To be posted*", prepare) #added the other & statements so that deadlines don't have "To be posted" language
-    ) |>
+  ) |>
   select(-dow, -admin_notes, -number, -session) |> #moved this down so i can use session value in above mutate prepare line
   relocate(due, .after = materials) |>
   gt() |>
   fmt_date(date, date_style = 31) |>
   sub_missing(
-    columns = c(week, prepare, topic, materials, due), 
+    columns = c(week, prepare, topic, materials, due),
     missing_text = ""
   ) |>
   cols_align(
-    align = "center", 
+    align = "center",
     columns = c(week)
   ) |>
   cols_align(
-    align = "right", 
+    align = "right",
     columns = c(date)
   ) |>
   cols_align(
-    align = "left", 
+    align = "left",
     columns = c(topic, prepare, materials, due)
   ) |>
   tab_style(
@@ -96,18 +104,18 @@ d |>
   tab_options(table.width = pct(100)) |>
   cols_width(
     week ~ pct(2),
-    date ~ pct(10), 
+    date ~ pct(10),
     prepare ~ pct(25),
     topic ~ pct(27),
     materials ~ pct(18),
     due ~ pct(18)
   ) |>
   cols_label_with(fn = function(x) {
-      janitor::make_clean_names(x, case = "title") |>
-        toupper() |>
-        stringr::str_replace_all("^|$", "**") |>
-        md()
-    }) |>
+    janitor::make_clean_names(x, case = "title") |>
+      toupper() |>
+      stringr::str_replace_all("^|$", "**") |>
+      md()
+  }) |>
   tab_options(table.font.size = 13) |>
   opt_row_striping()
 ```

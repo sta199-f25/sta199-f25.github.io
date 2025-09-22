@@ -1,11 +1,11 @@
 ---
 title: Lab 3
 subtitle: A pivot and a join walk into a pipe...
-description: "Due: End of lab on Mon, Sep 15"
+description: "Due: End of lab on Mon, Sep 22"
 categories: Lab
 filters:
   - ../remove-fmt-skip.lua
-draft: true
+draft: false
 ---
 
 # Introduction
