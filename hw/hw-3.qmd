@@ -205,6 +205,9 @@ library(tidyverse)
 
 For this question you will use the pivoted version of the `country_inflation` dataset that you created in Question 4 of Part 1.
 Load this dataset from the CSV file you created at the end of Part 1.
+To do so, you can use the following code, which is already in your `hw-3-part-2.qmd` file.
+However, you'll need to set `eval` to `true` in the code cell options so that this code runs when you render your Quarto document.
+And, before you can do that, you must have completed Question 4 of Part 1 and saved the pivoted data frame as a CSV file in your `data` folder as described in the previous section.
 
 ```{r}
 country_inflation_pivoted <- read_csv("data/country-inflation-pivoted.csv")
