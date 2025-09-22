@@ -372,7 +372,7 @@ c\.
 Choose one of the three approaches as the "most appropriate" approach and provide a brief (1-2 sentences) rationale for your choice.
 
 ::: callout-tip
-You can refer back to [AE 06: Sales taxes + data joining](ae/ae-06-taxes-join-A.qmd) if you need a reminder of these data and how to join them.
+You can refer back to [AE 06: Sales taxes + data joining](./ae/ae-06-taxes-join-A.qmd) if you need a reminder of these data and how to join them.
 :::
 
 # Wrap-up
