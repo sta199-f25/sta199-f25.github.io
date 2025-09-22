@@ -60,8 +60,8 @@ You will then need to click the red X on the top left corner of the Viewer pane 
 {{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
 </details>
 
-::: {.callout-note title="Extra credit opportunity" icon=false}
-Catch the AI making a mistake? Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to get extra credit.
+::: {.callout-note title="Catch the AI making a mistake?" icon=false}
+Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to earn the opportunity for **extra credit**.
 
 Your bug report must include screenshots of the relevant parts of your Quarto document as well as the "incorrect" feedback you received.
 Your bug report should be printed and turned in to Dr. Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date, e.g. for HW 3 due on Sun, Sep 28, your bug report is due by the beginning of class on Tue, Sep 30.
