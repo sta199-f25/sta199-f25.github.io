@@ -103,7 +103,7 @@ Find distinct countries with `distinct()` and print all countries with `print_n(
 Which countries had the top three highest inflation rates in 2023? Your output should be a data frame with two columns, `country` and `2023`, with inflation rates in descending order, and three rows for the top three countries. Briefly comment on how the inflation rates for these countries compare to the inflation rate for United States in that year.
 
 ::: callout-tip
-Column names that are numbers are not considered "proper" in R, therefore to select them you’ll need to surround them with backticks `(`).
+Column names that are numbers are not considered "proper" in R, therefore to select them you’ll need to surround them with backticks (`).
 :::
 
 ### Question 3
