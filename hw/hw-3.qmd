@@ -60,6 +60,17 @@ You will then need to click the red X on the top left corner of the Viewer pane 
 {{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
 </details>
 
+::: callout-note
+Catch the AI making a mistake? Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to get extra credit.
+
+Your bug report must include screenshots of the relevant parts of your Quarto document as well as the "incorrect" feedback you received.
+Your bug report should be printed and turned in to Dr. Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date, e.g. for HW 3 due on Sun, Sep 28, your bug report is due by the beginning of class on Tue, Sep 30.
+Electronic submissions will not be accepted.
+Your bug report, including screenshots, should fit on no more than two pages.
+
+If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), you will receive 1 extra point that will be added to your total points for the assignment.
+:::
+
 ## Packages
 
 In this part you will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
@@ -375,7 +386,7 @@ c\.
 Choose one of the three approaches as the "most appropriate" approach and provide a brief (1-2 sentences) rationale for your choice.
 
 ::: callout-tip
-You can refer back to [AE 06: Sales taxes + data joining](./ae/ae-06-taxes-join-A.qmd) if you need a reminder of these data and how to join them.
+You can refer back to [AE 06: Sales taxes + data joining](../ae/ae-06-taxes-join-A.qmd) if you need a reminder of these data and how to join them.
 :::
 
 # Wrap-up
