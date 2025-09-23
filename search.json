@@ -78,7 +78,7 @@
     "href": "slides/09-data-types-classes-slides.html#lets-attempt-to-clean-it-up",
     "title": "Data types and classes",
     "section": "Let’s (attempt to) clean it up…",
-    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"three\" ~ \"3\",\n      # add more conditions as needed\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  )\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `tue_classes = as.numeric(tue_classes)`.\nCaused by warning:\n! NAs introduced by coercion\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
+    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"one\" ~ \"1\",\n      tue_classes == \"two\" ~ \"2\",\n      tue_classes == \"Two\" ~ \"2\",\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  ) |&gt;\n  filter(year != \"29.32%\")\n\nsurvey\n\n# A tibble: 85 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 75 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#data-types-in-r",
@@ -211,7 +211,7 @@
     "href": "slides/09-data-types-classes-slides.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 85 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 75 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#but-coerce-when-plotting",
@@ -316,7 +316,7 @@
     "href": "slides/09-data-types-classes.html#lets-attempt-to-clean-it-up",
     "title": "Data types and classes",
     "section": "Let’s (attempt to) clean it up…",
-    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"three\" ~ \"3\",\n      # add more conditions as needed\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  )\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `tue_classes = as.numeric(tue_classes)`.\nCaused by warning:\n! NAs introduced by coercion\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
+    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"one\" ~ \"1\",\n      tue_classes == \"two\" ~ \"2\",\n      tue_classes == \"Two\" ~ \"2\",\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  ) |&gt;\n  filter(year != \"29.32%\")\n\nsurvey\n\n# A tibble: 85 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 75 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes.html#data-types-in-r",
@@ -449,7 +449,7 @@
     "href": "slides/09-data-types-classes.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 85 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 75 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes.html#but-coerce-when-plotting",
