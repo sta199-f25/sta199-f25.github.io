@@ -355,11 +355,16 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb9-6"><a></a>      tue_classes <span class="sc">==</span> <span class="st">"Two"</span> <span class="sc">~</span> <span class="st">"2"</span>,</span>
 <span id="cb9-7"><a></a>      <span class="at">.default =</span> tue_classes</span>
 <span id="cb9-8"><a></a>    ),</span>
-<span id="cb9-9"><a></a>    <span class="at">tue_classes =</span> <span class="fu">as.numeric</span>(tue_classes)</span>
-<span id="cb9-10"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb9-11"><a></a>  <span class="fu">filter</span>(year <span class="sc">!=</span> <span class="st">"29.32%"</span>)</span>
-<span id="cb9-12"><a></a></span>
-<span id="cb9-13"><a></a>survey</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-9"><a></a>    <span class="at">tue_classes =</span> <span class="fu">as.numeric</span>(tue_classes),</span>
+<span id="cb9-10"><a></a>    <span class="at">year =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-11"><a></a>      year <span class="sc">==</span> <span class="st">"Sophmore"</span> <span class="sc">~</span> <span class="st">"Sophomore"</span>,</span>
+<span id="cb9-12"><a></a>      year <span class="sc">==</span> <span class="st">"Freshman"</span> <span class="sc">~</span> <span class="st">"First-year"</span>,</span>
+<span id="cb9-13"><a></a>      <span class="at">.default =</span> year</span>
+<span id="cb9-14"><a></a>    )</span>
+<span id="cb9-15"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-16"><a></a>  <span class="fu">filter</span>(year <span class="sc">!=</span> <span class="st">"29.32%"</span>)</span>
+<span id="cb9-17"><a></a></span>
+<span id="cb9-18"><a></a>survey</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 85 × 2
    year       tue_classes
