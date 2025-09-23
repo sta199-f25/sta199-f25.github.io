@@ -22,7 +22,42 @@
     "href": "slides/09-data-types-classes-slides.html#announcements",
     "title": "Data types and classes",
     "section": "Announcements",
-    "text": "Announcements\n\nSurvey: Confidence in STEM courses at Duke\n\nExam 1:\n\nIn class on Thu, Oct 2\nTake home Thu, Oct 2 after class until Sat, Oct 4 at noon\nCovers lectures 1-10, labs 1-4, and homeworks 1-3\nPractice exam to be posted on Friday, exam review on Tue, Sep 30"
+    "text": "Announcements\n\n\nSurvey: Confidence in STEM courses at Duke\n\n\n\n\nExam 1:\n\nIn class on Thu, Oct 2\nTake home Thu, Oct 2 after class until Sat, Oct 4 at noon\nCovers lectures 1-10, labs 1-4, and homeworks 1-3\nPractice exam to be posted on Friday, exam review on Tue, Sep 30"
+  },
+  {
+    "objectID": "slides/09-data-types-classes-slides.html#recap-the-tidyverse-package",
+    "href": "slides/09-data-types-classes-slides.html#recap-the-tidyverse-package",
+    "title": "Data types and classes",
+    "section": "Recap: The tidyverse package",
+    "text": "Recap: The tidyverse package\nWhen you load the tidyverse package, you get access to a suite of packages that work well together for data manipulation and visualization:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nYou never need to load one of these packages individually after you load the tidyverse, e.g.,\n\nlibrary(dplyr) # not necessary if you already loaded tidyverse in your document/session"
+  },
+  {
+    "objectID": "slides/09-data-types-classes-slides.html#recap-loading-packages",
+    "href": "slides/09-data-types-classes-slides.html#recap-loading-packages",
+    "title": "Data types and classes",
+    "section": "Recap: Loading packages",
+    "text": "Recap: Loading packages\n\nYou only need to load a package once per R session or Quarto document.\nIt’s good practice to load all the packages you need at the start of your document, that’s why the templates I give you usually has a load-packages code cell at the top.\n\n\n```{r}\n#| label: load-packages\n#| message: false\nlibrary(tidyverse)\nlibrary(ggthemes)\nlibrary(scales)\n# etc.\n```\n\n\nYou never need to load these packages again further down in the same document.\nIf you need a new package further down in the document, go back and add it to the load-packages code cell."
+  },
+  {
+    "objectID": "slides/09-data-types-classes-slides.html#recap-pipes",
+    "href": "slides/09-data-types-classes-slides.html#recap-pipes",
+    "title": "Data types and classes",
+    "section": "Recap: Pipes",
+    "text": "Recap: Pipes\n\n\nThis is not a pipe."
+  },
+  {
+    "objectID": "slides/09-data-types-classes-slides.html#recap-pipes-1",
+    "href": "slides/09-data-types-classes-slides.html#recap-pipes-1",
+    "title": "Data types and classes",
+    "section": "Recap: Pipes",
+    "text": "Recap: Pipes\n\n\nThis is not our pipe [operator]."
+  },
+  {
+    "objectID": "slides/09-data-types-classes-slides.html#recap-pipes-2",
+    "href": "slides/09-data-types-classes-slides.html#recap-pipes-2",
+    "title": "Data types and classes",
+    "section": "Recap: Pipes",
+    "text": "Recap: Pipes\n\n\nThis is our a pipe [operator]."
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#how-many-classes-do-you-have-on-tuesdays",
@@ -211,7 +246,7 @@
     "href": "slides/09-data-types-classes.html",
     "title": "Data types and classes",
     "section": "",
-    "text": "Fill in the blanks:\nI’m a _____ (first-year, sophomore, junior, senior)\nand on Tuesdays I have _____ class(es).\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nSurvey: Confidence in STEM courses at Duke\n\nExam 1:\n\nIn class on Thu, Oct 2\nTake home Thu, Oct 2 after class until Sat, Oct 4 at noon\nCovers lectures 1-10, labs 1-4, and homeworks 1-3\nPractice exam to be posted on Friday, exam review on Tue, Sep 30"
+    "text": "Fill in the blanks:\nI’m a _____ (first-year, sophomore, junior, senior)\nand on Tuesdays I have _____ class(es).\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n\nSurvey: Confidence in STEM courses at Duke\n\n\n\n\n\nExam 1:\n\nIn class on Thu, Oct 2\nTake home Thu, Oct 2 after class until Sat, Oct 4 at noon\nCovers lectures 1-10, labs 1-4, and homeworks 1-3\nPractice exam to be posted on Friday, exam review on Tue, Sep 30\n\n\n\n\nWhen you load the tidyverse package, you get access to a suite of packages that work well together for data manipulation and visualization:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nYou never need to load one of these packages individually after you load the tidyverse, e.g.,\n\nlibrary(dplyr) # not necessary if you already loaded tidyverse in your document/session\n\n\n\nYou only need to load a package once per R session or Quarto document.\nIt’s good practice to load all the packages you need at the start of your document, that’s why the templates I give you usually has a load-packages code cell at the top.\n\n\n```{r}\n#| label: load-packages\n#| message: false\nlibrary(tidyverse)\nlibrary(ggthemes)\nlibrary(scales)\n# etc.\n```\n\n\nYou never need to load these packages again further down in the same document.\nIf you need a new package further down in the document, go back and add it to the load-packages code cell.\n\n\n\nThis is not a pipe.\n\n\n\n\nThis is not our pipe [operator].\n\n\n\n\nThis is our a pipe [operator]."
   },
   {
     "objectID": "slides/09-data-types-classes.html#while-you-wait-participate",
@@ -225,7 +260,42 @@
     "href": "slides/09-data-types-classes.html#announcements",
     "title": "Data types and classes",
     "section": "",
-    "text": "Survey: Confidence in STEM courses at Duke\n\nExam 1:\n\nIn class on Thu, Oct 2\nTake home Thu, Oct 2 after class until Sat, Oct 4 at noon\nCovers lectures 1-10, labs 1-4, and homeworks 1-3\nPractice exam to be posted on Friday, exam review on Tue, Sep 30"
+    "text": "Survey: Confidence in STEM courses at Duke\n\n\n\n\n\nExam 1:\n\nIn class on Thu, Oct 2\nTake home Thu, Oct 2 after class until Sat, Oct 4 at noon\nCovers lectures 1-10, labs 1-4, and homeworks 1-3\nPractice exam to be posted on Friday, exam review on Tue, Sep 30"
+  },
+  {
+    "objectID": "slides/09-data-types-classes.html#recap-the-tidyverse-package",
+    "href": "slides/09-data-types-classes.html#recap-the-tidyverse-package",
+    "title": "Data types and classes",
+    "section": "",
+    "text": "When you load the tidyverse package, you get access to a suite of packages that work well together for data manipulation and visualization:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nYou never need to load one of these packages individually after you load the tidyverse, e.g.,\n\nlibrary(dplyr) # not necessary if you already loaded tidyverse in your document/session"
+  },
+  {
+    "objectID": "slides/09-data-types-classes.html#recap-loading-packages",
+    "href": "slides/09-data-types-classes.html#recap-loading-packages",
+    "title": "Data types and classes",
+    "section": "",
+    "text": "You only need to load a package once per R session or Quarto document.\nIt’s good practice to load all the packages you need at the start of your document, that’s why the templates I give you usually has a load-packages code cell at the top.\n\n\n```{r}\n#| label: load-packages\n#| message: false\nlibrary(tidyverse)\nlibrary(ggthemes)\nlibrary(scales)\n# etc.\n```\n\n\nYou never need to load these packages again further down in the same document.\nIf you need a new package further down in the document, go back and add it to the load-packages code cell."
+  },
+  {
+    "objectID": "slides/09-data-types-classes.html#recap-pipes",
+    "href": "slides/09-data-types-classes.html#recap-pipes",
+    "title": "Data types and classes",
+    "section": "",
+    "text": "This is not a pipe."
+  },
+  {
+    "objectID": "slides/09-data-types-classes.html#recap-pipes-1",
+    "href": "slides/09-data-types-classes.html#recap-pipes-1",
+    "title": "Data types and classes",
+    "section": "",
+    "text": "This is not our pipe [operator]."
+  },
+  {
+    "objectID": "slides/09-data-types-classes.html#recap-pipes-2",
+    "href": "slides/09-data-types-classes.html#recap-pipes-2",
+    "title": "Data types and classes",
+    "section": "",
+    "text": "This is our a pipe [operator]."
   },
   {
     "objectID": "slides/09-data-types-classes.html#how-many-classes-do-you-have-on-tuesdays",
