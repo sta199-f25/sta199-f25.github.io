@@ -16,6 +16,8 @@ format:
     code-link: true
 filters: 
   - remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -154,10 +156,12 @@ survey <- read_csv(
   skip = 1
 ) |>
   mutate(response = str_remove(response, "^X - |^V - ")) |>
+  filter(!is.na(response)) |>
   separate_wider_delim(
     response,
     delim = " / ",
-    names = c("tue_classes", "year")
+    names = c("year", "tue_classes"),
+    too_few = "align_start"
   ) |>
   mutate(year = str_to_sentence(year))
 ```
