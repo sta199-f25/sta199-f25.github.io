@@ -1,11 +1,33 @@
 [
   {
-    "listing": "/lab.html",
+    "listing": "/exam-review.html",
+    "items": []
+  },
+  {
+    "listing": "/ae.html",
     "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html"
+      "/ae/ae-01-income-inequality-A.html",
+      "/ae/ae-01-income-inequality.html",
+      "/ae/ae-02-bechdel-dataviz-A.html",
+      "/ae/ae-02-bechdel-dataviz.html",
+      "/ae/ae-03-gerrymander-explore-I-A.html",
+      "/ae/ae-03-gerrymander-explore-I.html",
+      "/ae/ae-04-gerrymander-explore-II-A.html",
+      "/ae/ae-04-gerrymander-explore-II.html",
+      "/ae/ae-05-majors-A.html",
+      "/ae/ae-05-majors.html",
+      "/ae/ae-06-taxes-join-A.html",
+      "/ae/ae-06-taxes-join.html",
+      "/ae/ae-07-durham-climate-factors-A.html",
+      "/ae/ae-07-durham-climate-factors.html"
+    ]
+  },
+  {
+    "listing": "/hw.html",
+    "items": [
+      "/hw/hw-1.html",
+      "/hw/hw-2.html",
+      "/hw/hw-3.html"
     ]
   },
   {
@@ -32,32 +54,12 @@
     ]
   },
   {
-    "listing": "/hw.html",
+    "listing": "/lab.html",
     "items": [
-      "/hw/hw-1.html",
-      "/hw/hw-2.html",
-      "/hw/hw-3.html"
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html"
     ]
-  },
-  {
-    "listing": "/ae.html",
-    "items": [
-      "/ae/ae-01-income-inequality-A.html",
-      "/ae/ae-01-income-inequality.html",
-      "/ae/ae-02-bechdel-dataviz-A.html",
-      "/ae/ae-02-bechdel-dataviz.html",
-      "/ae/ae-03-gerrymander-explore-I-A.html",
-      "/ae/ae-03-gerrymander-explore-I.html",
-      "/ae/ae-04-gerrymander-explore-II-A.html",
-      "/ae/ae-04-gerrymander-explore-II.html",
-      "/ae/ae-05-majors-A.html",
-      "/ae/ae-05-majors.html",
-      "/ae/ae-06-taxes-join-A.html",
-      "/ae/ae-06-taxes-join.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": []
   }
 ]
