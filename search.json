@@ -64,21 +64,21 @@
     "href": "slides/09-data-types-classes-slides.html#how-many-classes-do-you-have-on-tuesdays",
     "title": "Data types and classes",
     "section": "How many classes do you have on Tuesdays?",
-    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n  &lt;chr&gt;       &lt;chr&gt;     \n1 &lt;NA&gt;        &lt;NA&gt;      \n2 2           Sophomore \n3 three       First-year\n4 1           Senior"
+    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;      &lt;chr&gt;      \n 1 Senior     3          \n 2 Sophomore  4          \n 3 Sophomore  3          \n 4 Junior     4          \n 5 Sophomore  2          \n 6 First-year 2          \n 7 Junior     2          \n 8 Sophomore  3          \n 9 First-year 2          \n10 Senior     3          \n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#variable-types",
     "href": "slides/09-data-types-classes-slides.html#variable-types",
     "title": "Data types and classes",
     "section": "Variable types",
-    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n  &lt;chr&gt;       &lt;chr&gt;     \n1 &lt;NA&gt;        &lt;NA&gt;      \n2 2           Sophomore \n3 three       First-year\n4 1           Senior"
+    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;      &lt;chr&gt;      \n 1 Senior     3          \n 2 Sophomore  4          \n 3 Sophomore  3          \n 4 Junior     4          \n 5 Sophomore  2          \n 6 First-year 2          \n 7 Junior     2          \n 8 Sophomore  3          \n 9 First-year 2          \n10 Senior     3          \n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#lets-attempt-to-clean-it-up",
     "href": "slides/09-data-types-classes-slides.html#lets-attempt-to-clean-it-up",
     "title": "Data types and classes",
     "section": "Let’s (attempt to) clean it up…",
-    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"three\" ~ \"3\",\n      # add more conditions as needed\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  )\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n        &lt;dbl&gt; &lt;chr&gt;     \n1          NA &lt;NA&gt;      \n2           2 Sophomore \n3           3 First-year\n4           1 Senior"
+    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"three\" ~ \"3\",\n      # add more conditions as needed\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  )\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `tue_classes = as.numeric(tue_classes)`.\nCaused by warning:\n! NAs introduced by coercion\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#data-types-in-r",
@@ -211,7 +211,7 @@
     "href": "slides/09-data-types-classes-slides.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n        &lt;dbl&gt; &lt;chr&gt;     \n1          NA &lt;NA&gt;      \n2           2 Sophomore \n3           3 First-year\n4           1 Senior"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#but-coerce-when-plotting",
@@ -225,7 +225,7 @@
     "href": "slides/09-data-types-classes-slides.html#use-forcats-to-reorder-levels",
     "title": "Data types and classes",
     "section": "Use forcats to reorder levels",
-    "text": "Use forcats to reorder levels\n\nsurvey |&gt;\n  mutate(\n    year = fct_relevel(year, \"First-year\", \"Sophomore\", \"Junior\", \"Senior\")\n  ) |&gt;\n  ggplot(mapping = aes(x = year)) +\n  geom_bar()\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `year = fct_relevel(year, \"First-year\", \"Sophomore\",\n  \"Junior\", \"Senior\")`.\nCaused by warning:\n! 1 unknown level in `f`: Junior"
+    "text": "Use forcats to reorder levels\n\nsurvey |&gt;\n  mutate(\n    year = fct_relevel(year, \"First-year\", \"Sophomore\", \"Junior\", \"Senior\")\n  ) |&gt;\n  ggplot(mapping = aes(x = year)) +\n  geom_bar()"
   },
   {
     "objectID": "slides/09-data-types-classes-slides.html#a-peek-into-forcats",
@@ -302,21 +302,21 @@
     "href": "slides/09-data-types-classes.html#how-many-classes-do-you-have-on-tuesdays",
     "title": "Data types and classes",
     "section": "How many classes do you have on Tuesdays?",
-    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n  &lt;chr&gt;       &lt;chr&gt;     \n1 &lt;NA&gt;        &lt;NA&gt;      \n2 2           Sophomore \n3 three       First-year\n4 1           Senior"
+    "text": "How many classes do you have on Tuesdays?\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;      &lt;chr&gt;      \n 1 Senior     3          \n 2 Sophomore  4          \n 3 Sophomore  3          \n 4 Junior     4          \n 5 Sophomore  2          \n 6 First-year 2          \n 7 Junior     2          \n 8 Sophomore  3          \n 9 First-year 2          \n10 Senior     3          \n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes.html#variable-types",
     "href": "slides/09-data-types-classes.html#variable-types",
     "title": "Data types and classes",
     "section": "Variable types",
-    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n  &lt;chr&gt;       &lt;chr&gt;     \n1 &lt;NA&gt;        &lt;NA&gt;      \n2 2           Sophomore \n3 three       First-year\n4 1           Senior"
+    "text": "Variable types\n\nWhat type of variable is tue_classes?\n\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;      &lt;chr&gt;      \n 1 Senior     3          \n 2 Sophomore  4          \n 3 Sophomore  3          \n 4 Junior     4          \n 5 Sophomore  2          \n 6 First-year 2          \n 7 Junior     2          \n 8 Sophomore  3          \n 9 First-year 2          \n10 Senior     3          \n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes.html#lets-attempt-to-clean-it-up",
     "href": "slides/09-data-types-classes.html#lets-attempt-to-clean-it-up",
     "title": "Data types and classes",
     "section": "Let’s (attempt to) clean it up…",
-    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"three\" ~ \"3\",\n      # add more conditions as needed\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  )\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n        &lt;dbl&gt; &lt;chr&gt;     \n1          NA &lt;NA&gt;      \n2           2 Sophomore \n3           3 First-year\n4           1 Senior"
+    "text": "Let’s (attempt to) clean it up…\n\nsurvey &lt;- survey |&gt;\n  mutate(\n    tue_classes = case_when(\n      tue_classes == \"three\" ~ \"3\",\n      # add more conditions as needed\n      .default = tue_classes\n    ),\n    tue_classes = as.numeric(tue_classes)\n  )\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `tue_classes = as.numeric(tue_classes)`.\nCaused by warning:\n! NAs introduced by coercion\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes.html#data-types-in-r",
@@ -449,7 +449,7 @@
     "href": "slides/09-data-types-classes.html#read-data-in-as-character-strings",
     "title": "Data types and classes",
     "section": "Read data in as character strings",
-    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 4 × 2\n  tue_classes year      \n        &lt;dbl&gt; &lt;chr&gt;     \n1          NA &lt;NA&gt;      \n2           2 Sophomore \n3           3 First-year\n4           1 Senior"
+    "text": "Read data in as character strings\n\nsurvey\n\n# A tibble: 86 × 2\n   year       tue_classes\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Senior               3\n 2 Sophomore            4\n 3 Sophomore            3\n 4 Junior               4\n 5 Sophomore            2\n 6 First-year           2\n 7 Junior               2\n 8 Sophomore            3\n 9 First-year           2\n10 Senior               3\n# ℹ 76 more rows"
   },
   {
     "objectID": "slides/09-data-types-classes.html#but-coerce-when-plotting",
@@ -463,7 +463,7 @@
     "href": "slides/09-data-types-classes.html#use-forcats-to-reorder-levels",
     "title": "Data types and classes",
     "section": "Use forcats to reorder levels",
-    "text": "Use forcats to reorder levels\n\nsurvey |&gt;\n  mutate(\n    year = fct_relevel(year, \"First-year\", \"Sophomore\", \"Junior\", \"Senior\")\n  ) |&gt;\n  ggplot(mapping = aes(x = year)) +\n  geom_bar()\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `year = fct_relevel(year, \"First-year\", \"Sophomore\",\n  \"Junior\", \"Senior\")`.\nCaused by warning:\n! 1 unknown level in `f`: Junior"
+    "text": "Use forcats to reorder levels\n\nsurvey |&gt;\n  mutate(\n    year = fct_relevel(year, \"First-year\", \"Sophomore\", \"Junior\", \"Senior\")\n  ) |&gt;\n  ggplot(mapping = aes(x = year)) +\n  geom_bar()"
   },
   {
     "objectID": "slides/09-data-types-classes.html#a-peek-into-forcats",
