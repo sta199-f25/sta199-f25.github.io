@@ -186,12 +186,14 @@ survey
 survey <- survey |>
   mutate(
     tue_classes = case_when(
-      tue_classes == "three" ~ "3",
-      # add more conditions as needed
+      tue_classes == "one" ~ "1",
+      tue_classes == "two" ~ "2",
+      tue_classes == "Two" ~ "2",
       .default = tue_classes
     ),
     tue_classes = as.numeric(tue_classes)
-  )
+  ) |>
+  filter(year != "29.32%")
 
 survey
 ```
