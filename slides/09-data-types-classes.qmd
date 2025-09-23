@@ -52,13 +52,93 @@ and on Tuesdays I have `_____` class(es).
 
 ## Announcements {.smaller}
 
-- Survey: Confidence in STEM courses at Duke
+::: {.columns}
+::: {.column width="25%"}
 
-- Exam 1: 
-  - In class on Thu, Oct 2
-  - Take home Thu, Oct 2 after class until Sat, Oct 4 at noon
-  - Covers lectures 1-10, labs 1-4, and homeworks 1-3
-  - Practice exam to be posted on Friday, exam review on Tue, Sep 30
+**Survey:** Confidence in STEM courses at Duke
+
+![](images/09/alexa-qr.png){width=200px}
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="70%" .fragment}
+
+**Exam 1:**
+
+- In class on Thu, Oct 2
+- Take home Thu, Oct 2 after class until Sat, Oct 4 at noon
+- Covers lectures 1-10, labs 1-4, and homeworks 1-3
+- Practice exam to be posted on Friday, exam review on Tue, Sep 30
+
+:::
+:::
+
+## Recap: The tidyverse package {.smaller}
+
+When you load the **tidyverse** package, you get access to a suite of packages that work well together for data manipulation and visualization:
+
+```{r}
+library(tidyverse)
+```
+
+You never need to load one of these packages individually after you load the tidyverse, e.g.,
+
+```{r}
+library(dplyr) # not necessary if you already loaded tidyverse in your document/session
+```
+
+## Recap: Loading packages {.smaller}
+
+- You only need to load a package once per R session or Quarto document.
+- It's good practice to load all the packages you need at the start of your document, that's why the templates I give you usually has a `load-packages` code cell at the top.
+
+```{r}
+#| echo: fenced
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(ggthemes)
+library(scales)
+# etc.
+```
+
+- You never need to load these packages again further down in the same document.
+- If you need a new package further down in the document, go back and add it to the `load-packages` code cell.
+
+## Recap: Pipes
+
+::: center-align
+
+![](images/09/magritte-pipe.jpg){width=900px}
+
+This is not a pipe.
+
+:::
+
+## Recap: Pipes
+
+::: center-align
+
+![](images/09/magrittr-pipe.png){width=900px}
+
+This is not our pipe [operator].
+
+:::
+
+## Recap: Pipes
+
+::: center-align
+
+![](images/09/base-pipe.png){width=900px}
+
+**This is our a pipe [operator].**
+
+:::
+
 
 # Data types
 
