@@ -22,7 +22,7 @@ filters:
 #| label: setup
 #| include: false
 ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
-todays_ae <- ""
+todays_ae <- "ae-07-durham-climate-factors"
 ```
 
 # Warm-up
@@ -546,4 +546,18 @@ Changing level values by:
 ...
 
 :::
+:::
+
+# Application exercise
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits by the end of class.
 :::
