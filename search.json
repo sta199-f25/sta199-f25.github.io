@@ -200,6 +200,13 @@
     "text": "A peek into forcats\n\n\nReordering levels by:\n\nfct_relevel(): hand\nfct_infreq(): frequency\nfct_reorder(): sorting along another variable\nfct_rev(): reversing\n\n…\n\nChanging level values by:\n\nfct_lump(): lumping uncommon levels together into “other”\nfct_other(): manually replacing some levels with “other”\n\n…"
   },
   {
+    "objectID": "slides/09-data-types-classes-slides.html#ae-07-durham-climate-factors",
+    "href": "slides/09-data-types-classes-slides.html#ae-07-durham-climate-factors",
+    "title": "Data types and classes",
+    "section": "ae-07-durham-climate-factors",
+    "text": "ae-07-durham-climate-factors\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-07-durham-climate-factors.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+  },
+  {
     "objectID": "slides/09-data-types-classes.html",
     "href": "slides/09-data-types-classes.html",
     "title": "Data types and classes",
@@ -394,6 +401,13 @@
     "title": "Data types and classes",
     "section": "A peek into forcats",
     "text": "A peek into forcats\n\n\nReordering levels by:\n\nfct_relevel(): hand\nfct_infreq(): frequency\nfct_reorder(): sorting along another variable\nfct_rev(): reversing\n\n…\n\n\nChanging level values by:\n\nfct_lump(): lumping uncommon levels together into “other”\nfct_other(): manually replacing some levels with “other”\n\n…"
+  },
+  {
+    "objectID": "slides/09-data-types-classes.html#ae-07-durham-climate-factors",
+    "href": "slides/09-data-types-classes.html#ae-07-durham-climate-factors",
+    "title": "Data types and classes",
+    "section": "ae-07-durham-climate-factors",
+    "text": "ae-07-durham-climate-factors\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-07-durham-climate-factors.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
   },
   {
     "objectID": "slides/01-hello-world-slides.html#meet-the-prof",
