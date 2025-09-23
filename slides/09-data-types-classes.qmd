@@ -191,7 +191,12 @@ survey <- survey |>
       tue_classes == "Two" ~ "2",
       .default = tue_classes
     ),
-    tue_classes = as.numeric(tue_classes)
+    tue_classes = as.numeric(tue_classes),
+    year = case_when(
+      year == "Sophmore" ~ "Sophomore",
+      year == "Freshman" ~ "First-year",
+      .default = year
+    )
   ) |>
   filter(year != "29.32%")
 
