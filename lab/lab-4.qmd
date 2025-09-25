@@ -1,0 +1,162 @@
+---
+title: Lab 4
+subtitle: "TO DO: ADD TITLE"
+description: "Due: End of lab on Mon, Sep 29"
+categories: Lab
+filters:
+  - ../remove-fmt-skip.lua
+draft: true
+---
+
+# Introduction
+
+In this lab you'll
+
+TO DO: ADD A BRIEF DESCRIPTION OF WHAT THE LAB IS ABOUT.
+
+Make sure to upload your completed lab to Gradescope **by the end of your lab session** and commit and push your final version to GitHub.
+
+## Getting started
+
+By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment.
+
+<details>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub. Click on the repo with the prefix **lab-4**. It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**. Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+</details>
+
+Open the *lab-4.qmd* template Quarto file and update the `authors` field to add your name first (first and last) and then your teammates' names (first and last).
+Render the document.
+Examine the rendered document and make sure your and your teammates' names are updated in the document.
+Commit and push your changes with a meaningful commit message and push to GitHub.
+
+<details>
+
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+
+{{< include _guidelines.qmd >}}
+
+</details>
+
+## Packages
+
+In this lab we will work with the **tidyverse** package.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+```
+
+## Data
+
+SurveyUSA polled 900 NC adults between September 4-7, 2024.
+Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.[^1]
+The following question was asked to these 771 adults:
+
+[^1]: Full survey results can be found at <https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1>.
+
+> Should the use of marijuana for medical use remain against the law in North Carolina?
+> Or be legalized?
+
+Responses were broken down into the following categories:
+
+| Variable | Levels                                          |
+|:---------|:------------------------------------------------|
+| Age      | 18-49; 50+                                      |
+| Opinion  | Remain Against The Law; Be Made Legal; Not Sure |
+
+Of the 771 responses, 391 were between the ages of 18-49.
+Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+
+# Questions
+
+## Question 1
+
+a.  Fill in the code below to create a two-way table that summarizes these data.
+
+```{r}
+#| eval: false
+survey_counts <- tibble(
+  age = c(),
+  opinion = c(),
+  n = c()
+)
+
+survey_counts |>
+  pivot_wider(
+    names_from = ___,
+    values_from = ___
+  )
+```
+
+For parts b-d below, use a single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
+
+b.  Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+
+c.  Calculate the proportions of those who think medical marijuana should remain against the law, should be made legal, and who are not sure.
+
+d.  Calculate the proportions of individuals in this sample who think medical marijuana should remain against the law, should be made legal, and who are not sure
+
+    -   among those who are 18-49 years old and
+
+    -   among those who are 50+ years old.
+
+## Question 2
+
+a.  Create a visualization that can be used to evaluate the relationship between `age` and `opinion` on legalizing medical marijuana in North Carolina based on this survey's results.
+
+::: callout-tip
+Your visualization should display the proportions you calculated in Question 1(d).
+:::
+
+b.  Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.
+
+::: render-commit-push
+Render, commit, and push one last time.
+Make sure that you commit and push all changed documents and that your Git pane is completely empty before proceeding.
+:::
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+By now you should also be familiar with how to submit your assignment in Gradescope.
+
+<details>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
+{{< include _submission.qmd >}}
+
+</details>
+
+## Grading and feedback
+
+-   This lab is worth 30 points:
+    -   10 points for being in lab and turning in *something* -- no partial credit for this part.
+    -   20 points for:
+        -   answering the questions correctly -- there is partial credit for this part.
+        -   following the workflow -- there is partial credit for this part.
+-   The workflow points are for:
+    -   committing at least three times as you work through your lab,
+    -   having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+    -   overall organization.
+-   You'll receive feedback on your lab on Gradescope within a week.
+
+Good luck, and have fun with it!
