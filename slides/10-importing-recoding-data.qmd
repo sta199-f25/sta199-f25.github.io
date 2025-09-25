@@ -107,8 +107,8 @@ Did you get my Week 5 nudge email?
 
 :::::: columns
 :::: {.column width="25%"}
-::: question
-What is the story in this visualization?
+::: wooclap
+Identify and articulate one feature of the data based on this visualization.
 :::
 ::::
 
