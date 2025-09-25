@@ -15,7 +15,7 @@ format:
   html: 
     code-link: true
 filters: 
-  - remove-fmt-skip.lua
+  - ../remove-fmt-skip.lua
 editor_options: 
   chunk_output_type: console
 ---
