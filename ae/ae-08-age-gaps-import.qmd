@@ -1,12 +1,6 @@
 ---
 title: "AE 08: Age gaps + import"
-subtitle: "Suggested answers"
 ---
-
-::: callout-important
-These are suggested answers.
-This document should be used as a reference only; it's not designed to be an exhaustive key.
-:::
 
 ## Packages
 
@@ -78,6 +72,5 @@ Write out the three new datasets you created into the `data`, and within that, i
 #| label: age-gaps-export
 #| error: true
 write_csv(woman_older, file = "data/age-gaps-subsets/woman-older.csv")
-write_csv(man_older, file = "data/age-gaps-subsets/man-older.csv")
-write_csv(same_age, file = "data/age-gaps-subsets/same-age.csv")
+# add more code here
 ```
