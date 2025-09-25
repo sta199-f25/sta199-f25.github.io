@@ -475,13 +475,9 @@ ul.task-list li input[type="checkbox"] {
   <li>
 <a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
   <ul class="collapse">
-<li><a href="#goal-1-reading-and-writing-csv-files" id="toc-goal-1-reading-and-writing-csv-files" class="nav-link" data-scroll-target="#goal-1-reading-and-writing-csv-files">Goal 1: Reading and writing CSV files</a></li>
+<li><a href="#reading-excel-files" id="toc-reading-excel-files" class="nav-link" data-scroll-target="#reading-excel-files">Reading Excel files</a></li>
   <li><a href="#age-gap-in-hollywood-relationships" id="toc-age-gap-in-hollywood-relationships" class="nav-link" data-scroll-target="#age-gap-in-hollywood-relationships">Age gap in Hollywood relationships</a></li>
-  <li><a href="#ae-09-age-gaps-sales-import---part-1" id="toc-ae-09-age-gaps-sales-import---part-1" class="nav-link" data-scroll-target="#ae-09-age-gaps-sales-import---part-1">ae-09-age-gaps-sales-import - Part 1</a></li>
-  <li><a href="#goal-2-reading-excel-files" id="toc-goal-2-reading-excel-files" class="nav-link" data-scroll-target="#goal-2-reading-excel-files">Goal 2: Reading Excel files</a></li>
-  <li><a href="#sales-data" id="toc-sales-data" class="nav-link" data-scroll-target="#sales-data">Sales data</a></li>
-  <li><a href="#sales-data-1" id="toc-sales-data-1" class="nav-link" data-scroll-target="#sales-data-1">Sales data</a></li>
-  <li><a href="#ae-09-age-gaps-sales-import---part-2" id="toc-ae-09-age-gaps-sales-import---part-2" class="nav-link" data-scroll-target="#ae-09-age-gaps-sales-import---part-2">ae-09-age-gaps-sales-import - Part 2</a></li>
+  <li><a href="#ae-08-age-gaps-import" id="toc-ae-08-age-gaps-import" class="nav-link" data-scroll-target="#ae-08-age-gaps-import">ae-08-age-gaps-import</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/10-importing-recoding-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="10-importing-recoding-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -527,7 +523,15 @@ ul.task-list li input[type="checkbox"] {
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>???</p>
+<p>Did you get my Week 5 nudge email?</p>
+<div class="wooclap-choices">
+<ul>
+<li>Yes, I did! And I don’t have any questions.</li>
+<li>Yes, I did! And I have questions.</li>
+<li>I haven’t checked my email today yet, I will do so after class.</li>
+<li>What, you email us?!</li>
+</ul>
+</div>
 </div>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -581,16 +585,16 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Using <a href="https://googlesheets4.tidyverse.org/"><strong>googlesheets4</strong></a>: <code>read_sheet()</code> – We haven’t covered this in the videos, but might be useful for your projects</li>
 </ul></section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
-<section id="goal-1-reading-and-writing-csv-files" class="level2"><h2 class="anchored" data-anchor-id="goal-1-reading-and-writing-csv-files">Goal 1: Reading and writing CSV files</h2>
+<section id="reading-excel-files" class="level2"><h2 class="anchored" data-anchor-id="reading-excel-files">Reading Excel files</h2>
 <ul>
-<li><p>Read a CSV file</p></li>
+<li><p>Read an Excel file, with all its Excel-ness</p></li>
 <li><p>Split it into subsets based on features of the data</p></li>
 <li><p>Write out subsets as CSV files</p></li>
 </ul></section><section id="age-gap-in-hollywood-relationships" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="age-gap-in-hollywood-relationships">Age gap in Hollywood relationships</h2>
 <div class="columns">
 <div class="column" style="width:25%;">
-<div class="question">
-<p>What is the story in this visualization?</p>
+<div class="wooclap">
+<p>Identify and articulate one feature of the data based on this visualization.</p>
 </div>
 </div><div class="column" style="width:75%;">
 <div class="quarto-figure quarto-figure-center">
@@ -599,42 +603,53 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</section><section id="ae-09-age-gaps-sales-import---part-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-09-age-gaps-sales-import---part-1">ae-09-age-gaps-sales-import - Part 1</h2>
+</section><section id="ae-08-age-gaps-import" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-08-age-gaps-import">ae-08-age-gaps-import</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
 <li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-age-gaps-sales-import.qmd</em>.</p></li>
-<li><p>Work through <strong>Part 1</strong> of the application exercise in class, and render, commit, and push your edits.</p></li>
-</ul>
-</div>
-</section><section id="goal-2-reading-excel-files" class="level2"><h2 class="anchored" data-anchor-id="goal-2-reading-excel-files">Goal 2: Reading Excel files</h2>
-<ul>
-<li><p>Read an Excel file with non-tidy data</p></li>
-<li><p>Tidy it up!</p></li>
-</ul></section><section id="sales-data" class="level2"><h2 class="anchored" data-anchor-id="sales-data">Sales data</h2>
-<p><img src="images/10/sales-excel.png" class="img-fluid"></p>
-<p>. . .</p>
-<div class="question">
-<p>Are these data tidy? Why or why not?</p>
-</div>
-</section><section id="sales-data-1" class="level2"><h2 class="anchored" data-anchor-id="sales-data-1">Sales data</h2>
-<div class="question">
-<p>What “data moves” do we need to go from the original, non-tidy data to this, tidy one?</p>
-</div>
-<p><img src="images/10/sales-2.png" class="img-fluid" width="150"></p>
-</section><section id="ae-09-age-gaps-sales-import---part-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-09-age-gaps-sales-import---part-2">ae-09-age-gaps-sales-import - Part 2</h2>
-<div class="appex">
-<ul>
-<li><p>Go to your ae project in RStudio.</p></li>
-<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-age-gaps-sales-import.qmd</em>.</p></li>
-<li><p>Work through <strong>Part 2</strong> of the application exercise in class, and render, commit, and push your edits.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-08-age-gaps-import.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
 </ul>
 </div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {

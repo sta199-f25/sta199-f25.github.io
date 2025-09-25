@@ -85,7 +85,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\n\n\n\n\n\nAE 01: Income inequality\n\n\nSuggested answers\n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\n \n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\n \n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\n \n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\n \n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\n \n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\n \n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\nSuggested answers\n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\nSuggested answers\n\n\n\n\n\n\nNo matching items",
+    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\n\n\n\n\n\nAE 01: Income inequality\n\n\nSuggested answers\n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\n \n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\n \n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\n \n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\n \n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\n \n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\n \n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\nSuggested answers\n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\n \n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Application exercises"
     ]
@@ -216,7 +216,7 @@
     "href": "slides/10-importing-recoding-data-slides.html#while-you-wait-participate",
     "title": "Importing and recoding data",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\n???\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\nDid you get my Week 5 nudge email?\n\n\nYes, I did! And I don’t have any questions.\nYes, I did! And I have questions.\nI haven’t checked my email today yet, I will do so after class.\nWhat, you email us?!\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/10-importing-recoding-data-slides.html#announcements",
@@ -240,67 +240,39 @@
     "text": "Reading rectangular data\n\nUsing readr:\n\nMost commonly: read_csv()\n\nMaybe also: read_tsv(), read_delim(), etc.\n\n\n\n\n\nUsing readxl: read_excel()\n\n\n\n\n\nUsing googlesheets4: read_sheet() – We haven’t covered this in the videos, but might be useful for your projects"
   },
   {
-    "objectID": "slides/10-importing-recoding-data-slides.html#goal-1-reading-and-writing-csv-files",
-    "href": "slides/10-importing-recoding-data-slides.html#goal-1-reading-and-writing-csv-files",
+    "objectID": "slides/10-importing-recoding-data-slides.html#reading-excel-files",
+    "href": "slides/10-importing-recoding-data-slides.html#reading-excel-files",
     "title": "Importing and recoding data",
-    "section": "Goal 1: Reading and writing CSV files",
-    "text": "Goal 1: Reading and writing CSV files\n\nRead a CSV file\nSplit it into subsets based on features of the data\nWrite out subsets as CSV files"
+    "section": "Reading Excel files",
+    "text": "Reading Excel files\n\nRead an Excel file, with all its Excel-ness\nSplit it into subsets based on features of the data\nWrite out subsets as CSV files"
   },
   {
     "objectID": "slides/10-importing-recoding-data-slides.html#age-gap-in-hollywood-relationships",
     "href": "slides/10-importing-recoding-data-slides.html#age-gap-in-hollywood-relationships",
     "title": "Importing and recoding data",
     "section": "Age gap in Hollywood relationships",
-    "text": "Age gap in Hollywood relationships\n\n\n\nWhat is the story in this visualization?"
+    "text": "Age gap in Hollywood relationships\n\n\n\nIdentify and articulate one feature of the data based on this visualization."
   },
   {
-    "objectID": "slides/10-importing-recoding-data-slides.html#ae-09-age-gaps-sales-import---part-1",
-    "href": "slides/10-importing-recoding-data-slides.html#ae-09-age-gaps-sales-import---part-1",
+    "objectID": "slides/10-importing-recoding-data-slides.html#ae-08-age-gaps-import",
+    "href": "slides/10-importing-recoding-data-slides.html#ae-08-age-gaps-import",
     "title": "Importing and recoding data",
-    "section": "ae-09-age-gaps-sales-import - Part 1",
-    "text": "ae-09-age-gaps-sales-import - Part 1\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-age-gaps-sales-import.qmd.\nWork through Part 1 of the application exercise in class, and render, commit, and push your edits."
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data-slides.html#goal-2-reading-excel-files",
-    "href": "slides/10-importing-recoding-data-slides.html#goal-2-reading-excel-files",
-    "title": "Importing and recoding data",
-    "section": "Goal 2: Reading Excel files",
-    "text": "Goal 2: Reading Excel files\n\nRead an Excel file with non-tidy data\nTidy it up!"
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data-slides.html#sales-data",
-    "href": "slides/10-importing-recoding-data-slides.html#sales-data",
-    "title": "Importing and recoding data",
-    "section": "Sales data",
-    "text": "Sales data\n\n\n\nAre these data tidy? Why or why not?"
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data-slides.html#sales-data-1",
-    "href": "slides/10-importing-recoding-data-slides.html#sales-data-1",
-    "title": "Importing and recoding data",
-    "section": "Sales data",
-    "text": "Sales data\n\nWhat “data moves” do we need to go from the original, non-tidy data to this, tidy one?"
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data-slides.html#ae-09-age-gaps-sales-import---part-2",
-    "href": "slides/10-importing-recoding-data-slides.html#ae-09-age-gaps-sales-import---part-2",
-    "title": "Importing and recoding data",
-    "section": "ae-09-age-gaps-sales-import - Part 2",
-    "text": "ae-09-age-gaps-sales-import - Part 2\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-age-gaps-sales-import.qmd.\nWork through Part 2 of the application exercise in class, and render, commit, and push your edits."
+    "section": "ae-08-age-gaps-import",
+    "text": "ae-08-age-gaps-import\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-08-age-gaps-import.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/10-importing-recoding-data.html",
     "href": "slides/10-importing-recoding-data.html",
     "title": "Importing and recoding data",
     "section": "",
-    "text": "???\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nWeek 5 nudges\nWooclap scores on Gradebook on Canvas\n\nStart thinking about your project teams:\n\nTeams of 3-4 people from your lab section\n\nFill out the project team form (link on Friday’s weekly recap email) or let your TA know of your team preferences by the end of lab on Monday\nAfter that, we’ll assign teams for you"
+    "text": "Did you get my Week 5 nudge email?\n\n\nYes, I did! And I don’t have any questions.\nYes, I did! And I have questions.\nI haven’t checked my email today yet, I will do so after class.\nWhat, you email us?!\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nWeek 5 nudges\nWooclap scores on Gradebook on Canvas\n\nStart thinking about your project teams:\n\nTeams of 3-4 people from your lab section\n\nFill out the project team form (link on Friday’s weekly recap email) or let your TA know of your team preferences by the end of lab on Monday\nAfter that, we’ll assign teams for you"
   },
   {
     "objectID": "slides/10-importing-recoding-data.html#while-you-wait-participate",
     "href": "slides/10-importing-recoding-data.html#while-you-wait-participate",
     "title": "Importing and recoding data",
     "section": "",
-    "text": "???\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Did you get my Week 5 nudge email?\n\n\nYes, I did! And I don’t have any questions.\nYes, I did! And I have questions.\nI haven’t checked my email today yet, I will do so after class.\nWhat, you email us?!\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/10-importing-recoding-data.html#announcements",
@@ -324,53 +296,25 @@
     "text": "Reading rectangular data\n\nUsing readr:\n\nMost commonly: read_csv()\n\nMaybe also: read_tsv(), read_delim(), etc.\n\n\n\n. . .\n\nUsing readxl: read_excel()\n\n\n. . .\n\nUsing googlesheets4: read_sheet() – We haven’t covered this in the videos, but might be useful for your projects"
   },
   {
-    "objectID": "slides/10-importing-recoding-data.html#goal-1-reading-and-writing-csv-files",
-    "href": "slides/10-importing-recoding-data.html#goal-1-reading-and-writing-csv-files",
+    "objectID": "slides/10-importing-recoding-data.html#reading-excel-files",
+    "href": "slides/10-importing-recoding-data.html#reading-excel-files",
     "title": "Importing and recoding data",
-    "section": "Goal 1: Reading and writing CSV files",
-    "text": "Goal 1: Reading and writing CSV files\n\nRead a CSV file\nSplit it into subsets based on features of the data\nWrite out subsets as CSV files"
+    "section": "Reading Excel files",
+    "text": "Reading Excel files\n\nRead an Excel file, with all its Excel-ness\nSplit it into subsets based on features of the data\nWrite out subsets as CSV files"
   },
   {
     "objectID": "slides/10-importing-recoding-data.html#age-gap-in-hollywood-relationships",
     "href": "slides/10-importing-recoding-data.html#age-gap-in-hollywood-relationships",
     "title": "Importing and recoding data",
     "section": "Age gap in Hollywood relationships",
-    "text": "Age gap in Hollywood relationships\n\n\n\nWhat is the story in this visualization?"
+    "text": "Age gap in Hollywood relationships\n\n\n\nIdentify and articulate one feature of the data based on this visualization."
   },
   {
-    "objectID": "slides/10-importing-recoding-data.html#ae-09-age-gaps-sales-import---part-1",
-    "href": "slides/10-importing-recoding-data.html#ae-09-age-gaps-sales-import---part-1",
+    "objectID": "slides/10-importing-recoding-data.html#ae-08-age-gaps-import",
+    "href": "slides/10-importing-recoding-data.html#ae-08-age-gaps-import",
     "title": "Importing and recoding data",
-    "section": "ae-09-age-gaps-sales-import - Part 1",
-    "text": "ae-09-age-gaps-sales-import - Part 1\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-age-gaps-sales-import.qmd.\nWork through Part 1 of the application exercise in class, and render, commit, and push your edits."
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data.html#goal-2-reading-excel-files",
-    "href": "slides/10-importing-recoding-data.html#goal-2-reading-excel-files",
-    "title": "Importing and recoding data",
-    "section": "Goal 2: Reading Excel files",
-    "text": "Goal 2: Reading Excel files\n\nRead an Excel file with non-tidy data\nTidy it up!"
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data.html#sales-data",
-    "href": "slides/10-importing-recoding-data.html#sales-data",
-    "title": "Importing and recoding data",
-    "section": "Sales data",
-    "text": "Sales data\n\n. . .\n\nAre these data tidy? Why or why not?"
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data.html#sales-data-1",
-    "href": "slides/10-importing-recoding-data.html#sales-data-1",
-    "title": "Importing and recoding data",
-    "section": "Sales data",
-    "text": "Sales data\n\nWhat “data moves” do we need to go from the original, non-tidy data to this, tidy one?"
-  },
-  {
-    "objectID": "slides/10-importing-recoding-data.html#ae-09-age-gaps-sales-import---part-2",
-    "href": "slides/10-importing-recoding-data.html#ae-09-age-gaps-sales-import---part-2",
-    "title": "Importing and recoding data",
-    "section": "ae-09-age-gaps-sales-import - Part 2",
-    "text": "ae-09-age-gaps-sales-import - Part 2\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-age-gaps-sales-import.qmd.\nWork through Part 2 of the application exercise in class, and render, commit, and push your edits."
+    "section": "ae-08-age-gaps-import",
+    "text": "ae-08-age-gaps-import\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-08-age-gaps-import.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/01-hello-world-slides.html#meet-the-prof",
@@ -3393,14 +3337,14 @@
     "href": "ae/ae-08-age-gaps-import.html",
     "title": "AE 08: Age gaps + import",
     "section": "",
-    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as a reference only; it’s not designed to be an exhaustive key."
+    "text": "We will use the following two packages in this application exercise.\n\n\ntidyverse: For data import, wrangling, and visualization.\n\nreadxl: For importing data from Excel.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-08-age-gaps-import.html#packages",
     "href": "ae/ae-08-age-gaps-import.html#packages",
     "title": "AE 08: Age gaps + import",
-    "section": "Packages",
-    "text": "Packages\nWe will use the following two packages in this application exercise.\n\n\ntidyverse: For data import, wrangling, and visualization.\n\nreadxl: For importing data from Excel.\n\n\n# add code here"
+    "section": "",
+    "text": "We will use the following two packages in this application exercise.\n\n\ntidyverse: For data import, wrangling, and visualization.\n\nreadxl: For importing data from Excel.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-08-age-gaps-import.html#data",
@@ -3428,7 +3372,7 @@
     "href": "ae/ae-08-age-gaps-import.html#export",
     "title": "AE 08: Age gaps + import",
     "section": "Export",
-    "text": "Export\nWrite out the three new datasets you created into the data, and within that, into a subfolder called age-gaps-subsets, as CSV files.\n\nwrite_csv(woman_older, file = \"data/age-gaps-subsets/woman-older.csv\")\n\nError in write_csv(woman_older, file = \"data/age-gaps-subsets/woman-older.csv\"): could not find function \"write_csv\"\n\nwrite_csv(man_older, file = \"data/age-gaps-subsets/man-older.csv\")\n\nError in write_csv(man_older, file = \"data/age-gaps-subsets/man-older.csv\"): could not find function \"write_csv\"\n\nwrite_csv(same_age, file = \"data/age-gaps-subsets/same-age.csv\")\n\nError in write_csv(same_age, file = \"data/age-gaps-subsets/same-age.csv\"): could not find function \"write_csv\""
+    "text": "Export\nWrite out the three new datasets you created into the data, and within that, into a subfolder called age-gaps-subsets, as CSV files.\n\nwrite_csv(woman_older, file = \"data/age-gaps-subsets/woman-older.csv\")\n\nError in write_csv(woman_older, file = \"data/age-gaps-subsets/woman-older.csv\"): could not find function \"write_csv\"\n\n# add more code here"
   },
   {
     "objectID": "ae/ae-02-bechdel-dataviz.html",

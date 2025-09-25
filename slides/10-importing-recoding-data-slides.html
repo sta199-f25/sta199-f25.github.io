@@ -151,7 +151,15 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>???</p>
+<p>Did you get my Week 5 nudge email?</p>
+<div class="wooclap-choices">
+<ul>
+<li>Yes, I did! And I don’t have any questions.</li>
+<li>Yes, I did! And I have questions.</li>
+<li>I haven’t checked my email today yet, I will do so after class.</li>
+<li>What, you email us?!</li>
+</ul>
+</div>
 </div>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -210,16 +218,16 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </section></section><section><section id="application-exercise" class="title-slide slide level1 center"><h1>Application exercise</h1>
 
-</section><section id="goal-1-reading-and-writing-csv-files" class="slide level2"><h2>Goal 1: Reading and writing CSV files</h2>
+</section><section id="reading-excel-files" class="slide level2"><h2>Reading Excel files</h2>
 <ul>
-<li><p>Read a CSV file</p></li>
+<li><p>Read an Excel file, with all its Excel-ness</p></li>
 <li><p>Split it into subsets based on features of the data</p></li>
 <li><p>Write out subsets as CSV files</p></li>
 </ul></section><section id="age-gap-in-hollywood-relationships" class="slide level2 smaller"><h2>Age gap in Hollywood relationships</h2>
 <div class="columns">
 <div class="column" style="width:25%;">
-<div class="question">
-<p>What is the story in this visualization?</p>
+<div class="wooclap">
+<p>Identify and articulate one feature of the data based on this visualization.</p>
 </div>
 </div><div class="column" style="width:75%;">
 <div class="quarto-figure quarto-figure-center">
@@ -227,38 +235,13 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </figure>
 </div>
 </div></div>
-</section><section id="ae-09-age-gaps-sales-import---part-1" class="slide level2 smaller"><h2>ae-09-age-gaps-sales-import - Part 1</h2>
+</section><section id="ae-08-age-gaps-import" class="slide level2 smaller"><h2>ae-08-age-gaps-import</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
 <li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-age-gaps-sales-import.qmd</em>.</p></li>
-<li><p>Work through <strong>Part 1</strong> of the application exercise in class, and render, commit, and push your edits.</p></li>
-</ul>
-</div>
-</section><section id="goal-2-reading-excel-files" class="slide level2"><h2>Goal 2: Reading Excel files</h2>
-<ul>
-<li><p>Read an Excel file with non-tidy data</p></li>
-<li><p>Tidy it up!</p></li>
-</ul></section><section id="sales-data" class="slide level2"><h2>Sales data</h2>
-
-<img data-src="images/10/sales-excel.png" class="r-stretch"><div class="fragment">
-<div class="question">
-<p>Are these data tidy? Why or why not?</p>
-</div>
-</div>
-</section><section id="sales-data-1" class="slide level2"><h2>Sales data</h2>
-<div class="question">
-<p>What “data moves” do we need to go from the original, non-tidy data to this, tidy one?</p>
-</div>
-
-<img data-src="images/10/sales-2.png" width="150" class="r-stretch"></section><section id="ae-09-age-gaps-sales-import---part-2" class="slide level2 smaller"><h2>ae-09-age-gaps-sales-import - Part 2</h2>
-<div class="appex">
-<ul>
-<li><p>Go to your ae project in RStudio.</p></li>
-<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-age-gaps-sales-import.qmd</em>.</p></li>
-<li><p>Work through <strong>Part 2</strong> of the application exercise in class, and render, commit, and push your edits.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-08-age-gaps-import.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
 </ul>
 </div>
 
@@ -463,6 +446,41 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
           RevealZoom
         ]
       });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
     </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
