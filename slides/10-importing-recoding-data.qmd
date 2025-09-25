@@ -1,0 +1,159 @@
+---
+title: "Importing and recoding data"
+subtitle: "Lecture 10"
+date: "2025-09-25"
+format: 
+  revealjs: 
+    output-file: 10-importing-recoding-data-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-09-age-gaps-sales-import"
+```
+
+# Warm-up
+
+## While you wait: Participate 📱💻 {.xsmall}
+
+::: columns
+::: {.column width="70%"}
+
+::: wooclap
+
+???
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Announcements
+
+- Week 5 nudges
+
+- Wooclap scores on Gradebook on Canvas
+
+- Start thinking about your project teams:
+  - Teams of 3-4 people _from your lab section_
+  - Fill out the project team form (link on Friday's weekly recap email) or let your TA know of your team preferences by the end of lab on Monday
+  - After that, we'll assign teams for you
+
+# From last time
+
+## Finish up: `ae-08-durham-climate-factors`
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   Open `ae-08-durham-climate-factors.qmd` and pick up at "Pivot".
+:::
+
+# Reading data into R
+
+## Reading rectangular data
+
+-   Using [**readr**](https://readr.tidyverse.org/):
+    -   Most commonly: `read_csv()`
+    -   Maybe also: `read_tsv()`, `read_delim()`, etc.
+
+. . .
+
+-   Using [**readxl**](https://readxl.tidyverse.org/): `read_excel()`
+
+. . .
+
+-   Using [**googlesheets4**](https://googlesheets4.tidyverse.org/): `read_sheet()` -- We haven't covered this in the videos, but might be useful for your projects
+
+# Application exercise
+
+## Goal 1: Reading and writing CSV files
+
+-   Read a CSV file
+
+-   Split it into subsets based on features of the data
+
+-   Write out subsets as CSV files
+
+## Age gap in Hollywood relationships {.smaller}
+
+:::::: columns
+:::: {.column width="25%"}
+::: question
+What is the story in this visualization?
+:::
+::::
+
+::: {.column width="75%"}
+![](images/10/hollywood-ages.jpeg){fig-align="center" width="600"}
+:::
+::::::
+
+## `{r} todays_ae` - Part 1 {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through **Part 1** of the application exercise in class, and render, commit, and push your edits.
+:::
+
+## Goal 2: Reading Excel files
+
+-   Read an Excel file with non-tidy data
+
+-   Tidy it up!
+
+## Sales data
+
+![](images/10/sales-excel.png)
+
+. . .
+
+::: question
+Are these data tidy?
+Why or why not?
+:::
+
+## Sales data
+
+::: question
+What "data moves" do we need to go from the original, non-tidy data to this, tidy one?
+:::
+
+![](images/10/sales-2.png){width="150"}
+
+## `{r} todays_ae` - Part 2 {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through **Part 2** of the application exercise in class, and render, commit, and push your edits.
+:::

@@ -1,0 +1,186 @@
+movie_name,release_year,director,age_difference,couple_number,actor_1_name,actor_2_name,character_1_gender,character_2_gender,actor_1_birthdate,actor_2_birthdate,actor_1_age,actor_2_age,older
+Harold and Maude,1971,Hal Ashby,52,1,Ruth Gordon,Bud Cort,woman,man,1896-10-30,1948-03-29T00:00:00Z,75,23,woman older
+The Mother,2003,Roger Michell,33,1,Anne Reid,Daniel Craig,woman,man,12932,1968-03-02T00:00:00Z,68,35,woman older
+Tadpole,2002,Gary Winick,27,1,Sigourney Weaver,Aaron Stanford,woman,man,18179,1976-12-27T00:00:00Z,53,26,woman older
+The Prom,2020,Ryan Murphy,22,1,Meryl Streep,Keegan-Michael Key,woman,man,18071,1971-03-22T00:00:00Z,71,49,woman older
+Don Jon,2013,Joseph Gordon-Levitt,21,1,Julianne Moore,Joseph Gordon-Levitt,woman,man,22253,1981-02-17T00:00:00Z,53,32,woman older
+Notes on a Scandal,2006,Richard Eyre,20,1,Cate Blanchett,Andrew Simpson,woman,man,25337,1989-01-01T00:00:00Z,37,17,woman older
+American Pie,1999,"Paul Weitz, Chris Weitz",19,1,Jennifer Coolidge,Eddie Kay Thomas,woman,man,22521,1980-10-31T00:00:00Z,38,19,woman older
+Something's Gotta Give,2003,Nancy Meyers,18,2,Diane Keaton,Keanu Reeves,woman,man,16807,1964-09-02T00:00:00Z,57,39,woman older
+Tadpole,2002,Gary Winick,18,2,Bebe Neuwirth,Aaron Stanford,woman,man,21550,1976-12-27T00:00:00Z,44,26,woman older
+The Only Living Boy in New York,2017,Marc Webb,17,2,Kate Beckinsale,Callum Turner,woman,man,26871,1990-02-15T00:00:00Z,44,27,woman older
+The Lost City,2022,"Adam Nee, Aaron Nee",16,1,Sandra Bullock,Channing Tatum,woman,man,23584,1980-04-26T00:00:00Z,58,42,woman older
+Home Again,2017,Hallie Meyers-Shyer,15,1,Reese Witherspoon,Pico Alexander,woman,man,27840,1991-06-03T00:00:00Z,41,26,woman older
+Sex and the City,2008,Michael Patrick King,15,1,Kim Cattrall,Jason Lewis,woman,man,20688,1971-06-25T00:00:00Z,52,37,woman older
+The Reader,2008,Stephen Daldry,15,1,Kate Winslet,David Kross,woman,man,27672,1990-07-04T00:00:00Z,33,18,woman older
+The Beach,2000,Danny Boyle,14,1,Tilda Swinton,Leonardo DiCaprio,woman,man,22255,1974-11-11T00:00:00Z,40,26,woman older
+How Stella Got Her Groove Back,1998,Kevin Rodney Sullivan,13,1,Angela Bassett,Taye Diggs,woman,man,21413,1971-01-02T00:00:00Z,40,27,woman older
+The Proposal,2009,Anne Fletcher,12,1,Sandra Bullock,Ryan Reynolds,woman,man,23584,1976-10-23T00:00:00Z,45,33,woman older
+Barfly,1987,Barbet Schroeder,11,1,Faye Dunaway,Mickey Rourke,woman,man,14990,1952-09-16T00:00:00Z,46,35,woman older
+Black Panther,2018,Ryan Coogler,11,1,Danai Gurira,Daniel Kaluuya,woman,man,28535,1989-02-24T00:00:00Z,40,29,woman older
+Boogie Nights,1997,Paul Thomas Anderson,11,1,Julianne Moore,Mark Wahlberg,woman,man,22253,1971-06-05T00:00:00Z,37,26,woman older
+I Could Never Be Your Woman,2007,Amy Heckerling,11,1,Michelle Pfeiffer,Paul Rudd,woman,man,21304,1969-04-06T00:00:00Z,49,38,woman older
+Love Actually,2003,Richard Curtis,11,5,Laura Linney,Rodrigo Santoro,woman,man,23412,1975-08-22T00:00:00Z,39,28,woman older
+The Good Girl,2002,Miguel Arteta,11,1,Jennifer Aniston,Jake Gyllenhaal,woman,man,25245,1980-12-19T00:00:00Z,33,22,woman older
+Death to Smoochy,2002,Danny DeVito,10,1,Catherine Keener,Edward Norton,woman,man,21632,1969-08-18T00:00:00Z,43,33,woman older
+Prima della rivoluzione,1964,Michelangelo Antonioni,10,1,Adriana Asti,Francesco Barilli,woman,man,12174,1943-02-04T00:00:00Z,31,21,woman older
+Water for Elephants,2011,Francis Lawrence,10,2,Reese Witherspoon,Robert Pattinson,woman,man,27840,1986-05-13T00:00:00Z,35,25,woman older
+Bull Durham,1988,Ron Shelton,9,1,Susan Sarandon,Kevin Costner,woman,man,17079,1955-01-18T00:00:00Z,42,33,woman older
+Everything Everywhere All at Once,2022,"Dan Kwan, Daniel Scheinert",9,1,Michelle Yeoh,Ke Huy Quan,woman,man,22864,1971-08-20T00:00:00Z,60,51,woman older
+It's Complicated,2009,Nancy Meyers,9,2,Meryl Streep,Alec Baldwin,woman,man,18071,1958-04-03T00:00:00Z,60,51,woman older
+Man of Steel,2013,Zack Snyder,9,2,Amy Adams,Henry Cavill,woman,man,27261,1983-05-05T00:00:00Z,39,30,woman older
+The Good Shepherd,2006,Robert De Niro,9,1,Martina Gedeck,Matt Damon,woman,man,22538,1970-10-08T00:00:00Z,45,36,woman older
+The Other Woman,2014,Nick Cassavetes,9,2,Cameron Diaz,Taylor Kinney,woman,man,26541,1981-07-15T00:00:00Z,42,33,woman older
+X-Men,2000,Bryan Singer,9,1,Famke Janssen,James Marsden,woman,man,23686,1973-09-18T00:00:00Z,36,27,woman older
+Y tu mam√° tambi√©n,2001,Alfonso Cuar√≥n,9,1,Maribel Verd√∫,Diego Luna,woman,man,25843,1979-12-29T00:00:00Z,31,22,woman older
+A Very Long Engagement,2004,Jean-Pierre Jeunet,8,1,Audrey Tautou,Gaspard Ulliel,woman,man,27981,1984-11-25T00:00:00Z,28,20,woman older
+Dan in Real Life,2007,Peter Hedges,8,1,Juliette Binoche,Dane Cook,woman,man,23445,1972-03-18T00:00:00Z,43,35,woman older
+Prime,2005,Ben Younger,8,1,Uma Thurman,Bryan Greenberg,woman,man,25687,1978-05-24T00:00:00Z,35,27,woman older
+Sorry to Bother You,2018,Boots Riley,8,1,Tessa Thompson,Lakeith Stanfield,woman,man,30592,1991-08-12T00:00:00Z,35,27,woman older
+Tommy Boy,1995,Peter Segal,8,2,Bo Derek,Rob Lowe,woman,man,20779,1964-03-17T00:00:00Z,39,31,woman older
+Y tu mam√° tambi√©n,2001,Alfonso Cuar√≥n,8,2,Maribel Verd√∫,Gael Garc√≠a Bernal,woman,man,25843,1978-11-30T00:00:00Z,31,23,woman older
+Away We Go,2009,Sam Mendes,7,1,Maya Rudolph,John Krasinski,woman,man,26507,1979-10-20T00:00:00Z,37,30,woman older
+Clueless,1995,Amy Heckerling,7,2,Stacey Dash,Donald Faison,woman,man,24492,1974-06-22T00:00:00Z,28,21,woman older
+Contact,1997,Robert Zemeckis,7,1,Jodie Foster,Matthew McConaughey,woman,man,22969,1969-11-04T00:00:00Z,35,28,woman older
+Die Hard,1988,John McTiernan,7,1,Bonnie Bedelia,Bruce Willis,woman,man,17617,1955-03-19T00:00:00Z,40,33,woman older
+Kate & Leopold,2001,James Mangold,7,1,Meg Ryan,Hugh Jackman,woman,man,22604,1968-10-12T00:00:00Z,40,33,woman older
+Long Shot,2019,Jonathan Levine,7,1,Charlize Theron,Seth Rogen,woman,man,27613,1982-04-15T00:00:00Z,44,37,woman older
+Mrs. Doubtfire,1993,Chris Columbus,7,1,Sally Field,Pierce Brosnan,woman,man,17112,1953-05-16T00:00:00Z,47,40,woman older
+The Kids Are All Right,2010,Lisa Cholodenko,7,1,Julianne Moore,Mark Ruffalo,woman,man,22253,1967-11-22T00:00:00Z,50,43,woman older
+Bridesmaids,2011,Paul Feig,6,1,Kristen Wiig,Chris O'Dowd,woman,man,26898,1979-10-09T00:00:00Z,38,32,woman older
+Legally Blonde,2001,Robert Luketic,6,1,Selma Blair,Matthew Davis,woman,man,26473,1978-05-08T00:00:00Z,29,23,woman older
+Nightmare Alley,2021,Guillermo del Toro,6,2,Cate Blanchett,Bradley Cooper,woman,man,25337,1975-01-05T00:00:00Z,52,46,woman older
+Raising Arizona,1987,Joel Coen,6,1,Holly Hunter,Nicolas Cage,woman,man,21264,1964-01-07T00:00:00Z,29,23,woman older
+Slumdog Millionaire,2008,Danny Boyle,6,1,Freida Pinto,Dev Patel,woman,man,30973,1990-04-23T00:00:00Z,24,18,woman older
+Spider-Man: Homecoming,2017,Jon Watts,6,1,Laura Harrier,Tom Holland,woman,man,32960,1996-06-01T00:00:00Z,27,21,woman older
+The Family Stone,2007,Thomas Bezucha,6,3,Sarah Jessica Parker,Luke Wilson,woman,man,23826,1971-09-21T00:00:00Z,42,36,woman older
+The Graduate,1967,Mike Nichols,6,1,Anne Bancroft,Dustin Hoffman,woman,man,11583,1937-08-08T00:00:00Z,36,30,woman older
+About Time,2013,Richard Curtis,5,1,Rachel McAdams,Domhnall Gleeson,woman,man,28811,1983-05-12T00:00:00Z,35,30,woman older
+American Pie,1999,"Paul Weitz, Chris Weitz",5,3,Shannon Elizabeth,Jason Biggs,woman,man,26914,1978-05-12T00:00:00Z,26,21,woman older
+American Pie,1999,"Paul Weitz, Chris Weitz",5,2,Tara Reid,Thomas Ian Nicholas,woman,man,27706,1980-07-10T00:00:00Z,24,19,woman older
+Anna Karenina,2012,Joe Wright,5,2,Keira Knightley,Aaron Taylor-Johnson,woman,man,31132,1990-06-13T00:00:00Z,27,22,woman older
+Baby Driver,2017,Edgar Wright,5,2,Lily James,Ansel Elgort,woman,man,32603,1994-03-14T00:00:00Z,28,23,woman older
+Closer,2004,Mike Nichols,5,3,Julia Roberts,Jude Law,woman,man,24773,1972-12-29T00:00:00Z,37,32,woman older
+Cold Mountain,2003,Anthony Minghella,5,1,Nicole Kidman,Jude Law,woman,man,24643,1972-12-29T00:00:00Z,36,31,woman older
+Crazy Rich Asians,2018,Jon M. Chu,5,2,Constance Wu,Henry Golding,woman,man,30032,1987-02-05T00:00:00Z,36,31,woman older
+Goldfinger,1964,Guy Hamilton,5,2,Honor Blackman,Sean Connery,woman,man,9366,1930-08-25T00:00:00Z,39,34,woman older
+He's Just Not That Into You,2009,Ken Kwapis,5,2,Jennifer Connelly,Bradley Cooper,woman,man,25914,1975-01-05T00:00:00Z,39,34,woman older
+Head over Heels,2001,Mark Waters,5,1,Monica Potter,Freddie Prinze Jr.,woman,man,26114,1976-03-08T00:00:00Z,30,25,woman older
+Heartbreakers,2001,David Mirkin,5,2,Sigourney Weaver,Ray Liotta,woman,man,18179,1954-12-18T00:00:00Z,52,47,woman older
+King Kong,2005,Peter Jackson,5,1,Naomi Watts,Adrien Brody,woman,man,25109,1973-04-14T00:00:00Z,37,32,woman older
+Les Miserables,2012,Tom Hooper,5,1,Helena Bonham Carter,Sacha Baron Cohen,woman,man,24253,1971-10-13T00:00:00Z,46,41,woman older
+Magnolia,1999,Paul Thomas Anderson,5,2,Melora Walters,John C. Reilly,woman,man,22210,1965-05-24T00:00:00Z,39,34,woman older
+Mrs. Doubtfire,1993,Chris Columbus,5,2,Sally Field,Robin Williams,woman,man,17112,1951-07-21T00:00:00Z,47,42,woman older
+Pearl Harbor,2001,Michael Bay,5,1,Kate Beckinsale,Josh Hartnett,woman,man,26871,1978-07-21T00:00:00Z,28,23,woman older
+The Aviator,2004,Martin Scorsese,5,2,Cate Blanchett,Leonardo DiCaprio,woman,man,25337,1974-11-11T00:00:00Z,35,30,woman older
+The Wood,1999,Rick Famuyiwa,5,1,LisaRaye McCoy,Taye Diggs,woman,man,24373,1971-01-02T00:00:00Z,33,28,woman older
+Top Gun,1986,Tony Scott,5,1,Kelly McGillis,Tom Cruise,woman,man,21010,1962-07-03T00:00:00Z,29,24,woman older
+What's Your Number?,2011,Mark Mylod,5,1,Anna Faris,Chris Evans,woman,man,28093,1981-06-13T00:00:00Z,35,30,woman older
+Boogie Nights,1997,Paul Thomas Anderson,4,4,Melora Walters,Don Cheadle,woman,man,22210,1964-11-29T00:00:00Z,37,33,woman older
+Chasing Amy,1997,Kevin Smith,4,1,Joey Lauren Adams,Ben Affleck,woman,man,24846,1972-08-15T00:00:00Z,29,25,woman older
+Crimson Peak,2015,Guillermo del Toro,4,2,Jessica Chastain,Tom Hiddleston,woman,man,28208,1981-02-09T00:00:00Z,38,34,woman older
+Dr. No,1962,Terence Young,4,2,Zena Marshall,Sean Connery,woman,man,9498,1930-08-25T00:00:00Z,36,32,woman older
+Hidden Figures,2016,Theodore Melfi,4,1,Taraji P. Henson,Mahershala Ali,woman,man,25822,1974-02-16T00:00:00Z,46,42,woman older
+Knocked Up,2007,Judd Apatow,4,1,Katherine Heigl,Seth Rogen,woman,man,28818,1982-04-15T00:00:00Z,29,25,woman older
+Leap Year,2010,Anand Tucker,4,1,Amy Adams,Matthew Goode,woman,man,27261,1978-04-03T00:00:00Z,36,32,woman older
+Mamma Mia!,2008,Phyllida Lloyd,4,2,Meryl Streep,Pierce Brosnan,woman,man,18071,1953-05-16T00:00:00Z,59,55,woman older
+Moulin Rouge!,2001,Baz Luhrmann,4,1,Nicole Kidman,Ewan McGregor,woman,man,24643,1971-03-31T00:00:00Z,34,30,woman older
+Peter Rabbit,2018,Will Gluck,4,1,Rose Byrne,Domhnall Gleeson,woman,man,29060,1983-05-12T00:00:00Z,39,35,woman older
+Reservation Road,2007,Terry George,4,1,Jennifer Connelly,Joaquin Phoenix,woman,man,25914,1974-10-28T00:00:00Z,37,33,woman older
+Soul Food,1997,George Tillman Jr.,4,2,Vivica A. Fox,Jeffrey D. Sams,woman,man,23588,1968-06-18T00:00:00Z,33,29,woman older
+Soul Food,1997,George Tillman Jr.,4,1,Nia Long,Mekhi Phifer,woman,man,25871,1974-12-29T00:00:00Z,27,23,woman older
+Source Code,2011,Duncan Jones,4,1,Michelle Monaghan,Jake Gyllenhaal,woman,man,27842,1980-12-19T00:00:00Z,35,31,woman older
+Spectre,2015,Sam Mendes,4,2,Monica Bellucci,Daniel Craig,woman,man,23650,1968-03-02T00:00:00Z,51,47,woman older
+This Means War,2012,McG,4,1,Reese Witherspoon,Chris Pine,woman,man,27840,1980-08-26T00:00:00Z,36,32,woman older
+X-Men,2000,Bryan Singer,4,2,Famke Janssen,Hugh Jackman,woman,man,23686,1968-10-12T00:00:00Z,36,32,woman older
+Arbitrage,2012,Nicholas Jarecki,3,2,Susan Sarandon,Richard Gere,woman,man,17079,1949-08-31T00:00:00Z,66,63,woman older
+Bottle Rocket,1996,Wes Anderson,3,1,Lumi Cavazos,Luke Wilson,woman,man,25193,1971-09-21T00:00:00Z,28,25,woman older
+City of Angels,1998,Brad Silberling,3,1,Meg Ryan,Nicolas Cage,woman,man,22604,1964-01-07T00:00:00Z,37,34,woman older
+Fight Club,1999,David Fincher,3,1,Helena Bonham Carter,Edward Norton,woman,man,24253,1969-08-18T00:00:00Z,33,30,woman older
+Fools Rush In,1997,Andy Tennant,3,1,Salma Hayek,Matthew Perry,woman,man,24352,1969-08-19T00:00:00Z,31,28,woman older
+Gigli,2003,Martin Brest,3,1,Jennifer Lopez,Ben Affleck,woman,man,25408,1972-08-15T00:00:00Z,34,31,woman older
+He's Just Not That Into You,2009,Ken Kwapis,3,3,Jennifer Aniston,Ben Affleck,woman,man,25245,1972-08-15T00:00:00Z,40,37,woman older
+La ragazza con la valigia,1961,Valerio Zurlini,3,1,Claudia Cardinale,Jacques Perrin,woman,man,13985,1941-07-13T00:00:00Z,23,20,woman older
+Look Who's Talking,1989,Amy Heckerling,3,1,Kirstie Alley,John Travolta,woman,man,18640,1954-02-18T00:00:00Z,38,35,woman older
+Me Before You,2016,Thea Sharrock,3,1,Emilia Clarke,Matthew Lewis,woman,man,31708,1989-06-27T00:00:00Z,30,27,woman older
+Neighbors,2014,Nicholas Stoller,3,1,Rose Byrne,Seth Rogen,woman,man,29060,1982-04-15T00:00:00Z,35,32,woman older
+On the Basis of Sex,2018,Mimi Leder,3,1,Felicity Jones,Armie Hammer,woman,man,30606,1986-08-28T00:00:00Z,35,32,woman older
+One Fine Day,1996,Michael Hoffman,3,1,Michelle Pfeiffer,George Clooney,woman,man,21304,1961-05-06T00:00:00Z,38,35,woman older
+Palo Alto,2013,Gia Coppola,3,2,Emma Roberts,Nat Wolff,woman,man,33279,1994-12-17T00:00:00Z,22,19,woman older
+Ready Player One,2018,Steven Spielberg,3,1,Olivia Cooke,Tye Sheridan,woman,man,34330,1996-11-11T00:00:00Z,25,22,woman older
+Risky Business,1983,Paul Brickman,3,1,Rebecca De Mornay,Tom Cruise,woman,man,21791,1962-07-03T00:00:00Z,24,21,woman older
+Savages,2007,undefined,3,2,Blake Lively,Aaron Taylor-Johnson,woman,man,32014,1990-06-13T00:00:00Z,20,17,woman older
+Selma,2014,Ava DuVernay,3,1,Carmen Ejogo,David Oyelowo,woman,man,26665,1976-04-01T00:00:00Z,41,38,woman older
+Solo: A Star Wars Story,2018,Ron Howard,3,2,Emilia Clarke,Alden Ehrenreich,woman,man,31708,1989-11-22T00:00:00Z,32,29,woman older
+The 40-Year Old Virgin,2005,Judd Apatow,3,1,Catherine Keener,Steve Carell,woman,man,21632,1962-08-16T00:00:00Z,46,43,woman older
+The Age of Adaline,2015,Lee Toland Krieger,3,2,Blake Lively,Anthony Ingruber,woman,man,32014,1990-02-05T00:00:00Z,28,25,woman older
+The Disaster Artist,2017,James Franco,3,1,Alison Brie,Dave Franco,woman,man,30314,1985-06-12T00:00:00Z,35,32,woman older
+The Fault in Our Stars,2014,Josh Boone,3,1,Shailene Woodley,Ansel Elgort,woman,man,33557,1994-03-14T00:00:00Z,23,20,woman older
+The Favourite,2018,Yorgos Lanthimos,3,4,Emma Stone,Joe Alwyn,woman,man,32453,1991-02-21T00:00:00Z,30,27,woman older
+The Lucky One,2012,Scott Hicks,3,1,Taylor Schilling,Zac Efron,woman,man,30890,1987-10-18T00:00:00Z,28,25,woman older
+Us,2019,Jordan Peele,3,1,Lupita Nyong'o,Winston Duke,woman,man,30376,1986-11-15T00:00:00Z,36,33,woman older
+Widows,2018,Steve McQueen,3,3,Michelle Rodriguez,Manuel Garcia-Rulfo,woman,man,28683,1981-02-25T00:00:00Z,40,37,woman older
+A Most Violent Year,2014,J.C. Chandor,2,1,Jessica Chastain,Oscar Isaac,woman,man,28208,1979-03-09T00:00:00Z,37,35,woman older
+A Simple Favor,2018,Paul Feig,2,1,Anna Kendrick,Henry Golding,woman,man,31268,1987-02-05T00:00:00Z,33,31,woman older
+A Walk on the Moon,1999,Tony Goldwyn,2,2,Diane Lane,Liev Schreiber,woman,man,23763,1967-10-04T00:00:00Z,34,32,woman older
+Anger Management,2003,Peter Segal,2,1,Marisa Tomei,Adam Sandler,woman,man,23715,1966-09-09T00:00:00Z,39,37,woman older
+Ben-Hur,2016,Timur Bekmambetov,2,1,Nazanin Boniadi,Jack Huston,woman,man,29363,1982-12-07T00:00:00Z,36,34,woman older
+"Crazy, Stupid, Love",2011,"Glenn Ficarra, John Requa",2,2,Julianne Moore,Steve Carell,woman,man,22253,1962-08-16T00:00:00Z,51,49,woman older
+Down and Out in Beverly Hills,1986,Paul Mazursky,2,2,Bette Midler,Richard Dreyfuss,woman,man,16772,1947-10-29T00:00:00Z,41,39,woman older
+Enchanted,2007,Kevin Lima,2,2,Idina Menzel,James Marsden,woman,man,26083,1973-09-18T00:00:00Z,36,34,woman older
+Enemy at the Gates,2001,Jean-Jacques Annaud,2,1,Rachel Weisz,Jude Law,woman,man,25634,1972-12-29T00:00:00Z,31,29,woman older
+Fantastic Beasts and Where to Find Them,2016,David Yates,2,2,Katherine Waterston,Eddie Redmayne,woman,man,29283,1982-01-26T00:00:00Z,36,34,woman older
+Four Weddings and a Funeral,1994,Mike Newell,2,1,Andie MacDowell,Hugh Grant,woman,man,21296,1960-09-09T00:00:00Z,36,34,woman older
+Gangs of New York,2002,Martin Scorsese,2,1,Cameron Diaz,Leonardo DiCaprio,woman,man,26541,1974-11-11T00:00:00Z,30,28,woman older
+Imagine Me & You,2005,Ol Parker,2,2,Piper Perabo,Matthew Goode,woman,man,28064,1978-04-03T00:00:00Z,29,27,woman older
+Last Night,2010,Massy Tadjedin,2,3,Eva Mendes,Sam Worthington,woman,man,27093,1976-08-02T00:00:00Z,36,34,woman older
+Legally Blonde,2001,Robert Luketic,2,3,Reese Witherspoon,Matthew Davis,woman,man,27840,1978-05-08T00:00:00Z,25,23,woman older
+Love & Basketball,2000,Gina Prince-Bythewood,2,1,Sanaa Lathan,Omar Epps,woman,man,26195,1973-07-20T00:00:00Z,29,27,woman older
+Love Story,1970,Arthur Hiller,2,1,Ali MacGraw,Ryan O'Neal,woman,man,14336,1941-04-20T00:00:00Z,31,29,woman older
+Mona Lisa Smile,2003,Mike Newell,2,4,Julia Roberts,Dominic West,woman,man,24773,1969-10-15T00:00:00Z,36,34,woman older
+Old School,2003,Todd Phillips,2,3,Ellen Pompeo,Luke Wilson,woman,man,25517,1971-09-21T00:00:00Z,34,32,woman older
+Pitch Perfect,2012,Jason Moore,2,1,Anna Kendrick,Skylar Astin,woman,man,31268,1987-09-23T00:00:00Z,27,25,woman older
+Spider-Man: Far From Home,2019,Jon Watts,2,1,Marisa Tomei,Jon Favreau,woman,man,23715,1966-10-19T00:00:00Z,55,53,woman older
+Tag,2018,Jeff Tomsic,2,3,Rashida Jones,Jake Johnson,woman,man,27815,1978-05-28T00:00:00Z,42,40,woman older
+The Butterfly Effect,2004,"Eric Bress, J. Mackye Gruber",2,1,Amy Smart,Ashton Kutcher,woman,man,27845,1978-02-07T00:00:00Z,28,26,woman older
+The English Patient,1996,Anthony Minghella,2,1,Kristin Scott Thomas,Ralph Fiennes,woman,man,22060,1962-12-22T00:00:00Z,36,34,woman older
+The Girl with the Dragon Tattoo,2011,David Fincher,2,2,Robin Wright,Daniel Craig,woman,man,24205,1968-03-02T00:00:00Z,45,43,woman older
+The Hunger Games: Mockingjay Part 2,2015,Francis Lawrence,2,1,Jennifer Lawrence,Josh Hutcherson,woman,man,33100,1992-10-12T00:00:00Z,25,23,woman older
+The Notebook,2004,Nick Cassavetes,2,2,Rachel McAdams,Ryan Gosling,woman,man,28811,1980-11-12T00:00:00Z,26,24,woman older
+The Twilight Saga: New Moon,2009,Chris Weitz,2,1,Kristen Stewart,Taylor Lautner,woman,man,32972,1992-02-11T00:00:00Z,19,17,woman older
+The Vow,2012,Michael Sucsy,2,2,Rachel McAdams,Channing Tatum,woman,man,28811,1980-04-26T00:00:00Z,34,32,woman older
+The Wood,1999,Rick Famuyiwa,2,2,Sanaa Lathan,Omar Epps,woman,man,26195,1973-07-20T00:00:00Z,28,26,woman older
+Thor,2011,Kenneth Branagh,2,1,Natalie Portman,Chris Hemsworth,woman,man,29746,1983-08-11T00:00:00Z,30,28,woman older
+Virginia,2010,Dustin Lance Black,2,2,Emma Roberts,Harrison Gilbertson,woman,man,33279,1993-06-29T00:00:00Z,19,17,woman older
+500 Days of Summer,2009,Marc Webb,1,1,Zooey Deschanel,Joseph Gordon-Levitt,woman,man,29237,1981-02-17T00:00:00Z,29,28,woman older
+A Knight's Tale,2001,Brian Helgeland,1,1,Shannyn Sossamon,Heath Ledger,woman,man,28766,1979-04-24T00:00:00Z,23,22,woman older
+Australia,2008,Baz Luhrmann,1,1,Nicole Kidman,Hugh Jackman,woman,man,24643,1968-10-12T00:00:00Z,41,40,woman older
+Baywatch,2017,Seth Gordon,1,1,Alexandra Daddario,Zac Efron,woman,man,31487,1987-10-18T00:00:00Z,31,30,woman older
+Because I Said So,2007,Michael Lehmann,1,3,Diane Keaton,Stephen Collins,woman,man,16807,1947-10-01T00:00:00Z,61,60,woman older
+Before Sunrise,1995,Richard Linklater,1,1,Julie Delpy,Ethan Hawke,woman,man,25558,1970-11-06T00:00:00Z,26,25,woman older
+Beverly Hills Ninja,1997,Dennis Dugan,1,1,Nicollette Sheridan,Chris Farley,woman,man,23336,1964-02-15T00:00:00Z,34,33,woman older
+Get Out,2017,Jordan Peele,1,1,Allison Williams,Daniel Kaluuya,woman,man,32246,1989-02-24T00:00:00Z,29,28,woman older
+Guardians of the Galaxy,2014,James Gunn,1,1,Zoe Saldana,Chris Pratt,woman,man,28660,1979-06-21T00:00:00Z,36,35,woman older
+In the Heights,2021,John M. Chu,1,3,Melissa Barrera,Anthony Ramos,woman,man,33058,1991-11-01T00:00:00Z,31,30,woman older
+Juno,2007,Jason Reitman,1,3,Elliot Page,Michael Cera,woman,man,31829,1988-06-07T00:00:00Z,20,19,woman older
+Jury Duty,1995,John Fortenberry,1,1,Tia Carrere,Pauly Shore,woman,man,24474,1968-02-01T00:00:00Z,28,27,woman older
+Lady Bird,2017,Greta Gerwig,1,1,Saoirse Ronan,Timoth√©e Chalamet,woman,man,34436,1995-12-27T00:00:00Z,23,22,woman older
+Monster Trucks,2017,Chris Wedge,1,1,Jane Levy,Lucas Till,woman,man,32871,1990-08-10T00:00:00Z,28,27,woman older
+On Her Majesty's Secret Service,1969,Peter R. Hunt,1,3,Diana Rigg,George Lazenby,woman,man,14081,1939-09-05T00:00:00Z,31,30,woman older
+Pride & Prejudice,2005,Joe Wright,1,2,Rosamund Pike,Simon Woods,woman,man,28882,1980-01-07T00:00:00Z,26,25,woman older
+Requiem for a Dream,2000,Darren Aronofsky,1,1,Jennifer Connelly,Jared Leto,woman,man,25914,1971-12-26T00:00:00Z,30,29,woman older
+Sense and Sensibility,1995,Ang Lee,1,2,Emma Thompson,Hugh Grant,woman,man,21655,1960-09-09T00:00:00Z,36,35,woman older
+Shopgirl,2005,Anand Tucker,1,2,Claire Danes,Jason Schwartzman,woman,man,28957,1980-06-26T00:00:00Z,26,25,woman older
+Stella Dallas,1937,King Vidor,1,2,Anne Shirley,Tim Holt,woman,man,6682,1919-02-05T00:00:00Z,19,18,woman older
+Stomp the Yard,2007,Sylvain White,1,1,Meagan Good,Columbus Short,woman,man,29806,1982-09-19T00:00:00Z,26,25,woman older
+The Aviator,2004,Martin Scorsese,1,3,Kate Beckinsale,Leonardo DiCaprio,woman,man,26871,1974-11-11T00:00:00Z,31,30,woman older
+The Break-Up,2006,Peyton Reed,1,1,Jennifer Aniston,Vince Vaughn,woman,man,25245,1970-03-28T00:00:00Z,37,36,woman older
+The Departed,2006,Martin Scorsese,1,3,Vera Farmiga,Leonardo DiCaprio,woman,man,26882,1974-11-11T00:00:00Z,33,32,woman older
+The Details,2011,Jacob Aaron Estes,1,2,Elizabeth Banks,Tobey Maguire,woman,man,27070,1975-06-27T00:00:00Z,37,36,woman older
+The Painted Veil,2006,John Curran,1,1,Naomi Watts,Edward Norton,woman,man,25109,1969-08-18T00:00:00Z,38,37,woman older
+The Sum of All Fears,2002,Phil Alden Robinson,1,1,Bridget Moynahan,Ben Affleck,woman,man,26051,1972-08-15T00:00:00Z,31,30,woman older
+This Means War,2012,McG,1,2,Reese Witherspoon,Tom Hardy,woman,man,27840,1977-09-15T00:00:00Z,36,35,woman older
+Troy,2004,Wolfgang Petersen,1,2,Diane Kruger,Orlando Bloom,woman,man,27956,1977-01-13T00:00:00Z,28,27,woman older
+Unfaithful,2002,Adrian Lyne,1,2,Diane Lane,Olivier Martinez,woman,man,23763,1966-01-12T00:00:00Z,37,36,woman older
+Wonder,2017,Stephen Chbosky,1,1,Julia Roberts,Owen Wilson,woman,man,24773,1968-11-18T00:00:00Z,50,49,woman older
+Yesterday,2019,Danny Boyle,1,1,Lily James,Himesh Patel,woman,man,32603,1990-10-13T00:00:00Z,30,29,woman older

@@ -24,7 +24,7 @@ editor_options:
 #| label: setup
 #| include: false
 ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
-todays_ae <- "ae-07-durham-climate-factors"
+todays_ae <- "ae-08-durham-climate-factors"
 ```
 
 # Warm-up
