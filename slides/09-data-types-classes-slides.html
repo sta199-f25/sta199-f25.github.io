@@ -805,7 +805,7 @@ $z
 <span id="cb89-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="09-data-types-classes_files/figure-html/unnamed-chunk-40-1.png" style="width:100.0%" class="r-stretch"></section><section id="use-forcats-to-reorder-levels" class="slide level2 smaller"><h2>Use forcats to reorder levels</h2>
+<img data-src="09-data-types-classes_files/figure-revealjs/unnamed-chunk-40-1.png" style="width:100.0%" class="r-stretch"></section><section id="use-forcats-to-reorder-levels" class="slide level2 smaller"><h2>Use forcats to reorder levels</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a>survey <span class="sc">|&gt;</span></span>
 <span id="cb90-2"><a></a>  <span class="fu">mutate</span>(</span>
@@ -815,7 +815,7 @@ $z
 <span id="cb90-6"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="09-data-types-classes_files/figure-html/unnamed-chunk-41-1.png" style="width:100.0%" class="r-stretch"></section><section id="a-peek-into-forcats" class="slide level2 smaller"><h2>A peek into forcats</h2>
+<img data-src="09-data-types-classes_files/figure-revealjs/unnamed-chunk-41-1.png" style="width:100.0%" class="r-stretch"></section><section id="a-peek-into-forcats" class="slide level2 smaller"><h2>A peek into forcats</h2>
 <div class="columns">
 <div class="column fragment" style="width:50%;">
 <p>Reordering levels by:</p>
@@ -1047,6 +1047,41 @@ $z
           RevealZoom
         ]
       });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
     </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
