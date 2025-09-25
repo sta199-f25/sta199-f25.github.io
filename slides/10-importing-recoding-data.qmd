@@ -24,7 +24,7 @@ editor_options:
 #| label: setup
 #| include: false
 ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
-todays_ae <- "ae-09-age-gaps-sales-import"
+todays_ae <- "ae-08-age-gaps-import"
 ```
 
 # Warm-up
@@ -32,11 +32,19 @@ todays_ae <- "ae-09-age-gaps-sales-import"
 ## While you wait: Participate 📱💻 {.xsmall}
 
 ::: columns
+
 ::: {.column width="70%"}
 
 ::: wooclap
 
-???
+Did you get my Week 5 nudge email?
+
+::: wooclap-choices
+- Yes, I did! And I don't have any questions.
+- Yes, I did! And I have questions.
+- I haven't checked my email today yet, I will do so after class.
+- What, you email us?!
+:::
 
 :::
 
@@ -87,9 +95,9 @@ todays_ae <- "ae-09-age-gaps-sales-import"
 
 # Application exercise
 
-## Goal 1: Reading and writing CSV files
+## Reading Excel files
 
--   Read a CSV file
+-   Read an Excel file, with all its Excel-ness
 
 -   Split it into subsets based on features of the data
 
@@ -109,7 +117,7 @@ What is the story in this visualization?
 :::
 ::::::
 
-## `{r} todays_ae` - Part 1 {.smaller}
+## `{r} todays_ae` {.smaller}
 
 ::: appex
 -   Go to your ae project in RStudio.
@@ -118,42 +126,6 @@ What is the story in this visualization?
 
 -   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
 
--   Work through **Part 1** of the application exercise in class, and render, commit, and push your edits.
+-   Work through the application exercise in class, and render, commit, and push your edits.
 :::
 
-## Goal 2: Reading Excel files
-
--   Read an Excel file with non-tidy data
-
--   Tidy it up!
-
-## Sales data
-
-![](images/10/sales-excel.png)
-
-. . .
-
-::: question
-Are these data tidy?
-Why or why not?
-:::
-
-## Sales data
-
-::: question
-What "data moves" do we need to go from the original, non-tidy data to this, tidy one?
-:::
-
-![](images/10/sales-2.png){width="150"}
-
-## `{r} todays_ae` - Part 2 {.smaller}
-
-::: appex
--   Go to your ae project in RStudio.
-
--   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
-
--   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
-
--   Work through **Part 2** of the application exercise in class, and render, commit, and push your edits.
-:::
