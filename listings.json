@@ -21,6 +21,10 @@
     ]
   },
   {
+    "listing": "/exam-review.html",
+    "items": []
+  },
+  {
     "listing": "/lab.html",
     "items": [
       "/lab/lab-0.html",
@@ -28,10 +32,6 @@
       "/lab/lab-2.html",
       "/lab/lab-3.html"
     ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": []
   },
   {
     "listing": "/course-team.html",
