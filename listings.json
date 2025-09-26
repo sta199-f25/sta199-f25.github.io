@@ -22,7 +22,12 @@
   },
   {
     "listing": "/exam-review.html",
-    "items": []
+    "items": [
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/final-exam-review.html"
+    ]
   },
   {
     "listing": "/lab.html",
