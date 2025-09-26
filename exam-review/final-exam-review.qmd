@@ -1,0 +1,12 @@
+---
+title: Final exam review
+subtitle: Questions
+format:
+  html: default
+  pdf: 
+    linkcolor: "black"
+execute:
+  echo: false
+---
+
+To be posted.
