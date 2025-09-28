@@ -359,7 +359,6 @@ The pipeline below produces a data frame with a fewer number of rows than `blizz
 ```{r}
 #| eval: false
 #| echo: true
-
 blizzard_salary |>
   filter(salary_type _(1)_ "Hourly" _(2)_ performance_rating == "Poor") |>
   _(3)_(annual_salary)
@@ -367,7 +366,6 @@ blizzard_salary |>
 
 ```{r}
 #| echo: false
-
 blizzard_salary |>
   filter(salary_type != "Hourly" & performance_rating == "Poor") |>
   arrange(annual_salary)
