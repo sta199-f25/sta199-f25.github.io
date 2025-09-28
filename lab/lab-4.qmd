@@ -79,19 +79,19 @@ Of the 1,500 responses, 699 were between the ages of 18-44.
 
 Of the individuals that are between 18-44,
 
-- 78 individuals said they thought the changes were Very positive,
+- 78  individuals said they thought the changes were Very positive,
 - 176 individuals said they thought the changes were Somewhat positive,
 - 162 individuals said they thought the changes were Neutral,
-- 50 individuals said they thought the changes were Somewhat negative,
-- 36 individuals said they thought the changes were Very negative.
+- 50  individuals said they thought the changes were Somewhat negative,
+- 36  individuals said they thought the changes were Very negative.
 
 Of the individuals that are 45+,
 
-- 41 individuals said they thought the changes were Very positive,
+- 41  individuals said they thought the changes were Very positive,
 - 121 individuals said they thought the changes were Somewhat positive,
 - 186 individuals said they thought the changes were Neutral,
 - 146 individuals said they thought the changes were Somewhat negative,
-- 97 individuals said they thought the changes were Very negative.
+- 97  individuals said they thought the changes were Very negative.
 
 # Questions
 
@@ -101,11 +101,26 @@ a.  Fill in the code below to create a two-way table that summarizes these data 
 
 ```{r}
 #| eval: false
-survey_counts <- tibble(
-  age = c(),
-  opinion = c(),
-  n = c()
-)
+# fmt: skip
+survey_counts <- tribble(
+  ~age,    ~opinion,            ~n,
+  "18-44", "Very positive",     ___,
+  "18-44", "Somewhat positive", ___,
+  "18-44", "Neutral",           ___,
+  "18-44", "Somewhat negative", ___,
+  "18-44", "Very negative",     ___,
+  "18-44", "Unsure",            ___,
+  "45+",   "Very positive",     ___,
+  "45+",   "Somewhat positive", ___,
+  "45+",   "Neutral",           ___,
+  "45+",   "Somewhat negative", ___,
+  "45+",   "Very negative",     ___,
+  "45+",   "Unsure",            ___,
+) |>
+  mutate(
+    age     = fct_relevel(age, ___),
+    opinion = fct_relevel(opinion, ___)
+  )
 
 survey_counts |>
   pivot_wider(
@@ -113,20 +128,6 @@ survey_counts |>
     values_from = ___
   )
 ```
-
-::: callout-tip
-You will need to repeat certain values in the `age` and `opinion` columns to fill in all the counts.
-You can use the `rep()` function to help you do this, e.g., if you had 3 individuals in the "18-44" age group and 4 individuals in the "45+" age group, you could use:
-
-```{r}
-#| eval: true
-c(
-  rep("18-44", 3),
-  rep("45+", 4)
-)
-```
-
-:::
 
 For parts b-d below, use a single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
 
