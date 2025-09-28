@@ -1,6 +1,6 @@
 ---
 title: Lab 4
-subtitle: Opinion on changes in Division I College Athletics
+subtitle: Changes in college athletics
 description: "Due: End of lab on Mon, Sep 29"
 categories: Lab
 filters:
@@ -57,15 +57,15 @@ library(tidyverse)
 
 ## Data
 
-YouGov, in collaboration with Elon University Poll and the Knight Commission on Intercollegiate Athletics, polled 1,500 US adults (aged 18 and older) between July 7-11, 2025.[^1]
+YouGov, in collaboration with Elon University Poll and the Knight Commission on Intercollegiate Athletics, polled 1,500 US adults (aged 18 and older) between July 7-11, 2025.[^2]
 The following question was asked to these 1,500 adults:
 
-[^1]: Full survey results can be found at <https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf>.
+[^2]: Full survey results can be found at <https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf>.
 
 > Overall, how would you describe the impact of the many changes (transfer portal, athlete name, image and likeness (NIL) compensation, conference
-realignments[^2]) taking place in Division I college athletics?
+realignments[^3]) taking place in Division I college athletics?
 
-[^2]: The transfer portal is an online database for college student-athletes who wish to transfer to a different school. Name, image, and likeness (NIL) compensation allows college athletes to earn money from third-party companies for using their "name, image, and likeness" through activities like endorsements, social media promotions, and public appearances. Conference realignments refer to the shifting of colleges and universities between athletic conferences, which can affect competition levels, revenue distribution, and media exposure.
+[^3]: The transfer portal is an online database for college student-athletes who wish to transfer to a different school. Name, image, and likeness (NIL) compensation allows college athletes to earn money from third-party companies for using their "name, image, and likeness" through activities like endorsements, social media promotions, and public appearances. Conference realignments refer to the shifting of colleges and universities between athletic conferences, which can affect competition levels, revenue distribution, and media exposure.
 
 Responses were broken down into the following categories:
 
@@ -97,7 +97,7 @@ Of the individuals that are 45+,
 
 ## Question 1
 
-a.  Fill in the code below to create a two-way table that summarizes these data.
+a.  Fill in the code below to create a two-way table that summarizes these data by filling in the blanks below.
 
 ```{r}
 #| eval: false
@@ -114,22 +114,36 @@ survey_counts |>
   )
 ```
 
+::: callout-tip
+You will need to repeat certain values in the `age` and `opinion` columns to fill in all the counts.
+You can use the `rep()` function to help you do this, e.g., if you had 3 individuals in the "18-44" age group and 4 individuals in the "45+" age group, you could use:
+
+```{r}
+#| eval: true
+c(
+  rep("18-44", 3),
+  rep("45+", 4)
+)
+```
+
+:::
+
 For parts b-d below, use a single pipeline starting with `survey_counts`, calculate the desired proportions, and make sure the result is an **ungrouped** data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you're interested in.
 
-b.  Marginal proportions of `age`: Calculate the proportions of individuals who are 18-44 year olds and 45+ year-olds in this sample.
+b.  Marginal proportions of age: Calculate the proportions of individuals who are 18-44 year olds and 45+ year-olds in this sample.
 
-c.  Marginal proportions of `opinion`: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure.
+c.  Marginal proportions of opinion: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure.
 
-d.  Conditional proportions of `opinion` based on `age`: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure
+d.  Conditional proportions of opinion based on age: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure
 
     -   among those who are 18-44 years old and
     -   among those who are 45+ years old.
 
 ## Question 2
 
-a.  What type of plot would be appropriate to visualize the relationship between `age` and `opinion` on the impact of the many changes taking place in Division I college athletics?
+a.  What type of plot would be appropriate to visualize the relationship between age and opinion on the impact of the many changes taking place in Division I college athletics?
 
-b.  Create the plot, using `geom_col()`, from part (a) that can be used to evaluate the relationship between `age` and `opinion` on the impact of the many changes taking place in Division I college athletics?
+b.  Create the plot, using `geom_col()`, from part (a) that can be used to evaluate the relationship between age and `opinion` on the impact of the many changes taking place in Division I college athletics?
 
 ::: callout-tip
 Your visualization should be displaying the proportions you calculated in Question 1(d).
