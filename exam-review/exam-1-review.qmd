@@ -770,7 +770,7 @@ The pipeline below produces a data frame with a fewer number of rows than `duke_
 ```{r}
 #| label: duke-forest-pipeline-blanks
 #| eval: false
-
+#| echo: true
 duke_forest |>
   filter(parking == "Garage" _(1)_ year_built _(2)_ 1950) |>
   select(parking, year_built, price, area) |>
@@ -780,7 +780,6 @@ duke_forest |>
 ```{r}
 #| label: duke-forest-pipeline
 #| echo: false
-
 duke_forest |>
   filter(parking == "Garage" & year_built < 1950) |>
   select(parking, year_built, price, area) |>
