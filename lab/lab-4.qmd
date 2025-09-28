@@ -81,7 +81,7 @@ Of the individuals that are between 18-44,
 
 - 78 individuals said they thought the changes were Very positive,
 - 176 individuals said they thought the changes were Somewhat positive,
-- 162 individuals said they thought the changes were Neither positive nor negative,
+- 162 individuals said they thought the changes were Neutral,
 - 50 individuals said they thought the changes were Somewhat negative,
 - 36 individuals said they thought the changes were Very negative.
 
@@ -89,7 +89,7 @@ Of the individuals that are 45+,
 
 - 41 individuals said they thought the changes were Very positive,
 - 121 individuals said they thought the changes were Somewhat positive,
-- 186 individuals said they thought the changes were Neither positive nor negative,
+- 186 individuals said they thought the changes were Neutral,
 - 146 individuals said they thought the changes were Somewhat negative,
 - 97 individuals said they thought the changes were Very negative.
 
@@ -132,9 +132,9 @@ For parts b-d below, use a single pipeline starting with `survey_counts`, calcul
 
 b.  Marginal proportions of age: Calculate the proportions of individuals who are 18-44 year olds and 45+ year-olds in this sample.
 
-c.  Marginal proportions of opinion: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure.
+c.  Marginal proportions of opinion: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neutral, Somewhat negative, Very negative, and Unsure.
 
-d.  Conditional proportions of opinion based on age: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure
+d.  Conditional proportions of opinion based on age: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neutral, Somewhat negative, Very negative, and Unsure
 
     -   among those who are 18-44 years old and
     -   among those who are 45+ years old.
