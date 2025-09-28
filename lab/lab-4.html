@@ -544,7 +544,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 4</h1>
-<p class="subtitle lead">TO DO: ADD TITLE</p>
+<p class="subtitle lead">Opinion on changes in Division I College Athletics</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -567,8 +567,7 @@ window.Quarto = {
 
 
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
-<p>In this lab you’ll</p>
-<p>TO DO: ADD A BRIEF DESCRIPTION OF WHAT THE LAB IS ABOUT.</p>
+<p>In this lab you’ll investigaete the relationship between age and opinion on the impact of the many changes (transfer portal, athlete name, image and likeness (NIL) compensation, conference realignments) taking place in Division I college athletics.</p>
 <p>Make sure to upload your completed lab to Gradescope <strong>by the end of your lab session</strong> and commit and push your final version to GitHub.</p>
 <section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <p>By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment.</p>
@@ -610,9 +609,9 @@ Click to expand if you need a refresher on assignment guidelines.
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The following question was asked to these 771 adults:</p>
+<p>YouGov, in collaboration with Elon University Poll and the Knight Commission on Intercollegiate Athletics, polled 1,500 US adults (aged 18 and older) between July 7-11, 2025.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The following question was asked to these 1,500 adults:</p>
 <blockquote class="blockquote">
-<p>Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?</p>
+<p>Overall, how would you describe the impact of the many changes (transfer portal, athlete name, image and likeness (NIL) compensation, conference realignments<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>) taking place in Division I college athletics?</p>
 </blockquote>
 <p>Responses were broken down into the following categories:</p>
 <table class="caption-top table">
@@ -623,16 +622,35 @@ Click to expand if you need a refresher on assignment guidelines.
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Age</td>
-<td style="text-align: left;">18-49; 50+</td>
+<td style="text-align: left;">18-44; 45+</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Opinion</td>
-<td style="text-align: left;">Remain Against The Law; Be Made Legal; Not Sure</td>
+<td style="text-align: left;">Very positive; Somewhat positive; Neither positive nor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">negative; Somewhat negative; Very negative; Unsure</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
-</section><section id="questions" class="level1"><h1>Questions</h1>
+<p>Of the 1,500 responses, 699 were between the ages of 18-44.</p>
+<p>Of the individuals that are between 18-44,</p>
+<ul>
+<li>78 individuals said they thought the changes were Very positive,</li>
+<li>176 individuals said they thought the changes were Somewhat positive,</li>
+<li>162 individuals said they thought the changes were Neither positive nor negative,</li>
+<li>50 individuals said they thought the changes were Somewhat negative,</li>
+<li>36 individuals said they thought the changes were Very negative.</li>
+</ul>
+<p>Of the individuals that are 45+,</p>
+<ul>
+<li>41 individuals said they thought the changes were Very positive,</li>
+<li>121 individuals said they thought the changes were Somewhat positive,</li>
+<li>186 individuals said they thought the changes were Neither positive nor negative,</li>
+<li>146 individuals said they thought the changes were Somewhat negative,</li>
+<li>97 individuals said they thought the changes were Very negative.</li>
+</ul></section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ol type="a">
 <li>Fill in the code below to create a two-way table that summarizes these data.</li>
@@ -652,19 +670,19 @@ Click to expand if you need a refresher on assignment guidelines.
 </div>
 <p>For parts b-d below, use a single pipeline starting with <code>survey_counts</code>, calculate the desired proportions, and make sure the result is an <strong>ungrouped</strong> data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
 <ol start="2" type="a">
-<li><p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.</p></li>
-<li><p>Calculate the proportions of those who think medical marijuana should remain against the law, should be made legal, and who are not sure.</p></li>
+<li><p>Marginal proportions of <code>age</code>: Calculate the proportions of individuals who are 18-44 year olds and 45+ year-olds in this sample.</p></li>
+<li><p>Marginal proportions of <code>opinion</code>: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure.</p></li>
 <li>
-<p>Calculate the proportions of individuals in this sample who think medical marijuana should remain against the law, should be made legal, and who are not sure</p>
+<p>Conditional proportions of <code>opinion</code> based on <code>age</code>: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure</p>
 <ul>
-<li><p>among those who are 18-49 years old and</p></li>
-<li><p>among those who are 50+ years old.</p></li>
+<li>among those who are 18-44 years old and</li>
+<li>among those who are 45+ years old.</li>
 </ul>
 </li>
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <ol type="a">
-<li><p>What type of plot would be appropriate to visualize the relationship between <code>age</code> and <code>opinion</code> on legalizing medical marijuana in North Carolina based on this survey’s results?</p></li>
-<li><p>Create the plot, using <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>, from part (a) that can be used to evaluate the relationship between <code>age</code> and <code>opinion</code> on legalizing medical marijuana in North Carolina based on this survey’s results.</p></li>
+<li><p>What type of plot would be appropriate to visualize the relationship between <code>age</code> and <code>opinion</code> on the impact of the many changes taking place in Division I college athletics?</p></li>
+<li><p>Create the plot, using <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>, from part (a) that can be used to evaluate the relationship between <code>age</code> and <code>opinion</code> on the impact of the many changes taking place in Division I college athletics?</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -676,11 +694,11 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Your visualization should display the proportions you calculated in Question 1(d).</p>
+<p>Your visualization should be displaying the proportions you calculated in Question 1(d).</p>
 </div>
 </div>
 <ol start="3" type="a">
-<li>Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on legalizing medical marijuana in North Carolina.</li>
+<li>Based on your calculations so far, as well as your visualization, write 1-2 sentences that describe the relationship, in this sample, between age and opinion on the impact of the many changes taking place in Division I college athletics?</li>
 </ol>
 <div class="render-commit-push">
 <p>Render, commit, and push one last time. Make sure that you commit and push all changed documents and that your Git pane is completely empty before proceeding.</p>
@@ -757,8 +775,9 @@ Checklist
 
 </section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
-<li id="fn1"><p>Full survey results can be found at <a href="https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1" class="uri">https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Full survey results can be found at <a href="https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1" class="uri">https://www.surveyusa.com/client/PollReport.aspx?g=c6995e17-3837-413e-ac98-3684e1c74dc1</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Full survey results can be found at <a href="https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf" class="uri">https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Full survey results can be found at <a href="https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf" class="uri">https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The transfer portal is an online database for college student-athletes who wish to transfer to a different school. Name, image, and likeness (NIL) compensation allows college athletes to earn money from third-party companies for using their “name, image, and likeness” through activities like endorsements, social media promotions, and public appearances. Conference realignments refer to the shifting of colleges and universities between athletic conferences, which can affect competition levels, revenue distribution, and media exposure.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
