@@ -144,7 +144,7 @@ d.  Conditional proportions of opinion based on age: Calculate the proportions o
 
 a.  What type of plot would be appropriate to visualize the relationship between age and opinion on the impact of the many changes taking place in Division I college athletics?
 
-b.  Create the plot, using `geom_col()`, from part (a) that can be used to evaluate the relationship between age and `opinion` on the impact of the many changes taking place in Division I college athletics?
+b.  Create the plot, using `geom_col()`, from part (a) that can be used to evaluate the relationship between age and `opinion` on the impact of the many changes taking place in Division I college athletics? Use the discrete viridis color scale for the fill aesthetic, `scale_fill_viridis_d()`. You cal review the documentation for this function and choose a Viridis color scale other than the default, but you must use one of these since the data are ordinal and an ordinal color scale is most appropriate. Make sure to include appropriate labels and a title (and also a subtitle if you wish).
 
 ::: callout-tip
 Your visualization should be displaying the proportions you calculated in Question 1(d).
