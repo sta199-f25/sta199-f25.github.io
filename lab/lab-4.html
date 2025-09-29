@@ -102,8 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><meta name="quarto:status" content="draft">
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -298,7 +297,7 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -544,7 +543,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Lab 4</h1>
-<p class="subtitle lead">TO DO: ADD TITLE</p>
+<p class="subtitle lead">Changes in college athletics</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -567,8 +566,7 @@ window.Quarto = {
 
 
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
-<p>In this lab you’ll</p>
-<p>TO DO: ADD A BRIEF DESCRIPTION OF WHAT THE LAB IS ABOUT.</p>
+<p>In this lab you’ll investigaete the relationship between age and opinion on the impact of the many changes (transfer portal, athlete name, image and likeness (NIL) compensation, conference realignments) taking place in Division I college athletics.</p>
 <p>Make sure to upload your completed lab to Gradescope <strong>by the end of your lab session</strong> and commit and push your final version to GitHub.</p>
 <section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <p>By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment.</p>
@@ -636,32 +634,59 @@ Click to expand if you need a refresher on assignment guidelines.
 </tbody>
 </table>
 <p>Of the 1,500 responses, 699 were between the ages of 18-44.</p>
-<p>Of the individuals that are between 18-44, - 78 individuals said they thought the changes were Very positive, - 176 individuals said they thought the changes were Somewhat positive, - 162 individuals said they thought the changes were Neither positive nor negative, - 50 individuals said they thought the changes were Somewhat negative, - 36 individuals said they thought the changes were Very negative.</p>
-<p>Of the individuals that are 45+, - 41 individuals said they thought the changes were Very positive, - 121 individuals said they thought the changes were Somewhat positive, - 186 individuals said they thought the changes were Neither positive nor negative, - 146 individuals said they thought the changes were Somewhat negative, - 97 individuals said they thought the changes were Very negative.</p>
-</section><section id="questions" class="level1"><h1>Questions</h1>
+<p>Of the individuals that are between 18-44,</p>
+<ul>
+<li>78 individuals said they thought the changes were Very positive,</li>
+<li>176 individuals said they thought the changes were Somewhat positive,</li>
+<li>162 individuals said they thought the changes were Neutral,</li>
+<li>50 individuals said they thought the changes were Somewhat negative,</li>
+<li>36 individuals said they thought the changes were Very negative.</li>
+</ul>
+<p>Of the individuals that are 45+,</p>
+<ul>
+<li>41 individuals said they thought the changes were Very positive,</li>
+<li>121 individuals said they thought the changes were Somewhat positive,</li>
+<li>186 individuals said they thought the changes were Neutral,</li>
+<li>146 individuals said they thought the changes were Somewhat negative,</li>
+<li>97 individuals said they thought the changes were Very negative.</li>
+</ul></section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ol type="a">
-<li>Fill in the code below to create a two-way table that summarizes these data.</li>
+<li>Fill in the code below to create a two-way table that summarizes these data by filling in the blanks below.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>survey_counts <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(),</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">opinion =</span> <span class="fu">c</span>(),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">c</span>()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>survey_counts <span class="sc">|&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ___,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> ___</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>survey_counts <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>age,    <span class="sc">~</span>opinion,            <span class="sc">~</span>n,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18-44"</span>, <span class="st">"Very positive"</span>,     ___,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18-44"</span>, <span class="st">"Somewhat positive"</span>, ___,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18-44"</span>, <span class="st">"Neutral"</span>,           ___,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18-44"</span>, <span class="st">"Somewhat negative"</span>, ___,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18-44"</span>, <span class="st">"Very negative"</span>,     ___,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18-44"</span>, <span class="st">"Unsure"</span>,            ___,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"45+"</span>,   <span class="st">"Very positive"</span>,     ___,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"45+"</span>,   <span class="st">"Somewhat positive"</span>, ___,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"45+"</span>,   <span class="st">"Neutral"</span>,           ___,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"45+"</span>,   <span class="st">"Somewhat negative"</span>, ___,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"45+"</span>,   <span class="st">"Very negative"</span>,     ___,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"45+"</span>,   <span class="st">"Unsure"</span>,            ___,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">age     =</span> <span class="fu">fct_relevel</span>(age, ___),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">opinion =</span> <span class="fu">fct_relevel</span>(opinion, ___)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>survey_counts <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ___,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> ___</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For parts b-d below, use a single pipeline starting with <code>survey_counts</code>, calculate the desired proportions, and make sure the result is an <strong>ungrouped</strong> data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
 <ol start="2" type="a">
-<li><p>Marginal proportions of <code>age</code>: Calculate the proportions of individuals who are 18-44 year olds and 45+ year-olds in this sample.</p></li>
-<li><p>Marginal proportions of <code>opinion</code>: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure.</p></li>
+<li><p>Marginal proportions of age: Calculate the proportions of individuals who are 18-44 year olds and 45+ year-olds in this sample.</p></li>
+<li><p>Marginal proportions of opinion: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neutral, Somewhat negative, Very negative, and Unsure.</p></li>
 <li>
-<p>Conditional proportions of <code>opinion</code> based on <code>age</code>: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neither positive nor negative, Somewhat negative, Very negative, and Unsure</p>
+<p>Conditional proportions of opinion based on age: Calculate the proportions of individuals who are Very positive, Somewhat positive, Neutral, Somewhat negative, Very negative, and Unsure</p>
 <ul>
 <li>among those who are 18-44 years old and</li>
 <li>among those who are 45+ years old.</li>
@@ -669,8 +694,8 @@ Click to expand if you need a refresher on assignment guidelines.
 </li>
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <ol type="a">
-<li><p>What type of plot would be appropriate to visualize the relationship between <code>age</code> and <code>opinion</code> on the impact of the many changes taking place in Division I college athletics?</p></li>
-<li><p>Create the plot, using <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>, from part (a) that can be used to evaluate the relationship between <code>age</code> and <code>opinion</code> on the impact of the many changes taking place in Division I college athletics?</p></li>
+<li><p>What type of plot would be appropriate to visualize the relationship between age and opinion on the impact of the many changes taking place in Division I college athletics?</p></li>
+<li><p>Create the plot, using <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>, from part (a) that can be used to evaluate the relationship between age and <code>opinion</code> on the impact of the many changes taking place in Division I college athletics? Use the discrete viridis color scale for the fill aesthetic, <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d()</a></code>. You cal review the documentation for this function and choose a Viridis color scale other than the default, but you must use one of these since the data are ordinal and an ordinal color scale is most appropriate. Make sure to include appropriate labels and a title (and also a subtitle if you wish).</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -763,7 +788,7 @@ Checklist
 
 </section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
-<li id="fn1"><p>Full survey results can be found at <a href="https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf" class="uri">https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Remember, haikus not novellas when writing code!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Full survey results can be found at <a href="https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf" class="uri">https://eloncdn.blob.core.windows.net/eu3/sites/819/2025/07/Elon-Knight-Commission-survey-TOPLINE.pdf</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>The transfer portal is an online database for college student-athletes who wish to transfer to a different school. Name, image, and likeness (NIL) compensation allows college athletes to earn money from third-party companies for using their “name, image, and likeness” through activities like endorsements, social media promotions, and public appearances. Conference realignments refer to the shifting of colleges and universities between athletic conferences, which can affect competition levels, revenue distribution, and media exposure.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
