@@ -115,7 +115,7 @@ survey_counts <- tribble(
   "45+",   "Neutral",           ___,
   "45+",   "Somewhat negative", ___,
   "45+",   "Very negative",     ___,
-  "45+",   "Unsure",            ___,
+  "45+",   "Unsure",            ___
 ) |>
   mutate(
     age     = fct_relevel(age, ___),
