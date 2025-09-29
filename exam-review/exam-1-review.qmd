@@ -142,6 +142,7 @@ Suppose your teammate wrote the following code as part of their analysis of the 
 ```{r}
 #| label: blizzard-summarize
 #| results: false
+#| echo: true
 blizzard_salary |>
   group_by(salary_type) |>
   summarize(
@@ -532,7 +533,7 @@ Which of the following plots is the result of the following code?
 ```{r}
 #| label: penguins-species-island-bar-code
 #| fig-show: hide
-
+#| echo: true
 ggplot(penguins, aes(x = island, fill = species)) + 
   geom_bar()
 ```
@@ -709,7 +710,7 @@ You join the two datasets with the following:
 ```{r}
 #| label: join-code
 #| results: hide
-
+#| echo: true
 population |>
   left_join(continents, by = join_by(country == entity))
 ```
@@ -883,7 +884,7 @@ The following code calculates the standard deviations of average season ratings 
 
 ```{r}
 #| results: hide
-
+#| echo: true
 lo_titles <- c("Law & Order", "Law & Order: Criminal Intent", "Law & Order: SVU")
 
 law_and_order |>
@@ -1094,6 +1095,7 @@ e.  Logical
 The code below summarizes the data in a certain way.
 
 ```{r}
+#| echo: true
 movies |>
   summarize(sum(release_country == "United States"))
 ```
