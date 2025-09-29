@@ -982,7 +982,7 @@ The name of the data frame used for this analysis is `movies`, and it contains t
 \setcounter{table}{0}
 
 | Variable          | Description                                                             |
-|-----------------------|-------------------------------------------------|
+|-------------------|-------------------------------------------------------------------------|
 | `name`            | name of the movie                                                       |
 | `rating`          | rating of the movie (R, PG, etc.)                                       |
 | `genre`           | main genre of the movie.                                                |
