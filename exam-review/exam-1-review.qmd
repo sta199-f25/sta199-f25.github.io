@@ -1162,6 +1162,7 @@ e.  Filter out all moves in genres other than Comedy, Drama, Action, and Horror 
 Which of the following is [**TRUE**]{.underline} about the code and its result? **Select all that are true.**
 
 ```{r}
+#| echo: true
 movies |>
   count(rating, genre) |>
   pivot_wider(names_from = genre, values_from = n, values_fill = 0)
