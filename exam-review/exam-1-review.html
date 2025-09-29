@@ -658,6 +658,14 @@ Figure&nbsp;1: Distribution of annual salaries of Blizzard employees
 <div style="page-break-after: always;"></div>
 </section><section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
 <p>Suppose your teammate wrote the following code as part of their analysis of the data.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">blizzard_salary</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">salary_type</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span></span>
+<span>    mean_annual_salary <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">annual_salary</span><span class="op">)</span>,</span>
+<span>    median_annual_salary <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">annual_salary</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>They then printed out the results shown below. Unfortunately one of the numbers got erased from the printout. It’s indicated with <code>_____</code> below.</p>
 <pre><code># A tibble: 2 × 3
   salary_type mean_annual_salary median_annual_salary
@@ -720,8 +728,8 @@ Figure&nbsp;2: Distribution of performance rating
 </div>
 <p>You made your bar plot without transforming the data in any way, while your friend did first transform the data with code like the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="ot">&lt;-</span> blizzard_salary <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_</span>(<span class="dv">1</span>)<span class="fu">_</span>(<span class="at">performance_rating =</span> <span class="fu">fct_relevel</span>(performance_rating, <span class="fu">_</span>(<span class="dv">2</span>)_))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="ot">&lt;-</span> blizzard_salary <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_</span>(<span class="dv">1</span>)<span class="fu">_</span>(<span class="at">performance_rating =</span> <span class="fu">fct_relevel</span>(performance_rating, <span class="fu">_</span>(<span class="dv">2</span>)_))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Question 6:</strong> What goes in the blank (1)?</p>
 <ol type="a">
@@ -796,9 +804,9 @@ Figure&nbsp;3: Distribution of salary type by performance rating
 </div>
 <p>The pipeline below produces a data frame with a fewer number of rows than <code>blizzard_salary</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(salary_type <span class="fu">_</span>(<span class="dv">1</span>)_ <span class="st">"Hourly"</span> <span class="fu">_</span>(<span class="dv">2</span>)_ performance_rating <span class="sc">==</span> <span class="st">"Poor"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_</span>(<span class="dv">3</span>)<span class="fu">_</span>(annual_salary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(salary_type <span class="fu">_</span>(<span class="dv">1</span>)_ <span class="st">"Hourly"</span> <span class="fu">_</span>(<span class="dv">2</span>)_ performance_rating <span class="sc">==</span> <span class="st">"Poor"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_</span>(<span class="dv">3</span>)<span class="fu">_</span>(annual_salary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -872,12 +880,12 @@ Figure&nbsp;3: Distribution of salary type by performance rating
 <li><p>The interpretation is causal – we don’t know if the cause of the high percent increase is higher annual salary based on observational data. The causal direction might be the other way around, or there may be other factors contributing to the apparent relationship.</p></li>
 </ol></section><section id="question-14" class="level3"><h3 class="anchored" data-anchor-id="question-14">Question 14</h3>
 <p>Below is some code and its output.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># label=plot blizzard</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(blizzard_salary,<span class="fu">aes</span>(<span class="at">x=</span>performance_rating,<span class="at">y=</span>percent_incr))<span class="sc">+</span><span class="fu">geom_boxplot</span>()</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Performance rating"</span>, <span class="at">y =</span> <span class="st">"Percent increase"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># label=plot blizzard</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(blizzard_salary,<span class="fu">aes</span>(<span class="at">x=</span>performance_rating,<span class="at">y=</span>percent_incr))<span class="sc">+</span><span class="fu">geom_boxplot</span>()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Performance rating"</span>, <span class="at">y =</span> <span class="st">"Percent increase"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 39 rows containing non-finite outside the scale range
@@ -925,23 +933,23 @@ attr(,"class")
 <p>The <code>penguins</code> data set includes measurements for penguin species, including: flipper length, body mass, bill dimensions, and sex. The following table summarizes information on which species of penguins (Adelie, Gentoo, and Chinstrap) live on which islands (Biscoe, Dream, or Torgersen).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="pvihkdmphr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pvihkdmphr table {
+<div id="jzujcgrogp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jzujcgrogp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pvihkdmphr thead, #pvihkdmphr tbody, #pvihkdmphr tfoot, #pvihkdmphr tr, #pvihkdmphr td, #pvihkdmphr th {
+#jzujcgrogp thead, #jzujcgrogp tbody, #jzujcgrogp tfoot, #jzujcgrogp tr, #jzujcgrogp td, #jzujcgrogp th {
   border-style: none;
 }
 
-#pvihkdmphr p {
+#jzujcgrogp p {
   margin: 0;
   padding: 0;
 }
 
-#pvihkdmphr .gt_table {
+#jzujcgrogp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -967,12 +975,12 @@ attr(,"class")
   border-left-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_caption {
+#jzujcgrogp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pvihkdmphr .gt_title {
+#jzujcgrogp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -984,7 +992,7 @@ attr(,"class")
   border-bottom-width: 0;
 }
 
-#pvihkdmphr .gt_subtitle {
+#jzujcgrogp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -996,7 +1004,7 @@ attr(,"class")
   border-top-width: 0;
 }
 
-#pvihkdmphr .gt_heading {
+#jzujcgrogp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1008,13 +1016,13 @@ attr(,"class")
   border-right-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_bottom_border {
+#jzujcgrogp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_col_headings {
+#jzujcgrogp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1029,7 +1037,7 @@ attr(,"class")
   border-right-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_col_heading {
+#jzujcgrogp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1049,7 +1057,7 @@ attr(,"class")
   overflow-x: hidden;
 }
 
-#pvihkdmphr .gt_column_spanner_outer {
+#jzujcgrogp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1061,15 +1069,15 @@ attr(,"class")
   padding-right: 4px;
 }
 
-#pvihkdmphr .gt_column_spanner_outer:first-child {
+#jzujcgrogp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pvihkdmphr .gt_column_spanner_outer:last-child {
+#jzujcgrogp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pvihkdmphr .gt_column_spanner {
+#jzujcgrogp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1081,11 +1089,11 @@ attr(,"class")
   width: 100%;
 }
 
-#pvihkdmphr .gt_spanner_row {
+#jzujcgrogp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pvihkdmphr .gt_group_heading {
+#jzujcgrogp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1111,7 +1119,7 @@ attr(,"class")
   text-align: left;
 }
 
-#pvihkdmphr .gt_empty_group_heading {
+#jzujcgrogp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1126,15 +1134,15 @@ attr(,"class")
   vertical-align: middle;
 }
 
-#pvihkdmphr .gt_from_md > :first-child {
+#jzujcgrogp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pvihkdmphr .gt_from_md > :last-child {
+#jzujcgrogp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pvihkdmphr .gt_row {
+#jzujcgrogp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1153,7 +1161,7 @@ attr(,"class")
   overflow-x: hidden;
 }
 
-#pvihkdmphr .gt_stub {
+#jzujcgrogp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1166,7 +1174,7 @@ attr(,"class")
   padding-right: 5px;
 }
 
-#pvihkdmphr .gt_stub_row_group {
+#jzujcgrogp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1180,15 +1188,15 @@ attr(,"class")
   vertical-align: top;
 }
 
-#pvihkdmphr .gt_row_group_first td {
+#jzujcgrogp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pvihkdmphr .gt_row_group_first th {
+#jzujcgrogp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pvihkdmphr .gt_summary_row {
+#jzujcgrogp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1198,16 +1206,16 @@ attr(,"class")
   padding-right: 5px;
 }
 
-#pvihkdmphr .gt_first_summary_row {
+#jzujcgrogp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_first_summary_row.thick {
+#jzujcgrogp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pvihkdmphr .gt_last_summary_row {
+#jzujcgrogp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1217,7 +1225,7 @@ attr(,"class")
   border-bottom-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_grand_summary_row {
+#jzujcgrogp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1227,7 +1235,7 @@ attr(,"class")
   padding-right: 5px;
 }
 
-#pvihkdmphr .gt_first_grand_summary_row {
+#jzujcgrogp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1237,7 +1245,7 @@ attr(,"class")
   border-top-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_last_grand_summary_row_top {
+#jzujcgrogp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1247,11 +1255,11 @@ attr(,"class")
   border-bottom-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_striped {
+#jzujcgrogp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pvihkdmphr .gt_table_body {
+#jzujcgrogp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1260,7 +1268,7 @@ attr(,"class")
   border-bottom-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_footnotes {
+#jzujcgrogp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1274,7 +1282,7 @@ attr(,"class")
   border-right-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_footnote {
+#jzujcgrogp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1283,7 +1291,7 @@ attr(,"class")
   padding-right: 5px;
 }
 
-#pvihkdmphr .gt_sourcenotes {
+#jzujcgrogp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1297,7 +1305,7 @@ attr(,"class")
   border-right-color: #D3D3D3;
 }
 
-#pvihkdmphr .gt_sourcenote {
+#jzujcgrogp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1305,72 +1313,72 @@ attr(,"class")
   padding-right: 5px;
 }
 
-#pvihkdmphr .gt_left {
+#jzujcgrogp .gt_left {
   text-align: left;
 }
 
-#pvihkdmphr .gt_center {
+#jzujcgrogp .gt_center {
   text-align: center;
 }
 
-#pvihkdmphr .gt_right {
+#jzujcgrogp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pvihkdmphr .gt_font_normal {
+#jzujcgrogp .gt_font_normal {
   font-weight: normal;
 }
 
-#pvihkdmphr .gt_font_bold {
+#jzujcgrogp .gt_font_bold {
   font-weight: bold;
 }
 
-#pvihkdmphr .gt_font_italic {
+#jzujcgrogp .gt_font_italic {
   font-style: italic;
 }
 
-#pvihkdmphr .gt_super {
+#jzujcgrogp .gt_super {
   font-size: 65%;
 }
 
-#pvihkdmphr .gt_footnote_marks {
+#jzujcgrogp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pvihkdmphr .gt_asterisk {
+#jzujcgrogp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pvihkdmphr .gt_indent_1 {
+#jzujcgrogp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pvihkdmphr .gt_indent_2 {
+#jzujcgrogp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pvihkdmphr .gt_indent_3 {
+#jzujcgrogp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pvihkdmphr .gt_indent_4 {
+#jzujcgrogp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pvihkdmphr .gt_indent_5 {
+#jzujcgrogp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pvihkdmphr .katex-display {
+#jzujcgrogp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pvihkdmphr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jzujcgrogp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1418,6 +1426,10 @@ attr(,"class")
 </div>
 <section id="question-16" class="level3"><h3 class="anchored" data-anchor-id="question-16">Question 16</h3>
 <p>Which of the following plots is the result of the following code?</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">island</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -1494,31 +1506,31 @@ attr(,"class")
 </div>
 <p>a.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">arr_delay</span>, <span class="va">carrier</span>, <span class="va">year</span>, <span class="va">month</span>, <span class="va">day</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">arr_delay</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>b.</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">arr_delay</span>, <span class="va">carrier</span>, <span class="va">year</span>, <span class="va">month</span>, <span class="va">day</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">arr_delay</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>c.</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">arr_delay</span>, <span class="va">carrier</span>, <span class="va">year</span>, <span class="va">month</span>, <span class="va">day</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">year</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>d.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">arr_delay</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">arr_delay</span>, <span class="va">carrier</span>, <span class="va">year</span>, <span class="va">month</span>, <span class="va">day</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>e.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">arr_delay</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">day</span>, <span class="va">month</span>, <span class="va">year</span>, <span class="va">arr_delay</span>, <span class="va">carrier</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1551,6 +1563,10 @@ attr(,"class")
 </div>
 </div>
 <p>You join the two datasets with the following:</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">population</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">continents</span>, by <span class="op">=</span> <span class="fu">join_by</span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="va">entity</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="question-19" class="level3"><h3 class="anchored" data-anchor-id="question-19">Question 19</h3>
 <p>How many rows will the resulting data frame have?</p>
 <ol type="a">
@@ -2064,10 +2080,10 @@ $ url        &lt;chr&gt; "https://www.zillow.com/homedetails/1-Learned-Pl-Durham
 </div>
 <p>The pipeline below produces a data frame with a fewer number of rows than <code>duke_forest</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>duke_forest <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(parking <span class="sc">==</span> <span class="st">"Garage"</span> <span class="fu">_</span>(<span class="dv">1</span>)_ year_built <span class="fu">_</span>(<span class="dv">2</span>)_ <span class="dv">1950</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(parking, year_built, price, area) <span class="sc">|&gt;</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_</span>(<span class="dv">3</span>)<span class="fu">_</span>(<span class="at">price_per_sqfeet =</span> price <span class="sc">/</span> area)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(parking <span class="sc">==</span> <span class="st">"Garage"</span> <span class="fu">_</span>(<span class="dv">1</span>)_ year_built <span class="fu">_</span>(<span class="dv">2</span>)_ <span class="dv">1950</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(parking, year_built, price, area) <span class="sc">|&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_</span>(<span class="dv">3</span>)<span class="fu">_</span>(<span class="at">price_per_sqfeet =</span> price <span class="sc">/</span> area)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -2149,6 +2165,14 @@ $ url        &lt;chr&gt; "https://www.zillow.com/homedetails/1-Learned-Pl-Durham
 </div>
 </section><section id="question-24" class="level3"><h3 class="anchored" data-anchor-id="question-24">Question 24</h3>
 <p>The following code calculates the standard deviations of average season ratings of the five Law &amp; Order series. Unfortunately, the output is partially erased and replaced with blanks.</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lo_titles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Law &amp; Order"</span>, <span class="st">"Law &amp; Order: Criminal Intent"</span>, <span class="st">"Law &amp; Order: SVU"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">law_and_order</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">title</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">lo_titles</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">title</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span>mean_av_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">av_rating</span><span class="op">)</span>, sd_av_rating <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">av_rating</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <pre><code># A tibble: 5 × 3
   title                         mean_av_rating sd_av_rating
   &lt;chr&gt;                                  &lt;dbl&gt;        &lt;dbl&gt;
@@ -2380,6 +2404,8 @@ Table&nbsp;2
 </section><section id="question-27" class="level3"><h3 class="anchored" data-anchor-id="question-27">Question 27</h3>
 <p>The code below summarizes the data in a certain way.</p>
 <div class="cell">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">movies</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">release_country</span> <span class="op">==</span> <span class="st">"United States"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   `sum(release_country == "United States")`
