@@ -37,12 +37,9 @@ todays_ae <- "ae-08-age-gaps-import"
 
 ::: wooclap
 
-Question
+Why is this a bad visualization for the data from lab yesterday?
 
-::: wooclap-choices
-- Options...
-- Options...
-:::
+![](images/11/age-opinion.png)
 
 :::
 
@@ -122,6 +119,40 @@ enrollments <- tribble(
 :::
 
 ::: 
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+What goes in the blank to get to find the courses that all `students` are enrolled in?
+
+```{r}
+#| eval: false
+students |>
+  [BLANK](enrollments, by = join_by(student_id == sid))
+```
+
+::: wooclap-options
+-  `anti_join`
+-  `full_join`
+-  `inner_join`
+-  `left_join`
+-  `right_join`
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
 
 ## What type of join?
 
