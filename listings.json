@@ -21,15 +21,6 @@
     ]
   },
   {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/final-exam-review.html"
-    ]
-  },
-  {
     "listing": "/lab.html",
     "items": [
       "/lab/lab-0.html",
@@ -37,6 +28,15 @@
       "/lab/lab-2.html",
       "/lab/lab-3.html",
       "/lab/lab-4.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/final-exam-review.html"
     ]
   },
   {
