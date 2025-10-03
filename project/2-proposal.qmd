@@ -109,7 +109,7 @@ For each data set:
 
 ## Research question
 
-Your research question should contain at least three variables, and should be a mix of categorical and quantitative variables.
+Your research question should contain at least three variables, and should be a mix of categorical and numerical variables.
 When writing a research question, please think about the following:
 
 -   What is your target population?
@@ -129,7 +129,7 @@ For each data set, include the following:
 
 -   Identify the types of variables in your research question.
     Categorical?
-    Quantitative?
+    Numerical?
 
 ## Glimpse of data
 
