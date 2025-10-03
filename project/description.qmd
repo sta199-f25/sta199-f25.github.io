@@ -21,7 +21,7 @@ Issues pertaining to the reliability and validity of your data, and appropriaten
 
 The project is very open ended.
 You should create compelling visualization(s) and summary table(s) of the data in R.
-You should employ methods we learned in the first half of the course, up til and including Week 8 (i.i.e., excluding modeling and inference).
+You should employ methods we learned in the first half of the course, up til and including Week 8 (i.e., excluding modeling and inference).
 There is no limit on what tools or packages you may use but sticking to packages we learned in the course is required.
 You do not need to visualize or summarize all of the data at once.
 A single high-quality visualization will receive a much higher grade than a large number of poor-quality visualizations.
