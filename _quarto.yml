@@ -83,18 +83,20 @@ website:
         contents:
           - href: project/description.qmd
             text: Description
-        #   - href: project/1-working-collaboratively.qmd
-        #     text: Milestone 1
-        #   - href: project/2-proposal.qmd
-        #     text: Milestone 2
-        #   - href: project/3-improvement-progress.qmd
-        #     text: Milestone 3
-        #   - href: project/4-peer-review.qmd
-        #     text: Milestone 4
-        #   - href: project/5-writeup-presentation.qmd
-        #     text: Milestone 5            
-        #   - href: project/tips-resources.qmd
-        #     text: Tips + resources
+          - href: project/1-working-collaboratively.qmd
+            text: Milestone 1
+          - href: project/2-proposal.qmd
+            text: Milestone 2
+          - href: project/3-improvement-progress-I.qmd
+            text: Milestone 3
+          - href: project/4-peer-review.qmd
+            text: Milestone 4
+          - href: project/5-improvement-progress-II.qmd
+            text: Milestone 5
+          - href: project/6-writeup-presentation.qmd
+            text: Milestone 6            
+          - href: project/tips-resources.qmd
+            text: Tips + resources
       - lab.qmd
       - hw.qmd
       - ae.qmd
