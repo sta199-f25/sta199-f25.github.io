@@ -112,6 +112,7 @@ format:
     mainfont: Atkinson Hyperlegible
     highlight-style: a11y-light
     linkcolor: "#005871"
+    lightbox: true
 
 theme:
   light: [cosmo, style/sta199.scss]

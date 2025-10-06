@@ -36,7 +36,6 @@ The goals of this milestone are as follows:
 -   Pick a team name
 -   Collaborate on GitHub with your teammates and resolve merge conflicts when they inevitably occur
 -   Discuss and write up your team contract
--   Start thinking about your project proposal
 
 # Team name
 
@@ -71,6 +70,15 @@ Everyone should have the repo cloned and know which role number(s) they are.
 -   Go to `about.qmd` in your project repo. Change the `[team name]` to your actual team name.
 -   Render the project by clicking on Render in the Build tab, commit (all changed files), and push.
 
+::: {#fig-role-1 layout-ncol=2}
+
+![](images/role-1-edit.png){ width="400px" }
+
+![](images/role-1-commit.png){ width="400px" }
+
+Role 1 changes the team name to "Team Dialectic Blue" and renders the project, then commits and pushes the changes.
+:::
+
 ::: callout-important
 Make sure the previous role has finished before moving on to the next step.
 :::
@@ -78,21 +86,67 @@ Make sure the previous role has finished before moving on to the next step.
 ### Role 2
 
 -   Change the team name to some other word.
+    Then, render the project by clicking on Render in the Build tab and commit all changed files.
 
--   Render the project by clicking on Render in the Build tab, commit (all changed files), and push.
+::: {#fig-role-2-1 layout-ncol=2}
+
+![](images/role-2-edit.png){ width="400px" }
+
+![](images/role-2-commit.png){ width="400px" }
+
+Role 2 changes the team name to "Team Royal Blue" and renders the project, then commits the changes.
+:::
+
+-   Now try to push your changes.
     You should get an error.
+
+::: {#fig-role-2-2 layout-ncol=2}
+
+![](images/role-2-push-error.png){ width="400px" }
+
+Role 2 tries to push the changes, but gets an error because Role 1 has already pushed changes to the remote repo.
+:::
 
 -   Pull.
     Take a look at the document (`about.qmd`) with the merge conflict.
 
--   Clear the merge conflict by editing the document to choose the correct/preferred change.
+::: {#fig-role-2-3 layout-ncol=2}
 
--   Render the project by clicking on Render in the Build tab.
+![](images/role-2-pull.png){ width="400px" }
+
+![](images/role-2-merge-conflict.png){ width="400px" }
+
+Role 2 tries to pulls from the remote repo as the error instructed and views the merge conflict.
+:::
+
+-   Resolve the merge conflict by editing the document to choose the correct/preferred change.
+    Then, render the project by clicking on Render in the Build tab.
+
+::: {#fig-role-2-4}
+
+![](images/role-2-resolve-merge-conflict.png){ width="400px" }
+
+Role resolves the merge conflict by editing the `about.qmd` document to remove the merge conflict decorators (`<<<<<< HEAD`, `======`, and `>>>>>>> 97e290f39f197467b5563ea8f81187b760c95aa2`, the commit hash). Since the team name is "Team Royal Blue", Role 2 deletes Role 1's edit and keeps their own. Then, Role 2 renders the project.
+::: 
 
 -   **Click the Stage checkbox** for all files in your Git tab.
     Make sure they all have check marks, not filled-in boxes.
 
+::: {#fig-role-2-4}
+
+![](images/role-2-commit-after-resolve-merge-conflict.png){ width="400px" }
+
+Role 2 stages all changed files and commits them with a message indicating that they resolved the merge conflict.
+:::
+
 -   Commit and push.
+
+::: {#fig-role-2-5}
+
+![](images/role-2-push.png){ width="400px" }
+
+Role 2 successfully pushes their changes after resolving the merge conflict.
+:::
 
 ::: callout-important
 Make sure the previous role has finished before moving on to the next step.
