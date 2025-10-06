@@ -146,7 +146,7 @@ For each data set, add a data dictionary to the `README.md` file in the `data` f
 
 Update your `_quarto.yml` file, specifically:
 
-```{.yaml filename="_quarto.yml" code-line-numbers="7-12,15-16,31-32"}
+```{.yaml filename="_quarto.yml"}
 project:
   type: website
   output-dir: docs
