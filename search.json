@@ -3257,6 +3257,17 @@
     ]
   },
   {
+    "objectID": "project/2-proposal.html#quarto.yml-file",
+    "href": "project/2-proposal.html#quarto.yml-file",
+    "title": "Proposal",
+    "section": "_quarto.yml file",
+    "text": "_quarto.yml file\nUpdate your _quarto.yml file, specifically:\n\n\n_quarto.yml\n\nproject:\n  type: website\n  output-dir: docs\n  resources:\n    - presentation.pdf\n\nauthor: # Replace with team member names\n  - name: Name of team member 1 \n  - name: Name of team member 2\n  - name: Name of team member 3\n  - name: Name of team member 4\n  - name: ...\n\nwebsite:\n  # Replace with team name\n  title: Team name \n  navbar:\n    left:\n      - text: Home\n        href: index.qmd\n      - text: Presentation\n        href: presentation.pdf  \n      - text: Proposal\n        href: proposal.qmd\n      - text: About\n        href: about.qmd\n      - text: Contract\n        href: contract.qmd\n    right:\n      - icon: github\n        # Replace with link to GitHub repo\n        href: \"https://github.com/sta199-f25/\" \n\nformat:\n  html:\n    theme: \n      light: flatly\n      dark: darkly",
+    "crumbs": [
+      "Project",
+      "Milestone 2"
+    ]
+  },
+  {
     "objectID": "project/1-working-collaboratively-preread.html",
     "href": "project/1-working-collaboratively-preread.html",
     "title": "Pre-read: Merge conflicts",
