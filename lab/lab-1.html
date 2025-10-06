@@ -76,7 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -694,12 +697,12 @@ Warning
 <section id="refresher-r-and-r-studio" class="level4"><h4 class="anchored" data-anchor-id="refresher-r-and-r-studio">Refresher: R and R Studio</h4>
 <p>Below are the components of the RStudio IDE.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-1/rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="RStudio IDE" width="700"></p>
+<figure class="figure"><p><a href="images/lab-1/rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/lab-1/rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="RStudio IDE" width="700"></a></p>
 </figure>
 </div>
 <p>Below are the components of a Quarto (.qmd) file.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/lab-1/quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Quarto document" width="700"></p>
+<figure class="figure"><p><a href="images/lab-1/quarto.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/lab-1/quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Quarto document" width="700"></a></p>
 </figure>
 </div>
 </section></section><section id="step-2-clone-the-repo-start-new-rstudio-project" class="level3"><h3 class="anchored" data-anchor-id="step-2-clone-the-repo-start-new-rstudio-project">Step 2: Clone the repo &amp; start new RStudio project</h3>
@@ -1409,7 +1412,38 @@ Checklist
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
-</footer>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>
