@@ -142,6 +142,51 @@ For each data set:
 
 For each data set, add a data dictionary to the `README.md` file in the `data` folder describing each variable.
 
+## `_quarto.yml` file
+
+Update your `_quarto.yml` file, specifically:
+
+```{.yaml filename="_quarto.yml" code-line-numbers="7-12,15-16,31-32"}
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - presentation.pdf
+
+author: # Replace with team member names
+  - name: Name of team member 1 
+  - name: Name of team member 2
+  - name: Name of team member 3
+  - name: Name of team member 4
+  - name: ...
+
+website:
+  # Replace with team name
+  title: Team name 
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Presentation
+        href: presentation.pdf  
+      - text: Proposal
+        href: proposal.qmd
+      - text: About
+        href: about.qmd
+      - text: Contract
+        href: contract.qmd
+    right:
+      - icon: github
+        # Replace with link to GitHub repo
+        href: "https://github.com/sta199-f25/" 
+
+format:
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+```
+
 # Grading
 
 | Total                   | 10 pts                    |
