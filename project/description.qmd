@@ -31,7 +31,15 @@ All analyses must be done in RStudio, using R, and all components of the project
 
 You will work on the project with your lab teams.
 
-The four milestones for the final project are
+# Structure
+
+Your project is organized as a Quarto website, with a GitHub repository shared by all team members.
+
+![](images/quarto-project.png)
+
+# Milestones
+
+The six milestones for the final project are
 
 1.  Milestone 1 - Working collaboratively
 2.  Milestone 2 - Proposals, with two dataset ideas
@@ -45,13 +53,13 @@ Submission of these deliverables will happen on GitHub and feedback will be prov
 The collection of the documents in your GitHub repo will create a webpage for your project.
 To create the webpage go to the Build tab in RStudio, and click on Render Website.
 
-# Milestone 1 - Working collaboratively
+## Milestone 1 - Working collaboratively
 
 For the first milestone of your project you'll practice a collaborative Git workflow with your team members.
 Instructions are outlined in [Milestone 1: Working collaboratively](/project/1-working-collaboratively.html).
 Each team member taking part in the collaborative working activity will get 5 points towards their project.
 
-# Milestone 2 - Proposal {#project-proposal}
+## Milestone 2 - Proposal {#project-proposal}
 
 There are two main purposes of the project proposal:
 
@@ -60,11 +68,11 @@ There are two main purposes of the project proposal:
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 2: Proposal](/project/2-proposal.html).
 
-# Milestone 3 - Improvement + progress I: proposal to project {#improvement-progress-I}
+## Milestone 3 - Improvement + progress I: proposal to project {#improvement-progress-I}
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 3: Improvement + progress I: proposal to project](/project/3-improvement-progress-I.html).
 
-# Milestone 4 - Peer review {#peer-review}
+## Milestone 4 - Peer review {#peer-review}
 
 Critically reviewing others' work is a crucial part of the scientific process, and STA 199 is no exception.
 You will be assigned two teams to review.
@@ -72,24 +80,22 @@ This feedback is intended to help you create a high quality final project, as we
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 4: Peer review](/project/4-peer-review.html).
 
-# Milestone 5 - Improvement + progress II: project to polish {#improvement-progress-II}
+## Milestone 5 - Improvement + progress II: project to polish {#improvement-progress-II}
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 5: Improvement + progress II: project to polish](/project/3-improvement-progress-II.html).
 
-# Milestone 6 - Write-up and presentation
+## Milestone 6 - Write-up and presentation
 
 Instructions and grading criteria for this milestone are outlined in [Milestone 6: Write-up + presentation](/project/6-writeup-presentation.html).
 
-# Other
-
-## Reproducibility + organization {#reproducibility-organization}
+# Reproducibility + organization
 
 All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.
 
 Points for reproducibility + organization will be based on the reproducibility of the write-up and the organization of the project GitHub repo.
 The repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable.
 
-## Teamwork
+# Teamwork
 
 You will be asked to fill out a survey where you rate the contribution and teamwork of each team member by assigning a contribution percentage for each team member.
 Filling out the survey is a prerequisite for getting credit on the team member evaluation.
@@ -112,7 +118,7 @@ The grade breakdown is as follows:
 | **M5: Improvement + progress II**  | 5 pts   |
 | **M6: Write-up**                   | 30 pts  |
 | **M6: Slides + presentation**      | 25 pts  |
-| **M6: Reproducibility + organization** | 5 pts   |
+| **Reproducibility + organization** | 5 pts   |
 | **Teamwork**                       | 10 pts  |
 
 ## Grading summary
