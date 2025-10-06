@@ -173,6 +173,15 @@ Make sure the previous role has finished before moving on to the next step.
 Make sure the previous role has finished before moving on to the next step.
 :::
 
+### Role 5
+
+This role is optional, in case your team has 5 members.
+
+-   Pull all changes from the remote repo.
+-   Change the name of the second team member.
+-   Render the project by clicking on Render in the Build tab, commit, and push. You should not get an error because you pulled first.
+This models "good" collaborative behavior -- start with pulling before doing any work.
+
 ### Everyone
 
 Pull, and observe the changes in your project.
