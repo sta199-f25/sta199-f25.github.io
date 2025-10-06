@@ -47,6 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,7 +81,10 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Project description – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2025.">
+<meta property="og:image" content="https://sta199-f25.github.io/project/images/quarto-project.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="2012">
+<meta property="og:image:width" content="3248">
 </head>
 
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -510,17 +516,18 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#milestones" id="toc-milestones" class="nav-link" data-scroll-target="#milestones">Milestones</a>
+  <ul class="collapse">
   <li><a href="#milestone-1---working-collaboratively" id="toc-milestone-1---working-collaboratively" class="nav-link" data-scroll-target="#milestone-1---working-collaboratively">Milestone 1 - Working collaboratively</a></li>
   <li><a href="#project-proposal" id="toc-project-proposal" class="nav-link" data-scroll-target="#project-proposal">Milestone 2 - Proposal</a></li>
   <li><a href="#improvement-progress-I" id="toc-improvement-progress-I" class="nav-link" data-scroll-target="#improvement-progress-I">Milestone 3 - Improvement + progress I: proposal to project</a></li>
   <li><a href="#peer-review" id="toc-peer-review" class="nav-link" data-scroll-target="#peer-review">Milestone 4 - Peer review</a></li>
   <li><a href="#improvement-progress-II" id="toc-improvement-progress-II" class="nav-link" data-scroll-target="#improvement-progress-II">Milestone 5 - Improvement + progress II: project to polish</a></li>
   <li><a href="#milestone-6---write-up-and-presentation" id="toc-milestone-6---write-up-and-presentation" class="nav-link" data-scroll-target="#milestone-6---write-up-and-presentation">Milestone 6 - Write-up and presentation</a></li>
-  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a>
-  <ul class="collapse">
+  </ul></li>
   <li><a href="#reproducibility-organization" id="toc-reproducibility-organization" class="nav-link" data-scroll-target="#reproducibility-organization">Reproducibility + organization</a></li>
   <li><a href="#teamwork" id="toc-teamwork" class="nav-link" data-scroll-target="#teamwork">Teamwork</a></li>
-  </ul></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a>
   <ul class="collapse">
   <li><a href="#grading-summary" id="toc-grading-summary" class="nav-link" data-scroll-target="#grading-summary">Grading summary</a></li>
@@ -560,7 +567,15 @@ ul.task-list li input[type="checkbox"] {
 <p>The goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of exploratory data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results. Focus on methods that help you begin to answer your research questions. You do not have to apply every data science method we learned. Also, critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.</p>
 <p>The project is very open ended. You should create compelling visualization(s) and summary table(s) of the data in R. You should employ methods we learned in the first half of the course, up til and including Week 8 (i.e., excluding modeling and inference). There is no limit on what tools or packages you may use but sticking to packages we learned in the course is required. You do not need to visualize or summarize all of the data at once. A single high-quality visualization will receive a much higher grade than a large number of poor-quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R, and all components of the project <strong>must be reproducible</strong> (with the exception of the slide deck).</p>
 <p>You will work on the project with your lab teams.</p>
-<p>The four milestones for the final project are</p>
+</section>
+<section id="structure" class="level1">
+<h1>Structure</h1>
+<p>Your project is organized as a Quarto website, with a GitHub repository shared by all team members.</p>
+<p><a href="images/quarto-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/quarto-project.png" class="img-fluid"></a></p>
+</section>
+<section id="milestones" class="level1">
+<h1>Milestones</h1>
+<p>The six milestones for the final project are</p>
 <ol type="1">
 <li>Milestone 1 - Working collaboratively</li>
 <li>Milestone 2 - Proposals, with two dataset ideas</li>
@@ -570,13 +585,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Milestone 6 - Presentation with slides and a reproducible project write-up of your analysis, with a draft along the way</li>
 </ol>
 <p>You will not be submitting anything on Gradescope for the project. Submission of these deliverables will happen on GitHub and feedback will be provided as GitHub issues that you need to engage with and close. The collection of the documents in your GitHub repo will create a webpage for your project. To create the webpage go to the Build tab in RStudio, and click on Render Website.</p>
-</section>
-<section id="milestone-1---working-collaboratively" class="level1">
-<h1>Milestone 1 - Working collaboratively</h1>
+<section id="milestone-1---working-collaboratively" class="level2">
+<h2 class="anchored" data-anchor-id="milestone-1---working-collaboratively">Milestone 1 - Working collaboratively</h2>
 <p>For the first milestone of your project you’ll practice a collaborative Git workflow with your team members. Instructions are outlined in <a href="../project/1-working-collaboratively.html">Milestone 1: Working collaboratively</a>. Each team member taking part in the collaborative working activity will get 5 points towards their project.</p>
 </section>
-<section id="project-proposal" class="level1">
-<h1>Milestone 2 - Proposal</h1>
+<section id="project-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="project-proposal">Milestone 2 - Proposal</h2>
 <p>There are two main purposes of the project proposal:</p>
 <ul>
 <li>To help you think about the project early, so you can get a head start on finding data, reading relevant literature, thinking about the questions you wish to answer, etc.</li>
@@ -584,35 +598,33 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Instructions and grading criteria for this milestone are outlined in <a href="../project/2-proposal.html">Milestone 2: Proposal</a>.</p>
 </section>
-<section id="improvement-progress-I" class="level1">
-<h1>Milestone 3 - Improvement + progress I: proposal to project</h1>
+<section id="improvement-progress-I" class="level2">
+<h2 class="anchored" data-anchor-id="improvement-progress-I">Milestone 3 - Improvement + progress I: proposal to project</h2>
 <p>Instructions and grading criteria for this milestone are outlined in <a href="../project/3-improvement-progress-I.html">Milestone 3: Improvement + progress I: proposal to project</a>.</p>
 </section>
-<section id="peer-review" class="level1">
-<h1>Milestone 4 - Peer review</h1>
+<section id="peer-review" class="level2">
+<h2 class="anchored" data-anchor-id="peer-review">Milestone 4 - Peer review</h2>
 <p>Critically reviewing others’ work is a crucial part of the scientific process, and STA 199 is no exception. You will be assigned two teams to review. This feedback is intended to help you create a high quality final project, as well as give you experience reading and constructively critiquing the work of others.</p>
 <p>Instructions and grading criteria for this milestone are outlined in <a href="../project/4-peer-review.html">Milestone 4: Peer review</a>.</p>
 </section>
-<section id="improvement-progress-II" class="level1">
-<h1>Milestone 5 - Improvement + progress II: project to polish</h1>
+<section id="improvement-progress-II" class="level2">
+<h2 class="anchored" data-anchor-id="improvement-progress-II">Milestone 5 - Improvement + progress II: project to polish</h2>
 <p>Instructions and grading criteria for this milestone are outlined in <a href="../project/3-improvement-progress-II.html">Milestone 5: Improvement + progress II: project to polish</a>.</p>
 </section>
-<section id="milestone-6---write-up-and-presentation" class="level1">
-<h1>Milestone 6 - Write-up and presentation</h1>
+<section id="milestone-6---write-up-and-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="milestone-6---write-up-and-presentation">Milestone 6 - Write-up and presentation</h2>
 <p>Instructions and grading criteria for this milestone are outlined in <a href="../project/6-writeup-presentation.html">Milestone 6: Write-up + presentation</a>.</p>
 </section>
-<section id="other" class="level1">
-<h1>Other</h1>
-<section id="reproducibility-organization" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility-organization">Reproducibility + organization</h2>
+</section>
+<section id="reproducibility-organization" class="level1">
+<h1>Reproducibility + organization</h1>
 <p>All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.</p>
 <p>Points for reproducibility + organization will be based on the reproducibility of the write-up and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable.</p>
 </section>
-<section id="teamwork" class="level2">
-<h2 class="anchored" data-anchor-id="teamwork">Teamwork</h2>
+<section id="teamwork" class="level1">
+<h1>Teamwork</h1>
 <p>You will be asked to fill out a survey where you rate the contribution and teamwork of each team member by assigning a contribution percentage for each team member. Filling out the survey is a prerequisite for getting credit on the team member evaluation. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly and penalties may apply beyond the teamwork component of the grade.</p>
 <p>If you have concerns with the teamwork and/or contribution from any team members, please email me by the project presentation deadline. <strong>You only need to email me if you have concerns.</strong> Otherwise, I will assume everyone on the team equally contributed and will receive full credit for the teamwork portion of the grade.</p>
-</section>
 </section>
 <section id="grading" class="level1">
 <h1>Grading</h1>
@@ -654,7 +666,7 @@ ul.task-list li input[type="checkbox"] {
 <td>25 pts</td>
 </tr>
 <tr class="even">
-<td><strong>M6: Reproducibility + organization</strong></td>
+<td><strong>Reproducibility + organization</strong></td>
 <td>5 pts</td>
 </tr>
 <tr class="odd">
@@ -1128,6 +1140,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

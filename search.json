@@ -3268,29 +3268,73 @@
     "href": "project/description.html",
     "title": "Project description",
     "section": "",
-    "text": "TL;DR: Ask a question you’re curious about and answer it with a dataset of your choice. This is your project in a nutshell.\nMay be too long, but please do read\nThe project for this course will consist of an exploratory data analysis on a dataset of your own choosing. The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment. You can choose the data based on your teams’ interests or based on work in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this course (and beyond, if you like) and apply them to a novel dataset in a meaningful way.\nThe goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of exploratory data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results. Focus on methods that help you begin to answer your research questions. You do not have to apply every data science method we learned. Also, critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.\nThe project is very open ended. You should create compelling visualization(s) and summary table(s) of the data in R. You should employ methods we learned in the first half of the course, up til and including Week 8 (i.e., excluding modeling and inference). There is no limit on what tools or packages you may use but sticking to packages we learned in the course is required. You do not need to visualize or summarize all of the data at once. A single high-quality visualization will receive a much higher grade than a large number of poor-quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R, and all components of the project must be reproducible (with the exception of the slide deck).\nYou will work on the project with your lab teams.\nThe four milestones for the final project are\n\nMilestone 1 - Working collaboratively\nMilestone 2 - Proposals, with two dataset ideas\nMilestone 3 - Improvement + progress I: proposal to project\nMilestone 4 - Peer review, on another team’s project\nMilestone 5 - Improvement + progress II: project to polish\nMilestone 6 - Presentation with slides and a reproducible project write-up of your analysis, with a draft along the way\n\nYou will not be submitting anything on Gradescope for the project. Submission of these deliverables will happen on GitHub and feedback will be provided as GitHub issues that you need to engage with and close. The collection of the documents in your GitHub repo will create a webpage for your project. To create the webpage go to the Build tab in RStudio, and click on Render Website.",
+    "text": "TL;DR: Ask a question you’re curious about and answer it with a dataset of your choice. This is your project in a nutshell.\nMay be too long, but please do read\nThe project for this course will consist of an exploratory data analysis on a dataset of your own choosing. The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment. You can choose the data based on your teams’ interests or based on work in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this course (and beyond, if you like) and apply them to a novel dataset in a meaningful way.\nThe goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of exploratory data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results. Focus on methods that help you begin to answer your research questions. You do not have to apply every data science method we learned. Also, critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.\nThe project is very open ended. You should create compelling visualization(s) and summary table(s) of the data in R. You should employ methods we learned in the first half of the course, up til and including Week 8 (i.e., excluding modeling and inference). There is no limit on what tools or packages you may use but sticking to packages we learned in the course is required. You do not need to visualize or summarize all of the data at once. A single high-quality visualization will receive a much higher grade than a large number of poor-quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R, and all components of the project must be reproducible (with the exception of the slide deck).\nYou will work on the project with your lab teams.",
     "crumbs": [
       "Project",
       "Description"
     ]
   },
   {
-    "objectID": "project/description.html#reproducibility-organization",
-    "href": "project/description.html#reproducibility-organization",
+    "objectID": "project/description.html#milestone-1---working-collaboratively",
+    "href": "project/description.html#milestone-1---working-collaboratively",
     "title": "Project description",
-    "section": "Reproducibility + organization",
-    "text": "Reproducibility + organization\nAll written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.\nPoints for reproducibility + organization will be based on the reproducibility of the write-up and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable.",
+    "section": "Milestone 1 - Working collaboratively",
+    "text": "Milestone 1 - Working collaboratively\nFor the first milestone of your project you’ll practice a collaborative Git workflow with your team members. Instructions are outlined in Milestone 1: Working collaboratively. Each team member taking part in the collaborative working activity will get 5 points towards their project.",
     "crumbs": [
       "Project",
       "Description"
     ]
   },
   {
-    "objectID": "project/description.html#teamwork",
-    "href": "project/description.html#teamwork",
+    "objectID": "project/description.html#project-proposal",
+    "href": "project/description.html#project-proposal",
     "title": "Project description",
-    "section": "Teamwork",
-    "text": "Teamwork\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member by assigning a contribution percentage for each team member. Filling out the survey is a prerequisite for getting credit on the team member evaluation. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly and penalties may apply beyond the teamwork component of the grade.\nIf you have concerns with the teamwork and/or contribution from any team members, please email me by the project presentation deadline. You only need to email me if you have concerns. Otherwise, I will assume everyone on the team equally contributed and will receive full credit for the teamwork portion of the grade.",
+    "section": "Milestone 2 - Proposal",
+    "text": "Milestone 2 - Proposal\nThere are two main purposes of the project proposal:\n\nTo help you think about the project early, so you can get a head start on finding data, reading relevant literature, thinking about the questions you wish to answer, etc.\nTo ensure that the data you wish to analyze, methods you plan to use, and the scope of your analysis are feasible and will allow you to be successful for this project.\n\nInstructions and grading criteria for this milestone are outlined in Milestone 2: Proposal.",
+    "crumbs": [
+      "Project",
+      "Description"
+    ]
+  },
+  {
+    "objectID": "project/description.html#improvement-progress-I",
+    "href": "project/description.html#improvement-progress-I",
+    "title": "Project description",
+    "section": "Milestone 3 - Improvement + progress I: proposal to project",
+    "text": "Milestone 3 - Improvement + progress I: proposal to project\nInstructions and grading criteria for this milestone are outlined in Milestone 3: Improvement + progress I: proposal to project.",
+    "crumbs": [
+      "Project",
+      "Description"
+    ]
+  },
+  {
+    "objectID": "project/description.html#peer-review",
+    "href": "project/description.html#peer-review",
+    "title": "Project description",
+    "section": "Milestone 4 - Peer review",
+    "text": "Milestone 4 - Peer review\nCritically reviewing others’ work is a crucial part of the scientific process, and STA 199 is no exception. You will be assigned two teams to review. This feedback is intended to help you create a high quality final project, as well as give you experience reading and constructively critiquing the work of others.\nInstructions and grading criteria for this milestone are outlined in Milestone 4: Peer review.",
+    "crumbs": [
+      "Project",
+      "Description"
+    ]
+  },
+  {
+    "objectID": "project/description.html#improvement-progress-II",
+    "href": "project/description.html#improvement-progress-II",
+    "title": "Project description",
+    "section": "Milestone 5 - Improvement + progress II: project to polish",
+    "text": "Milestone 5 - Improvement + progress II: project to polish\nInstructions and grading criteria for this milestone are outlined in Milestone 5: Improvement + progress II: project to polish.",
+    "crumbs": [
+      "Project",
+      "Description"
+    ]
+  },
+  {
+    "objectID": "project/description.html#milestone-6---write-up-and-presentation",
+    "href": "project/description.html#milestone-6---write-up-and-presentation",
+    "title": "Project description",
+    "section": "Milestone 6 - Write-up and presentation",
+    "text": "Milestone 6 - Write-up and presentation\nInstructions and grading criteria for this milestone are outlined in Milestone 6: Write-up + presentation.",
     "crumbs": [
       "Project",
       "Description"
