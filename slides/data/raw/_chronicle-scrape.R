@@ -65,7 +65,6 @@ chronicle <- chronicle_raw |>
     column = if_else(is.na(column_2), column_1, column_2),
     date_time = mdy_hm(date_time),
     month = month(date_time, label = TRUE),
-    month = fct_relevel(month, month.abb),
     day = day(date_time),
     url = paste0("https://www.dukechronicle.com/", url)
   ) |>

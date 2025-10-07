@@ -55,7 +55,6 @@ chronicle <- chronicle_raw |>
     date_time = ___,
     # extract month and day from date_time
     month = ___,
-    month = ___,
     day = ___,
     # create full url
     url = ___

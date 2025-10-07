@@ -24,12 +24,70 @@ editor_options:
 #| label: setup
 #| include: false
 ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
-todays_ae <- "ae-08-age-gaps-import"
+todays_ae <- "ae-09-chronicle-scrape"
 ```
 
 # Warm-up
 
 ## While you wait: Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Guess: What is this plot about?
+
+![](images/12/chronicle-sentiments-cropped.png)
+
+**Then, make sure you have a Chrome browser and the SelectorGadget extension installed.**
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Announcements {.smaller}
+
+- Exam 1: Well done!
+  - In-class exam scores will be posted by Friday morning, you can see your exams in my office hours on Friday
+  - Take-home exam scores + feedback will be posted after fall break
+
+. . .
+
+- **New exam grade policy:** For students who take all exams (Exam 1, Exam 2, and Final Exam), the final exam score will replace the lower of the two mid-semester exam scores, if the final exam score is higher.
+
+. . .
+
+- Midsemester course survey:
+  - Optional and anonymous, but super helpful!
+  - Available till Thursday night on Canvas
+
+## Project {.smaller}
+
+<https://sta199-f25.github.io/project/description.html>
+
+- Take note of the milestones and deadlines
+  - Milestone 1: If you missed it, check your email for a make-up.
+  - There will be no make-ups for future milestones
+
+- Start thinking about your project idea and potential data sources, Milestone 2 due after Fall break
+
+- Teamwork: 
+  - Review the expectations and guidelines at the description above
+  - Take note of peer evaluation due dates (first one due with Milestone 2) and look out for emails from TEAMMATES
+  - Peer evaluation policy: You cannot receive the points your teammates have allocated to you if you do not fill out the peer evaluation yourself
+
+
+# Data on the web
+
+## Participate 📱💻 {.xsmall}
 
 ::: columns
 
@@ -55,12 +113,6 @@ How often do you read The Chronicle?
 :::
 
 :::
-
-## Announcements
-
-- ...
-
-# Data on the web
 
 ## Reading The Chronicle
 
@@ -97,8 +149,8 @@ chronicle |>
     x = "Number of mentions",
     y = "Word",
     title = "The Chronicle - Opinion pieces",
-    subtitle = "Common words in the 500 most recent opinion pieces",
-    caption = "Source: Data scraped from The Chronicle on Sep 30, 2024"
+    subtitle = "Common words in the 500 most recent opinion piece titles",
+    caption = "Source: Data scraped from The Chronicle on Oct 6, 2025"
   ) +
   theme(
     plot.title.position = "plot",
@@ -161,7 +213,7 @@ chronicle |>
   ) +
   scale_fill_manual(values = c("neg" = "#4d4009", "pos" = "#FF4B91")) +
   scale_color_manual(values = c("neg" = "#4d4009", "pos" = "#FF4B91")) +
-  coord_cartesian(xlim = c(-8, 8)) +
+  coord_cartesian(xlim = c(-2, 2)) +
   labs(
     x = "negative  ←     Average sentiment score (AFINN)     →  positive",
     y = NULL,
@@ -198,7 +250,7 @@ Code for the earlier plot:
 #| code-line-numbers: "|2-3|5|6|8|9|10-23"
 ```
 
-## Avg sentiment scores of abstracts {.smaller}
+## Avg sentiment scores of titles {.smaller}
 
 Code for the earlier plot:
 
@@ -206,7 +258,7 @@ Code for the earlier plot:
 #| ref.label: chronicle-sentiments
 #| fig-show: hide
 #| message: false
-#| code-line-numbers: "|2-3|5|6|7-8|9-13|22-52"
+#| code-line-numbers: "|2-3|5|6|7-8|9-13|22-55"
 ```
 
 ## Where is the data coming from? {.smaller}
