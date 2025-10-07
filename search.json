@@ -4020,21 +4020,21 @@
     "href": "ae/ae-09-chronicle-scrape-A.html",
     "title": "AE 09: Opinion articles in The Chronicle",
     "section": "",
-    "text": "This will be done in the chronicle-scrape.R R script. Save the resulting data frame in the data folder."
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key."
   },
   {
     "objectID": "ae/ae-09-chronicle-scrape-A.html#part-1---data-scraping",
     "href": "ae/ae-09-chronicle-scrape-A.html#part-1---data-scraping",
     "title": "AE 09: Opinion articles in The Chronicle",
-    "section": "",
-    "text": "This will be done in the chronicle-scrape.R R script. Save the resulting data frame in the data folder."
+    "section": "Part 1 - Data scraping",
+    "text": "Part 1 - Data scraping\nSee chronicle-scrape.R for suggested scraping code."
   },
   {
     "objectID": "ae/ae-09-chronicle-scrape-A.html#part-2---data-analysis",
     "href": "ae/ae-09-chronicle-scrape-A.html#part-2---data-analysis",
     "title": "AE 09: Opinion articles in The Chronicle",
     "section": "Part 2 - Data analysis",
-    "text": "Part 2 - Data analysis\nLet’s start by loading the packages we will need:\n\n# add code here\n\n\nLoad the data you saved into the data folder and name it chronicle.\n\n\n# add code here\n\n\nWho are the most prolific authors of the 500 most recent opinion articles in The Chronicle?\n\n\n# add code here\n\n\nDraw a line plot of the number of opinion articles published per day in The Chronicle.\n\n\n# add code here\n\n\nWhat percent of the most recent 500 opinion articles in The Chronicle mention “climate” in their title?\n\n\n# add code here\n\n\nCome up with another question and try to answer it using the data.\n\n\n# add code here"
+    "text": "Part 2 - Data analysis\nLet’s start by loading the packages we will need:\n\nlibrary(tidyverse)\n\n\nLoad the data you saved into the data folder and name it chronicle.\n\n\nchronicle &lt;- read_csv(\"data/chronicle.csv\")\n\n\nWho are the most prolific authors of the 500 most recent opinion articles in The Chronicle?\n\n\nchronicle |&gt;\n  count(author, sort = TRUE)\n\n# A tibble: 191 × 2\n   author             n\n   &lt;chr&gt;          &lt;int&gt;\n 1 Luke A. Powery    32\n 2 Advikaa Anand     26\n 3 Heidi Smith       26\n 4 Nik Narain        23\n 5 Monday Monday     20\n 6 Aaron Siegle      15\n 7 Anna Garziera     15\n 8 Sonia Green       12\n 9 Linda Cao         10\n10 Angikar Ghosal     9\n# ℹ 181 more rows\n\n\n\nDraw a line plot of the number of opinion articles published per day in The Chronicle.\n\n\nchronicle |&gt;\n  count(date) |&gt;\n  ggplot(aes(x = date, y = n, group = 1)) +\n  geom_line()\n\n\n\n\n\n\n\n\nWhat percent of the most recent 500 opinion articles in The Chronicle mention “climate” in their title?\n\n\nchronicle |&gt;\n  mutate(\n    title = str_to_lower(title),\n    climate = if_else(\n      str_detect(title, \"climate\"),\n      \"mentioned\",\n      \"not mentioned\"\n    )\n  ) |&gt;\n  count(climate) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  climate           n  prop\n  &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt;\n1 mentioned        11 0.022\n2 not mentioned   489 0.978\n\n\n\nCome up with another question and try to answer it using the data.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-01-income-inequality-A.html",
@@ -4104,21 +4104,21 @@
     "href": "ae/ae-09-chronicle-scrape.html",
     "title": "AE 09: Opinion articles in The Chronicle",
     "section": "",
-    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key."
+    "text": "This will be done in the chronicle-scrape.R R script. Save the resulting data frame in the data folder."
   },
   {
     "objectID": "ae/ae-09-chronicle-scrape.html#part-1---data-scraping",
     "href": "ae/ae-09-chronicle-scrape.html#part-1---data-scraping",
     "title": "AE 09: Opinion articles in The Chronicle",
-    "section": "Part 1 - Data scraping",
-    "text": "Part 1 - Data scraping\nSee chronicle-scrape.R for suggested scraping code."
+    "section": "",
+    "text": "This will be done in the chronicle-scrape.R R script. Save the resulting data frame in the data folder."
   },
   {
     "objectID": "ae/ae-09-chronicle-scrape.html#part-2---data-analysis",
     "href": "ae/ae-09-chronicle-scrape.html#part-2---data-analysis",
     "title": "AE 09: Opinion articles in The Chronicle",
     "section": "Part 2 - Data analysis",
-    "text": "Part 2 - Data analysis\nLet’s start by loading the packages we will need:\n\nlibrary(tidyverse)\n\n\nLoad the data you saved into the data folder and name it chronicle.\n\n\nchronicle &lt;- read_csv(\"data/chronicle.csv\")\n\n\nWho are the most prolific authors of the 500 most recent opinion articles in The Chronicle?\n\n\nchronicle |&gt;\n  count(author, sort = TRUE)\n\n# A tibble: 191 × 2\n   author             n\n   &lt;chr&gt;          &lt;int&gt;\n 1 Luke A. Powery    32\n 2 Advikaa Anand     26\n 3 Heidi Smith       26\n 4 Nik Narain        23\n 5 Monday Monday     20\n 6 Aaron Siegle      15\n 7 Anna Garziera     15\n 8 Sonia Green       12\n 9 Linda Cao         10\n10 Angikar Ghosal     9\n# ℹ 181 more rows\n\n\n\nDraw a line plot of the number of opinion articles published per day in The Chronicle.\n\n\nchronicle |&gt;\n  count(date) |&gt;\n  ggplot(aes(x = date, y = n, group = 1)) +\n  geom_line()\n\n\n\n\n\n\n\n\nWhat percent of the most recent 500 opinion articles in The Chronicle mention “climate” in their title?\n\n\nchronicle |&gt;\n  mutate(\n    title = str_to_lower(title),\n    climate = if_else(\n      str_detect(title, \"climate\"),\n      \"mentioned\",\n      \"not mentioned\"\n    )\n  ) |&gt;\n  count(climate) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  climate           n  prop\n  &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt;\n1 mentioned        11 0.022\n2 not mentioned   489 0.978\n\n\n\nCome up with another question and try to answer it using the data.\n\n\n# add code here"
+    "text": "Part 2 - Data analysis\nLet’s start by loading the packages we will need:\n\n# add code here\n\n\nLoad the data you saved into the data folder and name it chronicle.\n\n\n# add code here\n\n\nWho are the most prolific authors of the 500 most recent opinion articles in The Chronicle?\n\n\n# add code here\n\n\nDraw a line plot of the number of opinion articles published per day in The Chronicle.\n\n\n# add code here\n\n\nWhat percent of the most recent 500 opinion articles in The Chronicle mention “climate” in their title?\n\n\n# add code here\n\n\nCome up with another question and try to answer it using the data.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-06-taxes-join-A.html",
@@ -5735,21 +5735,35 @@
     "href": "slides/12-web-scraping-single-page.html",
     "title": "Web scrapinga single page",
     "section": "",
-    "text": "How often do you read The Chronicle?\n\n\nEvery day\n3-5 times a week\nOnce a week\nRarely\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\n…"
+    "text": "Guess: What is this plot about?\n\nThen, make sure you have a Chrome browser and the SelectorGadget extension installed.\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nExam 1: Well done!\n\nIn-class exam scores will be posted by Friday morning, you can see your exams in my office hours on Friday\nTake-home exam scores + feedback will be posted after fall break\n\n\n\n. . .\n\n\nNew exam grade policy: For students who take all exams (Exam 1, Exam 2, and Final Exam), the final exam score will replace the lower of the two mid-semester exam scores, if the final exam score is higher.\n\n. . .\n\nMidsemester course survey:\n\nOptional and anonymous, but super helpful!\nAvailable till Thursday night on Canvas\n\n\n\nhttps://sta199-f25.github.io/project/description.html\n\n\nTake note of the milestones and deadlines\n\nMilestone 1: If you missed it, check your email for a make-up.\nThere will be no make-ups for future milestones\n\n\nStart thinking about your project idea and potential data sources, Milestone 2 due after Fall break\n\nTeamwork:\n\nReview the expectations and guidelines at the description above\nTake note of peer evaluation due dates (first one due with Milestone 2) and look out for emails from TEAMMATES\nPeer evaluation policy: You cannot receive the points your teammates have allocated to you if you do not fill out the peer evaluation yourself"
   },
   {
     "objectID": "slides/12-web-scraping-single-page.html#while-you-wait-participate",
     "href": "slides/12-web-scraping-single-page.html#while-you-wait-participate",
     "title": "Web scrapinga single page",
     "section": "",
-    "text": "How often do you read The Chronicle?\n\n\nEvery day\n3-5 times a week\nOnce a week\nRarely\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Guess: What is this plot about?\n\nThen, make sure you have a Chrome browser and the SelectorGadget extension installed.\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/12-web-scraping-single-page.html#announcements",
     "href": "slides/12-web-scraping-single-page.html#announcements",
     "title": "Web scrapinga single page",
     "section": "",
-    "text": "…"
+    "text": "Exam 1: Well done!\n\nIn-class exam scores will be posted by Friday morning, you can see your exams in my office hours on Friday\nTake-home exam scores + feedback will be posted after fall break\n\n\n\n. . .\n\n\nNew exam grade policy: For students who take all exams (Exam 1, Exam 2, and Final Exam), the final exam score will replace the lower of the two mid-semester exam scores, if the final exam score is higher.\n\n. . .\n\nMidsemester course survey:\n\nOptional and anonymous, but super helpful!\nAvailable till Thursday night on Canvas"
+  },
+  {
+    "objectID": "slides/12-web-scraping-single-page.html#project",
+    "href": "slides/12-web-scraping-single-page.html#project",
+    "title": "Web scrapinga single page",
+    "section": "",
+    "text": "https://sta199-f25.github.io/project/description.html\n\n\nTake note of the milestones and deadlines\n\nMilestone 1: If you missed it, check your email for a make-up.\nThere will be no make-ups for future milestones\n\n\nStart thinking about your project idea and potential data sources, Milestone 2 due after Fall break\n\nTeamwork:\n\nReview the expectations and guidelines at the description above\nTake note of peer evaluation due dates (first one due with Milestone 2) and look out for emails from TEAMMATES\nPeer evaluation policy: You cannot receive the points your teammates have allocated to you if you do not fill out the peer evaluation yourself"
+  },
+  {
+    "objectID": "slides/12-web-scraping-single-page.html#participate",
+    "href": "slides/12-web-scraping-single-page.html#participate",
+    "title": "Web scrapinga single page",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nHow often do you read The Chronicle?\n\n\nEvery day\n3-5 times a week\nOnce a week\nRarely\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/12-web-scraping-single-page.html#reading-the-chronicle",
@@ -5791,14 +5805,14 @@
     "href": "slides/12-web-scraping-single-page.html#common-words-in-the-chronicle-titles",
     "title": "Web scrapinga single page",
     "section": "Common words in The Chronicle titles",
-    "text": "Common words in The Chronicle titles\nCode for the earlier plot:\n\nstop_words &lt;- read_csv(\"data/stop-words.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  count(word, sort = TRUE) |&gt;\n  filter(word != \"duke's\") |&gt;\n  slice_head(n = 20) |&gt;\n  mutate(word = fct_reorder(word, n)) |&gt;\n  ggplot(aes(y = word, x = n, fill = log(n))) +\n  geom_col(show.legend = FALSE) +\n  theme_minimal(base_size = 16) +\n  labs(\n    x = \"Number of mentions\",\n    y = \"Word\",\n    title = \"The Chronicle - Opinion pieces\",\n    subtitle = \"Common words in the 500 most recent opinion pieces\",\n    caption = \"Source: Data scraped from The Chronicle on Sep 30, 2024\"\n  ) +\n  theme(\n    plot.title.position = \"plot\",\n    plot.caption = element_text(color = \"gray30\")\n  )"
+    "text": "Common words in The Chronicle titles\nCode for the earlier plot:\n\nstop_words &lt;- read_csv(\"data/stop-words.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  count(word, sort = TRUE) |&gt;\n  filter(word != \"duke's\") |&gt;\n  slice_head(n = 20) |&gt;\n  mutate(word = fct_reorder(word, n)) |&gt;\n  ggplot(aes(y = word, x = n, fill = log(n))) +\n  geom_col(show.legend = FALSE) +\n  theme_minimal(base_size = 16) +\n  labs(\n    x = \"Number of mentions\",\n    y = \"Word\",\n    title = \"The Chronicle - Opinion pieces\",\n    subtitle = \"Common words in the 500 most recent opinion piece titles\",\n    caption = \"Source: Data scraped from The Chronicle on Oct 6, 2025\"\n  ) +\n  theme(\n    plot.title.position = \"plot\",\n    plot.caption = element_text(color = \"gray30\")\n  )"
   },
   {
-    "objectID": "slides/12-web-scraping-single-page.html#avg-sentiment-scores-of-abstracts",
-    "href": "slides/12-web-scraping-single-page.html#avg-sentiment-scores-of-abstracts",
+    "objectID": "slides/12-web-scraping-single-page.html#avg-sentiment-scores-of-titles",
+    "href": "slides/12-web-scraping-single-page.html#avg-sentiment-scores-of-titles",
     "title": "Web scrapinga single page",
-    "section": "Avg sentiment scores of abstracts",
-    "text": "Avg sentiment scores of abstracts\nCode for the earlier plot:\n\nafinn_sentiments &lt;- read_csv(\"data/afinn-sentiments.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title, drop = FALSE) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  left_join(afinn_sentiments) |&gt;\n  group_by(author, title) |&gt;\n  summarize(total_sentiment = sum(value, na.rm = TRUE), .groups = \"drop\") |&gt;\n  group_by(author) |&gt;\n  summarize(\n    n_articles = n(),\n    avg_sentiment = mean(total_sentiment, na.rm = TRUE),\n  ) |&gt;\n  filter(n_articles &gt; 2 & !is.na(author)) |&gt;\n  arrange(desc(avg_sentiment)) |&gt;\n  slice(c(1:10, 30:39)) |&gt;\n  mutate(\n    author = fct_reorder(author, avg_sentiment),\n    neg_pos = if_else(avg_sentiment &lt; 0, \"neg\", \"pos\"),\n    label_position = if_else(neg_pos == \"neg\", 0.25, -0.25)\n  ) |&gt;\n  ggplot(aes(y = author, x = avg_sentiment)) +\n  geom_col(aes(fill = neg_pos), show.legend = FALSE) +\n  geom_text(\n    aes(x = label_position, label = author, color = neg_pos),\n    hjust = c(rep(1, 10), rep(0, 10)),\n    show.legend = FALSE,\n    fontface = \"bold\"\n  ) +\n  geom_text(\n    aes(label = round(avg_sentiment, 1)),\n    hjust = c(rep(1.25, 10), rep(-0.25, 10)),\n    color = \"white\",\n    fontface = \"bold\"\n  ) +\n  scale_fill_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  scale_color_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  coord_cartesian(xlim = c(-8, 8)) +\n  labs(\n    x = \"negative  ←     Average sentiment score (AFINN)     →  positive\",\n    y = NULL,\n    title = \"The Chronicle - Opinion pieces\\nAverage sentiment scores of titles by author\",\n    subtitle = \"Top 10 average positive and negative scores\",\n    caption = \"Source: Data scraped from The Chronicle on Sep 30, 2024\"\n  ) +\n  theme_void(base_size = 16) +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    plot.subtitle = element_text(\n      hjust = 0.5,\n      margin = unit(c(0.5, 0, 1, 0), \"lines\")\n    ),\n    axis.title.x = element_text(color = \"gray30\", size = 12),\n    plot.caption = element_text(color = \"gray30\", size = 10)\n  )"
+    "section": "Avg sentiment scores of titles",
+    "text": "Avg sentiment scores of titles\nCode for the earlier plot:\n\nafinn_sentiments &lt;- read_csv(\"data/afinn-sentiments.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title, drop = FALSE) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  left_join(afinn_sentiments) |&gt;\n  group_by(author, title) |&gt;\n  summarize(total_sentiment = sum(value, na.rm = TRUE), .groups = \"drop\") |&gt;\n  group_by(author) |&gt;\n  summarize(\n    n_articles = n(),\n    avg_sentiment = mean(total_sentiment, na.rm = TRUE),\n  ) |&gt;\n  filter(n_articles &gt; 2 & !is.na(author)) |&gt;\n  arrange(desc(avg_sentiment)) |&gt;\n  slice(c(1:10, 30:39)) |&gt;\n  mutate(\n    author = fct_reorder(author, avg_sentiment),\n    neg_pos = if_else(avg_sentiment &lt; 0, \"neg\", \"pos\"),\n    label_position = if_else(neg_pos == \"neg\", 0.25, -0.25)\n  ) |&gt;\n  ggplot(aes(y = author, x = avg_sentiment)) +\n  geom_col(aes(fill = neg_pos), show.legend = FALSE) +\n  geom_text(\n    aes(x = label_position, label = author, color = neg_pos),\n    hjust = c(rep(1, 10), rep(0, 10)),\n    show.legend = FALSE,\n    fontface = \"bold\"\n  ) +\n  geom_text(\n    aes(label = round(avg_sentiment, 1)),\n    hjust = c(rep(1.25, 10), rep(-0.25, 10)),\n    color = \"white\",\n    fontface = \"bold\"\n  ) +\n  scale_fill_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  scale_color_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  coord_cartesian(xlim = c(-2, 2)) +\n  labs(\n    x = \"negative  ←     Average sentiment score (AFINN)     →  positive\",\n    y = NULL,\n    title = \"The Chronicle - Opinion pieces\\nAverage sentiment scores of titles by author\",\n    subtitle = \"Top 10 average positive and negative scores\",\n    caption = \"Source: Data scraped from The Chronicle on Sep 30, 2024\"\n  ) +\n  theme_void(base_size = 16) +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    plot.subtitle = element_text(\n      hjust = 0.5,\n      margin = unit(c(0.5, 0, 1, 0), \"lines\")\n    ),\n    axis.title.x = element_text(color = \"gray30\", size = 12),\n    plot.caption = element_text(color = \"gray30\", size = 10)\n  )"
   },
   {
     "objectID": "slides/12-web-scraping-single-page.html#where-is-the-data-coming-from",
@@ -5913,11 +5927,11 @@
     "text": "Goal\n\n\n\nScrape data and organize it in a tidy format in R\nPerform light text parsing to clean data\nSummarize and visualze the data"
   },
   {
-    "objectID": "slides/12-web-scraping-single-page.html#ae-08-age-gaps-import",
-    "href": "slides/12-web-scraping-single-page.html#ae-08-age-gaps-import",
+    "objectID": "slides/12-web-scraping-single-page.html#ae-09-chronicle-scrape",
+    "href": "slides/12-web-scraping-single-page.html#ae-09-chronicle-scrape",
     "title": "Web scrapinga single page",
-    "section": "ae-08-age-gaps-import",
-    "text": "ae-08-age-gaps-import\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-08-age-gaps-import.qmd and chronicle-scrape.R."
+    "section": "ae-09-chronicle-scrape",
+    "text": "ae-09-chronicle-scrape\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-chronicle-scrape.qmd and chronicle-scrape.R."
   },
   {
     "objectID": "slides/12-web-scraping-single-page.html#recap",
@@ -5973,14 +5987,28 @@
     "href": "slides/12-web-scraping-single-page-slides.html#while-you-wait-participate",
     "title": "Web scrapinga single page",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\nHow often do you read The Chronicle?\n\n\nEvery day\n3-5 times a week\nOnce a week\nRarely\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\nGuess: What is this plot about?\n\nThen, make sure you have a Chrome browser and the SelectorGadget extension installed.\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/12-web-scraping-single-page-slides.html#announcements",
     "href": "slides/12-web-scraping-single-page-slides.html#announcements",
     "title": "Web scrapinga single page",
     "section": "Announcements",
-    "text": "Announcements\n\n…"
+    "text": "Announcements\n\nExam 1: Well done!\n\nIn-class exam scores will be posted by Friday morning, you can see your exams in my office hours on Friday\nTake-home exam scores + feedback will be posted after fall break\n\n\n\n\n\n\nNew exam grade policy: For students who take all exams (Exam 1, Exam 2, and Final Exam), the final exam score will replace the lower of the two mid-semester exam scores, if the final exam score is higher.\n\n\n\n\nMidsemester course survey:\n\nOptional and anonymous, but super helpful!\nAvailable till Thursday night on Canvas"
+  },
+  {
+    "objectID": "slides/12-web-scraping-single-page-slides.html#project",
+    "href": "slides/12-web-scraping-single-page-slides.html#project",
+    "title": "Web scrapinga single page",
+    "section": "Project",
+    "text": "Project\nhttps://sta199-f25.github.io/project/description.html\n\n\nTake note of the milestones and deadlines\n\nMilestone 1: If you missed it, check your email for a make-up.\nThere will be no make-ups for future milestones\n\n\nStart thinking about your project idea and potential data sources, Milestone 2 due after Fall break\n\nTeamwork:\n\nReview the expectations and guidelines at the description above\nTake note of peer evaluation due dates (first one due with Milestone 2) and look out for emails from TEAMMATES\nPeer evaluation policy: You cannot receive the points your teammates have allocated to you if you do not fill out the peer evaluation yourself"
+  },
+  {
+    "objectID": "slides/12-web-scraping-single-page-slides.html#participate",
+    "href": "slides/12-web-scraping-single-page-slides.html#participate",
+    "title": "Web scrapinga single page",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nHow often do you read The Chronicle?\n\n\nEvery day\n3-5 times a week\nOnce a week\nRarely\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/12-web-scraping-single-page-slides.html#reading-the-chronicle",
@@ -6022,14 +6050,14 @@
     "href": "slides/12-web-scraping-single-page-slides.html#common-words-in-the-chronicle-titles",
     "title": "Web scrapinga single page",
     "section": "Common words in The Chronicle titles",
-    "text": "Common words in The Chronicle titles\nCode for the earlier plot:\n\nstop_words &lt;- read_csv(\"data/stop-words.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  count(word, sort = TRUE) |&gt;\n  filter(word != \"duke's\") |&gt;\n  slice_head(n = 20) |&gt;\n  mutate(word = fct_reorder(word, n)) |&gt;\n  ggplot(aes(y = word, x = n, fill = log(n))) +\n  geom_col(show.legend = FALSE) +\n  theme_minimal(base_size = 16) +\n  labs(\n    x = \"Number of mentions\",\n    y = \"Word\",\n    title = \"The Chronicle - Opinion pieces\",\n    subtitle = \"Common words in the 500 most recent opinion pieces\",\n    caption = \"Source: Data scraped from The Chronicle on Sep 30, 2024\"\n  ) +\n  theme(\n    plot.title.position = \"plot\",\n    plot.caption = element_text(color = \"gray30\")\n  )"
+    "text": "Common words in The Chronicle titles\nCode for the earlier plot:\n\nstop_words &lt;- read_csv(\"data/stop-words.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  count(word, sort = TRUE) |&gt;\n  filter(word != \"duke's\") |&gt;\n  slice_head(n = 20) |&gt;\n  mutate(word = fct_reorder(word, n)) |&gt;\n  ggplot(aes(y = word, x = n, fill = log(n))) +\n  geom_col(show.legend = FALSE) +\n  theme_minimal(base_size = 16) +\n  labs(\n    x = \"Number of mentions\",\n    y = \"Word\",\n    title = \"The Chronicle - Opinion pieces\",\n    subtitle = \"Common words in the 500 most recent opinion piece titles\",\n    caption = \"Source: Data scraped from The Chronicle on Oct 6, 2025\"\n  ) +\n  theme(\n    plot.title.position = \"plot\",\n    plot.caption = element_text(color = \"gray30\")\n  )"
   },
   {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#avg-sentiment-scores-of-abstracts",
-    "href": "slides/12-web-scraping-single-page-slides.html#avg-sentiment-scores-of-abstracts",
+    "objectID": "slides/12-web-scraping-single-page-slides.html#avg-sentiment-scores-of-titles",
+    "href": "slides/12-web-scraping-single-page-slides.html#avg-sentiment-scores-of-titles",
     "title": "Web scrapinga single page",
-    "section": "Avg sentiment scores of abstracts",
-    "text": "Avg sentiment scores of abstracts\nCode for the earlier plot:\n\nafinn_sentiments &lt;- read_csv(\"data/afinn-sentiments.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title, drop = FALSE) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  left_join(afinn_sentiments) |&gt;\n  group_by(author, title) |&gt;\n  summarize(total_sentiment = sum(value, na.rm = TRUE), .groups = \"drop\") |&gt;\n  group_by(author) |&gt;\n  summarize(\n    n_articles = n(),\n    avg_sentiment = mean(total_sentiment, na.rm = TRUE),\n  ) |&gt;\n  filter(n_articles &gt; 2 & !is.na(author)) |&gt;\n  arrange(desc(avg_sentiment)) |&gt;\n  slice(c(1:10, 30:39)) |&gt;\n  mutate(\n    author = fct_reorder(author, avg_sentiment),\n    neg_pos = if_else(avg_sentiment &lt; 0, \"neg\", \"pos\"),\n    label_position = if_else(neg_pos == \"neg\", 0.25, -0.25)\n  ) |&gt;\n  ggplot(aes(y = author, x = avg_sentiment)) +\n  geom_col(aes(fill = neg_pos), show.legend = FALSE) +\n  geom_text(\n    aes(x = label_position, label = author, color = neg_pos),\n    hjust = c(rep(1, 10), rep(0, 10)),\n    show.legend = FALSE,\n    fontface = \"bold\"\n  ) +\n  geom_text(\n    aes(label = round(avg_sentiment, 1)),\n    hjust = c(rep(1.25, 10), rep(-0.25, 10)),\n    color = \"white\",\n    fontface = \"bold\"\n  ) +\n  scale_fill_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  scale_color_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  coord_cartesian(xlim = c(-8, 8)) +\n  labs(\n    x = \"negative  ←     Average sentiment score (AFINN)     →  positive\",\n    y = NULL,\n    title = \"The Chronicle - Opinion pieces\\nAverage sentiment scores of titles by author\",\n    subtitle = \"Top 10 average positive and negative scores\",\n    caption = \"Source: Data scraped from The Chronicle on Sep 30, 2024\"\n  ) +\n  theme_void(base_size = 16) +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    plot.subtitle = element_text(\n      hjust = 0.5,\n      margin = unit(c(0.5, 0, 1, 0), \"lines\")\n    ),\n    axis.title.x = element_text(color = \"gray30\", size = 12),\n    plot.caption = element_text(color = \"gray30\", size = 10)\n  )"
+    "section": "Avg sentiment scores of titles",
+    "text": "Avg sentiment scores of titles\nCode for the earlier plot:\n\nafinn_sentiments &lt;- read_csv(\"data/afinn-sentiments.csv\")\nchronicle |&gt;\n  tidytext::unnest_tokens(word, title, drop = FALSE) |&gt;\n  mutate(word = str_replace_all(word, \"’\", \"'\")) |&gt;\n  anti_join(stop_words) |&gt;\n  left_join(afinn_sentiments) |&gt;\n  group_by(author, title) |&gt;\n  summarize(total_sentiment = sum(value, na.rm = TRUE), .groups = \"drop\") |&gt;\n  group_by(author) |&gt;\n  summarize(\n    n_articles = n(),\n    avg_sentiment = mean(total_sentiment, na.rm = TRUE),\n  ) |&gt;\n  filter(n_articles &gt; 2 & !is.na(author)) |&gt;\n  arrange(desc(avg_sentiment)) |&gt;\n  slice(c(1:10, 30:39)) |&gt;\n  mutate(\n    author = fct_reorder(author, avg_sentiment),\n    neg_pos = if_else(avg_sentiment &lt; 0, \"neg\", \"pos\"),\n    label_position = if_else(neg_pos == \"neg\", 0.25, -0.25)\n  ) |&gt;\n  ggplot(aes(y = author, x = avg_sentiment)) +\n  geom_col(aes(fill = neg_pos), show.legend = FALSE) +\n  geom_text(\n    aes(x = label_position, label = author, color = neg_pos),\n    hjust = c(rep(1, 10), rep(0, 10)),\n    show.legend = FALSE,\n    fontface = \"bold\"\n  ) +\n  geom_text(\n    aes(label = round(avg_sentiment, 1)),\n    hjust = c(rep(1.25, 10), rep(-0.25, 10)),\n    color = \"white\",\n    fontface = \"bold\"\n  ) +\n  scale_fill_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  scale_color_manual(values = c(\"neg\" = \"#4d4009\", \"pos\" = \"#FF4B91\")) +\n  coord_cartesian(xlim = c(-2, 2)) +\n  labs(\n    x = \"negative  ←     Average sentiment score (AFINN)     →  positive\",\n    y = NULL,\n    title = \"The Chronicle - Opinion pieces\\nAverage sentiment scores of titles by author\",\n    subtitle = \"Top 10 average positive and negative scores\",\n    caption = \"Source: Data scraped from The Chronicle on Sep 30, 2024\"\n  ) +\n  theme_void(base_size = 16) +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    plot.subtitle = element_text(\n      hjust = 0.5,\n      margin = unit(c(0.5, 0, 1, 0), \"lines\")\n    ),\n    axis.title.x = element_text(color = \"gray30\", size = 12),\n    plot.caption = element_text(color = \"gray30\", size = 10)\n  )"
   },
   {
     "objectID": "slides/12-web-scraping-single-page-slides.html#where-is-the-data-coming-from",
@@ -6144,11 +6172,11 @@
     "text": "Goal\n\n\n\nScrape data and organize it in a tidy format in R\nPerform light text parsing to clean data\nSummarize and visualze the data"
   },
   {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#ae-08-age-gaps-import",
-    "href": "slides/12-web-scraping-single-page-slides.html#ae-08-age-gaps-import",
+    "objectID": "slides/12-web-scraping-single-page-slides.html#ae-09-chronicle-scrape",
+    "href": "slides/12-web-scraping-single-page-slides.html#ae-09-chronicle-scrape",
     "title": "Web scrapinga single page",
-    "section": "ae-08-age-gaps-import",
-    "text": "ae-08-age-gaps-import\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-08-age-gaps-import.qmd and chronicle-scrape.R."
+    "section": "ae-09-chronicle-scrape",
+    "text": "ae-09-chronicle-scrape\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-chronicle-scrape.qmd and chronicle-scrape.R."
   },
   {
     "objectID": "slides/12-web-scraping-single-page-slides.html#recap",

@@ -109,10 +109,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <meta property="og:title" content="Web scrapinga single page – STA 199">
 <meta property="og:description" content="Lecture 12">
-<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/12/chronicle-sentiments-cropped.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:height" content="888">
-<meta property="og:image:width" content="866">
+<meta property="og:image:height" content="728">
+<meta property="og:image:width" content="1169">
 </head>
 <body class="nav-sidebar docked slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -538,18 +538,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
   </ul>
 </li>
   <li>
 <a href="#data-on-the-web" id="toc-data-on-the-web" class="nav-link" data-scroll-target="#data-on-the-web">Data on the web</a>
   <ul class="collapse">
-<li><a href="#reading-the-chronicle" id="toc-reading-the-chronicle" class="nav-link" data-scroll-target="#reading-the-chronicle">Reading The Chronicle</a></li>
+<li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
+  <li><a href="#reading-the-chronicle" id="toc-reading-the-chronicle" class="nav-link" data-scroll-target="#reading-the-chronicle">Reading The Chronicle</a></li>
   <li><a href="#analyzing-the-chronicle" id="toc-analyzing-the-chronicle" class="nav-link" data-scroll-target="#analyzing-the-chronicle">Analyzing The Chronicle</a></li>
   <li><a href="#reading-the-chronicle-1" id="toc-reading-the-chronicle-1" class="nav-link" data-scroll-target="#reading-the-chronicle-1">Reading The Chronicle</a></li>
   <li><a href="#analyzing-the-chronicle-1" id="toc-analyzing-the-chronicle-1" class="nav-link" data-scroll-target="#analyzing-the-chronicle-1">Analyzing The Chronicle</a></li>
   <li><a href="#all-of-this-analysis-is-done-in-r" id="toc-all-of-this-analysis-is-done-in-r" class="nav-link" data-scroll-target="#all-of-this-analysis-is-done-in-r">All of this analysis is done in R!</a></li>
   <li><a href="#common-words-in-the-chronicle-titles" id="toc-common-words-in-the-chronicle-titles" class="nav-link" data-scroll-target="#common-words-in-the-chronicle-titles">Common words in The Chronicle titles</a></li>
-  <li><a href="#avg-sentiment-scores-of-abstracts" id="toc-avg-sentiment-scores-of-abstracts" class="nav-link" data-scroll-target="#avg-sentiment-scores-of-abstracts">Avg sentiment scores of abstracts</a></li>
+  <li><a href="#avg-sentiment-scores-of-titles" id="toc-avg-sentiment-scores-of-titles" class="nav-link" data-scroll-target="#avg-sentiment-scores-of-titles">Avg sentiment scores of titles</a></li>
   <li><a href="#where-is-the-data-coming-from" id="toc-where-is-the-data-coming-from" class="nav-link" data-scroll-target="#where-is-the-data-coming-from">Where is the data coming from?</a></li>
   <li><a href="#where-is-the-data-coming-from-1" id="toc-where-is-the-data-coming-from-1" class="nav-link" data-scroll-target="#where-is-the-data-coming-from-1">Where is the data coming from?</a></li>
   </ul>
@@ -576,7 +578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#opinion-articles-in-the-chronicle" id="toc-opinion-articles-in-the-chronicle" class="nav-link" data-scroll-target="#opinion-articles-in-the-chronicle">Opinion articles in The Chronicle</a></li>
   <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
-  <li><a href="#ae-08-age-gaps-import" id="toc-ae-08-age-gaps-import" class="nav-link" data-scroll-target="#ae-08-age-gaps-import">ae-08-age-gaps-import</a></li>
+  <li><a href="#ae-09-chronicle-scrape" id="toc-ae-09-chronicle-scrape" class="nav-link" data-scroll-target="#ae-09-chronicle-scrape">ae-09-chronicle-scrape</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   <li><a href="#a-new-r-workflow" id="toc-a-new-r-workflow" class="nav-link" data-scroll-target="#a-new-r-workflow">A new R workflow</a></li>
   </ul>
@@ -634,6 +636,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
+<p>Guess: What is this plot about?</p>
+<p><a href="images/12/chronicle-sentiments-cropped.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/12/chronicle-sentiments-cropped.png" class="img-fluid"></a></p>
+<p><strong>Then, make sure you have a Chrome browser and the SelectorGadget extension installed.</strong></p>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li>Exam 1: Well done!
+<ul>
+<li>In-class exam scores will be posted by Friday morning, you can see your exams in my office hours on Friday</li>
+<li>Take-home exam scores + feedback will be posted after fall break</li>
+</ul>
+</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>New exam grade policy:</strong> For students who take all exams (Exam 1, Exam 2, and Final Exam), the final exam score will replace the lower of the two mid-semester exam scores, if the final exam score is higher.</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>Midsemester course survey:
+<ul>
+<li>Optional and anonymous, but super helpful!</li>
+<li>Available till Thursday night on Canvas</li>
+</ul>
+</li>
+</ul></section><section id="project" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="project">Project</h2>
+<p><a href="https://sta199-f25.github.io/project/description.html" class="uri">https://sta199-f25.github.io/project/description.html</a></p>
+<ul>
+<li>
+<p>Take note of the milestones and deadlines</p>
+<ul>
+<li>Milestone 1: If you missed it, check your email for a make-up.</li>
+<li>There will be no make-ups for future milestones</li>
+</ul>
+</li>
+<li><p>Start thinking about your project idea and potential data sources, Milestone 2 due after Fall break</p></li>
+<li>
+<p>Teamwork:</p>
+<ul>
+<li>Review the expectations and guidelines at the description above</li>
+<li>Take note of peer evaluation due dates (first one due with Milestone 2) and look out for emails from TEAMMATES</li>
+<li>Peer evaluation policy: You cannot receive the points your teammates have allocated to you if you do not fill out the peer evaluation yourself</li>
+</ul>
+</li>
+</ul></section></section><section id="data-on-the-web" class="level1"><h1>Data on the web</h1>
+<section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
 <p>How often do you read The Chronicle?</p>
 <div class="wooclap-options">
 <ul>
@@ -646,7 +708,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
 </figure>
 </div>
 <div class="small">
@@ -654,11 +716,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="announcements" class="level2"><h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
-<ul>
-<li>…</li>
-</ul></section></section><section id="data-on-the-web" class="level1"><h1>Data on the web</h1>
-<section id="reading-the-chronicle" class="level2"><h2 class="anchored" data-anchor-id="reading-the-chronicle">Reading The Chronicle</h2>
+</section><section id="reading-the-chronicle" class="level2"><h2 class="anchored" data-anchor-id="reading-the-chronicle">Reading The Chronicle</h2>
 <div class="question">
 <p>What do you think is the most common word in the titles of The Chronicle opinion pieces?</p>
 </div>
@@ -666,7 +724,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="12-web-scraping-single-page_files/figure-revealjs/chronicle-common-words-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="12-web-scraping-single-page_files/figure-revealjs/chronicle-common-words-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="12-web-scraping-single-page_files/figure-revealjs/chronicle-common-words-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="12-web-scraping-single-page_files/figure-revealjs/chronicle-common-words-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -679,7 +737,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="12-web-scraping-single-page_files/figure-revealjs/chronicle-sentiments-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="12-web-scraping-single-page_files/figure-revealjs/chronicle-sentiments-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="12-web-scraping-single-page_files/figure-revealjs/chronicle-sentiments-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="12-web-scraping-single-page_files/figure-revealjs/chronicle-sentiments-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -707,15 +765,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14"></a>    <span class="at">x =</span> <span class="st">"Number of mentions"</span>,</span>
 <span id="cb1-15"><a href="#cb1-15"></a>    <span class="at">y =</span> <span class="st">"Word"</span>,</span>
 <span id="cb1-16"><a href="#cb1-16"></a>    <span class="at">title =</span> <span class="st">"The Chronicle - Opinion pieces"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17"></a>    <span class="at">subtitle =</span> <span class="st">"Common words in the 500 most recent opinion pieces"</span>,</span>
-<span id="cb1-18"><a href="#cb1-18"></a>    <span class="at">caption =</span> <span class="st">"Source: Data scraped from The Chronicle on Sep 30, 2024"</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>    <span class="at">subtitle =</span> <span class="st">"Common words in the 500 most recent opinion piece titles"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18"></a>    <span class="at">caption =</span> <span class="st">"Source: Data scraped from The Chronicle on Oct 6, 2025"</span></span>
 <span id="cb1-19"><a href="#cb1-19"></a>  ) <span class="sc">+</span></span>
 <span id="cb1-20"><a href="#cb1-20"></a>  <span class="fu">theme</span>(</span>
 <span id="cb1-21"><a href="#cb1-21"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
 <span id="cb1-22"><a href="#cb1-22"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"gray30"</span>)</span>
 <span id="cb1-23"><a href="#cb1-23"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="avg-sentiment-scores-of-abstracts" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="avg-sentiment-scores-of-abstracts">Avg sentiment scores of abstracts</h2>
+</section><section id="avg-sentiment-scores-of-titles" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="avg-sentiment-scores-of-titles">Avg sentiment scores of titles</h2>
 <p>Code for the earlier plot:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>afinn_sentiments <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/afinn-sentiments.csv"</span>)</span>
@@ -755,7 +813,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-35"><a href="#cb2-35"></a>  ) <span class="sc">+</span></span>
 <span id="cb2-36"><a href="#cb2-36"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"neg"</span> <span class="ot">=</span> <span class="st">"#4d4009"</span>, <span class="st">"pos"</span> <span class="ot">=</span> <span class="st">"#FF4B91"</span>)) <span class="sc">+</span></span>
 <span id="cb2-37"><a href="#cb2-37"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"neg"</span> <span class="ot">=</span> <span class="st">"#4d4009"</span>, <span class="st">"pos"</span> <span class="ot">=</span> <span class="st">"#FF4B91"</span>)) <span class="sc">+</span></span>
-<span id="cb2-38"><a href="#cb2-38"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">8</span>, <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
 <span id="cb2-39"><a href="#cb2-39"></a>  <span class="fu">labs</span>(</span>
 <span id="cb2-40"><a href="#cb2-40"></a>    <span class="at">x =</span> <span class="st">"negative  ←     Average sentiment score (AFINN)     →  positive"</span>,</span>
 <span id="cb2-41"><a href="#cb2-41"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
@@ -1117,7 +1175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="selectorgadget" class="level2"><h2 class="anchored" data-anchor-id="selectorgadget">SelectorGadget</h2>
 <p><strong>SelectorGadget</strong> (<a href="http://selectorgadget.com">selectorgadget.com</a>) is a javascript based tool that helps you interactively build an appropriate CSS selector for the content you are interested in.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/selectorgadget.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/12/selectorgadget.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></a></p>
+<figure class="figure"><p><a href="images/12/selectorgadget.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/12/selectorgadget.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></a></p>
 </figure>
 </div>
 </section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
@@ -1136,17 +1194,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/chronicle-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/12/chronicle-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure"><p><a href="images/12/chronicle-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/12/chronicle-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="ae-08-age-gaps-import" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-08-age-gaps-import">ae-08-age-gaps-import</h2>
+</section><section id="ae-09-chronicle-scrape" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-09-chronicle-scrape">ae-09-chronicle-scrape</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
 <li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-08-age-gaps-import.qmd</em> and <em><code>chronicle-scrape.R</code></em>.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-chronicle-scrape.qmd</em> and <em><code>chronicle-scrape.R</code></em>.</p></li>
 </ul>
 </div>
 </section><section id="recap" class="level2"><h2 class="anchored" data-anchor-id="recap">Recap</h2>
@@ -1169,7 +1227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></section></section><section id="web-scraping-considerations" class="level1 page-columns page-full"><h1>Web scraping considerations</h1>
 <section id="ethics-can-you-vs-should-you" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="ethics-can-you-vs-should-you">Ethics: “Can you?” vs “Should you?”</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/ok-cupid-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/12/ok-cupid-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></a></p>
+<figure class="figure"><p><a href="images/12/ok-cupid-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/12/ok-cupid-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></a></p>
 </figure>
 </div>
 
@@ -1177,12 +1235,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Source: Brian Resnick, <a href="https://www.vox.com/2016/5/12/11666116/70000-okcupid-users-data-release">Researchers just released profile data on 70,000 OkCupid users without permission</a>, Vox.</p>
 </div></div></section><section id="can-you-vs-should-you" class="level2"><h2 class="anchored" data-anchor-id="can-you-vs-should-you">“Can you?” vs “Should you?”</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/ok-cupid-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/12/ok-cupid-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
+<figure class="figure"><p><a href="images/12/ok-cupid-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/12/ok-cupid-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
 </figure>
 </div>
 </section><section id="challenges-unreliable-formatting" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="challenges-unreliable-formatting">Challenges: Unreliable formatting</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/unreliable-formatting.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/12/unreliable-formatting.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
+<figure class="figure"><p><a href="images/12/unreliable-formatting.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/12/unreliable-formatting.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
 </figure>
 </div>
 
@@ -1190,7 +1248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://alumni.duke.edu/news/notable-alumni">alumni.duke.edu/news/notable-alumni</a></p>
 </div></div></section><section id="challenges-data-broken-into-many-pages" class="level2"><h2 class="anchored" data-anchor-id="challenges-data-broken-into-many-pages">Challenges: Data broken into many pages</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/many-pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/12/many-pages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure"><p><a href="images/12/many-pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/12/many-pages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 </section><section id="workflow-screen-scraping-vs.-apis" class="level2"><h2 class="anchored" data-anchor-id="workflow-screen-scraping-vs.-apis">Workflow: Screen scraping vs.&nbsp;APIs</h2>

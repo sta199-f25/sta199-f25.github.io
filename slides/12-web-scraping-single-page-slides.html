@@ -217,6 +217,69 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
+<p>Guess: What is this plot about?</p>
+<p><img data-src="images/12/chronicle-sentiments-cropped.png"></p>
+<p><strong>Then, make sure you have a Chrome browser and the SelectorGadget extension installed.</strong></p>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section><section id="announcements" class="slide level2 smaller"><h2>Announcements</h2>
+<ul>
+<li>Exam 1: Well done!
+<ul>
+<li>In-class exam scores will be posted by Friday morning, you can see your exams in my office hours on Friday</li>
+<li>Take-home exam scores + feedback will be posted after fall break</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<strong>New exam grade policy:</strong> For students who take all exams (Exam 1, Exam 2, and Final Exam), the final exam score will replace the lower of the two mid-semester exam scores, if the final exam score is higher.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Midsemester course survey:
+<ul>
+<li>Optional and anonymous, but super helpful!</li>
+<li>Available till Thursday night on Canvas</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="project" class="slide level2 smaller"><h2>Project</h2>
+<p><a href="https://sta199-f25.github.io/project/description.html" class="uri">https://sta199-f25.github.io/project/description.html</a></p>
+<ul>
+<li>
+<p>Take note of the milestones and deadlines</p>
+<ul>
+<li>Milestone 1: If you missed it, check your email for a make-up.</li>
+<li>There will be no make-ups for future milestones</li>
+</ul>
+</li>
+<li><p>Start thinking about your project idea and potential data sources, Milestone 2 due after Fall break</p></li>
+<li>
+<p>Teamwork:</p>
+<ul>
+<li>Review the expectations and guidelines at the description above</li>
+<li>Take note of peer evaluation due dates (first one due with Milestone 2) and look out for emails from TEAMMATES</li>
+<li>Peer evaluation policy: You cannot receive the points your teammates have allocated to you if you do not fill out the peer evaluation yourself</li>
+</ul>
+</li>
+</ul></section></section><section><section id="data-on-the-web" class="title-slide slide level1 center"><h1>Data on the web</h1>
+
+</section><section id="participate" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
 <p>How often do you read The Chronicle?</p>
 <div class="wooclap-options">
 <ul>
@@ -236,11 +299,6 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="announcements" class="slide level2"><h2>Announcements</h2>
-<ul>
-<li>…</li>
-</ul></section></section><section><section id="data-on-the-web" class="title-slide slide level1 center"><h1>Data on the web</h1>
-
 </section><section id="reading-the-chronicle" class="slide level2"><h2>Reading The Chronicle</h2>
 <div class="question">
 <p>What do you think is the most common word in the titles of The Chronicle opinion pieces?</p>
@@ -276,18 +334,18 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb1-14"><a></a>    <span class="at">x =</span> <span class="st">"Number of mentions"</span>,</span>
 <span id="cb1-15"><a></a>    <span class="at">y =</span> <span class="st">"Word"</span>,</span>
 <span id="cb1-16"><a></a>    <span class="at">title =</span> <span class="st">"The Chronicle - Opinion pieces"</span>,</span>
-<span id="cb1-17"><a></a>    <span class="at">subtitle =</span> <span class="st">"Common words in the 500 most recent opinion pieces"</span>,</span>
-<span id="cb1-18"><a></a>    <span class="at">caption =</span> <span class="st">"Source: Data scraped from The Chronicle on Sep 30, 2024"</span></span>
+<span id="cb1-17"><a></a>    <span class="at">subtitle =</span> <span class="st">"Common words in the 500 most recent opinion piece titles"</span>,</span>
+<span id="cb1-18"><a></a>    <span class="at">caption =</span> <span class="st">"Source: Data scraped from The Chronicle on Oct 6, 2025"</span></span>
 <span id="cb1-19"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb1-20"><a></a>  <span class="fu">theme</span>(</span>
 <span id="cb1-21"><a></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
 <span id="cb1-22"><a></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"gray30"</span>)</span>
 <span id="cb1-23"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="avg-sentiment-scores-of-abstracts" class="slide level2 smaller"><h2>Avg sentiment scores of abstracts</h2>
+</section><section id="avg-sentiment-scores-of-titles" class="slide level2 smaller"><h2>Avg sentiment scores of titles</h2>
 <p>Code for the earlier plot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="|2-3|5|6|7-8|9-13|22-52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>afinn_sentiments <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/afinn-sentiments.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="|2-3|5|6|7-8|9-13|22-55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>afinn_sentiments <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/afinn-sentiments.csv"</span>)</span>
 <span id="cb2-2"><a></a>chronicle <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a></a>  tidytext<span class="sc">::</span><span class="fu">unnest_tokens</span>(word, title, <span class="at">drop =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb2-4"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">str_replace_all</span>(word, <span class="st">"’"</span>, <span class="st">"'"</span>)) <span class="sc">|&gt;</span></span>
@@ -324,7 +382,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb2-35"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb2-36"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"neg"</span> <span class="ot">=</span> <span class="st">"#4d4009"</span>, <span class="st">"pos"</span> <span class="ot">=</span> <span class="st">"#FF4B91"</span>)) <span class="sc">+</span></span>
 <span id="cb2-37"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"neg"</span> <span class="ot">=</span> <span class="st">"#4d4009"</span>, <span class="st">"pos"</span> <span class="ot">=</span> <span class="st">"#FF4B91"</span>)) <span class="sc">+</span></span>
-<span id="cb2-38"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">8</span>, <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb2-38"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
 <span id="cb2-39"><a></a>  <span class="fu">labs</span>(</span>
 <span id="cb2-40"><a></a>    <span class="at">x =</span> <span class="st">"negative  ←     Average sentiment score (AFINN)     →  positive"</span>,</span>
 <span id="cb2-41"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
@@ -717,12 +775,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </figure>
 </div>
 </div></div>
-</section><section id="ae-08-age-gaps-import" class="slide level2 smaller"><h2>ae-08-age-gaps-import</h2>
+</section><section id="ae-09-chronicle-scrape" class="slide level2 smaller"><h2>ae-09-chronicle-scrape</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
 <li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-08-age-gaps-import.qmd</em> and <em><code>chronicle-scrape.R</code></em>.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-chronicle-scrape.qmd</em> and <em><code>chronicle-scrape.R</code></em>.</p></li>
 </ul>
 </div>
 </section><section id="recap" class="slide level2"><h2>Recap</h2>
