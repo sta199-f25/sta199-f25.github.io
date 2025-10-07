@@ -1,16 +1,11 @@
 ---
 title: "AE 09: Opinion articles in The Chronicle"
-subtitle: "Suggested answers"
 ---
-
-::: callout-important
-These are suggested answers.
-This document should be used as reference only, it's not designed to be an exhaustive key.
-:::
 
 ## Part 1 - Data scraping
 
-See [`chronicle-scrape.R`](https://github.com/sta199-f25/sta199-f25.github.io/blob/main/ae/_chronicle-scrape-A.R) for suggested scraping code.
+This will be done in the `chronicle-scrape.R` R script.
+Save the resulting data frame in the `data` folder.
 
 ## Part 2 - Data analysis
 
@@ -19,7 +14,7 @@ Let's start by loading the packages we will need:
 ```{r}
 #| label: load-packages
 #| message: false
-library(tidyverse)
+# add code here
 ```
 
 -   Load the data you saved into the `data` folder and name it `chronicle`.
@@ -27,42 +22,28 @@ library(tidyverse)
 ```{r}
 #| label: load-data
 #| message: false
-chronicle <- read_csv("data/chronicle.csv")
+# add code here
 ```
 
 -   Who are the most prolific authors of the 500 most recent opinion articles in The Chronicle?
 
 ```{r}
 #| label: count-authors
-chronicle |>
-  count(author, sort = TRUE)
+# add code here
 ```
 
 -   Draw a line plot of the number of opinion articles published per day in The Chronicle.
 
 ```{r}
 #| label: articles-per-day
-chronicle |>
-  count(date) |>
-  ggplot(aes(x = date, y = n, group = 1)) +
-  geom_line()
+# add code here
 ```
 
 -   What percent of the most recent 500 opinion articles in The Chronicle mention "climate" in their title?
 
 ```{r}
 #| label: climate-title
-chronicle |>
-  mutate(
-    title = str_to_lower(title),
-    climate = if_else(
-      str_detect(title, "climate"),
-      "mentioned",
-      "not mentioned"
-    )
-  ) |>
-  count(climate) |>
-  mutate(prop = n / sum(n))
+# add code here
 ```
 
 -   Come up with another question and try to answer it using the data.
