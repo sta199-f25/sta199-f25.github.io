@@ -6,16 +6,15 @@ library(polite)
 
 # check that we can scrape data from the chronicle -----------------------------
 
-bow("https://www.dukechronicle.com/section/opinion?page=1&per_page=500")
+bow(
+  "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html"
+)
 
 # read page --------------------------------------------------------------------
 
-session <- bow(
-  "https://www.dukechronicle.com/section/opinion?page=1&per_page=500",
-  user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+page <- read_html(
+  "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html"
 )
-
-page <- scrape(session)
 
 # parse components -------------------------------------------------------------
 
