@@ -51,7 +51,6 @@ chronicle <- chronicle_raw |>
     author_date_time,
     delim = "\n|\n",
     names = c("author", "date_time"),
-    too_few = "align_start"
   ) |>
   separate_wider_delim(
     column,
@@ -74,4 +73,4 @@ chronicle <- chronicle_raw |>
 
 # write data -------------------------------------------------------------------
 
-write_csv(chronicle, file = "slides/data/chronicle.csv")
+write_csv(chronicle, file = "data/chronicle.csv")
