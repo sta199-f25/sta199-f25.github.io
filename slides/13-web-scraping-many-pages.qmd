@@ -37,11 +37,27 @@ todays_ae <- "ae-09-chronicle-scrape"
 
 ::: wooclap
 
-Guess: What is this plot about?
+The following code in `chronicle-scrape.R` extracts titles of an opinion article from The Chronicle website:
 
-![](images/12/chronicle-sentiments-cropped.png)
+```{r}
+#| eval: false
+page <- read_html(
+  "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html"
+)
 
-**Then, make sure you have a Chrome browser and the SelectorGadget extension installed.**
+titles <- page |>
+  html_elements(".space-y-4 .font-extrabold") |>
+  html_text()
+```
+
+Which of the following needs to change to extract column titles instead?
+
+::: wooclap-choices
+- Change the URL in `read_html()`
+- Change the function `html_elements()` to `html_element()`
+- Change the CSS selector `.space-y-4 .font-extrabold` to `.space-y-4 .text-brand`
+- Change the function `html_text()` to `html_attr()`
+:::
 
 :::
 
@@ -55,7 +71,7 @@ Guess: What is this plot about?
 
 ## Announcements {.smaller}
 
-- HW 2, Question 7: Reproduce the colorful box plot -- We caught an error in grading (any theme with a while background would have worked). If you originally missed points due to not using `theme_bw()`, but you used another theme with a white background, we've updated your grade.
+- HW 2, Question 7: Reproduce the colorful box plot -- We caught an error in grading (any theme with a white background would have worked). If you originally missed points due to not using `theme_bw()`, but you used another theme with a white background, we've updated your grade.
 
 - Midsemester course survey due tonight at 11:59pm
 
@@ -63,7 +79,7 @@ Guess: What is this plot about?
 
 # From last time
 
-## Opinion articles in The Chronicle
+## Opinion articles in The Chronicle {.smaller}
 
 Go to <https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html> (copy of The Chronicle opinion section as of October 7, 2025).
 
@@ -91,11 +107,32 @@ Go to <https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechro
 -   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`* and *`chronicle-scrape.R`*.
 :::
 
-## Recap
+## Participate 📱💻 {.xsmall}
 
--   Use the SelectorGadget identify tags for elements you want to grab
--   Use rvest to first read the whole page (into R) and then parse the object you've read in to the elements you're interested in
--   Put the components together in a data frame (a tibble) and analyze it like you analyze any other data
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Put the folllowing tasks in order to scrape data from a website:
+
+::: wooclap-choices
+- Use the SelectorGadget identify tags for elements you want to grab
+- Use `read_html()` to read the page's source code into R
+- Use other functions from the **rvest** package to parse the elements you're interested in
+- Put the components together in a data frame (a tibble) and analyze it like you analyze any other data
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
 
 ## A new R workflow {.smaller}
 
@@ -111,29 +148,26 @@ Go to <https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechro
 
 # Web scraping considerations
 
-## Ethics: "Can you?" vs "Should you?"
+## Ethics: "Can you?" vs "Should you?" {.smaller}
 
-![](images/12/ok-cupid-1.png){fig-align="center" width="800"}
+![](images/13/ok-cupid-1.png){fig-align="center" width="700"}
 
 ::: aside
-Source: Brian Resnick, [Researchers just released profile data on 70,000 OkCupid users without permission](https://www.vox.com/2016/5/12/11666116/70000-okcupid-users-data-release), Vox.
+Source: Brian Resnick, [Researchers just released profile data on 70,000 OkCupid users without permission](https://www.vox.com/2016/5/13/11666116/70000-okcupid-users-data-release), Vox.
 :::
 
 ## "Can you?" vs "Should you?"
 
-![](images/12/ok-cupid-2.png){fig-align="center" width="699"}
+![](images/13/ok-cupid-2.png){fig-align="center" width="699"}
 
 ## Challenges: Unreliable formatting
 
-![](images/12/unreliable-formatting.png){fig-align="center" width="699"}
-
-::: aside
-[alumni.duke.edu/news/notable-alumni](https://alumni.duke.edu/news/notable-alumni)
-:::
+![](images/13/unreliable-formatting.png){fig-align="center" width="699"}
 
 ## Challenges: Data broken into many pages
 
-![](images/12/many-pages.png){fig-align="center"}
+![](images/13/many-pages.png){fig-align="center"}
+
 
 # Scraping from many pages
 
@@ -141,8 +175,8 @@ Source: Brian Resnick, [Researchers just released profile data on 70,000 OkCupid
 
 ```{r}
 library(tidyverse)
-library(rvest)
-library(knitr)
+library(rvest) # for web scraping
+library(knitr) # for pretty tables
 ```
 
 ## Columns and words
