@@ -174,6 +174,7 @@ Source: Brian Resnick, [Researchers just released profile data on 70,000 OkCupid
 ## Packages
 
 ```{r}
+#| message: false
 library(tidyverse)
 library(rvest) # for web scraping
 library(knitr) # for pretty tables
@@ -186,12 +187,13 @@ What additional information do we need to produce the table below?
 :::
 
 ```{r}
+#| include: false
+chronicle_article <- read_csv("data/chronicle-article.csv")
+```
+
+```{r}
 #| label: chronicle-article-word-counts
 #| echo: false
-#| message: false
-chronicle_article <- read_csv("data/chronicle-article.csv")
-stop_words <- read_csv("data/stop-words.csv")
-
 chronicle_article |>
   mutate(n_words = str_count(article, " ") + 1) |>
   group_by(column) |>
@@ -234,6 +236,14 @@ article_page
 ## Parse the elements you want - 1 {.smaller}
 
 ```{r}
+#| eval: false
+article_page |>
+  html_elements(".article-content")
+```
+
+```{r}
+#| echo: false
+options(width = 500)
 article_page |>
   html_elements(".article-content")
 ```
@@ -269,18 +279,72 @@ parse_article_page <- function(url) {
 }
 ```
 
-## Test the function
+## Functions in R {.smaller}
 
 ```{r}
+#| eval: false
+function_name <- function(argument_1, argument_2, ...) {
+  # what the function does
+}
+```
+
+. . .
+
+For example:
+
+```{r}
+multiply_by_3 <- function(x) {
+  3 * x
+}
+```
+
+<br>
+
+. . .
+
+```{r}
+multiply_by_3(2)
+multiply_by_3(10)
+```
+
+## Revisit: `parse_article_page()` {.smaller}
+
+```{r}
+#| code-line-numbers: "|1|2|4|5|6|7"
+# fmt: skip
+parse_article_page <- function(url) {    # define a function with one argument, url
+  article_page <- read_html(url)         # read in the page at the url
+
+  article_page |> # start with the page
+    html_elements(".article-content") |> # extract element w/ selector .article-content
+    html_text2() |>                      # extract text from element (and clean it up)
+    str_remove_all("\n")                 # remove all newline characters, return result
+}
+```
+
+## Test the function {.smaller}
+
+```{r}
+#| eval: false
 chronicle |>
   slice_head(n = 1) |>
   mutate(article = parse_article_page(url)) |>
   select(title, article)
 ```
 
-## Test the function
+```{r}
+#| echo: false
+options(width = 200)
+chronicle |>
+  slice_head(n = 1) |>
+  mutate(article = parse_article_page(url)) |>
+  select(title, article)
+```
+
+## Test the function {.smaller}
 
 ```{r}
+#| eval: false
 #| code-line-numbers: "|3"
 chronicle |>
   slice_head(n = 3) |>
@@ -289,10 +353,32 @@ chronicle |>
   select(title, article)
 ```
 
-## Test the function
+```{r}
+#| echo: false
+options(width = 200)
+chronicle |>
+  slice_head(n = 3) |>
+  rowwise() |>
+  mutate(article = parse_article_page(url)) |>
+  select(title, article)
+```
+
+## Test the function {.smaller}
 
 ```{r}
-#| code-line-numbers: "|4"
+#| eval: false
+#| code-line-numbers: "|5"
+chronicle |>
+  slice_head(n = 3) |>
+  rowwise() |>
+  mutate(article = parse_article_page(url)) |>
+  ungroup() |>
+  select(title, article)
+```
+
+```{r}
+#| echo: false
+options(width = 200)
 chronicle |>
   slice_head(n = 3) |>
   rowwise() |>
@@ -320,25 +406,39 @@ chronicle_article
 chronicle_article
 ```
 
+## Revisit: Summary table
+
+::: question
+Now that you have the data, how would you produce the summary table below?
+:::
+
+```{r}
+#| ref-label: chronicle-article-word-counts
+#| echo: false
+```
+
 ## Summarize 1 {.smaller}
 
 ```{r}
+#| code-line-numbers: "|2"
 chronicle_article |>
   mutate(n_words = str_count(article, " ") + 1) |>
   relocate(n_words)
 ```
 
-## Summarize 2
+## Summarize 2 {.smaller}
 
 ```{r}
+#| code-line-numbers: "|3"
 chronicle_article |>
   mutate(n_words = str_count(article, " ") + 1) |>
   group_by(column)
 ```
 
-## Summarize 3
+## Summarize 3 {.smaller}
 
 ```{r}
+#| code-line-numbers: "|4-6"
 chronicle_article |>
   mutate(n_words = str_count(article, " ") + 1) |>
   group_by(column) |>
@@ -347,9 +447,10 @@ chronicle_article |>
   )
 ```
 
-## Summarize 4
+## Summarize 4 {.smaller}
 
 ```{r}
+#| code-line-numbers: "|4-7"
 chronicle_article |>
   mutate(n_words = str_count(article, " ") + 1) |>
   group_by(column) |>
@@ -359,7 +460,7 @@ chronicle_article |>
   )
 ```
 
-## Make a pretty table
+## Make a pretty table {.smaller}
 
 with the `kable()` function from the `knitr` package:
 
@@ -375,7 +476,7 @@ chronicle_article |>
   kable()
 ```
 
-## Update column names
+## Update column names {.smaller}
 
 ```{r}
 #| code-line-numbers: "|9"
@@ -391,7 +492,7 @@ chronicle_article |>
   )
 ```
 
-## Update digits
+## Update digits {.smaller}
 
 ```{r}
 #| code-line-numbers: "|10"
