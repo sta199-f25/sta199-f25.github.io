@@ -6,11 +6,10 @@ library(polite)
 
 # check that we can scrape data from the chronicle -----------------------------
 
-bow(
-  "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html"
-)
+bow("https://www.dukechronicle.com/section/opinion?page=1&per_page=500")
 
 # read page --------------------------------------------------------------------
+# read from local copy of the site
 
 page <- read_html(
   "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html"
@@ -48,14 +47,12 @@ chronicle_raw <- tibble(
 # clean up data ----------------------------------------------------------------
 
 chronicle <- chronicle_raw |>
-  # separate author and date_time into two columns
   separate_wider_delim(
     author_date_time,
     delim = "\n|\n",
     names = c("author", "date_time"),
     too_few = "align_start"
   ) |>
-  # separate column_1 and column_2 into two columns
   separate_wider_delim(
     column,
     delim = " | ",
@@ -63,19 +60,18 @@ chronicle <- chronicle_raw |>
     too_few = "align_start"
   ) |>
   mutate(
-    # make column be column_2 if it exists, otherwise column_1
     column = if_else(is.na(column_2), column_1, column_2),
-    # parse date_time into a date-time object
     date_time = mdy_hm(date_time),
-    # extract month and day from date_time
     month = month(date_time, label = TRUE),
     day = day(date_time),
-    # create full url
-    url = paste0("https://www.dukechronicle.com/", url)
+    url = str_remove(url, ".."),
+    url = paste0(
+      "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com",
+      url
+    )
   ) |>
-  # select only relevant columns
   select(title, author, date_time, month, day, column, url)
 
 # write data -------------------------------------------------------------------
 
-write_csv(chronicle, file = "data/chronicle.csv")
+write_csv(chronicle, file = "slides/data/chronicle.csv")

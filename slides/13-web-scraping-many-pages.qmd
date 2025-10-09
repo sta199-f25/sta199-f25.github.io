@@ -1,0 +1,375 @@
+---
+title: "Web scraping<br>many pages"
+subtitle: "Lecture 14"
+date: "2025-10-09"
+format: 
+  revealjs: 
+    output-file: 13-web-scraping-many-pages-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-09-chronicle-scrape"
+```
+
+# Warm-up
+
+## While you wait: Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Guess: What is this plot about?
+
+![](images/12/chronicle-sentiments-cropped.png)
+
+**Then, make sure you have a Chrome browser and the SelectorGadget extension installed.**
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Announcements {.smaller}
+
+- HW 2, Question 7: Reproduce the colorful box plot -- We caught an error in grading (any theme with a while background would have worked). If you originally missed points due to not using `theme_bw()`, but you used another theme with a white background, we've updated your grade.
+
+- Midsemester course survey due tonight at 11:59pm
+
+- Project proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm -- any questions?
+
+# From last time
+
+## Opinion articles in The Chronicle
+
+Go to <https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html> (copy of The Chronicle opinion section as of October 7, 2025).
+
+## Goal
+
+::::: columns
+::: {.column width="50%"}
+-   Scrape data and organize it in a tidy format in R
+-   Perform light text parsing to clean data
+-   Summarize and visualze the data
+:::
+
+::: {.column width="50%"}
+![](images/13/chronicle-data.png){fig-align="center"}
+:::
+:::::
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`* and *`chronicle-scrape.R`*.
+:::
+
+## Recap
+
+-   Use the SelectorGadget identify tags for elements you want to grab
+-   Use rvest to first read the whole page (into R) and then parse the object you've read in to the elements you're interested in
+-   Put the components together in a data frame (a tibble) and analyze it like you analyze any other data
+
+## A new R workflow {.smaller}
+
+-   When working in a Quarto document, your analysis is re-run each time you knit
+
+-   If web scraping in a Quarto document, you'd be re-scraping the data each time you knit, which is undesirable (and not *nice*)!
+
+-   An alternative workflow:
+
+    -   Use an R script to save your code
+    -   Saving interim data scraped using the code in the script as CSV or RDS files
+    -   Use the saved data in your analysis in your Quarto document
+
+# Web scraping considerations
+
+## Ethics: "Can you?" vs "Should you?"
+
+![](images/12/ok-cupid-1.png){fig-align="center" width="800"}
+
+::: aside
+Source: Brian Resnick, [Researchers just released profile data on 70,000 OkCupid users without permission](https://www.vox.com/2016/5/12/11666116/70000-okcupid-users-data-release), Vox.
+:::
+
+## "Can you?" vs "Should you?"
+
+![](images/12/ok-cupid-2.png){fig-align="center" width="699"}
+
+## Challenges: Unreliable formatting
+
+![](images/12/unreliable-formatting.png){fig-align="center" width="699"}
+
+::: aside
+[alumni.duke.edu/news/notable-alumni](https://alumni.duke.edu/news/notable-alumni)
+:::
+
+## Challenges: Data broken into many pages
+
+![](images/12/many-pages.png){fig-align="center"}
+
+# Scraping from many pages
+
+## Packages
+
+```{r}
+library(tidyverse)
+library(rvest)
+library(knitr)
+```
+
+## Columns and words
+
+::: question
+What additional information do we need to produce the table below?
+:::
+
+```{r}
+#| label: chronicle-article-word-counts
+#| echo: false
+#| message: false
+chronicle_article <- read_csv("data/chronicle-article.csv")
+stop_words <- read_csv("data/stop-words.csv")
+
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  group_by(column) |>
+  summarize(avg_n_words = mean(n_words), n_articles = n()) |>
+  knitr::kable(
+    col.names = c("Column", "Avg. # words/article", "# articles"),
+    digits = 0
+  )
+```
+
+## Start with the URL for an first article
+
+```{r}
+#| message: false
+chronicle <- read_csv("data/chronicle.csv")
+
+article_url <- chronicle |>
+  slice_head(n = 1) |>
+  pull()
+
+article_url
+```
+
+## Read in the page
+
+```{r}
+article_page <- read_html(article_url)
+
+article_page
+```
+
+## Identify the elements you want
+
+```
+.article-content
+```
+
+![](images/13/article-content.png){fig-align="center"}
+
+## Parse the elements you want - 1 {.smaller}
+
+```{r}
+article_page |>
+  html_elements(".article-content")
+```
+
+## Parse the elements you want - 2 {.smaller}
+
+```{r}
+article_page |>
+  html_elements(".article-content") |>
+  html_text2()
+```
+
+## Parse the elements you want - 3 {.smaller}
+
+```{r}
+article_page |>
+  html_elements(".article-content") |>
+  html_text2() |>
+  str_remove_all("\n")
+```
+
+## Wrap in a function
+
+```{r}
+#| code-line-numbers: "|1|2|4-7"
+parse_article_page <- function(url) {
+  article_page <- read_html(url)
+
+  article_page |>
+    html_elements(".article-content") |>
+    html_text2() |>
+    str_remove_all("\n")
+}
+```
+
+## Test the function
+
+```{r}
+chronicle |>
+  slice_head(n = 1) |>
+  mutate(article = parse_article_page(url)) |>
+  select(title, article)
+```
+
+## Test the function
+
+```{r}
+#| code-line-numbers: "|3"
+chronicle |>
+  slice_head(n = 3) |>
+  rowwise() |>
+  mutate(article = parse_article_page(url)) |>
+  select(title, article)
+```
+
+## Test the function
+
+```{r}
+#| code-line-numbers: "|4"
+chronicle |>
+  slice_head(n = 3) |>
+  rowwise() |>
+  mutate(article = parse_article_page(url)) |>
+  ungroup() |>
+  select(title, article)
+```
+
+## All articles {.smaller}
+
+This can take a bit to run!
+
+```{r}
+#| eval: false
+chronicle_article <- chronicle |>
+  rowwise() |>
+  mutate(article = parse_article_page(url)) |>
+  ungroup()
+
+chronicle_article
+```
+
+```{r}
+#| echo: false
+chronicle_article
+```
+
+## Summarize 1 {.smaller}
+
+```{r}
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  relocate(n_words)
+```
+
+## Summarize 2
+
+```{r}
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  group_by(column)
+```
+
+## Summarize 3
+
+```{r}
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  group_by(column) |>
+  summarize(
+    avg_n_words = mean(n_words)
+  )
+```
+
+## Summarize 4
+
+```{r}
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  group_by(column) |>
+  summarize(
+    avg_n_words = mean(n_words),
+    n_articles = n()
+  )
+```
+
+## Make a pretty table
+
+with the `kable()` function from the `knitr` package:
+
+```{r}
+#| code-line-numbers: "|8"
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  group_by(column) |>
+  summarize(
+    avg_n_words = mean(n_words),
+    n_articles = n()
+  ) |>
+  kable()
+```
+
+## Update column names
+
+```{r}
+#| code-line-numbers: "|9"
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  group_by(column) |>
+  summarize(
+    avg_n_words = mean(n_words),
+    n_articles = n()
+  ) |>
+  kable(
+    col.names = c("Column", "Avg. # words/article", "# articles")
+  )
+```
+
+## Update digits
+
+```{r}
+#| code-line-numbers: "|10"
+chronicle_article |>
+  mutate(n_words = str_count(article, " ") + 1) |>
+  group_by(column) |>
+  summarize(
+    avg_n_words = mean(n_words),
+    n_articles = n()
+  ) |>
+  kable(
+    col.names = c("Column", "Avg. # words/article", "# articles"),
+    digits = 0
+  )
+```
