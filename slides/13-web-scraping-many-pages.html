@@ -109,10 +109,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <meta property="og:title" content="Web scrapingmany pages – STA 199">
 <meta property="og:description" content="Lecture 14">
-<meta property="og:image" content="https://sta199-f25.github.io/slides/images/12/chronicle-sentiments-cropped.png">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:height" content="728">
-<meta property="og:image:width" content="1169">
+<meta property="og:image:height" content="888">
+<meta property="og:image:width" content="866">
 </head>
 <body class="nav-sidebar docked slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -546,7 +546,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#opinion-articles-in-the-chronicle" id="toc-opinion-articles-in-the-chronicle" class="nav-link" data-scroll-target="#opinion-articles-in-the-chronicle">Opinion articles in The Chronicle</a></li>
   <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
   <li><a href="#ae-09-chronicle-scrape" id="toc-ae-09-chronicle-scrape" class="nav-link" data-scroll-target="#ae-09-chronicle-scrape">ae-09-chronicle-scrape</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
   <li><a href="#a-new-r-workflow" id="toc-a-new-r-workflow" class="nav-link" data-scroll-target="#a-new-r-workflow">A new R workflow</a></li>
   </ul>
 </li>
@@ -627,13 +627,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>Guess: What is this plot about?</p>
-<p><a href="images/12/chronicle-sentiments-cropped.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/12/chronicle-sentiments-cropped.png" class="img-fluid"></a></p>
-<p><strong>Then, make sure you have a Chrome browser and the SelectorGadget extension installed.</strong></p>
+<p>The following code in <code>chronicle-scrape.R</code> extracts titles of an opinion article from The Chronicle website:</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">page</span> <span class="op">&lt;-</span> <span class="fu">read_html</span><span class="op">(</span></span>
+<span>  <span class="st">"https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">titles</span> <span class="op">&lt;-</span> <span class="va">page</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">html_elements</span><span class="op">(</span><span class="st">".space-y-4 .font-extrabold"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">html_text</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Which of the following needs to change to extract column titles instead?</p>
+<div class="wooclap-choices">
+<ul>
+<li>Change the URL in <code><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html()</a></code>
+</li>
+<li>Change the function <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code> to <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>
+</li>
+<li>Change the CSS selector <code>.space-y-4 .font-extrabold</code> to <code>.space-y-4 .text-brand</code>
+</li>
+<li>Change the function <code><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text()</a></code> to <code><a href="https://rvest.tidyverse.org/reference/html_attr.html">html_attr()</a></code>
+</li>
+</ul>
+</div>
 </div>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
 </figure>
 </div>
 <div class="small">
@@ -643,11 +663,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li><p>HW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a while background would have worked). If you originally missed points due to not using <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code>, but you used another theme with a white background, we’ve updated your grade.</p></li>
+<li><p>HW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a white background would have worked). If you originally missed points due to not using <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code>, but you used another theme with a white background, we’ve updated your grade.</p></li>
 <li><p>Midsemester course survey due tonight at 11:59pm</p></li>
 <li><p>Project proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm – any questions?</p></li>
 </ul></section></section><section id="from-last-time" class="level1"><h1>From last time</h1>
-<section id="opinion-articles-in-the-chronicle" class="level2"><h2 class="anchored" data-anchor-id="opinion-articles-in-the-chronicle">Opinion articles in The Chronicle</h2>
+<section id="opinion-articles-in-the-chronicle" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="opinion-articles-in-the-chronicle">Opinion articles in The Chronicle</h2>
 <p>Go to <a href="https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html" class="uri">https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html</a> (copy of The Chronicle opinion section as of October 7, 2025).</p>
 </section><section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <div class="columns">
@@ -659,7 +679,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/13/chronicle-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/13/chronicle-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure"><p><a href="images/13/chronicle-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/13/chronicle-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -672,12 +692,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-chronicle-scrape.qmd</em> and <em><code>chronicle-scrape.R</code></em>.</p></li>
 </ul>
 </div>
-</section><section id="recap" class="level2"><h2 class="anchored" data-anchor-id="recap">Recap</h2>
+</section><section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Put the folllowing tasks in order to scrape data from a website:</p>
+<div class="wooclap-choices">
 <ul>
 <li>Use the SelectorGadget identify tags for elements you want to grab</li>
-<li>Use rvest to first read the whole page (into R) and then parse the object you’ve read in to the elements you’re interested in</li>
+<li>Use <code><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html()</a></code> to read the page’s source code into R</li>
+<li>Use other functions from the <strong>rvest</strong> package to parse the elements you’re interested in</li>
 <li>Put the components together in a data frame (a tibble) and analyze it like you analyze any other data</li>
-</ul></section><section id="a-new-r-workflow" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="a-new-r-workflow">A new R workflow</h2>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="a-new-r-workflow" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="a-new-r-workflow">A new R workflow</h2>
 <ul>
 <li><p>When working in a Quarto document, your analysis is re-run each time you knit</p></li>
 <li><p>If web scraping in a Quarto document, you’d be re-scraping the data each time you knit, which is undesirable (and not <em>nice</em>)!</p></li>
@@ -690,36 +729,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </li>
 </ul></section></section><section id="web-scraping-considerations" class="level1 page-columns page-full"><h1>Web scraping considerations</h1>
-<section id="ethics-can-you-vs-should-you" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="ethics-can-you-vs-should-you">Ethics: “Can you?” vs “Should you?”</h2>
+<section id="ethics-can-you-vs-should-you" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="ethics-can-you-vs-should-you">Ethics: “Can you?” vs “Should you?”</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/ok-cupid-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/12/ok-cupid-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></a></p>
+<figure class="figure"><p><a href="images/13/ok-cupid-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/13/ok-cupid-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700"></a></p>
 </figure>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Source: Brian Resnick, <a href="https://www.vox.com/2016/5/12/11666116/70000-okcupid-users-data-release">Researchers just released profile data on 70,000 OkCupid users without permission</a>, Vox.</p>
+<p>Source: Brian Resnick, <a href="https://www.vox.com/2016/5/13/11666116/70000-okcupid-users-data-release">Researchers just released profile data on 70,000 OkCupid users without permission</a>, Vox.</p>
 </div></div></section><section id="can-you-vs-should-you" class="level2"><h2 class="anchored" data-anchor-id="can-you-vs-should-you">“Can you?” vs “Should you?”</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/ok-cupid-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/12/ok-cupid-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
+<figure class="figure"><p><a href="images/13/ok-cupid-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/13/ok-cupid-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
 </figure>
 </div>
-</section><section id="challenges-unreliable-formatting" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="challenges-unreliable-formatting">Challenges: Unreliable formatting</h2>
+</section><section id="challenges-unreliable-formatting" class="level2"><h2 class="anchored" data-anchor-id="challenges-unreliable-formatting">Challenges: Unreliable formatting</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/unreliable-formatting.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/12/unreliable-formatting.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
+<figure class="figure"><p><a href="images/13/unreliable-formatting.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/13/unreliable-formatting.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
 </figure>
 </div>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><a href="https://alumni.duke.edu/news/notable-alumni">alumni.duke.edu/news/notable-alumni</a></p>
-</div></div></section><section id="challenges-data-broken-into-many-pages" class="level2"><h2 class="anchored" data-anchor-id="challenges-data-broken-into-many-pages">Challenges: Data broken into many pages</h2>
+</section><section id="challenges-data-broken-into-many-pages" class="level2"><h2 class="anchored" data-anchor-id="challenges-data-broken-into-many-pages">Challenges: Data broken into many pages</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/many-pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/12/many-pages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure"><p><a href="images/13/many-pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/13/many-pages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 </section></section><section id="scraping-from-many-pages" class="level1"><h1>Scraping from many pages</h1>
 <section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4          ✔ readr     2.1.5     
@@ -732,7 +768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span> <span class="co"># for web scraping</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'rvest'
@@ -741,7 +777,7 @@ The following object is masked from 'package:readr':
 
     guess_encoding</code></pre>
 </div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co"># for pretty tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="columns-and-words" class="level2"><h2 class="anchored" data-anchor-id="columns-and-words">Columns and words</h2>
 <div class="question">
@@ -777,7 +813,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="start-with-the-url-for-an-first-article" class="level2"><h2 class="anchored" data-anchor-id="start-with-the-url-for-an-first-article">Start with the URL for an first article</h2>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/chronicle.csv"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/chronicle.csv"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">article_url</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -790,7 +826,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="read-in-the-page" class="level2"><h2 class="anchored" data-anchor-id="read-in-the-page">Read in the page</h2>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">article_url</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">article_url</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">article_page</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -808,7 +844,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="parse-the-elements-you-want---1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---1">Parse the elements you want - 1</h2>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{xml_nodeset (1)}
@@ -817,7 +853,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="parse-the-elements-you-want---2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---2">Parse the elements you want - 2</h2>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -826,7 +862,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="parse-the-elements-you-want---3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---3">Parse the elements you want - 3</h2>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -836,18 +872,18 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="wrap-in-a-function" class="level2"><h2 class="anchored" data-anchor-id="wrap-in-a-function">Wrap in a function</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
-<span id="cb17-2"><a href="#cb17-2"></a>  article_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
-<span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a>  article_page <span class="sc">|&gt;</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a>    <span class="fu">html_elements</span>(<span class="st">".article-content"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb17-6"><a href="#cb17-6"></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span></span>
-<span id="cb17-7"><a href="#cb17-7"></a>    <span class="fu">str_remove_all</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb17-8"><a href="#cb17-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
+<span id="cb18-2"><a href="#cb18-2"></a>  article_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  article_page <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="fu">html_elements</span>(<span class="st">".article-content"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>    <span class="fu">str_remove_all</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-8"><a href="#cb18-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="test-the-function" class="level2"><h2 class="anchored" data-anchor-id="test-the-function">Test the function</h2>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>article <span class="op">=</span> <span class="fu">parse_article_page</span><span class="op">(</span><span class="va">url</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">title</span>, <span class="va">article</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -860,11 +896,11 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="test-the-function-1" class="level2"><h2 class="anchored" data-anchor-id="test-the-function-1">Test the function</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>chronicle <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>chronicle <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
 # Rowwise: 
@@ -877,12 +913,12 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="test-the-function-2" class="level2"><h2 class="anchored" data-anchor-id="test-the-function-2">Test the function</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>chronicle <span class="sc">|&gt;</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>chronicle <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   title                                              article          
@@ -895,7 +931,7 @@ The following object is masked from 'package:readr':
 </section><section id="all-articles" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="all-articles">All articles</h2>
 <p>This can take a bit to run!</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>article <span class="op">=</span> <span class="fu">parse_article_page</span><span class="op">(</span><span class="va">url</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -922,7 +958,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="summarize-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-1">Summarize 1</h2>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>n_words <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_count.html">str_count</a></span><span class="op">(</span><span class="va">article</span>, <span class="st">" "</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span><span class="va">n_words</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -945,7 +981,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="summarize-2" class="level2"><h2 class="anchored" data-anchor-id="summarize-2">Summarize 2</h2>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>n_words <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_count.html">str_count</a></span><span class="op">(</span><span class="va">article</span>, <span class="st">" "</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">column</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -969,7 +1005,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="summarize-3" class="level2"><h2 class="anchored" data-anchor-id="summarize-3">Summarize 3</h2>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>n_words <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_count.html">str_count</a></span><span class="op">(</span><span class="va">article</span>, <span class="st">" "</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">column</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
@@ -986,7 +1022,7 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="summarize-4" class="level2"><h2 class="anchored" data-anchor-id="summarize-4">Summarize 4</h2>
 <div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>n_words <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_count.html">str_count</a></span><span class="op">(</span><span class="va">article</span>, <span class="st">" "</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">column</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
@@ -1005,14 +1041,14 @@ The following object is masked from 'package:readr':
 </section><section id="make-a-pretty-table" class="level2"><h2 class="anchored" data-anchor-id="make-a-pretty-table">Make a pretty table</h2>
 <p>with the <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable()</a></code> function from the <code>knitr</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb34-5"><a href="#cb34-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
-<span id="cb34-6"><a href="#cb34-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
-<span id="cb34-7"><a href="#cb34-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb35-5"><a href="#cb35-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
+<span id="cb35-6"><a href="#cb35-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
+<span id="cb35-7"><a href="#cb35-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1042,16 +1078,16 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="update-column-names" class="level2"><h2 class="anchored" data-anchor-id="update-column-names">Update column names</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
-<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb35-5"><a href="#cb35-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
-<span id="cb35-6"><a href="#cb35-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
-<span id="cb35-7"><a href="#cb35-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">kable</span>(</span>
-<span id="cb35-9"><a href="#cb35-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>)</span>
-<span id="cb35-10"><a href="#cb35-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb36-5"><a href="#cb36-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
+<span id="cb36-6"><a href="#cb36-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
+<span id="cb36-7"><a href="#cb36-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb36-8"><a href="#cb36-8"></a>  <span class="fu">kable</span>(</span>
+<span id="cb36-9"><a href="#cb36-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>)</span>
+<span id="cb36-10"><a href="#cb36-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1081,17 +1117,17 @@ The following object is masked from 'package:readr':
 </div>
 </section><section id="update-digits" class="level2"><h2 class="anchored" data-anchor-id="update-digits">Update digits</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
-<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb36-5"><a href="#cb36-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
-<span id="cb36-6"><a href="#cb36-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
-<span id="cb36-7"><a href="#cb36-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb36-8"><a href="#cb36-8"></a>  <span class="fu">kable</span>(</span>
-<span id="cb36-9"><a href="#cb36-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>),</span>
-<span id="cb36-10"><a href="#cb36-10"></a>    <span class="at">digits =</span> <span class="dv">0</span></span>
-<span id="cb36-11"><a href="#cb36-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb37-5"><a href="#cb37-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
+<span id="cb37-7"><a href="#cb37-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb37-8"><a href="#cb37-8"></a>  <span class="fu">kable</span>(</span>
+<span id="cb37-9"><a href="#cb37-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>),</span>
+<span id="cb37-10"><a href="#cb37-10"></a>    <span class="at">digits =</span> <span class="dv">0</span></span>
+<span id="cb37-11"><a href="#cb37-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">

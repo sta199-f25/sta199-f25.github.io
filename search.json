@@ -993,14 +993,14 @@
     "href": "slides/13-web-scraping-many-pages-slides.html#while-you-wait-participate",
     "title": "Web scrapingmany pages",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\nGuess: What is this plot about?\n\nThen, make sure you have a Chrome browser and the SelectorGadget extension installed.\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\nThe following code in chronicle-scrape.R extracts titles of an opinion article from The Chronicle website:\n\npage &lt;- read_html(\n  \"https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html\"\n)\n\ntitles &lt;- page |&gt;\n  html_elements(\".space-y-4 .font-extrabold\") |&gt;\n  html_text()\n\nWhich of the following needs to change to extract column titles instead?\n\n\nChange the URL in read_html()\n\nChange the function html_elements() to html_element()\n\nChange the CSS selector .space-y-4 .font-extrabold to .space-y-4 .text-brand\n\nChange the function html_text() to html_attr()\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/13-web-scraping-many-pages-slides.html#announcements",
     "href": "slides/13-web-scraping-many-pages-slides.html#announcements",
     "title": "Web scrapingmany pages",
     "section": "Announcements",
-    "text": "Announcements\n\nHW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a while background would have worked). If you originally missed points due to not using theme_bw(), but you used another theme with a white background, we’ve updated your grade.\nMidsemester course survey due tonight at 11:59pm\nProject proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm – any questions?"
+    "text": "Announcements\n\nHW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a white background would have worked). If you originally missed points due to not using theme_bw(), but you used another theme with a white background, we’ve updated your grade.\nMidsemester course survey due tonight at 11:59pm\nProject proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm – any questions?"
   },
   {
     "objectID": "slides/13-web-scraping-many-pages-slides.html#opinion-articles-in-the-chronicle",
@@ -1024,11 +1024,11 @@
     "text": "ae-09-chronicle-scrape\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-chronicle-scrape.qmd and chronicle-scrape.R."
   },
   {
-    "objectID": "slides/13-web-scraping-many-pages-slides.html#recap",
-    "href": "slides/13-web-scraping-many-pages-slides.html#recap",
+    "objectID": "slides/13-web-scraping-many-pages-slides.html#participate",
+    "href": "slides/13-web-scraping-many-pages-slides.html#participate",
     "title": "Web scrapingmany pages",
-    "section": "Recap",
-    "text": "Recap\n\nUse the SelectorGadget identify tags for elements you want to grab\nUse rvest to first read the whole page (into R) and then parse the object you’ve read in to the elements you’re interested in\nPut the components together in a data frame (a tibble) and analyze it like you analyze any other data"
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nPut the folllowing tasks in order to scrape data from a website:\n\n\nUse the SelectorGadget identify tags for elements you want to grab\nUse read_html() to read the page’s source code into R\nUse other functions from the rvest package to parse the elements you’re interested in\nPut the components together in a data frame (a tibble) and analyze it like you analyze any other data\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/13-web-scraping-many-pages-slides.html#a-new-r-workflow",
@@ -1056,7 +1056,7 @@
     "href": "slides/13-web-scraping-many-pages-slides.html#challenges-unreliable-formatting",
     "title": "Web scrapingmany pages",
     "section": "Challenges: Unreliable formatting",
-    "text": "Challenges: Unreliable formatting\n\n\n\n\n\n\nalumni.duke.edu/news/notable-alumni"
+    "text": "Challenges: Unreliable formatting"
   },
   {
     "objectID": "slides/13-web-scraping-many-pages-slides.html#challenges-data-broken-into-many-pages",
@@ -1070,7 +1070,7 @@
     "href": "slides/13-web-scraping-many-pages-slides.html#packages",
     "title": "Web scrapingmany pages",
     "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rvest)\n\n\nAttaching package: 'rvest'\n\nThe following object is masked from 'package:readr':\n\n    guess_encoding\n\nlibrary(knitr)"
+    "text": "Packages\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rvest) # for web scraping\n\n\nAttaching package: 'rvest'\n\nThe following object is masked from 'package:readr':\n\n    guess_encoding\n\nlibrary(knitr) # for pretty tables"
   },
   {
     "objectID": "slides/13-web-scraping-many-pages-slides.html#columns-and-words",
@@ -1210,21 +1210,21 @@
     "href": "slides/13-web-scraping-many-pages.html",
     "title": "Web scrapingmany pages",
     "section": "",
-    "text": "Guess: What is this plot about?\n\nThen, make sure you have a Chrome browser and the SelectorGadget extension installed.\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nHW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a while background would have worked). If you originally missed points due to not using theme_bw(), but you used another theme with a white background, we’ve updated your grade.\nMidsemester course survey due tonight at 11:59pm\nProject proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm – any questions?"
+    "text": "The following code in chronicle-scrape.R extracts titles of an opinion article from The Chronicle website:\n\npage &lt;- read_html(\n  \"https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html\"\n)\n\ntitles &lt;- page |&gt;\n  html_elements(\".space-y-4 .font-extrabold\") |&gt;\n  html_text()\n\nWhich of the following needs to change to extract column titles instead?\n\n\nChange the URL in read_html()\n\nChange the function html_elements() to html_element()\n\nChange the CSS selector .space-y-4 .font-extrabold to .space-y-4 .text-brand\n\nChange the function html_text() to html_attr()\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nHW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a white background would have worked). If you originally missed points due to not using theme_bw(), but you used another theme with a white background, we’ve updated your grade.\nMidsemester course survey due tonight at 11:59pm\nProject proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm – any questions?"
   },
   {
     "objectID": "slides/13-web-scraping-many-pages.html#while-you-wait-participate",
     "href": "slides/13-web-scraping-many-pages.html#while-you-wait-participate",
     "title": "Web scrapingmany pages",
     "section": "",
-    "text": "Guess: What is this plot about?\n\nThen, make sure you have a Chrome browser and the SelectorGadget extension installed.\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "The following code in chronicle-scrape.R extracts titles of an opinion article from The Chronicle website:\n\npage &lt;- read_html(\n  \"https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/section/opinionabc4.html\"\n)\n\ntitles &lt;- page |&gt;\n  html_elements(\".space-y-4 .font-extrabold\") |&gt;\n  html_text()\n\nWhich of the following needs to change to extract column titles instead?\n\n\nChange the URL in read_html()\n\nChange the function html_elements() to html_element()\n\nChange the CSS selector .space-y-4 .font-extrabold to .space-y-4 .text-brand\n\nChange the function html_text() to html_attr()\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/13-web-scraping-many-pages.html#announcements",
     "href": "slides/13-web-scraping-many-pages.html#announcements",
     "title": "Web scrapingmany pages",
     "section": "",
-    "text": "HW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a while background would have worked). If you originally missed points due to not using theme_bw(), but you used another theme with a white background, we’ve updated your grade.\nMidsemester course survey due tonight at 11:59pm\nProject proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm – any questions?"
+    "text": "HW 2, Question 7: Reproduce the colorful box plot – We caught an error in grading (any theme with a white background would have worked). If you originally missed points due to not using theme_bw(), but you used another theme with a white background, we’ve updated your grade.\nMidsemester course survey due tonight at 11:59pm\nProject proposals (Milestone 2) + first peer evaluation due next Thursday at 11:59pm – any questions?"
   },
   {
     "objectID": "slides/13-web-scraping-many-pages.html#opinion-articles-in-the-chronicle",
@@ -1248,11 +1248,11 @@
     "text": "ae-09-chronicle-scrape\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-chronicle-scrape.qmd and chronicle-scrape.R."
   },
   {
-    "objectID": "slides/13-web-scraping-many-pages.html#recap",
-    "href": "slides/13-web-scraping-many-pages.html#recap",
+    "objectID": "slides/13-web-scraping-many-pages.html#participate",
+    "href": "slides/13-web-scraping-many-pages.html#participate",
     "title": "Web scrapingmany pages",
-    "section": "Recap",
-    "text": "Recap\n\nUse the SelectorGadget identify tags for elements you want to grab\nUse rvest to first read the whole page (into R) and then parse the object you’ve read in to the elements you’re interested in\nPut the components together in a data frame (a tibble) and analyze it like you analyze any other data"
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nPut the folllowing tasks in order to scrape data from a website:\n\n\nUse the SelectorGadget identify tags for elements you want to grab\nUse read_html() to read the page’s source code into R\nUse other functions from the rvest package to parse the elements you’re interested in\nPut the components together in a data frame (a tibble) and analyze it like you analyze any other data\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/13-web-scraping-many-pages.html#a-new-r-workflow",
@@ -1280,7 +1280,7 @@
     "href": "slides/13-web-scraping-many-pages.html#challenges-unreliable-formatting",
     "title": "Web scrapingmany pages",
     "section": "Challenges: Unreliable formatting",
-    "text": "Challenges: Unreliable formatting\n\n\n\n\n\n\nalumni.duke.edu/news/notable-alumni"
+    "text": "Challenges: Unreliable formatting"
   },
   {
     "objectID": "slides/13-web-scraping-many-pages.html#challenges-data-broken-into-many-pages",
@@ -1294,7 +1294,7 @@
     "href": "slides/13-web-scraping-many-pages.html#packages",
     "title": "Web scrapingmany pages",
     "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rvest)\n\n\nAttaching package: 'rvest'\n\nThe following object is masked from 'package:readr':\n\n    guess_encoding\n\nlibrary(knitr)"
+    "text": "Packages\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4          ✔ readr     2.1.5     \n✔ forcats   1.0.0          ✔ stringr   1.5.1     \n✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004\n✔ lubridate 1.9.4          ✔ tidyr     1.3.1     \n✔ purrr     1.1.0          \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rvest) # for web scraping\n\n\nAttaching package: 'rvest'\n\nThe following object is masked from 'package:readr':\n\n    guess_encoding\n\nlibrary(knitr) # for pretty tables"
   },
   {
     "objectID": "slides/13-web-scraping-many-pages.html#columns-and-words",
@@ -1626,55 +1626,6 @@
     "text": "ae-09-chronicle-scrape\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-chronicle-scrape.qmd and chronicle-scrape.R."
   },
   {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#recap",
-    "href": "slides/12-web-scraping-single-page-slides.html#recap",
-    "title": "Web scrapinga single page",
-    "section": "Recap",
-    "text": "Recap\n\nUse the SelectorGadget identify tags for elements you want to grab\nUse rvest to first read the whole page (into R) and then parse the object you’ve read in to the elements you’re interested in\nPut the components together in a data frame (a tibble) and analyze it like you analyze any other data"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#a-new-r-workflow",
-    "href": "slides/12-web-scraping-single-page-slides.html#a-new-r-workflow",
-    "title": "Web scrapinga single page",
-    "section": "A new R workflow",
-    "text": "A new R workflow\n\nWhen working in a Quarto document, your analysis is re-run each time you knit\nIf web scraping in a Quarto document, you’d be re-scraping the data each time you knit, which is undesirable (and not nice)!\n\nAn alternative workflow:\n\nUse an R script to save your code\nSaving interim data scraped using the code in the script as CSV or RDS files\nUse the saved data in your analysis in your Quarto document"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#ethics-can-you-vs-should-you",
-    "href": "slides/12-web-scraping-single-page-slides.html#ethics-can-you-vs-should-you",
-    "title": "Web scrapinga single page",
-    "section": "Ethics: “Can you?” vs “Should you?”",
-    "text": "Ethics: “Can you?” vs “Should you?”\n\n\n\n\n\n\nSource: Brian Resnick, Researchers just released profile data on 70,000 OkCupid users without permission, Vox."
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#can-you-vs-should-you",
-    "href": "slides/12-web-scraping-single-page-slides.html#can-you-vs-should-you",
-    "title": "Web scrapinga single page",
-    "section": "“Can you?” vs “Should you?”",
-    "text": "“Can you?” vs “Should you?”"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#challenges-unreliable-formatting",
-    "href": "slides/12-web-scraping-single-page-slides.html#challenges-unreliable-formatting",
-    "title": "Web scrapinga single page",
-    "section": "Challenges: Unreliable formatting",
-    "text": "Challenges: Unreliable formatting\n\n\n\n\n\n\nalumni.duke.edu/news/notable-alumni"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#challenges-data-broken-into-many-pages",
-    "href": "slides/12-web-scraping-single-page-slides.html#challenges-data-broken-into-many-pages",
-    "title": "Web scrapinga single page",
-    "section": "Challenges: Data broken into many pages",
-    "text": "Challenges: Data broken into many pages"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page-slides.html#workflow-screen-scraping-vs.-apis",
-    "href": "slides/12-web-scraping-single-page-slides.html#workflow-screen-scraping-vs.-apis",
-    "title": "Web scrapinga single page",
-    "section": "Workflow: Screen scraping vs. APIs",
-    "text": "Workflow: Screen scraping vs. APIs\nTwo different scenarios for web scraping:\n\nScreen scraping: extract data from source code of website, with html parser (easy) or regular expression matching (less easy)\nWeb APIs (application programming interface): website offers a set of structured http requests that return JSON or XML files"
-  },
-  {
     "objectID": "slides/12-web-scraping-single-page.html",
     "href": "slides/12-web-scraping-single-page.html",
     "title": "Web scrapinga single page",
@@ -1876,55 +1827,6 @@
     "title": "Web scrapinga single page",
     "section": "ae-09-chronicle-scrape",
     "text": "ae-09-chronicle-scrape\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-chronicle-scrape.qmd and chronicle-scrape.R."
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page.html#recap",
-    "href": "slides/12-web-scraping-single-page.html#recap",
-    "title": "Web scrapinga single page",
-    "section": "Recap",
-    "text": "Recap\n\nUse the SelectorGadget identify tags for elements you want to grab\nUse rvest to first read the whole page (into R) and then parse the object you’ve read in to the elements you’re interested in\nPut the components together in a data frame (a tibble) and analyze it like you analyze any other data"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page.html#a-new-r-workflow",
-    "href": "slides/12-web-scraping-single-page.html#a-new-r-workflow",
-    "title": "Web scrapinga single page",
-    "section": "A new R workflow",
-    "text": "A new R workflow\n\nWhen working in a Quarto document, your analysis is re-run each time you knit\nIf web scraping in a Quarto document, you’d be re-scraping the data each time you knit, which is undesirable (and not nice)!\n\nAn alternative workflow:\n\nUse an R script to save your code\nSaving interim data scraped using the code in the script as CSV or RDS files\nUse the saved data in your analysis in your Quarto document"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page.html#ethics-can-you-vs-should-you",
-    "href": "slides/12-web-scraping-single-page.html#ethics-can-you-vs-should-you",
-    "title": "Web scrapinga single page",
-    "section": "Ethics: “Can you?” vs “Should you?”",
-    "text": "Ethics: “Can you?” vs “Should you?”\n\n\n\n\n\n\nSource: Brian Resnick, Researchers just released profile data on 70,000 OkCupid users without permission, Vox."
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page.html#can-you-vs-should-you",
-    "href": "slides/12-web-scraping-single-page.html#can-you-vs-should-you",
-    "title": "Web scrapinga single page",
-    "section": "“Can you?” vs “Should you?”",
-    "text": "“Can you?” vs “Should you?”"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page.html#challenges-unreliable-formatting",
-    "href": "slides/12-web-scraping-single-page.html#challenges-unreliable-formatting",
-    "title": "Web scrapinga single page",
-    "section": "Challenges: Unreliable formatting",
-    "text": "Challenges: Unreliable formatting\n\n\n\n\n\n\nalumni.duke.edu/news/notable-alumni"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page.html#challenges-data-broken-into-many-pages",
-    "href": "slides/12-web-scraping-single-page.html#challenges-data-broken-into-many-pages",
-    "title": "Web scrapinga single page",
-    "section": "Challenges: Data broken into many pages",
-    "text": "Challenges: Data broken into many pages"
-  },
-  {
-    "objectID": "slides/12-web-scraping-single-page.html#workflow-screen-scraping-vs.-apis",
-    "href": "slides/12-web-scraping-single-page.html#workflow-screen-scraping-vs.-apis",
-    "title": "Web scrapinga single page",
-    "section": "Workflow: Screen scraping vs. APIs",
-    "text": "Workflow: Screen scraping vs. APIs\nTwo different scenarios for web scraping:\n\nScreen scraping: extract data from source code of website, with html parser (easy) or regular expression matching (less easy)\nWeb APIs (application programming interface): website offers a set of structured http requests that return JSON or XML files"
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#while-you-wait-participate",

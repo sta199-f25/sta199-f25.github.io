@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:height" content="728">
 <meta property="og:image:width" content="1169">
 </head>
-<body class="nav-sidebar docked slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -579,24 +579,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#opinion-articles-in-the-chronicle" id="toc-opinion-articles-in-the-chronicle" class="nav-link" data-scroll-target="#opinion-articles-in-the-chronicle">Opinion articles in The Chronicle</a></li>
   <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
   <li><a href="#ae-09-chronicle-scrape" id="toc-ae-09-chronicle-scrape" class="nav-link" data-scroll-target="#ae-09-chronicle-scrape">ae-09-chronicle-scrape</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
-  <li><a href="#a-new-r-workflow" id="toc-a-new-r-workflow" class="nav-link" data-scroll-target="#a-new-r-workflow">A new R workflow</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#web-scraping-considerations" id="toc-web-scraping-considerations" class="nav-link" data-scroll-target="#web-scraping-considerations">Web scraping considerations</a>
-  <ul class="collapse">
-<li><a href="#ethics-can-you-vs-should-you" id="toc-ethics-can-you-vs-should-you" class="nav-link" data-scroll-target="#ethics-can-you-vs-should-you">Ethics: “Can you?” vs “Should you?”</a></li>
-  <li><a href="#can-you-vs-should-you" id="toc-can-you-vs-should-you" class="nav-link" data-scroll-target="#can-you-vs-should-you">“Can you?” vs “Should you?”</a></li>
-  <li><a href="#challenges-unreliable-formatting" id="toc-challenges-unreliable-formatting" class="nav-link" data-scroll-target="#challenges-unreliable-formatting">Challenges: Unreliable formatting</a></li>
-  <li><a href="#challenges-data-broken-into-many-pages" id="toc-challenges-data-broken-into-many-pages" class="nav-link" data-scroll-target="#challenges-data-broken-into-many-pages">Challenges: Data broken into many pages</a></li>
-  <li><a href="#workflow-screen-scraping-vs.-apis" id="toc-workflow-screen-scraping-vs.-apis" class="nav-link" data-scroll-target="#workflow-screen-scraping-vs.-apis">Workflow: Screen scraping vs.&nbsp;APIs</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/12-web-scraping-single-page.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="12-web-scraping-single-page-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Web scraping<br>a single page</h1>
 <p class="subtitle lead">Lecture 12</p>
 </div>
@@ -1207,56 +1195,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-chronicle-scrape.qmd</em> and <em><code>chronicle-scrape.R</code></em>.</p></li>
 </ul>
 </div>
-</section><section id="recap" class="level2"><h2 class="anchored" data-anchor-id="recap">Recap</h2>
-<ul>
-<li>Use the SelectorGadget identify tags for elements you want to grab</li>
-<li>Use rvest to first read the whole page (into R) and then parse the object you’ve read in to the elements you’re interested in</li>
-<li>Put the components together in a data frame (a tibble) and analyze it like you analyze any other data</li>
-</ul></section><section id="a-new-r-workflow" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="a-new-r-workflow">A new R workflow</h2>
-<ul>
-<li><p>When working in a Quarto document, your analysis is re-run each time you knit</p></li>
-<li><p>If web scraping in a Quarto document, you’d be re-scraping the data each time you knit, which is undesirable (and not <em>nice</em>)!</p></li>
-<li>
-<p>An alternative workflow:</p>
-<ul>
-<li>Use an R script to save your code</li>
-<li>Saving interim data scraped using the code in the script as CSV or RDS files</li>
-<li>Use the saved data in your analysis in your Quarto document</li>
-</ul>
-</li>
-</ul></section></section><section id="web-scraping-considerations" class="level1 page-columns page-full"><h1>Web scraping considerations</h1>
-<section id="ethics-can-you-vs-should-you" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="ethics-can-you-vs-should-you">Ethics: “Can you?” vs “Should you?”</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/ok-cupid-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/12/ok-cupid-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></a></p>
-</figure>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Source: Brian Resnick, <a href="https://www.vox.com/2016/5/12/11666116/70000-okcupid-users-data-release">Researchers just released profile data on 70,000 OkCupid users without permission</a>, Vox.</p>
-</div></div></section><section id="can-you-vs-should-you" class="level2"><h2 class="anchored" data-anchor-id="can-you-vs-should-you">“Can you?” vs “Should you?”</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/ok-cupid-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/12/ok-cupid-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
-</figure>
-</div>
-</section><section id="challenges-unreliable-formatting" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="challenges-unreliable-formatting">Challenges: Unreliable formatting</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/unreliable-formatting.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/12/unreliable-formatting.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
-</figure>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><a href="https://alumni.duke.edu/news/notable-alumni">alumni.duke.edu/news/notable-alumni</a></p>
-</div></div></section><section id="challenges-data-broken-into-many-pages" class="level2"><h2 class="anchored" data-anchor-id="challenges-data-broken-into-many-pages">Challenges: Data broken into many pages</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/12/many-pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/12/many-pages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
-</figure>
-</div>
-</section><section id="workflow-screen-scraping-vs.-apis" class="level2"><h2 class="anchored" data-anchor-id="workflow-screen-scraping-vs.-apis">Workflow: Screen scraping vs.&nbsp;APIs</h2>
-<p>Two different scenarios for web scraping:</p>
-<ul>
-<li><p>Screen scraping: extract data from source code of website, with html parser (easy) or regular expression matching (less easy)</p></li>
-<li><p>Web APIs (application programming interface): website offers a set of structured http requests that return JSON or XML files</p></li>
-</ul>
 
 
 </section></section></main><!-- /main --><script>

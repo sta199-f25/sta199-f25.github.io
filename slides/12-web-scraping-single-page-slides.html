@@ -783,51 +783,6 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-09-chronicle-scrape.qmd</em> and <em><code>chronicle-scrape.R</code></em>.</p></li>
 </ul>
 </div>
-</section><section id="recap" class="slide level2"><h2>Recap</h2>
-<ul>
-<li>Use the SelectorGadget identify tags for elements you want to grab</li>
-<li>Use rvest to first read the whole page (into R) and then parse the object you’ve read in to the elements you’re interested in</li>
-<li>Put the components together in a data frame (a tibble) and analyze it like you analyze any other data</li>
-</ul></section><section id="a-new-r-workflow" class="slide level2 smaller"><h2>A new R workflow</h2>
-<ul>
-<li><p>When working in a Quarto document, your analysis is re-run each time you knit</p></li>
-<li><p>If web scraping in a Quarto document, you’d be re-scraping the data each time you knit, which is undesirable (and not <em>nice</em>)!</p></li>
-<li>
-<p>An alternative workflow:</p>
-<ul>
-<li>Use an R script to save your code</li>
-<li>Saving interim data scraped using the code in the script as CSV or RDS files</li>
-<li>Use the saved data in your analysis in your Quarto document</li>
-</ul>
-</li>
-</ul></section></section><section><section id="web-scraping-considerations" class="title-slide slide level1 center"><h1>Web scraping considerations</h1>
-
-</section><section id="ethics-can-you-vs-should-you" class="slide level2"><h2>Ethics: “Can you?” vs “Should you?”</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/12/ok-cupid-1.png" class="quarto-figure quarto-figure-center" width="800"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>Source: Brian Resnick, <a href="https://www.vox.com/2016/5/12/11666116/70000-okcupid-users-data-release">Researchers just released profile data on 70,000 OkCupid users without permission</a>, Vox.</p>
-</div></aside></section><section id="can-you-vs-should-you" class="slide level2"><h2>“Can you?” vs “Should you?”</h2>
-
-<img data-src="images/12/ok-cupid-2.png" class="quarto-figure quarto-figure-center r-stretch" width="699"></section><section id="challenges-unreliable-formatting" class="slide level2"><h2>Challenges: Unreliable formatting</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/12/unreliable-formatting.png" class="quarto-figure quarto-figure-center" width="699"></p>
-</figure>
-</div>
-
-<aside><div>
-<p><a href="https://alumni.duke.edu/news/notable-alumni">alumni.duke.edu/news/notable-alumni</a></p>
-</div></aside></section><section id="challenges-data-broken-into-many-pages" class="slide level2"><h2>Challenges: Data broken into many pages</h2>
-
-<img data-src="images/12/many-pages.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="workflow-screen-scraping-vs.-apis" class="slide level2"><h2>Workflow: Screen scraping vs.&nbsp;APIs</h2>
-<p>Two different scenarios for web scraping:</p>
-<ul>
-<li><p>Screen scraping: extract data from source code of website, with html parser (easy) or regular expression matching (less easy)</p></li>
-<li><p>Web APIs (application programming interface): website offers a set of structured http requests that return JSON or XML files</p></li>
-</ul>
 
 
 </section></section>
