@@ -477,7 +477,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="aesthetic-mappings-1-output" class="slide level2 output-location-slide"><h2>Aesthetic mappings</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="11-exam-1-review_files/figure-html/mapping-1.png" width="672"></p>
+<figure><p><img data-src="11-exam-1-review_files/figure-revealjs/mapping-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -506,7 +506,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="11-exam-1-review_files/figure-html/global-mapping-1.png" width="672"></p>
+<figure><p><img data-src="11-exam-1-review_files/figure-revealjs/global-mapping-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -530,7 +530,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="11-exam-1-review_files/figure-html/mapping-local-1.png" width="672"></p>
+<figure><p><img data-src="11-exam-1-review_files/figure-revealjs/mapping-local-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -554,7 +554,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="11-exam-1-review_files/figure-html/mapping-setting-1.png" width="672"></p>
+<figure><p><img data-src="11-exam-1-review_files/figure-revealjs/mapping-setting-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -579,7 +579,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div><div class="column">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="11-exam-1-review_files/figure-html/unnamed-chunk-12-1.png" width="768"></p>
+<figure><p><img data-src="11-exam-1-review_files/figure-revealjs/unnamed-chunk-12-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -602,7 +602,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div><div class="column">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="11-exam-1-review_files/figure-html/unnamed-chunk-13-1.png" width="768"></p>
+<figure><p><img data-src="11-exam-1-review_files/figure-revealjs/unnamed-chunk-13-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -628,7 +628,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div><div class="column">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="11-exam-1-review_files/figure-html/unnamed-chunk-14-1.png" width="768"></p>
+<figure><p><img data-src="11-exam-1-review_files/figure-revealjs/unnamed-chunk-14-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -649,7 +649,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb27-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="11-exam-1-review_files/figure-html/unnamed-chunk-15-1.png" width="672" class="r-stretch"></section><section id="bar-plot---reordered" class="slide level2 smaller"><h2>Bar plot - reordered</h2>
+<img data-src="11-exam-1-review_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section><section id="bar-plot---reordered" class="slide level2 smaller"><h2>Bar plot - reordered</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
 <span id="cb28-2"><a></a>  <span class="fu">mutate</span>(</span>
@@ -659,7 +659,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb28-6"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="11-exam-1-review_files/figure-html/unnamed-chunk-16-1.png" width="672" class="r-stretch"></section><section id="frequency-table" class="slide level2"><h2>Frequency table</h2>
+<img data-src="11-exam-1-review_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section><section id="frequency-table" class="slide level2"><h2>Frequency table</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a></a>  <span class="fu">count</span>(homeownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -982,6 +982,41 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
           RevealZoom
         ]
       });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
     </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

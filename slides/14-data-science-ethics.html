@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
+<meta name="dcterms.date" content="2025-10-09">
+<title>Web scraping many pages – STA 199</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta property="og:title" content="Web scrapingmany pages – STA 199">
+<meta property="og:description" content="Lecture 14">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/14/machine-bias-cover.png">
+<meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="1592">
+<meta property="og:image:width" content="2860">
+</head>
+<body class="nav-sidebar docked slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Web scraping<br>many pages</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
+    <div class="dropdown">
+      <a href="" title="Support" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Support"><i class="bi bi-life-preserver"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+<li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing">
+              <i class="bi bi-person-raised-hand pe-1"></i>
+            Office hours
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://edstem.org/us/courses/80616/discussion">
+              <i class="bi bi-people-fill pe-1"></i>
+            Help from humans (Ed Discussion)
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/modules/items/647028">
+              <i class="bi bi-robot pe-1"></i>
+            Help from AI (Chatbot)
+            </a>
+          </li>
+      </ul>
+</div>
+    <div class="dropdown">
+      <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Canvas"><i class="bi bi-file-check-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+<li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/announcements">
+              <i class="bi bi-megaphone-fill pe-1"></i>
+            Announcements
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/external_tools/181">
+              <i class="bi bi-file-arrow-up-fill pe-1"></i>
+            Gradescope
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/61539/gradebook">
+              <i class="bi bi-alphabet-uppercase pe-1"></i>
+            Gradebook
+            </a>
+          </li>
+      </ul>
+</div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-code-alongs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code alongs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/1-working-collaboratively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/2-proposal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/3-improvement-progress-I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/5-improvement-progress-II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/6-writeup-presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/tips-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tips + resources</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homeworks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application exercises</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam reviews</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
+  <ul class="collapse">
+<li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#from-last-time" id="toc-from-last-time" class="nav-link" data-scroll-target="#from-last-time">From last time</a>
+  <ul class="collapse">
+<li><a href="#a-new-r-workflow" id="toc-a-new-r-workflow" class="nav-link" data-scroll-target="#a-new-r-workflow">A new R workflow</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#scraping-from-many-pages" id="toc-scraping-from-many-pages" class="nav-link" data-scroll-target="#scraping-from-many-pages">Scraping from many pages</a>
+  <ul class="collapse">
+<li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#columns-and-words" id="toc-columns-and-words" class="nav-link" data-scroll-target="#columns-and-words">Columns and words</a></li>
+  <li><a href="#start-with-the-url-for-an-first-article" id="toc-start-with-the-url-for-an-first-article" class="nav-link" data-scroll-target="#start-with-the-url-for-an-first-article">Start with the URL for an first article</a></li>
+  <li><a href="#read-in-the-page" id="toc-read-in-the-page" class="nav-link" data-scroll-target="#read-in-the-page">Read in the page</a></li>
+  <li><a href="#identify-the-elements-you-want" id="toc-identify-the-elements-you-want" class="nav-link" data-scroll-target="#identify-the-elements-you-want">Identify the elements you want</a></li>
+  <li><a href="#parse-the-elements-you-want---1" id="toc-parse-the-elements-you-want---1" class="nav-link" data-scroll-target="#parse-the-elements-you-want---1">Parse the elements you want - 1</a></li>
+  <li><a href="#parse-the-elements-you-want---2" id="toc-parse-the-elements-you-want---2" class="nav-link" data-scroll-target="#parse-the-elements-you-want---2">Parse the elements you want - 2</a></li>
+  <li><a href="#parse-the-elements-you-want---3" id="toc-parse-the-elements-you-want---3" class="nav-link" data-scroll-target="#parse-the-elements-you-want---3">Parse the elements you want - 3</a></li>
+  <li><a href="#wrap-in-a-function" id="toc-wrap-in-a-function" class="nav-link" data-scroll-target="#wrap-in-a-function">Wrap in a function</a></li>
+  <li><a href="#functions-in-r" id="toc-functions-in-r" class="nav-link" data-scroll-target="#functions-in-r">Functions in R</a></li>
+  <li><a href="#revisit-parse_article_page" id="toc-revisit-parse_article_page" class="nav-link" data-scroll-target="#revisit-parse_article_page">Revisit: <code>parse_article_page()</code></a></li>
+  <li><a href="#test-the-function" id="toc-test-the-function" class="nav-link" data-scroll-target="#test-the-function">Test the function</a></li>
+  <li><a href="#test-the-function-1" id="toc-test-the-function-1" class="nav-link" data-scroll-target="#test-the-function-1">Test the function</a></li>
+  <li><a href="#test-the-function-2" id="toc-test-the-function-2" class="nav-link" data-scroll-target="#test-the-function-2">Test the function</a></li>
+  <li><a href="#all-articles" id="toc-all-articles" class="nav-link" data-scroll-target="#all-articles">All articles</a></li>
+  <li><a href="#revisit-summary-table" id="toc-revisit-summary-table" class="nav-link" data-scroll-target="#revisit-summary-table">Revisit: Summary table</a></li>
+  <li><a href="#summarize-1" id="toc-summarize-1" class="nav-link" data-scroll-target="#summarize-1">Summarize 1</a></li>
+  <li><a href="#summarize-2" id="toc-summarize-2" class="nav-link" data-scroll-target="#summarize-2">Summarize 2</a></li>
+  <li><a href="#summarize-3" id="toc-summarize-3" class="nav-link" data-scroll-target="#summarize-3">Summarize 3</a></li>
+  <li><a href="#summarize-4" id="toc-summarize-4" class="nav-link" data-scroll-target="#summarize-4">Summarize 4</a></li>
+  <li><a href="#make-a-pretty-table" id="toc-make-a-pretty-table" class="nav-link" data-scroll-target="#make-a-pretty-table">Make a pretty table</a></li>
+  <li><a href="#update-column-names" id="toc-update-column-names" class="nav-link" data-scroll-target="#update-column-names">Update column names</a></li>
+  <li><a href="#update-digits" id="toc-update-digits" class="nav-link" data-scroll-target="#update-digits">Update digits</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#web-scraping-considerations" id="toc-web-scraping-considerations" class="nav-link" data-scroll-target="#web-scraping-considerations">Web scraping considerations</a>
+  <ul class="collapse">
+<li><a href="#challenges-unreliable-formatting" id="toc-challenges-unreliable-formatting" class="nav-link" data-scroll-target="#challenges-unreliable-formatting">Challenges: Unreliable formatting</a></li>
+  <li><a href="#challenges-data-broken-into-many-pages" id="toc-challenges-data-broken-into-many-pages" class="nav-link" data-scroll-target="#challenges-data-broken-into-many-pages">Challenges: Data broken into many pages</a></li>
+  <li><a href="#ethics-can-you-vs-should-you" id="toc-ethics-can-you-vs-should-you" class="nav-link" data-scroll-target="#ethics-can-you-vs-should-you">Ethics: “Can you?” vs “Should you?”</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy">Privacy</a>
+  <ul class="collapse">
+<li><a href="#your-data" id="toc-your-data" class="nav-link" data-scroll-target="#your-data">“Your” data</a></li>
+  <li><a href="#privacy-of-your-data" id="toc-privacy-of-your-data" class="nav-link" data-scroll-target="#privacy-of-your-data">Privacy of your data</a></li>
+  <li><a href="#sharing-your-data" id="toc-sharing-your-data" class="nav-link" data-scroll-target="#sharing-your-data">Sharing your data</a></li>
+  <li><a href="#what-does-google-thinkknow-about-you" id="toc-what-does-google-thinkknow-about-you" class="nav-link" data-scroll-target="#what-does-google-thinkknow-about-you">What does Google think/know about you?</a></li>
+  <li><a href="#your-browsing-history" id="toc-your-browsing-history" class="nav-link" data-scroll-target="#your-browsing-history">Your browsing history</a></li>
+  <li><a href="#who-else-gets-to-use-your-data" id="toc-who-else-gets-to-use-your-data" class="nav-link" data-scroll-target="#who-else-gets-to-use-your-data">Who else gets to use your data?</a></li>
+  <li><a href="#ok-cupid-data-breach" id="toc-ok-cupid-data-breach" class="nav-link" data-scroll-target="#ok-cupid-data-breach">OK Cupid data breach</a></li>
+  <li><a href="#ok-cupid-data-breach-1" id="toc-ok-cupid-data-breach-1" class="nav-link" data-scroll-target="#ok-cupid-data-breach-1">OK Cupid data breach</a></li>
+  <li><a href="#ok-cupid-data-breach-2" id="toc-ok-cupid-data-breach-2" class="nav-link" data-scroll-target="#ok-cupid-data-breach-2">OK Cupid data breach</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#misrepresentation" id="toc-misrepresentation" class="nav-link" data-scroll-target="#misrepresentation">Misrepresentation</a>
+  <ul class="collapse">
+<li><a href="#misrepresenting-data-science-results" id="toc-misrepresenting-data-science-results" class="nav-link" data-scroll-target="#misrepresenting-data-science-results">Misrepresenting data science results</a></li>
+  <li><a href="#causality---time-coverage" id="toc-causality---time-coverage" class="nav-link" data-scroll-target="#causality---time-coverage">Causality - TIME coverage</a></li>
+  <li><a href="#causality---la-times-coverage" id="toc-causality---la-times-coverage" class="nav-link" data-scroll-target="#causality---la-times-coverage">Causality - LA Times coverage</a></li>
+  <li><a href="#causality---original-study" id="toc-causality---original-study" class="nav-link" data-scroll-target="#causality---original-study">Causality - Original study</a></li>
+  <li><a href="#axes-and-scales---tax-cuts" id="toc-axes-and-scales---tax-cuts" class="nav-link" data-scroll-target="#axes-and-scales---tax-cuts">Axes and scales - Tax cuts</a></li>
+  <li><a href="#axes-and-scales---cost-of-gas" id="toc-axes-and-scales---cost-of-gas" class="nav-link" data-scroll-target="#axes-and-scales---cost-of-gas">Axes and scales - Cost of gas</a></li>
+  <li><a href="#axes-and-scales---cost-of-gas-1" id="toc-axes-and-scales---cost-of-gas-1" class="nav-link" data-scroll-target="#axes-and-scales---cost-of-gas-1">Axes and scales - Cost of gas</a></li>
+  <li><a href="#axes-and-scales---pp-services" id="toc-axes-and-scales---pp-services" class="nav-link" data-scroll-target="#axes-and-scales---pp-services">Axes and scales - PP services</a></li>
+  <li><a href="#axes-and-scales---pp-services-1" id="toc-axes-and-scales---pp-services-1" class="nav-link" data-scroll-target="#axes-and-scales---pp-services-1">Axes and scales - PP services</a></li>
+  <li><a href="#maps-and-areas---voting-map" id="toc-maps-and-areas---voting-map" class="nav-link" data-scroll-target="#maps-and-areas---voting-map">Maps and areas - Voting map</a></li>
+  <li><a href="#maps-and-areas---two-alternate-tales" id="toc-maps-and-areas---two-alternate-tales" class="nav-link" data-scroll-target="#maps-and-areas---two-alternate-tales">Maps and areas - Two alternate tales</a></li>
+  <li><a href="#maps-and-areas---voting-percentages" id="toc-maps-and-areas---voting-percentages" class="nav-link" data-scroll-target="#maps-and-areas---voting-percentages">Maps and areas - Voting percentages</a></li>
+  <li><a href="#maps-and-areas---voting-percentages-1" id="toc-maps-and-areas---voting-percentages-1" class="nav-link" data-scroll-target="#maps-and-areas---voting-percentages-1">Maps and areas - Voting percentages</a></li>
+  <li><a href="#uncertainty---catalan-independence" id="toc-uncertainty---catalan-independence" class="nav-link" data-scroll-target="#uncertainty---catalan-independence">Uncertainty - Catalan independence</a></li>
+  <li><a href="#uncertainty---catalan-independence-1" id="toc-uncertainty---catalan-independence-1" class="nav-link" data-scroll-target="#uncertainty---catalan-independence-1">Uncertainty - Catalan independence</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#algorithmic-bias" id="toc-algorithmic-bias" class="nav-link" data-scroll-target="#algorithmic-bias">Algorithmic bias</a>
+  <ul class="collapse">
+<li><a href="#garbage-in-garbage-out" id="toc-garbage-in-garbage-out" class="nav-link" data-scroll-target="#garbage-in-garbage-out">Garbage in, garbage out</a></li>
+  <li><a href="#google-translate" id="toc-google-translate" class="nav-link" data-scroll-target="#google-translate">Google Translate</a></li>
+  <li><a href="#criminal-sentencing" id="toc-criminal-sentencing" class="nav-link" data-scroll-target="#criminal-sentencing">Criminal sentencing</a></li>
+  <li><a href="#risk-score-errors" id="toc-risk-score-errors" class="nav-link" data-scroll-target="#risk-score-errors">Risk score errors</a></li>
+  <li><a href="#propublica-analysis" id="toc-propublica-analysis" class="nav-link" data-scroll-target="#propublica-analysis">ProPublica analysis</a></li>
+  <li><a href="#risk-scores" id="toc-risk-scores" class="nav-link" data-scroll-target="#risk-scores">Risk scores</a></li>
+  <li><a href="#predicting-ethnicity" id="toc-predicting-ethnicity" class="nav-link" data-scroll-target="#predicting-ethnicity">Predicting ethnicity</a></li>
+  <li><a href="#wru-package" id="toc-wru-package" class="nav-link" data-scroll-target="#wru-package"><strong>wru</strong> package</a></li>
+  <li><a href="#wru-package-1" id="toc-wru-package-1" class="nav-link" data-scroll-target="#wru-package-1"><strong>wru</strong> package</a></li>
+  <li><a href="#wru-package-2" id="toc-wru-package-2" class="nav-link" data-scroll-target="#wru-package-2"><strong>wru</strong> package</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a>
+  <ul class="collapse">
+<li><a href="#how-charts-lie" id="toc-how-charts-lie" class="nav-link" data-scroll-target="#how-charts-lie">How Charts Lie</a></li>
+  <li><a href="#calling-bullshit" id="toc-calling-bullshit" class="nav-link" data-scroll-target="#calling-bullshit">Calling Bullshit</a></li>
+  <li><a href="#machine-bias" id="toc-machine-bias" class="nav-link" data-scroll-target="#machine-bias">Machine Bias</a></li>
+  <li><a href="#ethics-and-data-science" id="toc-ethics-and-data-science" class="nav-link" data-scroll-target="#ethics-and-data-science">Ethics and Data Science</a></li>
+  <li><a href="#weapons-of-math-destruction" id="toc-weapons-of-math-destruction" class="nav-link" data-scroll-target="#weapons-of-math-destruction">Weapons of Math Destruction</a></li>
+  <li><a href="#algorithms-of-oppression" id="toc-algorithms-of-oppression" class="nav-link" data-scroll-target="#algorithms-of-oppression">Algorithms of Oppression</a></li>
+  <li><a href="#and-more-recently" id="toc-and-more-recently" class="nav-link" data-scroll-target="#and-more-recently">And more recently…</a></li>
+  <li><a href="#parting-thoughts" id="toc-parting-thoughts" class="nav-link" data-scroll-target="#parting-thoughts">Parting thoughts</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/14-data-science-ethics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="14-data-science-ethics-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Web scraping<br>many pages</h1>
+<p class="subtitle lead">Lecture 14</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Mine Çetinkaya-Rundel </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Duke University <br> STA 199 - Fall 2025
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 9, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header><section id="warm-up" class="level1"><h1>Warm-up</h1>
+<section id="while-you-wait-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate">While you wait: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Put the folllowing tasks in order to scrape data from a website:</p>
+<div class="wooclap-choices">
+<ul>
+<li>Use the SelectorGadget identify tags for elements you want to grab</li>
+<li>Use <code><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html()</a></code> to read the page’s source code into R</li>
+<li>Use other functions from the <strong>rvest</strong> package to parse the elements you’re interested in</li>
+<li>Put the components together in a data frame (a tibble) and analyze it like you analyze any other data</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li>…</li>
+</ul></section></section><section id="from-last-time" class="level1"><h1>From last time</h1>
+<section id="a-new-r-workflow" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="a-new-r-workflow">A new R workflow</h2>
+<ul>
+<li><p>When working in a Quarto document, your analysis is re-run each time you knit</p></li>
+<li><p>If web scraping in a Quarto document, you’d be re-scraping the data each time you knit, which is undesirable (and not <em>nice</em>)!</p></li>
+<li>
+<p>An alternative workflow:</p>
+<ul>
+<li>Use an R script to save your code</li>
+<li>Saving interim data scraped using the code in the script as CSV or RDS files</li>
+<li>Use the saved data in your analysis in your Quarto document</li>
+</ul>
+</li>
+</ul></section></section><section id="scraping-from-many-pages" class="level1"><h1>Scraping from many pages</h1>
+<section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span> <span class="co"># for web scraping</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co"># for pretty tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="columns-and-words" class="level2"><h2 class="anchored" data-anchor-id="columns-and-words">Columns and words</h2>
+<div class="question">
+<p>What additional information do we need to produce the table below?</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: right;">Avg. # words/article</th>
+<th style="text-align: right;"># articles</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Campus Voices</td>
+<td style="text-align: right;">942</td>
+<td style="text-align: right;">382</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Letters To The Editor</td>
+<td style="text-align: right;">307</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Opinion</td>
+<td style="text-align: right;">1020</td>
+<td style="text-align: right;">99</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="start-with-the-url-for-an-first-article" class="level2"><h2 class="anchored" data-anchor-id="start-with-the-url-for-an-first-article">Start with the URL for an first article</h2>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/chronicle.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">article_url</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">article_url</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/article/the-united-states-is-a-frat-and-i-cant-unsee-it-20251007.html"</code></pre>
+</div>
+</div>
+</section><section id="read-in-the-page" class="level2"><h2 class="anchored" data-anchor-id="read-in-the-page">Read in the page</h2>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">article_url</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">article_page</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{html_document}
+&lt;html lang="en" style="scrollbar-gutter: stable;"&gt;
+[1] &lt;head&gt;\n&lt;meta http-equiv="content-type" content="text/html;char ...
+[2] &lt;body class="snw-antialiased"&gt;\n    &lt;!-- Google Tag Manager (no ...</code></pre>
+</div>
+</div>
+</section><section id="identify-the-elements-you-want" class="level2"><h2 class="anchored" data-anchor-id="identify-the-elements-you-want">Identify the elements you want</h2>
+<pre><code>.article-content</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/14/article-content.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/14/article-content.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+</section><section id="parse-the-elements-you-want---1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---1">Parse the elements you want - 1</h2>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>{xml_nodeset (1)}
+[1] &lt;article class="full-article arx-styles prose max-w-3xl lg:prose-lg text-gray-900 bs-shim article-content" id="article-content-d976e3a0-027c-447d-a162-bd10f5d921a3"&gt;&lt;p spellcheck="false" aria-label="To enrich screen reader interactions, please activate Accessibility in Grammarly extension settings"&gt;Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeeping at the door, bending rules for insiders, pun ...</code></pre>
+</div>
+</div>
+</section><section id="parse-the-elements-you-want---2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---2">Parse the elements you want - 2</h2>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeeping at the door, bending rules for insiders, punishing outsiders) it’s hard not to notice the same logic playing out on a national scale. The United States, too, runs like a frat: immigration represents the rush process, the Constitution and the insiders who decide when those rules apply and when they don’t.\n\nThe First Test: Do You Belong?\n\nImmigration is America’s bid night. Who gets past the door and who gets turned away, reveals who the frat thinks deserves to wear its letters. \n\nIn the late 1800s, the Chinese Exclusion Act was the ultimate “you don’t belong here.” It was the equivalent of a fraternity cutting pledges at the door, not because of merit, but because of appearance.\n\nHistorian Andrew Gyory argues in “Closing the Gate: Race, Politics, and the Chinese Exclusion Act,” that the 1882 Chinese Exclusion law wasn’t just about jobs or economics — it was about racial scapegoating weaponized in a crisis. In the recession of the 1870s, white workers blamed Chinese laborers for stealing jobs and depressing wages. Politicians ran with it, branding Chinese immigrants as “coolies” (a slur) who threatened white labor. This act suspended immigration, denied naturalization and subjected exempt merchants and students to humiliating interrogation. \n\nThe same script is running today. Just as Chinese laborers were scapegoated during the 1870s downturn, today’s immigrants are painted as threats to American workers. Trump says migrants “steal jobs” and “drive down wages,” while ignoring the actual structural causes of inequality. Wealth-based hurdles for H-1B visas, restrictions on asylum work permits: all built on the same assumption that keeping immigrants out will magically protect American jobs. The target changes, but the logic does not: protect the insiders, keep the outsiders desperate.\n\nIt’s not “No Asians allowed” anymore; it’s “You can only enter if you can pay the toll.” The words have shifted — “merit,” “abuse,” “national security” — but the message hasn’t. Some people belong. Others don’t. \n\nGatekeeping at the border bleeds into gatekeeping the Constitution itself. Once you’re in though, it may not be what you expect it to. \n\nInside the House\n\nOnce you’re in, the house makes the rules. Fraternities are notorious for setting the tone of how members act, who they associate with and even how they speak. The U.S. works the same way: once you’re past the border, culture and politics dictate what’s acceptable and what’s excused.\n\nTrump’s infamous Access Hollywood tape was brushed off as “locker room talk.” Anyone who’s been in a frat knows exactly what that means: a culture where misogyny isn’t condemned; it’s normalized as tradition. And Trump isn’t an outlier. Defense Secretary Pete Hegseth recently scolded generals for being “fat” in the halls of the Pentagon. He said, “It's completely unacceptable to see fat generals and admirals in the halls of the Pentagon and leading commands around the country and the world.”\n\nWhat starts as frat culture seeps into governance. The overlap isn’t just metaphorical anymore. It’s literal.\n\nThe Second Test: Will You Submit?\n\nEvery frat has rules, but everyone knows they bend when it suits those in charge. National bylaws formally ban hazing and restrict alcohol, yet incidents from Penn State and Bowling Green prove those rules are selectively enforced. They are college kids, not U.S. government officials. So, no. No leeway here. \n\nThe Constitution is supposed to be America’s house bylaws, but we’re watching them get bent the same way fraternity brothers bend their codes of conduct. \n\nThe Fifth Amendment says: “No person shall … be deprived of life, liberty, or property, without due process of law.” No person. Not no citizen. Yet under Trump’s use of the Alien Enemies Act, Venezuelan migrants have been deported straight into El Salvador’s prisons — without hearings, charges or convictions. That’s not due process. That’s rule by decree.\n\nThe First Amendment is also under attack. Student activists like Rümeysa Öztürk have been detained by ICE for nothing more than co-writing an article. Visas revoked, scholars deported — not because of crime, but because of speech. This amendment also doesn’t specify “citizens,” it specifies “the people.”\n\nThe Fourteenth Amendment’s Equal Protection Clause is hanging by a thread. Trump’s executive order to end birthright citizenship — blocked in court but revealing in intent — openly defies the guarantee that “All persons born or naturalized in the United States… are citizens.” If the president of the United States feels free to ignore the Constitution’s plain text, what comes next?\n\nThe Third Test: Will You Stay Silent? \n\nI don’t deny a country, or a club, has the right to control its borders or rules. Sovereignty matters. Rules are necessary. But we have slipped into what I call selective constitutionalism: rules enforced for some (Second Amendment) and not others (Fifth Amendment). \n\nViktor Orbán’s Hungary is the case study: elections still happen, but rules are bent until liberal democracy is hollowed out and only the shell remains. \n\nA common rebuttal is: “Trump just says things, he doesn’t mean them.” That’s a lie we tell ourselves to stay comfortable. When I say something outrageous, it’s just words. When a president says the same thing, it becomes marching orders. Presidential words are not idle. They are policy.\n\nEven when I disagree with a law — like the Second Amendment — I still believe in respecting due process. If Biden abolished gun rights tomorrow by executive order, I would oppose it. Because the process matters. Without it, the rule of law is gone.\n\nI use this metaphor because it shouldn’t be foreign to any of us: if you’ve witnessed the selectivism that exists in Greek life at Duke, or seen rules bent to protect a brother, you’ve seen the same logic, when scaled up, applied to our nation's Constitution. What’s tolerable as a flawed college club becomes catastrophic when it defines a nation.\n\nWhen rules are bent long enough, they don’t snap. They disappear. In a frat, that leaves chaos. In a country, it leaves tyranny.\n\nNoor Nazir is a Trinity junior. Her columns typically run on alternate Tuesdays. "</code></pre>
+</div>
+</div>
+</section><section id="parse-the-elements-you-want---3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---3">Parse the elements you want - 3</h2>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeeping at the door, bending rules for insiders, punishing outsiders) it’s hard not to notice the same logic playing out on a national scale. The United States, too, runs like a frat: immigration represents the rush process, the Constitution and the insiders who decide when those rules apply and when they don’t.The First Test: Do You Belong?Immigration is America’s bid night. Who gets past the door and who gets turned away, reveals who the frat thinks deserves to wear its letters. In the late 1800s, the Chinese Exclusion Act was the ultimate “you don’t belong here.” It was the equivalent of a fraternity cutting pledges at the door, not because of merit, but because of appearance.Historian Andrew Gyory argues in “Closing the Gate: Race, Politics, and the Chinese Exclusion Act,” that the 1882 Chinese Exclusion law wasn’t just about jobs or economics — it was about racial scapegoating weaponized in a crisis. In the recession of the 1870s, white workers blamed Chinese laborers for stealing jobs and depressing wages. Politicians ran with it, branding Chinese immigrants as “coolies” (a slur) who threatened white labor. This act suspended immigration, denied naturalization and subjected exempt merchants and students to humiliating interrogation. The same script is running today. Just as Chinese laborers were scapegoated during the 1870s downturn, today’s immigrants are painted as threats to American workers. Trump says migrants “steal jobs” and “drive down wages,” while ignoring the actual structural causes of inequality. Wealth-based hurdles for H-1B visas, restrictions on asylum work permits: all built on the same assumption that keeping immigrants out will magically protect American jobs. The target changes, but the logic does not: protect the insiders, keep the outsiders desperate.It’s not “No Asians allowed” anymore; it’s “You can only enter if you can pay the toll.” The words have shifted — “merit,” “abuse,” “national security” — but the message hasn’t. Some people belong. Others don’t. Gatekeeping at the border bleeds into gatekeeping the Constitution itself. Once you’re in though, it may not be what you expect it to. Inside the HouseOnce you’re in, the house makes the rules. Fraternities are notorious for setting the tone of how members act, who they associate with and even how they speak. The U.S. works the same way: once you’re past the border, culture and politics dictate what’s acceptable and what’s excused.Trump’s infamous Access Hollywood tape was brushed off as “locker room talk.” Anyone who’s been in a frat knows exactly what that means: a culture where misogyny isn’t condemned; it’s normalized as tradition. And Trump isn’t an outlier. Defense Secretary Pete Hegseth recently scolded generals for being “fat” in the halls of the Pentagon. He said, “It's completely unacceptable to see fat generals and admirals in the halls of the Pentagon and leading commands around the country and the world.”What starts as frat culture seeps into governance. The overlap isn’t just metaphorical anymore. It’s literal.The Second Test: Will You Submit?Every frat has rules, but everyone knows they bend when it suits those in charge. National bylaws formally ban hazing and restrict alcohol, yet incidents from Penn State and Bowling Green prove those rules are selectively enforced. They are college kids, not U.S. government officials. So, no. No leeway here. The Constitution is supposed to be America’s house bylaws, but we’re watching them get bent the same way fraternity brothers bend their codes of conduct. The Fifth Amendment says: “No person shall … be deprived of life, liberty, or property, without due process of law.” No person. Not no citizen. Yet under Trump’s use of the Alien Enemies Act, Venezuelan migrants have been deported straight into El Salvador’s prisons — without hearings, charges or convictions. That’s not due process. That’s rule by decree.The First Amendment is also under attack. Student activists like Rümeysa Öztürk have been detained by ICE for nothing more than co-writing an article. Visas revoked, scholars deported — not because of crime, but because of speech. This amendment also doesn’t specify “citizens,” it specifies “the people.”The Fourteenth Amendment’s Equal Protection Clause is hanging by a thread. Trump’s executive order to end birthright citizenship — blocked in court but revealing in intent — openly defies the guarantee that “All persons born or naturalized in the United States… are citizens.” If the president of the United States feels free to ignore the Constitution’s plain text, what comes next?The Third Test: Will You Stay Silent? I don’t deny a country, or a club, has the right to control its borders or rules. Sovereignty matters. Rules are necessary. But we have slipped into what I call selective constitutionalism: rules enforced for some (Second Amendment) and not others (Fifth Amendment). Viktor Orbán’s Hungary is the case study: elections still happen, but rules are bent until liberal democracy is hollowed out and only the shell remains. A common rebuttal is: “Trump just says things, he doesn’t mean them.” That’s a lie we tell ourselves to stay comfortable. When I say something outrageous, it’s just words. When a president says the same thing, it becomes marching orders. Presidential words are not idle. They are policy.Even when I disagree with a law — like the Second Amendment — I still believe in respecting due process. If Biden abolished gun rights tomorrow by executive order, I would oppose it. Because the process matters. Without it, the rule of law is gone.I use this metaphor because it shouldn’t be foreign to any of us: if you’ve witnessed the selectivism that exists in Greek life at Duke, or seen rules bent to protect a brother, you’ve seen the same logic, when scaled up, applied to our nation's Constitution. What’s tolerable as a flawed college club becomes catastrophic when it defines a nation.When rules are bent long enough, they don’t snap. They disappear. In a frat, that leaves chaos. In a country, it leaves tyranny.Noor Nazir is a Trinity junior. Her columns typically run on alternate Tuesdays. "</code></pre>
+</div>
+</div>
+</section><section id="wrap-in-a-function" class="level2"><h2 class="anchored" data-anchor-id="wrap-in-a-function">Wrap in a function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  article_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  article_page <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="fu">html_elements</span>(<span class="st">".article-content"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>    <span class="fu">str_remove_all</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="functions-in-r" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="functions-in-r">Functions in R</h2>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">function_name</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">argument_1</span>, <span class="va">argument_2</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># what the function does</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>. . .</p>
+<p>For example:</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">multiply_by_3</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fl">3</span> <span class="op">*</span> <span class="va">x</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<p>. . .</p>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">multiply_by_3</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">multiply_by_3</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 30</code></pre>
+</div>
+</div>
+</section><section id="revisit-parse_article_page" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="revisit-parse_article_page">Revisit: <code>parse_article_page()</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {    <span class="co"># define a function with one argument, url</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  article_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)         <span class="co"># read in the page at the url</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a>  article_page <span class="sc">|&gt;</span> <span class="co"># start with the page</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="fu">html_elements</span>(<span class="st">".article-content"</span>) <span class="sc">|&gt;</span> <span class="co"># extract element w/ selector .article-content</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span>                      <span class="co"># extract text from element (and clean it up)</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a>    <span class="fu">str_remove_all</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)                 <span class="co"># remove all newline characters, return result</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="test-the-function" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="test-the-function">Test the function</h2>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>article <span class="op">=</span> <span class="fu">parse_article_page</span><span class="op">(</span><span class="va">url</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">title</span>, <span class="va">article</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  title                                              article                                                                                                                                            
+  &lt;chr&gt;                                              &lt;chr&gt;                                                                                                                                              
+1 The United States is a frat. And I can’t unsee it. "Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeep…</code></pre>
+</div>
+</div>
+</section><section id="test-the-function-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="test-the-function-1">Test the function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>chronicle <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+# Rowwise: 
+  title                                              article                                                                                                                                            
+  &lt;chr&gt;                                              &lt;chr&gt;                                                                                                                                              
+1 The United States is a frat. And I can’t unsee it. "Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeep…
+2 The problem with censorship and discourse at Duke  "In the wake of the tragic assassination of right-wing influencer Charlie Kirk, the Trump administration has attempted to crack down on what they …
+3 The 'Duke Difference' we actually need             "A week ago, hundreds of Duke students filled Page Auditorium to hear Former U.S. Secretary of Transportation Pete Buttigieg speak. He outlined a …</code></pre>
+</div>
+</div>
+</section><section id="test-the-function-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="test-the-function-2">Test the function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>chronicle <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  title                                              article                                                                                                                                            
+  &lt;chr&gt;                                              &lt;chr&gt;                                                                                                                                              
+1 The United States is a frat. And I can’t unsee it. "Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeep…
+2 The problem with censorship and discourse at Duke  "In the wake of the tragic assassination of right-wing influencer Charlie Kirk, the Trump administration has attempted to crack down on what they …
+3 The 'Duke Difference' we actually need             "A week ago, hundreds of Duke students filled Page Auditorium to hear Former U.S. Secretary of Transportation Pete Buttigieg speak. He outlined a …</code></pre>
+</div>
+</div>
+</section><section id="all-articles" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="all-articles">All articles</h2>
+<p>This can take a bit to run!</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>article <span class="op">=</span> <span class="fu">parse_article_page</span><span class="op">(</span><span class="va">url</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">chronicle_article</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 500 × 8
+   title   author date_time           month   day column url   article
+   &lt;chr&gt;   &lt;chr&gt;  &lt;dttm&gt;              &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  
+ 1 The Un… Noor … 2025-10-07 10:00:00 Oct       7 Opini… http… "Frate…
+ 2 The pr… Harri… 2025-10-07 10:00:00 Oct       7 Campu… http… "In th…
+ 3 The 'D… Gabri… 2025-10-06 14:30:00 Oct       6 Campu… http… "A wee…
+ 4 Death … Luke … 2025-10-06 10:00:00 Oct       6 Campu… http… "Some …
+ 5 Hazing… Monda… 2025-10-06 04:00:00 Oct       6 Campu… http… "Edito…
+ 6 Duke’s… Lucas… 2025-10-04 10:00:00 Oct       4 Campu… http… "Duke …
+ 7 The wo… Leo G… 2025-10-03 10:00:00 Oct       3 Campu… http… "Recen…
+ 8 We’ve … Kayle… 2025-10-02 14:00:00 Oct       2 Opini… http… "As a …
+ 9 How Du… Neel … 2025-10-01 10:00:00 Oct       1 Campu… http… "Comin…
+10 Why ar… Ryan … 2025-10-01 10:00:00 Oct       1 Campu… http… "The e…
+# ℹ 490 more rows</code></pre>
+</div>
+</div>
+</section><section id="revisit-summary-table" class="level2"><h2 class="anchored" data-anchor-id="revisit-summary-table">Revisit: Summary table</h2>
+<div class="question">
+<p>Now that you have the data, how would you produce the summary table below?</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: right;">Avg. # words/article</th>
+<th style="text-align: right;"># articles</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Campus Voices</td>
+<td style="text-align: right;">942</td>
+<td style="text-align: right;">382</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Letters To The Editor</td>
+<td style="text-align: right;">307</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Opinion</td>
+<td style="text-align: right;">1020</td>
+<td style="text-align: right;">99</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="summarize-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-1">Summarize 1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">relocate</span>(n_words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 500 × 9
+   n_words title   author date_time           month   day column url  
+     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;dttm&gt;              &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;
+ 1    1006 The Un… Noor … 2025-10-07 10:00:00 Oct       7 Opini… http…
+ 2    1189 The pr… Harri… 2025-10-07 10:00:00 Oct       7 Campu… http…
+ 3     778 The 'D… Gabri… 2025-10-06 14:30:00 Oct       6 Campu… http…
+ 4     614 Death … Luke … 2025-10-06 10:00:00 Oct       6 Campu… http…
+ 5     534 Hazing… Monda… 2025-10-06 04:00:00 Oct       6 Campu… http…
+ 6     839 Duke’s… Lucas… 2025-10-04 10:00:00 Oct       4 Campu… http…
+ 7    1212 The wo… Leo G… 2025-10-03 10:00:00 Oct       3 Campu… http…
+ 8    1245 We’ve … Kayle… 2025-10-02 14:00:00 Oct       2 Opini… http…
+ 9     937 How Du… Neel … 2025-10-01 10:00:00 Oct       1 Campu… http…
+10    1041 Why ar… Ryan … 2025-10-01 10:00:00 Oct       1 Campu… http…
+# ℹ 490 more rows
+# ℹ 1 more variable: article &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section><section id="summarize-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-2">Summarize 2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">group_by</span>(column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 500 × 9
+# Groups:   column [3]
+   title   author date_time           month   day column url   article
+   &lt;chr&gt;   &lt;chr&gt;  &lt;dttm&gt;              &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  
+ 1 The Un… Noor … 2025-10-07 10:00:00 Oct       7 Opini… http… "Frate…
+ 2 The pr… Harri… 2025-10-07 10:00:00 Oct       7 Campu… http… "In th…
+ 3 The 'D… Gabri… 2025-10-06 14:30:00 Oct       6 Campu… http… "A wee…
+ 4 Death … Luke … 2025-10-06 10:00:00 Oct       6 Campu… http… "Some …
+ 5 Hazing… Monda… 2025-10-06 04:00:00 Oct       6 Campu… http… "Edito…
+ 6 Duke’s… Lucas… 2025-10-04 10:00:00 Oct       4 Campu… http… "Duke …
+ 7 The wo… Leo G… 2025-10-03 10:00:00 Oct       3 Campu… http… "Recen…
+ 8 We’ve … Kayle… 2025-10-02 14:00:00 Oct       2 Opini… http… "As a …
+ 9 How Du… Neel … 2025-10-01 10:00:00 Oct       1 Campu… http… "Comin…
+10 Why ar… Ryan … 2025-10-01 10:00:00 Oct       1 Campu… http… "The e…
+# ℹ 490 more rows
+# ℹ 1 more variable: n_words &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="summarize-3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-3">Summarize 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb33-5"><a href="#cb33-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words)</span>
+<span id="cb33-6"><a href="#cb33-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  column                avg_n_words
+  &lt;chr&gt;                       &lt;dbl&gt;
+1 Campus Voices                942.
+2 Letters To The Editor        307.
+3 Opinion                     1020.</code></pre>
+</div>
+</div>
+</section><section id="summarize-4" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-4">Summarize 4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb35-5"><a href="#cb35-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
+<span id="cb35-6"><a href="#cb35-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
+<span id="cb35-7"><a href="#cb35-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  column                avg_n_words n_articles
+  &lt;chr&gt;                       &lt;dbl&gt;      &lt;int&gt;
+1 Campus Voices                942.        382
+2 Letters To The Editor        307.         19
+3 Opinion                     1020.         99</code></pre>
+</div>
+</div>
+</section><section id="make-a-pretty-table" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="make-a-pretty-table">Make a pretty table</h2>
+<p>with the <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable()</a></code> function from the <code>knitr</code> package:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb37-5"><a href="#cb37-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
+<span id="cb37-7"><a href="#cb37-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb37-8"><a href="#cb37-8"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">column</th>
+<th style="text-align: right;">avg_n_words</th>
+<th style="text-align: right;">n_articles</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Campus Voices</td>
+<td style="text-align: right;">941.8848</td>
+<td style="text-align: right;">382</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Letters To The Editor</td>
+<td style="text-align: right;">306.6316</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Opinion</td>
+<td style="text-align: right;">1020.2121</td>
+<td style="text-align: right;">99</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="update-column-names" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="update-column-names">Update column names</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb38-5"><a href="#cb38-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
+<span id="cb38-6"><a href="#cb38-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
+<span id="cb38-7"><a href="#cb38-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb38-8"><a href="#cb38-8"></a>  <span class="fu">kable</span>(</span>
+<span id="cb38-9"><a href="#cb38-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>)</span>
+<span id="cb38-10"><a href="#cb38-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: right;">Avg. # words/article</th>
+<th style="text-align: right;"># articles</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Campus Voices</td>
+<td style="text-align: right;">941.8848</td>
+<td style="text-align: right;">382</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Letters To The Editor</td>
+<td style="text-align: right;">306.6316</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Opinion</td>
+<td style="text-align: right;">1020.2121</td>
+<td style="text-align: right;">99</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="update-digits" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="update-digits">Update digits</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb39-5"><a href="#cb39-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
+<span id="cb39-6"><a href="#cb39-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
+<span id="cb39-7"><a href="#cb39-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb39-8"><a href="#cb39-8"></a>  <span class="fu">kable</span>(</span>
+<span id="cb39-9"><a href="#cb39-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>),</span>
+<span id="cb39-10"><a href="#cb39-10"></a>    <span class="at">digits =</span> <span class="dv">0</span></span>
+<span id="cb39-11"><a href="#cb39-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: right;">Avg. # words/article</th>
+<th style="text-align: right;"># articles</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Campus Voices</td>
+<td style="text-align: right;">942</td>
+<td style="text-align: right;">382</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Letters To The Editor</td>
+<td style="text-align: right;">307</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Opinion</td>
+<td style="text-align: right;">1020</td>
+<td style="text-align: right;">99</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section></section><section id="web-scraping-considerations" class="level1 page-columns page-full"><h1>Web scraping considerations</h1>
+<section id="challenges-unreliable-formatting" class="level2"><h2 class="anchored" data-anchor-id="challenges-unreliable-formatting">Challenges: Unreliable formatting</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/14/unreliable-formatting.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/14/unreliable-formatting.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699"></a></p>
+</figure>
+</div>
+</section><section id="challenges-data-broken-into-many-pages" class="level2"><h2 class="anchored" data-anchor-id="challenges-data-broken-into-many-pages">Challenges: Data broken into many pages</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/14/many-pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/14/many-pages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+</section><section id="ethics-can-you-vs-should-you" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="ethics-can-you-vs-should-you">Ethics: “Can you?” vs “Should you?”</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/14/ok-cupid-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/14/ok-cupid-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700"></a></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: Brian Resnick, <a href="https://www.vox.com/2016/5/14/11666116/70000-okcupid-users-data-release">Researchers just released profile data on 70,000 OkCupid users without permission</a>, Vox.</p>
+</div></div></section></section><section id="privacy" class="level1"><h1>Privacy</h1>
+<section id="your-data" class="level2"><h2 class="anchored" data-anchor-id="your-data">“Your” data</h2>
+<ul>
+<li><p>Every time we use apps, websites, and devices, our data is being collected and used or sold to others.</p></li>
+<li><p>More importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people.</p></li>
+</ul></section><section id="privacy-of-your-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="privacy-of-your-data">Privacy of your data</h2>
+<div class="question">
+<p>What pieces of data have you left on the internet today? Think through everything you’ve logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it’s shared with others?</p>
+</div>
+</section><section id="sharing-your-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sharing-your-data">Sharing your data</h2>
+<div class="question">
+<p>What are you OK with sharing?</p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="incremental">
+<ul class="incremental">
+<li>Name</li>
+<li>Age</li>
+<li>Email</li>
+<li>Phone Number</li>
+<li>List of every video you watch</li>
+<li>List of every video you comment on</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="incremental">
+<ul class="incremental">
+<li>How you type: speed, accuracy</li>
+<li>How long you spend on different content</li>
+<li>List of all your private messages (date, time, person sent to)</li>
+<li>Info about your photos (how it was taken, where it was taken (GPS), when it was taken)</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="what-does-google-thinkknow-about-you" class="level2"><h2 class="anchored" data-anchor-id="what-does-google-thinkknow-about-you">What does Google think/know about you?</h2>
+<div class="question">
+<p>Have you ever thought about why you’re seeing an ad on Google? Google it! Try to figure out if you have ad personalization on and how your ads are personalized.</p>
+</div>
+</section><section id="your-browsing-history" class="level2"><h2 class="anchored" data-anchor-id="your-browsing-history">Your browsing history</h2>
+<div class="question">
+<p>Which of the following are you OK with your browsing history to be used towards?</p>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li>To predict your age for serving you targeted ads</li>
+<li>To predict your race/ethnicity for serving you targeted ads</li>
+<li>To score you as a candidate for a job</li>
+</ul>
+</div>
+</section><section id="who-else-gets-to-use-your-data" class="level2"><h2 class="anchored" data-anchor-id="who-else-gets-to-use-your-data">Who else gets to use your data?</h2>
+<div class="question">
+<p>Suppose you create a profile on a social media site and share your personal information on your profile. Who else gets to use that data?</p>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li>Companies the social media company has a connection to?</li>
+<li>Companies the social media company sells your data to?</li>
+<li>Researchers?</li>
+</ul>
+</div>
+</section><section id="ok-cupid-data-breach" class="level2"><h2 class="anchored" data-anchor-id="ok-cupid-data-breach">OK Cupid data breach</h2>
+<ul>
+<li><p>In 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details</p></li>
+<li><p>Researchers didn’t release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g.&nbsp;usernames</p></li>
+</ul></section><section id="ok-cupid-data-breach-1" class="level2"><h2 class="anchored" data-anchor-id="ok-cupid-data-breach-1">OK Cupid data breach</h2>
+<p><a href="images/14/okcupid-tweet.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/14/okcupid-tweet.png" class="img-fluid"></a></p>
+</section><section id="ok-cupid-data-breach-2" class="level2"><h2 class="anchored" data-anchor-id="ok-cupid-data-breach-2">OK Cupid data breach</h2>
+<blockquote class="blockquote">
+<p>Some may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.</p>
+<p>Researchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær</p>
+</blockquote>
+</section></section><section id="misrepresentation" class="level1 page-columns page-full"><h1>Misrepresentation</h1>
+<section id="misrepresenting-data-science-results" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="misrepresenting-data-science-results">Misrepresenting data science results</h2>
+<p>Some common ways people do this, either intentionally or unintentionally, include:</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Claiming <strong>causality</strong> where it’s not in the scope of inference of the underlying study</p></li>
+<li><p>Distorting <strong>axes and scales</strong> to make the data tell a different story</p></li>
+<li><p>Visualizing <strong>spatial areas instead of human density</strong> for issues that depend on and affect humans</p></li>
+<li><p>Omitting <strong>uncertainty</strong> in reporting</p></li>
+</ul>
+</div>
+</section><section id="causality---time-coverage" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="causality---time-coverage">Causality - TIME coverage</h2>
+<div class="question">
+<p>How plausible is the statement in the title of this article?</p>
+</div>
+<p><a href="images/14/exercise-cancer-time.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/14/exercise-cancer-time.png" class="img-fluid"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Alice Park. <a href="https://time.com/4330041/reduce-cancer-risk-exercise/">Exercise Can Lower Risk of Some Cancers By 20%</a>. Time Magazine. 16 May 2016.</p>
+</div></div></section><section id="causality---la-times-coverage" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="causality---la-times-coverage">Causality - LA Times coverage</h2>
+<div class="question">
+<p>What does “research shows” mean?</p>
+</div>
+<p><a href="images/14/exercise-cancer-latimes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/14/exercise-cancer-latimes.png" class="img-fluid"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Melissa Healy. <a href="https://www.latimes.com/science/sciencenow/la-sci-sn-exercising-cancer-20160516-story.html">Exercising drives down risk for 13 cancers, research shows</a>.<br>
+Los Angeles Times. 16 May 2016.</p>
+</div></div></section><section id="causality---original-study" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="causality---original-study">Causality - Original study</h2>
+<p>Moore, Steven C., et al.&nbsp;<a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2521826"><strong>“Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.”</strong></a> JAMA internal medicine 176.6 (2016): 816-825.</p>
+<ul>
+<li>
+<strong>Volunteers</strong> were <strong>asked</strong> about their physical activity level over the preceding year.</li>
+<li>Half exercised less than about 150 minutes per week, half exercised more.</li>
+<li>Compared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.</li>
+<li>Researchers found no association between exercising and 13 other cancers (e.g.&nbsp;pancreatic, ovarian, and brain).</li>
+</ul>
+<div class="notes">
+<p>Carl Bergstrom and Jevin West. <a href="https://www.callingbullshit.org/">Calling Bullshit: The art of skepticism in a data-driven world</a>.<br>
+Random House, 2020.<br>
+Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-cancer/">“Does exercise prevent cancer?”</a>. StatNews. 16 May 2016.</p>
+</div>
+</section><section id="axes-and-scales---tax-cuts" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="axes-and-scales---tax-cuts">Axes and scales - Tax cuts</h2>
+<div class="question">
+<p>What is the difference between these two pictures? Which presents a better way to represent these data?</p>
+</div>
+<p><a href="images/14/axis-start-at-0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/14/axis-start-at-0.png" class="img-fluid"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Christopher Ingraham. <a href="https://www.washingtonpost.com/business/2019/10/14/youve-been-reading-charts-wrong-heres-how-pro-does-it/">“You’ve been reading charts wrong. Here’s how a pro does it.”</a>. The Washington Post. 14 October 2019.</p>
+</div></div></section><section id="axes-and-scales---cost-of-gas" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="axes-and-scales---cost-of-gas">Axes and scales - Cost of gas</h2>
+<div class="question">
+<p>What is wrong with this picture? How would you correct it?</p>
+</div>
+<p><a href="images/14/cost-of-gas.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/14/cost-of-gas.png" class="img-fluid"></a></p>
+</section><section id="axes-and-scales---cost-of-gas-1" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="axes-and-scales---cost-of-gas-1">Axes and scales - Cost of gas</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-30-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-30-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="axes-and-scales---pp-services" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="axes-and-scales---pp-services">Axes and scales - PP services</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="question">
+<p>What is wrong with this picture? How would you correct it?</p>
+</div>
+</div><div class="column" style="width:60%;">
+<p><a href="images/14/pp-misleading.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/14/pp-misleading.png" class="img-fluid"></a></p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Timothy B. Lee. <a href="https://www.vox.com/2015/9/29/9417845/planned-parenthood-terrible-chart">Whatever you think of Planned Parenthood, this is a terrible and dishonest chart</a>. Vox. 29 September 2019.</p>
+</div></div></section><section id="axes-and-scales---pp-services-1" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="axes-and-scales---pp-services-1">Axes and scales - PP services</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-31-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-31-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="maps-and-areas---voting-map" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="maps-and-areas---voting-map">Maps and areas - Voting map</h2>
+<div class="question">
+<p>Do you recognize this map? What does it show?</p>
+</div>
+<p><a href="images/14/election-2016-county.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/14/election-2016-county.png" class="img-fluid"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Lazaro Gamio. <a href="https://www.washingtonpost.com/graphics/politics/2016-election/how-election-maps-lie/">“Election maps are telling you big lies about small things”</a>. The Washington Post. 1 Nov 2016.</p>
+</div></div></section><section id="maps-and-areas---two-alternate-tales" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="maps-and-areas---two-alternate-tales">Maps and areas - Two alternate tales</h2>
+<div class="columns">
+<div class="column">
+<p><a href="images/14/citizens-for-trump.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/14/citizens-for-trump.png" class="img-fluid" width="350"></a></p>
+</div><div class="column">
+<p><a href="images/14/counties-for-trump.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/14/counties-for-trump.png" class="img-fluid" width="350"></a></p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
+</div></div></section><section id="maps-and-areas---voting-percentages" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="maps-and-areas---voting-percentages">Maps and areas - Voting percentages</h2>
+<p><a href="images/14/cairo-vote-percentages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/14/cairo-vote-percentages.png" class="img-fluid" width="800"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
+</div></div></section><section id="maps-and-areas---voting-percentages-1" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="maps-and-areas---voting-percentages-1">Maps and areas - Voting percentages</h2>
+<p><a href="images/14/cairo-what-matters.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/14/cairo-what-matters.png" class="img-fluid"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
+</div></div></section><section id="uncertainty---catalan-independence" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="uncertainty---catalan-independence">Uncertainty - Catalan independence</h2>
+<p>On December 19, 2014, the front page of Spanish national newspaper El País read <em>“Catalan public opinion swings toward ‘no’ for independence, says survey”</em>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/catalan-misleading-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="14-data-science-ethics_files/figure-revealjs/catalan-misleading-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Alberto Cairo. <a href="http://www.thefunctionalart.com/p/the-truthful-art-book.html">The truthful art: Data, charts, and maps for communication</a>. New Riders, 2016.</p>
+</div></div></section><section id="uncertainty---catalan-independence-1" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="uncertainty---catalan-independence-1">Uncertainty - Catalan independence</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/catalan-corrected-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="14-data-science-ethics_files/figure-revealjs/catalan-corrected-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Alberto Cairo. <a href="https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf">“Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”</a>, Power from Statistics: Data Information and Knowledge, 2017.</p>
+</div></div></section></section><section id="algorithmic-bias" class="level1 page-columns page-full"><h1>Algorithmic bias</h1>
+<section id="garbage-in-garbage-out" class="level2"><h2 class="anchored" data-anchor-id="garbage-in-garbage-out">Garbage in, garbage out</h2>
+<ul>
+<li><p>In statistical modeling and inference we talk about “garbage in, garbage out” – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.</p></li>
+<li><p>Corollary: Bias in, bias out.</p></li>
+</ul></section><section id="google-translate" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="google-translate">Google Translate</h2>
+<div class="question">
+<p>What might be the reason for Google’s gendered translation? How do ethics play into this situation?</p>
+</div>
+<p><a href="images/14/google-translate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="images/14/google-translate.png" class="img-fluid"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <a href="https://www.engadget.com/2018-12-07-google-remove-gender-bias-translations.html">Engadget - Google is working to remove gender bias in its translations</a></p>
+</div></div></section><section id="criminal-sentencing" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="criminal-sentencing">Criminal sentencing</h2>
+<p>2016 ProPublica article on algorithm used for rating a defendant’s risk of future crime:</p>
+<p><a href="images/14/machine-bias-cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="images/14/machine-bias-cover.png" class="img-fluid" width="500"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a>. 23 May 2016. ProPublica.</p>
+</div></div></section><section id="risk-score-errors" class="level2"><h2 class="anchored" data-anchor-id="risk-score-errors">Risk score errors</h2>
+<div class="question">
+<p>What is common among the defendants who were assigned a high/low risk score for reoffending?</p>
+</div>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img src="images/14/machine-bias-petty-theft-1.png" class="quarto-figure quarto-figure-center" width="400" height="333"><img src="images/14/machine-bias-petty-theft-2.png" class="quarto-figure quarto-figure-center" width="400" height="240"></p>
+</div><div class="column" style="width:35%;">
+<p><img src="images/14/machine-bias-drug-posession-1.png" class="quarto-figure quarto-figure-center" width="400" height="333"><img src="images/14/machine-bias-drug-posession-2.png" class="quarto-figure quarto-figure-center" width="400" height="240"></p>
+</div>
+</div>
+</section><section id="propublica-analysis" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="propublica-analysis">ProPublica analysis</h2>
+<p><strong>Data:</strong> Risk scores assigned to &gt;7,000 people arrested in Broward County, FL + whether they were charged with new crimes over the following 2 years.</p>
+<p>. . .</p>
+<p><strong>Results:</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>20% of those predicted to commit violent crimes actually did.</li>
+<li>Algorithm had higher accuracy (61%) when full range of crimes taken into account (e.g.&nbsp;misdemeanors). <img src="images/14/propublica-results.png" class="img-fluid">
+</li>
+<li>Algorithm was more likely to falsely flag black defendants as future criminals, at almost twice the rate as white defendants.</li>
+<li>White defendants were mislabeled as low risk more often than black defendants.</li>
+</ul>
+</div>
+</section><section id="risk-scores" class="level2"><h2 class="anchored" data-anchor-id="risk-scores">Risk scores</h2>
+<div class="question">
+<p>How can an algorithm that doesn’t use race as input data be racist?</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/14/machine-bias-risk-scores.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="images/14/machine-bias-risk-scores.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></a></p>
+</figure>
+</div>
+</section><section id="predicting-ethnicity" class="level2 xxsmall"><h2 class="xxsmall anchored" data-anchor-id="predicting-ethnicity">Predicting ethnicity</h2>
+<p><a href="https://imai.fas.harvard.edu/research/race.html">Improving Ecological Inference by Predicting Individual Ethnicity from Voter Registration Record</a> (Imran and Khan, 2016)</p>
+<blockquote class="blockquote">
+<p>In both political behavior research and voting rights litigation, turnout and vote choice for different racial groups are often inferred using aggregate election results and racial composition. Over the past several decades, many statistical methods have been proposed to address this ecological inference problem. We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records. Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records. We evaluate the performance of the proposed methodology using approximately nine million voter registration records from Florida, where self-reported ethnicity is available. We find that it is possible to reduce the false positive rate among Black and Latino voters to 6% and 3%, respectively, while maintaining the true positive rate above 80%. Moreover, we use our predictions to estimate turnout by race and find that our estimates yields substantially less amounts of bias and root mean squared error than standard ecological inference estimates. We provide open-source software to implement the proposed methodology. The open-source software is available for implementing the proposed methodology.</p>
+</blockquote>
+</section><section id="wru-package" class="level2"><h2 class="anchored" data-anchor-id="wru-package">
+<strong>wru</strong> package</h2>
+<p>The said “source software” is the wru package: <a href="https://github.com/kosukeimai/wru" class="uri">https://github.com/kosukeimai/wru</a>.</p>
+<div class="question">
+<p>Do you have any ethical concerns about installing this package?</p>
+</div>
+</section><section id="wru-package-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="wru-package-1">
+<strong>wru</strong> package</h2>
+<div class="question">
+<p>Was the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kosukeimai/wru">wru</a></span><span class="op">)</span></span>
+<span><span class="fu">predict_race</span><span class="op">(</span>voter.file <span class="op">=</span> <span class="va">voters</span>, surname.only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">surname</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"pred"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      surname    pred.whi    pred.bla     pred.his    pred.asi
+1      Khanna 0.045110474 0.003067623 0.0068522723 0.860411906
+2        Imai 0.052645440 0.001334812 0.0558160072 0.719376581
+3      Rivera 0.043285692 0.008204605 0.9136195794 0.024316883
+4     Fifield 0.895405704 0.001911388 0.0337464844 0.011079323
+5        Zhou 0.006572555 0.001298962 0.0005388581 0.982365594
+6    Ratkovic 0.861236727 0.008212824 0.0095395642 0.011334635
+7     Johnson 0.543815322 0.344128607 0.0272403940 0.007405765
+8       Lopez 0.038939877 0.004920643 0.9318797791 0.012154125
+10 Wantchekon 0.330697188 0.194700665 0.4042849478 0.021379541
+9       Morse 0.866360147 0.044429853 0.0246568086 0.010219712
+      pred.oth
+1  0.084557725
+2  0.170827160
+3  0.010573240
+4  0.057857101
+5  0.009224032
+6  0.109676251
+7  0.077409913
+8  0.012105576
+10 0.048937658
+9  0.054333479</code></pre>
+</div>
+</div>
+</section><section id="wru-package-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="wru-package-2">
+<strong>wru</strong> package</h2>
+<div class="cell">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">me</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>surname <span class="op">=</span> <span class="st">"Çetinkaya-Rundel"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">predict_race</span><span class="op">(</span>voter.file <span class="op">=</span> <span class="va">me</span>, surname.only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           surname  pred.whi pred.bla pred.his pred.asi   pred.oth
+1 Çetinkaya-Rundel 0.9177967        0        0        0 0.08220329</code></pre>
+</div>
+</div>
+</section></section><section id="further-reading" class="level1"><h1>Further reading</h1>
+<section id="how-charts-lie" class="level2"><h2 class="anchored" data-anchor-id="how-charts-lie">How Charts Lie</h2>
+<div class="columns">
+<div class="column">
+<p><a href="images/14/cairo-how-charts-lie.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="images/14/cairo-how-charts-lie.jpg" class="img-fluid" width="400"></a></p>
+</div><div class="column">
+<p><a href="http://www.thefunctionalart.com/p/reviews.html">How Charts Lie</a></p>
+<p>Getting Smarter about Visual Information</p>
+<p>by Alberto Cairo</p>
+</div>
+</div>
+</section><section id="calling-bullshit" class="level2"><h2 class="anchored" data-anchor-id="calling-bullshit">Calling Bullshit</h2>
+<div class="columns">
+<div class="column">
+<p><a href="images/14/calling-bullshit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="images/14/calling-bullshit.png" class="img-fluid" width="400"></a></p>
+</div><div class="column">
+<p><a href="https://www.callingbullshit.org/">Calling Bullshit</a><br>
+The Art of Skepticism in a<br>
+Data-Driven World</p>
+<p>by Carl Bergstrom and Jevin West</p>
+</div>
+</div>
+</section><section id="machine-bias" class="level2"><h2 class="anchored" data-anchor-id="machine-bias">Machine Bias</h2>
+<div class="columns">
+<div class="column">
+<p><a href="images/14/machine-bias-cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="images/14/machine-bias-cover.png" class="img-fluid" width="400"></a></p>
+</div><div class="column">
+<p><a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a><br></p>
+<p>by Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner</p>
+</div>
+</div>
+</section><section id="ethics-and-data-science" class="level2"><h2 class="anchored" data-anchor-id="ethics-and-data-science">Ethics and Data Science</h2>
+<div class="columns">
+<div class="column">
+<p><a href="images/14/ethics-data-science.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="images/14/ethics-data-science.jpg" class="img-fluid" width="400"></a></p>
+</div><div class="column">
+<p><a href="https://www.amazon.com/Ethics-Data-Science-Mike-Loukides-ebook/dp/B07GTC8ZN7">Ethics and Data Science</a><br></p>
+<p>by Mike Loukides, Hilary Mason, DJ Patil<br>
+(Free Kindle download)</p>
+</div>
+</div>
+</section><section id="weapons-of-math-destruction" class="level2"><h2 class="anchored" data-anchor-id="weapons-of-math-destruction">Weapons of Math Destruction</h2>
+<div class="columns">
+<div class="column">
+<p><a href="images/14/weapons-of-math-destruction.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="images/14/weapons-of-math-destruction.jpg" class="img-fluid" width="400"></a></p>
+</div><div class="column">
+<p><a href="https://www.penguin.co.uk/books/304/304514/weapons-of-math-destruction/9780141985411.html">Weapons of Math Destruction</a><br>
+How Big Data Increases Inequality and Threatens Democracy<br></p>
+<p>by Cathy O’Neil</p>
+</div>
+</div>
+</section><section id="algorithms-of-oppression" class="level2"><h2 class="anchored" data-anchor-id="algorithms-of-oppression">Algorithms of Oppression</h2>
+<div class="columns">
+<div class="column">
+<p><a href="images/14/algorithms-of-oppression.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img src="images/14/algorithms-of-oppression.jpg" class="img-fluid" width="400"></a></p>
+</div><div class="column">
+<p><a href="https://nyupress.org/9781479837243/algorithms-of-oppression/">Algorithms of Oppression</a><br>
+How Search Engines Reinforce Racism<br></p>
+<p>by Safiya Umoja Noble</p>
+</div>
+</div>
+</section><section id="and-more-recently" class="level2"><h2 class="anchored" data-anchor-id="and-more-recently">And more recently…</h2>
+<p><a href="https://newsroom.ucla.edu/stories/how-ai-discriminates-and-what-that-means-for-your-google-habit">How AI discriminates and what that means for your Google habit</a><br>
+A conversation with UCLA internet studies scholar Safiya Noble<br></p>
+<p>by Julia Busiek</p>
+</section><section id="parting-thoughts" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parting-thoughts">Parting thoughts</h2>
+<ul>
+<li><p>At some point during your data science learning journey you will learn tools that can be used unethically</p></li>
+<li><p>You might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)</p></li>
+</ul>
+<div class="question">
+<p>How do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?</p>
+</div>
+
+
+</section></section></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sta199-f25\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Mine Çetinkaya-Rundel, Mary Knox</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/14-data-science-ethics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+</body></html>
