@@ -58,7 +58,11 @@ Put the folllowing tasks in order to scrape data from a website:
 
 ## Announcements {.smaller}
 
-- ...
+- Milestone 2 (proposal) due tonight at 11:59 pm, you will not be able to push changes to your repo after this time!
+
+- Do not forget to fill out peer evaluations for your teammates on TEAMMATES!
+
+- **Office hours change:** For this Friday (10/17) only, my office hours will be on Zoom ([bit.ly/minezoom](https://bit.ly/minezoom)) from 3:30-4:30 pm.
 
 # From last time
 
@@ -443,9 +447,31 @@ Source: Brian Resnick, [Researchers just released profile data on 70,000 OkCupid
 
 ## Privacy of your data {.smaller}
 
-::: question
+Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
 What pieces of data have you left on the internet today?
 Think through everything you've logged into, clicked on, checked in, either actively or automatically, that might be tracking you.
+Submit as many as you can think of.
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Privacy of your data {.smaller}
+
+::: question
 Do you know where that data is stored?
 Who it can be accessed by?
 Whether it's shared with others?
@@ -894,11 +920,13 @@ What is common among the defendants who were assigned a high/low risk score for 
 
 ::::: columns
 ::: {.column width="35%"}
-![](images/14/machine-bias-petty-theft-1.png){fig-align="center" width="400" height="333"} ![](images/14/machine-bias-petty-theft-2.png){fig-align="center" width="400" height="240"}
+![](images/14/machine-bias-petty-theft-1.png){fig-align="center" width="400" height="333"} 
+![](images/14/machine-bias-petty-theft-2.png){fig-align="center" width="400" height="240"}
 :::
 
 ::: {.column width="35%"}
-![](images/14/machine-bias-drug-posession-1.png){fig-align="center" width="400" height="333"} ![](images/14/machine-bias-drug-posession-2.png){fig-align="center" width="400" height="240"}
+![](images/14/machine-bias-drug-posession-1.png){fig-align="center" width="400" height="333"} 
+![](images/14/machine-bias-drug-posession-2.png){fig-align="center" width="400" height="240"}
 :::
 :::::
 
