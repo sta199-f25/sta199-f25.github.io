@@ -1,5 +1,23 @@
 [
   {
+    "listing": "/hw.html",
+    "items": [
+      "/hw/hw-1.html",
+      "/hw/hw-2.html",
+      "/hw/hw-3.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html"
+    ]
+  },
+  {
     "listing": "/ae.html",
     "items": [
       "/ae/ae-01-income-inequality-A.html",
@@ -32,16 +50,6 @@
     ]
   },
   {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html",
-      "/lab/lab-4.html"
-    ]
-  },
-  {
     "listing": "/course-team.html",
     "items": [
       "/ta/abuzar.html",
@@ -62,14 +70,6 @@
       "/ta/sarah.html",
       "/ta/xueyan.html",
       "/ta/ziyan.html"
-    ]
-  },
-  {
-    "listing": "/hw.html",
-    "items": [
-      "/hw/hw-1.html",
-      "/hw/hw-2.html",
-      "/hw/hw-3.html"
     ]
   }
 ]

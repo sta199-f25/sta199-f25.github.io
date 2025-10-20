@@ -6,9 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
 <meta name="dcterms.date" content="2025-09-11">
 <title>STA 199 – Exploratory data analysis II</title>
@@ -96,7 +96,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-db9897f273744c3befa725f76235e105.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1ca830ec127231eae740a3e7713e8dc5.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -276,15 +276,15 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(usdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(usdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>For the analysis: <a href="https://www.tidyverse.org/packages/"><strong>tidyverse</strong></a> and <a href="https://jrnold.github.io/ggthemes/"><strong>ggthemes</strong></a>
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(ggthemes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="from-the-ae" class="slide level2 smaller"><h2>From the AE</h2>
 <div class="question">
@@ -293,12 +293,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb3-2"><a></a>  gerrymander, </span>
 <span id="cb3-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> flip18, <span class="at">fill =</span> gerry)</span>
 <span id="cb3-4"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb3-5"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb3-6"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure><p><img data-src="06-exploratory-data-analysis-II_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
@@ -308,10 +308,10 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a></a>  <span class="fu">count</span>(flip18, gerry) <span class="sc">|&gt;</span></span>
 <span id="cb4-3"><a></a>  <span class="fu">group_by</span>(flip18) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 4
 # Groups:   flip18 [3]
@@ -339,8 +339,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">count</span>(flip18, gerry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">count</span>(flip18, gerry)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 3
   flip18 gerry     n
@@ -357,9 +357,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a></a>  <span class="fu">count</span>(flip18, gerry) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">group_by</span>(flip18)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a></a>  <span class="fu">group_by</span>(flip18)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 3
 # Groups:   flip18 [3]
@@ -383,8 +383,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_trump16 =</span> <span class="fu">mean</span>(trump16))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_trump16 =</span> <span class="fu">mean</span>(trump16))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_trump16
@@ -394,9 +394,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_trump16 =</span> <span class="fu">mean</span>(trump16))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_trump16 =</span> <span class="fu">mean</span>(trump16))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 2
    state mean_trump16
@@ -423,9 +423,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a></a>  <span class="fu">select</span>(state, district, party16, party18) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">group_by</span>(state)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a></a>  <span class="fu">group_by</span>(state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 435 × 4
 # Groups:   state [50]
@@ -446,10 +446,10 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb16-2"><a></a>  <span class="fu">select</span>(state, district, party16, party18) <span class="sc">|&gt;</span></span>
 <span id="cb16-3"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 435 × 4
    state district party16 party18
@@ -471,12 +471,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="group_by-summarize" class="slide level2 smaller"><h2><code>group_by() |&gt; summarize()</code></h2>
 <p>A common pipeline is <code>group_by()</code> and then <code>summarize()</code> to <strong>calculate</strong> summary statistics for each group:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb18-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
 <span id="cb18-3"><a></a>  <span class="fu">summarize</span>(</span>
 <span id="cb18-4"><a></a>    <span class="at">mean_trump16 =</span> <span class="fu">mean</span>(trump16),</span>
 <span id="cb18-5"><a></a>    <span class="at">median_trump16 =</span> <span class="fu">median</span>(trump16)</span>
-<span id="cb18-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 3
    state mean_trump16 median_trump16
@@ -497,9 +497,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="group_by-summarize-1" class="slide level2 smaller"><h2><code>group_by() |&gt; summarize()</code></h2>
 <p>This pipeline can also be used to <strong>count</strong> number of observations for each group:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb20-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 2
    state     n
@@ -519,10 +519,10 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </section><section id="summarize" class="slide level2 smaller"><h2><code>summarize()</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>... <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>... <span class="sc">|&gt;</span></span>
 <span id="cb22-2"><a></a>  <span class="fu">summarize</span>(</span>
 <span id="cb22-3"><a></a>    <span class="at">name_of_summary_statistic =</span> <span class="fu">summary_function</span>(variable)</span>
-<span id="cb22-4"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-4"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <ul>
@@ -562,9 +562,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb23-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
-<span id="cb23-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 2
    state     n
@@ -584,8 +584,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb25-2"><a></a>  <span class="fu">count</span>(state)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">count</span>(state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 2
    state     n
@@ -607,12 +607,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="count" class="slide level2"><h2><code>count()</code></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>... <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">count</span>(variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>... <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">count</span>(variable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:60%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>... <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a></a>  <span class="fu">count</span>(variable1, variable2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>... <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">count</span>(variable1, variable2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <ul>
@@ -625,10 +625,10 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>How would you write the following pipeline with <code>count()</code> instead?</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a></a>  <span class="fu">group_by</span>(state) <span class="sc">|&gt;</span></span>
 <span id="cb29-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb29-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 2
@@ -680,8 +680,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>The following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high or low prevalence of gerrymandering?” However, it produces a <code>warning</code> and an unexpected plot. What’s going on?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
-<span id="cb31-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The following aesthetics were dropped during statistical
 transformation: fill.
@@ -695,7 +695,7 @@ transformation: fill.
 <img data-src="06-exploratory-data-analysis-II_files/figure-revealjs/fill-warning-1.png" width="960" class="r-stretch"></section><section id="another-glimpse-at-gerrymander" class="slide level2 smaller"><h2>Another glimpse at <code>gerrymander</code>
 </h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">glimpse</span>(gerrymander)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">glimpse</span>(gerrymander)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 435
 Columns: 12
@@ -723,9 +723,9 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <code>mutate()</code> in action</h2>
 <p>You can create a new variable with <code>mutate()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb35-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18_cat =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
-<span id="cb35-3"><a></a>  <span class="fu">relocate</span>(district, flip18, flip18_cat) <span class="co"># relocate to the beginning for easier viewing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-3"><a></a>  <span class="fu">relocate</span>(district, flip18, flip18_cat) <span class="co"># relocate to the beginning for easier viewing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 435 × 13
    district flip18 flip18_cat last_name first_name party16 clinton16
@@ -751,11 +751,11 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </div>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb37-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18_cat =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
 <span id="cb37-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18_cat)) <span class="sc">+</span></span>
 <span id="cb37-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb37-5"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-5"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -768,9 +768,9 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <code>mutate()</code> and overwrite</h2>
 <p>You can overwrite an existing variable with <code>mutate()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb38-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as.factor</span>(flip18)) <span class="sc">|&gt;</span></span>
-<span id="cb38-3"><a></a>  <span class="fu">select</span>(district, flip18)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-3"><a></a>  <span class="fu">select</span>(district, flip18)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 435 × 2
    district flip18
@@ -796,9 +796,9 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <p>If <code>party16</code> is “D”, recode it as “Democrat”, otherwise recode it as “Republican”.</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb40-2"><a></a>  <span class="fu">mutate</span>(<span class="at">party16_expanded =</span> <span class="fu">if_else</span>(party16 <span class="sc">==</span> <span class="st">"D"</span>, <span class="st">"Democrat"</span>, <span class="st">"Republican"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb40-3"><a></a>  <span class="fu">select</span>(district, party16, party16_expanded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-3"><a></a>  <span class="fu">select</span>(district, party16, party16_expanded)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 435 × 3
    district party16 party16_expanded
@@ -824,7 +824,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <p>If <code>flip18</code> is 1, recode it as “Democrat flipped”, if <code>flip18</code> is 0, recode it as “No flip”, and if <code>flip18</code> is -1, recode it as “Republican flipped”.</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb42-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb42-3"><a></a>    <span class="at">flip18_expanded =</span> <span class="fu">case_when</span>(</span>
 <span id="cb42-4"><a></a>      flip18 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Democrat flipped"</span>,</span>
@@ -834,7 +834,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <span id="cb42-8"><a></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb42-9"><a></a>  <span class="fu">select</span>(district, flip18, flip18_expanded) <span class="sc">|&gt;</span></span>
 <span id="cb42-10"><a></a>  <span class="fu">group_by</span>(flip18) <span class="sc">|&gt;</span> <span class="co"># group by flip type</span></span>
-<span id="cb42-11"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="co"># show top row per group</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-11"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="co"># show top row per group</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
 # Groups:   flip18 [3]
@@ -851,12 +851,12 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb44-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb44-3"><a></a>    <span class="at">p16 =</span> <span class="fu">if_else</span>(party16 <span class="sc">==</span> <span class="st">"D"</span>, <span class="st">"Dem"</span>, <span class="st">"Rep"</span>)</span>
 <span id="cb44-4"><a></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb44-5"><a></a>  <span class="fu">select</span>(district, p16) <span class="sc">|&gt;</span></span>
-<span id="cb44-6"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="co"># show top 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-6"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="co"># show top 3 rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   district p16  
@@ -865,8 +865,8 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 2 AL-01    Rep  
 3 AL-02    Rep  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb46-2"><a></a>  <span class="fu">select</span>(district, p16)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb46-2"><a></a>  <span class="fu">select</span>(district, p16)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `select()`:
 ! Can't select columns that don't exist.
@@ -875,7 +875,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </div>
 </div><div class="column fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>gerrymander <span class="ot">&lt;-</span> gerrymander <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>gerrymander <span class="ot">&lt;-</span> gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb48-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb48-3"><a></a>    <span class="at">p16 =</span> <span class="fu">if_else</span>(party16 <span class="sc">==</span> <span class="st">"D"</span>, <span class="st">"Dem"</span>, <span class="st">"Rep"</span>)</span>
 <span id="cb48-4"><a></a>  ) <span class="sc">|&gt;</span></span>
@@ -883,7 +883,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <span id="cb48-6"><a></a></span>
 <span id="cb48-7"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb48-8"><a></a>  <span class="fu">select</span>(district, p16)  <span class="sc">|&gt;</span></span>
-<span id="cb48-9"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="co"># show top 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-9"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="co"># show top 3 rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   district p16  
@@ -1087,7 +1087,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1195,13 +1195,14 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,18 +35,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4323a2cb4dfa4aaa09d0cff1df15bff0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -123,7 +124,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -334,7 +335,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -689,7 +691,7 @@ window.Quarto = {
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Abuzar Khudaverdiyeva" data-listing-filename-sort="abuzar.qmd">
+<tr data-index="0" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1756089037600" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Abuzar Khudaverdiyeva" data-listing-filename-sort="abuzar.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/abuzar.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -708,7 +710,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="1" data-categories="TGVjdHVyZSUyMGhlbHBlcg==" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Alexa Fahrer" data-listing-filename-sort="alexa.qmd">
+<tr data-index="1" data-categories="TGVjdHVyZSUyMGhlbHBlcg==" data-listing-file-modified-sort="1755904840772" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Alexa Fahrer" data-listing-filename-sort="alexa.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/alexa.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -727,7 +729,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="2" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Allison Yang" data-listing-filename-sort="allison.qmd">
+<tr data-index="2" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1755904435110" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Allison Yang" data-listing-filename-sort="allison.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/allison.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -746,7 +748,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="3" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Arijit Dey" data-listing-filename-sort="arijit.qmd">
+<tr data-index="3" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1755904488710" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Arijit Dey" data-listing-filename-sort="arijit.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/arijit.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -765,7 +767,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="4" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Ben Sherman" data-listing-filename-sort="ben.qmd">
+<tr data-index="4" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1756321431767" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Ben Sherman" data-listing-filename-sort="ben.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/ben.jpeg" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -784,7 +786,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="5" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Bethany Akinola" data-listing-filename-sort="bethany.qmd">
+<tr data-index="5" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1755904168957" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Bethany Akinola" data-listing-filename-sort="bethany.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/bethany.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -803,7 +805,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="6" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Eduardo Vasquez" data-listing-filename-sort="eduardo.qmd">
+<tr data-index="6" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1755903682221" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Eduardo Vasquez" data-listing-filename-sort="eduardo.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/eduardo.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -822,7 +824,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="7" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1760633870516" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Federico Arboleda" data-listing-filename-sort="federico.qmd">
+<tr data-index="7" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1755903867587" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Federico Arboleda" data-listing-filename-sort="federico.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/federico.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -841,7 +843,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="8" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Jessie Ringness" data-listing-filename-sort="jessie.qmd">
+<tr data-index="8" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1755903719064" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Jessie Ringness" data-listing-filename-sort="jessie.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/jessie.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -860,7 +862,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="9" data-categories="TGVjdHVyZSUyMGhlbHBlcg==" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Kathleen Zhang" data-listing-filename-sort="kathleen.qmd">
+<tr data-index="9" data-categories="TGVjdHVyZSUyMGhlbHBlcg==" data-listing-file-modified-sort="1755904794862" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Kathleen Zhang" data-listing-filename-sort="kathleen.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/kathleen.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -879,7 +881,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="10" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Katie Solarz" data-listing-filename-sort="katie.qmd">
+<tr data-index="10" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1756321431768" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Katie Solarz" data-listing-filename-sort="katie.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/katie.jpg" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -898,7 +900,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="11" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Luxman Maheswaran" data-listing-filename-sort="luxman.qmd">
+<tr data-index="11" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1755904699510" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Luxman Maheswaran" data-listing-filename-sort="luxman.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/luxman.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -917,7 +919,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="12" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Marie Neubrander" data-listing-filename-sort="marie.qmd">
+<tr data-index="12" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1755908997770" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Marie Neubrander" data-listing-filename-sort="marie.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/marie.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -936,7 +938,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="13" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Max Niu" data-listing-filename-sort="max.qmd">
+<tr data-index="13" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1755909325076" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Max Niu" data-listing-filename-sort="max.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/max.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -955,7 +957,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="14" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Natasha Harris" data-listing-filename-sort="natasha.qmd">
+<tr data-index="14" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1756218439000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Natasha Harris" data-listing-filename-sort="natasha.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/natasha.jpeg" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -974,7 +976,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="15" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Sarah Wu" data-listing-filename-sort="sarah.qmd">
+<tr data-index="15" data-categories="TGFiJTIwbGVhZGVy" data-listing-file-modified-sort="1755904045124" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Sarah Wu" data-listing-filename-sort="sarah.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/sarah.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -993,7 +995,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="16" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Xueyan Hu" data-listing-filename-sort="xueyan.qmd">
+<tr data-index="16" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1755903637010" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Xueyan Hu" data-listing-filename-sort="xueyan.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/xueyan.png" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -1012,7 +1014,7 @@ window.Quarto = {
 
 </tr>
 
-<tr data-index="17" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1760633870524" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Ziyan Wang" data-listing-filename-sort="ziyan.qmd">
+<tr data-index="17" data-categories="TGFiJTIwaGVscGVy" data-listing-file-modified-sort="1756321431769" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Ziyan Wang" data-listing-filename-sort="ziyan.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./ta/headshots/ziyan.jpg" style="height: 40px;" alt="Headshot of TA"></span>
 </td>
@@ -1110,13 +1112,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
