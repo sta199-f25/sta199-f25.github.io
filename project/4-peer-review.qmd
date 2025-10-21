@@ -24,10 +24,10 @@ The goals of this milestone are as follows:
 
 # Instructions
 
-Review two other teams' projects.
-As a team you should spend \~30 minutes on each team's project.
+Review one other teams' project.
+As a team you should spend \~30 minutes on the review.
 
--   Find the names of the teams whose projects you're reviewing below.
+-   Find the names of the team whose project you're reviewing below.
     You should already have access to this team's repo.
 
 -   Each team member should go to the repo of the team you're reviewing.
@@ -82,8 +82,9 @@ gs4_deauth()
 make_pairing_table <- function(df) {
   df |>
     mutate(team_to_review_1 = paste0("[", team_to_review_1, "](", url_1, ")")) |>
-    mutate(team_to_review_2 = paste0("[", team_to_review_2, "](", url_2, ")")) |>
-    select(-url_1, -url_2)  |>
+    #mutate(team_to_review_2 = paste0("[", team_to_review_2, "](", url_2, ")")) |>
+    select(-url_1)  |>
+    #select(-url_1, -url_2)  |>
     gt() |>
     fmt_markdown(
       columns = everything() 
@@ -91,7 +92,7 @@ make_pairing_table <- function(df) {
     cols_label(
       your_team_name = "Your team name",
       team_to_review_1 = "Team to review 1",
-      team_to_review_2 = "Team to review 2"
+      #team_to_review_2 = "Team to review 2"
     )
 }
 ```
@@ -101,15 +102,7 @@ make_pairing_table <- function(df) {
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 1))
-make_pairing_table(teams)
-```
-
-## L2 - 10:05 am
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 2))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 1))
 make_pairing_table(teams)
 ```
 
@@ -117,15 +110,15 @@ make_pairing_table(teams)
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 3))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 3))
 make_pairing_table(teams)
 ```
 
-## L4 - 11:45 am
+## L4 - 10:05 am
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 4))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 4))
 make_pairing_table(teams)
 ```
 
@@ -133,15 +126,15 @@ make_pairing_table(teams)
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 5))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 5))
 make_pairing_table(teams)
 ```
 
-## L6 - 1:25 pm
+## L6 - 11:45 am
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 6))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 6))
 make_pairing_table(teams)
 ```
 
@@ -149,15 +142,15 @@ make_pairing_table(teams)
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 7))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 7))
 make_pairing_table(teams)
 ```
 
-## L8 - 3:05 pm
+## L8 - 1:25 pm
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 8))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 8))
 make_pairing_table(teams)
 ```
 
@@ -165,15 +158,15 @@ make_pairing_table(teams)
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 9))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 9))
 make_pairing_table(teams)
 ```
 
-## L10 - 4:40 pm
+## L11 - 4:40 pm
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1SBnjF2qCOvg-_oz6leihuV3lM6gNZ5KYx4z4ZOgnbQM/edit?gid=715214055#gid=715214055", sheet = paste0("lab_", 10))
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/1EFjL1GgiOGEbR79JrDoNoUwoeJi6y3Wjn8XjHCa10mE/edit?usp=sharing", sheet = paste0("lab_", 11))
 make_pairing_table(teams)
 ```
 :::
