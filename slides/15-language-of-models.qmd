@@ -55,7 +55,7 @@ Source: [Engadget - Google is working to remove gender bias in its translations]
 
 ## Announcements {.smaller}
 
--   Peer evaluation 2 due at 11:59 pm
+-   Peer evaluation 2 due on Thursday at 11:59 pm
 
 -   You must continue to make progress on your projects until Sunday evening in preparation for peer evaluations on Monday in lab
 
