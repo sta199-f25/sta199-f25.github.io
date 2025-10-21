@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2025-10-09">
-<title>Web scraping many pages – STA 199</title>
+<meta name="dcterms.date" content="2025-10-16">
+<title>Data science ethics – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,19 +64,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4323a2cb4dfa4aaa09d0cff1df15bff0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -108,12 +107,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta property="og:title" content="Web scrapingmany pages – STA 199">
+<meta property="og:title" content="Data science ethics – STA 199">
 <meta property="og:description" content="Lecture 14">
-<meta property="og:image" content="https://sta199-f25.github.io/slides/images/14/machine-bias-cover.png">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:height" content="1592">
-<meta property="og:image:width" content="2860">
+<meta property="og:image:height" content="888">
+<meta property="og:image:width" content="866">
 </head>
 <body class="nav-sidebar docked slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -284,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Web scraping<br>many pages</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data science ethics</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -295,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
@@ -618,39 +617,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#uncertainty---catalan-independence-1" id="toc-uncertainty---catalan-independence-1" class="nav-link" data-scroll-target="#uncertainty---catalan-independence-1">Uncertainty - Catalan independence</a></li>
   </ul>
 </li>
-  <li>
-<a href="#algorithmic-bias" id="toc-algorithmic-bias" class="nav-link" data-scroll-target="#algorithmic-bias">Algorithmic bias</a>
-  <ul class="collapse">
-<li><a href="#garbage-in-garbage-out" id="toc-garbage-in-garbage-out" class="nav-link" data-scroll-target="#garbage-in-garbage-out">Garbage in, garbage out</a></li>
-  <li><a href="#google-translate" id="toc-google-translate" class="nav-link" data-scroll-target="#google-translate">Google Translate</a></li>
-  <li><a href="#criminal-sentencing" id="toc-criminal-sentencing" class="nav-link" data-scroll-target="#criminal-sentencing">Criminal sentencing</a></li>
-  <li><a href="#risk-score-errors" id="toc-risk-score-errors" class="nav-link" data-scroll-target="#risk-score-errors">Risk score errors</a></li>
-  <li><a href="#propublica-analysis" id="toc-propublica-analysis" class="nav-link" data-scroll-target="#propublica-analysis">ProPublica analysis</a></li>
-  <li><a href="#risk-scores" id="toc-risk-scores" class="nav-link" data-scroll-target="#risk-scores">Risk scores</a></li>
-  <li><a href="#predicting-ethnicity" id="toc-predicting-ethnicity" class="nav-link" data-scroll-target="#predicting-ethnicity">Predicting ethnicity</a></li>
-  <li><a href="#wru-package" id="toc-wru-package" class="nav-link" data-scroll-target="#wru-package"><strong>wru</strong> package</a></li>
-  <li><a href="#wru-package-1" id="toc-wru-package-1" class="nav-link" data-scroll-target="#wru-package-1"><strong>wru</strong> package</a></li>
-  <li><a href="#wru-package-2" id="toc-wru-package-2" class="nav-link" data-scroll-target="#wru-package-2"><strong>wru</strong> package</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a>
-  <ul class="collapse">
-<li><a href="#how-charts-lie" id="toc-how-charts-lie" class="nav-link" data-scroll-target="#how-charts-lie">How Charts Lie</a></li>
-  <li><a href="#calling-bullshit" id="toc-calling-bullshit" class="nav-link" data-scroll-target="#calling-bullshit">Calling Bullshit</a></li>
-  <li><a href="#machine-bias" id="toc-machine-bias" class="nav-link" data-scroll-target="#machine-bias">Machine Bias</a></li>
-  <li><a href="#ethics-and-data-science" id="toc-ethics-and-data-science" class="nav-link" data-scroll-target="#ethics-and-data-science">Ethics and Data Science</a></li>
-  <li><a href="#weapons-of-math-destruction" id="toc-weapons-of-math-destruction" class="nav-link" data-scroll-target="#weapons-of-math-destruction">Weapons of Math Destruction</a></li>
-  <li><a href="#algorithms-of-oppression" id="toc-algorithms-of-oppression" class="nav-link" data-scroll-target="#algorithms-of-oppression">Algorithms of Oppression</a></li>
-  <li><a href="#and-more-recently" id="toc-and-more-recently" class="nav-link" data-scroll-target="#and-more-recently">And more recently…</a></li>
-  <li><a href="#parting-thoughts" id="toc-parting-thoughts" class="nav-link" data-scroll-target="#parting-thoughts">Parting thoughts</a></li>
-  </ul>
-</li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/14-data-science-ethics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="14-data-science-ethics-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Web scraping<br>many pages</h1>
+<h1 class="title">Data science ethics</h1>
 <p class="subtitle lead">Lecture 14</p>
 </div>
 
@@ -675,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 9, 2025</p>
+      <p class="date">October 16, 2025</p>
     </div>
   </div>
   
@@ -730,9 +701,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></section></section><section id="scraping-from-many-pages" class="level1"><h1>Scraping from many pages</h1>
 <section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span> <span class="co"># for web scraping</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co"># for pretty tables</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co"># for pretty tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="columns-and-words" class="level2"><h2 class="anchored" data-anchor-id="columns-and-words">Columns and words</h2>
 <div class="question">
@@ -768,22 +739,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="start-with-the-url-for-an-first-article" class="level2"><h2 class="anchored" data-anchor-id="start-with-the-url-for-an-first-article">Start with the URL for an first article</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/chronicle.csv"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/chronicle.csv"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">article_url</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">article_url</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="va">article_url</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com/article/the-united-states-is-a-frat-and-i-cant-unsee-it-20251007.html"</code></pre>
 </div>
 </div>
 </section><section id="read-in-the-page" class="level2"><h2 class="anchored" data-anchor-id="read-in-the-page">Read in the page</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">article_url</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">article_url</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">article_page</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="va">article_page</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{html_document}
 &lt;html lang="en" style="scrollbar-gutter: stable;"&gt;
@@ -799,8 +770,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="parse-the-elements-you-want---1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---1">Parse the elements you want - 1</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -810,55 +781,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="parse-the-elements-you-want---2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---2">Parse the elements you want - 2</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeeping at the door, bending rules for insiders, punishing outsiders) it’s hard not to notice the same logic playing out on a national scale. The United States, too, runs like a frat: immigration represents the rush process, the Constitution and the insiders who decide when those rules apply and when they don’t.\n\nThe First Test: Do You Belong?\n\nImmigration is America’s bid night. Who gets past the door and who gets turned away, reveals who the frat thinks deserves to wear its letters. \n\nIn the late 1800s, the Chinese Exclusion Act was the ultimate “you don’t belong here.” It was the equivalent of a fraternity cutting pledges at the door, not because of merit, but because of appearance.\n\nHistorian Andrew Gyory argues in “Closing the Gate: Race, Politics, and the Chinese Exclusion Act,” that the 1882 Chinese Exclusion law wasn’t just about jobs or economics — it was about racial scapegoating weaponized in a crisis. In the recession of the 1870s, white workers blamed Chinese laborers for stealing jobs and depressing wages. Politicians ran with it, branding Chinese immigrants as “coolies” (a slur) who threatened white labor. This act suspended immigration, denied naturalization and subjected exempt merchants and students to humiliating interrogation. \n\nThe same script is running today. Just as Chinese laborers were scapegoated during the 1870s downturn, today’s immigrants are painted as threats to American workers. Trump says migrants “steal jobs” and “drive down wages,” while ignoring the actual structural causes of inequality. Wealth-based hurdles for H-1B visas, restrictions on asylum work permits: all built on the same assumption that keeping immigrants out will magically protect American jobs. The target changes, but the logic does not: protect the insiders, keep the outsiders desperate.\n\nIt’s not “No Asians allowed” anymore; it’s “You can only enter if you can pay the toll.” The words have shifted — “merit,” “abuse,” “national security” — but the message hasn’t. Some people belong. Others don’t. \n\nGatekeeping at the border bleeds into gatekeeping the Constitution itself. Once you’re in though, it may not be what you expect it to. \n\nInside the House\n\nOnce you’re in, the house makes the rules. Fraternities are notorious for setting the tone of how members act, who they associate with and even how they speak. The U.S. works the same way: once you’re past the border, culture and politics dictate what’s acceptable and what’s excused.\n\nTrump’s infamous Access Hollywood tape was brushed off as “locker room talk.” Anyone who’s been in a frat knows exactly what that means: a culture where misogyny isn’t condemned; it’s normalized as tradition. And Trump isn’t an outlier. Defense Secretary Pete Hegseth recently scolded generals for being “fat” in the halls of the Pentagon. He said, “It's completely unacceptable to see fat generals and admirals in the halls of the Pentagon and leading commands around the country and the world.”\n\nWhat starts as frat culture seeps into governance. The overlap isn’t just metaphorical anymore. It’s literal.\n\nThe Second Test: Will You Submit?\n\nEvery frat has rules, but everyone knows they bend when it suits those in charge. National bylaws formally ban hazing and restrict alcohol, yet incidents from Penn State and Bowling Green prove those rules are selectively enforced. They are college kids, not U.S. government officials. So, no. No leeway here. \n\nThe Constitution is supposed to be America’s house bylaws, but we’re watching them get bent the same way fraternity brothers bend their codes of conduct. \n\nThe Fifth Amendment says: “No person shall … be deprived of life, liberty, or property, without due process of law.” No person. Not no citizen. Yet under Trump’s use of the Alien Enemies Act, Venezuelan migrants have been deported straight into El Salvador’s prisons — without hearings, charges or convictions. That’s not due process. That’s rule by decree.\n\nThe First Amendment is also under attack. Student activists like Rümeysa Öztürk have been detained by ICE for nothing more than co-writing an article. Visas revoked, scholars deported — not because of crime, but because of speech. This amendment also doesn’t specify “citizens,” it specifies “the people.”\n\nThe Fourteenth Amendment’s Equal Protection Clause is hanging by a thread. Trump’s executive order to end birthright citizenship — blocked in court but revealing in intent — openly defies the guarantee that “All persons born or naturalized in the United States… are citizens.” If the president of the United States feels free to ignore the Constitution’s plain text, what comes next?\n\nThe Third Test: Will You Stay Silent? \n\nI don’t deny a country, or a club, has the right to control its borders or rules. Sovereignty matters. Rules are necessary. But we have slipped into what I call selective constitutionalism: rules enforced for some (Second Amendment) and not others (Fifth Amendment). \n\nViktor Orbán’s Hungary is the case study: elections still happen, but rules are bent until liberal democracy is hollowed out and only the shell remains. \n\nA common rebuttal is: “Trump just says things, he doesn’t mean them.” That’s a lie we tell ourselves to stay comfortable. When I say something outrageous, it’s just words. When a president says the same thing, it becomes marching orders. Presidential words are not idle. They are policy.\n\nEven when I disagree with a law — like the Second Amendment — I still believe in respecting due process. If Biden abolished gun rights tomorrow by executive order, I would oppose it. Because the process matters. Without it, the rule of law is gone.\n\nI use this metaphor because it shouldn’t be foreign to any of us: if you’ve witnessed the selectivism that exists in Greek life at Duke, or seen rules bent to protect a brother, you’ve seen the same logic, when scaled up, applied to our nation's Constitution. What’s tolerable as a flawed college club becomes catastrophic when it defines a nation.\n\nWhen rules are bent long enough, they don’t snap. They disappear. In a frat, that leaves chaos. In a country, it leaves tyranny.\n\nNoor Nazir is a Trinity junior. Her columns typically run on alternate Tuesdays. "</code></pre>
 </div>
 </div>
 </section><section id="parse-the-elements-you-want---3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parse-the-elements-you-want---3">Parse the elements you want - 3</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">article_page</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".article-content"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Fraternities thrive on exclusivity. At Duke, that posture may be tolerable, even expected. But once you’ve seen how Greek life operates (gatekeeping at the door, bending rules for insiders, punishing outsiders) it’s hard not to notice the same logic playing out on a national scale. The United States, too, runs like a frat: immigration represents the rush process, the Constitution and the insiders who decide when those rules apply and when they don’t.The First Test: Do You Belong?Immigration is America’s bid night. Who gets past the door and who gets turned away, reveals who the frat thinks deserves to wear its letters. In the late 1800s, the Chinese Exclusion Act was the ultimate “you don’t belong here.” It was the equivalent of a fraternity cutting pledges at the door, not because of merit, but because of appearance.Historian Andrew Gyory argues in “Closing the Gate: Race, Politics, and the Chinese Exclusion Act,” that the 1882 Chinese Exclusion law wasn’t just about jobs or economics — it was about racial scapegoating weaponized in a crisis. In the recession of the 1870s, white workers blamed Chinese laborers for stealing jobs and depressing wages. Politicians ran with it, branding Chinese immigrants as “coolies” (a slur) who threatened white labor. This act suspended immigration, denied naturalization and subjected exempt merchants and students to humiliating interrogation. The same script is running today. Just as Chinese laborers were scapegoated during the 1870s downturn, today’s immigrants are painted as threats to American workers. Trump says migrants “steal jobs” and “drive down wages,” while ignoring the actual structural causes of inequality. Wealth-based hurdles for H-1B visas, restrictions on asylum work permits: all built on the same assumption that keeping immigrants out will magically protect American jobs. The target changes, but the logic does not: protect the insiders, keep the outsiders desperate.It’s not “No Asians allowed” anymore; it’s “You can only enter if you can pay the toll.” The words have shifted — “merit,” “abuse,” “national security” — but the message hasn’t. Some people belong. Others don’t. Gatekeeping at the border bleeds into gatekeeping the Constitution itself. Once you’re in though, it may not be what you expect it to. Inside the HouseOnce you’re in, the house makes the rules. Fraternities are notorious for setting the tone of how members act, who they associate with and even how they speak. The U.S. works the same way: once you’re past the border, culture and politics dictate what’s acceptable and what’s excused.Trump’s infamous Access Hollywood tape was brushed off as “locker room talk.” Anyone who’s been in a frat knows exactly what that means: a culture where misogyny isn’t condemned; it’s normalized as tradition. And Trump isn’t an outlier. Defense Secretary Pete Hegseth recently scolded generals for being “fat” in the halls of the Pentagon. He said, “It's completely unacceptable to see fat generals and admirals in the halls of the Pentagon and leading commands around the country and the world.”What starts as frat culture seeps into governance. The overlap isn’t just metaphorical anymore. It’s literal.The Second Test: Will You Submit?Every frat has rules, but everyone knows they bend when it suits those in charge. National bylaws formally ban hazing and restrict alcohol, yet incidents from Penn State and Bowling Green prove those rules are selectively enforced. They are college kids, not U.S. government officials. So, no. No leeway here. The Constitution is supposed to be America’s house bylaws, but we’re watching them get bent the same way fraternity brothers bend their codes of conduct. The Fifth Amendment says: “No person shall … be deprived of life, liberty, or property, without due process of law.” No person. Not no citizen. Yet under Trump’s use of the Alien Enemies Act, Venezuelan migrants have been deported straight into El Salvador’s prisons — without hearings, charges or convictions. That’s not due process. That’s rule by decree.The First Amendment is also under attack. Student activists like Rümeysa Öztürk have been detained by ICE for nothing more than co-writing an article. Visas revoked, scholars deported — not because of crime, but because of speech. This amendment also doesn’t specify “citizens,” it specifies “the people.”The Fourteenth Amendment’s Equal Protection Clause is hanging by a thread. Trump’s executive order to end birthright citizenship — blocked in court but revealing in intent — openly defies the guarantee that “All persons born or naturalized in the United States… are citizens.” If the president of the United States feels free to ignore the Constitution’s plain text, what comes next?The Third Test: Will You Stay Silent? I don’t deny a country, or a club, has the right to control its borders or rules. Sovereignty matters. Rules are necessary. But we have slipped into what I call selective constitutionalism: rules enforced for some (Second Amendment) and not others (Fifth Amendment). Viktor Orbán’s Hungary is the case study: elections still happen, but rules are bent until liberal democracy is hollowed out and only the shell remains. A common rebuttal is: “Trump just says things, he doesn’t mean them.” That’s a lie we tell ourselves to stay comfortable. When I say something outrageous, it’s just words. When a president says the same thing, it becomes marching orders. Presidential words are not idle. They are policy.Even when I disagree with a law — like the Second Amendment — I still believe in respecting due process. If Biden abolished gun rights tomorrow by executive order, I would oppose it. Because the process matters. Without it, the rule of law is gone.I use this metaphor because it shouldn’t be foreign to any of us: if you’ve witnessed the selectivism that exists in Greek life at Duke, or seen rules bent to protect a brother, you’ve seen the same logic, when scaled up, applied to our nation's Constitution. What’s tolerable as a flawed college club becomes catastrophic when it defines a nation.When rules are bent long enough, they don’t snap. They disappear. In a frat, that leaves chaos. In a country, it leaves tyranny.Noor Nazir is a Trinity junior. Her columns typically run on alternate Tuesdays. "</code></pre>
 </div>
 </div>
 </section><section id="wrap-in-a-function" class="level2"><h2 class="anchored" data-anchor-id="wrap-in-a-function">Wrap in a function</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
 <span id="cb13-2"><a href="#cb13-2"></a>  article_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
 <span id="cb13-3"><a href="#cb13-3"></a></span>
 <span id="cb13-4"><a href="#cb13-4"></a>  article_page <span class="sc">|&gt;</span></span>
 <span id="cb13-5"><a href="#cb13-5"></a>    <span class="fu">html_elements</span>(<span class="st">".article-content"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-6"><a href="#cb13-6"></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span></span>
 <span id="cb13-7"><a href="#cb13-7"></a>    <span class="fu">str_remove_all</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb13-8"><a href="#cb13-8"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-8"><a href="#cb13-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="functions-in-r" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="functions-in-r">Functions in R</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">function_name</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">argument_1</span>, <span class="va">argument_2</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">function_name</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">argument_1</span>, <span class="va">argument_2</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="co"># what the function does</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>. . .</p>
 <p>For example:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">multiply_by_3</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">multiply_by_3</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fl">3</span> <span class="op">*</span> <span class="va">x</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p>. . .</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">multiply_by_3</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">multiply_by_3</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">multiply_by_3</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">multiply_by_3</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 30</code></pre>
 </div>
@@ -866,21 +837,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="revisit-parse_article_page" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="revisit-parse_article_page">Revisit: <code>parse_article_page()</code>
 </h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {    <span class="co"># define a function with one argument, url</span></span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>parse_article_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {    <span class="co"># define a function with one argument, url</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>  article_page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)         <span class="co"># read in the page at the url</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a></span>
 <span id="cb20-4"><a href="#cb20-4"></a>  article_page <span class="sc">|&gt;</span> <span class="co"># start with the page</span></span>
 <span id="cb20-5"><a href="#cb20-5"></a>    <span class="fu">html_elements</span>(<span class="st">".article-content"</span>) <span class="sc">|&gt;</span> <span class="co"># extract element w/ selector .article-content</span></span>
 <span id="cb20-6"><a href="#cb20-6"></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span>                      <span class="co"># extract text from element (and clean it up)</span></span>
 <span id="cb20-7"><a href="#cb20-7"></a>    <span class="fu">str_remove_all</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)                 <span class="co"># remove all newline characters, return result</span></span>
-<span id="cb20-8"><a href="#cb20-8"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-8"><a href="#cb20-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="test-the-function" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="test-the-function">Test the function</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>article <span class="op">=</span> <span class="fu">parse_article_page</span><span class="op">(</span><span class="va">url</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">title</span>, <span class="va">article</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">title</span>, <span class="va">article</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -892,11 +863,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="test-the-function-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="test-the-function-1">Test the function</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>chronicle <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>chronicle <span class="sc">|&gt;</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">select</span>(title, article)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -911,12 +882,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="test-the-function-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="test-the-function-2">Test the function</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>chronicle <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>chronicle <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
 <span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
 <span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">mutate</span>(<span class="at">article =</span> <span class="fu">parse_article_page</span>(url)) <span class="sc">|&gt;</span></span>
 <span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">select</span>(title, article)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">select</span>(title, article)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -931,12 +902,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="all-articles" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="all-articles">All articles</h2>
 <p>This can take a bit to run!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chronicle_article</span> <span class="op">&lt;-</span> <span class="va">chronicle</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>article <span class="op">=</span> <span class="fu">parse_article_page</span><span class="op">(</span><span class="va">url</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">chronicle_article</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="va">chronicle_article</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -990,9 +961,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="summarize-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-1">Summarize 1</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">relocate</span>(n_words)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">relocate</span>(n_words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 500 × 9
    n_words title   author date_time           month   day column url  
@@ -1013,9 +984,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="summarize-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-2">Summarize 2</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">group_by</span>(column)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">group_by</span>(column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 500 × 9
 # Groups:   column [3]
@@ -1037,12 +1008,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="summarize-3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-3">Summarize 3</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
 <span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">summarize</span>(</span>
 <span id="cb33-5"><a href="#cb33-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words)</span>
-<span id="cb33-6"><a href="#cb33-6"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb33-6"><a href="#cb33-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   column                avg_n_words
@@ -1054,13 +1025,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="summarize-4" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summarize-4">Summarize 4</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
 <span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">summarize</span>(</span>
 <span id="cb35-5"><a href="#cb35-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
 <span id="cb35-6"><a href="#cb35-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
-<span id="cb35-7"><a href="#cb35-7"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-7"><a href="#cb35-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   column                avg_n_words n_articles
@@ -1073,14 +1044,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="make-a-pretty-table" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="make-a-pretty-table">Make a pretty table</h2>
 <p>with the <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable()</a></code> function from the <code>knitr</code> package:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">summarize</span>(</span>
 <span id="cb37-5"><a href="#cb37-5"></a>    <span class="at">avg_n_words =</span> <span class="fu">mean</span>(n_words),</span>
 <span id="cb37-6"><a href="#cb37-6"></a>    <span class="at">n_articles =</span> <span class="fu">n</span>()</span>
 <span id="cb37-7"><a href="#cb37-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb37-8"><a href="#cb37-8"></a>  <span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb37-8"><a href="#cb37-8"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1110,7 +1081,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="update-column-names" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="update-column-names">Update column names</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
 <span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">summarize</span>(</span>
@@ -1119,7 +1090,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb38-7"><a href="#cb38-7"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb38-8"><a href="#cb38-8"></a>  <span class="fu">kable</span>(</span>
 <span id="cb38-9"><a href="#cb38-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>)</span>
-<span id="cb38-10"><a href="#cb38-10"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-10"><a href="#cb38-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1149,7 +1120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="update-digits" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="update-digits">Update digits</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>chronicle_article <span class="sc">|&gt;</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">mutate</span>(<span class="at">n_words =</span> <span class="fu">str_count</span>(article, <span class="st">" "</span>) <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">group_by</span>(column) <span class="sc">|&gt;</span></span>
 <span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">summarize</span>(</span>
@@ -1159,7 +1130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb39-8"><a href="#cb39-8"></a>  <span class="fu">kable</span>(</span>
 <span id="cb39-9"><a href="#cb39-9"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Column"</span>, <span class="st">"Avg. # words/article"</span>, <span class="st">"# articles"</span>),</span>
 <span id="cb39-10"><a href="#cb39-10"></a>    <span class="at">digits =</span> <span class="dv">0</span></span>
-<span id="cb39-11"><a href="#cb39-11"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-11"><a href="#cb39-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1355,7 +1326,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-30-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-30-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-html/unnamed-chunk-30-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="14-data-science-ethics_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -1377,7 +1348,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-31-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="14-data-science-ethics_files/figure-revealjs/unnamed-chunk-31-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-html/unnamed-chunk-31-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="14-data-science-ethics_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -1416,7 +1387,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/catalan-misleading-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="14-data-science-ethics_files/figure-revealjs/catalan-misleading-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-html/catalan-misleading-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="14-data-science-ethics_files/figure-html/catalan-misleading-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -1428,232 +1399,17 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="14-data-science-ethics_files/figure-revealjs/catalan-corrected-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="14-data-science-ethics_files/figure-revealjs/catalan-corrected-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="14-data-science-ethics_files/figure-html/catalan-corrected-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="14-data-science-ethics_files/figure-html/catalan-corrected-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
 </div>
+
+
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Alberto Cairo. <a href="https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf">“Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”</a>, Power from Statistics: Data Information and Knowledge, 2017.</p>
-</div></div></section></section><section id="algorithmic-bias" class="level1 page-columns page-full"><h1>Algorithmic bias</h1>
-<section id="garbage-in-garbage-out" class="level2"><h2 class="anchored" data-anchor-id="garbage-in-garbage-out">Garbage in, garbage out</h2>
-<ul>
-<li><p>In statistical modeling and inference we talk about “garbage in, garbage out” – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.</p></li>
-<li><p>Corollary: Bias in, bias out.</p></li>
-</ul></section><section id="google-translate" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="google-translate">Google Translate</h2>
-<div class="question">
-<p>What might be the reason for Google’s gendered translation? How do ethics play into this situation?</p>
-</div>
-<p><a href="images/14/google-translate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="images/14/google-translate.png" class="img-fluid"></a></p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Source: <a href="https://www.engadget.com/2018-12-07-google-remove-gender-bias-translations.html">Engadget - Google is working to remove gender bias in its translations</a></p>
-</div></div></section><section id="criminal-sentencing" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="criminal-sentencing">Criminal sentencing</h2>
-<p>2016 ProPublica article on algorithm used for rating a defendant’s risk of future crime:</p>
-<p><a href="images/14/machine-bias-cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="images/14/machine-bias-cover.png" class="img-fluid" width="500"></a></p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Source: Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a>. 23 May 2016. ProPublica.</p>
-</div></div></section><section id="risk-score-errors" class="level2"><h2 class="anchored" data-anchor-id="risk-score-errors">Risk score errors</h2>
-<div class="question">
-<p>What is common among the defendants who were assigned a high/low risk score for reoffending?</p>
-</div>
-<div class="columns">
-<div class="column" style="width:35%;">
-<p><img src="images/14/machine-bias-petty-theft-1.png" class="quarto-figure quarto-figure-center" width="400" height="333"><img src="images/14/machine-bias-petty-theft-2.png" class="quarto-figure quarto-figure-center" width="400" height="240"></p>
-</div><div class="column" style="width:35%;">
-<p><img src="images/14/machine-bias-drug-posession-1.png" class="quarto-figure quarto-figure-center" width="400" height="333"><img src="images/14/machine-bias-drug-posession-2.png" class="quarto-figure quarto-figure-center" width="400" height="240"></p>
-</div>
-</div>
-</section><section id="propublica-analysis" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="propublica-analysis">ProPublica analysis</h2>
-<p><strong>Data:</strong> Risk scores assigned to &gt;7,000 people arrested in Broward County, FL + whether they were charged with new crimes over the following 2 years.</p>
-<p>. . .</p>
-<p><strong>Results:</strong></p>
-<div class="incremental">
-<ul class="incremental">
-<li>20% of those predicted to commit violent crimes actually did.</li>
-<li>Algorithm had higher accuracy (61%) when full range of crimes taken into account (e.g.&nbsp;misdemeanors). <img src="images/14/propublica-results.png" class="img-fluid">
-</li>
-<li>Algorithm was more likely to falsely flag black defendants as future criminals, at almost twice the rate as white defendants.</li>
-<li>White defendants were mislabeled as low risk more often than black defendants.</li>
-</ul>
-</div>
-</section><section id="risk-scores" class="level2"><h2 class="anchored" data-anchor-id="risk-scores">Risk scores</h2>
-<div class="question">
-<p>How can an algorithm that doesn’t use race as input data be racist?</p>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/14/machine-bias-risk-scores.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="images/14/machine-bias-risk-scores.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></a></p>
-</figure>
-</div>
-</section><section id="predicting-ethnicity" class="level2 xxsmall"><h2 class="xxsmall anchored" data-anchor-id="predicting-ethnicity">Predicting ethnicity</h2>
-<p><a href="https://imai.fas.harvard.edu/research/race.html">Improving Ecological Inference by Predicting Individual Ethnicity from Voter Registration Record</a> (Imran and Khan, 2016)</p>
-<blockquote class="blockquote">
-<p>In both political behavior research and voting rights litigation, turnout and vote choice for different racial groups are often inferred using aggregate election results and racial composition. Over the past several decades, many statistical methods have been proposed to address this ecological inference problem. We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records. Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records. We evaluate the performance of the proposed methodology using approximately nine million voter registration records from Florida, where self-reported ethnicity is available. We find that it is possible to reduce the false positive rate among Black and Latino voters to 6% and 3%, respectively, while maintaining the true positive rate above 80%. Moreover, we use our predictions to estimate turnout by race and find that our estimates yields substantially less amounts of bias and root mean squared error than standard ecological inference estimates. We provide open-source software to implement the proposed methodology. The open-source software is available for implementing the proposed methodology.</p>
-</blockquote>
-</section><section id="wru-package" class="level2"><h2 class="anchored" data-anchor-id="wru-package">
-<strong>wru</strong> package</h2>
-<p>The said “source software” is the wru package: <a href="https://github.com/kosukeimai/wru" class="uri">https://github.com/kosukeimai/wru</a>.</p>
-<div class="question">
-<p>Do you have any ethical concerns about installing this package?</p>
-</div>
-</section><section id="wru-package-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="wru-package-1">
-<strong>wru</strong> package</h2>
-<div class="question">
-<p>Was the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?</p>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kosukeimai/wru">wru</a></span><span class="op">)</span></span>
-<span><span class="fu">predict_race</span><span class="op">(</span>voter.file <span class="op">=</span> <span class="va">voters</span>, surname.only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">surname</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"pred"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      surname    pred.whi    pred.bla     pred.his    pred.asi
-1      Khanna 0.045110474 0.003067623 0.0068522723 0.860411906
-2        Imai 0.052645440 0.001334812 0.0558160072 0.719376581
-3      Rivera 0.043285692 0.008204605 0.9136195794 0.024316883
-4     Fifield 0.895405704 0.001911388 0.0337464844 0.011079323
-5        Zhou 0.006572555 0.001298962 0.0005388581 0.982365594
-6    Ratkovic 0.861236727 0.008212824 0.0095395642 0.011334635
-7     Johnson 0.543815322 0.344128607 0.0272403940 0.007405765
-8       Lopez 0.038939877 0.004920643 0.9318797791 0.012154125
-10 Wantchekon 0.330697188 0.194700665 0.4042849478 0.021379541
-9       Morse 0.866360147 0.044429853 0.0246568086 0.010219712
-      pred.oth
-1  0.084557725
-2  0.170827160
-3  0.010573240
-4  0.057857101
-5  0.009224032
-6  0.109676251
-7  0.077409913
-8  0.012105576
-10 0.048937658
-9  0.054333479</code></pre>
-</div>
-</div>
-</section><section id="wru-package-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="wru-package-2">
-<strong>wru</strong> package</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">me</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>surname <span class="op">=</span> <span class="st">"Çetinkaya-Rundel"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">predict_race</span><span class="op">(</span>voter.file <span class="op">=</span> <span class="va">me</span>, surname.only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>           surname  pred.whi pred.bla pred.his pred.asi   pred.oth
-1 Çetinkaya-Rundel 0.9177967        0        0        0 0.08220329</code></pre>
-</div>
-</div>
-</section></section><section id="further-reading" class="level1"><h1>Further reading</h1>
-<section id="how-charts-lie" class="level2"><h2 class="anchored" data-anchor-id="how-charts-lie">How Charts Lie</h2>
-<div class="columns">
-<div class="column">
-<p><a href="images/14/cairo-how-charts-lie.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="images/14/cairo-how-charts-lie.jpg" class="img-fluid" width="400"></a></p>
-</div><div class="column">
-<p><a href="http://www.thefunctionalart.com/p/reviews.html">How Charts Lie</a></p>
-<p>Getting Smarter about Visual Information</p>
-<p>by Alberto Cairo</p>
-</div>
-</div>
-</section><section id="calling-bullshit" class="level2"><h2 class="anchored" data-anchor-id="calling-bullshit">Calling Bullshit</h2>
-<div class="columns">
-<div class="column">
-<p><a href="images/14/calling-bullshit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="images/14/calling-bullshit.png" class="img-fluid" width="400"></a></p>
-</div><div class="column">
-<p><a href="https://www.callingbullshit.org/">Calling Bullshit</a><br>
-The Art of Skepticism in a<br>
-Data-Driven World</p>
-<p>by Carl Bergstrom and Jevin West</p>
-</div>
-</div>
-</section><section id="machine-bias" class="level2"><h2 class="anchored" data-anchor-id="machine-bias">Machine Bias</h2>
-<div class="columns">
-<div class="column">
-<p><a href="images/14/machine-bias-cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="images/14/machine-bias-cover.png" class="img-fluid" width="400"></a></p>
-</div><div class="column">
-<p><a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a><br></p>
-<p>by Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner</p>
-</div>
-</div>
-</section><section id="ethics-and-data-science" class="level2"><h2 class="anchored" data-anchor-id="ethics-and-data-science">Ethics and Data Science</h2>
-<div class="columns">
-<div class="column">
-<p><a href="images/14/ethics-data-science.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="images/14/ethics-data-science.jpg" class="img-fluid" width="400"></a></p>
-</div><div class="column">
-<p><a href="https://www.amazon.com/Ethics-Data-Science-Mike-Loukides-ebook/dp/B07GTC8ZN7">Ethics and Data Science</a><br></p>
-<p>by Mike Loukides, Hilary Mason, DJ Patil<br>
-(Free Kindle download)</p>
-</div>
-</div>
-</section><section id="weapons-of-math-destruction" class="level2"><h2 class="anchored" data-anchor-id="weapons-of-math-destruction">Weapons of Math Destruction</h2>
-<div class="columns">
-<div class="column">
-<p><a href="images/14/weapons-of-math-destruction.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img src="images/14/weapons-of-math-destruction.jpg" class="img-fluid" width="400"></a></p>
-</div><div class="column">
-<p><a href="https://www.penguin.co.uk/books/304/304514/weapons-of-math-destruction/9780141985411.html">Weapons of Math Destruction</a><br>
-How Big Data Increases Inequality and Threatens Democracy<br></p>
-<p>by Cathy O’Neil</p>
-</div>
-</div>
-</section><section id="algorithms-of-oppression" class="level2"><h2 class="anchored" data-anchor-id="algorithms-of-oppression">Algorithms of Oppression</h2>
-<div class="columns">
-<div class="column">
-<p><a href="images/14/algorithms-of-oppression.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img src="images/14/algorithms-of-oppression.jpg" class="img-fluid" width="400"></a></p>
-</div><div class="column">
-<p><a href="https://nyupress.org/9781479837243/algorithms-of-oppression/">Algorithms of Oppression</a><br>
-How Search Engines Reinforce Racism<br></p>
-<p>by Safiya Umoja Noble</p>
-</div>
-</div>
-</section><section id="and-more-recently" class="level2"><h2 class="anchored" data-anchor-id="and-more-recently">And more recently…</h2>
-<p><a href="https://newsroom.ucla.edu/stories/how-ai-discriminates-and-what-that-means-for-your-google-habit">How AI discriminates and what that means for your Google habit</a><br>
-A conversation with UCLA internet studies scholar Safiya Noble<br></p>
-<p>by Julia Busiek</p>
-</section><section id="parting-thoughts" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="parting-thoughts">Parting thoughts</h2>
-<ul>
-<li><p>At some point during your data science learning journey you will learn tools that can be used unethically</p></li>
-<li><p>You might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)</p></li>
-</ul>
-<div class="question">
-<p>How do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?</p>
-</div>
-
-
-</section></section></main><!-- /main --><script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script><script id="quarto-html-after-body" type="application/javascript">
+</div></div></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1717,14 +1473,13 @@ A conversation with UCLA internet studies scholar Safiya Noble<br></p>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
