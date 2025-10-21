@@ -36,7 +36,11 @@ todays_ae <- "ae-10-modeling-fish"
 :::::: columns
 :::: {.column width="70%"}
 ::: wooclap
-ADD QUESTION
+What might have been the reason for Google’s gendered translation?
+How do ethics play into this situation?
+
+![](images/15/google-translate.png)
+
 :::
 ::::
 
@@ -45,9 +49,15 @@ ADD QUESTION
 :::
 ::::::
 
+::: aside
+Source: [Engadget - Google is working to remove gender bias in its translations](https://www.engadget.com/2018-12-07-google-remove-gender-bias-translations.html)
+:::
+
 ## Announcements {.smaller}
 
--   ADD ANNOUNCEMENTS
+-   Peer evaluation 2 due at 11:59 pm
+
+-   You must continue to make progress on your projects until Sunday evening in preparation for peer evaluations on Monday in lab
 
 # From last time: Algorithmic bias
 
@@ -56,19 +66,6 @@ ADD QUESTION
 -   In statistical modeling and inference we talk about "garbage in, garbage out" – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.
 
 -   Corollary: Bias in, bias out.
-
-## Google Translate {.smaller}
-
-::: question
-What might be the reason for Google’s gendered translation?
-How do ethics play into this situation?
-:::
-
-![](images/15/google-translate.png)
-
-::: aside
-Source: [Engadget - Google is working to remove gender bias in its translations](https://www.engadget.com/2018-12-07-google-remove-gender-bias-translations.html)
-:::
 
 ## Criminal sentencing
 
@@ -91,11 +88,11 @@ What is common among the defendants who were assigned a high/low risk score for 
 
 ::::: columns
 ::: {.column width="35%"}
-![](images/15/machine-bias-petty-theft-1.png){fig-align="center" width="400" height="333"} ![](images/15/machine-bias-petty-theft-2.png){fig-align="center" width="400" height="240"}
+![](images/15/machine-bias-petty-theft-1.png){fig-align="center" width="400" height="300"} ![](images/15/machine-bias-petty-theft-2.png){fig-align="center" width="400" height="200"}
 :::
 
 ::: {.column width="35%"}
-![](images/15/machine-bias-drug-posession-1.png){fig-align="center" width="400" height="333"} ![](images/15/machine-bias-drug-posession-2.png){fig-align="center" width="400" height="240"}
+![](images/15/machine-bias-drug-posession-1.png){fig-align="center" width="400" height="300"} ![](images/15/machine-bias-drug-posession-2.png){fig-align="center" width="400" height="200"}
 :::
 :::::
 
@@ -114,11 +111,22 @@ What is common among the defendants who were assigned a high/low risk score for 
 
 ## Risk scores
 
+::::: columns
+::: {.column width="35%"}
+
 ::: question
 How can an algorithm that doesn't use race as input data be racist?
 :::
 
+:::
+
+::: {.column width="65%"}
+
 ![](images/15/machine-bias-risk-scores.png){fig-align="center" width="600"}
+
+:::
+
+:::
 
 ## Predicting ethnicity {.xxsmall}
 
@@ -152,8 +160,17 @@ Does your answer change depending on the intended use?
 :::
 
 ```{r}
+#| eval: false
+library(wru)
+predict_race(voter.file = voters, surname.only = TRUE) |>
+  select(surname, contains("pred"))
+```
+
+```{r}
 #| cache: true
 #| message: false
+#| echo: false
+options(width = 100)
 library(wru)
 predict_race(voter.file = voters, surname.only = TRUE) |>
   select(surname, contains("pred"))
@@ -181,21 +198,23 @@ How do you train yourself to make the right decisions (or reduce the likelihood 
 
 # Modeling
 
-## Add a slide here
+## Two main 
 
-ADD TEXT HERE
+- Prediction / classification
 
-# Prediction / classification
+- Description / explanation
 
-## Let's drive a Tesla!
+<br>
 
-{{< video https://www.youtube.com/embed/xvqQ4F7Yf2o start="150" width="900" height="600" >}}
+::: question
 
-## Semi or garage? {.smaller}
+Can you think of examples of modeling for prediction vs. modeling for explanation?
 
-> New owner here.
-> Just parked in my garage.
-> Tesla thinks I crashed onto a semi.
+:::
+
+## Prediction gone wrong...
+
+> Tesla thinks my garage is a semi...
 
 ![](images/15/tesla-get-wrong-1.png){fig-align="center" width="300"}
 
@@ -203,26 +222,9 @@ ADD TEXT HERE
 Source: [Reddit](https://www.reddit.com/r/TeslaModelY/comments/112520t/new_owner_here_just_parked_in_my_garage_tesla/)
 :::
 
-## Car or trash?
+## Leisure, commute, physical activity & BP {.smaller .scrollable}
 
-> Tesla calls Mercedes trash
-
-![](images/15/tesla-get-wrong-2.png){fig-align="center" width="500"}
-
-::: aside
-Source: [Reddit](https://www.reddit.com/r/FUCKYOUINPARTICULAR/comments/hi5srx/tesla_calls_mercedes_trash/)
-:::
-
-# Description
-
-## Leisure, commute, physical activity and BP {.smaller}
-
-> [Relation Between Leisure Time, Commuting, and Occupational Physical Activity With Blood Pressure in 125,402 Adults: The Lifelines Cohort](https://www.ahajournals.org/doi/full/10.1161/JAHA.119.014313)
->
-> Byambasukh, Oyuntugs, Harold Snieder, and Eva Corpeleijn.
-> "Relation between leisure time, commuting, and occupational physical activity with blood pressure in 125 402 adults: the lifelines cohort." *Journal of the American Heart Association* 9.4 (2020): e014313.
-
-## Leisure, commute, physical activity and BP {.smaller .scrollable}
+[Relation Between Leisure Time, Commuting, and Occupational Physical Activity With Blood Pressure in 125,402 Adults: The Lifelines Cohort](https://www.ahajournals.org/doi/full/10.1161/JAHA.119.014313)
 
 **Background:** Whether all domains of daily‐life moderate‐to‐vigorous physical activity (MVPA) are associated with lower blood pressure (BP) and how this association depends on age and body mass index remains unclear.
 
@@ -237,6 +239,13 @@ This association was age dependent.
 β Coefficients (95% CI) for the highest tertiles of commuting‐and‐leisure‐time MVPA were −1.67 (−2.20 to −1.15), −3.39 (−3.94 to −2.82) and −4.64 (−6.15 to −3.14) mm Hg systolic BP in adults \<40, 40 to 60, and \>60 years, respectively.
 
 **Conclusions:** Higher commuting and leisure‐time but not occupational MVPA were significantly associated with lower BP and lower hypertension risk at all ages, but these associations were stronger in older adults.
+
+::: aside
+
+Byambasukh, Oyuntugs, Harold Snieder, and Eva Corpeleijn.
+> "Relation between leisure time, commuting, and occupational physical activity with blood pressure in 125 402 adults: the lifelines cohort." *Journal of the American Heart Association* 9.4 (2020): e014313.
+
+:::
 
 # Modeling
 
@@ -518,6 +527,55 @@ ggplot(df, aes(x = x, y = y, color = r)) +
   ) +
   scale_color_viridis_d(end = 0.9)
 ```
+
+## Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%"}
+::: wooclap
+
+Which of the following is the best guess for the correlation between the to variables on the plot below?
+
+```{r}
+#| echo: false
+#| fig-width: 3
+#| fig-asp: 1
+set.seed(54321)
+df <- tibble(
+  x = 1:20,
+  y = 1:20 + rnorm(20, 0, 200)
+)
+
+ggplot(df, aes(x = x, y = y)) +
+  geom_point() +
+  labs(x = NULL, y = NULL) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank()
+  )
+```
+
+::: wooclap-choices
+
+- -0.95
+
+- -0.53
+
+- 0.00
+
+- 0.25
+
+- 0.80
+:::
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
 
 ## Visualizing the model
 
