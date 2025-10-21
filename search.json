@@ -5427,21 +5427,21 @@
     "href": "slides/15-language-of-models.html",
     "title": "Language of models",
     "section": "",
-    "text": "ADD QUESTION\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nADD ANNOUNCEMENTS"
+    "text": "What might have been the reason for Google’s gendered translation? How do ethics play into this situation?\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nSource: Engadget - Google is working to remove gender bias in its translations\n\n\nPeer evaluation 2 due at 11:59 pm\nYou must continue to make progress on your projects until Sunday evening in preparation for peer evaluations on Monday in lab"
   },
   {
     "objectID": "slides/15-language-of-models.html#while-you-wait-participate",
     "href": "slides/15-language-of-models.html#while-you-wait-participate",
     "title": "Language of models",
     "section": "",
-    "text": "ADD QUESTION\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "What might have been the reason for Google’s gendered translation? How do ethics play into this situation?\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nSource: Engadget - Google is working to remove gender bias in its translations"
   },
   {
     "objectID": "slides/15-language-of-models.html#announcements",
     "href": "slides/15-language-of-models.html#announcements",
     "title": "Language of models",
     "section": "",
-    "text": "ADD ANNOUNCEMENTS"
+    "text": "Peer evaluation 2 due at 11:59 pm\nYou must continue to make progress on your projects until Sunday evening in preparation for peer evaluations on Monday in lab"
   },
   {
     "objectID": "slides/15-language-of-models.html#garbage-in-garbage-out",
@@ -5449,13 +5449,6 @@
     "title": "Language of models",
     "section": "Garbage in, garbage out",
     "text": "Garbage in, garbage out\n\nIn statistical modeling and inference we talk about “garbage in, garbage out” – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.\nCorollary: Bias in, bias out."
-  },
-  {
-    "objectID": "slides/15-language-of-models.html#google-translate",
-    "href": "slides/15-language-of-models.html#google-translate",
-    "title": "Language of models",
-    "section": "Google Translate",
-    "text": "Google Translate\n\nWhat might be the reason for Google’s gendered translation? How do ethics play into this situation?\n\n\n\n\nSource: Engadget - Google is working to remove gender bias in its translations"
   },
   {
     "objectID": "slides/15-language-of-models.html#criminal-sentencing",
@@ -5483,7 +5476,7 @@
     "href": "slides/15-language-of-models.html#risk-scores",
     "title": "Language of models",
     "section": "Risk scores",
-    "text": "Risk scores\n\nHow can an algorithm that doesn’t use race as input data be racist?"
+    "text": "Risk scores\n\n\n\nHow can an algorithm that doesn’t use race as input data be racist?"
   },
   {
     "objectID": "slides/15-language-of-models.html#predicting-ethnicity",
@@ -5504,7 +5497,7 @@
     "href": "slides/15-language-of-models.html#wru-package-1",
     "title": "Language of models",
     "section": "\nwru package",
-    "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, contains(\"pred\"))\n\n      surname    pred.whi    pred.bla     pred.his    pred.asi\n1      Khanna 0.045110474 0.003067623 0.0068522723 0.860411906\n2        Imai 0.052645440 0.001334812 0.0558160072 0.719376581\n3      Rivera 0.043285692 0.008204605 0.9136195794 0.024316883\n4     Fifield 0.895405704 0.001911388 0.0337464844 0.011079323\n5        Zhou 0.006572555 0.001298962 0.0005388581 0.982365594\n6    Ratkovic 0.861236727 0.008212824 0.0095395642 0.011334635\n7     Johnson 0.543815322 0.344128607 0.0272403940 0.007405765\n8       Lopez 0.038939877 0.004920643 0.9318797791 0.012154125\n10 Wantchekon 0.330697188 0.194700665 0.4042849478 0.021379541\n9       Morse 0.866360147 0.044429853 0.0246568086 0.010219712\n      pred.oth\n1  0.084557725\n2  0.170827160\n3  0.010573240\n4  0.057857101\n5  0.009224032\n6  0.109676251\n7  0.077409913\n8  0.012105576\n10 0.048937658\n9  0.054333479"
+    "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, contains(\"pred\"))\n\n\n\n      surname    pred.whi    pred.bla     pred.his    pred.asi    pred.oth\n1      Khanna 0.045110474 0.003067623 0.0068522723 0.860411906 0.084557725\n2        Imai 0.052645440 0.001334812 0.0558160072 0.719376581 0.170827160\n3      Rivera 0.043285692 0.008204605 0.9136195794 0.024316883 0.010573240\n4     Fifield 0.895405704 0.001911388 0.0337464844 0.011079323 0.057857101\n5        Zhou 0.006572555 0.001298962 0.0005388581 0.982365594 0.009224032\n6    Ratkovic 0.861236727 0.008212824 0.0095395642 0.011334635 0.109676251\n7     Johnson 0.543815322 0.344128607 0.0272403940 0.007405765 0.077409913\n8       Lopez 0.038939877 0.004920643 0.9318797791 0.012154125 0.012105576\n10 Wantchekon 0.330697188 0.194700665 0.4042849478 0.021379541 0.048937658\n9       Morse 0.866360147 0.044429853 0.0246568086 0.010219712 0.054333479"
   },
   {
     "objectID": "slides/15-language-of-models.html#wru-package-2",
@@ -5521,46 +5514,25 @@
     "text": "Parting thoughts\n\nAt some point during your data science learning journey you will learn tools that can be used unethically\nYou might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)\n\n\nHow do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?"
   },
   {
-    "objectID": "slides/15-language-of-models.html#add-a-slide-here",
-    "href": "slides/15-language-of-models.html#add-a-slide-here",
+    "objectID": "slides/15-language-of-models.html#two-main",
+    "href": "slides/15-language-of-models.html#two-main",
     "title": "Language of models",
-    "section": "Add a slide here",
-    "text": "Add a slide here\nADD TEXT HERE"
+    "section": "Two main",
+    "text": "Two main\n\nPrediction / classification\nDescription / explanation\n\n\n\nCan you think of examples of modeling for prediction vs. modeling for explanation?"
   },
   {
-    "objectID": "slides/15-language-of-models.html#lets-drive-a-tesla",
-    "href": "slides/15-language-of-models.html#lets-drive-a-tesla",
+    "objectID": "slides/15-language-of-models.html#prediction-gone-wrong",
+    "href": "slides/15-language-of-models.html#prediction-gone-wrong",
     "title": "Language of models",
-    "section": "Let’s drive a Tesla!",
-    "text": "Let’s drive a Tesla!"
+    "section": "Prediction gone wrong…",
+    "text": "Prediction gone wrong…\n\nTesla thinks my garage is a semi…\n\n\n\n\n\n\n\nSource: Reddit"
   },
   {
-    "objectID": "slides/15-language-of-models.html#semi-or-garage",
-    "href": "slides/15-language-of-models.html#semi-or-garage",
+    "objectID": "slides/15-language-of-models.html#leisure-commute-physical-activity-bp",
+    "href": "slides/15-language-of-models.html#leisure-commute-physical-activity-bp",
     "title": "Language of models",
-    "section": "Semi or garage?",
-    "text": "Semi or garage?\n\nNew owner here. Just parked in my garage. Tesla thinks I crashed onto a semi.\n\n\n\n\n\n\n\nSource: Reddit"
-  },
-  {
-    "objectID": "slides/15-language-of-models.html#car-or-trash",
-    "href": "slides/15-language-of-models.html#car-or-trash",
-    "title": "Language of models",
-    "section": "Car or trash?",
-    "text": "Car or trash?\n\nTesla calls Mercedes trash\n\n\n\n\n\n\n\nSource: Reddit"
-  },
-  {
-    "objectID": "slides/15-language-of-models.html#leisure-commute-physical-activity-and-bp",
-    "href": "slides/15-language-of-models.html#leisure-commute-physical-activity-and-bp",
-    "title": "Language of models",
-    "section": "Leisure, commute, physical activity and BP",
-    "text": "Leisure, commute, physical activity and BP\n\nRelation Between Leisure Time, Commuting, and Occupational Physical Activity With Blood Pressure in 125,402 Adults: The Lifelines Cohort\nByambasukh, Oyuntugs, Harold Snieder, and Eva Corpeleijn. “Relation between leisure time, commuting, and occupational physical activity with blood pressure in 125 402 adults: the lifelines cohort.” Journal of the American Heart Association 9.4 (2020): e014313."
-  },
-  {
-    "objectID": "slides/15-language-of-models.html#leisure-commute-physical-activity-and-bp-1",
-    "href": "slides/15-language-of-models.html#leisure-commute-physical-activity-and-bp-1",
-    "title": "Language of models",
-    "section": "Leisure, commute, physical activity and BP",
-    "text": "Leisure, commute, physical activity and BP\nBackground: Whether all domains of daily‐life moderate‐to‐vigorous physical activity (MVPA) are associated with lower blood pressure (BP) and how this association depends on age and body mass index remains unclear.\nMethods and Results: In the population‐based Lifelines cohort (N=125,402), MVPA was assessed by the Short Questionnaire to Assess Health‐Enhancing Physical Activity, a validated questionnaire in different domains such as commuting, leisure‐time, and occupational PA. BP was assessed using the last 3 of 10 measurements after 10 minutes’ rest in the supine position. Hypertension was defined as systolic BP ≥140 mm Hg and/or diastolic BP ≥90 mm Hg and/or use of antihypertensives. In regression analysis, higher commuting and leisure‐time but not occupational MVPA related to lower BP and lower hypertension risk. Commuting‐and‐leisure‐time MVPA was associated with BP in a dose‐dependent manner. β Coefficients (95% CI) from linear regression analyses were −1.64 (−2.03 to −1.24), −2.29 (−2.68 to −1.90), and finally −2.90 (−3.29 to −2.50) mm Hg systolic BP for the low, middle, and highest tertile of MVPA compared with “No MVPA” as the reference group after adjusting for age, sex, education, smoking and alcohol use. Further adjustment for body mass index attenuated the associations by 30% to 50%, but more MVPA remained significantly associated with lower BP and lower risk of hypertension. This association was age dependent. β Coefficients (95% CI) for the highest tertiles of commuting‐and‐leisure‐time MVPA were −1.67 (−2.20 to −1.15), −3.39 (−3.94 to −2.82) and −4.64 (−6.15 to −3.14) mm Hg systolic BP in adults &lt;40, 40 to 60, and &gt;60 years, respectively.\nConclusions: Higher commuting and leisure‐time but not occupational MVPA were significantly associated with lower BP and lower hypertension risk at all ages, but these associations were stronger in older adults."
+    "section": "Leisure, commute, physical activity & BP",
+    "text": "Leisure, commute, physical activity & BP\nRelation Between Leisure Time, Commuting, and Occupational Physical Activity With Blood Pressure in 125,402 Adults: The Lifelines Cohort\nBackground: Whether all domains of daily‐life moderate‐to‐vigorous physical activity (MVPA) are associated with lower blood pressure (BP) and how this association depends on age and body mass index remains unclear.\nMethods and Results: In the population‐based Lifelines cohort (N=125,402), MVPA was assessed by the Short Questionnaire to Assess Health‐Enhancing Physical Activity, a validated questionnaire in different domains such as commuting, leisure‐time, and occupational PA. BP was assessed using the last 3 of 10 measurements after 10 minutes’ rest in the supine position. Hypertension was defined as systolic BP ≥140 mm Hg and/or diastolic BP ≥90 mm Hg and/or use of antihypertensives. In regression analysis, higher commuting and leisure‐time but not occupational MVPA related to lower BP and lower hypertension risk. Commuting‐and‐leisure‐time MVPA was associated with BP in a dose‐dependent manner. β Coefficients (95% CI) from linear regression analyses were −1.64 (−2.03 to −1.24), −2.29 (−2.68 to −1.90), and finally −2.90 (−3.29 to −2.50) mm Hg systolic BP for the low, middle, and highest tertile of MVPA compared with “No MVPA” as the reference group after adjusting for age, sex, education, smoking and alcohol use. Further adjustment for body mass index attenuated the associations by 30% to 50%, but more MVPA remained significantly associated with lower BP and lower risk of hypertension. This association was age dependent. β Coefficients (95% CI) for the highest tertiles of commuting‐and‐leisure‐time MVPA were −1.67 (−2.20 to −1.15), −3.39 (−3.94 to −2.82) and −4.64 (−6.15 to −3.14) mm Hg systolic BP in adults &lt;40, 40 to 60, and &gt;60 years, respectively.\nConclusions: Higher commuting and leisure‐time but not occupational MVPA were significantly associated with lower BP and lower hypertension risk at all ages, but these associations were stronger in older adults.\n\n\nByambasukh, Oyuntugs, Harold Snieder, and Eva Corpeleijn. &gt; “Relation between leisure time, commuting, and occupational physical activity with blood pressure in 125 402 adults: the lifelines cohort.” Journal of the American Heart Association 9.4 (2020): e014313."
   },
   {
     "objectID": "slides/15-language-of-models.html#modeling-cars",
@@ -5647,6 +5619,13 @@
     "text": "Correlation\n\nRanges between -1 and 1.\nSame sign as the slope."
   },
   {
+    "objectID": "slides/15-language-of-models.html#participate",
+    "href": "slides/15-language-of-models.html#participate",
+    "title": "Language of models",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the best guess for the correlation between the to variables on the plot below?\n\n\n\n\n\n\n\n\n\n\n-0.95\n-0.53\n0.00\n0.25\n0.80\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/15-language-of-models.html#visualizing-the-model",
     "href": "slides/15-language-of-models.html#visualizing-the-model",
     "title": "Language of models",
@@ -5665,14 +5644,14 @@
     "href": "slides/15-language-of-models-slides.html#while-you-wait-participate",
     "title": "Language of models",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\nADD QUESTION\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhat might have been the reason for Google’s gendered translation? How do ethics play into this situation?\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\nSource: Engadget - Google is working to remove gender bias in its translations"
   },
   {
     "objectID": "slides/15-language-of-models-slides.html#announcements",
     "href": "slides/15-language-of-models-slides.html#announcements",
     "title": "Language of models",
     "section": "Announcements",
-    "text": "Announcements\n\nADD ANNOUNCEMENTS"
+    "text": "Announcements\n\nPeer evaluation 2 due at 11:59 pm\nYou must continue to make progress on your projects until Sunday evening in preparation for peer evaluations on Monday in lab"
   },
   {
     "objectID": "slides/15-language-of-models-slides.html#garbage-in-garbage-out",
@@ -5680,13 +5659,6 @@
     "title": "Language of models",
     "section": "Garbage in, garbage out",
     "text": "Garbage in, garbage out\n\nIn statistical modeling and inference we talk about “garbage in, garbage out” – if you don’t have good (random, representative) data, results of your analysis will not be reliable or generalizable.\nCorollary: Bias in, bias out."
-  },
-  {
-    "objectID": "slides/15-language-of-models-slides.html#google-translate",
-    "href": "slides/15-language-of-models-slides.html#google-translate",
-    "title": "Language of models",
-    "section": "Google Translate",
-    "text": "Google Translate\n\nWhat might be the reason for Google’s gendered translation? How do ethics play into this situation?\n\n\n\n\nSource: Engadget - Google is working to remove gender bias in its translations"
   },
   {
     "objectID": "slides/15-language-of-models-slides.html#criminal-sentencing",
@@ -5714,7 +5686,7 @@
     "href": "slides/15-language-of-models-slides.html#risk-scores",
     "title": "Language of models",
     "section": "Risk scores",
-    "text": "Risk scores\n\nHow can an algorithm that doesn’t use race as input data be racist?"
+    "text": "Risk scores\n\n\n\nHow can an algorithm that doesn’t use race as input data be racist?"
   },
   {
     "objectID": "slides/15-language-of-models-slides.html#predicting-ethnicity",
@@ -5735,7 +5707,7 @@
     "href": "slides/15-language-of-models-slides.html#wru-package-1",
     "title": "Language of models",
     "section": "\nwru package",
-    "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, contains(\"pred\"))\n\n      surname    pred.whi    pred.bla     pred.his    pred.asi\n1      Khanna 0.045110474 0.003067623 0.0068522723 0.860411906\n2        Imai 0.052645440 0.001334812 0.0558160072 0.719376581\n3      Rivera 0.043285692 0.008204605 0.9136195794 0.024316883\n4     Fifield 0.895405704 0.001911388 0.0337464844 0.011079323\n5        Zhou 0.006572555 0.001298962 0.0005388581 0.982365594\n6    Ratkovic 0.861236727 0.008212824 0.0095395642 0.011334635\n7     Johnson 0.543815322 0.344128607 0.0272403940 0.007405765\n8       Lopez 0.038939877 0.004920643 0.9318797791 0.012154125\n10 Wantchekon 0.330697188 0.194700665 0.4042849478 0.021379541\n9       Morse 0.866360147 0.044429853 0.0246568086 0.010219712\n      pred.oth\n1  0.084557725\n2  0.170827160\n3  0.010573240\n4  0.057857101\n5  0.009224032\n6  0.109676251\n7  0.077409913\n8  0.012105576\n10 0.048937658\n9  0.054333479"
+    "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, contains(\"pred\"))\n\n\n\n      surname    pred.whi    pred.bla     pred.his    pred.asi    pred.oth\n1      Khanna 0.045110474 0.003067623 0.0068522723 0.860411906 0.084557725\n2        Imai 0.052645440 0.001334812 0.0558160072 0.719376581 0.170827160\n3      Rivera 0.043285692 0.008204605 0.9136195794 0.024316883 0.010573240\n4     Fifield 0.895405704 0.001911388 0.0337464844 0.011079323 0.057857101\n5        Zhou 0.006572555 0.001298962 0.0005388581 0.982365594 0.009224032\n6    Ratkovic 0.861236727 0.008212824 0.0095395642 0.011334635 0.109676251\n7     Johnson 0.543815322 0.344128607 0.0272403940 0.007405765 0.077409913\n8       Lopez 0.038939877 0.004920643 0.9318797791 0.012154125 0.012105576\n10 Wantchekon 0.330697188 0.194700665 0.4042849478 0.021379541 0.048937658\n9       Morse 0.866360147 0.044429853 0.0246568086 0.010219712 0.054333479"
   },
   {
     "objectID": "slides/15-language-of-models-slides.html#wru-package-2",
@@ -5752,46 +5724,25 @@
     "text": "Parting thoughts\n\nAt some point during your data science learning journey you will learn tools that can be used unethically\nYou might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)\n\n\nHow do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?"
   },
   {
-    "objectID": "slides/15-language-of-models-slides.html#add-a-slide-here",
-    "href": "slides/15-language-of-models-slides.html#add-a-slide-here",
+    "objectID": "slides/15-language-of-models-slides.html#two-main",
+    "href": "slides/15-language-of-models-slides.html#two-main",
     "title": "Language of models",
-    "section": "Add a slide here",
-    "text": "Add a slide here\nADD TEXT HERE"
+    "section": "Two main",
+    "text": "Two main\n\nPrediction / classification\nDescription / explanation\n\n\n\nCan you think of examples of modeling for prediction vs. modeling for explanation?"
   },
   {
-    "objectID": "slides/15-language-of-models-slides.html#lets-drive-a-tesla",
-    "href": "slides/15-language-of-models-slides.html#lets-drive-a-tesla",
+    "objectID": "slides/15-language-of-models-slides.html#prediction-gone-wrong",
+    "href": "slides/15-language-of-models-slides.html#prediction-gone-wrong",
     "title": "Language of models",
-    "section": "Let’s drive a Tesla!",
-    "text": "Let’s drive a Tesla!"
+    "section": "Prediction gone wrong…",
+    "text": "Prediction gone wrong…\n\nTesla thinks my garage is a semi…\n\n\n\n\n\n\n\nSource: Reddit"
   },
   {
-    "objectID": "slides/15-language-of-models-slides.html#semi-or-garage",
-    "href": "slides/15-language-of-models-slides.html#semi-or-garage",
+    "objectID": "slides/15-language-of-models-slides.html#leisure-commute-physical-activity-bp",
+    "href": "slides/15-language-of-models-slides.html#leisure-commute-physical-activity-bp",
     "title": "Language of models",
-    "section": "Semi or garage?",
-    "text": "Semi or garage?\n\nNew owner here. Just parked in my garage. Tesla thinks I crashed onto a semi.\n\n\n\n\n\n\n\nSource: Reddit"
-  },
-  {
-    "objectID": "slides/15-language-of-models-slides.html#car-or-trash",
-    "href": "slides/15-language-of-models-slides.html#car-or-trash",
-    "title": "Language of models",
-    "section": "Car or trash?",
-    "text": "Car or trash?\n\nTesla calls Mercedes trash\n\n\n\n\n\n\n\nSource: Reddit"
-  },
-  {
-    "objectID": "slides/15-language-of-models-slides.html#leisure-commute-physical-activity-and-bp",
-    "href": "slides/15-language-of-models-slides.html#leisure-commute-physical-activity-and-bp",
-    "title": "Language of models",
-    "section": "Leisure, commute, physical activity and BP",
-    "text": "Leisure, commute, physical activity and BP\n\nRelation Between Leisure Time, Commuting, and Occupational Physical Activity With Blood Pressure in 125,402 Adults: The Lifelines Cohort\nByambasukh, Oyuntugs, Harold Snieder, and Eva Corpeleijn. “Relation between leisure time, commuting, and occupational physical activity with blood pressure in 125 402 adults: the lifelines cohort.” Journal of the American Heart Association 9.4 (2020): e014313."
-  },
-  {
-    "objectID": "slides/15-language-of-models-slides.html#leisure-commute-physical-activity-and-bp-1",
-    "href": "slides/15-language-of-models-slides.html#leisure-commute-physical-activity-and-bp-1",
-    "title": "Language of models",
-    "section": "Leisure, commute, physical activity and BP",
-    "text": "Leisure, commute, physical activity and BP\nBackground: Whether all domains of daily‐life moderate‐to‐vigorous physical activity (MVPA) are associated with lower blood pressure (BP) and how this association depends on age and body mass index remains unclear.\nMethods and Results: In the population‐based Lifelines cohort (N=125,402), MVPA was assessed by the Short Questionnaire to Assess Health‐Enhancing Physical Activity, a validated questionnaire in different domains such as commuting, leisure‐time, and occupational PA. BP was assessed using the last 3 of 10 measurements after 10 minutes’ rest in the supine position. Hypertension was defined as systolic BP ≥140 mm Hg and/or diastolic BP ≥90 mm Hg and/or use of antihypertensives. In regression analysis, higher commuting and leisure‐time but not occupational MVPA related to lower BP and lower hypertension risk. Commuting‐and‐leisure‐time MVPA was associated with BP in a dose‐dependent manner. β Coefficients (95% CI) from linear regression analyses were −1.64 (−2.03 to −1.24), −2.29 (−2.68 to −1.90), and finally −2.90 (−3.29 to −2.50) mm Hg systolic BP for the low, middle, and highest tertile of MVPA compared with “No MVPA” as the reference group after adjusting for age, sex, education, smoking and alcohol use. Further adjustment for body mass index attenuated the associations by 30% to 50%, but more MVPA remained significantly associated with lower BP and lower risk of hypertension. This association was age dependent. β Coefficients (95% CI) for the highest tertiles of commuting‐and‐leisure‐time MVPA were −1.67 (−2.20 to −1.15), −3.39 (−3.94 to −2.82) and −4.64 (−6.15 to −3.14) mm Hg systolic BP in adults &lt;40, 40 to 60, and &gt;60 years, respectively.\nConclusions: Higher commuting and leisure‐time but not occupational MVPA were significantly associated with lower BP and lower hypertension risk at all ages, but these associations were stronger in older adults."
+    "section": "Leisure, commute, physical activity & BP",
+    "text": "Leisure, commute, physical activity & BP\nRelation Between Leisure Time, Commuting, and Occupational Physical Activity With Blood Pressure in 125,402 Adults: The Lifelines Cohort\nBackground: Whether all domains of daily‐life moderate‐to‐vigorous physical activity (MVPA) are associated with lower blood pressure (BP) and how this association depends on age and body mass index remains unclear.\nMethods and Results: In the population‐based Lifelines cohort (N=125,402), MVPA was assessed by the Short Questionnaire to Assess Health‐Enhancing Physical Activity, a validated questionnaire in different domains such as commuting, leisure‐time, and occupational PA. BP was assessed using the last 3 of 10 measurements after 10 minutes’ rest in the supine position. Hypertension was defined as systolic BP ≥140 mm Hg and/or diastolic BP ≥90 mm Hg and/or use of antihypertensives. In regression analysis, higher commuting and leisure‐time but not occupational MVPA related to lower BP and lower hypertension risk. Commuting‐and‐leisure‐time MVPA was associated with BP in a dose‐dependent manner. β Coefficients (95% CI) from linear regression analyses were −1.64 (−2.03 to −1.24), −2.29 (−2.68 to −1.90), and finally −2.90 (−3.29 to −2.50) mm Hg systolic BP for the low, middle, and highest tertile of MVPA compared with “No MVPA” as the reference group after adjusting for age, sex, education, smoking and alcohol use. Further adjustment for body mass index attenuated the associations by 30% to 50%, but more MVPA remained significantly associated with lower BP and lower risk of hypertension. This association was age dependent. β Coefficients (95% CI) for the highest tertiles of commuting‐and‐leisure‐time MVPA were −1.67 (−2.20 to −1.15), −3.39 (−3.94 to −2.82) and −4.64 (−6.15 to −3.14) mm Hg systolic BP in adults &lt;40, 40 to 60, and &gt;60 years, respectively.\nConclusions: Higher commuting and leisure‐time but not occupational MVPA were significantly associated with lower BP and lower hypertension risk at all ages, but these associations were stronger in older adults.\n\n\nByambasukh, Oyuntugs, Harold Snieder, and Eva Corpeleijn. &gt; “Relation between leisure time, commuting, and occupational physical activity with blood pressure in 125 402 adults: the lifelines cohort.” Journal of the American Heart Association 9.4 (2020): e014313."
   },
   {
     "objectID": "slides/15-language-of-models-slides.html#modeling-cars",
@@ -5876,6 +5827,13 @@
     "title": "Language of models",
     "section": "Correlation",
     "text": "Correlation\n\nRanges between -1 and 1.\nSame sign as the slope."
+  },
+  {
+    "objectID": "slides/15-language-of-models-slides.html#participate",
+    "href": "slides/15-language-of-models-slides.html#participate",
+    "title": "Language of models",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the best guess for the correlation between the to variables on the plot below?\n\n\n\n\n\n\n\n\n\n\n-0.95\n-0.53\n0.00\n0.25\n0.80\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/15-language-of-models-slides.html#visualizing-the-model",
