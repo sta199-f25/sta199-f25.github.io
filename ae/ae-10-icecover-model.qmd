@@ -1,0 +1,123 @@
+---
+title: "AE 10: Ice cover in Madison, WI area lakes"
+---
+
+The data for this application exercise comes from the [lterdatasampler](https://lter.github.io/lterdatasampler/) package. The mission of the [Long Term Ecological Research program (LTER)](https://lternet.edu) Network is to "provide the scientific community, policy makers, and society with the knowledge and predictive understanding necessary to conserve, protect, and manage the nation’s ecosystems, their biodiversity, and the services they provide."
+
+Specifically we'll be using data from the North Temperate Lakes LTER (NTL-LTER) site, which is located in the Madison, WI area, modeling the relationship between number of days that a lake is frozen, excluding periods where the lake thaws before refreezing again, and annual average temperature.
+
+## Getting started
+
+### Packages
+
+We will use the **tidyverse** package for data visualization and wrangling and the **tidymodels** package for modeling.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+### Data
+
+The data can be found in the `data` folder; it's called `icecover.csv`.
+
+```{r}
+#| label: load-data
+#| message: false
+# add code here
+```
+
+The data dictionary is below:
+
+| Variable Name      | Description                                                      |
+|:-------------------|:-----------------------------------------------------------------|
+| `lakeid`           | Lake name                                                        |
+| `ice_on`           | Date of freeze of lake                                           |
+| `ice_off`          | Date of ice breakup of lake                                      |
+| `ice_duration`     | Number of days between the freeze and breakup dates of each lake |
+| `year`             | Year of observation                                              |
+| `annual_avg_temp`  | Annual average air temperature (°C)                              |
+
+## Visualizing the model
+
+We’re going to investigate the relationship between `ice_duration` and `annual_avg_temp`.
+
+- Create an appropriate plot to investigate this relationship. Add appropriate labels to the plot.
+
+```{r}
+#| label: visualize
+# add code here
+```
+
+- If you were to draw a a straight line to best represent the relationship between ice duration and annual average temperature, where would it go? Why?
+
+*Start from the top left and go towards bottom right. Identify the first and last point and draw a line through most the others.*
+
+- Now, let R draw the line for you. Refer to the documentation at <https://ggplot2.tidyverse.org/reference/geom_smooth.html>. Specifically, refer to the method section.
+
+```{r}
+#| label: visualize-with-line
+# add code here
+```
+
+- What types of questions can this plot help answer?
+
+*How does ice duration change with annual average temperature? What is the predicted ice duration for a given annual average temperature?*
+
+- We can use this line to make predictions. Predict what you think the ice duration would be in a year with annual average temperature of 7, 10, and 12 °C. Which prediction is considered extrapolation?
+
+*At 7 °C, we estimate ice duration to be 100 days. At 10 °C, we estimate ice duration to be 80 days. 12 °C would be considered extrapolation.*
+
+- What is a residual?
+
+*Difference between predicted and observed.*
+
+## Model fitting
+
+Fit a model to predict fish weights from their heights.
+
+```{r}
+#| label: fit-model
+# add code here
+```
+
+## Model summary
+
+- Display the model summary including estimates for the slope and intercept along with measurements of uncertainty around them. Show how you can extract these values from the model output.
+
+```{r}
+#| label: model-summary
+# add code here
+```
+
+- Write out your model using mathematical notation.
+
+$$ \widehat{ice~duration} = 148 - 6.18 \times annual~avg~temp $$
+
+## Correlation
+
+We can also assess correlation between two quantitative variables.
+
+- What is correlation? What are values correlation can take?
+
+*Strength and direction of a linear relationship. It’s bounded by -1 and 1.*
+
+- Are you good at guessing correlation? Give it a try! <https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html>
+
+- What is the correlation between heights and weights of fish?
+
+```{r}
+#| label: correlation
+# add code here
+```
+
+## Fitting other models
+
+We can fit more models than just a straight line. Change the plotting code from earlier to use `method = "loess"`. What is different from the plot created before?
+
+```{r}
+#| label: visualize-with-curve
+# add code here
+```

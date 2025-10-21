@@ -337,7 +337,6 @@ base <- ggplot(mtcars, aes(x = wt, y = mpg)) +
 
 :::::: columns
 ::: {.column width="25%"}
-
 ```{r}
 #| echo: false
 mtcars |>
@@ -355,14 +354,12 @@ mtcars |>
   ) |>
   tab_options(table.font.size = px(24))
 ```
-
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="70%"}
-
 ```{r}
 #| echo: false
 base +
@@ -370,7 +367,6 @@ base +
     axis.title.x = element_text(color = "#BE394F", face = "bold", size = 16)
   )
 ```
-
 :::
 ::::::
 
@@ -378,7 +374,6 @@ base +
 
 :::::: columns
 ::: {.column width="25%"}
-
 ```{r}
 #| echo: false
 mtcars |>
@@ -396,14 +391,12 @@ mtcars |>
   ) |>
   tab_options(table.font.size = px(24))
 ```
-
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="70%"}
-
 ```{r}
 #| echo: false
 base +
@@ -411,7 +404,6 @@ base +
     axis.title.y = element_text(color = "#BE394F", face = "bold", size = 16)
   )
 ```
-
 :::
 ::::::
 
@@ -495,16 +487,37 @@ base +
 -   Same sign as the slope.
 
 ```{r}
+#| fig-asp: 0.2
+#| echo: false
+set.seed(12345)
 df <- tibble(
-  x = 1:10,
-  y = 1:10 * 0.75
-)
+  x = 1:20,
+  y1 = 1:20 * 0.75,
+  y2 = 1:20 * 0.75 + rnorm(20, 0, 1),
+  y3 = 1:20 * 0.75 + rnorm(20, 0, 8),
+  y4 = 1:20 + rnorm(20, 0, 200),
+  y5 = -1 * y3,
+  y6 = -1 * y2,
+  y7 = -1 * y1
+) |>
+  pivot_longer(cols = starts_with("y"), names_to = "series", values_to = "y") |>
+  group_by(series) |>
+  mutate(r = paste("r =", round(cor(x, y), 2))) |>
+  ungroup() |>
+  arrange(series, x) |>
+  mutate(r = fct_inorder(r))
 
-ggplot(df, aes(x = x, y = y)) +
-  geom_point()
+ggplot(df, aes(x = x, y = y, color = r)) +
+  geom_point(show.legend = FALSE) +
+  facet_wrap(~r, ncol = 7, scales = "free") +
+  theme_bw(base_size = 16) +
+  labs(x = NULL, y = NULL) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank()
+  ) +
+  scale_color_viridis_d(end = 0.9)
 ```
-
-![](images/15/corr-example.png){fig-align="center"}
 
 ## Visualizing the model
 
