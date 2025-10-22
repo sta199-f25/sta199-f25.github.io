@@ -63,13 +63,15 @@ chronicle <- chronicle_raw |>
     date_time = mdy_hm(date_time),
     month = month(date_time, label = TRUE),
     day = day(date_time),
+    year = year(date_time),
+    date = make_date(year, month, day),
     url = str_remove(url, ".."),
     url = paste0(
       "https://www2.stat.duke.edu/~cr173/data/dukechronicle-opinion/www.dukechronicle.com",
       url
     )
   ) |>
-  select(title, author, date_time, month, day, column, url)
+  select(title, author, date_time, date, month, day, column, url)
 
 # write data -------------------------------------------------------------------
 
