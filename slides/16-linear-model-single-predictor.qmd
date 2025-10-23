@@ -54,11 +54,42 @@ Play the game a few times and report your score: smallest absolute difference be
 
 -   Make progress on projects -- any questions?
 
+# Midsemester survey results
+
+## 
+
+![](images/16/midsemester/engagement.png)
+
+## 
+
+![](images/16/midsemester/pace-course.png)
+
+##
+
+![](images/16/midsemester/pace-lecture.png)
+
+## 
+
+![](images/16/midsemester/lecture-time.png)
+
+##
+
+![](images/16/midsemester/difficulty.png)
+
+##
+
+![](images/16/midsemester/learn-best.png)
+
+##
+
+![](images/16/midsemester/resources-used.png)
+
 # Linear regression with a single predictor
 
 ## Packages
 
 ```{r}
+#| message: false
 library(tidyverse)
 library(tidymodels)
 library(fivethirtyeight)
