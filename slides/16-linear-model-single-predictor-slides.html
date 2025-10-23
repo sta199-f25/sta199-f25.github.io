@@ -236,55 +236,29 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <ul>
 <li><p>Peer evaluation 2 due on tonight at 11:59 pm – see email from TEAMMATES.</p></li>
 <li><p>Make progress on projects – any questions?</p></li>
-</ul></section></section><section><section id="linear-regression-with-a-single-predictor" class="title-slide slide level1 center"><h1>Linear regression with a single predictor</h1>
+</ul></section></section><section><section id="midsemester-survey-results" class="title-slide slide level1 center"><h1>Midsemester survey results</h1>
+
+</section><section id="section" class="slide level2"><h2></h2>
+
+<img data-src="images/16/midsemester/engagement.png" class="r-stretch"></section><section id="section-1" class="slide level2"><h2></h2>
+
+<img data-src="images/16/midsemester/pace-course.png" class="r-stretch"></section><section id="section-2" class="slide level2"><h2></h2>
+
+<img data-src="images/16/midsemester/pace-lecture.png" class="r-stretch"></section><section id="section-3" class="slide level2"><h2></h2>
+
+<img data-src="images/16/midsemester/lecture-time.png" class="r-stretch"></section><section id="section-4" class="slide level2"><h2></h2>
+
+<img data-src="images/16/midsemester/difficulty.png" class="r-stretch"></section><section id="section-5" class="slide level2"><h2></h2>
+
+<img data-src="images/16/midsemester/learn-best.png" class="r-stretch"></section><section id="section-6" class="slide level2"><h2></h2>
+
+<img data-src="images/16/midsemester/resources-used.png" class="r-stretch"></section></section><section><section id="linear-regression-with-a-single-predictor" class="title-slide slide level1 center"><h1>Linear regression with a single predictor</h1>
 
 </section><section id="packages" class="slide level2"><h2>Packages</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4          ✔ readr     2.1.5     
-✔ forcats   1.0.0          ✔ stringr   1.5.1     
-✔ ggplot2   3.5.2          ✔ tibble    3.3.0.9004
-✔ lubridate 1.9.4          ✔ tidyr     1.3.1     
-✔ purrr     1.1.0          
-── Conflicts ──────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ──────────────────────────── tidymodels 1.3.0 ──
-✔ broom        1.0.9     ✔ rsample      1.3.1
-✔ dials        1.4.1     ✔ tune         1.3.0
-✔ infer        1.0.9     ✔ workflows    1.2.0
-✔ modeldata    1.5.1     ✔ workflowsets 1.1.1
-✔ parsnip      1.3.2     ✔ yardstick    1.3.2
-✔ recipes      1.3.1     
-── Conflicts ─────────────────────────────── tidymodels_conflicts() ──
-✖ scales::discard() masks purrr::discard()
-✖ dplyr::filter()   masks stats::filter()
-✖ recipes::fixed()  masks stringr::fixed()
-✖ dplyr::lag()      masks stats::lag()
-✖ yardstick::spec() masks readr::spec()
-✖ recipes::step()   masks stats::step()</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(fivethirtyeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Some larger datasets need to be installed separately, like
-senators and house_district_forecast. To install these, we
-recommend you install the fivethirtyeightdata package by
-running: install.packages('fivethirtyeightdata', repos =
-'https://fivethirtyeightdata.github.io/drat/', type =
-'source')
-
-Attaching package: 'fivethirtyeight'
-
-The following object is masked from 'package:modeldata':
-
-    drinks</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(fivethirtyeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="data-prep" class="slide level2"><h2>Data prep</h2>
 <ul>
@@ -294,16 +268,16 @@ The following object is masked from 'package:modeldata':
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>movie_scores <span class="ot">&lt;-</span> fandango <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">rename</span>(</span>
-<span id="cb7-3"><a></a>    <span class="at">critics =</span> rottentomatoes,</span>
-<span id="cb7-4"><a></a>    <span class="at">audience =</span> rottentomatoes_user</span>
-<span id="cb7-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>movie_scores <span class="ot">&lt;-</span> fandango <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">rename</span>(</span>
+<span id="cb2-3"><a></a>    <span class="at">critics =</span> rottentomatoes,</span>
+<span id="cb2-4"><a></a>    <span class="at">audience =</span> rottentomatoes_user</span>
+<span id="cb2-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="data-overview" class="slide level2"><h2>Data overview</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>movie_scores <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">select</span>(critics, audience)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>movie_scores <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">select</span>(critics, audience)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 146 × 2
    critics audience
@@ -323,12 +297,12 @@ The following object is masked from 'package:modeldata':
 </div>
 </section><section id="data-visualization" class="slide level2"><h2>Data visualization</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(movie_scores, <span class="fu">aes</span>(<span class="at">x =</span> critics, <span class="at">y =</span> audience)) <span class="sc">+</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-4"><a></a>    <span class="at">x =</span> <span class="st">"Critics Score"</span>,</span>
-<span id="cb10-5"><a></a>    <span class="at">y =</span> <span class="st">"Audience Score"</span></span>
-<span id="cb10-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(movie_scores, <span class="fu">aes</span>(<span class="at">x =</span> critics, <span class="at">y =</span> audience)) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-4"><a></a>    <span class="at">x =</span> <span class="st">"Critics Score"</span>,</span>
+<span id="cb5-5"><a></a>    <span class="at">y =</span> <span class="st">"Audience Score"</span></span>
+<span id="cb5-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="16-linear-model-single-predictor_files/figure-revealjs/scatterplot-1.png" width="960" class="r-stretch"></section><section id="regression-model-1" class="slide level2"><h2>Regression model</h2>
@@ -398,10 +372,10 @@ The following object is masked from 'package:modeldata':
 </li>
 </ul></section><section id="least-squares-line-1" class="slide level2"><h2>Least squares line</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>movies_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">fit</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
-<span id="cb11-3"><a></a></span>
-<span id="cb11-4"><a></a><span class="fu">tidy</span>(movies_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>movies_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">fit</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="fu">tidy</span>(movies_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   term        estimate std.error statistic  p.value
