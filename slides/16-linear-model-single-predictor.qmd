@@ -1,0 +1,343 @@
+---
+title: "Linear models with a single predictor"
+subtitle: "Lecture 16"
+date: "2025-10-23"
+format: 
+  revealjs: 
+    output-file: 16-linear-model-single-predictor-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-13-modeling-penguins"
+```
+
+# Warm-up
+
+## While you wait: Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%"}
+::: wooclap
+Play the game a few times and report your score: smallest absolute difference between yuor guess and the actual correlation.
+
+<https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html>
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
+## Announcements {.smaller}
+
+-   Peer evaluation 2 due on tonight at 11:59 pm
+
+-   ...
+
+# Linear regression with a single predictor
+
+## Packages
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(fivethirtyeight)
+```
+
+## Data prep
+
+-   Rename Rotten Tomatoes columns as `critics` and `audience`
+-   Rename the dataset as `movie_scores`
+
+```{r}
+#| label: data-prep
+movie_scores <- fandango |>
+  rename(
+    critics = rottentomatoes,
+    audience = rottentomatoes_user
+  )
+```
+
+## Data overview
+
+```{r}
+#| label: data-overview
+movie_scores |>
+  select(critics, audience)
+```
+
+## Data visualization
+
+```{r}
+#| label: scatterplot
+ggplot(movie_scores, aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) +
+  labs(
+    x = "Critics Score",
+    y = "Audience Score"
+  )
+```
+
+## Regression model {#regression-model-1}
+
+A **regression model** is a function that describes the relationship between the outcome, $Y$, and the predictor, $X$.
+
+$$
+\begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
+&= \color{black}{\mathbf{f(X)}} + \epsilon \\[8pt]
+&= \color{black}{\boldsymbol{\mu_{Y|X}}} + \epsilon \end{aligned}
+$$
+
+## Regression model
+
+::::: columns
+::: {.column width="30%"}
+
+$$
+\begin{aligned} Y &= \color{#325b74}{\textbf{Model}} + \text{Error} \\[8pt]
+&= \color{#325b74}{\mathbf{f(X)}} + \epsilon \\[8pt]
+&= \color{#325b74}{\boldsymbol{\mu_{Y|X}}} + \epsilon 
+\end{aligned}
+$$
+
+:::
+
+::: {.column width="70%"}
+
+```{r}
+#| echo: false
+#| message: false
+m <- lm(audience ~ critics, data = movie_scores)
+ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", color = "#325b74", se = FALSE, linewidth = 1.5) +
+  labs(x = "X", y = "Y") +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+:::
+:::::
+
+## Simple linear regression {.smaller}
+
+Use **simple linear regression** to model the relationship between a quantitative outcome ($Y$) and a single quantitative predictor ($X$): $$\Large{Y = \beta_0 + \beta_1 X + \epsilon}$$
+
+::: incremental
+-   $\beta_1$: True slope of the relationship between $X$ and $Y$
+-   $\beta_0$: True intercept of the relationship between $X$ and $Y$
+-   $\epsilon$: Error (residual)
+:::
+
+## Simple linear regression
+
+$$ \Large{\hat{Y} = b_0 + b_1 X} $$
+
+-   $b_1$: Estimated slope of the relationship between $X$ and $Y$
+-   $b_0$: Estimated intercept of the relationship between $X$ and $Y$
+-   No error term!
+
+## Choosing values for $b_1$ and $b_0$
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(movie_scores, aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.4) +
+  geom_abline(
+    intercept = 32.3155,
+    slope = 0.5187,
+    color = "#325b74",
+    linewidth = 1.5
+  ) +
+  geom_abline(intercept = 25, slope = 0.7, color = "gray") +
+  geom_abline(intercept = 21, slope = 0.9, color = "gray") +
+  geom_abline(intercept = 35, slope = 0.3, color = "gray") +
+  labs(x = "Critics Score", y = "Audience Score")
+```
+
+## Residuals
+
+```{r}
+#| message: false
+#| echo: false
+#| fig-align: center
+ggplot(movie_scores, aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", color = "#325b74", se = FALSE, linewidth = 1.5) +
+  geom_segment(
+    aes(x = critics, xend = critics, y = audience, yend = predict(m)),
+    color = "steel blue"
+  ) +
+  labs(x = "Critics Score", y = "Audience Score") +
+  theme(legend.position = "none")
+```
+
+$$ \text{residual} = \text{observed} - \text{predicted} = y - \hat{y} $$
+
+## Least squares line {.smaller}
+
+-   The residual for the $i^{th}$ observation is
+
+$$ e_i = \text{observed} - \text{predicted} = y_i - \hat{y}_i $$
+
+-   The **sum of squared** residuals is
+
+$$ e^2_1 + e^2_2 + \dots + e^2_n $$
+
+-   The **least squares line** is the one that **minimizes the sum of squared residuals**
+
+## Least squares line
+
+```{r}
+movies_fit <- linear_reg() |>
+  fit(audience ~ critics, data = movie_scores)
+
+tidy(movies_fit)
+```
+
+# Slope and intercept
+
+## Properties of least squares regression
+
+::: incremental
+-   The regression line goes through the center of mass point (the coordinates corresponding to average $X$ and average $Y$): $b_0 = \bar{Y} - b_1~\bar{X}$
+
+-   Slope has the same sign as the correlation coefficient: $b_1 = r \frac{s_Y}{s_X}$
+
+-   Sum of the residuals is zero: $\sum_{i = 1}^n \epsilon_i = 0$
+
+-   Residuals and $X$ values are uncorrelated
+:::
+
+## Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%"}
+
+::: wooclap
+The slope of the model for predicting audience score from critics score is 0.519.
+Which of the following is the best interpretation of this value?
+
+$$\widehat{\text{audience}} = 32.3 + 0.519 \times \text{critics}$$
+
+::: wooclap-choices
+- For every one point increase in the critics score, the audience score goes up by 0.519 points, on average.
+- For every one point increase in the critics score, we expect the audience score to be higher by 0.519 points, on average.
+- For every one point increase in the critics score, the audience score goes up by 0.519 points.
+- For every one point increase in the audience score, the critics score goes up by 0.519 points, on average.
+:::
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
+## Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%"}
+
+::: wooclap
+The intercept of the model for predicting audience score from critics score is 32.3.
+Which of the following is the best interpretation of this value?
+
+$$\widehat{\text{audience}} = 32.3 + 0.519 \times \text{critics}$$
+
+::: wooclap-choices
+- For movies with a critics score of 0 points, we expect the audience score to be 32.3 points, on average.
+- For movies with an audience score of 0 points, we expect the critics score to be 32.3 points, on average.
+- For every one point increase in the critics score, the audience score goes up by 32.3 points.
+- For movies with an audience score of 0 points, we expect the critics score to be 0.519 points, on average.
+:::
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
+## Is the intercept meaningful?
+
+✅ The intercept is meaningful in context of the data if
+
+-   the predictor can feasibly take values equal to or near zero or
+-   the predictor has values near zero in the observed data
+
+. . .
+
+🛑 Otherwise, it might not be meaningful!
+
+# Application exercise
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
+
+## Recap
+
+::: task
+Calculate the predicted body weights of penguins on Biscoe, Dream, and Torgersen islands *by hand*.
+:::
+
+$$
+\widehat{body~mass} = 4716 - 1003 \times islandDream - 1010 \times islandTorgersen
+$$
+
+. . .
+
+-   Biscoe: $\widehat{body~mass} = 4716 - 1003 \times 0 - 1010 \times 0 = 4716$
+
+. . .
+
+-   Dream: $\widehat{body~mass} = 4716 - 1003 \times 1 - 1010 \times 0 = 3713$
+
+. . .
+
+-   Torgersen: $\widehat{body~mass} = 4716 - 1003 \times 0 - 1010 \times 1 = 3706$
+
+## Models with categorical predictors
+
+::: incremental
+-   When the categorical predictor has many levels, they're encoded to **dummy variables**.
+
+-   The first level of the categorical variable is the baseline level.
+    In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).
+
+-   Each slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable compared to the baseline level.
+:::
