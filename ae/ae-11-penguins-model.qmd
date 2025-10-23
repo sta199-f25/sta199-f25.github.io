@@ -24,7 +24,7 @@ Please read the following context and take a `glimpse` at the data set before we
 
 ```{r}
 #| label: glimpse-penguins
-# add code here
+glimpse(penguins)
 ```
 
 Our goal is to understand better how various body measurements and attributes of penguins relate to their body mass.
@@ -74,7 +74,7 @@ Add response here.
 
 Add response here.
 
--   Recreate the visualization from above, this time adding a regression line to the visualization `geom_smooth(method = "lm")`.
+-   Recreate the visualization from above, this time adding a linear regression line to the visualization.
 
 ```{r}
 #| label: plot-bm-fl-line

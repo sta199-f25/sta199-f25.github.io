@@ -100,7 +100,7 @@ $$
 
     -   Slopes: For each additional millimeter of a penguin;s flipper length, the weight of their penguin is expected to be higher, on average, by 49.7 grams.
 
--   Recreate the visualization from above, this time adding a regression line to the visualization `geom_smooth(method = "lm")`.
+-   Recreate the visualization from above, this time adding a linear regression line to the visualization.
 
 ```{r}
 #| label: plot-bm-fl-line

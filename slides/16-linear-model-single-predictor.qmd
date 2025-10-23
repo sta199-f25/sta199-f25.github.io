@@ -34,9 +34,11 @@ todays_ae <- "ae-13-modeling-penguins"
 :::::: columns
 :::: {.column width="70%"}
 ::: wooclap
-Play the game a few times and report your score: smallest absolute difference between yuor guess and the actual correlation.
+Play the game a few times and report your score: smallest absolute difference between your guess and the actual correlation, e.g., if the actual correlation was 0.8 and you guessed 0.6, your score would be 0.2. If the actual correlation was -0.4 and you guessed 0.1, your score would be 0.5. 
 
-<https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html>
+- Option 1 - Calculates your score for you: <https://duke.is/corr-game-1>
+
+- Option 2 - You need to calculate your own score: <https://duke.is/corr-game-2>
 
 :::
 ::::
@@ -48,9 +50,9 @@ Play the game a few times and report your score: smallest absolute difference be
 
 ## Announcements {.smaller}
 
--   Peer evaluation 2 due on tonight at 11:59 pm
+-   Peer evaluation 2 due on tonight at 11:59 pm -- see email from TEAMMATES.
 
--   ...
+-   Make progress on projects -- any questions?
 
 # Linear regression with a single predictor
 
