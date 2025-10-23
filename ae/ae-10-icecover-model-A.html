@@ -131,7 +131,7 @@ window.Quarto = {
 };
 </script>
 <meta property="og:title" content="AE 10: Ice cover in Madison, WI area lakes – STA 199">
-<meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2025.">
+<meta property="og:description" content="Suggested answers">
 <meta property="og:image" content="https://sta199-f25.github.io/ae/ae-10-icecover-model-A_files/figure-html/visualize-1.png">
 <meta property="og:site_name" content="STA 199">
 <meta property="og:image:height" content="960">
@@ -573,7 +573,12 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">AE 10: Ice cover in Madison, WI area lakes</h1>
-</div>
+<p class="subtitle lead">Suggested answers</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Application exercise</div>
+    <div class="quarto-category">Answers</div>
+  </div>
+  </div>
 
 
 
@@ -586,7 +591,20 @@ window.Quarto = {
   
 
 
-</header><p>The data for this application exercise comes from the <a href="https://lter.github.io/lterdatasampler/">lterdatasampler</a> package. The mission of the <a href="https://lternet.edu">Long Term Ecological Research program (LTER)</a> Network is to “provide the scientific community, policy makers, and society with the knowledge and predictive understanding necessary to conserve, protect, and manage the nation’s ecosystems, their biodiversity, and the services they provide.”</p>
+</header><div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key.</p>
+</div>
+</div>
+<p>The data for this application exercise comes from the <a href="https://lter.github.io/lterdatasampler/">lterdatasampler</a> package. The mission of the <a href="https://lternet.edu">Long Term Ecological Research program (LTER)</a> Network is to “provide the scientific community, policy makers, and society with the knowledge and predictive understanding necessary to conserve, protect, and manage the nation’s ecosystems, their biodiversity, and the services they provide.”</p>
 <p>Specifically we’ll be using data from the North Temperate Lakes LTER (NTL-LTER) site, which is located in the Madison, WI area, modeling the relationship between number of days that a lake is frozen, excluding periods where the lake thaws before refreezing again, and annual average temperature.</p>
 <section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <section id="packages" class="level3"><h3 class="anchored" data-anchor-id="packages">Packages</h3>
@@ -697,7 +715,7 @@ window.Quarto = {
 </ul>
 <p><em>Difference between predicted and observed.</em></p>
 </section><section id="model-fitting" class="level2"><h2 class="anchored" data-anchor-id="model-fitting">Model fitting</h2>
-<p>Fit a model to predict fish weights from their heights.</p>
+<p>Fit a model to predict ice cover from average annual temperature.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ice_temp_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="va">ice_duration</span> <span class="op">~</span> <span class="va">annual_avg_temp</span>, data <span class="op">=</span> <span class="va">icecover</span><span class="op">)</span></span>
@@ -740,8 +758,7 @@ Coefficients:
 </ul>
 <p><em>Strength and direction of a linear relationship. It’s bounded by -1 and 1.</em></p>
 <ul>
-<li><p>Are you good at guessing correlation? Give it a try! <a href="https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html" class="uri">https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html</a></p></li>
-<li><p>What is the correlation between heights and weights of fish?</p></li>
+<li>What is the correlation between heights and weights of fish?</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">icecover</span> <span class="op">|&gt;</span></span>

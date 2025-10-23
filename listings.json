@@ -20,8 +20,19 @@
       "/ae/ae-08-age-gaps-import.html",
       "/ae/ae-09-chronicle-scrape-A.html",
       "/ae/ae-09-chronicle-scrape.html",
+      "/ae/ae-10-icecover-model-A.html",
       "/ae/ae-10-icecover-model.html",
-      "/ae/ae-10-icecover-model-A.html"
+      "/ae/ae-11-penguins-model-A.html",
+      "/ae/ae-11-penguins-model.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/final-exam-review.html"
     ]
   },
   {
@@ -32,15 +43,6 @@
       "/lab/lab-2.html",
       "/lab/lab-3.html",
       "/lab/lab-4.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/final-exam-review.html"
     ]
   },
   {
