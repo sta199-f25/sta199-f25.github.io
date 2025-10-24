@@ -91,7 +91,7 @@ make_pairing_table <- function(df) {
     ) |>
     cols_label(
       your_team_name = "Your team name",
-      team_to_review_1 = "Team to review 1",
+      team_to_review_1 = "Team to review",
       #team_to_review_2 = "Team to review 2"
     )
 }
