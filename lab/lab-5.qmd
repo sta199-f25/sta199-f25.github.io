@@ -1,0 +1,124 @@
+---
+title: Lab 5
+subtitle: Make up your other half
+description: "Due: End of lab on Mon, Oct 29"
+categories: Lab
+filters:
+  - ../remove-fmt-skip.lua
+draft: true
+---
+
+# Introduction
+
+In this lab you'll "make up" data for an outcome variable to match certain criteria, and then visualize and summarize the relationship between your outcome and predictor variables as well as fit a model to evaluate whether the made up data meets the criteria you set out to achieve.
+
+Make sure to upload your completed lab to Gradescope **by the end of your lab session** and commit and push your final version to GitHub.
+
+## Getting started
+
+By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment.
+If you're not sure how, refer back to an earlier lab.
+
+Open the *lab-5.qmd* template Quarto file and update the `authors` field to add your name first (first and last) and then your teammates' names (first and last).
+Render the document.
+Examine the rendered document and make sure your and your teammates' names are updated in the document.
+Commit and push your changes with a meaningful commit message and push to GitHub.
+
+<details>
+
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+
+{{< include _guidelines.qmd >}}
+
+</details>
+
+## Packages
+
+In this lab we will work with the **tidyverse** package.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+## Data
+
+You have half the data, just your predictor variable (`x`), you need in the following data frame:
+
+```{r}
+#| include: false
+df <- tibble(x = 1:10, y = rep("__", 10))
+```
+
+```{r}
+df
+```
+
+## Goal
+
+Your goal is to "make up" the outcome variable `y` such that when you fit a linear regression model predicting `y` from `x`, the model are true about the model:
+
+- For each additional unit in `x`, `y` is expected to be lower, on average, by (approximately) 2 units.
+
+- For observations with `x` equal to 0, `y` is expected to be (approximately) 5.
+
+- The model for predicting `y` from `x` explains (approximately) 60% of the variability in `y`.
+
+# Questions
+
+## Question 1
+
+Make up the values for `y` in the data frame above so that the linear regression model predicting `y` from `x` meets the criteria specified in the **Goal** section.
+Add these values to the data frame `df` and display the updated data frame.
+
+::: callout-tip
+Solving Question 1 will require some trial and error, creativity, and patience.
+Specifically, it will require writing and testing the code for Questions 2 and 3 multiple times until you get the desired results.
+:::
+
+## Question 2
+
+Visualize the relationship between `x` and `y` using a scatter plot with a regression line.
+Comment on how the plot supports that the criteria specified in the **Goal** section are met.
+
+## Question 3
+
+Fit a linear regression model predicting `y` from `x`.
+Extract the model coefficients and the R-squared value from the model summary.
+Comment on how the model coefficients and R-squared value support that the criteria specified in the **Goal** section are met.
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+By now you should also be familiar with how to submit your assignment in Gradescope.
+
+<details>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
+{{< include _submission.qmd >}}
+
+</details>
+
+## Grading and feedback
+
+-   This lab is worth 30 points:
+    -   10 points for being in lab and turning in *something* -- no partial credit for this part.
+    -   20 points for:
+        -   answering the questions correctly -- there is partial credit for this part.
+        -   following the workflow -- there is partial credit for this part.
+-   The workflow points are for:
+    -   committing at least three times as you work through your lab,
+    -   having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+    -   overall organization.
+-   You'll receive feedback on your lab on Gradescope within a week.
+
+Good luck, and have fun with it!

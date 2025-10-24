@@ -10,7 +10,7 @@ draft: false
 
 # Introduction
 
-In this lab you'll investigaete the relationship between age and opinion on the impact of the many changes  (transfer portal, athlete name, image and likeness (NIL) compensation, conference realignments) taking place in Division I college athletics.
+In this lab you'll investigate the relationship between age and opinion on the impact of the many changes  (transfer portal, athlete name, image and likeness (NIL) compensation, conference realignments) taking place in Division I college athletics.
 
 Make sure to upload your completed lab to Gradescope **by the end of your lab session** and commit and push your final version to GitHub.
 
