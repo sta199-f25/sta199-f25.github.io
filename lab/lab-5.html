@@ -646,7 +646,22 @@ Click to expand if you need a refresher on assignment guidelines.
 </section><section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>You have half the data, just your predictor variable (<code>x</code>), you need in the following data frame:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">our_data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 1
+       x
+   &lt;int&gt;
+ 1     1
+ 2     2
+ 3     3
+ 4     4
+ 5     5
+ 6     6
+ 7     7
+ 8     8
+ 9     9
+10    10</code></pre>
+</div>
 </div>
 </section><section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <p>Your goal is to “make up” the outcome variable <code>y</code> such that when you fit a linear regression model predicting <code>y</code> from <code>x</code>, the model are true about the model:</p>
@@ -656,7 +671,7 @@ Click to expand if you need a refresher on assignment guidelines.
 <li><p>The model for predicting <code>y</code> from <code>x</code> explains (approximately) 60% of the variability in <code>y</code>.</p></li>
 </ul></section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>Make up the values for <code>y</code> in the data frame above so that the linear regression model predicting <code>y</code> from <code>x</code> meets the criteria specified in the <strong>Goal</strong> section. Add these values to the data frame <code>df</code> and display the updated data frame.</p>
+<p>Make up the values for <code>y</code> in the data frame above so that the linear regression model predicting <code>y</code> from <code>x</code> meets the criteria specified in the <strong>Goal</strong> section. Add these values to the data frame <code>our_data</code> and display the updated data frame.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
