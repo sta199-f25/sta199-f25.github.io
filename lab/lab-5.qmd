@@ -88,7 +88,7 @@ Comment on how the plot supports that the criteria specified in the **Goal** sec
 ## Question 3
 
 Fit a linear regression model predicting `y` from `x`.
-Extract the model coefficients and the R-squared value from the model summary.
+Display the model coefficients and the R-squared value from the model summary.
 Comment on how the model coefficients and R-squared value support that the criteria specified in the **Goal** section are met.
 
 # Wrap-up
