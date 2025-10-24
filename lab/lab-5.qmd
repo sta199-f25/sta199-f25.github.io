@@ -48,12 +48,14 @@ library(tidymodels)
 You have half the data, just your predictor variable (`x`), you need in the following data frame:
 
 ```{r}
-#| include: false
-df <- tibble(x = 1:10, y = rep("__", 10))
+#| echo: false
+#| eval: true
+our_data <- tibble(x = 1:10)
 ```
 
 ```{r}
-df
+#| eval: true
+our_data
 ```
 
 ## Goal
@@ -71,7 +73,7 @@ Your goal is to "make up" the outcome variable `y` such that when you fit a line
 ## Question 1
 
 Make up the values for `y` in the data frame above so that the linear regression model predicting `y` from `x` meets the criteria specified in the **Goal** section.
-Add these values to the data frame `df` and display the updated data frame.
+Add these values to the data frame `our_data` and display the updated data frame.
 
 ::: callout-tip
 Solving Question 1 will require some trial and error, creativity, and patience.
