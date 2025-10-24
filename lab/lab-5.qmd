@@ -48,13 +48,8 @@ library(tidymodels)
 You have half the data, just your predictor variable (`x`), you need in the following data frame:
 
 ```{r}
-#| echo: false
 #| eval: true
-our_data <- tibble(x = 1:10)
-```
-
-```{r}
-#| eval: true
+our_data <- tibble(x = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 our_data
 ```
 
