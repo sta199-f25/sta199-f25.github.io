@@ -36,7 +36,7 @@ As a team you should spend \~30 minutes on the review.
 
     -   1-2 team members clone the team's project and renders it to check for reproducibility.
 
-    -   1-2 team members open the team's project in their browser and starts reading through the project draft.
+    -   All team members open the team's project in their browser and starts reading through the project draft.
 
     -   1 team member opens an issue on the team's repo using the peer review template.
 
