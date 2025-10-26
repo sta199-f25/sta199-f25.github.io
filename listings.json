@@ -1,49 +1,10 @@
 [
   {
-    "listing": "/ae.html",
+    "listing": "/hw.html",
     "items": [
-      "/ae/ae-01-income-inequality-A.html",
-      "/ae/ae-01-income-inequality.html",
-      "/ae/ae-02-bechdel-dataviz-A.html",
-      "/ae/ae-02-bechdel-dataviz.html",
-      "/ae/ae-03-gerrymander-explore-I-A.html",
-      "/ae/ae-03-gerrymander-explore-I.html",
-      "/ae/ae-04-gerrymander-explore-II-A.html",
-      "/ae/ae-04-gerrymander-explore-II.html",
-      "/ae/ae-05-majors.html",
-      "/ae/ae-05-majors-A.html",
-      "/ae/ae-06-taxes-join-A.html",
-      "/ae/ae-06-taxes-join.html",
-      "/ae/ae-07-durham-climate-factors-A.html",
-      "/ae/ae-07-durham-climate-factors.html",
-      "/ae/ae-08-age-gaps-import-A.html",
-      "/ae/ae-08-age-gaps-import.html",
-      "/ae/ae-09-chronicle-scrape-A.html",
-      "/ae/ae-09-chronicle-scrape.html",
-      "/ae/ae-10-icecover-model-A.html",
-      "/ae/ae-10-icecover-model.html",
-      "/ae/ae-11-penguins-model-A.html",
-      "/ae/ae-11-penguins-model.html"
-    ]
-  },
-  {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html",
-      "/lab/lab-4.html",
-      "/lab/lab-5.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/final-exam-review.html"
+      "/hw/hw-1.html",
+      "/hw/hw-2.html",
+      "/hw/hw-3.html"
     ]
   },
   {
@@ -70,11 +31,50 @@
     ]
   },
   {
-    "listing": "/hw.html",
+    "listing": "/exam-review.html",
     "items": [
-      "/hw/hw-1.html",
-      "/hw/hw-2.html",
-      "/hw/hw-3.html"
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/final-exam-review.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html",
+      "/lab/lab-5.html"
+    ]
+  },
+  {
+    "listing": "/ae.html",
+    "items": [
+      "/ae/ae-01-income-inequality-A.html",
+      "/ae/ae-01-income-inequality.html",
+      "/ae/ae-02-bechdel-dataviz-A.html",
+      "/ae/ae-02-bechdel-dataviz.html",
+      "/ae/ae-03-gerrymander-explore-I-A.html",
+      "/ae/ae-03-gerrymander-explore-I.html",
+      "/ae/ae-04-gerrymander-explore-II-A.html",
+      "/ae/ae-04-gerrymander-explore-II.html",
+      "/ae/ae-05-majors.html",
+      "/ae/ae-05-majors-A.html",
+      "/ae/ae-06-taxes-join-A.html",
+      "/ae/ae-06-taxes-join.html",
+      "/ae/ae-07-durham-climate-factors-A.html",
+      "/ae/ae-07-durham-climate-factors.html",
+      "/ae/ae-08-age-gaps-import-A.html",
+      "/ae/ae-08-age-gaps-import.html",
+      "/ae/ae-09-chronicle-scrape-A.html",
+      "/ae/ae-09-chronicle-scrape.html",
+      "/ae/ae-10-icecover-model-A.html",
+      "/ae/ae-10-icecover-model.html",
+      "/ae/ae-11-penguins-model-A.html",
+      "/ae/ae-11-penguins-model.html"
     ]
   }
 ]
