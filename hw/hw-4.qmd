@@ -1,0 +1,339 @@
+---
+title: HW 4
+subtitle: Wages up, parasites down
+description: "Due: Sun, Nov 2, 11:59 pm"
+categories: HW
+filters:
+  - ../remove-fmt-skip.lua
+draft: true
+---
+
+# Introduction
+
+This is a two-part homework assignment:
+
+- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-4-part-1.qmd`, no submission required.
+
+- **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team within a week. Complete in `hw-4-part-2.qmd`, submit on Gradescope.
+
+By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.
+
+<details>
+<summary>Click to expand if you need a refresher on how to get started with a homework assignment.</summary>
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
+    Click on the repo with the prefix **hw-4**.
+    It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**.
+    Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+</details>
+
+By now you should also be familiar with guidelines for formatting your code and plots as well as your Git and Gradescope workflow.
+
+<details>
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+{{< include _guidelines.qmd >}}
+</details>
+
+
+# Part 1 -- Feedback from AI
+
+Your answers to the questions in this part should go in the file `hw-4-part-1.qmd`.
+
+## Instructions
+
+Write your answer to each question in the appropriate section of the `hw-4-part-1.qmd` file.
+Then, highlight your answer to a question, click on _Addins > AIFEEDR > Get feedback_.
+In the app that opens, select the appropriate homework number (3) and question number.
+Then click on _Get Feedback_.
+Please be patient, feedback generation can take a few seconds. 
+Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. 
+You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.
+
+<details>
+<summary>Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.</summary>
+{{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
+</details>
+
+::: {.callout-note title="Catch the AI making a mistake?" icon=false}
+Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to earn the opportunity for **extra credit**.
+
+Your bug report must include screenshots of the relevant parts of your Quarto document as well as the "incorrect" feedback you received.
+Your bug report should be printed and turned in to Dr. Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date, e.g. for HW 3 due on Sun, Sep 28, your bug report is due by the beginning of class on Tue, Sep 30.
+Electronic submissions will not be accepted.
+Your bug report, including screenshots, should fit on no more than two pages.
+
+If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), you will receive 1 extra point that will be added to your total points for the assignment.
+:::
+
+## Context
+
+Parasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.
+
+In this part of the lab, we will see how much evolutionary history predicts parasite similarity.
+
+## Packages
+
+In this part you will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+```
+
+## Data
+
+The dataset comes from an Ecology Letters paper by Cooper at al. (2012) entitled “Phylogenetic host specificity and understanding parasite sharing in primates” located [here](https://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2012.01858.x). The goal of the paper was to identify the ability of evolutionary history and ecological traits to characterize parasite host specificity.
+
+Each row of the data contains two species, `species1` and `species2`.
+
+Subsequent columns describe metrics that compare the species:
+
+-   `divergence_time`: how many (millions) of years ago the two species diverged. i.e. how many million years ago they were the same species.
+
+-   `distance`: geodesic distance between species geographic range centroids (in kilometers)
+
+-   `BMdiff`: difference in body mass between the two species (in grams)
+
+-   `precdiff`: difference in mean annual precipitation across the two species geographic ranges (mm)
+
+-   `parsim`: a measure of parasite similarity (proportion of parasites shared between species, ranges from 0 to 1.)
+
+The data are available in `parasites.csv` in your `data` folder.
+
+## Questions
+
+::: render-commit-push
+Do not forget to render, commit, and push regularly, after each substantial change to your document (e.g., after answering each question).
+Use succinct and informative commit messages.
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+::: {.callout-warning title="Heads up!"}
+Take a note of Question 6 in Part 2 which asks you to summarize your experience in Part 1.
+You may want to keep track of your experience as you work through Part 1 so that you can write a good summary later.
+:::
+
+### Question 1
+
+Let’s start by reading in the `parasites` data and examining the relationship between `divergence_time` and `parsim`.
+
+a.  Load the data and save the data frame as `parasites`.
+
+b.  Based on the goals of the analysis, what is the response variable?
+
+c.  Visualize the relationship between the two variables.
+
+d.  Use the visualization to describe the relationship between the two variables.
+
+### Question 2
+
+Next, model this relationship.
+
+a.  Fit the model and write the estimated regression equation.
+
+b.  Interpret the slope and the intercept in the context of the data.
+
+c.  Recreate the visualization from Question 6, this time adding a regression line to the visualization.
+
+d.  What do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?
+
+### Question 3
+
+Since `parsim` takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞). This will be better suited for fitting a regression model (and interpreting predicted values!)
+
+a.  Using mutate, create a new variable `transformed_parsim` that is calculated as `log(parsim/(1-parsim))`. Add this variable to your data frame.
+
+    ::: callout-note
+    `log()` in R represents the **nautral log**.
+    :::
+
+b.  Then, visualize the relationship between divergence_time and `transformed_parsim`. Add a regression line to your visualization.
+
+c.  Write a 1-2 sentence description of what you observe in the visualization.
+
+### Question 4
+
+*Which variable is the strongest individual predictor of parasite similarity between species?*
+
+To answer this question, begin by fitting a linear regression model to each pair of variables. Do not report the model outputs in a tidy format but save each one as `dt_model`, `dist_model`, `BM_model`, and `prec_model`, respectively.
+
+-   `divergence_time` and `transformed_parsim`
+
+-   `distance` and `transformed_parsim`
+
+-   `BMdiff` and `transformed_parsim`
+
+-   `precdiff` and `transformed_parsim`
+
+a.  Report the slopes for each of these models. Use proper notation.
+
+b.  To answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?
+
+### Question 5
+
+Now, what if we calculated $R^2$ to help answer our question? To compare the explanatory power of each individual predictor, we will look at $R^2$ between the models. $R^2$ is a measure of how much of the variability in the response variable is explained by the model.
+
+As you may have guessed from the name $R^2$ can be calculated by squaring the correlation when we have a simple linear regression model. The correlation r takes values -1 to 1, therefore, $R^2$ takes values 0 to 1. Intuitively, if r=1 or −1, then $R^2$=1, indicating the model is a perfect fit for the data. If r≈0 then $R^2$≈0, indicating the model is a very bad fit for the data.
+
+You can calculate $R^2$ using the glance function. For example, you can calculate $R^2$ for `dt_model` using the code `glance(dt_model)$r.squared`.
+
+a.  Calculate and report $R^2$ for each model fit in the previous exercise.
+
+b.  To answer our question of interest, would it be useful to compare the $R^2$ in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?
+
+::: render-commit-push
+Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
+And once again, make sure to commit and push all changed files so that your Git pane is empty afterward.
+We keep repeating this because it's important and because we see students forget to do this.
+So take a moment to make sure you're practicing good version control habits.
+:::
+
+# Part 2 -- Feedback from Humans
+
+Your answers to the questions in this part should go in the file `hw-4-part-2.qmd`.
+
+## Packages
+
+You will use the **tidyverse** and **tidymodels** packages for data wrangling and visualization, 
+
+You may choose to load other packages as needed, particularly for improving your plots. 
+If you do so, add the functions to load these packages in the code cell labeled `load-packages`.
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+```
+
+## Question 6
+
+Write a summary of your experience in Part 1 of this homework assignment.
+This summary should contain at least one sentence for each question you completed describing what you did and what you learned from it.
+Additionally, you should include 1-3 sentences about how you iterated on your answers with help from the AI feedback tool, giving specific examples of changes you made based on the feedback you received.
+
+## Questions 7-10
+
+### Context
+
+Should the minimum wage be increased? I’m sure many of you have an opinion about this. When debating this policy issue, one thing we need to understand is how changes in the minimum wage affect employment. When the minimum wage is raised, does it create jobs? Does it put people out of work? Does it have no affect at all? An ECON 101 model of the labor market implies that minimum wage increases could put people out of work because they make it more expensive for firms to employ workers, and we tend to do less of something if it becomes more expensive (demand curves slope down). That's a theoretical argument anyway, but this is ultimately an empirical question -- one that has a long history in applied economics.
+
+Indeed, the [2021 Nobel Prize in Economic Sciences](https://www.nobelprize.org/prizes/economic-sciences/2021/summary/) was shared by economist David Card, in part for a famous paper he wrote with Alan Krueger that initiated the modern empirical literature on the minimum wage:
+
+> Card, David and Alan Krueger (1994): "Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania," *American Economic Review*, Vol. 84, No. 4., pp. 772-793.
+
+On April 1, 1992, New Jersey's minimum wage rose from \$4.25 to \$5.05 per hour. Pennsylvania's did not. In order to assess the impact of this change, Card and Krueger collected data from fast-food restaurants along the PA/NJ border, both `before` the policy change went into affect (February 1992) and `after` (November/December 1992). They figured that restaurants close to the border were probably indistinguishable in terms of their features, practices, clientele, work force, etc, and so if there were any noticeable differences in employment after the wage hike, they must be due to the wage hike itself and not some other confounding factor. This is what we call a **natural experiment**. The data in Card and Krueger are purely observational, but the main idea is that the arbitrary placement of otherwise similar restaurants on either side of the PA/NJ border acts *as if* a controlled, randomized experiment were performed, and so we can use these data to draw *causal* conclusions about the impact of minimum wage policy on employment. As you can imagine, a massive literature has emerged where statisticians and economists argue about when this is appropriate and how it should be done, but nevertheless, researchers nowadays love to sniff around like truffle pigs for cute natural experiments hidden in otherwise messy observational data sets.
+
+### Data
+
+For this part of your homework, you will play around with the original Card and Krueger data:
+
+```{r}
+#| message: false
+card_krueger <- read_csv("data/card-krueger.csv")
+
+glimpse(card_krueger)
+```
+
+There are five columns:
+
+-   `id`: a unique identifier for each restaurant;
+-   `state`: which state is the restaurant in?
+-   `time`: measurements collected `before` or `after` the NJ minimum wage increase?
+-   `wage`: the starting wage in US dollars;
+-   `fte`: full-time-equivalent employment, calculated as the number of full-time workers (including managers) plus 0.5 times the number of part-time workers.
+
+The full dataset is available on David Card's [website](https://davidcard.berkeley.edu/data_sets.html), and it contains more information than this if you want to keep playing.
+
+### Background
+
+Acquire some domain knowledge! As we know, it's never a good idea to blunder into a data analysis without *some* subject-matter expertise, so here is some suggested reading:
+
+-   The original Card and Krueger paper is [here](https://davidcard.berkeley.edu/papers/njmin-aer.pdf). Their bottom line was "\[w\]e find no indication that the rise in the minimum wage reduced employment," which runs counter to the usual ECON 101 story. People have been arguing about this ever since;
+-   [This](https://www.nber.org/papers/w28388) recent survey article attempts to summarize the state of the literature on (dis?)employment effects of the minimum wage;
+-   The award citation for Card's Nobel has useful summaries: [popular](https://www.nobelprize.org/prizes/economic-sciences/2021/popular-information/), [advanced](https://www.nobelprize.org/uploads/2021/10/advanced-economicsciencesprize2021.pdf).
+
+We are not grading this, and we'll never know if you did it or not, but you should definitely go exploring if this area interests you. Furthermore, while you may not do the reading we are suggesting here, you should definitely do a little outside reading in the domain relevant to your final project.
+
+### Question 7
+
+a.  Relevel the `state` and `time` variables so that `"PA"` and `"before"` are the baselines, respectively.
+
+b.  How many restaurants were sampled in each state?
+
+c.  Compute the median wage and the median employment in each state before and after the policy change.
+
+d.  Create a faceted density plot displaying `wage` according to both `state` and `time`. We want two panels stacked vertically, one for each time period (before and after the policy change). Within each panel, we want two densities, one for each state. Comment on any patterns you notice.
+
+e.  Create a faceted density plot displaying `fte` according to both `state` and `time` (similar to part d). Comment on any patterns you notice.
+
+### Question 8
+
+a.  Use `pivot_wider` to create a new data frame `card_krueger_wide` that has **six** columns: `id`, `state`, `wage_before`, `wage_after`, `fte_before`, and `fte_after`.
+
+b.  Modify `card_krueger_wide` by discarding any rows that have a missing value in any of the four columns `wage_before`, `wage_after`, `fte_before`, and `fte_after`.
+
+c.  Add a new variable `emp_diff` to `card_krueger_wide` which measures the change in `fte` after the new law took effect.
+
+d.  Add a new variable `gap` to `card_krueger_wide` which is constructed in the following way:
+
+-   `gap` equals zero for stores in Pennsylvania;
+-   `gap` equals zero for stores in New Jersey whose starting wage before the policy change was already higher than the new minimum;
+-   `gap` equals $(5.05 - \text{wage}_{\text{before}})/\text{wage}_{\text{before}}$ for all other stores in New Jersey.
+
+Card and Krueger introduced `gap` as an alternative measure of the impact of the minimum wage at each store. In their words:
+
+> $\text{GAP}_i$ is the proportional increase in wages at store $i$ necessary to meet the new minimum rate. Variation in GAP, reflects both the New Jersey-Pennsylvania contrast and differences within New Jersey based on reported starting wages in wave 1. Indeed, the value of GAP, is a strong predictor of the actual proportional wage change between waves 1 and 2 ($R^2=0.75$), and conditional on GAP, there is no difference in wage behavior between stores in New Jersey and Pennsylvania
+
+### Question 9
+
+a.  Create side-by-side boxplots of `emp_diff` for each state.
+
+b.  Fit a linear model that predicts `emp_diff` from `state` and save the model object. Then, provide the tidy summary output.
+
+c.  Write the estimated least squares regression line below using proper notation.
+
+d.  Interpret the intercept in the context of the data and the research question. Is the intercept meaningful in this context? Why or why not?
+
+e.  Interpret the slope in the context of the data and the research question.
+
+### Question 10
+
+a.  Create a scatter plot of `gap` versus `emp_diff`.
+
+b.  Fit a linear model that predicts `emp_diff` from `gap` and save the model object. Then, provide the tidy summary output.
+
+c.  Write the estimated least squares regression line below using proper notation.
+
+d.  Interpret the intercept in the context of the data and the research question. Is the intercept meaningful in this context? Why or why not?
+
+e.  Interpret the slope in the context of the data and the research question.
+
+f.  Card and Krueger tried to argue that, even though their data were observational, they had nevertheless identified a clean *natural experiment* that permitted them to ascribe a *causal* interpretation to the results of their regression analysis. Do you agree? Do you see any potential dangers with this approach? Write a paragraph or two discussing. Note that we are only grading this on a good faith completion effort, but again, if this area interests you, take the opportunity to do some of the reading under Question 0, and then try to write something interesting.
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+{{< include _submission.qmd >}}
+
+## Grading and feedback
+
+-   Questions 1-5 are not graded, but you should complete them to get practice.
+
+-   Questions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.
+    -   Questions will be graded for accuracy and completeness.
+    -   Partial credit will be given where appropriate.
+    -   There are also workflow points for:
+        - committing at least three times as you work through your lab,
+        - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+        - overall organization.
