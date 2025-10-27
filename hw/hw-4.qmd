@@ -5,7 +5,7 @@ description: "Due: Sun, Nov 2, 11:59 pm"
 categories: HW
 filters:
   - ../remove-fmt-skip.lua
-draft: true
+draft: false
 ---
 
 # Introduction
@@ -13,6 +13,12 @@ draft: true
 This is a two-part homework assignment:
 
 - **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-4-part-1.qmd`, no submission required.
+
+  ::: {.callout-warning title="Heads up!"}
+  While Part 1 is not graded, it is a prerequisite for Part 2 -- Question 6 in Part 2 asks you to summarize your experience in Part 1.
+  Additionally, the skills you practice in Part 1 will be useful for future assignments that are graded.
+  Finally, there are workflow points assigned to Part 1 -- you must make at least three commits in Part 1 and make updates to both your qmd and pdf files in order to earn these points.
+  :::
 
 - **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team within a week. Complete in `hw-4-part-2.qmd`, submit on Gradescope.
 
@@ -102,7 +108,7 @@ Subsequent columns describe metrics that compare the species:
 
 -   `precdiff`: difference in mean annual precipitation across the two species geographic ranges (mm)
 
--   `parsim`: a measure of parasite similarity (proportion of parasites shared between species, ranges from 0 to 1.)
+-   `parsim`: a measure of parasite similarity (proportion of parasites shared between species, ranges between 0 to 1.)
 
 The data are available in `parasites.csv` in your `data` folder.
 
@@ -125,9 +131,9 @@ Let’s start by reading in the `parasites` data and examining the relationship 
 
 a.  Load the data and save the data frame as `parasites`.
 
-b.  Based on the goals of the analysis, what is the response variable?
+b.  Based on the goals of the analysis, what is the outcome variable?
 
-c.  Visualize the relationship between the two variables.
+c.  Visualize the relationship between the two variables, making sure to place the outcome and predictor variables on the appropriate axes.
 
 d.  Use the visualization to describe the relationship between the two variables.
 
@@ -145,15 +151,15 @@ d.  What do you notice about the prediction (regression) line that may be strang
 
 ### Question 3
 
-Since `parsim` takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞). This will be better suited for fitting a regression model (and interpreting predicted values!)
+Since `parsim` takes values between 0 and 1, but predicted values from a linear regression model can range between (−∞,+∞), we will transform `parsim` using a logit transformation. This transformation is commonly used for proportion data because it maps values between (0,1) to values between (−∞,+∞). 
 
-a.  Using mutate, create a new variable `transformed_parsim` that is calculated as `log(parsim/(1-parsim))`. Add this variable to your data frame.
+a.  Using mutate, create a new variable in the `parasites` data frame called  `transformed_parsim` that is calculated as `log(parsim/(1-parsim))`. Add this variable to your data frame.
 
     ::: callout-note
     `log()` in R represents the **nautral log**.
     :::
 
-b.  Then, visualize the relationship between divergence_time and `transformed_parsim`. Add a regression line to your visualization.
+b.  Then, visualize the relationship between `divergence_time` and `transformed_parsim`. Add a regression line to your visualization.
 
 c.  Write a 1-2 sentence description of what you observe in the visualization.
 
@@ -173,7 +179,7 @@ To answer this question, begin by fitting a linear regression model to each pair
 
 a.  Report the slopes for each of these models. Use proper notation.
 
-b.  To answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?
+b.  To answer our question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?
 
 ### Question 5
 
@@ -185,7 +191,7 @@ You can calculate $R^2$ using the glance function. For example, you can calculat
 
 a.  Calculate and report $R^2$ for each model fit in the previous exercise.
 
-b.  To answer our question of interest, would it be useful to compare the $R^2$ in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?
+b.  To answer our question of interest, would it be useful to compare the $R^2$ in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not? And if so, which variable is the strongest individual predictor of parasite similarity between species?
 
 ::: render-commit-push
 Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
@@ -277,7 +283,7 @@ a.  Use `pivot_wider` to create a new data frame `card_krueger_wide` that has **
 
 b.  Modify `card_krueger_wide` by discarding any rows that have a missing value in any of the four columns `wage_before`, `wage_after`, `fte_before`, and `fte_after`.
 
-c.  Add a new variable `emp_diff` to `card_krueger_wide` which measures the change in `fte` after the new law took effect.
+c.  Add a new variable `emp_diff` to `card_krueger_wide` which measures the change in `fte` after the new law took effect (`fte_after` - `fte_before`)
 
 d.  Add a new variable `gap` to `card_krueger_wide` which is constructed in the following way:
 
