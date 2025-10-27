@@ -102,8 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><meta name="quarto:status" content="draft">
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -298,7 +297,7 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -635,7 +634,22 @@ window.Quarto = {
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
 <p>This is a two-part homework assignment:</p>
 <ul>
-<li><p><strong>Part 1 – 🤖 Feedback from AI:</strong> Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in <code>hw-4-part-1.qmd</code>, no submission required.</p></li>
+<li>
+<p><strong>Part 1 – 🤖 Feedback from AI:</strong> Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in <code>hw-4-part-1.qmd</code>, no submission required.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Heads up!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Heads up!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>While Part 1 is not graded, it is a prerequisite for Part 2 – Question 6 in Part 2 asks you to summarize your experience in Part 1. Additionally, the skills you practice in Part 1 will be useful for future assignments that are graded. Finally, there are workflow points assigned to Part 1 – you must make at least three commits in Part 1 and make updates to both your qmd and pdf files in order to earn these points.</p>
+</div>
+</div>
+</li>
 <li><p><strong>Part 2 – 🧑🏽‍🏫 Feedback from Humans:</strong> Graded, you get feedback from the course instructional team within a week. Complete in <code>hw-4-part-2.qmd</code>, submit on Gradescope.</p></li>
 </ul>
 <p>By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.</p>
@@ -674,7 +688,7 @@ Click to expand if you need a refresher on assignment guidelines.
 </ul></section></details></section><section id="part-1-feedback-from-ai" class="level1"><h1>Part 1 – Feedback from AI</h1>
 <p>Your answers to the questions in this part should go in the file <code>hw-4-part-1.qmd</code>.</p>
 <section id="instructions" class="level2"><h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Write your answer to each question in the appropriate section of the <code>hw-4-part-1.qmd</code> file. Then, highlight your answer to a question, click on <em>Addins &gt; AIFEEDR &gt; Get feedback</em>. In the app that opens, select the appropriate homework number (3) and question number. Then click on <em>Get Feedback</em>. Please be patient, feedback generation can take a few seconds. Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.</p>
+<p>Write your answer to each question in the appropriate section of the <code>hw-4-part-1.qmd</code> file. Then, highlight your answer to a question, click on <em>Addins &gt; AIFEEDR &gt; Get feedback</em>. In the app that opens, select the appropriate homework number (4) and question number. Then click on <em>Get Feedback</em>. Please be patient, feedback generation can take a few seconds. Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.</p>
 <details><summary>
 Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.
 </summary><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby" title="aifeedr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
@@ -689,7 +703,7 @@ Catch the AI making a mistake?
 </div>
 <div class="callout-body-container callout-body">
 <p>Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to earn the opportunity for <strong>extra credit</strong>.</p>
-<p>Your bug report must include screenshots of the relevant parts of your Quarto document as well as the “incorrect” feedback you received. Your bug report should be printed and turned in to Dr.&nbsp;Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date, e.g.&nbsp;for HW 3 due on Sun, Sep 28, your bug report is due by the beginning of class on Tue, Sep 30. Electronic submissions will not be accepted. Your bug report, including screenshots, should fit on no more than two pages.</p>
+<p>Your bug report must include screenshots of the relevant parts of your Quarto document as well as the “incorrect” feedback you received. Your bug report should be printed and turned in to Dr.&nbsp;Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date. Electronic submissions will not be accepted. Your bug report, including screenshots, should fit on no more than two pages.</p>
 <p>If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), you will receive 1 extra point that will be added to your total points for the assignment.</p>
 </div>
 </div>
@@ -711,7 +725,7 @@ Catch the AI making a mistake?
 <li><p><code>distance</code>: geodesic distance between species geographic range centroids (in kilometers)</p></li>
 <li><p><code>BMdiff</code>: difference in body mass between the two species (in grams)</p></li>
 <li><p><code>precdiff</code>: difference in mean annual precipitation across the two species geographic ranges (mm)</p></li>
-<li><p><code>parsim</code>: a measure of parasite similarity (proportion of parasites shared between species, ranges from 0 to 1.)</p></li>
+<li><p><code>parsim</code>: a measure of parasite similarity (proportion of parasites shared between species, ranges between 0 to 1.)</p></li>
 </ul>
 <p>The data are available in <code>parasites.csv</code> in your <code>data</code> folder.</p>
 </section><section id="questions" class="level2"><h2 class="anchored" data-anchor-id="questions">Questions</h2>
@@ -735,8 +749,8 @@ Heads up!
 <p>Let’s start by reading in the <code>parasites</code> data and examining the relationship between <code>divergence_time</code> and <code>parsim</code>.</p>
 <ol type="a">
 <li><p>Load the data and save the data frame as <code>parasites</code>.</p></li>
-<li><p>Based on the goals of the analysis, what is the response variable?</p></li>
-<li><p>Visualize the relationship between the two variables.</p></li>
+<li><p>Based on the goals of the analysis, what is the outcome variable?</p></li>
+<li><p>Visualize the relationship between the two variables, making sure to place the outcome and predictor variables on the appropriate axes.</p></li>
 <li><p>Use the visualization to describe the relationship between the two variables.</p></li>
 </ol></section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
 <p>Next, model this relationship.</p>
@@ -746,10 +760,10 @@ Heads up!
 <li><p>Recreate the visualization from Question 6, this time adding a regression line to the visualization.</p></li>
 <li><p>What do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?</p></li>
 </ol></section><section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
-<p>Since <code>parsim</code> takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞). This will be better suited for fitting a regression model (and interpreting predicted values!)</p>
+<p>Since <code>parsim</code> takes values between 0 and 1, but predicted values from a linear regression model can range between (−∞,+∞), we will transform <code>parsim</code> using a logit transformation. This transformation is commonly used for proportion data because it maps values between (0,1) to values between (−∞,+∞).</p>
 <ol type="a">
 <li>
-<p>Using mutate, create a new variable <code>transformed_parsim</code> that is calculated as <code>log(parsim/(1-parsim))</code>. Add this variable to your data frame.</p>
+<p>Using mutate, create a new variable in the <code>parasites</code> data frame called <code>transformed_parsim</code> that is calculated as <code>log(parsim/(1-parsim))</code>. Add this variable to your data frame.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -764,7 +778,7 @@ Note
 </div>
 </div>
 </li>
-<li><p>Then, visualize the relationship between divergence_time and <code>transformed_parsim</code>. Add a regression line to your visualization.</p></li>
+<li><p>Then, visualize the relationship between <code>divergence_time</code> and <code>transformed_parsim</code>. Add a regression line to your visualization.</p></li>
 <li><p>Write a 1-2 sentence description of what you observe in the visualization.</p></li>
 </ol></section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
 <p><em>Which variable is the strongest individual predictor of parasite similarity between species?</em></p>
@@ -777,14 +791,14 @@ Note
 </ul>
 <ol type="a">
 <li><p>Report the slopes for each of these models. Use proper notation.</p></li>
-<li><p>To answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?</p></li>
+<li><p>To answer our question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?</p></li>
 </ol></section><section id="question-5" class="level3"><h3 class="anchored" data-anchor-id="question-5">Question 5</h3>
 <p>Now, what if we calculated <span class="math inline">\(R^2\)</span> to help answer our question? To compare the explanatory power of each individual predictor, we will look at <span class="math inline">\(R^2\)</span> between the models. <span class="math inline">\(R^2\)</span> is a measure of how much of the variability in the response variable is explained by the model.</p>
 <p>As you may have guessed from the name <span class="math inline">\(R^2\)</span> can be calculated by squaring the correlation when we have a simple linear regression model. The correlation r takes values -1 to 1, therefore, <span class="math inline">\(R^2\)</span> takes values 0 to 1. Intuitively, if r=1 or −1, then <span class="math inline">\(R^2\)</span>=1, indicating the model is a perfect fit for the data. If r≈0 then <span class="math inline">\(R^2\)</span>≈0, indicating the model is a very bad fit for the data.</p>
 <p>You can calculate <span class="math inline">\(R^2\)</span> using the glance function. For example, you can calculate <span class="math inline">\(R^2\)</span> for <code>dt_model</code> using the code <code>glance(dt_model)$r.squared</code>.</p>
 <ol type="a">
 <li><p>Calculate and report <span class="math inline">\(R^2\)</span> for each model fit in the previous exercise.</p></li>
-<li><p>To answer our question of interest, would it be useful to compare the <span class="math inline">\(R^2\)</span> in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?</p></li>
+<li><p>To answer our question of interest, would it be useful to compare the <span class="math inline">\(R^2\)</span> in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not? And if so, which variable is the strongest individual predictor of parasite similarity between species?</p></li>
 </ol>
 <div class="render-commit-push">
 <p>Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message. And once again, make sure to commit and push all changed files so that your Git pane is empty afterward. We keep repeating this because it’s important and because we see students forget to do this. So take a moment to make sure you’re practicing good version control habits.</p>
@@ -849,7 +863,7 @@ Note
 <ol type="a">
 <li><p>Use <code>pivot_wider</code> to create a new data frame <code>card_krueger_wide</code> that has <strong>six</strong> columns: <code>id</code>, <code>state</code>, <code>wage_before</code>, <code>wage_after</code>, <code>fte_before</code>, and <code>fte_after</code>.</p></li>
 <li><p>Modify <code>card_krueger_wide</code> by discarding any rows that have a missing value in any of the four columns <code>wage_before</code>, <code>wage_after</code>, <code>fte_before</code>, and <code>fte_after</code>.</p></li>
-<li><p>Add a new variable <code>emp_diff</code> to <code>card_krueger_wide</code> which measures the change in <code>fte</code> after the new law took effect.</p></li>
+<li><p>Add a new variable <code>emp_diff</code> to <code>card_krueger_wide</code> which measures the change in <code>fte</code> after the new law took effect (<code>fte_after</code> - <code>fte_before</code>)</p></li>
 <li><p>Add a new variable <code>gap</code> to <code>card_krueger_wide</code> which is constructed in the following way:</p></li>
 </ol>
 <ul>
