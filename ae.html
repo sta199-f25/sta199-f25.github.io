@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,18 +35,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4323a2cb4dfa4aaa09d0cff1df15bff0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -120,7 +121,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -327,7 +328,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -612,7 +614,7 @@ Subtitle
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="4" data-listing-word-count-sort="685" data-listing-title-sort="AE 01: Income inequality" data-listing-filename-sort="ae-01-income-inequality-A.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1757349353268" data-listing-reading-time-sort="4" data-listing-word-count-sort="685" data-listing-title-sort="AE 01: Income inequality" data-listing-filename-sort="ae-01-income-inequality-A.qmd">
 <td>
 <a href="./ae/ae-01-income-inequality-A.html" class="title listing-title">AE 01: Income inequality</a>
 </td>
@@ -622,7 +624,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="1" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="4" data-listing-word-count-sort="669" data-listing-title-sort="AE 01: Income inequality" data-listing-filename-sort="ae-01-income-inequality.qmd">
+<tr data-index="1" data-listing-file-modified-sort="1757349353268" data-listing-reading-time-sort="4" data-listing-word-count-sort="669" data-listing-title-sort="AE 01: Income inequality" data-listing-filename-sort="ae-01-income-inequality.qmd">
 <td>
 <a href="./ae/ae-01-income-inequality.html" class="title listing-title">AE 01: Income inequality</a>
 </td>
@@ -632,7 +634,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="2" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="5" data-listing-word-count-sort="912" data-listing-title-sort="AE 02: Bechdel + data visualization" data-listing-filename-sort="ae-02-bechdel-dataviz-A.qmd">
+<tr data-index="2" data-listing-file-modified-sort="1757349353268" data-listing-reading-time-sort="5" data-listing-word-count-sort="912" data-listing-title-sort="AE 02: Bechdel + data visualization" data-listing-filename-sort="ae-02-bechdel-dataviz-A.qmd">
 <td>
 <a href="./ae/ae-02-bechdel-dataviz-A.html" class="title listing-title">AE 02: Bechdel + data visualization</a>
 </td>
@@ -642,7 +644,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="3" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="4" data-listing-word-count-sort="789" data-listing-title-sort="AE 02: Bechdel + data visualization" data-listing-filename-sort="ae-02-bechdel-dataviz.qmd">
+<tr data-index="3" data-listing-file-modified-sort="1757349353268" data-listing-reading-time-sort="4" data-listing-word-count-sort="789" data-listing-title-sort="AE 02: Bechdel + data visualization" data-listing-filename-sort="ae-02-bechdel-dataviz.qmd">
 <td>
 <a href="./ae/ae-02-bechdel-dataviz.html" class="title listing-title">AE 02: Bechdel + data visualization</a>
 </td>
@@ -652,7 +654,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="4" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="2" data-listing-word-count-sort="207" data-listing-title-sort="AE 03: Gerrymandering + data exploration I" data-listing-filename-sort="ae-03-gerrymander-explore-I-A.qmd">
+<tr data-index="4" data-listing-file-modified-sort="1757624229619" data-listing-reading-time-sort="2" data-listing-word-count-sort="207" data-listing-title-sort="AE 03: Gerrymandering + data exploration I" data-listing-filename-sort="ae-03-gerrymander-explore-I-A.qmd">
 <td>
 <a href="./ae/ae-03-gerrymander-explore-I-A.html" class="title listing-title">AE 03: Gerrymandering + data exploration I</a>
 </td>
@@ -662,7 +664,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="5" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="1" data-listing-word-count-sort="155" data-listing-title-sort="AE 03: Gerrymandering + data exploration I" data-listing-filename-sort="ae-03-gerrymander-explore-I.qmd">
+<tr data-index="5" data-listing-file-modified-sort="1757624229619" data-listing-reading-time-sort="1" data-listing-word-count-sort="155" data-listing-title-sort="AE 03: Gerrymandering + data exploration I" data-listing-filename-sort="ae-03-gerrymander-explore-I.qmd">
 <td>
 <a href="./ae/ae-03-gerrymander-explore-I.html" class="title listing-title">AE 03: Gerrymandering + data exploration I</a>
 </td>
@@ -672,7 +674,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="6" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="2" data-listing-word-count-sort="227" data-listing-title-sort="AE 04: Gerrymandering + data exploration II" data-listing-filename-sort="ae-04-gerrymander-explore-II-A.qmd">
+<tr data-index="6" data-listing-file-modified-sort="1757624229619" data-listing-reading-time-sort="2" data-listing-word-count-sort="227" data-listing-title-sort="AE 04: Gerrymandering + data exploration II" data-listing-filename-sort="ae-04-gerrymander-explore-II-A.qmd">
 <td>
 <a href="./ae/ae-04-gerrymander-explore-II-A.html" class="title listing-title">AE 04: Gerrymandering + data exploration II</a>
 </td>
@@ -682,7 +684,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="7" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="1" data-listing-word-count-sort="110" data-listing-title-sort="AE 04: Gerrymandering + data exploration II" data-listing-filename-sort="ae-04-gerrymander-explore-II.qmd">
+<tr data-index="7" data-listing-file-modified-sort="1757624229619" data-listing-reading-time-sort="1" data-listing-word-count-sort="110" data-listing-title-sort="AE 04: Gerrymandering + data exploration II" data-listing-filename-sort="ae-04-gerrymander-explore-II.qmd">
 <td>
 <a href="./ae/ae-04-gerrymander-explore-II.html" class="title listing-title">AE 04: Gerrymandering + data exploration II</a>
 </td>
@@ -692,7 +694,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="8" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="3" data-listing-word-count-sort="555" data-listing-title-sort="AE 05: Tidying Stat Sci" data-listing-filename-sort="ae-05-majors.qmd">
+<tr data-index="8" data-listing-file-modified-sort="1758301288833" data-listing-reading-time-sort="3" data-listing-word-count-sort="555" data-listing-title-sort="AE 05: Tidying Stat Sci" data-listing-filename-sort="ae-05-majors.qmd">
 <td>
 <a href="./ae/ae-05-majors.html" class="title listing-title">AE 05: Tidying Stat Sci</a>
 </td>
@@ -702,7 +704,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="9" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="7" data-listing-word-count-sort="1214" data-listing-title-sort="AE 05: Tidying Stat Sci" data-listing-filename-sort="ae-05-majors-A.qmd">
+<tr data-index="9" data-listing-file-modified-sort="1758301288833" data-listing-reading-time-sort="7" data-listing-word-count-sort="1214" data-listing-title-sort="AE 05: Tidying Stat Sci" data-listing-filename-sort="ae-05-majors-A.qmd">
 <td>
 <a href="./ae/ae-05-majors-A.html" class="title listing-title">AE 05: Tidying Stat Sci</a>
 </td>
@@ -712,7 +714,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="10" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="1" data-listing-word-count-sort="197" data-listing-title-sort="AE 06: Sales taxes + data joining" data-listing-filename-sort="ae-06-taxes-join-A.qmd">
+<tr data-index="10" data-listing-file-modified-sort="1758301288833" data-listing-reading-time-sort="1" data-listing-word-count-sort="197" data-listing-title-sort="AE 06: Sales taxes + data joining" data-listing-filename-sort="ae-06-taxes-join-A.qmd">
 <td>
 <a href="./ae/ae-06-taxes-join-A.html" class="title listing-title">AE 06: Sales taxes + data joining</a>
 </td>
@@ -722,7 +724,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="11" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="1" data-listing-word-count-sort="141" data-listing-title-sort="AE 06: Sales taxes + data joining" data-listing-filename-sort="ae-06-taxes-join.qmd">
+<tr data-index="11" data-listing-file-modified-sort="1758301288833" data-listing-reading-time-sort="1" data-listing-word-count-sort="141" data-listing-title-sort="AE 06: Sales taxes + data joining" data-listing-filename-sort="ae-06-taxes-join.qmd">
 <td>
 <a href="./ae/ae-06-taxes-join.html" class="title listing-title">AE 06: Sales taxes + data joining</a>
 </td>
@@ -732,7 +734,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="12" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="5" data-listing-word-count-sort="822" data-listing-title-sort="AE 07: Durham climate + factors" data-listing-filename-sort="ae-07-durham-climate-factors-A.qmd">
+<tr data-index="12" data-listing-file-modified-sort="1758640129185" data-listing-reading-time-sort="5" data-listing-word-count-sort="822" data-listing-title-sort="AE 07: Durham climate + factors" data-listing-filename-sort="ae-07-durham-climate-factors-A.qmd">
 <td>
 <a href="./ae/ae-07-durham-climate-factors-A.html" class="title listing-title">AE 07: Durham climate + factors</a>
 </td>
@@ -742,7 +744,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="13" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="2" data-listing-word-count-sort="309" data-listing-title-sort="AE 07: Durham climate + factors" data-listing-filename-sort="ae-07-durham-climate-factors.qmd">
+<tr data-index="13" data-listing-file-modified-sort="1758640129185" data-listing-reading-time-sort="2" data-listing-word-count-sort="309" data-listing-title-sort="AE 07: Durham climate + factors" data-listing-filename-sort="ae-07-durham-climate-factors.qmd">
 <td>
 <a href="./ae/ae-07-durham-climate-factors.html" class="title listing-title">AE 07: Durham climate + factors</a>
 </td>
@@ -752,7 +754,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="14" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="3" data-listing-word-count-sort="499" data-listing-title-sort="AE 08: Age gaps + import" data-listing-filename-sort="ae-08-age-gaps-import-A.qmd">
+<tr data-index="14" data-listing-file-modified-sort="1759107740359" data-listing-reading-time-sort="3" data-listing-word-count-sort="499" data-listing-title-sort="AE 08: Age gaps + import" data-listing-filename-sort="ae-08-age-gaps-import-A.qmd">
 <td>
 <a href="./ae/ae-08-age-gaps-import-A.html" class="title listing-title">AE 08: Age gaps + import</a>
 </td>
@@ -762,7 +764,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="15" data-listing-file-modified-sort="1761540905711" data-listing-reading-time-sort="2" data-listing-word-count-sort="352" data-listing-title-sort="AE 08: Age gaps + import" data-listing-filename-sort="ae-08-age-gaps-import.qmd">
+<tr data-index="15" data-listing-file-modified-sort="1759107740359" data-listing-reading-time-sort="2" data-listing-word-count-sort="352" data-listing-title-sort="AE 08: Age gaps + import" data-listing-filename-sort="ae-08-age-gaps-import.qmd">
 <td>
 <a href="./ae/ae-08-age-gaps-import.html" class="title listing-title">AE 08: Age gaps + import</a>
 </td>
@@ -772,7 +774,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="16" data-listing-file-modified-sort="1761540905712" data-listing-reading-time-sort="2" data-listing-word-count-sort="218" data-listing-title-sort="AE 09: Opinion articles in The Chronicle" data-listing-filename-sort="ae-09-chronicle-scrape-A.qmd">
+<tr data-index="16" data-listing-file-modified-sort="1760967550974" data-listing-reading-time-sort="2" data-listing-word-count-sort="218" data-listing-title-sort="AE 09: Opinion articles in The Chronicle" data-listing-filename-sort="ae-09-chronicle-scrape-A.qmd">
 <td>
 <a href="./ae/ae-09-chronicle-scrape-A.html" class="title listing-title">AE 09: Opinion articles in The Chronicle</a>
 </td>
@@ -782,7 +784,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="17" data-listing-file-modified-sort="1761540905712" data-listing-reading-time-sort="1" data-listing-word-count-sort="149" data-listing-title-sort="AE 09: Opinion articles in The Chronicle" data-listing-filename-sort="ae-09-chronicle-scrape.qmd">
+<tr data-index="17" data-listing-file-modified-sort="1760967550975" data-listing-reading-time-sort="1" data-listing-word-count-sort="149" data-listing-title-sort="AE 09: Opinion articles in The Chronicle" data-listing-filename-sort="ae-09-chronicle-scrape.qmd">
 <td>
 <a href="./ae/ae-09-chronicle-scrape.html" class="title listing-title">AE 09: Opinion articles in The Chronicle</a>
 </td>
@@ -792,7 +794,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="18" data-categories="QXBwbGljYXRpb24lMjBleGVyY2lzZSUyQ0Fuc3dlcnM=" data-listing-file-modified-sort="1761540905712" data-listing-reading-time-sort="6" data-listing-word-count-sort="1043" data-listing-title-sort="AE 10: Ice cover in Madison, WI area lakes" data-listing-filename-sort="ae-10-icecover-model-A.qmd">
+<tr data-index="18" data-categories="QXBwbGljYXRpb24lMjBleGVyY2lzZSUyQ0Fuc3dlcnM=" data-listing-file-modified-sort="1761597296664" data-listing-reading-time-sort="6" data-listing-word-count-sort="1043" data-listing-title-sort="AE 10: Ice cover in Madison, WI area lakes" data-listing-filename-sort="ae-10-icecover-model-A.qmd">
 <td>
 <a href="./ae/ae-10-icecover-model-A.html" class="title listing-title">AE 10: Ice cover in Madison, WI area lakes</a>
 </td>
@@ -802,7 +804,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="19" data-listing-file-modified-sort="1761540905712" data-listing-reading-time-sort="5" data-listing-word-count-sort="828" data-listing-title-sort="AE 10: Ice cover in Madison, WI area lakes" data-listing-filename-sort="ae-10-icecover-model.qmd">
+<tr data-index="19" data-listing-file-modified-sort="1761597296664" data-listing-reading-time-sort="5" data-listing-word-count-sort="828" data-listing-title-sort="AE 10: Ice cover in Madison, WI area lakes" data-listing-filename-sort="ae-10-icecover-model.qmd">
 <td>
 <a href="./ae/ae-10-icecover-model.html" class="title listing-title">AE 10: Ice cover in Madison, WI area lakes</a>
 </td>
@@ -812,7 +814,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="20" data-categories="QXBwbGljYXRpb24lMjBleGVyY2lzZSUyQ0Fuc3dlcnM=" data-listing-file-modified-sort="1761540905712" data-listing-reading-time-sort="4" data-listing-word-count-sort="796" data-listing-title-sort="AE 13: Modelling penguins" data-listing-filename-sort="ae-11-penguins-model-A.qmd">
+<tr data-index="20" data-categories="QXBwbGljYXRpb24lMjBleGVyY2lzZSUyQ0Fuc3dlcnM=" data-listing-file-modified-sort="1761597296664" data-listing-reading-time-sort="4" data-listing-word-count-sort="796" data-listing-title-sort="AE 13: Modelling penguins" data-listing-filename-sort="ae-11-penguins-model-A.qmd">
 <td>
 <a href="./ae/ae-11-penguins-model-A.html" class="title listing-title">AE 13: Modelling penguins</a>
 </td>
@@ -822,7 +824,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="21" data-listing-file-modified-sort="1761540905712" data-listing-reading-time-sort="3" data-listing-word-count-sort="508" data-listing-title-sort="AE 13: Modelling penguins" data-listing-filename-sort="ae-11-penguins-model.qmd">
+<tr data-index="21" data-listing-file-modified-sort="1761597296664" data-listing-reading-time-sort="3" data-listing-word-count-sort="508" data-listing-title-sort="AE 13: Modelling penguins" data-listing-filename-sort="ae-11-penguins-model.qmd">
 <td>
 <a href="./ae/ae-11-penguins-model.html" class="title listing-title">AE 13: Modelling penguins</a>
 </td>
@@ -900,13 +902,14 @@ Subtitle
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
