@@ -29,7 +29,7 @@
     "href": "hw/hw-4.html#context",
     "title": "HW 4",
     "section": "Context",
-    "text": "Context\nParasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.\nIn this part of the lab, we will see how much evolutionary history predicts parasite similarity."
+    "text": "Context\nParasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.\nIn this part of the homwework, you will explore how much evolutionary history predicts parasite similarity."
   },
   {
     "objectID": "hw/hw-4.html#packages",
@@ -85,7 +85,7 @@
     "href": "hw/hw-4.html#grading-and-feedback",
     "title": "HW 4",
     "section": "Grading and feedback",
-    "text": "Grading and feedback\n\nQuestions 1-5 are not graded, but you should complete them to get practice.\n\nQuestions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.\n\nQuestions will be graded for accuracy and completeness.\nPartial credit will be given where appropriate.\nThere are also workflow points for:\n\ncommitting at least three times as you work through your lab,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization."
+    "text": "Grading and feedback\n\nQuestions 1-5 are not graded, but you should complete them to get practice.\n\nQuestions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.\n\nQuestions will be graded for accuracy and completeness.\nPartial credit will be given where appropriate.\nThere are also workflow points for:\n\ncommitting at least three times as you work through your homework,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization."
   },
   {
     "objectID": "hw/hw-3.html",
