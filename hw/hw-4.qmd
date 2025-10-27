@@ -81,7 +81,7 @@ If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), y
 
 Parasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.
 
-In this part of the lab, we will see how much evolutionary history predicts parasite similarity.
+In this part of the homwework, you will explore how much evolutionary history predicts parasite similarity.
 
 ## Packages
 
@@ -340,6 +340,6 @@ We will be checking these to make sure you have been practicing how to commit an
     -   Questions will be graded for accuracy and completeness.
     -   Partial credit will be given where appropriate.
     -   There are also workflow points for:
-        - committing at least three times as you work through your lab,
+        - committing at least three times as you work through your homework,
         - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
         - overall organization.
