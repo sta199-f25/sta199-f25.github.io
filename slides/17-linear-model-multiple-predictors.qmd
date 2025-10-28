@@ -35,7 +35,14 @@ todays_ae <- "ae-13-modeling-penguins"
 :::: {.column width="70%"}
 ::: wooclap
 
-ADD QUESTION
+Which of the following is true about linear regression models?
+
+::: wooclap-choices
+- The regression line always passes through the origin (x = 0, y = 0).
+- The slope indicates the average change in the outcome for a one-unit increase in the predictor.
+- The intercept indicates the average value of the predictor when the outcome is 0.
+- Least squares regression line minimizes the sum of the vertical distances between the observed and predicted values of the outcome.
+:::
 
 :::
 ::::
@@ -299,6 +306,14 @@ penguins |>
 
 ## Participate 📱💻 {.xsmall}
 
+:::::: columns
+
+:::: {.column width="70%"}
+
+::: wooclap
+
+What is the baseline level of `island` in the following model??
+
 ```{r}
 #| include: false
 penguins <- penguins |>
@@ -306,14 +321,6 @@ penguins <- penguins |>
     island = fct_relevel(island, "Torgersen")
   )
 ```
-
-:::::: columns
-
-:::: {.column width="70%"}
-
-::: wooclap
-
-What is the baseline level in the modified `island` variable?
 
 ```{r}
 linear_reg() |>
