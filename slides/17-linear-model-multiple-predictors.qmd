@@ -24,7 +24,7 @@ editor_options:
 #| label: setup
 #| include: false
 ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
-todays_ae <- "ae-13-modeling-penguins"
+todays_ae <- "ae-12-penguins-model-multi"
 ```
 
 # Warm-up
@@ -54,7 +54,15 @@ Which of the following is true about linear regression models?
 
 ## Announcements {.smaller}
 
--   ADD ANNOUNCEMENTS
+-   HW 4 is due on Sunday, 11:59 pm
+
+-   Make use of office hours!!!
+
+-   Reminder: Class starts at 11:45 am, ends at 1:00 pm (not 12:50 pm)
+
+-   If you missed yesterdays project milestone due to a documented illness, look out for an email from me for an alternate task. (This likely means you also missed the lab, that can be one of your dropped labs.)
+
+-   Email me to let me know if you'd like a live review of your project in class next Tuesday! I'll take the first 2 respondents.
 
 # Linear regression with a categorical predictor
 
@@ -344,3 +352,17 @@ linear_reg() |>
 :::
 
 ::::::
+
+# Application exercise
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
