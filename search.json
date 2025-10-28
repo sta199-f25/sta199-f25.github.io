@@ -1096,7 +1096,7 @@
     "href": "slides/17-linear-model-multiple-predictors-slides.html#announcements",
     "title": "Linear models with a multiple predictors",
     "section": "Announcements",
-    "text": "Announcements\n\nADD ANNOUNCEMENTS"
+    "text": "Announcements\n\nHW 4 is due on Sunday, 11:59 pm\nMake use of office hours!!!\nReminder: Class starts at 11:45 am, ends at 1:00 pm (not 12:50 pm)\nIf you missed yesterdays project milestone due to a documented illness, look out for an email from me for an alternate task. (This likely means you also missed the lab, that can be one of your dropped labs.)\nEmail me to let me know if you’d like a live review of your project in class next Tuesday! I’ll take the first 2 respondents."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors-slides.html#packages",
@@ -1204,11 +1204,18 @@
     "text": "Participate 📱💻\n\n\n\nWhat is the baseline level of island in the following model??\n\nlinear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   3706.        87.7   42.3    3.64e-137\n2 islandBiscoe  1010.       100.    10.1    4.66e- 21\n3 islandDream      6.53     104.     0.0627 9.50e-  1\n\n\n\n\nBiscoe\nDream\nTorgersen\nCannot tell from the output\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
+    "objectID": "slides/17-linear-model-multiple-predictors-slides.html#ae-12-penguins-model-multi",
+    "href": "slides/17-linear-model-multiple-predictors-slides.html#ae-12-penguins-model-multi",
+    "title": "Linear models with a multiple predictors",
+    "section": "ae-12-penguins-model-multi",
+    "text": "ae-12-penguins-model-multi\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-12-penguins-model-multi.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
+  },
+  {
     "objectID": "slides/17-linear-model-multiple-predictors.html",
     "href": "slides/17-linear-model-multiple-predictors.html",
     "title": "Linear models with a multiple predictors",
     "section": "",
-    "text": "Which of the following is true about linear regression models?\n\n\nThe regression line always passes through the origin (x = 0, y = 0).\nThe slope indicates the average change in the outcome for a one-unit increase in the predictor.\nThe intercept indicates the average value of the predictor when the outcome is 0.\nLeast squares regression line minimizes the sum of the vertical distances between the observed and predicted values of the outcome.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nADD ANNOUNCEMENTS"
+    "text": "Which of the following is true about linear regression models?\n\n\nThe regression line always passes through the origin (x = 0, y = 0).\nThe slope indicates the average change in the outcome for a one-unit increase in the predictor.\nThe intercept indicates the average value of the predictor when the outcome is 0.\nLeast squares regression line minimizes the sum of the vertical distances between the observed and predicted values of the outcome.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nHW 4 is due on Sunday, 11:59 pm\nMake use of office hours!!!\nReminder: Class starts at 11:45 am, ends at 1:00 pm (not 12:50 pm)\nIf you missed yesterdays project milestone due to a documented illness, look out for an email from me for an alternate task. (This likely means you also missed the lab, that can be one of your dropped labs.)\nEmail me to let me know if you’d like a live review of your project in class next Tuesday! I’ll take the first 2 respondents."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors.html#while-you-wait-participate",
@@ -1222,7 +1229,7 @@
     "href": "slides/17-linear-model-multiple-predictors.html#announcements",
     "title": "Linear models with a multiple predictors",
     "section": "",
-    "text": "ADD ANNOUNCEMENTS"
+    "text": "HW 4 is due on Sunday, 11:59 pm\nMake use of office hours!!!\nReminder: Class starts at 11:45 am, ends at 1:00 pm (not 12:50 pm)\nIf you missed yesterdays project milestone due to a documented illness, look out for an email from me for an alternate task. (This likely means you also missed the lab, that can be one of your dropped labs.)\nEmail me to let me know if you’d like a live review of your project in class next Tuesday! I’ll take the first 2 respondents."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors.html#packages",
@@ -1328,6 +1335,13 @@
     "title": "Linear models with a multiple predictors",
     "section": "Participate 📱💻",
     "text": "Participate 📱💻\n\n\n\nWhat is the baseline level of island in the following model??\n\nlinear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   3706.        87.7   42.3    3.64e-137\n2 islandBiscoe  1010.       100.    10.1    4.66e- 21\n3 islandDream      6.53     104.     0.0627 9.50e-  1\n\n\n\n\nBiscoe\nDream\nTorgersen\nCannot tell from the output\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/17-linear-model-multiple-predictors.html#ae-12-penguins-model-multi",
+    "href": "slides/17-linear-model-multiple-predictors.html#ae-12-penguins-model-multi",
+    "title": "Linear models with a multiple predictors",
+    "section": "ae-12-penguins-model-multi",
+    "text": "ae-12-penguins-model-multi\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-12-penguins-model-multi.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/01-hello-world-slides.html#meet-the-prof",
