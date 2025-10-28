@@ -1,0 +1,339 @@
+---
+title: "Linear models with a multiple predictors"
+subtitle: "Lecture 17"
+date: "2025-10-28"
+format: 
+  revealjs: 
+    output-file: 17-linear-model-multiple-predictors-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-13-modeling-penguins"
+```
+
+# Warm-up
+
+## While you wait: Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%"}
+::: wooclap
+
+ADD QUESTION
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
+## Announcements {.smaller}
+
+-   ADD ANNOUNCEMENTS
+
+# Linear regression with a categorical predictor
+
+## Packages
+
+```{r}
+#| messages: false
+library(tidyverse)
+library(tidymodels)
+library(palmerpenguins)
+library(ggthemes)
+library(ggbeeswarm)
+```
+
+## From last time (with `penguins`)
+
+::: question
+A different researcher wants to look at body weight of penguins based on the island they were recorded on.
+How are the variables involved in this analysis different?
+:::
+
+. . .
+
+-   outcome: body weight (numerical)
+
+-   predictor: island (categorical)
+
+## Visualize body weight vs. island {.smaller}
+
+::: question
+Determine whether each of the following plot types would be an appropriate choice for visualizing the relationship between body weight and island of penguins.
+:::
+
+-   Scatterplot [❌]{.fragment}
+
+-   Box plot [✅]{.fragment}
+
+-   Violin plot [✅]{.fragment}
+
+-   Density plot [✅]{.fragment}
+
+-   Bar plot [❌]{.fragment}
+
+-   Stacked bar plot [❌]{.fragment}
+
+## Boxplot {.smaller}
+
+::: question
+Visualize the relationship between body weight and island of penguins.
+Also calculate the average body weight per island.
+:::
+
+```{r}
+#| output-location: column
+#| warning: false
+ggplot(
+  penguins,
+  aes(x = island, y = body_mass_g)
+) +
+  geom_boxplot() +
+  labs(
+    x = "Island",
+    y = "Body mass (g)",
+    title = "Body mass by island"
+  )
+```
+
+```{r}
+#| output-location: column
+penguins |>
+  group_by(island) |>
+  summarize(
+    bm_mean = mean(body_mass_g, na.rm = TRUE)
+  )
+```
+
+## Violin plot {.smaller}
+
+```{r}
+#| output-location: column
+#| warning: false
+ggplot(
+  penguins,
+  aes(x = island, y = body_mass_g)
+) +
+  geom_violin() +
+  labs(
+    x = "Island",
+    y = "Body mass (g)",
+    title = "Body mass by island"
+  )
+```
+
+## Density plot {.smaller}
+
+```{r}
+#| output-location: column
+#| warning: false
+ggplot(
+  penguins,
+  aes(x = body_mass_g, color = island, fill = island)
+) +
+  geom_density(alpha = 0.5) +
+  scale_color_colorblind() +
+  scale_fill_colorblind() +
+  labs(
+    x = "Island",
+    y = "Body mass (g)",
+    title = "Body mass by island"
+  )
+```
+
+## Multiple geoms {.smaller}
+
+```{r}
+#| output-location: column
+#| warning: false
+#| fig-asp: 0.6
+ggplot(
+  penguins,
+  aes(x = island, y = body_mass_g, color = island)
+) +
+  geom_boxplot() +
+  geom_beeswarm(size = 2, alpha = 0.5) +
+  scale_color_colorblind() +
+  labs(
+    x = "Island",
+    y = "Body mass (g)",
+    title = "Body mass by island"
+  ) +
+  theme(legend.position = "none")
+```
+
+## Model - fit {.smaller}
+
+::: question
+Fit a linear regression model predicting body weight from island and display the results.
+Why is Biscoe not on the output?
+:::
+
+```{r}
+bm_island_fit <- linear_reg() |>
+  fit(body_mass_g ~ island, data = penguins)
+
+tidy(bm_island_fit)
+```
+
+## Model - interpret {.smaller}
+
+$$
+\widehat{body~mass} = 4716 - 1003 \times islandDream - 1010 \times islandTorgersen
+$$
+
+-   Intercept: [Penguins from Biscoe island are expected to weigh, on average, 4,716 grams.]{.fragment}
+
+-   Slope - islandDream: [Penguins from Dream island are expected to weigh, on average, 1,003 grams less than those from Biscoe island.]{.fragment}
+
+-   Slope - islandTorgersen: [Penguins from Torgersen island are expected to weigh, on average, 1,010 grams less than those from Biscoe island.]{.fragment}
+
+## Model - predict {.smaller}
+
+::: question
+What is the predicted body weight of a penguin on Biscoe island?
+What are the estimated body weights of penguins on Dream and Torgersen islands?
+Where have we seen these values before?
+:::
+
+```{r}
+new_penguins <- tibble(
+  island = c("Biscoe", "Dream", "Torgersen")
+)
+
+augment(bm_island_fit, new_data = new_penguins)
+```
+
+## Model - predict {.smaller}
+
+::: task
+Calculate the predicted body weights of penguins on Biscoe, Dream, and Torgersen islands *by hand*.
+:::
+
+$$
+\widehat{body~mass} = 4716 - 1003 \times islandDream - 1010 \times islandTorgersen
+$$
+
+. . .
+
+-   Biscoe: $\widehat{body~mass} = 4716 - 1003 \times 0 - 1010 \times 0 = 4716$
+
+. . .
+
+-   Dream: $\widehat{body~mass} = 4716 - 1003 \times 1 - 1010 \times 0 = 3713$
+
+. . .
+
+-   Torgersen: $\widehat{body~mass} = 4716 - 1003 \times 0 - 1010 \times 1 = 3706$
+
+## Models with categorical predictors
+
+::: incremental
+-   When the categorical predictor has many levels, they're encoded to **dummy variables**.
+
+-   The first level of the categorical variable is the **baseline level**.
+    In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).
+
+-   Each slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable compared to the baseline level.
+:::
+
+## Changing the baseline level
+
+-   By default, R uses the first level of a categorical variable as the baseline level.
+
+-   We can change the baseline level by reordering the levels of the categorical variable.
+
+## Participate 📱💻 {.xsmall}
+
+:::::: columns
+
+:::: {.column width="70%"}
+
+::: wooclap
+
+What function goes in the blank to make "Dream" the baseline level in the `island` variable?
+
+```{r}
+#| eval: false
+penguins |>
+  mutate(
+    island = ___(island, "Dream")
+  )
+```
+
+::: wooclap-choices
+- `level_reorder`
+- `fct_relevel`
+- `fct_reorder`
+- `str_relevel`
+:::
+
+:::
+
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+::::::
+
+## Participate 📱💻 {.xsmall}
+
+```{r}
+#| include: false
+penguins <- penguins |>
+  mutate(
+    island = fct_relevel(island, "Torgersen")
+  )
+```
+
+:::::: columns
+
+:::: {.column width="70%"}
+
+::: wooclap
+
+What is the baseline level in the modified `island` variable?
+
+```{r}
+linear_reg() |>
+  fit(body_mass_g ~ island, data = penguins) |>
+  tidy()
+```
+
+::: wooclap-choices
+- Biscoe
+- Dream
+- Torgersen
+- Cannot tell from the output
+:::
+
+:::
+
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+::::::
