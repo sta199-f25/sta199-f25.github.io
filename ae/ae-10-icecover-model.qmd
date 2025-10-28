@@ -1,5 +1,7 @@
 ---
 title: "AE 10: Ice cover in Madison, WI area lakes"
+categories: 
+  - Application exercise
 ---
 
 ::: callout-important

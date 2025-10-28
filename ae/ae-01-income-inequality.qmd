@@ -1,5 +1,7 @@
 ---
 title: "AE 01: Income inequality"
+categories: 
+  - Application exercise
 ---
 
 **Demo:** Replace "Your Name" above with your actual name.
@@ -107,7 +109,9 @@ Now let's explore income inequality over time in many countries.
 #| fig-width: 8
 #| fig-asp: 0.8
 income_inequality |>
-  filter(country %in% c("United States", "United Kingdom", "Spain", "Sweden")) |>
+  filter(
+    country %in% c("United States", "United Kingdom", "Spain", "Sweden")
+  ) |>
   pivot_longer(
     cols = contains("gini"),
     names_to = "gini_type",

@@ -1,5 +1,7 @@
 ---
 title: "AE 13: Modelling penguins"
+categories: 
+  - Application exercise
 fig-width: 7
 fig-asp: 0.618
 ---

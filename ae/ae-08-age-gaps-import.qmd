@@ -1,5 +1,7 @@
 ---
 title: "AE 08: Age gaps + import"
+categories: 
+  - Application exercise
 ---
 
 ## Packages

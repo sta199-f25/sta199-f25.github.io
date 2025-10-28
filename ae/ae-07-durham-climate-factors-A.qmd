@@ -1,6 +1,9 @@
 ---
 title: "AE 07: Durham climate + factors"
 subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
 
 ::: callout-important

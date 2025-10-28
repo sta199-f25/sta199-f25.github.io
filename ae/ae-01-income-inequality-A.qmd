@@ -1,6 +1,9 @@
 ---
 title: "AE 01: Income inequality"
 subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
 
 ::: callout-important

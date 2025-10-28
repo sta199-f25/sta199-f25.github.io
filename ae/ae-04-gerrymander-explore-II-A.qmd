@@ -1,6 +1,9 @@
 ---
 title: "AE 04: Gerrymandering + data exploration II"
 subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
 
 ::: callout-important
@@ -75,8 +78,8 @@ Recreate the following visualization, and then improve it.
 ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
   geom_beeswarm(color = "gray50", alpha = 0.5) +
   geom_boxplot(
-    aes(color = gerry), 
-    alpha = 0.5, 
+    aes(color = gerry),
+    alpha = 0.5,
     show.legend = FALSE
   ) +
   scale_color_colorblind() +

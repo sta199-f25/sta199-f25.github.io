@@ -1,6 +1,9 @@
 ---
 title: "AE 08: Age gaps + import"
 subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
 
 ::: callout-important

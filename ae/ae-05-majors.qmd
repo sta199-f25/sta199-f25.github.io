@@ -1,8 +1,7 @@
 ---
 title: "AE 05: Tidying Stat Sci"
-format:
-  html:
-    self-contained: true
+categories: 
+  - Application exercise
 ---
 
 ## Goal

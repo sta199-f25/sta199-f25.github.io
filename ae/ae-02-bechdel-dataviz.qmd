@@ -1,5 +1,7 @@
 ---
 title: "AE 02: Bechdel + data visualization"
+categories: 
+  - Application exercise
 ---
 
 In this mini-analysis, we use the data from the FiveThirtyEight story "The Dollar-And-Cents Case Against Hollywood's Exclusion of Women."

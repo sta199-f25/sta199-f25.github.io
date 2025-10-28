@@ -1,6 +1,9 @@
 ---
 title: "AE 06: Sales taxes + data joining"
 subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
 
 ::: callout-important

@@ -1,9 +1,15 @@
 ---
 title: "AE 05: Tidying Stat Sci"
-format:
-  html:
-    self-contained: true
+subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
+
+::: callout-important
+These are suggested answers.
+This document should be used as reference only, it's not designed to be an exhaustive key.
+:::
 
 ## Goal
 
@@ -116,10 +122,13 @@ statsci_longer |>
   geom_line() +
   scale_x_continuous(breaks = seq(2011, 2025, 2)) +
   scale_color_manual(
-    values = c("BS" = "cadetblue4", 
-               "BS2" = "cadetblue3", 
-               "AB" = "lightgoldenrod4", 
-               "AB2" = "lightgoldenrod3"))
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  )
 
 ```
 
@@ -134,10 +143,13 @@ statsci_longer |>
   geom_line() +
   scale_x_continuous(breaks = seq(2011, 2025, 2)) +
   scale_color_manual(
-    values = c("BS" = "cadetblue4", 
-               "BS2" = "cadetblue3", 
-               "AB" = "lightgoldenrod4", 
-               "AB2" = "lightgoldenrod3"))+
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  ) +
   labs(
     x = "Graduation year",
     y = "Number of majors graduating",
@@ -159,10 +171,13 @@ statsci_longer |>
   geom_line() +
   scale_x_continuous(breaks = seq(2011, 2025, 2)) +
   scale_color_manual(
-    values = c("BS" = "cadetblue4", 
-               "BS2" = "cadetblue3", 
-               "AB" = "lightgoldenrod4", 
-               "AB2" = "lightgoldenrod3"))+
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  ) +
   labs(
     x = "Graduation year",
     y = "Number of majors graduating",
@@ -192,10 +207,13 @@ statsci_longer |>
   geom_line() +
   scale_x_continuous(breaks = seq(2011, 2025, 2)) +
   scale_color_manual(
-    values = c("BS" = "cadetblue4", 
-               "BS2" = "cadetblue3", 
-               "AB" = "lightgoldenrod4", 
-               "AB2" = "lightgoldenrod3"))+
+    values = c(
+      "BS" = "cadetblue4",
+      "BS2" = "cadetblue3",
+      "AB" = "lightgoldenrod4",
+      "AB2" = "lightgoldenrod3"
+    )
+  ) +
   labs(
     x = "Graduation year",
     y = "Number of majors graduating",
@@ -221,7 +239,7 @@ statsci_longer |>
 
 statsci_wider <- statsci_longer |>
   pivot_wider(
-    names_from = "year", 
+    names_from = "year",
     values_from = "n"
   )
 ```

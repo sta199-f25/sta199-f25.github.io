@@ -1,5 +1,7 @@
 ---
 title: "AE 07: Durham climate + factors"
+categories: 
+  - Application exercise
 ---
 
 ## Getting started

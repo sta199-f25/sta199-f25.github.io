@@ -1,5 +1,7 @@
 ---
 title: "AE 03: Gerrymandering + data exploration I"
+categories: 
+  - Application exercise
 ---
 
 ## Getting started

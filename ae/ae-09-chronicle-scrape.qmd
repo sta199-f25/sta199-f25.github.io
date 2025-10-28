@@ -1,5 +1,7 @@
 ---
 title: "AE 09: Opinion articles in The Chronicle"
+categories: 
+  - Application exercise
 ---
 
 ## Part 1 - Data scraping

@@ -1,5 +1,7 @@
 ---
 title: "AE 06: Sales taxes + data joining"
+categories: 
+  - Application exercise
 ---
 
 ## Getting started

@@ -1,6 +1,9 @@
 ---
 title: "AE 03: Gerrymandering + data exploration I"
 subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
 
 ::: callout-important

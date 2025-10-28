@@ -1,6 +1,9 @@
 ---
 title: "AE 09: Opinion articles in The Chronicle"
 subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
 ---
 
 ::: callout-important
