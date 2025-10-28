@@ -1089,7 +1089,7 @@
     "href": "slides/17-linear-model-multiple-predictors-slides.html#while-you-wait-participate",
     "title": "Linear models with a multiple predictors",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\nADD QUESTION\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhich of the following is true about linear regression models?\n\n\nThe regression line always passes through the origin (x = 0, y = 0).\nThe slope indicates the average change in the outcome for a one-unit increase in the predictor.\nThe intercept indicates the average value of the predictor when the outcome is 0.\nLeast squares regression line minimizes the sum of the vertical distances between the observed and predicted values of the outcome.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors-slides.html#announcements",
@@ -1201,21 +1201,21 @@
     "href": "slides/17-linear-model-multiple-predictors-slides.html#participate-1",
     "title": "Linear models with a multiple predictors",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nWhat is the baseline level in the modified island variable?\n\nlinear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   3706.        87.7   42.3    3.64e-137\n2 islandBiscoe  1010.       100.    10.1    4.66e- 21\n3 islandDream      6.53     104.     0.0627 9.50e-  1\n\n\n\n\nBiscoe\nDream\nTorgersen\nCannot tell from the output\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nWhat is the baseline level of island in the following model??\n\nlinear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   3706.        87.7   42.3    3.64e-137\n2 islandBiscoe  1010.       100.    10.1    4.66e- 21\n3 islandDream      6.53     104.     0.0627 9.50e-  1\n\n\n\n\nBiscoe\nDream\nTorgersen\nCannot tell from the output\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors.html",
     "href": "slides/17-linear-model-multiple-predictors.html",
     "title": "Linear models with a multiple predictors",
     "section": "",
-    "text": "ADD QUESTION\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nADD ANNOUNCEMENTS"
+    "text": "Which of the following is true about linear regression models?\n\n\nThe regression line always passes through the origin (x = 0, y = 0).\nThe slope indicates the average change in the outcome for a one-unit increase in the predictor.\nThe intercept indicates the average value of the predictor when the outcome is 0.\nLeast squares regression line minimizes the sum of the vertical distances between the observed and predicted values of the outcome.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nADD ANNOUNCEMENTS"
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors.html#while-you-wait-participate",
     "href": "slides/17-linear-model-multiple-predictors.html#while-you-wait-participate",
     "title": "Linear models with a multiple predictors",
     "section": "",
-    "text": "ADD QUESTION\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Which of the following is true about linear regression models?\n\n\nThe regression line always passes through the origin (x = 0, y = 0).\nThe slope indicates the average change in the outcome for a one-unit increase in the predictor.\nThe intercept indicates the average value of the predictor when the outcome is 0.\nLeast squares regression line minimizes the sum of the vertical distances between the observed and predicted values of the outcome.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/17-linear-model-multiple-predictors.html#announcements",
@@ -1327,7 +1327,7 @@
     "href": "slides/17-linear-model-multiple-predictors.html#participate-1",
     "title": "Linear models with a multiple predictors",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nWhat is the baseline level in the modified island variable?\n\nlinear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   3706.        87.7   42.3    3.64e-137\n2 islandBiscoe  1010.       100.    10.1    4.66e- 21\n3 islandDream      6.53     104.     0.0627 9.50e-  1\n\n\n\n\nBiscoe\nDream\nTorgersen\nCannot tell from the output\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nWhat is the baseline level of island in the following model??\n\nlinear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   3706.        87.7   42.3    3.64e-137\n2 islandBiscoe  1010.       100.    10.1    4.66e- 21\n3 islandDream      6.53     104.     0.0627 9.50e-  1\n\n\n\n\nBiscoe\nDream\nTorgersen\nCannot tell from the output\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/01-hello-world-slides.html#meet-the-prof",
