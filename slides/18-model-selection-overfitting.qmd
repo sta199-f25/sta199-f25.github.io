@@ -1,0 +1,491 @@
+---
+title: "Model selection and overfitting"
+subtitle: "Lecture 18"
+date: "2025-10-28"
+format: 
+  revealjs: 
+    output-file: 18-model-selection-overfitting-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-12-penguins-model-multi"
+```
+
+# Warm-up
+
+## While you wait
+
+::: task
+
+::: columns
+
+:::: {.column width="70%"}
+
+Read the NY Times story 
+
+[How China Raced Ahead of the U.S. on Nuclear Power](https://www.nytimes.com/interactive/2025/10/22/climate/china-us-nuclear-energy-race.html?smid=nytcore-ios-share&referringSource=articleShare).
+
+:::
+
+:::: {.column width="30%"}
+
+![](images/18/nytimes-qrcode.png)
+
+:::
+
+:::
+
+:::
+
+## Announcements {.smaller}
+
+-   Peer eval 2 due tonight at 11:59 pm
+
+-   ADD OTHER ANNOUNCEMENTS HERE
+
+# From last time
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
+
+## What is the difference between $R^2$ and adjusted $R^2$? {.smaller}
+
+::: incremental
+
+- $R^2$:
+  - Proportion of variability in the outcome explained by the model.
+  - Useful for quantifying the fit of a given model.
+
+- Adjusted $R^2$:
+  - Proportion of variability in the outcome explained by the model, with a penalty added for the number of predictors in the model.
+  - Useful for comparing models.
+
+:::
+
+## Using adjusted $R^2$ to compare models {.smaller}
+
+::: incremental
+
+- Fit two (or more) models to the same data set with different sets of predictors, selected based on subject-matter knowledge and/or exploratory data analysis results, compared their adjusted $R^2$ values, and selected the model with the highest adjusted $R^2$ value.
+
+- Perform stepwise selection (forward or backward) to select a model that maximizes adjusted $R^2$:
+  - Backward elimination: Start with a model that includes all candidate predictors, and iteratively remove the predictor that results in the largest increase in adjusted $R^2$ until no further improvement is observed.
+  - Forward selection: Start with a model that includes no predictors, and iteratively add the predictor that results in the largest increase in adjusted $R^2$ until no further improvement is observed.
+
+:::
+
+## Using other criteria to compare models {.smaller}
+
+Same model selection approaches (subject-matter knowledge, stepwise selection) can be used with various model comparison criteria, such as:
+
+- Maximize adjusted $R^2$
+- _Minimize Akaike Information Criterion (AIC)_
+- _Minimize Bayesian Information Criterion (BIC)_
+- ...
+
+::: {.callout-note .fragment}
+Only mentioning criteria other than adjusted $R^2$ here to build awareness that other criteria exist. We will not cover all of them in detail in this course (and this is not even a complete list), but you will encounter them in higher-level modeling courses and in practice.
+:::
+
+## Balancing fit and complexity
+
+::: incremental
+
+- More complex models (i.e., models with more predictors) tend to fit the data at hand better, but may not generalize well to new data.
+
+- Model selection criteria, like adjusted $R^2$, help balance model fit and complexity to avoid overfitting by penalizing models with more predictors.
+
+:::
+
+## Overfitting {.smaller}
+
+::: incremental
+
+- Overfitting occurs when a model captures not only the underlying relationship between predictors and outcome but also the random noise in the data.
+
+- Overfitted models tend to perform well on the observed data but poorly on new, unseen data.
+  - Good news: We have techniques to detect and prevent overfitting.
+  - Bad news: We won't get into those until next week.
+  - For today, we'll discuss one feature of data that can lead to overfitting -- outliers.
+
+:::
+
+# Outliers
+
+```{r}
+#| include: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(patchwork)
+library(ggside)
+library(readxl)
+library(scales)
+library(janitor)
+```
+
+## Outliers in regression {.smaller}
+
+::: incremental
+- Outliers are observations that fall far from the main cloud of points.
+
+- They can be outlying in:
+  - the $x$ direction,
+  - the $y$ direction, or
+  - both.
+
+- However, being outlying in a univariate sense does **not** always mean being outlying from the **bivariate model**.
+
+- Points that are in-line with the bivariate model usually do **not** influence the least squares line, even if they are extreme in $x$, $y$, or both.
+:::
+
+## Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%" .small}
+::: wooclap
+
+Which of the following best describes the circled point?
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 8
+#| fig-asp: 0.4
+d2 <- simulated_scatter |>
+  filter(group == 25) |>
+  mutate(outlier = if_else(y == min(y), TRUE, FALSE))
+
+ggplot(d2, aes(x = x, y = y)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_point(
+    data = d2 |> filter(outlier),
+    size = 5,
+    shape = "circle open",
+    color = "#d1805f",
+    stroke = 2
+  ) +
+  geom_xsideboxplot(orientation = "y") +
+  geom_ysideboxplot(orientation = "x") +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank()
+  )
+```
+
+::: wooclap-choices
+- It's an outlier in $x$ only
+- It's an outlier in $y$ only
+- It's an outlier in both $x$ and $y$ and influences the regression line
+- It's an outlier in both $x$ and $y$ but does not influence the regression line
+:::
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
+## Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%" .small}
+::: wooclap
+
+Which of the following best describes the circled point?
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 8
+#| fig-asp: 0.4
+d1 <- simulated_scatter |>
+  filter(group == 24) |>
+  mutate(
+    x = if_else(y == min(y), 0.015, x),
+    y = if_else(y == min(y), -40, y),
+    outlier = if_else(y == min(y), TRUE, FALSE)
+  )
+
+ggplot(d1, aes(x = x, y = y)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_point(
+    data = d1 |> filter(outlier),
+    size = 5,
+    shape = "circle open",
+    color = "#d1805f",
+    stroke = 2
+  ) +
+  geom_xsideboxplot(orientation = "y") +
+  geom_ysideboxplot(orientation = "x") +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank()
+  )
+```
+
+::: wooclap-choices
+- It's an outlier in $x$ only and influences the regression line
+- It's an outlier in $x$ only but does not influence the regression line
+- It's an outlier in $y$ only and influences the regression line
+- It's an outlier in $y$ only but does not influence the regression line
+:::
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
+## Types of outliers {.smaller}
+
+::: incremental
+- **Outliers:** Points or groups of points that stand out from the rest of the data.
+
+- **Leverage points:** Points that fall horizontally away from the center of the cloud tend to pull harder on the line, so we call them points with **high leverage** or **leverage points**.
+
+- **Influential points:** Outliers, generally high leverage points, that actually alter the slope or position of the regression line.
+  - We say a point is influential if omitting it would substantially change the regression model.
+:::
+
+## Practical advice
+
+::: incremental
+- Test your analysis **with and without** outliers.
+
+- Compare and discuss the impact of outliers on model fit.
+
+- Present both models to stakeholders to choose the most reasonable interpretation.
+:::
+
+. . .
+
+::: callout-warning
+Removing outliers should only be done with strong justification -- excluding interesting or extreme cases can lead to misleading models, poor predictive performance, and flawed conclusions.
+:::
+
+## From the NYTimes {.smaller}
+
+[How China Raced Ahead of the U.S. on Nuclear Power](https://www.nytimes.com/interactive/2025/10/22/climate/china-us-nuclear-energy-race.html?smid=nytcore-ios-share&referringSource=articleShare)
+
+```{r}
+#| echo: false
+#| warning: false
+usa_nuclear <- read_excel(
+  here::here("slides", "data/ChinaVsUSA_NuclearPlants_Costs.xlsx"),
+  sheet = "USA"
+)
+china_nuclear <- read_excel(
+  here::here("slides", "data/ChinaVsUSA_NuclearPlants_Costs.xlsx"),
+  sheet = "China"
+)
+nuclear <- bind_rows(usa_nuclear, china_nuclear) |>
+  select(Country_Area, Year, Status, OCC_2020_USD_Watt) |>
+  clean_names() |>
+  rename(
+    country = country_area,
+    cost = occ_2020_usd_watt
+  ) |>
+  mutate(
+    shape = if_else(
+      status == "construction",
+      "Construction",
+      "Operational/Retired"
+    ),
+    year = if_else(country == "United States" & year == 2034, 2024, year)
+  )
+
+nuclear |>
+  ggplot(aes(x = year, y = cost, color = country)) +
+  geom_point(aes(shape = shape)) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  labs(
+    title = "Construction costs of nuclear reactors",
+    subtitle = "$15 per watt",
+    y = NULL,
+    x = NULL
+  ) +
+  scale_x_continuous(breaks = seq(1970, 2020, by = 10)) +
+  scale_y_continuous(breaks = c(5, 10), labels = dollar_format(prefix = "$")) +
+  scale_shape_manual(values = c("circle open", "circle")) +
+  scale_color_manual(values = c("#b9a53a", "#808da8")) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  annotate(
+    "text",
+    x = 1985,
+    y = 11,
+    label = "United States",
+    color = "#808da8",
+    size = 4,
+    hjust = 1,
+    fontface = "bold"
+  ) +
+  annotate(
+    "text",
+    x = 2003,
+    y = 5,
+    label = "China",
+    color = "#b9a53a",
+    size = 4,
+    hjust = 1,
+    fontface = "bold"
+  )
+```
+
+## US without outliers
+
+```{r}
+#| echo: false
+#| warning: false
+nuclear |>
+  ggplot(aes(x = year, y = cost, color = country)) +
+  geom_point(aes(shape = shape)) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  labs(
+    title = "Construction costs of nuclear reactors",
+    subtitle = "$15 per watt",
+    y = NULL,
+    x = NULL
+  ) +
+  scale_x_continuous(breaks = seq(1970, 2020, by = 10)) +
+  scale_y_continuous(breaks = c(5, 10), labels = dollar_format(prefix = "$")) +
+  scale_shape_manual(values = c("circle open", "circle")) +
+  scale_color_manual(values = c("#b9a53a", "#808da8")) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  annotate(
+    "text",
+    x = 1985,
+    y = 11,
+    label = "United States",
+    color = "#808da8",
+    size = 4,
+    hjust = 1,
+    fontface = "bold"
+  ) +
+  annotate(
+    "text",
+    x = 2003,
+    y = 5,
+    label = "China",
+    color = "#b9a53a",
+    size = 4,
+    hjust = 1,
+    fontface = "bold"
+  ) +
+  geom_smooth(
+    data = nuclear |> filter(country == "United States" & year <= 2000),
+    method = "lm",
+    se = FALSE,
+    linetype = "dotted",
+    color = "red",
+    fullrange = TRUE
+  ) +
+  geom_point(
+    data = nuclear |> filter(country == "United States" & year > 2000),
+    color = "red",
+    size = 5,
+    stroke = 2,
+    shape = "circle open"
+  )
+```
+
+## China without outliers
+
+```{r}
+#| echo: false
+#| warning: false
+nuclear |>
+  ggplot(aes(x = year, y = cost, color = country)) +
+  geom_point(aes(shape = shape)) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  labs(
+    title = "Construction costs of nuclear reactors",
+    subtitle = "$15 per watt",
+    y = NULL,
+    x = NULL
+  ) +
+  scale_x_continuous(breaks = seq(1970, 2020, by = 10)) +
+  scale_y_continuous(breaks = c(5, 10), labels = dollar_format(prefix = "$")) +
+  scale_shape_manual(values = c("circle open", "circle")) +
+  scale_color_manual(values = c("#b9a53a", "#808da8")) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  annotate(
+    "text",
+    x = 1985,
+    y = 11,
+    label = "United States",
+    color = "#808da8",
+    size = 4,
+    hjust = 1,
+    fontface = "bold"
+  ) +
+  annotate(
+    "text",
+    x = 2003,
+    y = 5,
+    label = "China",
+    color = "#b9a53a",
+    size = 4,
+    hjust = 1,
+    fontface = "bold"
+  ) +
+  geom_smooth(
+    data = nuclear |> filter(country == "United States" & year <= 2000),
+    method = "lm",
+    se = FALSE,
+    linetype = "dotted",
+    color = "red",
+    fullrange = TRUE
+  ) +
+  geom_smooth(
+    data = nuclear |> filter(country == "China" & cost < 5),
+    method = "lm",
+    se = FALSE,
+    linetype = "dotted",
+    color = "purple",
+    fullrange = TRUE
+  ) +
+  geom_point(
+    data = nuclear |> filter(country == "China" & cost > 5),
+    color = "purple",
+    size = 5,
+    stroke = 2,
+    shape = "circle open"
+  )
+```
