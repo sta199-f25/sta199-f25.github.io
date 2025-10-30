@@ -1,7 +1,7 @@
 ---
 title: "Model selection and overfitting"
 subtitle: "Lecture 18"
-date: "2025-10-28"
+date: "2025-10-30"
 format: 
   revealjs: 
     output-file: 18-model-selection-overfitting-slides.html
@@ -57,7 +57,7 @@ Read the NY Times story
 
 -   Peer eval 2 due tonight at 11:59 pm
 
--   ADD OTHER ANNOUNCEMENTS HERE
+-   Next semester: STA 313 - Advanced Data Visualization - [vizdata.org](https://vizdata.org)
 
 # From last time
 
