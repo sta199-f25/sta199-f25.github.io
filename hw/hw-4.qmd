@@ -319,7 +319,7 @@ d.  Interpret the intercept in the context of the data and the research question
 
 e.  Interpret the slope in the context of the data and the research question.
 
-f.  Card and Krueger tried to argue that, even though their data were observational, they had nevertheless identified a clean *natural experiment* that permitted them to ascribe a *causal* interpretation to the results of their regression analysis. Do you agree? Do you see any potential dangers with this approach? Write a paragraph or two discussing. Note that we are only grading this on a good faith completion effort, but again, if this area interests you, take the opportunity to do some of the reading under Question 0, and then try to write something interesting.
+f.  Card and Krueger tried to argue that, even though their data were observational, they had nevertheless identified a clean *natural experiment* that permitted them to ascribe a *causal* interpretation to the results of their regression analysis. Do you agree? Do you see any potential dangers with this approach? Write a paragraph or two discussing. Note that we are only grading this on a good faith completion effort, but again, if this area interests you, take the opportunity to do some of the reading under Background, and then try to write something interesting.
 
 # Wrap-up
 
