@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>STA 199: Introduction to Data Science and Statistical Thinking – STA 199</title>
 <style>
@@ -29,18 +29,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./course-team.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4323a2cb4dfa4aaa09d0cff1df15bff0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -253,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="./img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="./img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
@@ -510,23 +511,23 @@ ul.task-list li input[type="checkbox"] {
 </header><p>This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.</p>
 <div class="cell page-columns page-full">
 <div class="cell-output-display column-screen-inset-right">
-<div id="xfhptsupxa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xfhptsupxa table {
+<div id="umwlnujldg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#umwlnujldg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xfhptsupxa thead, #xfhptsupxa tbody, #xfhptsupxa tfoot, #xfhptsupxa tr, #xfhptsupxa td, #xfhptsupxa th {
+#umwlnujldg thead, #umwlnujldg tbody, #umwlnujldg tfoot, #umwlnujldg tr, #umwlnujldg td, #umwlnujldg th {
   border-style: none;
 }
 
-#xfhptsupxa p {
+#umwlnujldg p {
   margin: 0;
   padding: 0;
 }
 
-#xfhptsupxa .gt_table {
+#umwlnujldg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -552,12 +553,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_caption {
+#umwlnujldg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xfhptsupxa .gt_title {
+#umwlnujldg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -569,7 +570,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#xfhptsupxa .gt_subtitle {
+#umwlnujldg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -581,7 +582,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#xfhptsupxa .gt_heading {
+#umwlnujldg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -593,13 +594,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_bottom_border {
+#umwlnujldg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_col_headings {
+#umwlnujldg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -614,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_col_heading {
+#umwlnujldg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -634,7 +635,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#xfhptsupxa .gt_column_spanner_outer {
+#umwlnujldg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -646,15 +647,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#xfhptsupxa .gt_column_spanner_outer:first-child {
+#umwlnujldg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xfhptsupxa .gt_column_spanner_outer:last-child {
+#umwlnujldg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xfhptsupxa .gt_column_spanner {
+#umwlnujldg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -666,11 +667,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#xfhptsupxa .gt_spanner_row {
+#umwlnujldg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xfhptsupxa .gt_group_heading {
+#umwlnujldg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -696,7 +697,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#xfhptsupxa .gt_empty_group_heading {
+#umwlnujldg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -711,15 +712,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#xfhptsupxa .gt_from_md > :first-child {
+#umwlnujldg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xfhptsupxa .gt_from_md > :last-child {
+#umwlnujldg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xfhptsupxa .gt_row {
+#umwlnujldg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -738,7 +739,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#xfhptsupxa .gt_stub {
+#umwlnujldg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -751,7 +752,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#xfhptsupxa .gt_stub_row_group {
+#umwlnujldg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -765,15 +766,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#xfhptsupxa .gt_row_group_first td {
+#umwlnujldg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xfhptsupxa .gt_row_group_first th {
+#umwlnujldg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xfhptsupxa .gt_summary_row {
+#umwlnujldg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -783,16 +784,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#xfhptsupxa .gt_first_summary_row {
+#umwlnujldg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_first_summary_row.thick {
+#umwlnujldg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xfhptsupxa .gt_last_summary_row {
+#umwlnujldg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -802,7 +803,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_grand_summary_row {
+#umwlnujldg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -812,7 +813,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#xfhptsupxa .gt_first_grand_summary_row {
+#umwlnujldg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -822,7 +823,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_last_grand_summary_row_top {
+#umwlnujldg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -832,11 +833,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_striped {
+#umwlnujldg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xfhptsupxa .gt_table_body {
+#umwlnujldg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -845,7 +846,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_footnotes {
+#umwlnujldg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -859,7 +860,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_footnote {
+#umwlnujldg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -868,7 +869,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#xfhptsupxa .gt_sourcenotes {
+#umwlnujldg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -882,7 +883,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#xfhptsupxa .gt_sourcenote {
+#umwlnujldg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -890,76 +891,76 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#xfhptsupxa .gt_left {
+#umwlnujldg .gt_left {
   text-align: left;
 }
 
-#xfhptsupxa .gt_center {
+#umwlnujldg .gt_center {
   text-align: center;
 }
 
-#xfhptsupxa .gt_right {
+#umwlnujldg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xfhptsupxa .gt_font_normal {
+#umwlnujldg .gt_font_normal {
   font-weight: normal;
 }
 
-#xfhptsupxa .gt_font_bold {
+#umwlnujldg .gt_font_bold {
   font-weight: bold;
 }
 
-#xfhptsupxa .gt_font_italic {
+#umwlnujldg .gt_font_italic {
   font-style: italic;
 }
 
-#xfhptsupxa .gt_super {
+#umwlnujldg .gt_super {
   font-size: 65%;
 }
 
-#xfhptsupxa .gt_footnote_marks {
+#umwlnujldg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xfhptsupxa .gt_asterisk {
+#umwlnujldg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xfhptsupxa .gt_indent_1 {
+#umwlnujldg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xfhptsupxa .gt_indent_2 {
+#umwlnujldg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xfhptsupxa .gt_indent_3 {
+#umwlnujldg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xfhptsupxa .gt_indent_4 {
+#umwlnujldg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xfhptsupxa .gt_indent_5 {
+#umwlnujldg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xfhptsupxa .katex-display {
+#umwlnujldg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xfhptsupxa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#umwlnujldg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 2%">
 <col style="width: 10%">
@@ -1368,119 +1369,127 @@ Essential data science skills potpourri:<br><ul>
 <td class="gt_row gt_left" headers="due">Project milestone 6 write-up due at 11:59 pm</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_center gt_striped" headers="week" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">13</td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Mon, Nov 17</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 6: Everything so far II</td>
-<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
-<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
-<td class="gt_row gt_left gt_striped" headers="due" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 6 due at the end of lab session</td>
+<td class="gt_row gt_center gt_striped" headers="week"><br></td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Nov 14</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="due">Peer evaluation 4 due at 11:59 pm</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">13</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Mon, Nov 17</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 6: Everything so far II</td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
+<td class="gt_row gt_left" headers="due" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 6 due at the end of lab session</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br></td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Nov 18</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Exam 2 review</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">📝 <a href="./exam-review/exam-2-review.html">exam 2 review</a> <br> ✅ <a href="./exam-review/exam-2-review-A.html">exam 2 review</a>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><br></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_center" headers="week"><br></td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Nov 18</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Exam 2 review</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 20</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><strong>Exam 2 - In-class + take-home released</strong></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">📝 <a href="./exam-review/exam-2-review.html">exam 2 review</a> <br> ✅ <a href="./exam-review/exam-2-review-A.html">exam 2 review</a>
-</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left" headers="due"><br></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_center gt_striped" headers="week"><br></td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 20</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><strong>Exam 2 - In-class + take-home released</strong></td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Sat, Nov 22</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="due">Exam 2 take-home due at 12 pm</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">14</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Mon, Nov 24</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 7: Explore and classify</td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
+<td class="gt_row gt_left" headers="due" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 7 due at the end of lab session</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br></td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Nov 25</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Quantifying uncertainty with bootstrap intervals</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">🎥 <a href="https://warpwire.duke.edu/w/gQIJAA/">Quantifying uncertainty</a> <br> 🎥 <a href="https://warpwire.duke.edu/w/iwIJAA/">Bootstrapping</a> <br> 🎥 <a href="https://warpwire.duke.edu/w/hQIJAA/">Code along :: Bootstrapping Duke Forest houses</a> <br> 📘 <a href="https://openintrostat.github.io/ims/foundations-randomization">ims - chp 11</a> <br> 📘 <a href="https://openintrostat.github.io/ims/foundations-bootstrapping">ims - chp 12</a>
+</td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_center" headers="week"><br></td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Sat, Nov 22</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 27</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><em>No lecture - Thanksgiving</em></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="due">Exam 2 take-home due at 12 pm</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center gt_striped" headers="week" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">14</td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Mon, Nov 24</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 7: Explore and classify</td>
-<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
-<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
-<td class="gt_row gt_left gt_striped" headers="due" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 7 due at the end of lab session</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="week"><br></td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Nov 25</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Quantifying uncertainty with bootstrap intervals</td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">🎥 <a href="https://warpwire.duke.edu/w/gQIJAA/">Quantifying uncertainty</a> <br> 🎥 <a href="https://warpwire.duke.edu/w/iwIJAA/">Bootstrapping</a> <br> 🎥 <a href="https://warpwire.duke.edu/w/hQIJAA/">Code along :: Bootstrapping Duke Forest houses</a> <br> 📘 <a href="https://openintrostat.github.io/ims/foundations-randomization">ims - chp 11</a> <br> 📘 <a href="https://openintrostat.github.io/ims/foundations-bootstrapping">ims - chp 12</a>
-</td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left" headers="due"><br></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_center gt_striped" headers="week"><br></td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 27</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><em>No lecture - Thanksgiving</em></td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Sun, Nov 30</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left gt_striped" headers="due"><br></td>
+<td class="gt_row gt_left gt_striped" headers="due">HW 5 due at 11:59 pm</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_center" headers="week"><br></td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Sun, Nov 30</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="due">HW 5 due at 11:59 pm</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center gt_striped" headers="week" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">15</td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Mon, Dec 1</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 8: Inference</td>
-<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><em>To be posted</em></td>
-<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
-<td class="gt_row gt_left gt_striped" headers="due" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 8 due at the end of lab session</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="week"><br></td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Dec 2</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Making decisions with randomization tests</td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><em>To be posted</em></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="due"><br></td>
+<td class="gt_row gt_center" headers="week" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">15</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Mon, Dec 1</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 8: Inference</td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><em>To be posted</em></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3; border-top-width: 2px; border-top-style: solid; border-top-color: black"><br></td>
+<td class="gt_row gt_left" headers="due" style="border-top-width: 2px; border-top-style: solid; border-top-color: black">Lab 8 due at the end of lab session</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_center gt_striped" headers="week"><br></td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Dec 4</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Looking further</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Dec 2</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Making decisions with randomization tests</td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><em>To be posted</em></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_center" headers="week"><br></td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Dec 5</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left" headers="due">HW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center gt_striped" headers="week"><br></td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">NA</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Final review (time TBD, location TBD)</td>
-<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
-<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">📝 <a href="./exam-review/final-review.html">final review</a> <br> ✅ <a href="./exam-review/final-review-A.html">final review</a>
-</td>
-<td class="gt_row gt_left gt_striped" headers="due"><br></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="week">16</td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Dec 12</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Final (2 pm - 5 pm)</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Dec 4</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Looking further</td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><em>To be posted</em></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
 <td class="gt_row gt_left" headers="due"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br></td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Dec 5</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="due">HW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br></td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">NA</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Final review (time TBD, location TBD)</td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">📝 <a href="./exam-review/final-review.html">final review</a> <br> ✅ <a href="./exam-review/final-review-A.html">final review</a>
+</td>
+<td class="gt_row gt_left" headers="due"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">16</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Dec 12</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Final (2 pm - 5 pm)</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><em>To be posted</em></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br></td>
 </tr>
 </tbody>
 </table>
@@ -1554,13 +1563,14 @@ Essential data science skills potpourri:<br><ul>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
