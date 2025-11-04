@@ -1,6 +1,6 @@
 ---
 title: "Model selection and overfitting"
-subtitle: "Lecture 18"
+subtitle: "Lecture 19"
 date: "2025-10-30"
 format: 
   revealjs: 

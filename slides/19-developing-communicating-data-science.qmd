@@ -1,0 +1,307 @@
+---
+title: "Developing and communicating data science results"
+subtitle: "Lecture 19"
+date: "2025-11-04"
+format: 
+  revealjs: 
+    output-file: 19-developing-communicating-data-science-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-12-penguins-model-multi"
+```
+
+# Warm-up
+
+## Announcements {.smaller}
+
+-   Friday, 11/7 is the last day to withdraw with W from Fall 2025 classes -- highly recommend checking in with me (as well as your academic advisor/Dean) if you're considering this option
+
+-   Additional office hours by me on Sunday on Zoom: Tentatively 10-11 am, might need to move to afternoon. Will send Zoom link on Friday's email and confirm Saturday evening.
+
+## Project deadlines {.smaller}
+
+-   By the end of the day on Friday, 11/7: (Optional) Stop by my or a TAs office hours _as a team_. Either come prepared with
+    -   two concrete questions 
+    -   your presentation to do a practice run
+  
+-   Monday (11/10), in your lab session, in person: Project presentation
+
+-   Thursday (11/13), 11:59pm: Project write-up, website, repo (all issues must be closed, final commit must successfully build the website)
+
+-   Friday (11/14), 11:59pm: Peer eval 4 (final one!) on TEAMMATES
+
+# Story development
+
+## Structure: presentation + write-up
+
+-  Start with your goal / high-level question
+
+-  Don't chronicle your steps, but instead tell us a compelling story of what you set out to find and what you found
+
+-  "No significant results" or "no concrete relationships" are still results -- what did you learn? how deep did you dig and with what tools and techniques?
+
+## "But... Therefore..." {.smaller}
+
+Advice from those much more successful than me at telling stories:
+
+{{< video https://www.youtube.com/embed/j9jEg9uiLOU title="But... Therefore..." width="800" height="500" >}}
+
+# Technical writing with Quarto
+
+## Your project write-up with Quarto {.smaller}
+
+-   Figure sizing: `fig-width`, `fig-height`, etc. in code cells.
+
+-   Figure layout: `layout-ncol` for placing multiple figures in a chunk.
+
+-   Further control over figure layout with the **patchwork** package.
+
+-   Cell options for what makes it in your final report: `message`, `echo`, etc.
+
+-   Noting outside resources and formal citations.
+
+-   Finalizing your report with `echo: false`.
+
+## Building your project website with Quarto
+
+-   The `docs` folder.
+
+-   Making sure your website reflects your latest changes.
+
+-   Customizing the look of your website.
+
+## Slides
+
+-   **Option 1:** Make your slides not in Quarto but make sure they’re available in your Quarto project website.
+
+-   **Option 2:** Make your slides with Quarto.
+
+# Code smell and style
+
+## Code smell {.smaller}
+
+> One way to look at smells is with respect to principles and quality: "Smells are certain structures in the code that indicate violation of fundamental design principles and negatively impact design quality".
+> Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning.
+> Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.
+
+::: aside
+Source: [Code smell on Wikipedia](https://en.wikipedia.org/wiki/Code_smell)
+:::
+
+## Code style {.smaller}
+
+Follow the [Tidyverse style guide](https://style.tidyverse.org/):
+
+-   Spaces before and line breaks after each `+` when building a ggplot
+
+-   Spaces before and line breaks after each `|>` in a data transformation pipeline,
+
+-   Proper indentation
+
+-   Spaces around `=` signs and spaces after commas
+
+-   Lines should not span more than 80 characters, long lines should be broken up with each argument on its own line
+
+# Project reviews
+
+## R-chitects {.smaller}
+
+**Police Misconduct Allegations Analysis**
+
+> The purpose of our project is to examine how police officer misconduct in the state of New York varies with officer experience and victim race using Civilian Complaint Review Board data. Through analyzing FADO (Force, Abuse, Discourtesy, Offensive Language) violations by officers’ days on force and victim race, we identify trends in when certain types of misconduct typically occur, understand how those trends vary by victim race, and reveal how racial disproportionalities are present within all offense types.
+
+## The Outliers {.smaller}
+
+**Paying for Purpose: How College Costs and Career Returns Shape Alumni Beliefs About Changing the World**[*]
+
+> We are interested in the relationship between tuition, perception of making world a better place, and return on investment among United States colleges. To explore these intersections we will utilize multiple datasets. Here are our research questions: Are tuition costs and salary potential related to the feeling that they are making the world a better place post graduation, and does this differ whether a school is a state school or not? What factors most strongly correlate to a higher percentage of alumni who believe they are making the world a better place? We hypothesize that attending a public college and making above-average money afterwards will have a relationship to a higher percentage of alumni who believe they are making the world a better place.
+
+::: aside
+Title generated by ChatGPT 5. [Tuition Purpose and ROI](https://chatgpt.com/s/t_690a23646bd48191adc347aa98ad62f3)
+:::
+
+# The 🐘 in the room: Chat GPT (and friends)
+
+## Take a pulse
+
+::: question
+How are you using Chat GPT or similar AI tools for this class?
+:::
+
+## Example 1 - Similar to Lab 4 {.smaller .scrollable}
+
+::: question
+SurveyUSA polled 900 NC adults between September 4-7, 2024.
+Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.
+The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?"
+
+Of the 771 responses, 391 were between the ages of 18-49.
+Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+
+Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
+:::
+
+## Chat GPT - Take 1 prompt {.smaller .scrollable}
+
+::: question
+What is wrong with this prompt?
+How would you correct it?
+:::
+
+> SurveyUSA polled 900 NC adults between September 4-7, 2024.
+> Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote.
+> The following question was asked to these 771 adults: "Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?"
+
+> Of the 771 responses, 391 were between the ages of 18-49.
+> Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure.
+> Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.
+
+> Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample.
+> Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.
+
+## Chat GPT - Take 1 response {.smaller .scrollable}
+
+::: question
+Identify at least one mistake or code smell/style issue with the code below.
+:::
+
+```{r}
+library(tidyverse)
+
+# Given data
+total_registered <- 771
+
+# Responses by age group
+responses <- tribble(
+  ~age_group , ~against , ~legalize , ~not_sure                ,
+  "18-49"    ,       59 ,       292 , 391 - (59 + 292)         ,
+  "50+"      ,       67 ,       245 , (771 - 391) - (67 + 245)
+)
+
+# Calculate total per group
+responses <- responses %>%
+  mutate(total = against + legalize + not_sure)
+
+# Then calculate proportions of each age group in the total sample
+age_props <- responses %>%
+  summarise(
+    total_18_49 = sum(total[age_group == "18-49"]),
+    total_50_plus = sum(total[age_group == "50+"])
+  ) %>%
+  pivot_longer(everything(), names_to = "age_group", values_to = "count") %>%
+  mutate(
+    age_group = recode(
+      age_group,
+      "total_18_49" = "18-49",
+      "total_50_plus" = "50+"
+    ),
+    proportion = count / total_registered
+  )
+
+# Show both tables
+list(
+  responses_by_age = responses,
+  proportions_by_age = age_props
+)
+```
+
+## Let's follow along with Chat GPT...
+
+<https://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c>
+
+## Example 2 {.smaller}
+
+::: question
+Each CSI franchise includes a number of series, each with the character string `"CSI"` (in capital letters) in their title.
+Using this information, create a new data frame called `csi` that only has titles from the CSI-verse and all of the columns from `tv` for these titles.
+Then, display the first 10 rows of `csi`.
+**Note:** The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.
+:::
+
+## Chat GPT - Take 1 prompt
+
+> Each CSI franchise includes a number of series, each with the character string `"CSI"` (in capital letters) in their title.
+> Using this information, create a new data frame called `csi` that only has titles from the CSI-verse and all of the columns from `tv` for these titles.
+> Then, display the first 10 rows of `csi`.
+> **Note:** The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.
+
+## Chat GPT - Take 1 response {.xsmall}
+
+> Here's a short, safe solution. It keeps all columns from tv, selects only rows whose title contains the exact uppercase string "CSI", stores that in csi, then prints the first 10 rows.
+>
+>``` r
+> # Base R solution (case-sensitive match for "CSI")
+> csi <- tv[grepl("CSI", tv$title, fixed = TRUE), ]
+>
+># Show the first 10 rows
+>head(csi, 10)
+>```
+>
+>If you prefer dplyr:
+>``` r
+>library(dplyr)
+>
+>csi <- tv %>%
+>  filter(grepl("CSI", title, fixed = TRUE))
+>
+>csi %>% slice_head(n = 10)
+>```
+>
+>Notes:
+>The code above searches for the exact uppercase substring `"CSI"` (per your instructions).
+>If you want a case-insensitive match (e.g., to also catch `"csi"`), use `grepl("CSI", tv$title, ignore.case = TRUE)` or `fixed = FALSE` with `ignore.case = TRUE`.
+
+## Chat GPT - Take 1 code {.xsmall}
+
+::: question
+What is wrong with the following code?
+:::
+
+```{r}
+#| message: false
+tv <- read_csv("data/tv.csv")
+```
+
+```{r}
+library(dplyr)
+
+csi <- tv %>%
+  filter(grepl("CSI", title, fixed = TRUE))
+
+csi %>% slice_head(n = 10)
+```
+
+## Let's follow along with Chat GPT...
+
+<https://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244>
+
+## Guidelines and best practices for using Chat GPT {.smaller}
+
+::: incremental
+-   Do [**not**]{.underline} just copy-paste the prompt – for appropriate academic conduct, for your own learning, and for getting to better results faster
+-   Engineer the prompt until the response starts to look like code you're learning in the course
+-   If the response is not correct, ask for a correction
+-   If the response doesn't follow the guidelines, ask for a correction
+-   When you ask for a correction, be ready for it to "correct" (i.e., change) more than you asked for
+-   Do not just copy-paste code from Chat GPT responses, run it line-by-line and edit as needed -- Chat GPT does not execute R code so there's no guarantee any of the code it gives you works
+-   Watch out for clear mistakes in the response: do not keep loading packages that are already loaded, use the base pipe `|>`, use the tidyverse style, do not use unnecessary `print()` statements, be critical of code smell, etc.
+:::
