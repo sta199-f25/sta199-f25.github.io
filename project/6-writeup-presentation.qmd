@@ -82,7 +82,7 @@ The main body of the written report (not including the appendix) is no longer th
 
 The write-up is due on Thursday, November 13 at 11:59 pm. 
 
-It is worth 35 points, broken down as follows:
+It is worth 30 points, broken down as follows:
 
 | Total                         | 30 pts |
 |-------------------------------|--------|
