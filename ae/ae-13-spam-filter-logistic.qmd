@@ -1,0 +1,136 @@
+---
+title: "AE 16: Building a spam filter"
+categories: 
+  - Application exercise
+---
+
+In this application exercise, we will
+
+-   Use logistic regression to fit a model for a binary response variable
+-   Fit a logistic regression model in R
+-   Use a logistic regression model for classification
+
+To illustrate logistic regression, we will build a spam filter from email data.
+
+The data come from incoming emails in David Diez's (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012.
+All personally identifiable information has been removed.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+```{r}
+#| label: glimpse-email
+glimpse(email)
+```
+
+The variables we'll use in this analysis are
+
+-   `spam`: 1 if the email is spam, 0 otherwise
+-   `exclaim_mess`: The number of exclamation points in the email message
+
+**Goal:** Use the number of exclamation points in an email to predict whether or not it is spam.
+
+# Exploratory data analysis
+
+Let's start by taking a look at our data.
+Create a density plot to investigate the relationship between `spam` and `exclaim_mess`.
+Additionally, calculate the mean number of exclamation points for both spam and non-spam emails.
+
+```{r}
+ggplot(email, aes(x = exclaim_mess, fill = spam)) +
+  geom_density()
+
+email |>
+  group_by(spam) |>
+  summarize(mean_ep = mean(exclaim_mess))
+```
+
+# Linear model -- a false start
+
+Suppose we try using a linear model to describe the relationship between the number of exclamation points and whether an email is spam.
+Write up a linear model that models spam by exclamation marks.
+
+```{r}
+linear_reg() |>
+  fit(as.numeric(spam) ~ exclaim_mess, data = email)
+```
+
+A visualization of a linear model is below.
+
+```{r}
+#| label: plot-linear-model
+ggplot(email, aes(x = exclaim_mess, y = as.numeric(spam), color = spam)) +
+  geom_jitter(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, color = "black")
+```
+
+-   Is the linear model a good fit for the data? Why or why not?
+
+Add response here.
+
+# Logistic regression -- a different approach
+
+Let $p$ be the probability an email is spam (success).
+
+-   $\frac{p}{1-p}$: odds an email is spam (if p = 0.7, then the odds are 0.7/(1 - 0.7) = 2.33)
+-   $\log\Big(\frac{p}{1-p}\Big)$: "log-odds", i.e., the natural log, an email is spam
+
+The logistic regression model using the number of exclamation points as an explanatory variable is as follows:
+
+$$\log\Big(\frac{p}{1-p}\Big) = \beta_0 + \beta_1 \times exclaim\_mess$$
+
+The probability an email is spam can be calculated as:
+
+$$p = \frac{\exp\{\beta_0 + \beta_1 \times exclaim\_mess\}}{1 + \exp\{\beta_0 + \beta_1 \times exclaim\_mess\}}$$
+
+# Exercises
+
+## Exercise 1
+
+-   Fit the logistic regression model using the number of exclamation points to predict the probability an email is spam.
+
+```{r}
+# add code here
+```
+
+-   How does the code above differ from previous code we've used to fit regression models? Compare your summary output to the estimated model below.
+
+$$\log\Big(\frac{p}{1-p}\Big) = -2.27 - 0.000272 \times exclaim\_mess$$
+
+Add response here.
+
+## Exercise 2
+
+a. What is the probability the email is spam if it contains 10 exclamation points?
+Answer the question using the `predict()` function with the appropriate `type` argument.
+
+```{r}
+#| label: pred-prob
+# add code here
+```
+
+b. A probability is nice, but we want an actual decision. Classify the email. What threshold does `predict()` use by default?
+
+```{r}
+#| label: pred-class
+# add code here
+```
+
+## Exercise 3
+
+a. Fit a model with **all** variables in the dataset as predictors.
+
+```{r}
+# add code here
+```
+
+b. If you used this model to classify the emails in the dataset, how would it do? Use the fitted model to classify each email in the dataset, and then calculate the classification error rates (TP, TN, FP, FN).
+
+```{r}
+# add code here
+```

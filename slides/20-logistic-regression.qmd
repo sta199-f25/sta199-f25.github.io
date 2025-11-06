@@ -1,0 +1,1214 @@
+---
+title: "Logistic regression"
+subtitle: "Lecture 20"
+date: "2025-11-06"
+format: 
+  revealjs: 
+    output-file: 20-logistic-regression-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 24))
+todays_ae <- "ae-13-spam-filter"
+```
+
+# Warm-up
+
+## Announcements {.smaller}
+
+-   My Friday office hours extended -- 12:45 - 3:00 PM in for this week
+
+-   Project presentations: Hard stop at 5 minute mark! No limit on number of slides, but be mindful of how long it takes you to go through each.
+
+# Logistic regression
+
+## Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse) # data wrangling and visualization
+library(tidymodels) # modeling
+library(openintro) # emails data
+library(fivethirtyeight) # movies data
+library(palmerpenguins) # penguins data
+library(ggthemes) # accessible color palettes
+```
+
+## Thus far...
+
+We have been studying regression:
+
+-   What combinations of data types have we seen?
+
+-   What did the picture look like?
+
+## Recap: Simple linear regression
+
+Numerical outcome and one numerical predictor:
+
+```{r}
+#| label: movies
+#| message: false
+#| echo: false
+movie_scores <- fandango |>
+  rename(
+    critics = rottentomatoes,
+    audience = rottentomatoes_user
+  )
+ggplot(movie_scores, aes(x = critics, y = audience)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    x = "Critics Score",
+    y = "Audience Score",
+    title = "Rotten Tomatoes Scores"
+  )
+```
+
+## Recap: Simple linear regression
+
+Numerical outcome and one categorical predictor (two levels):
+
+```{r}
+#| label: card-krueger
+#| echo: false
+#| message: false
+#| warning: false
+card_krueger <- read_csv("data/card-krueger.csv")
+card_krueger_wide <- card_krueger |>
+  mutate(
+    state = fct_relevel(state, "PA", "NJ"),
+    time = fct_relevel(time, "before", "after")
+  ) |>
+  pivot_wider(
+    names_from = time,
+    values_from = c(wage, fte)
+  ) |>
+  mutate(
+    emp_diff = fte_after - fte_before,
+    statebin = if_else(state == "PA", 0, 1)
+  )
+
+ggplot(card_krueger_wide, aes(x = statebin, y = emp_diff)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_x_continuous(breaks = c(0, 1), labels = c("PA (0)", "NJ (1)")) +
+  labs(
+    title = "Card and Krueger data from HW 4",
+    y = "Employment difference",
+    x = "State"
+  )
+```
+
+## Recap: Multiple linear regression
+
+Numerical outcome, numerical and categorical predictors:
+
+```{r}
+#| label: penguins-additive-interaction
+#| echo: false
+#| message: false
+#| warning: false
+#| layout-ncol: 2
+#| fig-asp: 1
+# Plot A
+bm_fl_island_fit <- linear_reg() |>
+  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)
+bm_fl_island_aug <- augment(bm_fl_island_fit, new_data = penguins)
+ggplot(
+  bm_fl_island_aug,
+  aes(x = flipper_length_mm, y = body_mass_g, color = island)
+) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(aes(y = .pred), method = "lm") +
+  labs(title = "Plot A - Additive model") +
+  theme_minimal(base_size = 24) +
+  theme(legend.position = "bottom") +
+  scale_color_colorblind()
+
+# Plot B
+ggplot(
+  penguins,
+  aes(x = flipper_length_mm, y = body_mass_g, color = island)
+) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Plot B - Interaction model") +
+  theme_minimal(base_size = 24) +
+  theme(legend.position = "bottom") +
+  scale_color_colorblind()
+```
+
+## Today: a *binary* outcome {.smaller}
+
+```{r}
+#| label: cartoon-settings
+#| message: false
+#| echo: false
+set.seed(8675309)
+n <- 50
+x <- rnorm(n, mean = 0, sd = 1)
+b0 <- 0
+b1 <- 5
+prob <- 1 / (1 + exp(-(b0 + b1 * x)))
+y <- rbinom(n, 1, prob)
+df <- tibble(x = x, y = as.factor(y))
+
+df_fit <- logistic_reg() |>
+  fit(y ~ x, data = df)
+
+new_df_aug <- augment(
+  df_fit,
+  new_data = tibble(x = seq(1.2 * min(x), 1.2 * max(x), length.out = 500))
+)
+```
+
+$$
+y = 
+\begin{cases}
+1 & &&\text{eg. Yes, Win, True, Heads, Success}\\
+0 & &&\text{eg. No, Lose, False, Tails, Failure}.
+\end{cases}
+$$
+
+```{r}
+#| label: binary-outcome-scatter
+#| message: false
+#| echo: false
+#| fig-width: 10
+ggplot(df, aes(x = x, y = y)) +
+  geom_point(alpha = 0.5) +
+  theme_minimal(base_size = 24)
+```
+
+## Who cares?
+
+If we can model the relationship between predictors ($x$) and a binary outcome ($y$), we can use the model to do a special kind of prediction called *classification*.
+
+## Example: Is the e-mail spam or not? {.smaller}
+
+$$
+\mathbf{x}: \text{word and character counts in an e-mail.}
+$$
+
+![](images/20/spam.png){fig-align="center" width="70%"}
+
+$$
+y
+= 
+\begin{cases}
+1 & \text{it's spam}\\
+0 & \text{it's legit}
+\end{cases}
+$$
+
+## Example: Is it cancer or not? {.smaller}
+
+$$
+\mathbf{x}: \text{features in a medical image.}
+$$
+
+![](images/20/head-neck.jpg){fig-align="center"}
+
+$$
+y
+= 
+\begin{cases}
+1 & \text{it's cancer}\\
+0 & \text{it's healthy}
+\end{cases}
+$$
+
+## Example: Will they default? {.smaller}
+
+$$
+\mathbf{x}: \text{financial and demographic info about a loan applicant.}
+$$
+
+![](images/20/fico.jpg){fig-align="center" width="60%"}
+
+$$
+y
+= 
+\begin{cases}
+1 & \text{applicant is at risk of defaulting on loan}\\
+0 & \text{applicant is safe}
+\end{cases}
+$$
+
+## How do we model this type of data?
+
+```{r}
+#| ref-label: binary-outcome-scatter
+#| message: false
+#| warning: false
+#| echo: false
+```
+
+## Straight line of best fit is a little silly
+
+```{r}
+#| message: false
+#| echo: false
+ggplot(df, aes(x = x, y = y)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(
+    aes(y = as.numeric(y)),
+    method = "lm",
+    se = FALSE,
+    color = "#d1805f",
+    linewidth = 1.5
+  ) +
+  theme_minimal(base_size = 24)
+```
+
+## Instead: S-curve of best fit {.smaller}
+
+Instead of modeling $y$ directly, we model the probability that $y=1$:
+
+```{r}
+#| message: false
+#| echo: false
+#| fig-asp: 0.4
+ggplot(df, aes(x = x, y = as.numeric(y) - 1)) +
+  geom_point(alpha = 0.5) +
+  geom_line(
+    data = new_df_aug,
+    aes(y = .pred_1),
+    color = "#d1805f",
+    linewidth = 1.5
+  ) +
+  theme_minimal(base_size = 24) +
+  scale_y_continuous(
+    limits = c(-0.1, 1.1),
+    breaks = c(0, 1),
+    minor_breaks = NULL
+  ) +
+  labs(y = "y")
+```
+
+-   "Given new email, what's the probability that it's spam?''
+-   "Given new image, what's the probability that it's cancer?''
+-   "Given new loan application, what's the probability that they default?''
+
+## Why don't we model y directly?
+
+-   **Recall regression with a numerical outcome**:
+
+    -   Our models do not output *guarantees* for $y$, they output predictions that describe behavior *on average*
+
+-   **Similar when modeling a binary outcome**:
+
+    -   Our models cannot directly guarantee that $y$ will be zero or one. The correct analog to "on average" for a 0/1 outcome is "what's the probability?"
+
+## So, what is this S-curve, anyway?
+
+It's the *logistic function*:
+
+$$
+\text{Prob}(y = 1)
+=
+\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}.
+$$
+
+If you set $p = \text{Prob}(y = 1)$ and do some algebra, you get the simple linear model for the *log-odds*:
+
+$$
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x.
+$$
+
+This is called the *logistic regression* model.
+
+## Log-odds?
+
+-   $p = \text{Prob}(y = 1)$ is a probability. A number between 0 and 1
+
+-   $p / (1 - p)$ is the odds. A number between 0 and $\infty$
+
+> "The odds of this lecture going well are 10 to 1."
+
+-   The log odds $\log(p / (1 - p))$ is a number between $-\infty$ and $\infty$, which is suitable for the linear model.
+
+## Probability to odds
+
+```{r}
+#| echo: false
+#| fig-asp: 0.6
+df_logit <- tibble(
+  x = seq(0, 1, length.out = 500),
+  y = x / (1 - x)
+)
+
+ggplot(df_logit, aes(x = x, y = y)) +
+  geom_line(col = "#d1805f", linewidth = 1.5) +
+  theme_minimal(base_size = 24) +
+  labs(x = "p", y = "p / (1 - p)")
+```
+
+## Odds to log odds
+
+```{r}
+#| echo: false
+#| fig-asp: 0.6
+df_log <- tibble(
+  x = seq(0, 10, length.out = 1000),
+  y = log(x)
+)
+
+ggplot(df_log, aes(x = x, y = y)) +
+  geom_line(col = "#d1805f", linewidth = 1.5) +
+  theme_minimal(base_size = 24) +
+  labs(
+    x = expression(frac(p, 1 - p)),
+    y = expression(paste("log(", frac(p, 1 - p), ")"))
+  ) +
+  scale_y_continuous(breaks = c(-4:2))
+```
+
+## Logistic regression
+
+$$
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x.
+$$
+
+-   The *logit* function $\log(p / (1-p))$ is an example of a *link function* that transforms the linear model to have an appropriate range
+
+-   This is an example of a *generalized linear model*
+
+## Estimation
+
+-   We estimate the parameters $\beta_0,\,\beta_1$ using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve
+
+-   The fitted model is
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+b_0+b_1x.
+$$
+
+## Today's data {.smaller}
+
+```{r}
+email |>
+  select(c(spam, dollar, viagra, winner, password, exclaim_mess)) |>
+  glimpse()
+```
+
+## Fitting a logistic model
+
+```{r}
+logistic_fit <- logistic_reg() |>
+  fit(spam ~ exclaim_mess, data = email)
+
+tidy(logistic_fit)
+```
+
+Fitted equation for the log-odds:
+
+$$
+\log\left(\frac{\hat{p}}{1-\hat{p}}\right)
+=
+-2.27
++
+0.000272\times exclaim~mess
+$$
+
+## Interpreting the intercept
+
+If `exclaim_mess = 0`, then
+
+$$
+\hat{p}=\widehat{P(y=1)}=\frac{e^{-2.27}}{1+e^{-2.27}}\approx 0.09.
+$$
+
+So, an email with no exclamation marks has a 9% chance of being spam.
+
+## Interpreting the slope is tricky {.smaller .scrollable}
+
+Recall:
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+b_0+b_1x.
+$$
+
+. . .
+
+Alternatively:
+
+$$
+\frac{\widehat{p}}{1-\widehat{p}}
+=
+e^{b_0+b_1x}
+=
+\color{blue}{e^{b_0}e^{b_1x}}
+.
+$$
+
+. . .
+
+If $x$ is higher by one unit, we have:
+
+$$
+\frac{\widehat{p}}{1-\widehat{p}}
+=
+e^{b_0}e^{b_1(x+1)}
+=
+e^{b_0}e^{b_1x+b_1}
+=
+{\color{blue}{e^{b_0}e^{b_1x}}}{\color{red}{e^{b_1}}}
+.
+$$
+
+. . .
+
+A one unit increase in $x$ is associated with a change in odds by a factor of $e^{b_1}$. Helpful! 🙄
+
+## Back to the example...
+
+$$
+\log\left(\frac{\hat{p}}{1-\hat{p}}\right)
+=
+-2.27
++
+0.000272\times exclaim~mess
+$$
+
+Emails with one additional exclamation point are predicted to have odds of being spam that are **higher** by a factor of $e^{0.000272}\approx 1.000272$, on average.
+
+# Classification <br> (logistic regression by another name...)
+
+## Step 1: fit the model {.smaller}
+
+Select a number $0 < p^* < 1$:
+
+```{r}
+#| label: step-0
+#| echo: false
+#| fig-width: 10
+step_1 <- ggplot(df, aes(x = x, y = as.numeric(y) - 1)) +
+  geom_point(alpha = 0.5) +
+  geom_line(
+    data = new_df_aug,
+    aes(y = .pred_1),
+    color = "#d1805f",
+    linewidth = 1.5
+  ) +
+  theme_minimal(base_size = 24) +
+  scale_y_continuous(
+    limits = c(-0.1, 1.1),
+    breaks = c(0, 0.5, 1),
+    minor_breaks = NULL
+  ) +
+  labs(y = "Prob(y = 1)")
+
+step_1
+```
+
+-   if $\text{Prob}(y=1)\leq p^*$, then predict $\widehat{y}=0$
+-   if $\text{Prob}(y=1)> p^*$, then predict $\widehat{y}=1$.
+
+## Step 2: pick a threshold {.smaller}
+
+Select a number $0 < p^* < 1$:
+
+```{r}
+#| label: step-1
+#| echo: false
+#| fig-width: 10
+threshold_1 <- 0.7
+x_at_threshold_1 <- (log(threshold_1 / (1 - threshold_1)) -
+  df_fit$fit$coefficients[1]) /
+  df_fit$fit$coefficients[2]
+
+step_2 <- step_1 +
+  annotate(
+    "segment",
+    y = threshold_1,
+    yend = threshold_1,
+    x = -Inf,
+    xend = x_at_threshold_1,
+    linetype = "dashed",
+    linewidth = 1.5,
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = min(df$x),
+    y = threshold_1 + 0.1,
+    label = paste("p* =", threshold_1),
+    hjust = 0,
+    size = 8,
+    color = "#005871"
+  )
+
+step_2
+```
+
+-   if $\text{Prob}(y=1)\leq p^*$, then predict $\widehat{y}=0$
+-   if $\text{Prob}(y=1)> p^*$, then predict $\widehat{y}=1$.
+
+## Step 3: find the "decision boundary" {.smaller}
+
+Solve for the x-value that matches the threshold:
+
+```{r}
+#| label: step-2
+#| message: false
+#| echo: false
+step_3 <- step_2 +
+  annotate(
+    "segment",
+    x = x_at_threshold_1,
+    xend = x_at_threshold_1,
+    y = -0.1,
+    yend = threshold_1,
+    linetype = "dashed",
+    linewidth = 1.5,
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = x_at_threshold_1 + 0.2,
+    y = 0.2,
+    label = "x*",
+    size = 8,
+    color = "#005871"
+  )
+
+step_3
+```
+
+-   if $\text{Prob}(y=1)\leq p^*$, then predict $\widehat{y}=0$
+-   if $\text{Prob}(y=1)> p^*$, then predict $\widehat{y}=1$.
+
+## Step 4: classify a new arrival {.smaller}
+
+A new person shows up with $x_{\text{new}}$. Which side of the boundary are they on?
+
+```{r}
+#| message: false
+#| echo: false
+step_4 <- step_3 +
+  annotate(
+    "rect",
+    xmin = -Inf,
+    xmax = x_at_threshold_1,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.2,
+    fill = "#E69F00"
+  ) +
+  annotate(
+    "rect",
+    xmin = x_at_threshold_1,
+    xmax = Inf,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.2,
+    fill = "#0072B2"
+  ) +
+  annotate(
+    "label",
+    x = 1,
+    y = 0.5,
+    label = "hat(y) == 1",
+    parse = TRUE,
+    fill = "white"
+  ) +
+  annotate(
+    "label",
+    x = -1,
+    y = 0.5,
+    label = "hat(y) == 0",
+    parse = TRUE,
+    fill = "white"
+  ) +
+  annotate(
+    "segment",
+    x = x_at_threshold_1,
+    xend = x_at_threshold_1,
+    y = -0.1,
+    yend = threshold_1,
+    linetype = "dashed",
+    linewidth = 1.5,
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = x_at_threshold_1 + 0.2,
+    y = 0.2,
+    label = "x*",
+    size = 8,
+    color = "#005871"
+  )
+
+step_4
+```
+
+-   if $x_{\text{new}} \leq x^\star$, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person
+-   if $x_{\text{new}} > x^\star$, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
+
+## Let's change the threshold {.smaller}
+
+A new person shows up with $x_{\text{new}}$. Which side of the boundary are they on?
+
+```{r}
+#| label: lower-threshold
+#| message: false
+#| echo: false
+threshold_2 <- 0.15
+x_at_threshold_2 <- (log(threshold_2 / (1 - threshold_2)) -
+  df_fit$fit$coefficients[1]) /
+  df_fit$fit$coefficients[2]
+
+ggplot(df, aes(x = x, y = as.numeric(y) - 1)) +
+  geom_point(alpha = 0.5) +
+  geom_line(
+    data = new_df_aug,
+    aes(y = .pred_1),
+    color = "#d1805f",
+    linewidth = 1.5
+  ) +
+  theme_minimal(base_size = 24) +
+  scale_y_continuous(
+    limits = c(-0.1, 1.1),
+    breaks = c(0, 0.5, 1),
+    minor_breaks = NULL
+  ) +
+  labs(y = "Prob(y = 1)") +
+  annotate(
+    "segment",
+    y = threshold_2,
+    yend = threshold_2,
+    x = -Inf,
+    xend = x_at_threshold_2,
+    linetype = "dashed",
+    linewidth = 1.5,
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = min(df$x),
+    y = threshold_2 + 0.1,
+    label = paste("p* =", threshold_2),
+    hjust = 0,
+    size = 8,
+    color = "#005871"
+  ) +
+  annotate(
+    "segment",
+    x = x_at_threshold_2,
+    xend = x_at_threshold_2,
+    y = -0.1,
+    yend = threshold_2,
+    linetype = "dashed",
+    linewidth = 1.5,
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = x_at_threshold_2 + 0.2,
+    y = -0.07,
+    label = "x*",
+    size = 8,
+    color = "#005871"
+  ) +
+  annotate(
+    "rect",
+    xmin = -Inf,
+    xmax = x_at_threshold_2,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.2,
+    fill = "#E69F00"
+  ) +
+  annotate(
+    "rect",
+    xmin = x_at_threshold_2,
+    xmax = Inf,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.2,
+    fill = "#0072B2"
+  )
+```
+
+-   if $x_{\text{new}} \leq x^\star$, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person
+-   if $x_{\text{new}} > x^\star$, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
+
+## Let's change the threshold {.smaller}
+
+A new person shows up with $x_{\text{new}}$. Which side of the boundary are they on?
+
+```{r}
+#| label: higher-threshold
+#| message: false
+#| echo: false
+threshold_3 <- 0.9
+x_at_threshold_3 <- (log(threshold_3 / (1 - threshold_3)) -
+  df_fit$fit$coefficients[1]) /
+  df_fit$fit$coefficients[2]
+
+ggplot(df, aes(x = x, y = as.numeric(y) - 1)) +
+  geom_point(alpha = 0.5) +
+  geom_line(
+    data = new_df_aug,
+    aes(y = .pred_1),
+    color = "#d1805f",
+    linewidth = 1.5
+  ) +
+  theme_minimal(base_size = 24) +
+  scale_y_continuous(
+    limits = c(-0.1, 1.1),
+    breaks = c(0, 0.5, 1),
+    minor_breaks = NULL
+  ) +
+  labs(y = "Prob(y = 1)") +
+  annotate(
+    "segment",
+    y = threshold_3,
+    yend = threshold_3,
+    x = -Inf,
+    xend = x_at_threshold_3,
+    linetype = "dashed",
+    linewidth = 1.5,
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = min(df$x),
+    y = threshold_3 + 0.1,
+    label = paste("p* =", threshold_3),
+    hjust = 0,
+    size = 8,
+    color = "#005871"
+  ) +
+  annotate(
+    "segment",
+    x = x_at_threshold_3,
+    xend = x_at_threshold_3,
+    y = -0.1,
+    yend = threshold_3,
+    linetype = "dashed",
+    linewidth = 1.5,
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = x_at_threshold_3 + 0.2,
+    y = 0.8,
+    label = "x*",
+    size = 8,
+    color = "#005871"
+  ) +
+  annotate(
+    "rect",
+    xmin = -Inf,
+    xmax = x_at_threshold_3,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.2,
+    fill = "#E69F00"
+  ) +
+  annotate(
+    "rect",
+    xmin = x_at_threshold_3,
+    xmax = Inf,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.2,
+    fill = "#0072B2"
+  ) +
+  annotate(
+    "label",
+    x = 1,
+    y = 0.5,
+    label = "hat(y) == 1",
+    parse = TRUE,
+    fill = "white"
+  ) +
+  annotate(
+    "label",
+    x = -1,
+    y = 0.5,
+    label = "hat(y) == 0",
+    parse = TRUE,
+    fill = "white"
+  )
+```
+
+-   if $x_{\text{new}} \leq x^\star$, then $\text{Prob}(y=1)\leq p^*$, so predict $\widehat{y}=0$ for the new person
+-   if $x_{\text{new}} > x^\star$, then $\text{Prob}(y=1)> p^*$, so predict $\widehat{y}=1$ for the new person.
+
+## Nothing special about one predictor... {.smaller}
+
+Two numerical predictors and one binary outcome:
+
+```{r}
+#| message: false
+#| echo: false
+set.seed(20)
+n <- 20
+
+library(MASS)
+cloud1 <- mvrnorm(n, c(-0.5, -0.5) + 4, matrix(c(1, 0.5, 0.5, 1), 2, 2))
+cloud2 <- mvrnorm(n, c(0.5, 0.5) + 4, matrix(c(1, -0.5, -0.5, 1), 2, 2))
+
+df_2 <- tibble(
+  x1 = c(cloud1[, 1], cloud2[, 1]),
+  x2 = c(cloud1[, 2], cloud2[, 2]),
+  y = as.factor(c(rep(0, n), rep(1, n)))
+)
+
+ggplot(df_2, aes(x = x1, y = x2, color = y)) +
+  geom_point(alpha = 0.7) +
+  theme_minimal(base_size = 24) +
+  scale_color_manual(values = c("#E69F00", "#0072B2"))
+```
+
+## "Multiple" logistic regression
+
+On the probability scale:
+
+$$
+\text{Prob}(y = 1)
+=
+\frac{e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}{1+e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}.
+$$
+
+For the log-odds, a *multiple* linear regression:
+
+$$
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m.
+$$
+
+## Decision boundary, again {.smaller}
+
+It's linear! Consider two numerical predictors:
+
+```{r}
+#| include: false
+df_2_fit <- logistic_reg() |>
+  fit(y ~ x1 + x2, data = df_2)
+
+b0 <- df_2_fit$fit$coefficients[1]
+b1 <- df_2_fit$fit$coefficients[2]
+b2 <- df_2_fit$fit$coefficients[3]
+```
+
+```{r}
+#| label: p-thresh-50
+#| message: false
+#| echo: false
+p_thresh <- 0.5
+
+# compute intercept and slope of decision boundary
+bd_incpt_50 <- (log(p_thresh / (1 - p_thresh)) - b0) / b2
+bd_slp_50 <- -b1 / b2
+
+x_for_poly <- seq(0, 9, length.out = 500)
+y_for_poly <- bd_incpt_50 + bd_slp_50 * x_for_poly
+
+p_thresh_50 <- ggplot(df_2, aes(x = x1, y = x2, color = y)) +
+  geom_point(alpha = 0.7) +
+  theme_minimal(base_size = 24) +
+  scale_color_manual(values = c("#E69F00", "#0072B2")) +
+  scale_x_continuous(limits = c(0, 9), breaks = seq(0, 9, 2)) +
+  scale_y_continuous(limits = c(-1, 9), breaks = seq(0, 9, 2)) +
+  annotate(
+    "line",
+    x = x_for_poly,
+    y = y_for_poly,
+    linetype = "dashed",
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = 7,
+    y = 3,
+    label = paste("p* =", p_thresh),
+    color = "#005871"
+  ) +
+  annotate(
+    "polygon",
+    x = c(x_for_poly, rev(x_for_poly)),
+    y = c(y_for_poly, rep(Inf, 500)),
+    fill = "#0072B2",
+    alpha = 0.2
+  ) +
+  annotate(
+    "polygon",
+    x = c(x_for_poly, rev(x_for_poly)),
+    y = c(y_for_poly, rep(-Inf, 500)),
+    fill = "#E69F00",
+    alpha = 0.2
+  ) +
+  annotate(
+    "label",
+    x = 7,
+    y = 6,
+    label = "hat(y) == 1",
+    parse = TRUE,
+    fill = "white"
+  ) +
+  annotate(
+    "label",
+    x = 1,
+    y = 3,
+    label = "hat(y) == 0",
+    parse = TRUE,
+    fill = "white"
+  )
+
+p_thresh_50
+```
+
+-   if new $(x_1,\,x_2)$ below, $\text{Prob}(y=1)\leq p^*$ $\rightarrow$ predict $\widehat{y}=0$ for new observation
+-   if new $(x_1,\,x_2)$ above, $\text{Prob}(y=1)> p^*$ $\rightarrow$ predict $\widehat{y}=1$ for new observation
+
+## Decision boundary, again {.smaller}
+
+It's linear! Consider two numerical predictors:
+
+```{r}
+#| label: p-thresh-15
+#| message: false
+#| echo: false
+p_thresh <- 0.15
+
+# compute intercept and slope of decision boundary
+bd_incpt_15 <- (log(p_thresh / (1 - p_thresh)) - b0) / b2
+bd_slp_15 <- -b1 / b2
+
+y_for_poly <- bd_incpt_15 + bd_slp_15 * x_for_poly
+
+ggplot(df_2, aes(x = x1, y = x2, color = y)) +
+  geom_point(alpha = 0.7) +
+  theme_minimal(base_size = 24) +
+  scale_color_manual(values = c("#E69F00", "#0072B2")) +
+  scale_x_continuous(limits = c(0, 9), breaks = seq(0, 9, 2)) +
+  scale_y_continuous(limits = c(-1, 9), breaks = seq(0, 9, 2)) +
+  annotate(
+    "line",
+    x = x_for_poly,
+    y = y_for_poly,
+    linetype = "dashed",
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = 7,
+    y = 2,
+    label = paste("p* =", p_thresh),
+    color = "#005871"
+  ) +
+  annotate(
+    "polygon",
+    x = c(x_for_poly, rev(x_for_poly)),
+    y = c(y_for_poly, rep(Inf, 500)),
+    fill = "#0072B2",
+    alpha = 0.2
+  ) +
+  annotate(
+    "polygon",
+    x = c(x_for_poly, rev(x_for_poly)),
+    y = c(y_for_poly, rep(-Inf, 500)),
+    fill = "#E69F00",
+    alpha = 0.2
+  ) +
+  annotate(
+    "label",
+    x = 7,
+    y = 6,
+    label = "hat(y) == 1",
+    parse = TRUE,
+    fill = "white"
+  ) +
+  annotate(
+    "label",
+    x = 1,
+    y = 3,
+    label = "hat(y) == 0",
+    parse = TRUE,
+    fill = "white"
+  )
+```
+
+-   if new $(x_1,\,x_2)$ below, $\text{Prob}(y=1)\leq p^*$ $\rightarrow$ predict $\widehat{y}=0$ for new observation
+-   if new $(x_1,\,x_2)$ above, $\text{Prob}(y=1)> p^*$ $\rightarrow$ predict $\widehat{y}=1$ for new observation
+
+## Decision boundary, again {.smaller}
+
+It's linear! Consider two numerical predictors:
+
+```{r}
+#| label: p-thresh-90
+#| message: false
+#| echo: false
+p_thresh <- 0.90
+
+# compute intercept and slope of decision boundary
+bd_incpt_90 <- (log(p_thresh / (1 - p_thresh)) - b0) / b2
+bd_slp_90 <- -b1 / b2
+
+y_for_poly <- bd_incpt_90 + bd_slp_90 * x_for_poly
+
+ggplot(df_2, aes(x = x1, y = x2, color = y)) +
+  geom_point(alpha = 0.7) +
+  theme_minimal(base_size = 24) +
+  scale_color_manual(values = c("#E69F00", "#0072B2")) +
+  scale_x_continuous(limits = c(0, 9), breaks = seq(0, 9, 2)) +
+  scale_y_continuous(limits = c(-1, 9), breaks = seq(0, 9, 2)) +
+  annotate(
+    "line",
+    x = x_for_poly,
+    y = y_for_poly,
+    linetype = "dashed",
+    color = "#005871"
+  ) +
+  annotate(
+    "text",
+    x = 7,
+    y = 2,
+    label = paste("p* =", p_thresh),
+    color = "#005871"
+  ) +
+  annotate(
+    "polygon",
+    x = c(x_for_poly, rev(x_for_poly)),
+    y = c(y_for_poly, rep(Inf, 500)),
+    fill = "#0072B2",
+    alpha = 0.2
+  ) +
+  annotate(
+    "polygon",
+    x = c(x_for_poly, rev(x_for_poly)),
+    y = c(y_for_poly, rep(-Inf, 500)),
+    fill = "#E69F00",
+    alpha = 0.2
+  ) +
+  annotate(
+    "label",
+    x = 7,
+    y = 6,
+    label = "hat(y) == 1",
+    parse = TRUE,
+    fill = "white"
+  ) +
+  annotate(
+    "label",
+    x = 1,
+    y = 3,
+    label = "hat(y) == 0",
+    parse = TRUE,
+    fill = "white"
+  )
+```
+
+-   if new $(x_1,\,x_2)$ below, $\text{Prob}(y=1)\leq p^*$ $\rightarrow$ predict $\widehat{y}=0$ for new observation
+-   if new $(x_1,\,x_2)$ above, $\text{Prob}(y=1)> p^*$ $\rightarrow$ predict $\widehat{y}=1$ for new observation
+
+## The classifier isn't perfect {.smaller}
+
+There are blue points in the orange region and oranges in the blue:
+
+```{r}
+#| message: false
+#| echo: false
+p_thresh_50
+```
+
+## The classifier isn't perfect {.smaller}
+
+[Blue points in the orange region: spam (1) emails misclassified as legit (0)]{style="color: red;"}
+
+```{r}
+#| message: false
+#| echo: false
+p_thresh_50 +
+  geom_point(
+    data = df_2 |> filter(y == 1 & x2 < (bd_incpt_50 + bd_slp_50 * x1)),
+    color = "red",
+    size = 6,
+    shape = 1,
+    stroke = 1.5
+  )
+```
+
+## The classifier isn't perfect {.smaller}
+
+[Orange points in the blue region: legit (0) emails misclassified as spam (1)]{style="color: red;"}
+
+```{r}
+#| message: false
+#| echo: false
+p_thresh_50 +
+  geom_point(
+    data = df_2 |> filter(y == 0 & x2 > (bd_incpt_50 + bd_slp_50 * x1)),
+    color = "red",
+    size = 6,
+    shape = 1,
+    stroke = 1.5
+  )
+```
+
+
+## How do you pick the threshold? {.smaller}
+
+To balance out the two kinds of errors:
+
+![](images/20/confusion-matrix.png)
+
+-   High threshold \>\> Hard to classify as 1 \>\> FP less likely, FN more likely
+-   Low threshold \>\> Easy to classify as 1 \>\> FP more likely, FN less likely
+
+## Silly examples
+
+-   Set p\* = 0
+
+    -   Classify every email as spam (1)
+    -   No false negatives, but *a lot* of false positives
+
+-   Set p\* = 1
+
+    -   Classify every email as legit (0)
+    -   No false positives, but *a lot* of false negatives.
+
+You pick a threshold in between to strike a balance. The exact number depends on context.
+
+## `{r} todays_ae`
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
