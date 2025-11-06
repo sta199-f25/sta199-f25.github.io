@@ -37,6 +37,7 @@ todays_ae <- "ae-13-spam-filter"
 
 ## Project questions {.scrollable .smaller}
 
+::: incremental
 - Focus: Can expand focus after research question, sure!
 
 - Citations: Don't have to have them on slides and don't need to say them out loud unless relevant to presentation, must include in writeup.
@@ -58,6 +59,7 @@ todays_ae <- "ae-13-spam-filter"
 - Who is grading? TAs and myself, I'll be at (most of) the presentations.
 
 - When is it due?
+:::
 
 # Logistic regression
 
