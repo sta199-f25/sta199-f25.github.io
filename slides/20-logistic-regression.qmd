@@ -35,6 +35,30 @@ todays_ae <- "ae-13-spam-filter"
 
 -   Project presentations: Hard stop at 5 minute mark! No limit on number of slides, but be mindful of how long it takes you to go through each.
 
+## Project questions {.scrollable .smaller}
+
+- Focus: Can expand focus after research question, sure!
+
+- Citations: Don't have to have them on slides and don't need to say them out loud unless relevant to presentation, must include in writeup.
+
+- Vairble names: It's ok to have some long variable names, but if you're using them a lot in your code, make sure code is easy to follow.
+
+- Outliers: Evaluate if they're genuinely influencing your model.
+
+- Grading: Rubric is in the milestone 6.
+
+- Categorical variables + summary stats: Correlation isn't appropriate, report %s or make stacked bar plots.
+
+- There is no single correct number of graphs, tables, etc.
+
+- Review your website by clicking on the link from your repo.
+
+- Analysis writeup can be broken into multiple pieces with plots, tables, etc. sprinkled.
+
+- Who is grading? TAs and myself, I'll be at (most of) the presentations.
+
+- When is it due?
+
 # Logistic regression
 
 ## Packages
@@ -383,6 +407,31 @@ ggplot(df_log, aes(x = x, y = y)) +
   scale_y_continuous(breaks = c(-4:2))
 ```
 
+## Participate 📱💻 {.xsmall}
+
+:::::: columns
+:::: {.column width="70%"}
+::: wooclap
+
+If $p$ is the probability of success, what is the following called: 
+
+$$ \frac{p}{1-p} $$
+
+::: wooclap-choices
+- Probability of failure
+- Odds of failure
+- Odds of success
+- Log-odds of success
+:::
+
+:::
+::::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+::::::
+
 ## Logistic regression
 
 $$
@@ -397,7 +446,7 @@ $$
 
 ## Estimation
 
--   We estimate the parameters $\beta_0,\,\beta_1$ using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve
+-   We estimate the parameters $\beta_0$ (intercept) and $\beta_1$ (slope) using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve
 
 -   The fitted model is
 
