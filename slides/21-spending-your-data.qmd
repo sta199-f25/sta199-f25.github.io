@@ -29,11 +29,45 @@ todays_ae <- "ae-14-chicago-taxi-classification"
 
 # Warm-up
 
+## While you wait: Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following files should you be updating in your project between now and Thursday's deadline? Check all that apply.
+
+::: wooclap-choices
+- `contract.qmd`
+- `index.qmd`
+- `presentation.qmd` or `presentation.pdf`
+- `proposal.qmd`
+- `README.md` in your `data` folder
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
 ## Announcements {.smaller}
 
 -   Project write-ups due Thursday at 11:59pm
 
 -   Peer evaluations due Friday at 11:59pm
+
+## From last week
+
+::: appex
+Finish up `ae-13-spam-filter`.
+:::
 
 # Setup
 
@@ -204,11 +238,30 @@ chicago_taxi_train
 
 -   How does the distribution of `tip` differ across the categorical and numerical variables?
 
-. . .
+## While you wait: Participate 📱💻 {.xsmall}
 
-::: task
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
 Which dataset should we use for the exploration?
-The entire data `chicago_taxi`, the training data `chicago_taxi_train`, or the testing data `chicago_taxi_test`?
+
+::: wooclap-choices
+- The entire data `chicago_taxi`
+- The training data `chicago_taxi_train`
+- The testing data `chicago_taxi_test`
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
 :::
 
 ## `tip`
@@ -302,6 +355,34 @@ ggplot(chicago_taxi_train, aes(x = dow, fill = tip)) +
 The **receiver operating characteristic (ROC) curve** allows to assess the model performance across a range of thresholds.
 
 ![](images/21/roc-curve.png)
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following best describes the area annotated on the ROC curve?
+
+![](images/21/roc-curve-annotated-question.png)
+
+::: wooclap-choices
+- Where all positives classified as positive, all negatives classified as negative
+- Where true positive rate = false positive rate
+- Where all positives classified as negative, all negatives classified as positive
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
 
 ## ROC curve {.smaller}
 
