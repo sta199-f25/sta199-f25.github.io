@@ -1,5 +1,7 @@
 ---
 title: "AE 14: Chicago taxi classification"
+categories: 
+  - Application exercise
 ---
 
 In this application exercise, we will

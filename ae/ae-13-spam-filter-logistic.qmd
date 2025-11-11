@@ -1,5 +1,5 @@
 ---
-title: "AE 16: Building a spam filter"
+title: "AE 13: Building a spam filter"
 categories: 
   - Application exercise
 ---
