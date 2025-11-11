@@ -32,15 +32,6 @@
     ]
   },
   {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/final-exam-review.html"
-    ]
-  },
-  {
     "listing": "/lab.html",
     "items": [
       "/lab/lab-0.html",
@@ -49,6 +40,15 @@
       "/lab/lab-3.html",
       "/lab/lab-4.html",
       "/lab/lab-5.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/final-exam-review.html"
     ]
   },
   {
@@ -78,6 +78,8 @@
       "/ae/ae-12-penguins-model-multi.html",
       "/ae/ae-11-penguins-model-A.html",
       "/ae/ae-11-penguins-model.html",
+      "/ae/ae-14-chicago-taxi-classification-A.html",
+      "/ae/ae-14-chicago-taxi-classification.html",
       "/ae/ae-13-spam-filter-logistic-A.html",
       "/ae/ae-13-spam-filter-logistic.html"
     ]
