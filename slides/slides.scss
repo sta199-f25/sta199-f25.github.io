@@ -38,6 +38,10 @@ details>summary {
   text-align: center;
 }
 
+.huge {
+  font-size: 4em;
+}
+
 .small {
   font-size: 0.75em;
 }
@@ -103,8 +107,10 @@ details>summary {
 }
 
 .reveal .slide .wooclap-choices ul {
-  list-style: none;       /* remove default bullets */
-  padding-left: 1em;    /* space for custom bullets */
+  list-style: none;
+  /* remove default bullets */
+  padding-left: 1em;
+  /* space for custom bullets */
 }
 
 .reveal .slide .wooclap-choices li {
@@ -113,9 +119,11 @@ details>summary {
 }
 
 .reveal .slide .wooclap-choices li::before {
-  content: "◯";          /* hollow circle (\25CB / &#9675;) */
+  content: "◯";
+  /* hollow circle (\25CB / &#9675;) */
   position: absolute;
-  left: -1.5em;          /* align circles nicely */
+  left: -1.5em;
+  /* align circles nicely */
   font-size: 1em;
 }
 

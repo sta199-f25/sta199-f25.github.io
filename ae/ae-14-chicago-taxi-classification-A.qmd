@@ -1,0 +1,276 @@
+---
+title: "AE 14: Chicago taxi classification"
+subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
+---
+
+::: callout-important
+These are suggested answers.
+This document should be used as reference only, it's not designed to be an exhaustive key.
+:::
+
+In this application exercise, we will
+
+-   Split our data into testing and training
+-   Fit logistic regression regression models to testing data to classify outcomes
+-   Evaluate performance of models on testing data
+
+We will use **tidyverse** and **tidymodels** for data exploration and modeling,
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+and the `chicago_taxi` dataset introduced in the lecture.
+
+```{r}
+chicago_taxi <- read_csv("data/chicago-taxi.csv") |>
+  mutate(
+    tip = fct_relevel(tip, "no", "yes"),
+    local = fct_relevel(local, "no", "yes"),
+    dow = fct_relevel(dow, "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"),
+    month = fct_relevel(month, "Jan", "Feb", "Mar", "Apr")
+  )
+```
+
+Remember from the lecture that the `chicago_taxi` dataset contains information on whether a trip resulted in a tip (`yes`) or not (`no`) as well as numerical and categorical features of the trip.
+
+```{r}
+#| label: glimpse-chicago-taxi
+glimpse(chicago_taxi)
+```
+
+# Spending your data
+
+Split your data into testing and training in a reproducible manner and display the split object.
+
+```{r}
+#| label: train-test-split
+set.seed(1234)
+chicago_taxi_split <- initial_split(chicago_taxi)
+chicago_taxi_split
+```
+
+What percent of the original `chicago_taxi` data is allocated to training and what percent to testing?
+Compare your response to your neighbor's.
+Are the percentages roughly consistent?
+What determines this in the `initial_split()`?
+How would the code need to be updated to allocate 80% of the data to training and the remaining 20% to testing?
+
+```{r}
+#| label: train-test-percentages
+# training percentage
+7500 / 10000
+
+# testing percentage
+2500 / 10000
+```
+
+75% of the data is allocated to training and the remaining 25% to testing.
+This is because the `prop` argument in `initial_split()` is `3/4` by default.
+The code would need to be updated as follows for a 80%/20% split:
+
+```{r}
+#| label: train-test-80-20
+# split 80-20
+set.seed(123456)
+initial_split(chicago_taxi, prop = 0.8)
+```
+
+Let's stick with the default split and save our testing and training data.
+
+```{r}
+#| label: train-test-save
+chicago_taxi_train <- training(chicago_taxi_split)
+chicago_taxi_test <- testing(chicago_taxi_split)
+```
+
+# Model 1: Custom choice of predictors
+
+## Fit
+
+Fit a model for classifying trips as tipped or not based on a subset of predictors of your choice.
+Name the model `chicago_taxi_custom_fit` and display a tidy output of the model.
+
+```{r}
+#| label: forested-custom-fit
+chicago_taxi_custom_fit <- logistic_reg() |>
+  fit(
+    tip ~ hour + distance + local + dow,
+    data = chicago_taxi_train
+  )
+tidy(chicago_taxi_custom_fit)
+```
+
+## Predict
+
+Predict for the testing data using this model.
+
+```{r}
+#| label: forested-custom-aug
+chicago_taxi_custom_aug <- augment(
+  chicago_taxi_custom_fit,
+  new_data = chicago_taxi_test
+)
+chicago_taxi_custom_aug
+```
+
+## Evaluate
+
+Calculate the false positive and false negative rates for the testing data using this model.
+
+```{r}
+#| label: forested-custom-eval
+chicago_taxi_custom_aug |>
+  count(.pred_class, tip) |>
+  arrange(tip) |>
+  group_by(tip) |>
+  mutate(
+    p = round(n / sum(n), 2),
+    decision = case_when(
+      .pred_class == "yes" & tip == "yes" ~ "True positive",
+      .pred_class == "yes" & tip == "no" ~ "False positive",
+      .pred_class == "no" & tip == "yes" ~ "False negative",
+      .pred_class == "no" & tip == "no" ~ "True negative"
+    )
+  )
+```
+
+Another commonly used display of this information is a confusion matrix.
+Create this using the `conf_mat()` function.
+You will need to review the documentation for the function to determine how to use it.
+
+```{r}
+#| label: conf-mat-custom
+conf_mat(
+  chicago_taxi_custom_aug,
+  truth = tip,
+  estimate = .pred_class
+)
+```
+
+## Sensitivity, specificity, ROC curve
+
+Calculate sensitivity and specificity and draw the ROC curve.
+
+```{r}
+#| label: forested-custom-roc
+chicago_taxi_custom_roc <- roc_curve(
+  chicago_taxi_custom_aug,
+  truth = tip,
+  .pred_yes,
+  event_level = "second"
+)
+chicago_taxi_custom_roc
+ggplot(chicago_taxi_custom_roc, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty = 3) +
+  coord_equal()
+```
+
+# Model 2: All predictors
+
+## Fit
+
+Fit a model for classifying plots as forested or not based on all predictors available.
+Name the model `forested_full_fit` and display a tidy output of the model.
+
+```{r}
+#| label: forested-full-fit
+chicago_taxi_full_fit <- logistic_reg() |>
+  fit(tip ~ ., data = chicago_taxi_train)
+tidy(chicago_taxi_full_fit)
+```
+
+## Predict
+
+Predict for the testing data using this model.
+
+```{r}
+#| label: forested-full-aug
+chicago_taxi_full_aug <- augment(
+  chicago_taxi_full_fit,
+  new_data = chicago_taxi_test
+)
+chicago_taxi_full_aug
+```
+
+## Evaluate
+
+Calculate the false positive and false negative rates for the testing data using this model.
+
+```{r}
+#| label: forested-full-eval
+chicago_taxi_full_aug |>
+  count(.pred_class, tip) |>
+  arrange(tip) |>
+  group_by(tip) |>
+  mutate(
+    p = round(n / sum(n), 2),
+    decision = case_when(
+      .pred_class == "yes" & tip == "yes" ~ "True positive",
+      .pred_class == "yes" & tip == "no" ~ "False positive",
+      .pred_class == "no" & tip == "yes" ~ "False negative",
+      .pred_class == "no" & tip == "no" ~ "True negative"
+    )
+  )
+```
+
+## Sensitivity, specificity, ROC curve
+
+Calculate sensitivity and specificity and draw the ROC curve.
+
+```{r}
+#| label: forested-full-roc
+chicago_taxi_full_roc <- roc_curve(
+  chicago_taxi_full_aug,
+  truth = tip,
+  .pred_yes,
+  event_level = "second"
+)
+chicago_taxi_full_roc
+ggplot(chicago_taxi_full_roc, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty = 3) +
+  coord_equal()
+```
+
+# Model 1 vs. Model 2
+
+Plot both ROC curves and articulate how you would use them to compare these models. Also calculate the areas under the two curves.
+
+```{r}
+#| label: compare
+chicago_taxi_custom_roc <- chicago_taxi_custom_roc |>
+  mutate(model = "Custom")
+chicago_taxi_full_roc <- chicago_taxi_full_roc |>
+  mutate(model = "Full")
+
+bind_rows(
+  chicago_taxi_custom_roc,
+  chicago_taxi_full_roc
+) |>
+  ggplot(aes(x = 1 - specificity, y = sensitivity, color = model)) +
+  geom_path() +
+  geom_abline(lty = 3) +
+  coord_equal()
+
+roc_auc(
+  chicago_taxi_custom_aug,
+  truth = tip,
+  .pred_yes,
+  event_level = "second"
+)
+
+roc_auc(
+  chicago_taxi_full_aug,
+  truth = tip,
+  .pred_yes,
+  event_level = "second"
+)
+```

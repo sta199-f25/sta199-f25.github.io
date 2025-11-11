@@ -1,0 +1,2001 @@
+tip,distance,company,local,dow,month,hour
+no,0.4,other,yes,Fri,Mar,17
+no,0.96,Taxicab Insurance Agency Llc,no,Mon,Apr,8
+no,1.07,Sun Taxi,no,Fri,Feb,15
+no,1.13,other,no,Sat,Feb,14
+no,10.81,Sun Taxi,no,Sat,Apr,14
+no,3.6,Chicago Independents,no,Wed,Mar,12
+no,1.08,Flash Cab,yes,Wed,Mar,13
+no,0.85,Taxicab Insurance Agency Llc,no,Tue,Mar,8
+no,17.92,City Service,no,Tue,Jan,20
+no,0,City Service,yes,Sun,Apr,16
+no,0.52,City Service,yes,Fri,Apr,20
+no,4.4,City Service,no,Fri,Feb,8
+no,1.92,Sun Taxi,no,Fri,Mar,15
+no,10,Taxi Affiliation Services,no,Thu,Apr,15
+no,17.16,Taxicab Insurance Agency Llc,no,Fri,Mar,12
+no,0,Flash Cab,yes,Tue,Feb,0
+no,17.17,Flash Cab,no,Sun,Jan,19
+no,1,other,yes,Fri,Mar,18
+no,30.6,Taxi Affiliation Services,no,Fri,Jan,15
+no,3.44,Taxicab Insurance Agency Llc,no,Sat,Apr,11
+no,0,Sun Taxi,yes,Thu,Apr,14
+no,10.3,other,no,Mon,Mar,22
+no,1.51,Sun Taxi,no,Sun,Apr,13
+no,6.26,Flash Cab,no,Tue,Apr,15
+no,1.35,Taxicab Insurance Agency Llc,no,Wed,Mar,9
+no,18.1,other,no,Sun,Apr,16
+no,1.95,Chicago Independents,no,Thu,Mar,8
+no,8.99,Sun Taxi,no,Tue,Feb,20
+no,2.09,City Service,no,Thu,Mar,21
+no,3.32,Taxicab Insurance Agency Llc,no,Mon,Apr,11
+no,17.1,Taxi Affiliation Services,no,Mon,Mar,21
+no,2.68,Flash Cab,no,Tue,Mar,15
+no,19.88,Taxicab Insurance Agency Llc,no,Tue,Mar,18
+no,2.7,Taxi Affiliation Services,no,Mon,Mar,20
+no,0.97,Taxicab Insurance Agency Llc,no,Mon,Apr,12
+no,0.6,other,no,Wed,Apr,7
+no,0.1,Taxi Affiliation Services,no,Wed,Feb,15
+no,0.55,other,yes,Tue,Apr,11
+no,2.78,Sun Taxi,no,Thu,Apr,17
+no,5.41,Flash Cab,no,Fri,Jan,7
+no,1.6,Sun Taxi,yes,Tue,Feb,17
+no,1,other,no,Thu,Mar,18
+no,2.54,Taxicab Insurance Agency Llc,no,Wed,Mar,19
+no,17.79,other,no,Wed,Feb,15
+no,1.6,other,no,Thu,Mar,7
+no,1.1,other,no,Fri,Feb,9
+no,1.05,City Service,no,Tue,Feb,17
+no,18.06,Flash Cab,no,Mon,Jan,20
+no,0.9,Taxi Affiliation Services,no,Thu,Jan,23
+no,3.9,other,no,Fri,Mar,13
+no,2.1,Taxi Affiliation Services,no,Tue,Mar,18
+no,3.05,other,no,Wed,Apr,16
+no,1.88,Sun Taxi,no,Sat,Feb,18
+no,1.38,Taxicab Insurance Agency Llc,no,Thu,Jan,16
+no,1.45,Taxicab Insurance Agency Llc,yes,Fri,Apr,11
+no,5.9,other,no,Wed,Apr,13
+no,0.3,other,yes,Thu,Apr,16
+no,16.9,Chicago Independents,no,Tue,Feb,13
+no,5.7,other,no,Thu,Mar,18
+no,1.29,other,no,Mon,Jan,8
+no,0.1,Taxi Affiliation Services,no,Mon,Feb,17
+no,0.7,Sun Taxi,yes,Tue,Feb,17
+no,0,Taxi Affiliation Services,yes,Wed,Jan,7
+no,0.45,Taxicab Insurance Agency Llc,no,Mon,Feb,9
+no,1.44,Chicago Independents,no,Tue,Mar,16
+no,10.78,Taxicab Insurance Agency Llc,no,Thu,Mar,23
+no,9.2,Taxi Affiliation Services,yes,Thu,Mar,9
+no,1.49,Sun Taxi,no,Wed,Jan,8
+no,15.84,Taxicab Insurance Agency Llc,yes,Sun,Mar,15
+no,0,other,no,Sat,Mar,20
+no,6.1,Taxi Affiliation Services,no,Tue,Mar,13
+no,1.21,City Service,no,Sat,Mar,19
+no,0.91,City Service,yes,Thu,Apr,21
+no,0,Taxi Affiliation Services,yes,Tue,Feb,18
+no,9.78,City Service,no,Tue,Apr,8
+no,1.8,other,no,Fri,Jan,15
+no,19.1,City Service,no,Sun,Feb,17
+no,18.24,Taxicab Insurance Agency Llc,no,Thu,Mar,8
+no,15.95,other,no,Thu,Jan,19
+no,10.72,Sun Taxi,no,Fri,Mar,9
+no,6.42,other,no,Fri,Feb,13
+no,1.5,Taxi Affiliation Services,yes,Tue,Mar,15
+no,0.8,Taxi Affiliation Services,yes,Fri,Jan,14
+no,30.8,Taxi Affiliation Services,no,Mon,Jan,12
+no,1.9,Taxicab Insurance Agency Llc,no,Thu,Jan,8
+no,1.27,Flash Cab,no,Fri,Jan,14
+no,2.24,Taxicab Insurance Agency Llc,no,Wed,Mar,16
+no,0,Taxi Affiliation Services,no,Tue,Apr,11
+no,7.09,Taxicab Insurance Agency Llc,no,Fri,Apr,18
+no,1.67,other,no,Thu,Mar,8
+no,18.57,Taxicab Insurance Agency Llc,no,Fri,Feb,15
+no,1.81,Sun Taxi,no,Tue,Jan,8
+no,0.93,City Service,no,Mon,Jan,12
+no,1.83,Flash Cab,no,Thu,Jan,14
+no,2.05,Sun Taxi,no,Thu,Apr,16
+no,1.1,Taxi Affiliation Services,no,Fri,Jan,12
+no,0.62,other,yes,Tue,Jan,10
+no,2.82,Flash Cab,no,Thu,Feb,10
+no,17.08,City Service,no,Mon,Mar,12
+no,0.98,Flash Cab,no,Mon,Apr,8
+no,17.79,City Service,no,Thu,Feb,13
+no,2.1,other,no,Mon,Apr,14
+no,0,Taxi Affiliation Services,no,Thu,Mar,18
+no,3.54,Sun Taxi,no,Fri,Mar,19
+no,1.22,City Service,no,Sun,Mar,15
+no,9.83,Flash Cab,no,Sun,Apr,10
+no,1.1,other,yes,Tue,Jan,16
+no,17.3,Taxi Affiliation Services,no,Sat,Apr,20
+no,1.2,other,yes,Tue,Jan,16
+no,12.12,Flash Cab,no,Tue,Mar,22
+no,20.91,other,yes,Sun,Mar,7
+no,16.95,other,no,Sun,Apr,18
+no,2.79,Taxicab Insurance Agency Llc,no,Tue,Mar,22
+no,1.92,Sun Taxi,no,Wed,Jan,8
+no,19.07,Flash Cab,no,Mon,Apr,11
+no,0,Taxi Affiliation Services,yes,Thu,Jan,20
+no,0.56,City Service,yes,Thu,Mar,17
+no,11.8,Taxi Affiliation Services,no,Wed,Mar,14
+no,1.06,City Service,yes,Fri,Apr,18
+no,3.36,Flash Cab,no,Mon,Apr,11
+no,17.37,other,no,Thu,Apr,18
+no,16.81,other,no,Fri,Jan,13
+no,16.85,City Service,no,Fri,Mar,16
+no,0,other,yes,Mon,Mar,18
+no,1.74,Taxicab Insurance Agency Llc,no,Thu,Apr,9
+no,9.95,Flash Cab,no,Mon,Jan,13
+no,7.24,Chicago Independents,no,Fri,Apr,19
+no,3.73,City Service,no,Mon,Mar,15
+no,17.5,Taxi Affiliation Services,no,Sat,Apr,12
+no,11.51,Sun Taxi,no,Mon,Jan,14
+no,17.62,Taxicab Insurance Agency Llc,no,Fri,Apr,17
+no,0,Taxi Affiliation Services,no,Fri,Apr,15
+no,18.28,City Service,no,Wed,Jan,19
+no,0.1,Taxi Affiliation Services,no,Wed,Mar,17
+no,0.7,other,yes,Mon,Jan,11
+no,1.35,other,no,Thu,Apr,17
+no,0.26,Sun Taxi,no,Thu,Feb,20
+no,20.28,other,no,Mon,Apr,10
+no,1.54,Taxicab Insurance Agency Llc,no,Thu,Apr,21
+no,1.51,other,yes,Wed,Jan,19
+no,2.51,Sun Taxi,no,Wed,Apr,17
+no,1.92,other,no,Fri,Feb,18
+no,1.1,Taxi Affiliation Services,no,Wed,Feb,14
+no,1.27,other,no,Wed,Feb,8
+no,1.56,City Service,no,Sat,Apr,19
+no,0.1,Taxi Affiliation Services,no,Fri,Mar,9
+no,11.21,Chicago Independents,no,Thu,Mar,14
+no,1.2,Flash Cab,no,Fri,Mar,12
+no,0,City Service,yes,Fri,Apr,12
+no,1.39,Taxicab Insurance Agency Llc,yes,Thu,Jan,17
+no,17.1,other,no,Thu,Apr,7
+no,2.7,Sun Taxi,no,Tue,Mar,15
+no,0,other,no,Fri,Mar,7
+no,1.03,Flash Cab,yes,Mon,Feb,9
+no,3.13,other,no,Wed,Feb,17
+no,9.3,other,no,Fri,Mar,16
+no,0,Flash Cab,no,Tue,Feb,9
+no,1.01,Flash Cab,yes,Mon,Jan,10
+no,0.8,Taxi Affiliation Services,no,Mon,Apr,16
+no,1.01,Flash Cab,yes,Tue,Mar,14
+no,1.04,other,yes,Fri,Apr,11
+no,1,Taxi Affiliation Services,yes,Tue,Jan,9
+no,0.72,Taxicab Insurance Agency Llc,no,Tue,Jan,8
+no,1.1,City Service,no,Tue,Feb,14
+no,0.48,Taxicab Insurance Agency Llc,yes,Thu,Jan,8
+no,1.98,Flash Cab,no,Tue,Jan,16
+no,0.2,Taxi Affiliation Services,no,Mon,Mar,11
+no,0,City Service,yes,Wed,Mar,23
+no,18.12,Flash Cab,no,Thu,Jan,16
+no,11.67,Flash Cab,no,Mon,Jan,10
+no,0.5,other,no,Fri,Apr,13
+no,8.6,Taxi Affiliation Services,no,Fri,Mar,10
+no,1.8,Taxi Affiliation Services,no,Tue,Feb,16
+no,5.53,Flash Cab,no,Mon,Jan,14
+no,5.7,Taxi Affiliation Services,no,Thu,Mar,8
+no,1.55,City Service,no,Tue,Apr,8
+no,1,other,no,Tue,Apr,18
+no,17.73,Flash Cab,no,Wed,Apr,18
+no,0.9,Taxi Affiliation Services,no,Sat,Mar,9
+no,7.5,other,no,Wed,Mar,14
+no,10.22,Sun Taxi,no,Wed,Feb,17
+no,16.28,other,no,Tue,Jan,0
+no,1.63,other,no,Fri,Apr,17
+no,0,Flash Cab,no,Fri,Jan,8
+no,3.02,Flash Cab,no,Mon,Feb,14
+no,1.04,Flash Cab,no,Wed,Apr,22
+no,2.36,Flash Cab,no,Wed,Jan,21
+no,2.14,other,no,Wed,Jan,11
+no,6.78,City Service,no,Mon,Mar,9
+no,0.4,other,no,Thu,Feb,22
+no,4.48,City Service,no,Mon,Feb,10
+no,3.45,Flash Cab,no,Sat,Apr,12
+no,2.85,Chicago Independents,no,Tue,Mar,14
+no,3.42,Taxicab Insurance Agency Llc,no,Sat,Apr,18
+no,0.68,Flash Cab,yes,Wed,Mar,9
+no,5.89,other,no,Tue,Mar,9
+no,0.02,Taxicab Insurance Agency Llc,yes,Fri,Apr,13
+no,1.5,Taxi Affiliation Services,yes,Tue,Apr,15
+no,9.16,other,no,Thu,Mar,11
+no,1.04,City Service,yes,Mon,Jan,10
+no,1.02,Flash Cab,yes,Thu,Feb,10
+no,16.95,City Service,no,Mon,Mar,18
+no,0.76,City Service,yes,Thu,Feb,16
+no,11.12,City Service,no,Sun,Apr,17
+no,1.2,City Service,yes,Mon,Apr,11
+no,0.56,Sun Taxi,yes,Sat,Mar,12
+no,0.41,other,yes,Fri,Jan,17
+no,0,Flash Cab,yes,Thu,Mar,17
+no,6.9,Taxi Affiliation Services,no,Tue,Mar,15
+no,1.58,other,no,Thu,Apr,18
+no,1.99,other,no,Thu,Apr,9
+no,0.7,Taxi Affiliation Services,yes,Thu,Feb,21
+no,1.39,City Service,no,Mon,Apr,17
+no,1.6,other,no,Wed,Jan,20
+no,0.3,Taxi Affiliation Services,no,Sat,Apr,23
+no,0.7,Taxi Affiliation Services,yes,Sat,Jan,15
+no,2.52,Flash Cab,no,Mon,Jan,18
+no,2.79,Taxicab Insurance Agency Llc,no,Mon,Feb,10
+no,13.85,Flash Cab,yes,Sun,Jan,6
+no,1.1,Taxi Affiliation Services,yes,Wed,Mar,8
+no,0.03,City Service,yes,Sat,Apr,22
+no,1.02,Chicago Independents,yes,Fri,Apr,10
+no,0.7,Taxi Affiliation Services,no,Tue,Jan,9
+no,1.77,Chicago Independents,no,Wed,Jan,17
+no,0.55,Sun Taxi,yes,Mon,Feb,13
+no,1,Taxi Affiliation Services,no,Tue,Apr,20
+no,1.6,other,no,Sat,Mar,13
+no,0.4,Taxi Affiliation Services,no,Wed,Mar,16
+no,1.45,Chicago Independents,no,Mon,Feb,8
+no,3.09,Taxicab Insurance Agency Llc,no,Sat,Apr,18
+no,0.36,Sun Taxi,yes,Fri,Jan,16
+no,0,other,yes,Mon,Mar,15
+no,18.4,Taxi Affiliation Services,no,Mon,Apr,14
+no,2.99,other,no,Fri,Feb,18
+no,0,other,yes,Thu,Apr,10
+no,1.79,Taxicab Insurance Agency Llc,no,Mon,Mar,17
+no,1.27,Sun Taxi,yes,Thu,Feb,12
+no,17.15,other,no,Mon,Apr,12
+no,10.15,other,no,Tue,Mar,14
+no,8.62,Flash Cab,no,Fri,Feb,15
+no,2.26,Sun Taxi,no,Tue,Jan,13
+no,17.2,Chicago Independents,no,Tue,Apr,10
+no,13,other,no,Fri,Jan,15
+no,0,Flash Cab,no,Mon,Apr,12
+no,0.7,Taxi Affiliation Services,no,Mon,Mar,14
+no,0,Taxicab Insurance Agency Llc,yes,Mon,Apr,11
+no,1.65,City Service,no,Fri,Apr,19
+no,0,Taxi Affiliation Services,no,Wed,Mar,10
+no,3.38,Flash Cab,no,Wed,Apr,18
+no,0,City Service,yes,Thu,Feb,13
+no,4.63,Flash Cab,no,Mon,Mar,15
+no,0.9,Taxi Affiliation Services,yes,Wed,Apr,0
+no,1,Taxi Affiliation Services,no,Sun,Apr,8
+no,0.32,Sun Taxi,yes,Thu,Apr,15
+no,0.65,other,yes,Thu,Mar,6
+no,2.52,City Service,no,Mon,Mar,7
+no,17.62,City Service,no,Wed,Feb,19
+no,12.85,Taxicab Insurance Agency Llc,no,Wed,Apr,9
+no,0.81,other,yes,Wed,Jan,19
+no,0.1,Taxi Affiliation Services,no,Sat,Apr,15
+no,9.6,Flash Cab,yes,Sat,Jan,12
+no,2.71,City Service,no,Sun,Mar,8
+no,6.27,Flash Cab,no,Fri,Jan,11
+no,1.07,City Service,no,Thu,Feb,17
+no,12.96,Taxicab Insurance Agency Llc,no,Sun,Mar,10
+no,15,Taxi Affiliation Services,no,Thu,Feb,19
+no,1.2,Taxi Affiliation Services,no,Sat,Mar,22
+no,0.7,other,yes,Tue,Jan,9
+no,0,Flash Cab,no,Fri,Mar,21
+no,4.57,Sun Taxi,no,Mon,Feb,7
+no,1.28,City Service,no,Mon,Feb,18
+no,0,Taxicab Insurance Agency Llc,yes,Fri,Apr,13
+no,1.77,other,no,Thu,Apr,18
+no,1.3,Taxi Affiliation Services,yes,Wed,Mar,11
+no,5.48,Chicago Independents,no,Sat,Mar,15
+no,17.26,Sun Taxi,no,Tue,Mar,8
+no,0.7,other,yes,Wed,Apr,15
+no,19.06,Flash Cab,no,Mon,Mar,14
+no,4.9,Taxi Affiliation Services,no,Sat,Mar,12
+no,1.16,Taxicab Insurance Agency Llc,no,Tue,Jan,15
+no,1.34,Taxicab Insurance Agency Llc,no,Thu,Mar,19
+no,9.68,Sun Taxi,no,Fri,Jan,18
+no,1.75,Sun Taxi,no,Thu,Mar,10
+no,0.97,Taxicab Insurance Agency Llc,yes,Thu,Mar,21
+no,6.28,Flash Cab,no,Wed,Mar,14
+no,1.56,Taxicab Insurance Agency Llc,no,Fri,Apr,8
+no,0.3,Taxi Affiliation Services,no,Wed,Apr,15
+no,35.5,other,no,Wed,Feb,18
+no,2.6,Taxi Affiliation Services,no,Wed,Feb,8
+no,17.84,City Service,no,Sun,Jan,19
+no,12.16,Flash Cab,no,Sat,Apr,16
+no,1.17,City Service,no,Tue,Jan,16
+no,0.7,Sun Taxi,no,Mon,Jan,16
+no,10.29,Sun Taxi,no,Thu,Jan,19
+no,1.4,other,no,Sat,Feb,1
+no,1.03,other,yes,Fri,Jan,20
+no,9.1,Taxi Affiliation Services,no,Sat,Apr,15
+no,0,City Service,yes,Tue,Feb,14
+no,17.7,Taxi Affiliation Services,no,Fri,Mar,14
+no,4.7,Taxi Affiliation Services,no,Fri,Feb,18
+no,12.31,other,no,Fri,Mar,12
+no,7,Taxi Affiliation Services,no,Tue,Mar,9
+no,0.1,Taxi Affiliation Services,no,Tue,Apr,12
+no,10.68,Flash Cab,yes,Mon,Apr,16
+no,14.1,Flash Cab,no,Mon,Apr,15
+no,1.03,Flash Cab,no,Fri,Feb,18
+no,1.68,Chicago Independents,no,Wed,Jan,17
+no,0.77,Sun Taxi,yes,Thu,Feb,8
+no,1.8,Taxi Affiliation Services,no,Sun,Jan,15
+no,0.1,Taxi Affiliation Services,no,Mon,Jan,15
+no,0.6,Chicago Independents,no,Tue,Apr,20
+no,2.68,Sun Taxi,no,Sat,Apr,23
+no,0,Taxi Affiliation Services,no,Mon,Mar,13
+no,0.02,Sun Taxi,yes,Fri,Mar,12
+no,1.99,Taxicab Insurance Agency Llc,no,Fri,Apr,22
+no,0,Taxi Affiliation Services,no,Sat,Jan,17
+no,0.52,Flash Cab,yes,Wed,Mar,13
+no,6.6,Taxi Affiliation Services,no,Fri,Apr,15
+no,1.3,Taxi Affiliation Services,no,Fri,Feb,11
+no,0.15,Taxicab Insurance Agency Llc,yes,Tue,Mar,11
+no,2,other,no,Tue,Mar,13
+no,18.74,Sun Taxi,no,Mon,Apr,18
+no,6.6,other,no,Thu,Mar,13
+no,0,other,yes,Thu,Apr,15
+no,2.74,Flash Cab,no,Mon,Mar,8
+no,0.65,Flash Cab,no,Tue,Mar,6
+no,0,other,no,Thu,Feb,8
+no,0.6,Taxi Affiliation Services,yes,Tue,Apr,12
+no,0.99,other,yes,Sat,Jan,19
+no,12.2,City Service,yes,Wed,Jan,6
+no,11.1,City Service,yes,Sun,Jan,19
+no,1.87,Taxicab Insurance Agency Llc,no,Sat,Apr,20
+no,2.52,City Service,no,Thu,Feb,16
+no,6.72,Sun Taxi,no,Thu,Mar,14
+no,6.03,other,no,Thu,Apr,13
+no,1.01,Sun Taxi,yes,Mon,Jan,15
+no,1.9,other,no,Sun,Mar,18
+no,1.03,City Service,yes,Fri,Feb,17
+no,1.66,other,no,Tue,Mar,16
+no,0,other,yes,Sun,Apr,18
+no,4.21,Taxicab Insurance Agency Llc,no,Fri,Feb,17
+no,9.52,Taxicab Insurance Agency Llc,no,Thu,Mar,12
+no,1.31,Taxicab Insurance Agency Llc,no,Mon,Apr,18
+no,11.74,other,no,Mon,Mar,14
+no,10.53,City Service,no,Wed,Mar,13
+no,2.34,other,no,Wed,Feb,7
+no,18.76,Chicago Independents,no,Tue,Feb,16
+no,2.14,Chicago Independents,no,Tue,Mar,11
+no,2.08,other,no,Tue,Mar,23
+no,1.03,Chicago Independents,yes,Mon,Apr,16
+no,11.6,Sun Taxi,yes,Tue,Jan,22
+no,20.1,Chicago Independents,no,Tue,Mar,14
+no,7.9,other,no,Mon,Mar,13
+no,9.7,Taxi Affiliation Services,no,Wed,Apr,15
+no,0,Chicago Independents,yes,Sat,Mar,8
+no,1.23,Taxicab Insurance Agency Llc,yes,Tue,Mar,15
+no,0.79,Chicago Independents,yes,Fri,Feb,9
+no,0,Taxicab Insurance Agency Llc,yes,Fri,Apr,13
+no,0,Taxicab Insurance Agency Llc,yes,Fri,Apr,13
+no,0.61,Taxicab Insurance Agency Llc,no,Thu,Apr,14
+no,0,other,yes,Fri,Apr,10
+no,1.86,Taxicab Insurance Agency Llc,no,Wed,Jan,11
+no,2.85,other,no,Mon,Apr,19
+no,18.28,Sun Taxi,no,Wed,Mar,12
+no,0.34,City Service,yes,Thu,Mar,14
+no,0.1,Taxi Affiliation Services,no,Fri,Mar,15
+no,0.76,other,yes,Fri,Apr,23
+no,0,Taxi Affiliation Services,no,Wed,Mar,13
+no,0.63,Taxicab Insurance Agency Llc,yes,Sat,Mar,14
+no,1.11,Taxicab Insurance Agency Llc,yes,Tue,Apr,10
+no,1.35,other,no,Tue,Feb,8
+no,1.24,Sun Taxi,no,Wed,Jan,8
+no,1.1,Taxi Affiliation Services,no,Fri,Feb,7
+no,0,other,yes,Wed,Apr,21
+no,0.81,Taxicab Insurance Agency Llc,no,Sun,Apr,16
+no,6.42,Sun Taxi,no,Fri,Feb,8
+no,0.4,Chicago Independents,yes,Fri,Mar,11
+no,2.82,other,yes,Fri,Mar,16
+no,1,Taxi Affiliation Services,no,Mon,Feb,13
+no,1.15,Flash Cab,no,Mon,Feb,12
+no,0.87,Flash Cab,yes,Mon,Feb,15
+no,0.6,Taxi Affiliation Services,yes,Mon,Apr,22
+no,0,Taxi Affiliation Services,yes,Tue,Apr,16
+no,0.3,Taxi Affiliation Services,no,Mon,Mar,9
+no,18.44,Sun Taxi,no,Sat,Feb,14
+no,0.6,Sun Taxi,yes,Tue,Mar,18
+no,1.18,Flash Cab,no,Wed,Apr,18
+no,0.6,other,yes,Thu,Mar,14
+no,1.3,Taxi Affiliation Services,no,Tue,Feb,19
+no,1.37,Sun Taxi,no,Sat,Mar,14
+no,4.3,Taxi Affiliation Services,no,Wed,Mar,15
+no,1.81,Flash Cab,no,Tue,Mar,19
+no,1.1,Taxi Affiliation Services,no,Wed,Mar,21
+no,0,other,yes,Thu,Mar,16
+no,0.1,Taxi Affiliation Services,yes,Tue,Mar,11
+no,0.88,Flash Cab,yes,Tue,Apr,11
+no,0,other,yes,Sat,Apr,11
+no,5.3,Taxi Affiliation Services,no,Fri,Mar,20
+no,3.4,Taxi Affiliation Services,yes,Tue,Apr,14
+no,0.5,Taxicab Insurance Agency Llc,yes,Thu,Feb,15
+no,0.1,Taxi Affiliation Services,no,Tue,Mar,12
+no,1.56,Chicago Independents,yes,Sat,Jan,13
+no,12.62,Taxicab Insurance Agency Llc,no,Thu,Mar,14
+no,0,Taxi Affiliation Services,yes,Tue,Jan,14
+no,0.2,other,yes,Sun,Mar,19
+no,10.85,Flash Cab,no,Tue,Feb,13
+no,0,other,yes,Wed,Jan,17
+no,0.89,City Service,no,Sun,Apr,18
+no,1.62,other,no,Mon,Mar,16
+no,12.79,Taxicab Insurance Agency Llc,no,Wed,Apr,19
+no,0.6,Flash Cab,yes,Sat,Jan,15
+no,0.2,Taxi Affiliation Services,no,Tue,Jan,17
+no,16.49,other,no,Tue,Mar,21
+no,1.6,Flash Cab,yes,Sat,Mar,15
+no,11.6,Sun Taxi,no,Sun,Mar,16
+no,17.73,Taxicab Insurance Agency Llc,no,Sun,Apr,9
+no,2.3,Taxi Affiliation Services,yes,Fri,Mar,12
+no,1.14,other,no,Thu,Mar,8
+no,1.79,other,no,Wed,Apr,14
+no,2.11,Flash Cab,no,Mon,Mar,10
+no,1.1,Taxi Affiliation Services,no,Fri,Mar,20
+no,1.09,City Service,no,Tue,Apr,8
+no,2.78,Taxicab Insurance Agency Llc,no,Tue,Mar,15
+no,17.9,other,no,Thu,Jan,15
+no,2.85,Flash Cab,no,Thu,Mar,9
+no,0.74,Flash Cab,no,Tue,Feb,10
+no,0.48,other,no,Sat,Mar,19
+no,0,Flash Cab,no,Mon,Mar,15
+no,3.7,Taxi Affiliation Services,no,Wed,Feb,12
+no,1.78,other,no,Thu,Mar,16
+no,0,Taxi Affiliation Services,no,Sun,Apr,18
+no,2.2,Taxi Affiliation Services,yes,Wed,Feb,9
+no,0.84,Taxicab Insurance Agency Llc,yes,Sat,Mar,20
+no,18.75,Flash Cab,no,Mon,Mar,12
+no,18.1,other,no,Fri,Jan,6
+no,3.25,Taxicab Insurance Agency Llc,no,Fri,Apr,10
+no,7.9,Taxi Affiliation Services,no,Sat,Apr,17
+no,2.68,Flash Cab,no,Thu,Jan,7
+no,7.15,Flash Cab,no,Fri,Mar,12
+no,1.5,other,no,Wed,Apr,17
+no,11.35,Flash Cab,no,Tue,Mar,12
+no,1.9,Taxi Affiliation Services,no,Thu,Apr,15
+no,1.41,Flash Cab,yes,Thu,Feb,18
+no,0,Taxicab Insurance Agency Llc,yes,Fri,Apr,18
+no,21.43,Taxicab Insurance Agency Llc,no,Mon,Mar,20
+no,0.2,Taxi Affiliation Services,no,Thu,Jan,8
+no,0.77,Flash Cab,no,Thu,Jan,8
+no,0.4,Taxi Affiliation Services,yes,Tue,Jan,18
+no,17.2,Taxi Affiliation Services,no,Sat,Jan,12
+no,0,Taxi Affiliation Services,no,Thu,Apr,13
+no,8.2,Taxi Affiliation Services,no,Fri,Feb,18
+no,0,Taxi Affiliation Services,yes,Tue,Jan,17
+no,1.78,other,no,Wed,Apr,8
+no,2.05,Chicago Independents,yes,Fri,Mar,11
+no,1.71,Sun Taxi,no,Fri,Feb,10
+no,2.62,Sun Taxi,no,Fri,Feb,15
+no,1.59,other,no,Thu,Apr,10
+no,2.27,Sun Taxi,no,Thu,Mar,8
+no,16.92,Sun Taxi,no,Sun,Mar,18
+no,2.89,Flash Cab,no,Tue,Feb,12
+no,0.01,City Service,yes,Tue,Mar,12
+no,1.1,other,no,Thu,Jan,19
+no,17.24,other,no,Thu,Apr,12
+no,1,Chicago Independents,yes,Thu,Feb,19
+no,0.61,other,yes,Tue,Apr,13
+no,2.15,City Service,no,Tue,Mar,10
+no,1.6,Taxi Affiliation Services,no,Sat,Mar,14
+no,3.28,other,no,Sat,Apr,14
+no,0.88,City Service,yes,Sun,Mar,17
+no,9.6,Taxi Affiliation Services,no,Wed,Feb,14
+no,0,Taxi Affiliation Services,no,Thu,Apr,18
+no,0,other,no,Mon,Mar,17
+no,1.6,Taxi Affiliation Services,no,Mon,Jan,15
+no,3.4,City Service,no,Sat,Apr,14
+no,6.26,Flash Cab,no,Wed,Feb,9
+no,1.68,Taxicab Insurance Agency Llc,no,Tue,Feb,12
+no,2.77,Taxicab Insurance Agency Llc,no,Sun,Jan,13
+no,0.57,other,yes,Wed,Apr,18
+no,11.25,Flash Cab,no,Wed,Jan,20
+no,0,Taxicab Insurance Agency Llc,yes,Wed,Feb,11
+no,1.82,Chicago Independents,no,Fri,Apr,15
+no,3.92,Sun Taxi,no,Wed,Apr,15
+no,3.5,Taxi Affiliation Services,no,Wed,Feb,13
+no,0,Taxi Affiliation Services,yes,Tue,Mar,8
+no,1.45,Sun Taxi,no,Fri,Mar,8
+no,2,other,no,Fri,Feb,9
+no,11.79,Flash Cab,no,Fri,Feb,9
+no,18.12,Sun Taxi,no,Thu,Jan,19
+no,3.28,other,no,Fri,Apr,10
+no,0.36,other,yes,Tue,Feb,8
+no,1,Taxi Affiliation Services,no,Tue,Apr,16
+no,12.25,Taxicab Insurance Agency Llc,no,Mon,Apr,10
+no,10.21,Flash Cab,no,Tue,Jan,14
+no,18.15,other,no,Sat,Apr,16
+no,10.93,Sun Taxi,no,Fri,Jan,10
+no,3.23,City Service,no,Tue,Feb,17
+no,1,Taxi Affiliation Services,no,Tue,Apr,9
+no,19.55,City Service,no,Fri,Feb,13
+no,8.29,other,no,Sat,Feb,21
+no,18.22,Sun Taxi,no,Tue,Apr,20
+no,1.83,Flash Cab,no,Thu,Mar,17
+no,8.74,Flash Cab,no,Tue,Feb,10
+no,0.94,Sun Taxi,no,Wed,Apr,18
+no,4.28,Sun Taxi,no,Tue,Feb,11
+no,0,Taxicab Insurance Agency Llc,yes,Mon,Mar,14
+no,4.1,Flash Cab,no,Tue,Feb,14
+no,1.7,Taxi Affiliation Services,no,Wed,Feb,9
+no,0,Taxi Affiliation Services,yes,Fri,Mar,17
+no,2.39,Taxicab Insurance Agency Llc,no,Sat,Apr,16
+no,18.77,City Service,no,Sun,Apr,9
+no,19.56,Taxicab Insurance Agency Llc,no,Wed,Mar,11
+no,1.97,Flash Cab,no,Sun,Apr,15
+no,3.13,other,no,Tue,Mar,12
+no,11.5,Taxi Affiliation Services,no,Mon,Jan,13
+no,0.7,Taxi Affiliation Services,yes,Mon,Feb,10
+no,0,Taxi Affiliation Services,no,Fri,Feb,18
+no,17.16,City Service,no,Sun,Mar,16
+no,1.72,Flash Cab,no,Wed,Jan,17
+no,2.84,Taxicab Insurance Agency Llc,yes,Fri,Feb,15
+no,0.8,Taxi Affiliation Services,no,Thu,Jan,11
+no,1.23,Taxicab Insurance Agency Llc,yes,Thu,Feb,19
+no,11.01,Sun Taxi,no,Thu,Mar,16
+no,0.63,other,yes,Tue,Jan,13
+no,0,Chicago Independents,yes,Mon,Feb,13
+no,1.23,Sun Taxi,no,Fri,Mar,15
+no,11.13,Flash Cab,no,Tue,Jan,10
+no,2.5,other,no,Wed,Apr,10
+no,16.79,City Service,no,Wed,Apr,13
+no,1.94,Flash Cab,no,Thu,Feb,9
+no,2.22,Chicago Independents,no,Fri,Apr,19
+no,1.7,Taxicab Insurance Agency Llc,no,Thu,Feb,20
+no,7.55,other,no,Tue,Feb,16
+no,6.1,Taxi Affiliation Services,no,Thu,Mar,14
+no,3.27,Chicago Independents,no,Mon,Jan,14
+no,10.05,Flash Cab,no,Wed,Mar,11
+no,0.47,Flash Cab,no,Sat,Mar,18
+no,1.5,other,no,Sun,Feb,13
+no,0.9,other,yes,Mon,Mar,8
+no,0.75,Flash Cab,no,Mon,Feb,11
+no,1.39,Sun Taxi,no,Mon,Feb,16
+no,0.9,Taxi Affiliation Services,yes,Tue,Feb,14
+no,1.39,City Service,no,Mon,Mar,11
+no,0.8,Flash Cab,no,Fri,Mar,13
+no,2.5,Chicago Independents,no,Wed,Jan,10
+no,10.08,City Service,no,Fri,Apr,21
+no,2.71,Flash Cab,yes,Wed,Feb,7
+no,2.35,Flash Cab,no,Mon,Apr,17
+no,1.9,Chicago Independents,no,Sat,Feb,18
+no,2.88,Sun Taxi,no,Sun,Apr,12
+no,1.68,Flash Cab,no,Sat,Mar,15
+no,5.68,City Service,no,Wed,Mar,9
+no,1.1,other,no,Sat,Mar,13
+no,11.14,City Service,no,Tue,Jan,9
+no,0.95,City Service,yes,Thu,Jan,15
+no,16.8,other,no,Sat,Mar,11
+no,11.08,Flash Cab,no,Fri,Feb,9
+no,10.62,Flash Cab,no,Wed,Apr,15
+no,0.3,Sun Taxi,no,Fri,Apr,18
+no,1.01,Taxicab Insurance Agency Llc,no,Wed,Jan,16
+no,0,Taxi Affiliation Services,yes,Wed,Mar,18
+no,0,other,yes,Fri,Mar,12
+no,2.8,other,no,Fri,Mar,18
+no,0.85,other,yes,Tue,Mar,19
+no,1.6,other,no,Tue,Mar,19
+no,0.24,Chicago Independents,no,Wed,Jan,10
+no,1.28,Flash Cab,yes,Tue,Apr,14
+no,0.82,City Service,yes,Mon,Mar,14
+no,18.26,City Service,no,Fri,Feb,16
+no,18,Chicago Independents,no,Wed,Mar,14
+no,10.1,Flash Cab,no,Fri,Mar,10
+no,1.65,Flash Cab,no,Tue,Jan,9
+no,1.95,other,yes,Fri,Mar,21
+no,1.54,Sun Taxi,yes,Wed,Mar,18
+no,1.42,other,no,Thu,Apr,16
+no,1.26,Sun Taxi,no,Thu,Jan,10
+no,0.96,Taxicab Insurance Agency Llc,no,Fri,Feb,18
+no,5.92,City Service,no,Thu,Mar,13
+no,0,other,yes,Fri,Apr,12
+no,1.26,Taxicab Insurance Agency Llc,no,Sat,Mar,8
+no,3.15,Flash Cab,no,Thu,Apr,14
+no,18.06,Taxicab Insurance Agency Llc,no,Thu,Jan,8
+no,1.09,other,yes,Tue,Apr,13
+no,1.5,Chicago Independents,yes,Tue,Jan,18
+no,0.95,Sun Taxi,yes,Fri,Jan,8
+no,3.1,other,no,Tue,Mar,19
+no,0.43,Sun Taxi,yes,Wed,Feb,18
+no,0,other,yes,Thu,Mar,16
+no,0.3,other,yes,Thu,Jan,15
+no,1.53,City Service,no,Thu,Feb,17
+no,16.9,Chicago Independents,no,Fri,Apr,8
+no,8.6,other,yes,Mon,Feb,14
+no,16.4,Chicago Independents,no,Sun,Apr,10
+no,20.07,City Service,no,Mon,Feb,21
+no,0,Taxi Affiliation Services,no,Tue,Mar,14
+no,0,Taxi Affiliation Services,yes,Sun,Feb,15
+no,10.09,other,no,Thu,Feb,14
+no,8.79,Flash Cab,yes,Fri,Apr,18
+no,0,Taxi Affiliation Services,no,Thu,Feb,15
+no,5.37,Flash Cab,yes,Sun,Mar,12
+no,13.38,other,no,Sat,Apr,21
+no,0.9,other,yes,Wed,Mar,10
+no,0,Flash Cab,yes,Thu,Jan,12
+no,18.38,Sun Taxi,no,Tue,Mar,5
+no,4.14,Flash Cab,no,Thu,Mar,16
+no,0.91,Taxicab Insurance Agency Llc,no,Fri,Jan,17
+no,1.72,other,no,Fri,Apr,8
+no,1.58,Flash Cab,no,Thu,Jan,12
+no,8.54,other,yes,Fri,Feb,17
+no,0.6,Taxi Affiliation Services,no,Wed,Apr,15
+no,2.05,other,no,Thu,Jan,18
+no,6.64,Flash Cab,no,Sat,Feb,12
+no,1.3,Taxi Affiliation Services,yes,Fri,Apr,18
+no,0,Flash Cab,yes,Thu,Feb,18
+no,0.2,Taxi Affiliation Services,no,Mon,Mar,12
+no,9.18,Taxicab Insurance Agency Llc,no,Wed,Feb,16
+no,0.8,Taxi Affiliation Services,yes,Tue,Mar,16
+no,13,Taxicab Insurance Agency Llc,no,Sat,Apr,19
+no,5.78,City Service,no,Wed,Mar,10
+no,1,Taxi Affiliation Services,no,Sun,Mar,12
+no,0,Taxi Affiliation Services,no,Sat,Apr,12
+no,4.04,City Service,no,Sat,Apr,18
+no,1.82,City Service,no,Wed,Jan,19
+no,3.08,other,no,Tue,Apr,12
+no,1.03,other,no,Thu,Mar,21
+no,17.8,other,no,Mon,Feb,11
+no,1.44,Flash Cab,no,Wed,Apr,14
+no,2.98,Taxicab Insurance Agency Llc,no,Mon,Mar,23
+no,9.66,other,no,Sat,Jan,13
+no,0.53,Sun Taxi,no,Thu,Jan,15
+no,0,Taxi Affiliation Services,yes,Mon,Mar,19
+no,18.5,other,no,Wed,Feb,13
+no,7.66,Sun Taxi,no,Thu,Feb,14
+no,0.09,Sun Taxi,no,Fri,Jan,16
+no,1.7,other,no,Thu,Feb,21
+no,1,other,yes,Wed,Feb,20
+no,0.55,Sun Taxi,no,Sat,Jan,14
+no,10.36,Flash Cab,no,Sat,Feb,18
+no,1.28,other,no,Tue,Feb,12
+no,0,Taxi Affiliation Services,yes,Tue,Apr,10
+no,1.08,Sun Taxi,yes,Sun,Mar,16
+no,1.25,Flash Cab,no,Thu,Feb,10
+no,1.79,Taxicab Insurance Agency Llc,no,Wed,Mar,17
+no,0.1,Taxi Affiliation Services,no,Mon,Mar,12
+no,0,Taxi Affiliation Services,yes,Sun,Mar,11
+no,0.1,Taxi Affiliation Services,no,Thu,Feb,10
+no,1.98,Taxicab Insurance Agency Llc,no,Sun,Apr,17
+no,0.5,Taxi Affiliation Services,yes,Mon,Apr,16
+no,0.69,other,no,Mon,Mar,16
+no,1.06,other,no,Sun,Apr,10
+no,1.45,Flash Cab,no,Mon,Mar,18
+no,18.1,other,no,Sun,Apr,0
+no,0,Flash Cab,yes,Wed,Apr,5
+no,4.54,Sun Taxi,no,Thu,Feb,17
+no,18.03,Sun Taxi,no,Wed,Apr,21
+no,1.7,Taxi Affiliation Services,no,Tue,Apr,17
+no,1.61,Sun Taxi,no,Thu,Apr,16
+no,0.86,other,no,Sat,Apr,11
+no,4.7,Taxi Affiliation Services,no,Fri,Jan,9
+no,11.2,other,no,Thu,Mar,15
+no,2.6,Taxi Affiliation Services,no,Fri,Feb,12
+no,0,Flash Cab,no,Thu,Apr,8
+no,1.1,Taxi Affiliation Services,no,Wed,Apr,16
+no,0.2,Taxi Affiliation Services,no,Tue,Jan,13
+no,1.11,Flash Cab,no,Tue,Feb,8
+no,2.73,Taxicab Insurance Agency Llc,no,Thu,Jan,8
+no,1.05,Flash Cab,no,Thu,Feb,16
+no,1.5,Taxi Affiliation Services,no,Sat,Apr,18
+no,0,Chicago Independents,no,Wed,Feb,7
+no,1.83,City Service,no,Wed,Feb,18
+no,1.82,other,no,Thu,Mar,18
+no,12.63,Flash Cab,no,Thu,Mar,16
+no,0,Flash Cab,no,Sat,Apr,23
+no,3.91,Chicago Independents,no,Thu,Jan,7
+no,0.69,Flash Cab,yes,Thu,Feb,16
+no,1.56,other,no,Tue,Mar,8
+no,1.03,Flash Cab,no,Wed,Mar,13
+no,4.87,other,no,Wed,Mar,9
+no,13.21,other,no,Fri,Mar,10
+no,0,Flash Cab,no,Thu,Feb,19
+no,1,other,no,Mon,Feb,22
+no,1.68,Flash Cab,yes,Tue,Apr,13
+no,0.7,other,yes,Fri,Feb,9
+no,0.64,Chicago Independents,yes,Thu,Mar,16
+no,13.59,Taxicab Insurance Agency Llc,no,Tue,Apr,14
+no,2.59,Sun Taxi,no,Fri,Apr,19
+no,18.12,other,no,Thu,Feb,12
+no,0,other,no,Sat,Mar,20
+no,0.79,Flash Cab,no,Wed,Jan,7
+no,11.33,Flash Cab,no,Thu,Mar,19
+no,0.9,City Service,yes,Fri,Mar,14
+no,18.09,Sun Taxi,no,Wed,Mar,11
+no,0.72,City Service,yes,Thu,Mar,17
+no,16.98,Taxicab Insurance Agency Llc,no,Thu,Apr,11
+no,11.6,Taxi Affiliation Services,no,Fri,Apr,12
+no,4.7,Taxi Affiliation Services,no,Wed,Feb,16
+no,0.8,other,yes,Wed,Feb,11
+no,0.56,other,yes,Fri,Apr,16
+no,10.9,Taxi Affiliation Services,no,Wed,Feb,12
+no,10.21,Flash Cab,no,Wed,Apr,12
+no,1.71,Sun Taxi,no,Sun,Mar,13
+no,18.05,Sun Taxi,no,Wed,Mar,19
+no,0.8,other,yes,Thu,Mar,13
+no,4.85,other,no,Tue,Mar,16
+no,0.96,Flash Cab,no,Mon,Mar,14
+no,1.79,Taxicab Insurance Agency Llc,no,Fri,Jan,17
+no,8.57,Flash Cab,no,Thu,Apr,8
+no,0.54,other,yes,Mon,Feb,15
+no,1,Taxi Affiliation Services,no,Wed,Apr,23
+no,0,Taxi Affiliation Services,no,Fri,Jan,10
+no,2.19,Flash Cab,no,Sat,Feb,23
+no,6.12,Flash Cab,no,Fri,Jan,17
+no,1.99,other,no,Tue,Apr,17
+no,3.93,City Service,no,Wed,Jan,14
+no,1.7,other,no,Tue,Jan,12
+no,1.26,Sun Taxi,no,Mon,Jan,14
+no,1.23,Taxicab Insurance Agency Llc,yes,Thu,Mar,18
+no,0.1,Taxi Affiliation Services,no,Wed,Mar,15
+no,3.58,other,no,Sun,Feb,10
+no,17.3,other,no,Thu,Jan,22
+no,0,Taxi Affiliation Services,no,Thu,Feb,17
+no,5.6,Taxi Affiliation Services,no,Fri,Mar,15
+no,11.68,Flash Cab,no,Tue,Feb,10
+no,1.45,other,no,Sat,Mar,17
+no,1.94,Flash Cab,no,Mon,Feb,11
+no,2.8,Taxi Affiliation Services,no,Fri,Apr,12
+no,0.1,Taxi Affiliation Services,no,Mon,Mar,10
+no,8.35,Flash Cab,no,Wed,Mar,13
+no,18.2,other,no,Wed,Jan,19
+no,0.79,other,yes,Mon,Mar,16
+no,0,other,yes,Fri,Jan,12
+no,17.7,Taxi Affiliation Services,no,Sun,Apr,13
+no,0.88,Sun Taxi,yes,Mon,Apr,12
+no,0,Taxi Affiliation Services,yes,Mon,Mar,11
+no,1.47,Flash Cab,no,Sat,Feb,18
+no,1.44,Chicago Independents,no,Fri,Apr,23
+no,0.4,Taxi Affiliation Services,yes,Fri,Feb,16
+no,1.66,Flash Cab,no,Fri,Feb,12
+no,0,Taxicab Insurance Agency Llc,yes,Wed,Feb,19
+no,2.47,other,no,Fri,Feb,20
+no,3.3,Taxi Affiliation Services,yes,Thu,Feb,16
+no,2,Taxi Affiliation Services,no,Fri,Feb,19
+no,1.86,City Service,no,Tue,Feb,16
+no,0.65,City Service,no,Wed,Mar,10
+no,0,other,no,Wed,Apr,17
+no,1.56,Taxicab Insurance Agency Llc,no,Wed,Mar,17
+no,0,other,no,Thu,Jan,16
+no,1.4,other,no,Wed,Feb,17
+no,1.57,City Service,no,Fri,Mar,19
+no,2.62,City Service,no,Wed,Feb,13
+no,0,Taxi Affiliation Services,no,Wed,Jan,18
+no,11.75,other,no,Mon,Feb,9
+no,16.5,Taxi Affiliation Services,no,Fri,Apr,15
+no,1.07,other,no,Tue,Jan,12
+no,0.4,other,yes,Fri,Mar,16
+no,16.82,other,no,Thu,Feb,20
+no,1.51,City Service,no,Sun,Apr,7
+no,0,other,yes,Sun,Feb,13
+no,1.24,other,yes,Fri,Apr,22
+no,0.02,Taxicab Insurance Agency Llc,no,Mon,Apr,7
+no,1.79,Chicago Independents,no,Mon,Feb,9
+no,4.82,other,no,Tue,Feb,11
+no,0,Taxi Affiliation Services,yes,Sun,Jan,13
+no,1.31,Sun Taxi,no,Mon,Mar,15
+no,1.93,City Service,no,Tue,Mar,11
+no,0,Taxi Affiliation Services,no,Thu,Feb,10
+no,17.79,other,no,Sun,Apr,11
+no,1.92,City Service,no,Tue,Jan,8
+no,0.9,Taxicab Insurance Agency Llc,no,Wed,Feb,10
+no,0,Flash Cab,yes,Thu,Feb,18
+no,0,other,yes,Tue,Apr,13
+no,16.46,Flash Cab,no,Fri,Apr,19
+no,1.51,other,yes,Wed,Feb,11
+no,1.4,Taxi Affiliation Services,no,Wed,Apr,11
+no,1.12,Taxicab Insurance Agency Llc,no,Tue,Jan,17
+no,3.22,Sun Taxi,no,Tue,Apr,8
+no,0.1,Taxi Affiliation Services,no,Fri,Apr,16
+no,17.22,City Service,no,Tue,Apr,15
+no,6.6,Taxi Affiliation Services,no,Wed,Jan,15
+no,10.4,City Service,no,Sat,Apr,17
+no,1.23,other,no,Fri,Apr,12
+no,0.5,Taxi Affiliation Services,no,Tue,Mar,9
+no,0,Flash Cab,yes,Wed,Feb,11
+no,11.19,Flash Cab,no,Mon,Apr,10
+no,0.57,other,no,Fri,Jan,20
+no,0,Taxi Affiliation Services,no,Wed,Mar,16
+no,2.1,other,no,Fri,Apr,21
+no,3.5,Taxi Affiliation Services,no,Wed,Apr,10
+no,3.07,City Service,no,Wed,Apr,13
+no,5.5,Taxi Affiliation Services,no,Tue,Feb,9
+no,0.91,other,no,Sun,Apr,18
+no,18.44,other,no,Thu,Jan,8
+yes,1.88,Taxicab Insurance Agency Llc,no,Fri,Mar,12
+yes,1.05,Taxicab Insurance Agency Llc,no,Thu,Apr,15
+yes,0.71,Taxicab Insurance Agency Llc,yes,Tue,Feb,13
+yes,0.5,Taxi Affiliation Services,no,Fri,Mar,11
+yes,1.79,other,no,Fri,Apr,16
+yes,19.28,other,no,Fri,Apr,8
+yes,1.21,Flash Cab,no,Sat,Feb,13
+yes,18.88,Chicago Independents,no,Sat,Apr,14
+yes,0.73,City Service,no,Thu,Mar,11
+yes,0.77,Taxicab Insurance Agency Llc,no,Mon,Mar,7
+yes,2.2,other,no,Sat,Jan,13
+yes,21.3,other,no,Mon,Mar,15
+yes,2.63,other,no,Tue,Apr,9
+yes,0.81,other,no,Fri,Mar,18
+yes,12.6,Taxi Affiliation Services,no,Mon,Mar,21
+yes,1.06,other,no,Wed,Feb,13
+yes,13.1,City Service,no,Wed,Mar,15
+yes,12.06,Sun Taxi,no,Thu,Mar,20
+yes,26.26,other,no,Mon,Apr,13
+yes,0,Taxi Affiliation Services,no,Wed,Apr,20
+yes,15.2,other,no,Fri,Apr,22
+yes,0,Taxi Affiliation Services,yes,Sat,Jan,19
+yes,18.91,Sun Taxi,no,Wed,Feb,16
+yes,16.6,other,no,Sun,Apr,19
+yes,1.1,other,no,Wed,Mar,19
+yes,0.36,Flash Cab,yes,Tue,Feb,18
+yes,1.54,Taxicab Insurance Agency Llc,no,Wed,Apr,9
+yes,17.4,other,no,Thu,Apr,17
+yes,16.9,Taxi Affiliation Services,no,Tue,Feb,18
+yes,1.91,Sun Taxi,no,Wed,Feb,7
+yes,17.64,other,no,Sun,Mar,13
+yes,0,Taxi Affiliation Services,yes,Thu,Feb,19
+yes,17.89,Taxicab Insurance Agency Llc,no,Tue,Mar,18
+yes,18.65,other,no,Sun,Jan,15
+yes,31.33,Taxicab Insurance Agency Llc,no,Thu,Apr,9
+yes,13.2,other,no,Mon,Apr,22
+yes,17.6,other,no,Mon,Feb,10
+yes,13.47,Sun Taxi,no,Sat,Mar,10
+yes,1.07,Flash Cab,yes,Sun,Apr,10
+yes,1.42,Sun Taxi,yes,Fri,Mar,18
+yes,16.47,Taxicab Insurance Agency Llc,no,Thu,Apr,23
+yes,6.02,Taxicab Insurance Agency Llc,no,Fri,Feb,17
+yes,0.04,City Service,yes,Sat,Apr,21
+yes,1,Chicago Independents,no,Sat,Mar,11
+yes,18.3,Taxi Affiliation Services,no,Wed,Jan,10
+yes,18.13,Sun Taxi,no,Fri,Mar,13
+yes,0,Taxi Affiliation Services,no,Tue,Mar,10
+yes,0,other,yes,Thu,Mar,13
+yes,2.2,Taxi Affiliation Services,no,Sun,Apr,15
+yes,1.28,Sun Taxi,no,Fri,Apr,15
+yes,0.7,Flash Cab,no,Mon,Mar,8
+yes,1,Taxi Affiliation Services,no,Tue,Feb,14
+yes,18.08,Flash Cab,no,Fri,Apr,12
+yes,1.74,City Service,no,Tue,Mar,8
+yes,17.5,Taxicab Insurance Agency Llc,no,Fri,Mar,23
+yes,0,Flash Cab,no,Tue,Mar,7
+yes,18.27,Sun Taxi,no,Wed,Mar,9
+yes,18.15,Chicago Independents,no,Sun,Mar,14
+yes,0.6,Taxi Affiliation Services,yes,Fri,Jan,21
+yes,2.45,Sun Taxi,no,Fri,Apr,11
+yes,13.4,other,no,Sun,Jan,11
+yes,1.2,Taxi Affiliation Services,no,Sun,Mar,10
+yes,15,other,no,Wed,Mar,20
+yes,1.14,Sun Taxi,yes,Thu,Feb,18
+yes,0.43,Flash Cab,no,Wed,Feb,12
+yes,0.65,other,yes,Wed,Apr,16
+yes,16.7,City Service,no,Sun,Apr,21
+yes,10.85,other,no,Fri,Jan,23
+yes,1.1,Taxi Affiliation Services,no,Fri,Jan,19
+yes,17.22,other,no,Thu,Mar,15
+yes,1.64,City Service,no,Wed,Feb,22
+yes,17.9,other,no,Fri,Mar,17
+yes,1.09,Taxicab Insurance Agency Llc,no,Tue,Feb,7
+yes,0,Taxi Affiliation Services,no,Wed,Jan,17
+yes,1.81,Sun Taxi,no,Wed,Mar,17
+yes,1.34,City Service,no,Fri,Apr,22
+yes,0.9,City Service,no,Thu,Apr,19
+yes,1.5,Taxicab Insurance Agency Llc,no,Thu,Jan,15
+yes,1.7,other,no,Fri,Mar,18
+yes,1.75,other,no,Wed,Feb,15
+yes,1.25,other,yes,Fri,Mar,18
+yes,1.14,other,no,Thu,Apr,16
+yes,0.1,Taxi Affiliation Services,no,Sat,Mar,0
+yes,0.74,Sun Taxi,no,Fri,Feb,11
+yes,1.09,City Service,yes,Fri,Feb,9
+yes,11.91,other,no,Thu,Apr,19
+yes,1.79,other,no,Fri,Feb,21
+yes,18.18,City Service,no,Wed,Feb,19
+yes,17.4,Taxicab Insurance Agency Llc,no,Tue,Feb,20
+yes,1.67,Sun Taxi,no,Mon,Mar,11
+yes,2.03,other,no,Fri,Apr,18
+yes,1.05,Taxicab Insurance Agency Llc,yes,Sun,Mar,18
+yes,18.3,Taxi Affiliation Services,no,Sun,Mar,13
+yes,0.59,Taxicab Insurance Agency Llc,no,Thu,Feb,12
+yes,17.11,Chicago Independents,no,Mon,Mar,18
+yes,1.79,other,yes,Fri,Mar,21
+yes,0.67,Flash Cab,yes,Wed,Jan,16
+yes,0.9,Flash Cab,no,Fri,Mar,23
+yes,0,Taxi Affiliation Services,yes,Wed,Mar,11
+yes,0.56,other,yes,Thu,Mar,11
+yes,0.46,other,yes,Tue,Jan,15
+yes,1.86,Sun Taxi,no,Fri,Apr,11
+yes,7.9,Taxi Affiliation Services,no,Sat,Apr,16
+yes,0.14,Sun Taxi,no,Fri,Jan,19
+yes,0,Taxi Affiliation Services,no,Tue,Feb,13
+yes,0,Flash Cab,yes,Tue,Jan,18
+yes,17.97,Taxicab Insurance Agency Llc,no,Wed,Mar,11
+yes,2.07,Taxicab Insurance Agency Llc,no,Mon,Apr,7
+yes,1.4,Chicago Independents,no,Tue,Apr,6
+yes,0.97,other,yes,Wed,Feb,16
+yes,0.82,Flash Cab,no,Sun,Jan,14
+yes,1.7,other,no,Thu,Mar,15
+yes,16.54,City Service,no,Wed,Jan,19
+yes,0.83,other,no,Tue,Apr,12
+yes,12.2,other,no,Wed,Apr,17
+yes,2.55,City Service,no,Fri,Jan,17
+yes,1.46,Flash Cab,no,Mon,Apr,16
+yes,1.46,Sun Taxi,no,Tue,Apr,8
+yes,2.7,other,no,Fri,Jan,12
+yes,16.63,Chicago Independents,no,Tue,Apr,12
+yes,11.28,other,no,Tue,Feb,18
+yes,2.9,Taxi Affiliation Services,no,Sun,Mar,9
+yes,1.23,other,yes,Wed,Jan,11
+yes,2.54,Taxicab Insurance Agency Llc,no,Thu,Mar,17
+yes,0.73,Taxicab Insurance Agency Llc,no,Sun,Mar,18
+yes,1.3,Taxi Affiliation Services,no,Tue,Jan,19
+yes,1.13,Flash Cab,yes,Mon,Apr,16
+yes,0,Taxi Affiliation Services,yes,Thu,Feb,15
+yes,18.3,other,no,Fri,Feb,19
+yes,18.27,Flash Cab,no,Sat,Feb,13
+yes,17.5,Flash Cab,no,Mon,Jan,19
+yes,1.61,Flash Cab,no,Wed,Feb,20
+yes,17.38,Taxicab Insurance Agency Llc,no,Wed,Mar,13
+yes,1.4,other,no,Wed,Feb,20
+yes,1.1,Taxi Affiliation Services,no,Sun,Apr,12
+yes,3.42,Sun Taxi,no,Fri,Jan,16
+yes,1.8,Taxi Affiliation Services,no,Thu,Jan,8
+yes,2.24,other,no,Mon,Apr,17
+yes,0,Taxi Affiliation Services,no,Thu,Feb,7
+yes,0,Taxi Affiliation Services,no,Wed,Mar,21
+yes,0.55,other,yes,Tue,Apr,18
+yes,12.08,City Service,no,Wed,Mar,14
+yes,2,Taxi Affiliation Services,no,Thu,Jan,18
+yes,20.65,City Service,no,Thu,Mar,12
+yes,2.22,Sun Taxi,no,Mon,Mar,14
+yes,12.41,Sun Taxi,no,Fri,Feb,8
+yes,3.9,other,no,Wed,Mar,14
+yes,0,Taxicab Insurance Agency Llc,yes,Tue,Apr,14
+yes,0.65,other,yes,Fri,Feb,7
+yes,3.2,Taxi Affiliation Services,no,Mon,Mar,12
+yes,1.25,City Service,no,Sat,Mar,10
+yes,0.45,other,yes,Fri,Jan,9
+yes,1.63,Taxicab Insurance Agency Llc,no,Tue,Mar,12
+yes,17.4,Taxi Affiliation Services,no,Fri,Mar,16
+yes,3.1,other,no,Fri,Apr,16
+yes,1.25,City Service,yes,Fri,Apr,19
+yes,1.04,Taxicab Insurance Agency Llc,no,Mon,Mar,12
+yes,2.56,Taxicab Insurance Agency Llc,no,Sun,Mar,10
+yes,16.64,City Service,no,Mon,Mar,16
+yes,0.5,Taxi Affiliation Services,no,Thu,Apr,16
+yes,1.53,other,no,Mon,Apr,16
+yes,2.46,Sun Taxi,no,Tue,Mar,12
+yes,0.5,other,yes,Wed,Mar,14
+yes,16.83,City Service,no,Tue,Feb,16
+yes,16.2,other,no,Wed,Apr,20
+yes,17.57,City Service,no,Sun,Apr,5
+yes,16.78,other,no,Thu,Feb,13
+yes,17.96,other,no,Fri,Feb,9
+yes,1.24,City Service,no,Thu,Feb,12
+yes,0,Taxi Affiliation Services,no,Fri,Mar,20
+yes,1.05,Flash Cab,yes,Fri,Apr,21
+yes,1.59,Taxicab Insurance Agency Llc,no,Wed,Apr,18
+yes,0.92,Flash Cab,no,Wed,Apr,13
+yes,2.99,Taxicab Insurance Agency Llc,no,Sun,Mar,16
+yes,1.98,other,no,Thu,Jan,9
+yes,17.68,Sun Taxi,no,Sat,Apr,19
+yes,0,Sun Taxi,yes,Sat,Mar,6
+yes,18.98,Sun Taxi,no,Thu,Feb,8
+yes,10.9,Taxi Affiliation Services,no,Sun,Apr,16
+yes,2.11,City Service,no,Tue,Apr,18
+yes,15.7,Taxi Affiliation Services,no,Thu,Mar,18
+yes,4.96,Taxicab Insurance Agency Llc,no,Mon,Apr,8
+yes,1.5,Chicago Independents,no,Thu,Feb,18
+yes,2.51,Taxicab Insurance Agency Llc,no,Wed,Mar,15
+yes,0,Taxi Affiliation Services,no,Mon,Mar,13
+yes,17.4,Taxi Affiliation Services,no,Tue,Apr,20
+yes,1.61,other,yes,Fri,Feb,20
+yes,17.8,Sun Taxi,no,Sun,Apr,14
+yes,0.1,Taxi Affiliation Services,no,Mon,Mar,15
+yes,1.28,other,yes,Thu,Apr,13
+yes,2.98,City Service,no,Tue,Apr,7
+yes,1.67,Flash Cab,no,Fri,Feb,12
+yes,0.51,other,yes,Fri,Apr,7
+yes,17.34,Sun Taxi,no,Tue,Feb,16
+yes,0.82,City Service,no,Wed,Feb,8
+yes,4.88,other,yes,Fri,Feb,0
+yes,0.8,Taxi Affiliation Services,no,Wed,Feb,20
+yes,21.13,Taxicab Insurance Agency Llc,no,Fri,Mar,16
+yes,17.07,other,no,Thu,Jan,17
+yes,1.22,Flash Cab,no,Tue,Feb,19
+yes,0.6,other,no,Wed,Feb,11
+yes,2.7,other,no,Tue,Mar,18
+yes,17.73,Flash Cab,no,Wed,Feb,14
+yes,1.2,other,no,Tue,Feb,15
+yes,1.09,other,yes,Wed,Mar,13
+yes,0,Sun Taxi,yes,Sun,Mar,20
+yes,3.47,other,no,Tue,Jan,12
+yes,1.29,Sun Taxi,yes,Thu,Feb,8
+yes,17.3,other,no,Wed,Mar,14
+yes,1.97,other,no,Fri,Jan,8
+yes,1.3,other,yes,Thu,Jan,10
+yes,17.6,Taxi Affiliation Services,no,Sun,Mar,19
+yes,2.44,Taxicab Insurance Agency Llc,no,Mon,Apr,20
+yes,0.63,other,no,Wed,Feb,12
+yes,0,Taxi Affiliation Services,yes,Sat,Feb,19
+yes,1.5,other,no,Wed,Mar,15
+yes,1.98,City Service,no,Mon,Mar,9
+yes,16.58,Sun Taxi,no,Sat,Feb,16
+yes,0,Taxi Affiliation Services,no,Wed,Mar,8
+yes,0,Taxi Affiliation Services,yes,Mon,Jan,8
+yes,0.43,Sun Taxi,no,Wed,Mar,22
+yes,0.8,other,yes,Wed,Apr,11
+yes,17.6,other,no,Mon,Jan,16
+yes,2.6,Taxi Affiliation Services,no,Thu,Feb,10
+yes,1.77,Sun Taxi,no,Tue,Jan,15
+yes,2.3,Taxi Affiliation Services,no,Thu,Apr,18
+yes,0.99,Sun Taxi,yes,Fri,Jan,18
+yes,1.37,Taxicab Insurance Agency Llc,yes,Fri,Mar,21
+yes,18.76,City Service,no,Thu,Mar,15
+yes,1.04,Chicago Independents,yes,Thu,Jan,18
+yes,15.85,Sun Taxi,no,Mon,Jan,15
+yes,21.28,City Service,no,Fri,Apr,0
+yes,17.85,City Service,no,Tue,Apr,17
+yes,1.25,City Service,no,Fri,Mar,13
+yes,16.92,Sun Taxi,no,Sun,Mar,13
+yes,0.56,other,yes,Mon,Feb,16
+yes,16.67,other,no,Mon,Jan,18
+yes,0.72,Flash Cab,no,Wed,Feb,11
+yes,18.2,other,no,Wed,Jan,20
+yes,7.3,other,no,Wed,Apr,18
+yes,9.84,other,no,Sat,Mar,7
+yes,2.8,other,no,Sun,Apr,16
+yes,0,Taxi Affiliation Services,yes,Wed,Feb,19
+yes,3.5,Flash Cab,no,Fri,Mar,18
+yes,0.67,City Service,yes,Tue,Jan,16
+yes,17.7,Taxi Affiliation Services,no,Sun,Apr,13
+yes,0.95,Sun Taxi,yes,Tue,Jan,9
+yes,1.43,Sun Taxi,no,Wed,Mar,14
+yes,0.1,Taxi Affiliation Services,no,Tue,Apr,10
+yes,2,Taxi Affiliation Services,no,Wed,Mar,17
+yes,5.04,Taxicab Insurance Agency Llc,no,Tue,Apr,12
+yes,0.97,Flash Cab,no,Fri,Jan,21
+yes,1.13,Taxicab Insurance Agency Llc,no,Wed,Mar,7
+yes,0.8,City Service,no,Tue,Jan,14
+yes,2,Taxi Affiliation Services,no,Wed,Apr,22
+yes,0.9,Taxi Affiliation Services,yes,Tue,Jan,18
+yes,16.78,Chicago Independents,no,Wed,Feb,6
+yes,17.6,Taxi Affiliation Services,no,Thu,Apr,21
+yes,0.51,Sun Taxi,yes,Thu,Apr,19
+yes,0.57,other,no,Wed,Feb,15
+yes,0.88,Sun Taxi,yes,Tue,Mar,9
+yes,0.83,Taxicab Insurance Agency Llc,no,Mon,Apr,9
+yes,0.7,Taxi Affiliation Services,no,Wed,Mar,17
+yes,0,Taxicab Insurance Agency Llc,yes,Tue,Mar,20
+yes,17.5,Taxi Affiliation Services,no,Tue,Apr,9
+yes,0,Flash Cab,no,Mon,Jan,8
+yes,17.6,Sun Taxi,no,Fri,Feb,8
+yes,1.44,Flash Cab,no,Sat,Apr,19
+yes,17.87,Taxicab Insurance Agency Llc,no,Thu,Apr,11
+yes,1,other,no,Tue,Apr,8
+yes,6.98,Sun Taxi,no,Thu,Mar,11
+yes,0.64,Taxicab Insurance Agency Llc,no,Thu,Feb,16
+yes,1.83,Taxicab Insurance Agency Llc,no,Thu,Apr,15
+yes,2.01,City Service,no,Tue,Apr,15
+yes,17.8,other,no,Thu,Jan,13
+yes,1.57,other,no,Thu,Feb,18
+yes,3.07,City Service,no,Sun,Feb,19
+yes,18.61,City Service,no,Tue,Jan,17
+yes,0,Taxicab Insurance Agency Llc,yes,Fri,Mar,6
+yes,1.66,Sun Taxi,no,Mon,Mar,17
+yes,1.64,Sun Taxi,no,Fri,Mar,19
+yes,17.98,Chicago Independents,no,Mon,Apr,15
+yes,0.72,Taxicab Insurance Agency Llc,no,Sun,Mar,12
+yes,16.8,Chicago Independents,no,Wed,Apr,17
+yes,1.58,other,yes,Thu,Apr,13
+yes,0.41,City Service,yes,Wed,Feb,13
+yes,17.84,Chicago Independents,no,Fri,Apr,12
+yes,2.3,Taxi Affiliation Services,no,Tue,Feb,18
+yes,3.52,other,no,Wed,Mar,12
+yes,17.23,Chicago Independents,no,Fri,Jan,8
+yes,17.47,Sun Taxi,no,Sun,Apr,12
+yes,17.16,other,no,Sat,Jan,19
+yes,1,Taxi Affiliation Services,no,Wed,Apr,16
+yes,1.2,Chicago Independents,no,Tue,Apr,12
+yes,0,Taxi Affiliation Services,yes,Tue,Mar,13
+yes,19.4,Taxi Affiliation Services,no,Tue,Feb,13
+yes,1.2,Taxi Affiliation Services,no,Tue,Feb,13
+yes,17.95,Taxicab Insurance Agency Llc,no,Sun,Apr,12
+yes,0.7,Taxi Affiliation Services,yes,Thu,Apr,6
+yes,2.1,Sun Taxi,no,Sat,Apr,9
+yes,0.58,Taxicab Insurance Agency Llc,yes,Sun,Apr,15
+yes,1.2,Taxi Affiliation Services,no,Tue,Feb,15
+yes,1.3,Taxi Affiliation Services,no,Wed,Apr,16
+yes,1.04,other,no,Wed,Apr,15
+yes,9.6,other,no,Sat,Jan,22
+yes,1.2,other,no,Mon,Jan,21
+yes,1.63,Sun Taxi,no,Sat,Feb,21
+yes,2.51,City Service,no,Tue,Mar,8
+yes,17.82,other,no,Tue,Feb,11
+yes,1.16,City Service,no,Wed,Mar,9
+yes,1.15,Chicago Independents,no,Mon,Mar,9
+yes,21.5,Chicago Independents,no,Fri,Mar,13
+yes,1.4,City Service,no,Sun,Jan,0
+yes,1.01,Sun Taxi,no,Wed,Mar,16
+yes,1.45,other,no,Fri,Jan,17
+yes,1.24,Taxicab Insurance Agency Llc,no,Thu,Jan,8
+yes,1.22,Chicago Independents,yes,Fri,Mar,19
+yes,0.7,Taxi Affiliation Services,yes,Fri,Mar,14
+yes,0.69,other,no,Tue,Mar,8
+yes,16.97,City Service,no,Wed,Mar,19
+yes,1.12,other,no,Fri,Feb,18
+yes,21,Taxi Affiliation Services,no,Tue,Mar,15
+yes,0,Taxicab Insurance Agency Llc,yes,Mon,Mar,17
+yes,0,Taxi Affiliation Services,no,Thu,Apr,17
+yes,2.84,other,no,Sun,Apr,20
+yes,17.53,Taxicab Insurance Agency Llc,no,Sat,Jan,16
+yes,18.22,City Service,no,Fri,Apr,20
+yes,2.24,Sun Taxi,no,Thu,Mar,19
+yes,18,other,no,Thu,Mar,17
+yes,17.58,Taxicab Insurance Agency Llc,no,Sun,Mar,23
+yes,1.27,other,no,Mon,Mar,15
+yes,0.55,other,yes,Tue,Apr,16
+yes,0,other,no,Wed,Apr,9
+yes,1.02,other,yes,Wed,Apr,17
+yes,0.5,Taxi Affiliation Services,no,Mon,Apr,9
+yes,13.59,other,no,Sat,Mar,12
+yes,0,Flash Cab,no,Sat,Apr,18
+yes,1.95,Taxicab Insurance Agency Llc,yes,Tue,Apr,9
+yes,2.42,Flash Cab,no,Sat,Apr,20
+yes,0.75,Sun Taxi,no,Mon,Feb,10
+yes,18.41,Chicago Independents,no,Mon,Mar,18
+yes,20.57,other,no,Thu,Apr,12
+yes,0.1,Taxi Affiliation Services,no,Sun,Apr,11
+yes,1.97,other,no,Tue,Apr,8
+yes,0.5,Chicago Independents,no,Thu,Mar,15
+yes,0.75,Sun Taxi,no,Wed,Apr,9
+yes,1.81,City Service,no,Mon,Jan,14
+yes,1.19,City Service,no,Thu,Apr,12
+yes,0,City Service,yes,Thu,Mar,13
+yes,1.38,Flash Cab,no,Thu,Mar,8
+yes,2.1,Taxi Affiliation Services,no,Wed,Feb,19
+yes,0.73,Flash Cab,no,Thu,Mar,11
+yes,17.5,Sun Taxi,no,Thu,Jan,16
+yes,18.1,Taxicab Insurance Agency Llc,no,Sun,Mar,6
+yes,2.1,other,no,Wed,Mar,21
+yes,1.39,City Service,no,Wed,Mar,17
+yes,12.99,Chicago Independents,no,Sat,Apr,9
+yes,16.7,other,no,Thu,Feb,20
+yes,2.28,Sun Taxi,no,Mon,Feb,8
+yes,2.51,Taxicab Insurance Agency Llc,no,Wed,Apr,10
+yes,2.16,other,no,Sat,Mar,18
+yes,4.91,City Service,no,Fri,Apr,17
+yes,18.05,other,no,Thu,Apr,13
+yes,1.09,Chicago Independents,no,Wed,Jan,16
+yes,21.17,City Service,no,Wed,Apr,18
+yes,0.92,Sun Taxi,no,Wed,Feb,11
+yes,1.13,Sun Taxi,yes,Thu,Mar,15
+yes,17.6,other,no,Mon,Apr,13
+yes,12.99,Sun Taxi,no,Fri,Apr,11
+yes,17.4,other,no,Wed,Mar,19
+yes,3.17,City Service,no,Mon,Mar,12
+yes,17.9,Taxicab Insurance Agency Llc,no,Wed,Feb,19
+yes,1.7,Chicago Independents,no,Thu,Jan,14
+yes,2.33,other,no,Mon,Apr,21
+yes,16.7,Taxicab Insurance Agency Llc,no,Thu,Mar,12
+yes,1.09,Sun Taxi,yes,Wed,Feb,18
+yes,0.8,City Service,no,Tue,Apr,8
+yes,1.1,Taxi Affiliation Services,no,Mon,Apr,7
+yes,0.6,other,no,Fri,Apr,21
+yes,1.09,Taxicab Insurance Agency Llc,no,Thu,Mar,12
+yes,17.29,Taxicab Insurance Agency Llc,no,Sun,Apr,8
+yes,1.79,Taxicab Insurance Agency Llc,no,Tue,Mar,12
+yes,1.17,City Service,no,Fri,Feb,10
+yes,17.86,Sun Taxi,no,Sat,Mar,18
+yes,1.26,Sun Taxi,no,Wed,Mar,8
+yes,0.1,Taxi Affiliation Services,no,Sun,Jan,14
+yes,0.8,Taxi Affiliation Services,no,Mon,Apr,18
+yes,1.6,other,no,Fri,Apr,13
+yes,1.22,Taxicab Insurance Agency Llc,no,Fri,Mar,13
+yes,2.08,other,no,Wed,Jan,17
+yes,1.82,Flash Cab,no,Fri,Jan,18
+yes,1.4,City Service,no,Thu,Feb,14
+yes,17.7,other,no,Thu,Mar,17
+yes,1.5,Taxi Affiliation Services,yes,Wed,Mar,10
+yes,1.1,Taxi Affiliation Services,no,Thu,Apr,13
+yes,2.06,Chicago Independents,no,Fri,Feb,19
+yes,16.16,Sun Taxi,no,Tue,Apr,20
+yes,17.61,other,no,Fri,Apr,8
+yes,1.51,other,no,Fri,Feb,11
+yes,12.63,City Service,no,Thu,Apr,16
+yes,17.7,other,no,Mon,Feb,17
+yes,1.13,Flash Cab,yes,Thu,Apr,8
+yes,18.1,other,no,Mon,Feb,19
+yes,16.8,Flash Cab,no,Mon,Mar,12
+yes,18.62,Flash Cab,no,Tue,Mar,6
+yes,18.4,Chicago Independents,no,Tue,Jan,20
+yes,0.66,Taxicab Insurance Agency Llc,no,Fri,Mar,11
+yes,0,Taxi Affiliation Services,no,Mon,Jan,21
+yes,1.79,Sun Taxi,yes,Wed,Mar,18
+yes,2.61,City Service,no,Fri,Apr,11
+yes,0.74,other,no,Mon,Feb,8
+yes,1.06,Taxicab Insurance Agency Llc,no,Fri,Jan,17
+yes,1.51,Sun Taxi,no,Wed,Feb,10
+yes,0.1,Taxi Affiliation Services,no,Thu,Mar,16
+yes,0,Taxi Affiliation Services,yes,Fri,Apr,17
+yes,0,Taxicab Insurance Agency Llc,yes,Fri,Apr,16
+yes,5.81,Taxicab Insurance Agency Llc,no,Thu,Feb,22
+yes,1.67,Flash Cab,no,Sat,Mar,21
+yes,1.7,other,no,Thu,Apr,14
+yes,0.6,other,yes,Mon,Mar,8
+yes,0.79,Flash Cab,no,Tue,Feb,15
+yes,18.29,City Service,no,Thu,Jan,15
+yes,1.84,Chicago Independents,no,Tue,Mar,16
+yes,0,other,no,Wed,Apr,8
+yes,17.36,Chicago Independents,no,Mon,Jan,19
+yes,1.18,Flash Cab,yes,Tue,Feb,14
+yes,0.9,Taxi Affiliation Services,yes,Wed,Mar,8
+yes,1.23,other,yes,Sun,Feb,17
+yes,0,Taxi Affiliation Services,yes,Sun,Apr,11
+yes,0.9,Taxi Affiliation Services,no,Mon,Feb,20
+yes,1.31,Flash Cab,no,Wed,Mar,9
+yes,16.4,other,no,Mon,Jan,10
+yes,0.72,City Service,no,Fri,Mar,8
+yes,2.5,City Service,no,Thu,Apr,15
+yes,1,Taxi Affiliation Services,no,Mon,Mar,20
+yes,1.1,Chicago Independents,yes,Sun,Jan,14
+yes,0.1,Taxi Affiliation Services,no,Tue,Apr,19
+yes,1.33,City Service,no,Mon,Mar,11
+yes,1.4,Taxi Affiliation Services,no,Tue,Jan,14
+yes,17.49,Taxicab Insurance Agency Llc,no,Tue,Feb,18
+yes,0.65,Chicago Independents,yes,Wed,Feb,16
+yes,0.89,other,yes,Fri,Mar,17
+yes,1.33,City Service,no,Tue,Jan,7
+yes,21.11,Flash Cab,no,Tue,Jan,10
+yes,17.84,other,no,Thu,Apr,16
+yes,17.5,other,no,Sun,Jan,18
+yes,17.15,Flash Cab,no,Sun,Apr,19
+yes,1.1,Chicago Independents,no,Sat,Mar,10
+yes,1.43,Taxicab Insurance Agency Llc,yes,Thu,Apr,10
+yes,0.94,Sun Taxi,no,Sun,Apr,13
+yes,1.02,City Service,yes,Mon,Apr,9
+yes,17.32,Flash Cab,no,Thu,Mar,12
+yes,0.7,Taxi Affiliation Services,yes,Tue,Jan,15
+yes,3.33,Chicago Independents,no,Thu,Mar,14
+yes,3.42,Sun Taxi,no,Tue,Mar,13
+yes,0.73,Sun Taxi,no,Fri,Jan,21
+yes,1.71,Sun Taxi,no,Mon,Mar,11
+yes,17.9,other,no,Wed,Mar,10
+yes,1.26,other,no,Wed,Apr,11
+yes,3.85,City Service,yes,Thu,Feb,10
+yes,17.98,Chicago Independents,no,Tue,Jan,15
+yes,0.58,other,yes,Fri,Mar,15
+yes,9.95,City Service,no,Sun,Jan,19
+yes,17.71,Taxicab Insurance Agency Llc,no,Sun,Apr,11
+yes,16.3,Taxi Affiliation Services,no,Sun,Jan,19
+yes,17.5,Taxicab Insurance Agency Llc,no,Wed,Apr,13
+yes,0.9,Taxi Affiliation Services,no,Sat,Apr,11
+yes,2.01,other,no,Wed,Apr,9
+yes,18.11,other,no,Fri,Mar,17
+yes,2.98,Chicago Independents,no,Sun,Feb,9
+yes,13.62,City Service,no,Thu,Feb,18
+yes,2.14,Taxicab Insurance Agency Llc,no,Tue,Feb,9
+yes,0.9,Taxi Affiliation Services,yes,Tue,Feb,12
+yes,1.58,Taxicab Insurance Agency Llc,no,Wed,Jan,15
+yes,0,Taxi Affiliation Services,no,Sat,Jan,12
+yes,1.53,Taxicab Insurance Agency Llc,no,Fri,Mar,15
+yes,0.97,City Service,no,Tue,Feb,10
+yes,0,Taxi Affiliation Services,no,Wed,Feb,10
+yes,0.68,Flash Cab,yes,Fri,Mar,11
+yes,0.55,Flash Cab,yes,Thu,Feb,17
+yes,1.01,City Service,no,Thu,Feb,21
+yes,17.58,other,no,Fri,Apr,11
+yes,2.46,Sun Taxi,no,Thu,Apr,14
+yes,0.81,Taxicab Insurance Agency Llc,no,Sat,Feb,11
+yes,3.57,Sun Taxi,no,Sat,Mar,9
+yes,5.77,Chicago Independents,no,Sun,Apr,14
+yes,0,Taxi Affiliation Services,no,Sat,Apr,18
+yes,2.01,City Service,no,Sat,Apr,22
+yes,21.82,City Service,no,Thu,Mar,12
+yes,2.78,other,no,Sun,Apr,8
+yes,16.73,Flash Cab,no,Sat,Feb,18
+yes,0.78,City Service,yes,Wed,Apr,18
+yes,1.55,other,no,Tue,Mar,13
+yes,0.81,Taxicab Insurance Agency Llc,no,Tue,Apr,9
+yes,1.1,Flash Cab,no,Wed,Mar,17
+yes,0.4,Taxi Affiliation Services,no,Thu,Mar,8
+yes,1.43,other,no,Thu,Mar,15
+yes,1.4,Chicago Independents,no,Fri,Apr,18
+yes,17.62,other,no,Mon,Mar,18
+yes,0.76,Flash Cab,no,Thu,Jan,10
+yes,1.81,other,no,Sun,Apr,14
+yes,2.94,Chicago Independents,no,Thu,Apr,21
+yes,1,Taxi Affiliation Services,no,Mon,Feb,15
+yes,0,Taxi Affiliation Services,no,Mon,Apr,16
+yes,1.42,Taxicab Insurance Agency Llc,no,Thu,Mar,11
+yes,12.11,Sun Taxi,no,Mon,Feb,20
+yes,0.69,other,yes,Mon,Feb,14
+yes,0.8,Taxi Affiliation Services,yes,Sat,Mar,10
+yes,0.73,other,yes,Tue,Apr,6
+yes,0.94,Sun Taxi,no,Tue,Jan,21
+yes,1.5,Taxi Affiliation Services,no,Sat,Apr,8
+yes,11.89,other,no,Tue,Mar,13
+yes,0.7,other,no,Tue,Apr,9
+yes,1.2,Taxi Affiliation Services,no,Fri,Mar,16
+yes,17.5,Taxi Affiliation Services,no,Sun,Mar,10
+yes,17.6,Chicago Independents,yes,Tue,Apr,13
+yes,1.1,Taxi Affiliation Services,no,Thu,Jan,20
+yes,18.52,Taxicab Insurance Agency Llc,no,Wed,Feb,15
+yes,17.51,Sun Taxi,no,Mon,Apr,20
+yes,8.9,City Service,no,Sat,Apr,13
+yes,17.34,Chicago Independents,no,Thu,Feb,15
+yes,18.44,Taxicab Insurance Agency Llc,no,Thu,Mar,13
+yes,0.4,other,yes,Wed,Mar,11
+yes,0,Flash Cab,no,Thu,Mar,14
+yes,17.91,City Service,no,Wed,Apr,6
+yes,16.8,Taxi Affiliation Services,no,Wed,Mar,11
+yes,11.91,other,no,Wed,Feb,19
+yes,1.4,Sun Taxi,no,Fri,Jan,9
+yes,1.1,other,no,Fri,Jan,9
+yes,0.39,other,yes,Thu,Jan,19
+yes,11.98,Flash Cab,no,Tue,Jan,13
+yes,0.6,other,yes,Tue,Mar,12
+yes,0.76,other,no,Thu,Feb,16
+yes,1.82,Sun Taxi,no,Sun,Mar,0
+yes,0,City Service,yes,Mon,Apr,11
+yes,3,Chicago Independents,no,Fri,Apr,12
+yes,1.5,other,no,Thu,Mar,10
+yes,2.99,Sun Taxi,no,Fri,Apr,18
+yes,1.56,Taxicab Insurance Agency Llc,no,Tue,Feb,17
+yes,0.35,City Service,yes,Fri,Feb,14
+yes,0.01,Taxicab Insurance Agency Llc,yes,Tue,Mar,9
+yes,17.6,other,no,Tue,Mar,16
+yes,0.7,Taxi Affiliation Services,no,Thu,Feb,8
+yes,17.64,Chicago Independents,no,Wed,Mar,6
+yes,0,other,no,Fri,Apr,22
+yes,0,Flash Cab,yes,Thu,Apr,15
+yes,1.21,Chicago Independents,no,Fri,Feb,9
+yes,18.1,other,no,Thu,Feb,14
+yes,11.96,City Service,no,Thu,Mar,19
+yes,18.03,City Service,no,Fri,Jan,11
+yes,0.2,Taxi Affiliation Services,no,Thu,Apr,14
+yes,16.89,City Service,no,Fri,Jan,18
+yes,1.99,Taxicab Insurance Agency Llc,no,Tue,Apr,8
+yes,1.29,other,no,Sun,Mar,17
+yes,19.39,Taxicab Insurance Agency Llc,no,Tue,Apr,14
+yes,0.53,Sun Taxi,yes,Fri,Mar,17
+yes,1.01,Taxicab Insurance Agency Llc,no,Wed,Mar,15
+yes,1.48,Chicago Independents,no,Wed,Mar,21
+yes,0.98,City Service,yes,Fri,Apr,12
+yes,0.7,Taxi Affiliation Services,no,Thu,Jan,12
+yes,18.15,Flash Cab,no,Wed,Apr,17
+yes,17.31,Flash Cab,yes,Fri,Apr,16
+yes,1.7,City Service,no,Tue,Apr,8
+yes,1.25,Flash Cab,no,Tue,Feb,10
+yes,2.16,Taxicab Insurance Agency Llc,no,Fri,Mar,14
+yes,2.41,City Service,no,Sat,Jan,18
+yes,18.1,Taxi Affiliation Services,no,Thu,Mar,11
+yes,20.95,other,no,Wed,Feb,16
+yes,0.71,City Service,yes,Sun,Mar,20
+yes,3.27,other,no,Fri,Feb,9
+yes,16.3,Chicago Independents,no,Fri,Apr,17
+yes,0.7,City Service,no,Thu,Apr,18
+yes,0.77,other,no,Thu,Feb,15
+yes,18.4,other,no,Wed,Jan,11
+yes,20.54,City Service,no,Thu,Mar,11
+yes,0.79,Chicago Independents,yes,Tue,Jan,14
+yes,0,Taxi Affiliation Services,no,Thu,Apr,13
+yes,0.45,other,no,Tue,Mar,8
+yes,2.2,other,no,Wed,Apr,10
+yes,1.14,City Service,no,Wed,Mar,14
+yes,0.9,other,no,Thu,Jan,16
+yes,14.31,Taxicab Insurance Agency Llc,no,Thu,Mar,19
+yes,1.1,Taxi Affiliation Services,yes,Thu,Mar,11
+yes,18.55,City Service,no,Mon,Mar,10
+yes,16.98,Taxicab Insurance Agency Llc,no,Thu,Mar,13
+yes,0,other,no,Mon,Apr,11
+yes,10.73,other,no,Wed,Mar,16
+yes,0.63,Taxicab Insurance Agency Llc,yes,Mon,Mar,15
+yes,1.67,Sun Taxi,no,Wed,Feb,15
+yes,0.85,Chicago Independents,yes,Thu,Apr,10
+yes,1.71,Chicago Independents,no,Mon,Mar,15
+yes,1.35,Sun Taxi,no,Fri,Mar,16
+yes,1.23,Flash Cab,yes,Tue,Feb,18
+yes,1.83,Flash Cab,yes,Mon,Mar,15
+yes,0.67,Taxicab Insurance Agency Llc,no,Fri,Jan,20
+yes,0.9,Taxi Affiliation Services,no,Tue,Jan,20
+yes,1.7,Taxi Affiliation Services,no,Wed,Apr,11
+yes,2.72,City Service,no,Thu,Apr,18
+yes,1.38,other,no,Wed,Apr,6
+yes,0.79,other,yes,Tue,Jan,16
+yes,0.66,other,yes,Sat,Apr,14
+yes,21.33,Flash Cab,no,Thu,Apr,7
+yes,18.06,City Service,no,Wed,Apr,17
+yes,1.2,other,no,Fri,Apr,10
+yes,0.9,other,yes,Tue,Mar,20
+yes,11.8,other,no,Thu,Feb,19
+yes,17.73,Taxicab Insurance Agency Llc,no,Fri,Jan,16
+yes,0.89,City Service,yes,Wed,Mar,7
+yes,0.84,Flash Cab,yes,Tue,Apr,16
+yes,6.9,Taxi Affiliation Services,no,Mon,Apr,17
+yes,1.97,Flash Cab,no,Thu,Mar,8
+yes,1.85,Sun Taxi,no,Fri,Apr,18
+yes,0,Flash Cab,yes,Fri,Mar,18
+yes,13.76,Chicago Independents,no,Fri,Apr,16
+yes,1.1,City Service,no,Fri,Apr,11
+yes,17.92,Taxicab Insurance Agency Llc,no,Thu,Jan,9
+yes,5.19,Sun Taxi,no,Thu,Apr,8
+yes,0.7,other,yes,Wed,Jan,9
+yes,1.39,other,no,Sun,Apr,18
+yes,1.8,other,yes,Fri,Mar,10
+yes,0,Taxi Affiliation Services,yes,Thu,Jan,15
+yes,2.85,Sun Taxi,no,Mon,Mar,14
+yes,0.77,other,no,Sat,Mar,13
+yes,1.34,other,yes,Tue,Apr,10
+yes,2.08,Sun Taxi,no,Wed,Jan,17
+yes,17.71,Taxicab Insurance Agency Llc,no,Mon,Jan,23
+yes,3.49,other,no,Sat,Mar,17
+yes,0.92,Sun Taxi,no,Sun,Apr,18
+yes,0.73,City Service,no,Mon,Mar,13
+yes,20.31,Sun Taxi,no,Fri,Apr,15
+yes,19.17,Taxicab Insurance Agency Llc,no,Fri,Apr,14
+yes,0.87,City Service,no,Mon,Feb,9
+yes,0.9,Taxi Affiliation Services,yes,Fri,Mar,13
+yes,1.41,other,no,Thu,Mar,14
+yes,17.8,City Service,no,Fri,Jan,13
+yes,0.95,Sun Taxi,yes,Fri,Jan,10
+yes,0.99,Chicago Independents,no,Fri,Apr,16
+yes,12.86,other,no,Fri,Mar,12
+yes,0,Taxi Affiliation Services,no,Sun,Mar,18
+yes,0,Taxi Affiliation Services,yes,Thu,Mar,11
+yes,18.59,Flash Cab,no,Sat,Feb,13
+yes,1.06,other,yes,Mon,Apr,17
+yes,3.31,Sun Taxi,no,Fri,Apr,15
+yes,0.81,Taxicab Insurance Agency Llc,yes,Thu,Apr,19
+yes,17.79,Sun Taxi,no,Sat,Mar,16
+yes,1.27,Flash Cab,no,Thu,Apr,11
+yes,1.68,Flash Cab,yes,Thu,Mar,8
+yes,5.13,Sun Taxi,no,Fri,Apr,11
+yes,0.83,other,no,Fri,Feb,8
+yes,0.25,other,yes,Sat,Mar,18
+yes,1.44,other,yes,Wed,Mar,16
+yes,0,Sun Taxi,yes,Fri,Jan,12
+yes,16.9,Taxi Affiliation Services,no,Tue,Jan,11
+yes,1.15,Sun Taxi,no,Tue,Apr,15
+yes,1.45,other,no,Sat,Apr,19
+yes,1.1,Chicago Independents,no,Thu,Mar,8
+yes,2.21,City Service,no,Fri,Jan,15
+yes,18.33,Chicago Independents,no,Fri,Apr,19
+yes,1.2,Taxi Affiliation Services,no,Wed,Feb,12
+yes,2.5,Taxi Affiliation Services,no,Sat,Apr,8
+yes,4.77,Chicago Independents,no,Sat,Apr,14
+yes,13,Taxi Affiliation Services,no,Mon,Feb,15
+yes,0,Taxi Affiliation Services,no,Mon,Apr,13
+yes,18.17,other,no,Fri,Mar,11
+yes,7.34,Taxicab Insurance Agency Llc,yes,Fri,Apr,9
+yes,2.9,other,no,Tue,Apr,22
+yes,0.2,Taxi Affiliation Services,no,Thu,Feb,13
+yes,0.51,Sun Taxi,no,Wed,Mar,18
+yes,16.83,Chicago Independents,no,Thu,Mar,14
+yes,1.6,Taxi Affiliation Services,yes,Wed,Mar,19
+yes,16.81,Sun Taxi,no,Thu,Apr,17
+yes,9.01,City Service,no,Fri,Apr,12
+yes,3.17,Taxicab Insurance Agency Llc,no,Wed,Feb,21
+yes,1.15,Sun Taxi,no,Thu,Jan,16
+yes,2.35,City Service,no,Tue,Jan,9
+yes,13.01,Sun Taxi,no,Thu,Mar,16
+yes,0.95,City Service,yes,Wed,Apr,18
+yes,1.4,other,yes,Fri,Apr,13
+yes,1.58,Sun Taxi,no,Sun,Apr,8
+yes,18.45,Taxicab Insurance Agency Llc,no,Sun,Jan,8
+yes,4.23,Taxicab Insurance Agency Llc,no,Wed,Mar,19
+yes,1.58,Chicago Independents,no,Tue,Feb,7
+yes,1.43,Taxicab Insurance Agency Llc,no,Fri,Apr,9
+yes,16.9,other,no,Sun,Apr,16
+yes,1.2,Taxicab Insurance Agency Llc,no,Thu,Apr,9
+yes,0,other,no,Sat,Mar,9
+yes,1.07,other,no,Tue,Jan,18
+yes,1.06,Flash Cab,no,Thu,Apr,9
+yes,18.9,other,no,Tue,Jan,22
+yes,0,other,no,Fri,Apr,14
+yes,18.22,City Service,no,Thu,Mar,21
+yes,1.7,Taxi Affiliation Services,no,Wed,Apr,16
+yes,17.6,other,no,Sun,Jan,20
+yes,1.49,other,yes,Fri,Apr,17
+yes,3.14,Flash Cab,no,Thu,Mar,15
+yes,2.16,Flash Cab,no,Wed,Jan,17
+yes,1.89,Sun Taxi,no,Sun,Apr,11
+yes,1.65,Taxicab Insurance Agency Llc,no,Mon,Jan,8
+yes,1.3,Taxi Affiliation Services,no,Sat,Feb,17
+yes,1.26,Flash Cab,no,Sun,Jan,1
+yes,1.8,Taxicab Insurance Agency Llc,no,Tue,Mar,13
+yes,13.4,Taxi Affiliation Services,no,Sat,Apr,9
+yes,1.44,Sun Taxi,no,Mon,Mar,17
+yes,15.8,other,no,Mon,Feb,18
+yes,12.78,Taxicab Insurance Agency Llc,no,Fri,Apr,13
+yes,1.76,other,no,Wed,Feb,16
+yes,0.68,Sun Taxi,yes,Sat,Apr,14
+yes,1.42,other,no,Sat,Apr,13
+yes,3.39,Sun Taxi,no,Sat,Apr,17
+yes,1,Chicago Independents,no,Thu,Apr,10
+yes,1.16,Flash Cab,yes,Wed,Feb,17
+yes,17.3,Taxi Affiliation Services,no,Thu,Apr,23
+yes,1.1,Taxi Affiliation Services,yes,Thu,Jan,12
+yes,1.85,other,no,Fri,Apr,8
+yes,1.03,City Service,no,Wed,Apr,9
+yes,0.8,Taxi Affiliation Services,yes,Thu,Apr,11
+yes,8.51,Taxicab Insurance Agency Llc,no,Wed,Mar,13
+yes,17.3,other,no,Sun,Apr,15
+yes,0,Taxi Affiliation Services,no,Wed,Apr,12
+yes,0.8,other,yes,Fri,Mar,13
+yes,1,Taxi Affiliation Services,no,Sun,Jan,22
+yes,20.88,other,no,Tue,Mar,15
+yes,18.01,Flash Cab,no,Tue,Mar,17
+yes,18.02,Sun Taxi,no,Wed,Mar,14
+yes,2.27,Taxicab Insurance Agency Llc,yes,Mon,Apr,15
+yes,0.97,City Service,no,Tue,Feb,19
+yes,1.25,other,no,Fri,Apr,22
+yes,0.9,other,yes,Sun,Apr,14
+yes,1.59,Flash Cab,no,Sat,Jan,13
+yes,0,Taxi Affiliation Services,yes,Thu,Mar,11
+yes,3.13,Taxicab Insurance Agency Llc,no,Sat,Apr,19
+yes,0,Taxi Affiliation Services,no,Thu,Apr,17
+yes,0.64,City Service,yes,Tue,Apr,18
+yes,0.55,Flash Cab,no,Sat,Mar,21
+yes,0.75,other,yes,Sat,Mar,13
+yes,21.79,other,no,Fri,Mar,12
+yes,1.44,Sun Taxi,no,Thu,Jan,16
+yes,9.35,Taxicab Insurance Agency Llc,no,Fri,Jan,20
+yes,0.9,Taxi Affiliation Services,no,Wed,Jan,15
+yes,2.51,Flash Cab,no,Wed,Mar,11
+yes,17.06,Sun Taxi,no,Thu,Jan,12
+yes,0.24,other,yes,Sat,Jan,19
+yes,0.4,other,yes,Wed,Feb,12
+yes,0.62,Taxicab Insurance Agency Llc,yes,Thu,Feb,6
+yes,0.6,other,yes,Sat,Apr,10
+yes,2.57,City Service,no,Thu,Feb,21
+yes,16.1,Taxi Affiliation Services,no,Mon,Mar,15
+yes,1.75,City Service,no,Wed,Mar,14
+yes,1.24,City Service,yes,Thu,Jan,17
+yes,9.82,Taxicab Insurance Agency Llc,no,Wed,Mar,11
+yes,1.8,other,no,Tue,Mar,15
+yes,18.02,Sun Taxi,no,Sun,Jan,9
+yes,1.97,Sun Taxi,no,Sun,Mar,18
+yes,3.1,Taxi Affiliation Services,no,Thu,Feb,20
+yes,17.72,City Service,no,Mon,Jan,19
+yes,0.4,Flash Cab,no,Tue,Mar,16
+yes,1.21,City Service,no,Thu,Feb,13
+yes,4.91,City Service,no,Thu,Mar,21
+yes,1.39,Taxicab Insurance Agency Llc,no,Tue,Feb,11
+yes,3.42,Sun Taxi,no,Thu,Apr,18
+yes,18.28,other,no,Mon,Apr,14
+yes,2.3,City Service,no,Sat,Feb,16
+yes,1.09,other,no,Tue,Feb,13
+yes,12.81,Flash Cab,no,Thu,Feb,9
+yes,0.78,Taxicab Insurance Agency Llc,yes,Tue,Mar,18
+yes,17.65,Taxicab Insurance Agency Llc,no,Tue,Apr,6
+yes,0.64,Flash Cab,no,Thu,Jan,14
+yes,1.4,Taxi Affiliation Services,no,Tue,Feb,18
+yes,2.4,Taxi Affiliation Services,no,Tue,Apr,18
+yes,0.32,Sun Taxi,no,Fri,Apr,16
+yes,11.61,Taxicab Insurance Agency Llc,no,Thu,Mar,10
+yes,10,Taxi Affiliation Services,no,Mon,Jan,19
+yes,17.18,Sun Taxi,no,Mon,Mar,21
+yes,16.66,Sun Taxi,no,Fri,Jan,12
+yes,0,Flash Cab,no,Tue,Jan,16
+yes,0,Flash Cab,no,Thu,Jan,8
+yes,17.64,Taxicab Insurance Agency Llc,no,Sun,Mar,8
+yes,17.9,Taxi Affiliation Services,no,Mon,Apr,21
+yes,0.9,Chicago Independents,yes,Mon,Feb,8
+yes,1.78,other,no,Sat,Mar,22
+yes,2.02,other,no,Fri,Jan,18
+yes,0.46,Chicago Independents,yes,Thu,Apr,16
+yes,18.22,other,no,Sat,Feb,8
+yes,1.29,Sun Taxi,no,Mon,Apr,8
+yes,0,other,yes,Sun,Apr,18
+yes,15.21,City Service,no,Thu,Jan,19
+yes,6.04,Chicago Independents,no,Wed,Jan,7
+yes,1,other,yes,Fri,Mar,7
+yes,0.9,other,yes,Wed,Feb,16
+yes,16.61,Chicago Independents,no,Fri,Apr,12
+yes,1,Chicago Independents,yes,Fri,Feb,13
+yes,1.4,other,no,Mon,Mar,10
+yes,2.44,other,yes,Tue,Mar,10
+yes,1.4,Taxi Affiliation Services,no,Wed,Jan,18
+yes,14.8,Taxi Affiliation Services,no,Sun,Mar,20
+yes,2.83,Taxicab Insurance Agency Llc,no,Sun,Apr,13
+yes,18.62,Flash Cab,no,Wed,Mar,14
+yes,0.95,Sun Taxi,yes,Sun,Jan,16
+yes,1.14,Taxicab Insurance Agency Llc,no,Tue,Jan,11
+yes,0,Taxi Affiliation Services,no,Wed,Apr,9
+yes,17.9,other,no,Sun,Mar,19
+yes,0,City Service,yes,Fri,Jan,15
+yes,1.82,Taxicab Insurance Agency Llc,no,Tue,Mar,17
+yes,0.06,other,yes,Thu,Mar,16
+yes,17.9,other,no,Wed,Feb,9
+yes,1.26,Taxicab Insurance Agency Llc,no,Wed,Mar,7
+yes,18.45,Taxicab Insurance Agency Llc,no,Thu,Mar,6
+yes,1,Taxi Affiliation Services,no,Tue,Apr,22
+yes,14.24,Taxicab Insurance Agency Llc,no,Wed,Mar,11
+yes,1.23,Chicago Independents,no,Sat,Apr,20
+yes,1.5,other,no,Sat,Apr,13
+yes,17.54,Taxicab Insurance Agency Llc,no,Mon,Feb,13
+yes,0.9,other,yes,Thu,Feb,10
+yes,1.76,other,no,Sat,Mar,11
+yes,2.28,Taxicab Insurance Agency Llc,no,Mon,Feb,14
+yes,0,Flash Cab,no,Thu,Feb,8
+yes,2.86,other,no,Mon,Apr,17
+yes,17.55,Chicago Independents,no,Fri,Mar,19
+yes,1.2,Flash Cab,yes,Fri,Mar,17
+yes,1.4,other,no,Mon,Mar,14
+yes,8.31,Taxicab Insurance Agency Llc,no,Sat,Apr,20
+yes,2.35,City Service,no,Fri,Apr,14
+yes,1.69,other,no,Tue,Apr,18
+yes,6.7,other,no,Mon,Mar,18
+yes,17.59,Sun Taxi,no,Wed,Mar,15
+yes,0.82,City Service,yes,Thu,Feb,17
+yes,0.68,other,no,Thu,Apr,17
+yes,1.5,other,yes,Fri,Feb,19
+yes,0,other,yes,Thu,Apr,8
+yes,1.21,Flash Cab,no,Wed,Mar,11
+yes,0.75,Flash Cab,no,Fri,Apr,21
+yes,1.97,other,no,Sat,Apr,13
+yes,17.31,Sun Taxi,no,Thu,Jan,20
+yes,1,Taxi Affiliation Services,no,Thu,Apr,19
+yes,20.5,other,no,Fri,Apr,12
+yes,0.51,other,yes,Wed,Feb,12
+yes,17.59,Flash Cab,no,Thu,Mar,12
+yes,1,Taxi Affiliation Services,no,Sat,Mar,12
+yes,0.5,Sun Taxi,no,Wed,Jan,12
+yes,0,Taxi Affiliation Services,no,Wed,Mar,10
+yes,0.7,other,yes,Wed,Jan,16
+yes,0,Taxi Affiliation Services,no,Tue,Apr,17
+yes,2.13,Taxicab Insurance Agency Llc,no,Fri,Apr,17
+yes,0.37,City Service,yes,Fri,Feb,15
+yes,1.24,Chicago Independents,no,Mon,Jan,17
+yes,0.7,Taxi Affiliation Services,no,Thu,Apr,8
+yes,1.79,Taxicab Insurance Agency Llc,no,Wed,Jan,19
+yes,14.4,Taxicab Insurance Agency Llc,no,Sun,Mar,17
+yes,0.68,City Service,no,Mon,Apr,19
+yes,1.12,Chicago Independents,no,Wed,Apr,8
+yes,0.8,Taxi Affiliation Services,no,Mon,Apr,13
+yes,14.14,City Service,no,Fri,Feb,17
+yes,12.23,Taxicab Insurance Agency Llc,no,Wed,Apr,16
+yes,3.3,Taxi Affiliation Services,yes,Fri,Mar,18
+yes,1.11,City Service,yes,Thu,Apr,18
+yes,17.8,Flash Cab,no,Thu,Mar,12
+yes,0,City Service,yes,Fri,Apr,14
+yes,17.5,City Service,no,Wed,Feb,7
+yes,17.92,Taxicab Insurance Agency Llc,no,Tue,Mar,18
+yes,0,Taxicab Insurance Agency Llc,yes,Fri,Feb,18
+yes,17.46,other,no,Tue,Apr,12
+yes,16.95,other,no,Wed,Apr,15
+yes,12.96,other,no,Fri,Mar,20
+yes,1.7,other,no,Fri,Jan,16
+yes,1.01,Sun Taxi,no,Tue,Jan,9
+yes,16.5,other,no,Mon,Apr,21
+yes,0.8,other,yes,Fri,Mar,14
+yes,1,other,no,Tue,Jan,16
+yes,15.39,other,no,Wed,Mar,18
+yes,0.54,City Service,no,Mon,Jan,15
+yes,3.19,Sun Taxi,no,Mon,Mar,8
+yes,0.7,Taxi Affiliation Services,no,Mon,Jan,8
+yes,0.53,other,no,Wed,Feb,9
+yes,17.8,Taxicab Insurance Agency Llc,no,Fri,Mar,19
+yes,3,Taxi Affiliation Services,no,Sun,Apr,10
+yes,0.72,Taxicab Insurance Agency Llc,yes,Sun,Apr,13
+yes,1.9,other,no,Tue,Mar,13
+yes,2.8,Taxi Affiliation Services,no,Fri,Mar,20
+yes,17.6,other,no,Thu,Apr,12
+yes,2.7,Taxi Affiliation Services,no,Sat,Mar,17
+yes,0.99,Chicago Independents,no,Tue,Apr,17
+yes,0.03,other,yes,Wed,Apr,20
+yes,1.74,Sun Taxi,no,Mon,Jan,15
+yes,0.62,City Service,yes,Fri,Mar,16
+yes,5.72,Chicago Independents,no,Thu,Apr,13
+yes,0.93,City Service,no,Sun,Jan,14
+yes,0.85,City Service,yes,Tue,Apr,11
+yes,1.81,City Service,no,Fri,Feb,21
+yes,0.59,City Service,yes,Wed,Mar,17
+yes,1.5,City Service,no,Wed,Apr,17
+yes,17.6,Taxi Affiliation Services,no,Fri,Apr,16
+yes,0.8,Flash Cab,no,Wed,Apr,11
+yes,18.56,Sun Taxi,no,Sat,Apr,10
+yes,18.45,Taxicab Insurance Agency Llc,no,Fri,Apr,5
+yes,2.38,Taxicab Insurance Agency Llc,no,Tue,Jan,15
+yes,17.4,Taxi Affiliation Services,no,Thu,Feb,13
+yes,1.3,other,yes,Thu,Mar,12
+yes,0.68,City Service,yes,Sun,Apr,16
+yes,16.3,Taxi Affiliation Services,no,Mon,Jan,20
+yes,0.78,Chicago Independents,yes,Tue,Feb,17
+yes,0,City Service,yes,Tue,Mar,10
+yes,0,Taxicab Insurance Agency Llc,yes,Tue,Feb,21
+yes,1.07,City Service,no,Wed,Feb,8
+yes,1,Taxi Affiliation Services,no,Sun,Mar,15
+yes,1.1,Taxi Affiliation Services,no,Sun,Jan,12
+yes,1.6,other,no,Mon,Jan,14
+yes,2.94,City Service,no,Tue,Apr,9
+yes,0,Taxicab Insurance Agency Llc,yes,Sun,Apr,9
+yes,0.93,Sun Taxi,yes,Thu,Mar,19
+yes,17.68,other,no,Fri,Feb,11
+yes,1.2,Taxicab Insurance Agency Llc,no,Tue,Feb,19
+yes,1.14,City Service,yes,Fri,Apr,10
+yes,0.8,Flash Cab,yes,Tue,Jan,17
+yes,1.92,Chicago Independents,no,Fri,Mar,17
+yes,0,Taxi Affiliation Services,no,Tue,Apr,8
+yes,1,Taxi Affiliation Services,no,Mon,Apr,20
+yes,0,Taxi Affiliation Services,no,Wed,Apr,15
+yes,3.8,other,no,Fri,Mar,19
+yes,1.31,Flash Cab,yes,Fri,Feb,13
+yes,1.33,Sun Taxi,no,Thu,Jan,9
+yes,4.47,Chicago Independents,no,Sat,Mar,17
+yes,3.48,Flash Cab,no,Mon,Feb,8
+yes,16.7,Taxi Affiliation Services,no,Fri,Mar,11
+yes,1.55,Flash Cab,no,Tue,Jan,16
+yes,16.64,City Service,no,Thu,Apr,17
+yes,17.99,Sun Taxi,no,Fri,Feb,12
+yes,1.82,Sun Taxi,no,Wed,Mar,17
+yes,0.91,City Service,yes,Thu,Mar,16
+yes,17.05,Chicago Independents,no,Wed,Apr,12
+yes,0.94,Taxicab Insurance Agency Llc,yes,Wed,Apr,13
+yes,1.44,Taxicab Insurance Agency Llc,no,Wed,Feb,9
+yes,1.36,City Service,no,Wed,Mar,17
+yes,16.31,Taxicab Insurance Agency Llc,no,Thu,Feb,11
+yes,0.88,City Service,yes,Thu,Mar,18
+yes,0,Flash Cab,no,Thu,Mar,13
+yes,0.57,Sun Taxi,no,Thu,Jan,12
+yes,18.7,Chicago Independents,no,Thu,Mar,18
+yes,0.1,Taxi Affiliation Services,no,Tue,Feb,10
+yes,11,Taxi Affiliation Services,no,Thu,Apr,13
+yes,0,City Service,yes,Fri,Apr,13
+yes,18.03,City Service,no,Mon,Feb,11
+yes,17.92,Chicago Independents,no,Fri,Jan,12
+yes,0.1,Taxi Affiliation Services,no,Wed,Jan,17
+yes,17.19,Chicago Independents,no,Fri,Apr,22
+yes,2.57,City Service,no,Fri,Feb,16
+yes,12.5,other,no,Tue,Apr,11
+yes,1.8,Taxi Affiliation Services,no,Fri,Mar,14
+yes,18.22,City Service,no,Thu,Mar,12
+yes,0.87,other,yes,Tue,Mar,17
+yes,3.4,other,no,Tue,Jan,9
+yes,1.53,other,no,Tue,Apr,12
+yes,0,other,yes,Wed,Apr,14
+yes,18.77,other,no,Thu,Jan,20
+yes,2.4,Chicago Independents,no,Thu,Jan,9
+yes,21.02,Sun Taxi,no,Fri,Apr,11
+yes,13.3,Taxicab Insurance Agency Llc,no,Mon,Feb,11
+yes,0.7,other,no,Tue,Jan,18
+yes,2.11,Taxicab Insurance Agency Llc,no,Tue,Feb,16
+yes,0.38,City Service,yes,Mon,Apr,18
+yes,1.48,Flash Cab,yes,Sat,Jan,17
+yes,0,Taxi Affiliation Services,yes,Fri,Apr,17
+yes,17.98,Sun Taxi,no,Thu,Apr,12
+yes,17.9,Taxicab Insurance Agency Llc,no,Fri,Mar,11
+yes,2.02,Sun Taxi,no,Fri,Feb,17
+yes,0,Taxicab Insurance Agency Llc,yes,Thu,Feb,8
+yes,0.9,Taxi Affiliation Services,no,Mon,Apr,21
+yes,0,Taxi Affiliation Services,yes,Tue,Feb,14
+yes,0.6,City Service,yes,Sat,Feb,13
+yes,0.9,Taxi Affiliation Services,no,Fri,Jan,18
+yes,12.6,City Service,no,Sat,Jan,13
+yes,20.98,other,no,Sun,Mar,9
+yes,0.59,Sun Taxi,yes,Thu,Jan,21
+yes,1,Taxi Affiliation Services,no,Thu,Jan,19
+yes,17,Chicago Independents,no,Tue,Jan,9
+yes,17.2,other,no,Thu,Mar,23
+yes,2.4,Taxicab Insurance Agency Llc,no,Tue,Mar,17
+yes,17.03,other,no,Wed,Apr,18
+yes,17.52,Taxicab Insurance Agency Llc,no,Tue,Feb,14
+yes,1.2,City Service,no,Tue,Mar,13
+yes,1.62,Chicago Independents,no,Wed,Jan,17
+yes,1.99,other,no,Thu,Jan,15
+yes,1,Taxi Affiliation Services,no,Wed,Apr,13
+yes,16.89,Sun Taxi,no,Sat,Apr,15
+yes,18.4,Chicago Independents,no,Thu,Feb,8
+yes,0.51,Chicago Independents,yes,Fri,Mar,12
+yes,2.66,Flash Cab,no,Wed,Feb,14
+yes,1.4,Taxi Affiliation Services,no,Sat,Apr,14
+yes,2.07,Sun Taxi,no,Mon,Mar,11
+yes,1.31,Flash Cab,yes,Sat,Apr,15
+yes,17.6,other,no,Fri,Feb,20
+yes,0.82,Sun Taxi,no,Wed,Mar,12
+yes,2.2,Taxi Affiliation Services,no,Mon,Mar,11
+yes,0.86,other,no,Tue,Feb,13
+yes,3.7,Chicago Independents,no,Sat,Apr,14
+yes,17.6,other,no,Wed,Mar,16
+yes,0,Taxi Affiliation Services,no,Thu,Feb,15
+yes,17.5,Chicago Independents,no,Sun,Mar,10
+yes,0,Taxi Affiliation Services,no,Mon,Feb,17
+yes,1.48,Chicago Independents,no,Wed,Apr,21
+yes,18.63,other,no,Mon,Apr,8
+yes,17.95,Sun Taxi,no,Tue,Apr,14
+yes,0.9,Taxi Affiliation Services,yes,Sat,Mar,17
+yes,17.07,Taxicab Insurance Agency Llc,no,Thu,Apr,14
+yes,17.87,Taxicab Insurance Agency Llc,no,Mon,Feb,15
+yes,2.46,Sun Taxi,no,Fri,Feb,19
+yes,0.89,Sun Taxi,no,Wed,Jan,6
+yes,16.17,City Service,no,Wed,Mar,7
+yes,1.15,City Service,no,Fri,Feb,17
+yes,0.7,Flash Cab,no,Wed,Feb,15
+yes,17.47,City Service,no,Sat,Mar,23
+yes,1.8,other,no,Fri,Mar,18
+yes,1.84,other,no,Thu,Mar,12
+yes,18.6,Flash Cab,no,Fri,Feb,6
+yes,1.23,Taxicab Insurance Agency Llc,no,Wed,Apr,16
+yes,16.9,Taxi Affiliation Services,no,Sun,Apr,16
+yes,19.5,other,no,Sun,Jan,20
+yes,1.52,other,no,Sun,Mar,18
+yes,17.66,Chicago Independents,no,Thu,Feb,10
+yes,17.5,City Service,no,Thu,Feb,18
+yes,0.7,Taxicab Insurance Agency Llc,no,Sat,Feb,8
+yes,1.38,other,no,Sun,Mar,20
+yes,16.5,Chicago Independents,no,Thu,Mar,17
+yes,2.07,other,no,Fri,Feb,14
+yes,2.61,Chicago Independents,no,Fri,Jan,9
+yes,16.8,other,no,Thu,Jan,15
+yes,14.43,Sun Taxi,no,Tue,Jan,18
+yes,18.07,Sun Taxi,no,Thu,Apr,17
+yes,1.82,Sun Taxi,no,Fri,Feb,15
+yes,2.53,Taxicab Insurance Agency Llc,no,Fri,Feb,18
+yes,2.87,Sun Taxi,no,Fri,Apr,19
+yes,3.85,Taxicab Insurance Agency Llc,no,Sat,Feb,7
+yes,0.65,other,yes,Fri,Jan,11
+yes,2.77,Taxicab Insurance Agency Llc,no,Sat,Mar,20
+yes,0.73,other,no,Wed,Mar,10
+yes,17.76,Chicago Independents,no,Wed,Apr,14
+yes,16.7,other,no,Wed,Feb,13
+yes,1.98,Sun Taxi,no,Wed,Mar,7
+yes,2.8,other,no,Mon,Mar,18
+yes,0,Flash Cab,no,Wed,Feb,9
+yes,0.9,Chicago Independents,no,Thu,Feb,18
+yes,1,Taxi Affiliation Services,no,Sun,Jan,16
+yes,17.11,other,no,Tue,Apr,13
+yes,0,Taxi Affiliation Services,no,Fri,Mar,13
+yes,0.78,Sun Taxi,yes,Tue,Feb,8
+yes,1.66,other,no,Wed,Mar,19
+yes,1.84,City Service,no,Mon,Mar,16
+yes,2.44,other,no,Thu,Mar,22
+yes,16.44,other,no,Sat,Apr,19
+yes,17.6,other,no,Wed,Mar,12
+yes,0.73,City Service,no,Fri,Mar,15
+yes,2.82,Taxicab Insurance Agency Llc,no,Sun,Apr,11
+yes,16.44,City Service,no,Wed,Apr,11
+yes,1,Taxi Affiliation Services,no,Mon,Mar,16
+yes,4.3,other,no,Wed,Mar,18
+yes,0,Taxi Affiliation Services,no,Fri,Apr,16
+yes,0,Flash Cab,no,Sun,Mar,12
+yes,17.8,Taxi Affiliation Services,no,Thu,Mar,0
+yes,4.55,Taxicab Insurance Agency Llc,no,Sat,Apr,19
+yes,18.61,Sun Taxi,no,Thu,Apr,20
+yes,9.29,Sun Taxi,no,Sun,Apr,8
+yes,17.76,Sun Taxi,no,Fri,Mar,18
+yes,1,Taxi Affiliation Services,no,Mon,Jan,18
+yes,0,Taxi Affiliation Services,no,Wed,Feb,10
+yes,0,Flash Cab,yes,Tue,Jan,16
+yes,20.1,Chicago Independents,no,Thu,Mar,7
+yes,1.09,City Service,no,Fri,Apr,8
+yes,17.07,City Service,no,Mon,Feb,16
+yes,2.81,other,no,Thu,Mar,11
+yes,17.08,Taxicab Insurance Agency Llc,no,Mon,Apr,19
+yes,3.12,City Service,no,Sat,Apr,19
+yes,1.12,other,no,Tue,Feb,16
+yes,1,Taxi Affiliation Services,no,Tue,Apr,21
+yes,17.79,other,no,Fri,Apr,18
+yes,0.6,other,no,Wed,Mar,13
+yes,0,Taxi Affiliation Services,no,Sun,Mar,20
+yes,1.78,Taxicab Insurance Agency Llc,no,Thu,Mar,9
+yes,18.05,Sun Taxi,no,Tue,Jan,8
+yes,3.64,Chicago Independents,no,Fri,Apr,18
+yes,17.9,Taxi Affiliation Services,no,Fri,Jan,6
+yes,17.53,City Service,no,Fri,Apr,14
+yes,17.73,Sun Taxi,no,Tue,Mar,10
+yes,3.23,Taxicab Insurance Agency Llc,no,Fri,Mar,17
+yes,1.04,Sun Taxi,no,Thu,Feb,7
+yes,3.4,Taxi Affiliation Services,no,Thu,Mar,20
+yes,1,other,no,Fri,Mar,17
+yes,2,other,no,Sat,Jan,11
+yes,0.62,other,no,Fri,Apr,16
+yes,1.94,Sun Taxi,no,Wed,Mar,12
+yes,0,Flash Cab,yes,Fri,Mar,11
+yes,0,Flash Cab,no,Thu,Apr,16
+yes,11.86,Flash Cab,no,Fri,Feb,22
+yes,1.5,City Service,no,Tue,Mar,13
+yes,1.9,other,no,Wed,Jan,10
+yes,1.81,Sun Taxi,no,Fri,Jan,16
+yes,2.48,other,no,Fri,Jan,16
+yes,2.45,Taxicab Insurance Agency Llc,no,Thu,Apr,8
+yes,3.64,other,no,Thu,Mar,13
+yes,2.26,other,no,Tue,Feb,20
+yes,5.96,City Service,no,Wed,Feb,17
+yes,1.91,City Service,no,Sat,Apr,14
+yes,19.2,Flash Cab,no,Tue,Apr,20
+yes,17.92,other,no,Tue,Feb,16
+yes,1.27,Sun Taxi,no,Fri,Apr,14
+yes,1.35,Taxicab Insurance Agency Llc,yes,Fri,Apr,10
+yes,0.53,Chicago Independents,no,Thu,Mar,10
+yes,17.94,Sun Taxi,no,Mon,Jan,8
+yes,1.52,Sun Taxi,yes,Wed,Jan,16
+yes,0.77,Flash Cab,no,Mon,Apr,18
+yes,17.73,other,no,Thu,Apr,17
+yes,1,Taxi Affiliation Services,no,Sun,Apr,16
+yes,1.79,City Service,yes,Thu,Mar,11
+yes,1.21,other,no,Thu,Mar,17
+yes,1.02,Chicago Independents,no,Mon,Jan,16
+yes,1.66,other,no,Tue,Feb,20
+yes,17.85,other,no,Mon,Apr,18
+yes,1.7,Sun Taxi,no,Tue,Mar,9
+yes,10,other,no,Sun,Mar,14
+yes,1.37,Sun Taxi,no,Mon,Mar,15
+yes,17.57,Flash Cab,no,Tue,Apr,12
+yes,17,Taxi Affiliation Services,no,Wed,Apr,14
+yes,1.68,Sun Taxi,no,Thu,Feb,18
+yes,1.28,Sun Taxi,no,Fri,Mar,0
+yes,2.33,Chicago Independents,no,Thu,Jan,17
+yes,1.31,Sun Taxi,no,Sun,Feb,14
+yes,1.19,other,no,Wed,Mar,18
+yes,18.3,other,no,Thu,Apr,15
+yes,2.91,City Service,no,Tue,Mar,7
+yes,1.27,Sun Taxi,yes,Fri,Mar,17
+yes,13.15,other,no,Fri,Mar,17
+yes,17.1,City Service,no,Tue,Mar,18
+yes,17,Flash Cab,no,Sun,Apr,16
+yes,16.25,other,no,Mon,Feb,13
+yes,1.29,Sun Taxi,no,Fri,Apr,17
+yes,19.12,City Service,no,Wed,Feb,6
+yes,1.73,Flash Cab,no,Thu,Apr,19
+yes,0,Taxi Affiliation Services,no,Tue,Feb,12
+yes,16.74,City Service,no,Thu,Apr,14
+yes,16.88,City Service,no,Mon,Jan,19
+yes,0.78,Chicago Independents,no,Mon,Mar,16
+yes,0.3,Chicago Independents,yes,Fri,Feb,19
+yes,1.33,other,yes,Sat,Apr,15
+yes,17.26,City Service,no,Sun,Feb,6
+yes,1.28,Flash Cab,no,Sat,Feb,12
+yes,12.67,Taxicab Insurance Agency Llc,no,Tue,Feb,13
+yes,2.14,other,no,Fri,Feb,9
+yes,12.6,Taxi Affiliation Services,no,Sat,Apr,15
+yes,1.3,other,yes,Wed,Jan,6
+yes,16.67,Taxicab Insurance Agency Llc,no,Tue,Apr,21
+yes,2.44,Chicago Independents,no,Thu,Mar,10
+yes,23.3,other,no,Thu,Mar,15
+yes,1.44,Taxicab Insurance Agency Llc,yes,Wed,Mar,10
+yes,1.78,Sun Taxi,no,Thu,Feb,7
+yes,17.67,Chicago Independents,no,Wed,Apr,15
+yes,2.52,City Service,no,Thu,Apr,20
+yes,1.11,Sun Taxi,no,Wed,Jan,17
+yes,1.29,City Service,no,Fri,Jan,9
+yes,2.29,other,no,Thu,Mar,17
+yes,0.2,Taxi Affiliation Services,no,Fri,Apr,20
+yes,21.04,Sun Taxi,no,Wed,Apr,20
+yes,2.75,Sun Taxi,no,Wed,Apr,20
+yes,18.02,City Service,no,Thu,Mar,19
+yes,1.13,other,no,Fri,Feb,20
+yes,0.62,Taxicab Insurance Agency Llc,yes,Tue,Mar,7
+yes,1.02,Flash Cab,no,Tue,Apr,10
+yes,0.31,other,yes,Thu,Mar,15
+yes,12.88,City Service,no,Sun,Apr,11
+yes,1.2,other,no,Sun,Mar,2
+yes,1.09,other,no,Tue,Mar,14
+yes,3.9,City Service,no,Thu,Feb,19
+yes,0.97,Flash Cab,yes,Sat,Feb,22
+yes,17.68,Chicago Independents,no,Mon,Apr,20
+yes,18.04,Sun Taxi,no,Sun,Mar,6
+yes,17.71,other,no,Tue,Apr,14
+yes,0.97,Sun Taxi,yes,Thu,Jan,21
+yes,3.32,Chicago Independents,no,Thu,Feb,17
+yes,1.47,Chicago Independents,yes,Thu,Apr,13
+yes,1,Taxi Affiliation Services,no,Thu,Mar,17
+yes,1.87,Sun Taxi,no,Wed,Apr,10
+yes,2.08,other,no,Tue,Mar,11
+yes,2.58,other,no,Sat,Apr,14
+yes,1.17,Taxicab Insurance Agency Llc,no,Thu,Mar,16
+yes,16.41,Sun Taxi,no,Sun,Apr,19
+yes,0.8,other,no,Tue,Jan,9
+yes,1.78,other,no,Sun,Feb,10
+yes,18.23,Sun Taxi,no,Fri,Jan,23
+yes,2.57,other,no,Tue,Apr,15
+yes,0.6,other,yes,Fri,Feb,18
+yes,12.1,Sun Taxi,no,Tue,Apr,13
+yes,17.38,Flash Cab,no,Fri,Jan,20
+yes,1.8,other,no,Thu,Feb,14
+yes,2.12,Flash Cab,no,Sun,Apr,13
+yes,17.1,Taxi Affiliation Services,no,Thu,Jan,15
+yes,17.8,other,no,Sun,Feb,12
+yes,1.18,other,no,Fri,Feb,14
+yes,0.9,Taxi Affiliation Services,no,Fri,Apr,9
+yes,17.54,other,no,Tue,Apr,12
+yes,0.8,Flash Cab,yes,Thu,Apr,12
+yes,9.2,Taxi Affiliation Services,no,Tue,Apr,15
+yes,11.09,other,no,Tue,Apr,21
+yes,16.93,Taxicab Insurance Agency Llc,no,Tue,Mar,15
+yes,0,other,yes,Tue,Feb,11
+yes,17.59,Taxicab Insurance Agency Llc,no,Mon,Feb,18
+yes,2.4,other,no,Mon,Mar,14
+yes,0.88,other,no,Thu,Jan,18
+yes,13.2,Sun Taxi,no,Thu,Feb,12
+yes,1.89,Taxicab Insurance Agency Llc,no,Tue,Jan,14
+yes,12.7,Taxi Affiliation Services,no,Sat,Feb,20
+yes,16.83,City Service,no,Mon,Feb,18
+yes,17.7,Taxi Affiliation Services,no,Fri,Mar,13

@@ -1,0 +1,347 @@
+---
+title: "Spending your data"
+subtitle: "Lecture 21"
+date: "2025-11-11"
+format: 
+  revealjs: 
+    output-file: 21-spending-your-data-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 24))
+todays_ae <- "ae-14-chicago-taxi-classification"
+```
+
+# Warm-up
+
+## Announcements {.smaller}
+
+-   Project write-ups due Thursday at 11:59pm
+
+-   Peer evaluations due Friday at 11:59pm
+
+# Setup
+
+## Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse) # data wrangling and visualization
+library(tidymodels) # modeling
+```
+
+## Data
+
+-   Taxi trips in Chicago, IL in 2022
+
+-   Data from [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew)
+
+## Data: `chicago_taxi` {.smaller}
+
+```{r}
+#| include: false
+chicago_taxi <- read_csv(here::here("slides", "data/chicago-taxi.csv"))
+```
+
+```{r}
+#| eval: false
+chicago_taxi <- read_csv("data/chicago-taxi.csv")
+```
+
+```{r}
+chicago_taxi
+```
+
+## Data: `chicago_taxi` {.smaller}
+
+```{r}
+glimpse(chicago_taxi)
+```
+
+## Data prep
+
+```{r}
+chicago_taxi <- chicago_taxi |>
+  mutate(
+    tip = fct_relevel(tip, "no", "yes"),
+    local = fct_relevel(local, "no", "yes"),
+    dow = fct_relevel(dow, "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"),
+    month = fct_relevel(month, "Jan", "Feb", "Mar", "Apr")
+  )
+```
+
+## Outcome and predictors {.smaller}
+
+- Outcome - `tip`: Whether rider left a tip -- a factor w/ levels "yes" and "no"
+- (Potential) predictors:
+  - Numerical:
+    - `distance`: The trip distance, in odometer miles.
+    - `hour`: The hour of the day in which the trip began.
+  - Categorical:
+    - `company`: The taxi company -- companies that occurred few times were binned as "other".
+    - `local`: Whether the trip started in the same community area as it began.
+    - `dow`: The day of the week in which the trip began.
+    - `month`: The month in which the trip began.
+
+## Should we include a predictor?
+
+To determine whether we should include a predictor in a model, we should start by asking:
+
+::: incremental
+-   Is it ethical to use this variable?
+    (Or even legal?)
+
+-   Will this variable be available at prediction time?
+
+-   Does this variable contribute to explainability?
+:::
+
+# Data splitting and spending
+
+## We've been cheating!
+
+::: incremental
+-   So far, we've been using all the data we have for building models.
+    In predictive contexts, this would be considered *cheating*.
+
+-   Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you've already seen.
+:::
+
+## Spending your data {.smaller}
+
+For predictive models (used primarily in machine learning), we typically split data into training and test sets:
+
+![](images/21/test-train-split-1.svg){fig-align="center"}
+
+-   The **training set** is used to estimate model parameters.
+
+-   The **test set** is used to find an independent assessment of model performance.
+
+. . .
+
+::: callout-warning
+Do not use, or even peek at, the test set during training.
+:::
+
+## How much to spend?
+
+::: incremental
+-   The more data we spend (use in training), the better estimates we’ll get.
+
+-   Spending too much data in training prevents us from computing a good assessment of predictive performance.
+
+-   Spending too much data in testing prevents us from computing a good estimate of model parameters.
+:::
+
+## The initial split
+
+```{r}
+#| label: initial-split
+set.seed(20251111)
+chicago_taxi_split <- initial_split(chicago_taxi)
+chicago_taxi_split
+```
+
+## Setting a seed {.smaller}
+
+::: task
+What does `set.seed()` do?
+:::
+
+::: incremental
+-   To create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.
+
+-   This allows us to reproduce results by setting that seed.
+
+-   Which seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance.
+:::
+
+## Accessing the data
+
+```{r}
+#| label: access-data
+chicago_taxi_train <- training(chicago_taxi_split)
+chicago_taxi_test <- testing(chicago_taxi_split)
+```
+
+## The training set {.smaller}
+
+```{r}
+chicago_taxi_train
+```
+
+## The testing data
+
+. . .
+
+::: huge
+🙈
+:::
+
+# Exploratory data analysis
+
+## Initial questions {.smaller}
+
+-   What’s the distribution of the outcome, `tip`?
+
+-   What’s the distribution of numeric variables like `distance` or `hour`?
+
+-   How does the distribution of `tip` differ across the categorical and numerical variables?
+
+. . .
+
+::: task
+Which dataset should we use for the exploration?
+The entire data `chicago_taxi`, the training data `chicago_taxi_train`, or the testing data `chicago_taxi_test`?
+:::
+
+## `tip`
+
+What’s the distribution of the outcome, `tip`?
+
+```{r}
+chicago_taxi_train |>
+  count(tip) |>
+  mutate(prop = n / sum(n))
+```
+
+## `distance`
+
+What’s the distribution of `distance`?
+
+```{r}
+ggplot(chicago_taxi_train, aes(x = distance)) +
+  geom_histogram(binwidth = 3)
+```
+
+## `tip` and `distance` {.smaller}
+
+```{r}
+#| code-line-numbers: "|7"
+ggplot(chicago_taxi_train, aes(x = distance, fill = tip, group = tip)) +
+  geom_histogram(binwidth = 3, show.legend = FALSE) +
+  scale_fill_manual(values = c("yes" = "darkolivegreen4", "no" = "darkgray")) +
+  facet_wrap(~tip, ncol = 1, labeller = label_both, scales = "free_y")
+```
+
+## `tip` and `hour` {.smaller}
+
+```{r}
+ggplot(chicago_taxi_train, aes(x = hour, fill = tip, group = tip)) +
+  geom_histogram(binwidth = 1, show.legend = FALSE) +
+  scale_fill_manual(values = c("yes" = "darkolivegreen4", "no" = "darkgray")) +
+  scale_x_continuous(breaks = seq(0, 18, by = 6)) +
+  facet_wrap(~tip, ncol = 1, labeller = label_both, scales = "free_y")
+```
+
+## `tip` and `local` {.smaller}
+
+```{r}
+#| code-line-numbers: "|2"
+ggplot(chicago_taxi_train, aes(x = local, fill = tip)) +
+  geom_bar(position = "fill", color = "white") +
+  scale_fill_manual(values = c("yes" = "darkolivegreen4", "no" = "darkgray")) +
+  labs(y = "Proportion") +
+  theme(legend.position = "top")
+```
+
+## `tip` and `dow` {.smaller}
+
+```{r}
+ggplot(chicago_taxi_train, aes(x = dow, fill = tip)) +
+  geom_bar(position = "fill", color = "white") +
+  scale_fill_manual(values = c("yes" = "darkolivegreen4", "no" = "darkgray")) +
+  labs(y = "Proportion", x = "Day of week") +
+  theme(legend.position = "top")
+```
+
+# Terminology
+
+## False negative and positive
+
+-   **False negative rate** is the proportion of actual positives that were classified as negatives.
+
+-   **False positive rate** is the proportion of actual negatives that were classified as positives.
+
+## Sensitivity
+
+**Sensitivity** is the proportion of actual positives that were correctly classified as positive.
+
+-   Also known as **true positive rate** and **recall**
+
+-   Sensitivity = 1 − False negative rate
+
+-   Useful when false negatives are more "expensive" than false positives
+
+## Specificity
+
+**Specificity** is the proportion of actual negatives that were correctly classified as negative
+
+-   Also known as **true negative rate**
+
+-   Specificity = 1 − False positive rate
+
+## ROC curve
+
+The **receiver operating characteristic (ROC) curve** allows to assess the model performance across a range of thresholds.
+
+![](images/21/roc-curve.png)
+
+## ROC curve {.smaller}
+
+::: task
+Which corner of the plot indicates the best model performance?
+:::
+
+![](images/21/roc-curve-annotated.png)
+
+# Next steps
+
+## Next steps {.smaller}
+
+::: incremental
+-   Fit models on training data
+
+-   Make predictions on testing data
+
+-   Evaluate predictions on testing data:
+
+    -   Linear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.
+    -   Logistic models: False negative and positive rates, AUC (area under the curve), etc.
+
+-   Make decisions based on model predictive performance, validity across various testing/training splits (aka "cross validation"), explainability
+:::
+
+. . .
+
+::: callout-note
+We will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses.
+:::
+
+## `{r} todays_ae` {.smaller}
+
+::: appex
+-   Go to your ae project in RStudio.
+
+-   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Work through the application exercise in class, and render, commit, and push your edits.
+:::
