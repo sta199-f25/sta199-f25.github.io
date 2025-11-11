@@ -109,8 +109,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <meta property="og:title" content="Spending your data – STA 199">
 <meta property="og:description" content="Lecture 21">
-<meta property="og:image" content="https://sta199-f25.github.io/slides/images/21/test-train-split-1.svg">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="888">
+<meta property="og:image:width" content="866">
 </head>
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -534,7 +536,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
   <ul class="collapse">
-<li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
+<li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#from-last-week" id="toc-from-last-week" class="nav-link" data-scroll-target="#from-last-week">From last week</a></li>
   </ul>
 </li>
   <li>
@@ -566,6 +570,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a>
   <ul class="collapse">
 <li><a href="#initial-questions" id="toc-initial-questions" class="nav-link" data-scroll-target="#initial-questions">Initial questions</a></li>
+  <li><a href="#while-you-wait-participate-1" id="toc-while-you-wait-participate-1" class="nav-link" data-scroll-target="#while-you-wait-participate-1">While you wait: Participate 📱💻</a></li>
   <li><a href="#tip" id="toc-tip" class="nav-link" data-scroll-target="#tip"><code>tip</code></a></li>
   <li><a href="#distance" id="toc-distance" class="nav-link" data-scroll-target="#distance"><code>distance</code></a></li>
   <li><a href="#tip-and-distance" id="toc-tip-and-distance" class="nav-link" data-scroll-target="#tip-and-distance"><code>tip</code> and <code>distance</code></a></li>
@@ -581,6 +586,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sensitivity" id="toc-sensitivity" class="nav-link" data-scroll-target="#sensitivity">Sensitivity</a></li>
   <li><a href="#specificity" id="toc-specificity" class="nav-link" data-scroll-target="#specificity">Specificity</a></li>
   <li><a href="#roc-curve" id="toc-roc-curve" class="nav-link" data-scroll-target="#roc-curve">ROC curve</a></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
   <li><a href="#roc-curve-1" id="toc-roc-curve-1" class="nav-link" data-scroll-target="#roc-curve-1">ROC curve</a></li>
   </ul>
 </li>
@@ -630,11 +636,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><section id="warm-up" class="level1"><h1>Warm-up</h1>
-<section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
+<section id="while-you-wait-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate">While you wait: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following files should you be updating in your project between now and Thursday’s deadline? Check all that apply.</p>
+<div class="wooclap-choices">
+<ul>
+<li><code>contract.qmd</code></li>
+<li><code>index.qmd</code></li>
+<li>
+<code>presentation.qmd</code> or <code>presentation.pdf</code>
+</li>
+<li><code>proposal.qmd</code></li>
+<li>
+<code>README.md</code> in your <code>data</code> folder</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
 <li><p>Project write-ups due Thursday at 11:59pm</p></li>
 <li><p>Peer evaluations due Friday at 11:59pm</p></li>
-</ul></section></section><section id="setup" class="level1"><h1>Setup</h1>
+</ul></section><section id="from-last-week" class="level2"><h2 class="anchored" data-anchor-id="from-last-week">From last week</h2>
+<div class="appex">
+<p>Finish up <code>ae-13-spam-filter</code>.</p>
+</div>
+</section></section><section id="setup" class="level1"><h1>Setup</h1>
 <section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># data wrangling and visualization</span></span>
@@ -652,7 +690,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4,000 × 7
+<pre><code># A tibble: 2,000 × 7
    tip   distance company                      local dow   month  hour
    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;
  1 no        0.4  other                        yes   Fri   Mar      17
@@ -665,7 +703,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  8 no        0.85 Taxicab Insurance Agency Llc no    Tue   Mar       8
  9 no       17.9  City Service                 no    Tue   Jan      20
 10 no        0    City Service                 yes   Sun   Apr      16
-# ℹ 3,990 more rows</code></pre>
+# ℹ 1,990 more rows</code></pre>
 </div>
 </div>
 </section><section id="data-chicago_taxi-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-chicago_taxi-1">Data: <code>chicago_taxi</code>
@@ -673,7 +711,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">chicago_taxi</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 4,000
+<pre><code>Rows: 2,000
 Columns: 7
 $ tip      &lt;chr&gt; "no", "no", "no", "no", "no", "no", "no", "no", "no…
 $ distance &lt;dbl&gt; 0.40, 0.96, 1.07, 1.13, 10.81, 3.60, 1.08, 0.85, 17…
@@ -741,7 +779,7 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 </section><section id="spending-your-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="spending-your-data">Spending your data</h2>
 <p>For predictive models (used primarily in machine learning), we typically split data into training and test sets:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/21/test-train-split-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/21/test-train-split-1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure"><p><a href="images/21/test-train-split-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/21/test-train-split-1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 <ul>
@@ -777,7 +815,7 @@ Warning
 <span><span class="va">chicago_taxi_split</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;Training/Testing/Total&gt;
-&lt;3000/1000/4000&gt;</code></pre>
+&lt;1500/500/2000&gt;</code></pre>
 </div>
 </div>
 </section><section id="setting-a-seed" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="setting-a-seed">Setting a seed</h2>
@@ -800,20 +838,20 @@ Warning
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi_train</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,000 × 7
+<pre><code># A tibble: 1,500 × 7
    tip   distance company                      local dow   month  hour
    &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;
- 1 no         7.9 Taxi Affiliation Services    no    Sat   Apr      17
- 2 yes        0   Taxi Affiliation Services    yes   Mon   Jan       8
- 3 yes       17.5 other                        no    Thu   Jan      17
- 4 no         4.7 Taxi Affiliation Services    no    Fri   Jan       9
- 5 no        18.6 Taxicab Insurance Agency Llc no    Fri   Feb      15
- 6 yes        1.3 Taxi Affiliation Services    no    Thu   Jan      17
- 7 no        17.6 City Service                 no    Wed   Feb      19
- 8 yes       12.1 other                        no    Thu   Apr      13
- 9 no         0.4 other                        yes   Fri   Mar      17
-10 yes        2.2 other                        no    Wed   Apr      10
-# ℹ 2,990 more rows</code></pre>
+ 1 no        7.9  Taxi Affiliation Services    no    Sat   Apr      17
+ 2 no       10.7  Sun Taxi                     no    Fri   Mar       9
+ 3 yes       3.4  Taxi Affiliation Services    no    Thu   Mar      20
+ 4 no        4.7  Taxi Affiliation Services    no    Fri   Jan       9
+ 5 no       18.6  Taxicab Insurance Agency Llc no    Fri   Feb      15
+ 6 yes       0.89 other                        yes   Fri   Mar      17
+ 7 no       17.6  City Service                 no    Wed   Feb      19
+ 8 no        0.97 Taxicab Insurance Agency Llc yes   Thu   Mar      21
+ 9 no        0.4  other                        yes   Fri   Mar      17
+10 yes       2.2  other                        no    Wed   Apr      10
+# ℹ 1,490 more rows</code></pre>
 </div>
 </div>
 </section><section id="the-testing-data" class="level2"><h2 class="anchored" data-anchor-id="the-testing-data">The testing data</h2>
@@ -827,10 +865,31 @@ Warning
 <li><p>What’s the distribution of the outcome, <code>tip</code>?</p></li>
 <li><p>What’s the distribution of numeric variables like <code>distance</code> or <code>hour</code>?</p></li>
 <li><p>How does the distribution of <code>tip</code> differ across the categorical and numerical variables?</p></li>
+</ul></section><section id="while-you-wait-participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate-1">While you wait: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which dataset should we use for the exploration?</p>
+<div class="wooclap-choices">
+<ul>
+<li>The entire data <code>chicago_taxi</code>
+</li>
+<li>The training data <code>chicago_taxi_train</code>
+</li>
+<li>The testing data <code>chicago_taxi_test</code>
+</li>
 </ul>
-<p>. . .</p>
-<div class="task">
-<p>Which dataset should we use for the exploration? The entire data <code>chicago_taxi</code>, the training data <code>chicago_taxi_train</code>, or the testing data <code>chicago_taxi_test</code>?</p>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
 </div>
 </section><section id="tip" class="level2"><h2 class="anchored" data-anchor-id="tip"><code>tip</code></h2>
 <p>What’s the distribution of the outcome, <code>tip</code>?</p>
@@ -842,8 +901,8 @@ Warning
 <pre><code># A tibble: 2 × 3
   tip       n  prop
   &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
-1 no      572 0.191
-2 yes    2428 0.809</code></pre>
+1 no      586 0.391
+2 yes     914 0.609</code></pre>
 </div>
 </div>
 </section><section id="distance" class="level2"><h2 class="anchored" data-anchor-id="distance"><code>distance</code></h2>
@@ -853,7 +912,7 @@ Warning
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="21-spending-your-data_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="21-spending-your-data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -868,7 +927,7 @@ Warning
 <span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="21-spending-your-data_files/figure-html/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="21-spending-your-data_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -884,7 +943,7 @@ Warning
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">tip</span>, ncol <span class="op">=</span> <span class="fl">1</span>, labeller <span class="op">=</span> <span class="va">label_both</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="21-spending-your-data_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="21-spending-your-data_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -900,7 +959,7 @@ Warning
 <span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="21-spending-your-data_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="21-spending-your-data_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -916,7 +975,7 @@ Warning
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="21-spending-your-data_files/figure-html/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="21-spending-your-data_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -939,12 +998,36 @@ Warning
 <li><p>Specificity = 1 − False positive rate</p></li>
 </ul></section><section id="roc-curve" class="level2"><h2 class="anchored" data-anchor-id="roc-curve">ROC curve</h2>
 <p>The <strong>receiver operating characteristic (ROC) curve</strong> allows to assess the model performance across a range of thresholds.</p>
-<p><a href="images/21/roc-curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/21/roc-curve.png" class="img-fluid"></a></p>
+<p><a href="images/21/roc-curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/21/roc-curve.png" class="img-fluid"></a></p>
+</section><section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following best describes the area annotated on the ROC curve?</p>
+<p><a href="images/21/roc-curve-annotated-question.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/21/roc-curve-annotated-question.png" class="img-fluid"></a></p>
+<div class="wooclap-choices">
+<ul>
+<li>Where all positives classified as positive, all negatives classified as negative</li>
+<li>Where true positive rate = false positive rate</li>
+<li>Where all positives classified as negative, all negatives classified as positive</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
 </section><section id="roc-curve-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="roc-curve-1">ROC curve</h2>
 <div class="task">
 <p>Which corner of the plot indicates the best model performance?</p>
 </div>
-<p><a href="images/21/roc-curve-annotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/21/roc-curve-annotated.png" class="img-fluid"></a></p>
+<p><a href="images/21/roc-curve-annotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/21/roc-curve-annotated.png" class="img-fluid"></a></p>
 </section></section><section id="next-steps" class="level1"><h1>Next steps</h1>
 <section id="next-steps-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="next-steps-1">Next steps</h2>
 <div class="incremental">
@@ -986,42 +1069,7 @@ Note
 </div>
 
 
-</section></section></main><!-- /main --><script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {

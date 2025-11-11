@@ -76,12 +76,12 @@
       "/ae/ae-10-icecover-model.html",
       "/ae/ae-12-penguins-model-multi-A.html",
       "/ae/ae-12-penguins-model-multi.html",
+      "/ae/ae-13-spam-filter-logistic-A.html",
+      "/ae/ae-13-spam-filter-logistic.html",
       "/ae/ae-11-penguins-model-A.html",
       "/ae/ae-11-penguins-model.html",
       "/ae/ae-14-chicago-taxi-classification-A.html",
-      "/ae/ae-14-chicago-taxi-classification.html",
-      "/ae/ae-13-spam-filter-logistic-A.html",
-      "/ae/ae-13-spam-filter-logistic.html"
+      "/ae/ae-14-chicago-taxi-classification.html"
     ]
   }
 ]

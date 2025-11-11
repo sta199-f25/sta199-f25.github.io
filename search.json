@@ -1344,11 +1344,25 @@
     "text": "ae-12-penguins-model-multi\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-12-penguins-model-multi.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
+    "objectID": "slides/21-spending-your-data-slides.html#while-you-wait-participate",
+    "href": "slides/21-spending-your-data-slides.html#while-you-wait-participate",
+    "title": "Spending your data",
+    "section": "While you wait: Participate 📱💻",
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhich of the following files should you be updating in your project between now and Thursday’s deadline? Check all that apply.\n\n\ncontract.qmd\nindex.qmd\n\npresentation.qmd or presentation.pdf\n\nproposal.qmd\n\nREADME.md in your data folder\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/21-spending-your-data-slides.html#announcements",
     "href": "slides/21-spending-your-data-slides.html#announcements",
     "title": "Spending your data",
     "section": "Announcements",
     "text": "Announcements\n\nProject write-ups due Thursday at 11:59pm\nPeer evaluations due Friday at 11:59pm"
+  },
+  {
+    "objectID": "slides/21-spending-your-data-slides.html#from-last-week",
+    "href": "slides/21-spending-your-data-slides.html#from-last-week",
+    "title": "Spending your data",
+    "section": "From last week",
+    "text": "From last week\n\nFinish up ae-13-spam-filter."
   },
   {
     "objectID": "slides/21-spending-your-data-slides.html#packages",
@@ -1369,14 +1383,14 @@
     "href": "slides/21-spending-your-data-slides.html#data-chicago_taxi",
     "title": "Spending your data",
     "section": "Data: chicago_taxi\n",
-    "text": "Data: chicago_taxi\n\n\nchicago_taxi &lt;- read_csv(\"data/chicago-taxi.csv\")\n\n\nchicago_taxi\n\n# A tibble: 4,000 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;\n 1 no        0.4  other                        yes   Fri   Mar      17\n 2 no        0.96 Taxicab Insurance Agency Llc no    Mon   Apr       8\n 3 no        1.07 Sun Taxi                     no    Fri   Feb      15\n 4 no        1.13 other                        no    Sat   Feb      14\n 5 no       10.8  Sun Taxi                     no    Sat   Apr      14\n 6 no        3.6  Chicago Independents         no    Wed   Mar      12\n 7 no        1.08 Flash Cab                    yes   Wed   Mar      13\n 8 no        0.85 Taxicab Insurance Agency Llc no    Tue   Mar       8\n 9 no       17.9  City Service                 no    Tue   Jan      20\n10 no        0    City Service                 yes   Sun   Apr      16\n# ℹ 3,990 more rows"
+    "text": "Data: chicago_taxi\n\n\nchicago_taxi &lt;- read_csv(\"data/chicago-taxi.csv\")\n\n\nchicago_taxi\n\n# A tibble: 2,000 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;\n 1 no        0.4  other                        yes   Fri   Mar      17\n 2 no        0.96 Taxicab Insurance Agency Llc no    Mon   Apr       8\n 3 no        1.07 Sun Taxi                     no    Fri   Feb      15\n 4 no        1.13 other                        no    Sat   Feb      14\n 5 no       10.8  Sun Taxi                     no    Sat   Apr      14\n 6 no        3.6  Chicago Independents         no    Wed   Mar      12\n 7 no        1.08 Flash Cab                    yes   Wed   Mar      13\n 8 no        0.85 Taxicab Insurance Agency Llc no    Tue   Mar       8\n 9 no       17.9  City Service                 no    Tue   Jan      20\n10 no        0    City Service                 yes   Sun   Apr      16\n# ℹ 1,990 more rows"
   },
   {
     "objectID": "slides/21-spending-your-data-slides.html#data-chicago_taxi-1",
     "href": "slides/21-spending-your-data-slides.html#data-chicago_taxi-1",
     "title": "Spending your data",
     "section": "Data: chicago_taxi\n",
-    "text": "Data: chicago_taxi\n\n\nglimpse(chicago_taxi)\n\nRows: 4,000\nColumns: 7\n$ tip      &lt;chr&gt; \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no…\n$ distance &lt;dbl&gt; 0.40, 0.96, 1.07, 1.13, 10.81, 3.60, 1.08, 0.85, 17…\n$ company  &lt;chr&gt; \"other\", \"Taxicab Insurance Agency Llc\", \"Sun Taxi\"…\n$ local    &lt;chr&gt; \"yes\", \"no\", \"no\", \"no\", \"no\", \"no\", \"yes\", \"no\", \"…\n$ dow      &lt;chr&gt; \"Fri\", \"Mon\", \"Fri\", \"Sat\", \"Sat\", \"Wed\", \"Wed\", \"T…\n$ month    &lt;chr&gt; \"Mar\", \"Apr\", \"Feb\", \"Feb\", \"Apr\", \"Mar\", \"Mar\", \"M…\n$ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…"
+    "text": "Data: chicago_taxi\n\n\nglimpse(chicago_taxi)\n\nRows: 2,000\nColumns: 7\n$ tip      &lt;chr&gt; \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no…\n$ distance &lt;dbl&gt; 0.40, 0.96, 1.07, 1.13, 10.81, 3.60, 1.08, 0.85, 17…\n$ company  &lt;chr&gt; \"other\", \"Taxicab Insurance Agency Llc\", \"Sun Taxi\"…\n$ local    &lt;chr&gt; \"yes\", \"no\", \"no\", \"no\", \"no\", \"no\", \"yes\", \"no\", \"…\n$ dow      &lt;chr&gt; \"Fri\", \"Mon\", \"Fri\", \"Sat\", \"Sat\", \"Wed\", \"Wed\", \"T…\n$ month    &lt;chr&gt; \"Mar\", \"Apr\", \"Feb\", \"Feb\", \"Apr\", \"Mar\", \"Mar\", \"M…\n$ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…"
   },
   {
     "objectID": "slides/21-spending-your-data-slides.html#data-prep",
@@ -1425,7 +1439,7 @@
     "href": "slides/21-spending-your-data-slides.html#the-initial-split",
     "title": "Spending your data",
     "section": "The initial split",
-    "text": "The initial split\n\nset.seed(20251111)\nchicago_taxi_split &lt;- initial_split(chicago_taxi)\nchicago_taxi_split\n\n&lt;Training/Testing/Total&gt;\n&lt;3000/1000/4000&gt;"
+    "text": "The initial split\n\nset.seed(20251111)\nchicago_taxi_split &lt;- initial_split(chicago_taxi)\nchicago_taxi_split\n\n&lt;Training/Testing/Total&gt;\n&lt;1500/500/2000&gt;"
   },
   {
     "objectID": "slides/21-spending-your-data-slides.html#setting-a-seed",
@@ -1446,7 +1460,7 @@
     "href": "slides/21-spending-your-data-slides.html#the-training-set",
     "title": "Spending your data",
     "section": "The training set",
-    "text": "The training set\n\nchicago_taxi_train\n\n# A tibble: 3,000 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;\n 1 no         7.9 Taxi Affiliation Services    no    Sat   Apr      17\n 2 yes        0   Taxi Affiliation Services    yes   Mon   Jan       8\n 3 yes       17.5 other                        no    Thu   Jan      17\n 4 no         4.7 Taxi Affiliation Services    no    Fri   Jan       9\n 5 no        18.6 Taxicab Insurance Agency Llc no    Fri   Feb      15\n 6 yes        1.3 Taxi Affiliation Services    no    Thu   Jan      17\n 7 no        17.6 City Service                 no    Wed   Feb      19\n 8 yes       12.1 other                        no    Thu   Apr      13\n 9 no         0.4 other                        yes   Fri   Mar      17\n10 yes        2.2 other                        no    Wed   Apr      10\n# ℹ 2,990 more rows"
+    "text": "The training set\n\nchicago_taxi_train\n\n# A tibble: 1,500 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;\n 1 no        7.9  Taxi Affiliation Services    no    Sat   Apr      17\n 2 no       10.7  Sun Taxi                     no    Fri   Mar       9\n 3 yes       3.4  Taxi Affiliation Services    no    Thu   Mar      20\n 4 no        4.7  Taxi Affiliation Services    no    Fri   Jan       9\n 5 no       18.6  Taxicab Insurance Agency Llc no    Fri   Feb      15\n 6 yes       0.89 other                        yes   Fri   Mar      17\n 7 no       17.6  City Service                 no    Wed   Feb      19\n 8 no        0.97 Taxicab Insurance Agency Llc yes   Thu   Mar      21\n 9 no        0.4  other                        yes   Fri   Mar      17\n10 yes       2.2  other                        no    Wed   Apr      10\n# ℹ 1,490 more rows"
   },
   {
     "objectID": "slides/21-spending-your-data-slides.html#the-testing-data",
@@ -1460,14 +1474,21 @@
     "href": "slides/21-spending-your-data-slides.html#initial-questions",
     "title": "Spending your data",
     "section": "Initial questions",
-    "text": "Initial questions\n\nWhat’s the distribution of the outcome, tip?\nWhat’s the distribution of numeric variables like distance or hour?\nHow does the distribution of tip differ across the categorical and numerical variables?\n\n\n\nWhich dataset should we use for the exploration? The entire data chicago_taxi, the training data chicago_taxi_train, or the testing data chicago_taxi_test?"
+    "text": "Initial questions\n\nWhat’s the distribution of the outcome, tip?\nWhat’s the distribution of numeric variables like distance or hour?\nHow does the distribution of tip differ across the categorical and numerical variables?"
+  },
+  {
+    "objectID": "slides/21-spending-your-data-slides.html#while-you-wait-participate-1",
+    "href": "slides/21-spending-your-data-slides.html#while-you-wait-participate-1",
+    "title": "Spending your data",
+    "section": "While you wait: Participate 📱💻",
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhich dataset should we use for the exploration?\n\n\nThe entire data chicago_taxi\n\nThe training data chicago_taxi_train\n\nThe testing data chicago_taxi_test\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/21-spending-your-data-slides.html#tip",
     "href": "slides/21-spending-your-data-slides.html#tip",
     "title": "Spending your data",
     "section": "tip",
-    "text": "tip\nWhat’s the distribution of the outcome, tip?\n\nchicago_taxi_train |&gt;\n  count(tip) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  tip       n  prop\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 no      572 0.191\n2 yes    2428 0.809"
+    "text": "tip\nWhat’s the distribution of the outcome, tip?\n\nchicago_taxi_train |&gt;\n  count(tip) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  tip       n  prop\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 no      586 0.391\n2 yes     914 0.609"
   },
   {
     "objectID": "slides/21-spending-your-data-slides.html#distance",
@@ -1533,6 +1554,13 @@
     "text": "ROC curve\nThe receiver operating characteristic (ROC) curve allows to assess the model performance across a range of thresholds."
   },
   {
+    "objectID": "slides/21-spending-your-data-slides.html#participate",
+    "href": "slides/21-spending-your-data-slides.html#participate",
+    "title": "Spending your data",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following best describes the area annotated on the ROC curve?\n\n\n\nWhere all positives classified as positive, all negatives classified as negative\nWhere true positive rate = false positive rate\nWhere all positives classified as negative, all negatives classified as positive\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/21-spending-your-data-slides.html#roc-curve-1",
     "href": "slides/21-spending-your-data-slides.html#roc-curve-1",
     "title": "Spending your data",
@@ -1558,7 +1586,14 @@
     "href": "slides/21-spending-your-data.html",
     "title": "Spending your data",
     "section": "",
-    "text": "Project write-ups due Thursday at 11:59pm\nPeer evaluations due Friday at 11:59pm"
+    "text": "Which of the following files should you be updating in your project between now and Thursday’s deadline? Check all that apply.\n\n\ncontract.qmd\nindex.qmd\n\npresentation.qmd or presentation.pdf\n\nproposal.qmd\n\nREADME.md in your data folder\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nProject write-ups due Thursday at 11:59pm\nPeer evaluations due Friday at 11:59pm\n\n\nFinish up ae-13-spam-filter."
+  },
+  {
+    "objectID": "slides/21-spending-your-data.html#while-you-wait-participate",
+    "href": "slides/21-spending-your-data.html#while-you-wait-participate",
+    "title": "Spending your data",
+    "section": "",
+    "text": "Which of the following files should you be updating in your project between now and Thursday’s deadline? Check all that apply.\n\n\ncontract.qmd\nindex.qmd\n\npresentation.qmd or presentation.pdf\n\nproposal.qmd\n\nREADME.md in your data folder\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/21-spending-your-data.html#announcements",
@@ -1566,6 +1601,13 @@
     "title": "Spending your data",
     "section": "",
     "text": "Project write-ups due Thursday at 11:59pm\nPeer evaluations due Friday at 11:59pm"
+  },
+  {
+    "objectID": "slides/21-spending-your-data.html#from-last-week",
+    "href": "slides/21-spending-your-data.html#from-last-week",
+    "title": "Spending your data",
+    "section": "",
+    "text": "Finish up ae-13-spam-filter."
   },
   {
     "objectID": "slides/21-spending-your-data.html#packages",
@@ -1586,14 +1628,14 @@
     "href": "slides/21-spending-your-data.html#data-chicago_taxi",
     "title": "Spending your data",
     "section": "Data: chicago_taxi\n",
-    "text": "Data: chicago_taxi\n\n\nchicago_taxi &lt;- read_csv(\"data/chicago-taxi.csv\")\n\n\nchicago_taxi\n\n# A tibble: 4,000 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;\n 1 no        0.4  other                        yes   Fri   Mar      17\n 2 no        0.96 Taxicab Insurance Agency Llc no    Mon   Apr       8\n 3 no        1.07 Sun Taxi                     no    Fri   Feb      15\n 4 no        1.13 other                        no    Sat   Feb      14\n 5 no       10.8  Sun Taxi                     no    Sat   Apr      14\n 6 no        3.6  Chicago Independents         no    Wed   Mar      12\n 7 no        1.08 Flash Cab                    yes   Wed   Mar      13\n 8 no        0.85 Taxicab Insurance Agency Llc no    Tue   Mar       8\n 9 no       17.9  City Service                 no    Tue   Jan      20\n10 no        0    City Service                 yes   Sun   Apr      16\n# ℹ 3,990 more rows"
+    "text": "Data: chicago_taxi\n\n\nchicago_taxi &lt;- read_csv(\"data/chicago-taxi.csv\")\n\n\nchicago_taxi\n\n# A tibble: 2,000 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;\n 1 no        0.4  other                        yes   Fri   Mar      17\n 2 no        0.96 Taxicab Insurance Agency Llc no    Mon   Apr       8\n 3 no        1.07 Sun Taxi                     no    Fri   Feb      15\n 4 no        1.13 other                        no    Sat   Feb      14\n 5 no       10.8  Sun Taxi                     no    Sat   Apr      14\n 6 no        3.6  Chicago Independents         no    Wed   Mar      12\n 7 no        1.08 Flash Cab                    yes   Wed   Mar      13\n 8 no        0.85 Taxicab Insurance Agency Llc no    Tue   Mar       8\n 9 no       17.9  City Service                 no    Tue   Jan      20\n10 no        0    City Service                 yes   Sun   Apr      16\n# ℹ 1,990 more rows"
   },
   {
     "objectID": "slides/21-spending-your-data.html#data-chicago_taxi-1",
     "href": "slides/21-spending-your-data.html#data-chicago_taxi-1",
     "title": "Spending your data",
     "section": "Data: chicago_taxi\n",
-    "text": "Data: chicago_taxi\n\n\nglimpse(chicago_taxi)\n\nRows: 4,000\nColumns: 7\n$ tip      &lt;chr&gt; \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no…\n$ distance &lt;dbl&gt; 0.40, 0.96, 1.07, 1.13, 10.81, 3.60, 1.08, 0.85, 17…\n$ company  &lt;chr&gt; \"other\", \"Taxicab Insurance Agency Llc\", \"Sun Taxi\"…\n$ local    &lt;chr&gt; \"yes\", \"no\", \"no\", \"no\", \"no\", \"no\", \"yes\", \"no\", \"…\n$ dow      &lt;chr&gt; \"Fri\", \"Mon\", \"Fri\", \"Sat\", \"Sat\", \"Wed\", \"Wed\", \"T…\n$ month    &lt;chr&gt; \"Mar\", \"Apr\", \"Feb\", \"Feb\", \"Apr\", \"Mar\", \"Mar\", \"M…\n$ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…"
+    "text": "Data: chicago_taxi\n\n\nglimpse(chicago_taxi)\n\nRows: 2,000\nColumns: 7\n$ tip      &lt;chr&gt; \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no\", \"no…\n$ distance &lt;dbl&gt; 0.40, 0.96, 1.07, 1.13, 10.81, 3.60, 1.08, 0.85, 17…\n$ company  &lt;chr&gt; \"other\", \"Taxicab Insurance Agency Llc\", \"Sun Taxi\"…\n$ local    &lt;chr&gt; \"yes\", \"no\", \"no\", \"no\", \"no\", \"no\", \"yes\", \"no\", \"…\n$ dow      &lt;chr&gt; \"Fri\", \"Mon\", \"Fri\", \"Sat\", \"Sat\", \"Wed\", \"Wed\", \"T…\n$ month    &lt;chr&gt; \"Mar\", \"Apr\", \"Feb\", \"Feb\", \"Apr\", \"Mar\", \"Mar\", \"M…\n$ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…"
   },
   {
     "objectID": "slides/21-spending-your-data.html#data-prep",
@@ -1642,7 +1684,7 @@
     "href": "slides/21-spending-your-data.html#the-initial-split",
     "title": "Spending your data",
     "section": "The initial split",
-    "text": "The initial split\n\nset.seed(20251111)\nchicago_taxi_split &lt;- initial_split(chicago_taxi)\nchicago_taxi_split\n\n&lt;Training/Testing/Total&gt;\n&lt;3000/1000/4000&gt;"
+    "text": "The initial split\n\nset.seed(20251111)\nchicago_taxi_split &lt;- initial_split(chicago_taxi)\nchicago_taxi_split\n\n&lt;Training/Testing/Total&gt;\n&lt;1500/500/2000&gt;"
   },
   {
     "objectID": "slides/21-spending-your-data.html#setting-a-seed",
@@ -1663,7 +1705,7 @@
     "href": "slides/21-spending-your-data.html#the-training-set",
     "title": "Spending your data",
     "section": "The training set",
-    "text": "The training set\n\nchicago_taxi_train\n\n# A tibble: 3,000 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;\n 1 no         7.9 Taxi Affiliation Services    no    Sat   Apr      17\n 2 yes        0   Taxi Affiliation Services    yes   Mon   Jan       8\n 3 yes       17.5 other                        no    Thu   Jan      17\n 4 no         4.7 Taxi Affiliation Services    no    Fri   Jan       9\n 5 no        18.6 Taxicab Insurance Agency Llc no    Fri   Feb      15\n 6 yes        1.3 Taxi Affiliation Services    no    Thu   Jan      17\n 7 no        17.6 City Service                 no    Wed   Feb      19\n 8 yes       12.1 other                        no    Thu   Apr      13\n 9 no         0.4 other                        yes   Fri   Mar      17\n10 yes        2.2 other                        no    Wed   Apr      10\n# ℹ 2,990 more rows"
+    "text": "The training set\n\nchicago_taxi_train\n\n# A tibble: 1,500 × 7\n   tip   distance company                      local dow   month  hour\n   &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;\n 1 no        7.9  Taxi Affiliation Services    no    Sat   Apr      17\n 2 no       10.7  Sun Taxi                     no    Fri   Mar       9\n 3 yes       3.4  Taxi Affiliation Services    no    Thu   Mar      20\n 4 no        4.7  Taxi Affiliation Services    no    Fri   Jan       9\n 5 no       18.6  Taxicab Insurance Agency Llc no    Fri   Feb      15\n 6 yes       0.89 other                        yes   Fri   Mar      17\n 7 no       17.6  City Service                 no    Wed   Feb      19\n 8 no        0.97 Taxicab Insurance Agency Llc yes   Thu   Mar      21\n 9 no        0.4  other                        yes   Fri   Mar      17\n10 yes       2.2  other                        no    Wed   Apr      10\n# ℹ 1,490 more rows"
   },
   {
     "objectID": "slides/21-spending-your-data.html#the-testing-data",
@@ -1677,14 +1719,21 @@
     "href": "slides/21-spending-your-data.html#initial-questions",
     "title": "Spending your data",
     "section": "Initial questions",
-    "text": "Initial questions\n\nWhat’s the distribution of the outcome, tip?\nWhat’s the distribution of numeric variables like distance or hour?\nHow does the distribution of tip differ across the categorical and numerical variables?\n\n. . .\n\nWhich dataset should we use for the exploration? The entire data chicago_taxi, the training data chicago_taxi_train, or the testing data chicago_taxi_test?"
+    "text": "Initial questions\n\nWhat’s the distribution of the outcome, tip?\nWhat’s the distribution of numeric variables like distance or hour?\nHow does the distribution of tip differ across the categorical and numerical variables?"
+  },
+  {
+    "objectID": "slides/21-spending-your-data.html#while-you-wait-participate-1",
+    "href": "slides/21-spending-your-data.html#while-you-wait-participate-1",
+    "title": "Spending your data",
+    "section": "While you wait: Participate 📱💻",
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhich dataset should we use for the exploration?\n\n\nThe entire data chicago_taxi\n\nThe training data chicago_taxi_train\n\nThe testing data chicago_taxi_test\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/21-spending-your-data.html#tip",
     "href": "slides/21-spending-your-data.html#tip",
     "title": "Spending your data",
     "section": "tip",
-    "text": "tip\nWhat’s the distribution of the outcome, tip?\n\nchicago_taxi_train |&gt;\n  count(tip) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  tip       n  prop\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 no      572 0.191\n2 yes    2428 0.809"
+    "text": "tip\nWhat’s the distribution of the outcome, tip?\n\nchicago_taxi_train |&gt;\n  count(tip) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 2 × 3\n  tip       n  prop\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 no      586 0.391\n2 yes     914 0.609"
   },
   {
     "objectID": "slides/21-spending-your-data.html#distance",
@@ -1748,6 +1797,13 @@
     "title": "Spending your data",
     "section": "ROC curve",
     "text": "ROC curve\nThe receiver operating characteristic (ROC) curve allows to assess the model performance across a range of thresholds."
+  },
+  {
+    "objectID": "slides/21-spending-your-data.html#participate",
+    "href": "slides/21-spending-your-data.html#participate",
+    "title": "Spending your data",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following best describes the area annotated on the ROC curve?\n\n\n\nWhere all positives classified as positive, all negatives classified as negative\nWhere true positive rate = false positive rate\nWhere all positives classified as negative, all negatives classified as positive\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/21-spending-your-data.html#roc-curve-1",
@@ -5093,28 +5149,28 @@
   {
     "objectID": "ae/ae-13-spam-filter-logistic-A.html",
     "href": "ae/ae-13-spam-filter-logistic-A.html",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "",
-    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key.\nIn this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 01:16:41, 2012-01-01 02:03:59, 2012-01-01 11:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
+    "text": "Important\n\n\n\nThese are suggested answers. This document should be used as reference only, it’s not designed to be an exhaustive key.\nIn this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 06:16:41, 2012-01-01 07:03:59, 2012-01-01 16:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
   },
   {
     "objectID": "ae/ae-13-spam-filter-logistic-A.html#exercise-1",
     "href": "ae/ae-13-spam-filter-logistic-A.html#exercise-1",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "Exercise 1",
     "text": "Exercise 1\n\n\nDemo: Fit the logistic regression model using the number of exclamation points to predict the probability an email is spam.\n\n\nlog_fit &lt;- logistic_reg() |&gt;\n  fit(spam ~ exclaim_mess, data = email)\n\ntidy(log_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 (Intercept)  -2.27      0.0553     -41.1     0    \n2 exclaim_mess  0.000272  0.000949     0.287   0.774\n\n\n\n\nYour turn: How does the code above differ from previous code we’ve used to fit regression models? Compare your summary output to the estimated model below.\n\n\\[\\log\\Big(\\frac{p}{1-p}\\Big) = -2.27 - 0.000272 \\times exclaim\\_mess\\]\nWe use logistic instead of linear regression."
   },
   {
     "objectID": "ae/ae-13-spam-filter-logistic-A.html#exercise-2",
     "href": "ae/ae-13-spam-filter-logistic-A.html#exercise-2",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "Exercise 2",
     "text": "Exercise 2\n\nWhat is the probability the email is spam if it contains 10 exclamation points? Answer the question using the predict() function with the appropriate type argument.\n\n\nnew_email &lt;- tibble(\n  exclaim_mess = 10\n)\n\npredict(log_fit, new_data = new_email, type = \"prob\")\n\n# A tibble: 1 × 2\n  .pred_0 .pred_1\n    &lt;dbl&gt;   &lt;dbl&gt;\n1   0.906  0.0937\n\n\n\nA probability is nice, but we want an actual decision. Classify the email. What threshold does predict() use by default?\n\n\npredict(log_fit, new_data = new_email, type = \"class\")\n\n# A tibble: 1 × 1\n  .pred_class\n  &lt;fct&gt;      \n1 0"
   },
   {
     "objectID": "ae/ae-13-spam-filter-logistic-A.html#exercise-3",
     "href": "ae/ae-13-spam-filter-logistic-A.html#exercise-3",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "Exercise 3",
     "text": "Exercise 3\n\nFit a model with all variables in the dataset as predictors.\n\n\nlog_fit2 &lt;- logistic_reg() |&gt;\n  fit(spam ~ ., data = email)\n\nWarning: glm.fit: fitted probabilities numerically 0 or 1 occurred\n\n\n\nIf you used this model to classify the emails in the dataset, how would it do? Use the fitted model to classify each email in the dataset, and then calculate the classification error rates (TP, TN, FP, FN).\n\n\nlog_aug2 &lt;- augment(log_fit2, email)\n\nggplot(log_aug2, aes(x = exclaim_mess, y = spam, color = .pred_class)) +\n  geom_jitter(alpha = 0.5)\n\n\n\n\n\n\nlog_aug2 |&gt;\n  count(spam, .pred_class) |&gt;\n  group_by(spam) |&gt;\n  mutate(p = n / sum(n))\n\n# A tibble: 4 × 4\n# Groups:   spam [2]\n  spam  .pred_class     n       p\n  &lt;fct&gt; &lt;fct&gt;       &lt;int&gt;   &lt;dbl&gt;\n1 0     0            3521 0.991  \n2 0     1              33 0.00929\n3 1     0             299 0.815  \n4 1     1              68 0.185"
   },
@@ -6284,28 +6340,28 @@
   {
     "objectID": "ae/ae-13-spam-filter-logistic.html",
     "href": "ae/ae-13-spam-filter-logistic.html",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "",
-    "text": "In this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 01:16:41, 2012-01-01 02:03:59, 2012-01-01 11:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
+    "text": "In this application exercise, we will\nTo illustrate logistic regression, we will build a spam filter from email data.\nThe data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 0, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 06:16:41, 2012-01-01 07:03:59, 2012-01-01 16:…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no, no, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.091, 4.837, 7.421…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, 68, 25, 79, 191…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 10, 4, 10, 20, 0…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big, small, small, …\nThe variables we’ll use in this analysis are\nGoal: Use the number of exclamation points in an email to predict whether or not it is spam."
   },
   {
     "objectID": "ae/ae-13-spam-filter-logistic.html#exercise-1",
     "href": "ae/ae-13-spam-filter-logistic.html#exercise-1",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "Exercise 1",
     "text": "Exercise 1\n\nFit the logistic regression model using the number of exclamation points to predict the probability an email is spam.\n\n\n# add code here\n\n\nHow does the code above differ from previous code we’ve used to fit regression models? Compare your summary output to the estimated model below.\n\n\\[\\log\\Big(\\frac{p}{1-p}\\Big) = -2.27 - 0.000272 \\times exclaim\\_mess\\]\nAdd response here."
   },
   {
     "objectID": "ae/ae-13-spam-filter-logistic.html#exercise-2",
     "href": "ae/ae-13-spam-filter-logistic.html#exercise-2",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "Exercise 2",
     "text": "Exercise 2\n\nWhat is the probability the email is spam if it contains 10 exclamation points? Answer the question using the predict() function with the appropriate type argument.\n\n\n# add code here\n\n\nA probability is nice, but we want an actual decision. Classify the email. What threshold does predict() use by default?\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-13-spam-filter-logistic.html#exercise-3",
     "href": "ae/ae-13-spam-filter-logistic.html#exercise-3",
-    "title": "AE 16: Building a spam filter",
+    "title": "AE 13: Building a spam filter",
     "section": "Exercise 3",
     "text": "Exercise 3\n\nFit a model with all variables in the dataset as predictors.\n\n\n# add code here\n\n\nIf you used this model to classify the emails in the dataset, how would it do? Use the fitted model to classify each email in the dataset, and then calculate the classification error rates (TP, TN, FP, FN).\n\n\n# add code here"
   },
@@ -11419,7 +11475,7 @@
     "href": "ae.html",
     "title": "Application exercises",
     "section": "",
-    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\n\n\n\n\n\nAE 01: Income inequality\n\n\nSuggested answers\n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\n \n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\n \n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\nSuggested answers\n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\n \n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\n \n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\n \n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\nSuggested answers\n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\n \n\n\n\n\n\n\nAE 09: Opinion articles in The Chronicle\n\n\nSuggested answers\n\n\n\n\n\n\nAE 09: Opinion articles in The Chronicle\n\n\n \n\n\n\n\n\n\nAE 10: Ice cover in Madison, WI area lakes\n\n\nSuggested answers\n\n\n\n\n\n\nAE 10: Ice cover in Madison, WI area lakes\n\n\n \n\n\n\n\n\n\nAE 12: Modelling penguins with multiple predictors\n\n\nSuggested answers\n\n\n\n\n\n\nAE 12: Modelling penguins with multiple predictors\n\n\n \n\n\n\n\n\n\nAE 13: Modelling penguins\n\n\nSuggested answers\n\n\n\n\n\n\nAE 13: Modelling penguins\n\n\n \n\n\n\n\n\n\nAE 14: Chicago taxi classification\n\n\nSuggested answers\n\n\n\n\n\n\nAE 14: Chicago taxi classification\n\n\n \n\n\n\n\n\n\nAE 16: Building a spam filter\n\n\nSuggested answers\n\n\n\n\n\n\nAE 16: Building a spam filter\n\n\n \n\n\n\n\n\n\nNo matching items",
+    "text": "More AEs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\n\n\n\n\n\nAE 01: Income inequality\n\n\nSuggested answers\n\n\n\n\n\n\nAE 01: Income inequality\n\n\n \n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\nSuggested answers\n\n\n\n\n\n\nAE 02: Bechdel + data visualization\n\n\n \n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\n\n\nAE 03: Gerrymandering + data exploration I\n\n\n \n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\n\n\nAE 04: Gerrymandering + data exploration II\n\n\n \n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\nSuggested answers\n\n\n\n\n\n\nAE 05: Tidying Stat Sci\n\n\n \n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\nSuggested answers\n\n\n\n\n\n\nAE 06: Sales taxes + data joining\n\n\n \n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\nSuggested answers\n\n\n\n\n\n\nAE 07: Durham climate + factors\n\n\n \n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\nSuggested answers\n\n\n\n\n\n\nAE 08: Age gaps + import\n\n\n \n\n\n\n\n\n\nAE 09: Opinion articles in The Chronicle\n\n\nSuggested answers\n\n\n\n\n\n\nAE 09: Opinion articles in The Chronicle\n\n\n \n\n\n\n\n\n\nAE 10: Ice cover in Madison, WI area lakes\n\n\nSuggested answers\n\n\n\n\n\n\nAE 10: Ice cover in Madison, WI area lakes\n\n\n \n\n\n\n\n\n\nAE 12: Modelling penguins with multiple predictors\n\n\nSuggested answers\n\n\n\n\n\n\nAE 12: Modelling penguins with multiple predictors\n\n\n \n\n\n\n\n\n\nAE 13: Building a spam filter\n\n\nSuggested answers\n\n\n\n\n\n\nAE 13: Building a spam filter\n\n\n \n\n\n\n\n\n\nAE 13: Modelling penguins\n\n\nSuggested answers\n\n\n\n\n\n\nAE 13: Modelling penguins\n\n\n \n\n\n\n\n\n\nAE 14: Chicago taxi classification\n\n\nSuggested answers\n\n\n\n\n\n\nAE 14: Chicago taxi classification\n\n\n \n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Application exercises"
     ]
