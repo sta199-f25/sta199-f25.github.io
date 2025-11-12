@@ -254,7 +254,7 @@ c\. The model predicts that the percentage increase employees with Successful pe
 
 d\. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.
 
-# Part 2 - Movies
+# Movies
 
 The data for this part comes from the Internet Movie Database (IMDB). Specifically, the data are a random sample of movies released between 1980 and 2020.
 
@@ -515,8 +515,6 @@ movies |>
 1           0.434. __blank_2__       
 ```
 
-::: {layout="[0.5, 0.5]"}
-::: {#firstcol}
 ### Question 10
 
 Which of the following goes in `__blank_1__`?
@@ -530,9 +528,7 @@ c.  `group_by`
 d.  `arrange`
 
 e.  `filter`
-:::
 
-::: {#secondcol}
 ### Question 11
 
 What can we say about the value that goes in `__blank_2__`?
@@ -546,8 +542,6 @@ c.  A value between 0.434 and 1.
 d.  A value between 0 and -0.434.
 
 e.  A value between -1 and -0.434.
-:::
-:::
 
 {{< pagebreak >}}
 
@@ -673,7 +667,7 @@ Define the term "parsimonious model".
 $\vspace{2cm}$
 :::
 
-# Part 4 - Building a spam filter
+# Building a spam filter
 
 The data come from incoming emails in David Diez's (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed. The dataset is called `email` and it's in the **openintro** package.
 
