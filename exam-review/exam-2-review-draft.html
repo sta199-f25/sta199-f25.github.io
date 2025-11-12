@@ -564,7 +564,7 @@ window.Quarto = {
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   <li>
-<a href="#part-2---movies" id="toc-part-2---movies" class="nav-link" data-scroll-target="#part-2---movies">Part 2 - Movies</a>
+<a href="#movies" id="toc-movies" class="nav-link" data-scroll-target="#movies">Movies</a>
   <ul class="collapse">
 <li>
 <a href="#score-vs.-runtime" id="toc-score-vs.-runtime" class="nav-link" data-scroll-target="#score-vs.-runtime">Score vs.&nbsp;runtime</a>
@@ -574,7 +574,13 @@ window.Quarto = {
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   </ul>
 </li>
-  <li><a href="#score-vs.-runtime-or-year" id="toc-score-vs.-runtime-or-year" class="nav-link" data-scroll-target="#score-vs.-runtime-or-year">Score vs.&nbsp;runtime or year</a></li>
+  <li>
+<a href="#score-vs.-runtime-or-year" id="toc-score-vs.-runtime-or-year" class="nav-link" data-scroll-target="#score-vs.-runtime-or-year">Score vs.&nbsp;runtime or year</a>
+  <ul class="collapse">
+<li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
+  </ul>
+</li>
   <li>
 <a href="#score-vs.-runtime-and-rating" id="toc-score-vs.-runtime-and-rating" class="nav-link" data-scroll-target="#score-vs.-runtime-and-rating">Score vs.&nbsp;runtime and rating</a>
   <ul class="collapse">
@@ -595,7 +601,7 @@ window.Quarto = {
   </ul>
 </li>
   <li>
-<a href="#part-4---building-a-spam-filter" id="toc-part-4---building-a-spam-filter" class="nav-link" data-scroll-target="#part-4---building-a-spam-filter">Part 4 - Building a spam filter</a>
+<a href="#building-a-spam-filter" id="toc-building-a-spam-filter" class="nav-link" data-scroll-target="#building-a-spam-filter">Building a spam filter</a>
   <ul class="collapse">
 <li><a href="#question-19" id="toc-question-19" class="nav-link" data-scroll-target="#question-19">Question 19</a></li>
   <li><a href="#question-20" id="toc-question-20" class="nav-link" data-scroll-target="#question-20">Question 20</a></li>
@@ -814,7 +820,7 @@ Figure&nbsp;1: Visualizations of the relationship between percent increase, annu
 <p>b. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 6.93% compared to the employees with Poor performance rating.</p>
 <p>c. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.</p>
 <p>d. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.</p>
-</section><section id="part-2---movies" class="level1"><h1>Part 2 - Movies</h1>
+</section><section id="movies" class="level1"><h1>Movies</h1>
 <p>The data for this part comes from the Internet Movie Database (IMDB). Specifically, the data are a random sample of movies released between 1980 and 2020.</p>
 <p>The name of the data frame used for this analysis is <code>movies</code>, and it contains the variables shown in <a href="#tbl-data-dictionary" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div id="tbl-data-dictionary" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[20,80]">
@@ -1060,9 +1066,6 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
   r_score_runtime r_score_year
             &lt;dbl&gt;        &lt;dbl&gt;
 1           0.434. __blank_2__       </code></pre>
-<div class="quarto-layout-panel" data-layout="[0.5, 0.5]">
-<div class="quarto-layout-row">
-<div id="firstcol" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <section id="question-10" class="level3"><h3 class="anchored" data-anchor-id="question-10">Question 10</h3>
 <p>Which of the following goes in <code>__blank_1__</code>?</p>
 <ol type="a">
@@ -1071,10 +1074,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <li><p><code>group_by</code></p></li>
 <li><p><code>arrange</code></p></li>
 <li><p><code>filter</code></p></li>
-</ol></section>
-</div>
-<div id="secondcol" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<section id="question-11" class="level3"><h3 class="anchored" data-anchor-id="question-11">Question 11</h3>
+</ol></section><section id="question-11" class="level3"><h3 class="anchored" data-anchor-id="question-11">Question 11</h3>
 <p>What can we say about the value that goes in <code>__blank_2__</code>?</p>
 <ol type="a">
 <li><p><code>NA</code></p></li>
@@ -1082,12 +1082,9 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <li><p>A value between 0.434 and 1.</p></li>
 <li><p>A value between 0 and -0.434.</p></li>
 <li><p>A value between -1 and -0.434.</p></li>
-</ol></section>
-</div>
-</div>
-</div>
+</ol>
 <div style="page-break-after: always;"></div>
-</section><section id="score-vs.-runtime-and-rating" class="level2"><h2 class="anchored" data-anchor-id="score-vs.-runtime-and-rating">Score vs.&nbsp;runtime and rating</h2>
+</section></section><section id="score-vs.-runtime-and-rating" class="level2"><h2 class="anchored" data-anchor-id="score-vs.-runtime-and-rating">Score vs.&nbsp;runtime and rating</h2>
 <p>In this part, we fit a model predicting <code>score</code> from <code>runtime</code> and <code>rating</code> (categorized as G, PG, PG-13, R, NC-17, and Not Rated), and name it <code>score_runtime_rating_fit</code>.</p>
 <p>The model output for <code>score_runtime_rating_fit</code> is shown in <a href="#tbl-score-runtime-rating-tidy" class="quarto-xref">Table&nbsp;3</a>. Answer all questions in this part based on <a href="#tbl-score-runtime-rating-tidy" class="quarto-xref">Table&nbsp;3</a>.</p>
 <div class="cell">
@@ -1219,7 +1216,7 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 <div style="page-break-after: always;"></div>
 </section><section id="question-18" class="level2"><h2 class="anchored" data-anchor-id="question-18">Question 18</h2>
 <p>Define the term “parsimonious model”.</p>
-</section></section><section id="part-4---building-a-spam-filter" class="level1"><h1>Part 4 - Building a spam filter</h1>
+</section></section><section id="building-a-spam-filter" class="level1"><h1>Building a spam filter</h1>
 <p>The data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed. The dataset is called <code>email</code> and it’s in the <strong>openintro</strong> package.</p>
 <p>The outcome variable is <code>spam</code>, which takes the value <code>1</code> if the email is spam, <code>0</code> otherwise.</p>
 <section id="question-19" class="level2"><h2 class="anchored" data-anchor-id="question-19">Question 19</h2>
