@@ -577,13 +577,13 @@ window.Quarto = {
 <li>(d) <span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher than <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code> since <code>raise_2_fit</code> has one more predictor</li>
 <li>The reference level of <code>performance_rating</code> is High, since it’s the first level alphabetically. Therefore, the coefficient -2.40% is the predicted difference in raise comparing High to Successful. In this context a negative coefficient makes sense since we would expect those with High performance rating to get higher raises than those with Successful performance.</li>
 <li>(a) “Poor”, “Successful”, “High”, “Top”.</li>
-<li>Option 3. It’s a linear model with no interaction effect, so parallel lines. And since the slope for <code>salary_typeSalaried</code> is positive, its intercept is higher. The equations of the lines are as follows:
+<li>(c) Option 3. It’s a linear model with no interaction effect, so parallel lines. And since the slope for <code>salary_typeSalaried</code> is positive, its intercept is higher. The equations of the lines are as follows:
 <ul>
 <li>
 <p>Hourly:</p>
 <p><span class="math display">\[
 \begin{align*}
-\widehat{percent\_incr} &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 salary\_typeSalaried \\
+\widehat{percent\_incr} &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times salary\_typeSalaried \\
 &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times 0 \\
 &amp;= 1.24 + 0.0000137 \times annual\_salary
 \end{align*}
@@ -593,7 +593,7 @@ window.Quarto = {
 <p>Salaried:</p>
 <p><span class="math display">\[
 \begin{align*}
-\widehat{percent\_incr} &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 salary\_typeSalaried \\
+\widehat{percent\_incr} &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times salary\_typeSalaried \\
 &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times 1 \\
 &amp;= 2.153 + 0.0000137 \times annual\_salary
 \end{align*}
