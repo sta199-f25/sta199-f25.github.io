@@ -1,0 +1,229 @@
+---
+title: Exam 2 review
+subtitle: Suggested answers
+execute:
+  echo: false
+---
+
+1.  \(c\) For every additional \$1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.
+2.  \(d\) $R^2$ of `raise_2_fit` is higher than $R^2$ of `raise_1_fit` since `raise_2_fit` has one more predictor and $R^2$ always
+3.  The reference level of `performance_rating` is High, since it’s the first level alphabetically. Therefore, the coefficient -2.40% is the predicted difference in raise comparing High to Successful. In this context a negative coefficient makes sense since we would expect those with High performance rating to get higher raises than those with Successful performance.
+4.  \(a\) “Poor”, “Successful”, “High”, “Top”.
+5.  Option 3. It's a linear model with no interaction effect, so parallel lines. And since the slope for `salary_typeSalaried` is positive, its intercept is higher. The equations of the lines are as follows:
+    -   Hourly:
+
+        $$
+        \begin{align*}
+        \widehat{percent\_incr} &= 1.24 + 0.0000137 \times annual\_salary + 0.913 salary\_typeSalaried \\
+        &= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times 0 \\
+        &= 1.24 + 0.0000137 \times annual\_salary
+        \end{align*}
+        $$
+
+    -   Salaried:
+
+        $$
+        \begin{align*}
+        \widehat{percent\_incr} &= 1.24 + 0.0000137 \times annual\_salary + 0.913 salary\_typeSalaried \\
+        &= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times 1 \\
+        &= 2.153 + 0.0000137 \times annual\_salary
+        \end{align*}
+        $$
+6.  \(c\) The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.
+7.  \(d\) `as.numeric(str_remove(runtime, " mins"))`
+8.  \(e\) Blue City $>$ Rang De Basanti $>$ Winter Sleep
+9.  \(b\) 31% of the variability in movie scores is explained by their runtime.
+10. \(a\) summarize
+11. \(b\) A value between 0 and 0.434.
+12. \(e\) G-rated movies that are 0 minutes in length are predicted to score, on average, 4.525 points.
+13. \(c\) All else held constant, for each additional minute of runtime, movie scores will be higher by 0.021 points on average.
+14. \(c\) is greater than
+15. \(a\) $\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime$
+16. \(a\) and (d).
+17. \(c\) We are 95% confident that the mean number of texts per month of all American teens is between 1450 and 1550.
+18. A parsimonious model is the simplest model with the best predictive performance.
+19. 
+a.\
+
+```{r}
+#| label: load-packages
+#| message: false
+#| echo: true
+
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+Spam is a factor; it is an indicator for if an email was spam or not.
+
+```{r}
+#| label: spam-distribution
+#| echo: true
+email |> 
+  count(spam) |>
+  mutate(percent = (n/sum(n))*100)
+```
+
+About 9.36 percent of the emails are labeled spam.
+
+b.\
+Dollar is a double.
+
+```{r}
+#| label: dollar-distribution
+#| echo: true
+email |>
+  ggplot(aes(x = dollar)) + 
+  geom_histogram(bins = 20) + 
+  labs(
+    title = "Histogram of dollar mentions in emails",
+    x = "Number of times dollar appears in the email",
+    y = "Count"
+  )
+
+email |>
+  summarize(
+    dollar_median = median(dollar),
+    dollar_iqr = IQR(dollar),
+    dollar_q25 = quantile(dollar, 0.25),
+    dollar_q75 = quantile(dollar, 0.75)
+  )
+```
+
+The distribution of `dollar` is unimodal and right-skewed with a median of 0. In fact, the majority of the emails have 0 dollar signs in them.
+
+c.\
+
+```{r}
+#| label: fit-spam-dollar
+#| echo: true
+spam_dollar_fit <- logistic_reg() |>
+  fit(spam ~ dollar, data = email)
+
+tidy(spam_dollar_fit)
+```
+
+d.\
+
+The probability the email is spam in this case is 7.6%. Since it is less than 50% the email is classified as not spam.
+
+```{r}
+#| label: predict-spam
+#| echo: true
+new_email = tibble(dollar = 5)
+
+predict(spam_dollar_fit, new_data = new_email, type = "prob")
+```
+
+20. 
+a\.
+
+```{r}
+#| label: spam-dollar-winner-urg-fit
+#| echo: true
+spam_dollar_winner_urg_fit <- logistic_reg() |>
+  fit(
+    spam ~ dollar + winner + urgent_subj, 
+    data = email
+  )
+
+tidy(spam_dollar_winner_urg_fit)
+```
+
+b\.
+
+```{r}
+#| label: augment
+#| echo: true
+spam_dollar_winner_urg_aug <- augment(spam_dollar_winner_urg_fit, new_data = email)
+
+spam_dollar_winner_urg_aug
+```
+
+c\.
+
+```{r}
+#| label: email-tp-fp-tn-fn-counts
+#| echo: true
+email_pred_counts <- spam_dollar_winner_urg_aug |>
+  count(spam, .pred_class)
+
+email_pred_counts
+```
+
+There are 4 emails that are spam and are correctly identified. There are 363 emails that are spam that are labelled as not spam. There are 3 emails that are not spam that are labelled as spam. There are 3551 emails that are not spam and are correctly identified.
+
+d\.
+
+The false positive rate is 0.0844% and false negative rate is 98.9%.
+
+```{r}
+#| label: email-tp-fp-tn-fn-rates
+#| echo: true
+email_pred_counts |>
+  group_by(spam) |>
+  mutate(p = n / sum(n))
+```
+
+21. 
+a\.
+
+```{r}
+#| label: spam-vs-num-char
+#| echo: true
+email |>
+  ggplot(aes(x = num_char, y = spam)) +
+  geom_boxplot() + 
+  labs(
+    title = "Boxplot of number of characters for spam and not spam emails",
+    x = "Number of characters",
+    y = "Spam"
+  )
+```
+
+Number of characters could be reasonable predictor of spam. Also, this plot supports differences in distributions. (I also included the predictors from Question 2 -- `winner` and `urgent_subj` in addition to `dollar`)
+
+```{r}
+#| label: new-spam-model-dollar-char
+#| echo: true
+spam_dollar_char_fit <- logistic_reg() |>
+  fit(
+    spam ~  dollar + winner + urgent_subj + num_char, 
+    data = email
+  )
+
+tidy(spam_dollar_char_fit)
+```
+
+b\.
+
+```{r}
+#| label: predict-spam-from-dollar-char
+#| echo: true
+spam_dollar_char_fit_aug <- augment(spam_dollar_char_fit, new_data = email)
+```
+
+c\.
+
+```{r}
+#| label: spam-from-dollar-char-compute-counts
+#| echo: true
+pred_counts <- spam_dollar_char_fit_aug |>
+  count(spam, .pred_class)
+pred_counts
+```
+
+d\.
+
+The false negative rate decreased to 96.2%. The false positive rate is a tiny bit higher at 0.2%.
+
+```{r}
+#| label: spam-from-dollar-char-compute-rates
+#| echo: true
+pred_counts |>
+  group_by(spam) |>
+  mutate(p = n / sum(n))
+```
+
+e\. The model from Question 21 is preferable over the model in Question 20. While the false positive rate increased, the false negative rate decreased by a larger amount; and overall more emails are categorized correctly (3547+14 = 3561 emails vs 3551 + 4 = 3555) for the model used in Question 21.
