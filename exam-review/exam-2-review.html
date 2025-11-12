@@ -820,6 +820,7 @@ Figure&nbsp;1: Visualizations of the relationship between percent increase, annu
 <p>b. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 6.93% compared to the employees with Poor performance rating.</p>
 <p>c. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.</p>
 <p>d. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.</p>
+<div style="page-break-after: always;"></div>
 </section><section id="movies" class="level1"><h1>Movies</h1>
 <p>The data for this part comes from the Internet Movie Database (IMDB). Specifically, the data are a random sample of movies released between 1980 and 2020.</p>
 <p>The name of the data frame used for this analysis is <code>movies</code>, and it contains the variables shown in <a href="#tbl-data-dictionary" class="quarto-xref">Table&nbsp;1</a>.</p>
@@ -1006,6 +1007,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 </div>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 <section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
 <p>Partial code for producing <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> is given below. Which of the following goes in the blank on Line 2? <strong>Select all that apply.</strong></p>
 <div class="cell">
@@ -1022,9 +1024,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <li><p><code>str_remove(runtime, " mins")</code></p></li>
 <li><p><code>as.numeric(str_remove(runtime, " mins"))</code></p></li>
 <li><p><code>na.rm(runtime)</code></p></li>
-</ol>
-<div style="page-break-after: always;"></div>
-</section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
+</ol></section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
 <p>Based on this model, order the three labeled movies in <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> in decreasing order of the magnitude (absolute value) of their residuals.</p>
 <ol type="a">
 <li><p>Winter Sleep&gt; Rang De Basanti &gt; Blue City</p></li>
@@ -1212,10 +1212,9 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 <li>If a new survey with the same sample size were to be taken, there is a 95% chance that the mean number of texts in the sample would be between 1450 and 1550.</li>
 <li>We are 95% confident that the mean number of texts per month of all American teens is between 1450 and 1550.</li>
 <li>We are 95% confident that, were we to repeat this survey, the mean number of texts per month of those taking part in the survey would be between 1450 and 1550.</li>
-</ol>
-<div style="page-break-after: always;"></div>
-</section><section id="question-18" class="level2"><h2 class="anchored" data-anchor-id="question-18">Question 18</h2>
+</ol></section><section id="question-18" class="level2"><h2 class="anchored" data-anchor-id="question-18">Question 18</h2>
 <p>Define the term “parsimonious model”.</p>
+<div style="page-break-after: always;"></div>
 </section></section><section id="building-a-spam-filter" class="level1"><h1>Building a spam filter</h1>
 <p>The data come from incoming emails in David Diez’s (one of the authors of OpenIntro textbooks) Gmail account for the first three months of 2012. All personally identifiable information has been removed. The dataset is called <code>email</code> and it’s in the <strong>openintro</strong> package.</p>
 <p>The outcome variable is <code>spam</code>, which takes the value <code>1</code> if the email is spam, <code>0</code> otherwise.</p>
@@ -1239,6 +1238,7 @@ Note
 <p>To obtain the predicted probability, you can set the <code>type</code> argument in <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> to <code>"prob"</code>.</p>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section><section id="question-20" class="level2"><h2 class="anchored" data-anchor-id="question-20">Question 20</h2>
 <ol type="a">
 <li><p>Fit another logistic regression model predicting <code>spam</code> from <code>dollar</code>, <code>winner</code> (indicating whether “winner” appeared in the email), and <code>urgent_subj</code> (whether the word “urgent” is in the subject of the email). Then, display the tidy output of the model.</p></li>
