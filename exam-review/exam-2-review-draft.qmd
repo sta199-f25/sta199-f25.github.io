@@ -312,8 +312,6 @@ movies <- movies |>
   relocate(name, score, runtime, genre, rating, release_country, release_date, budget, gross, votes, year, director, writer, star, company, country)
 ```
 
-````{=tex}
-\begin{landscape}
 
 ::: {#tbl-data}
 First 30 rows of `movies`, with variable types suppressed.
@@ -340,13 +338,9 @@ options(
 ```
 :::
 
-\end{landscape}
-\clearpage
-````
-
 {{< pagebreak >}}
 
-# Part 2a - Score vs. runtime
+## Score vs. runtime
 
 In this part, we fit a model predicting `score` from `runtime` and name it `score_runtime_fit`.
 
@@ -410,7 +404,7 @@ ggplot(movies, aes(x = runtime, y = score)) +
   scale_x_continuous(breaks = seq(80, 240, 20))
 ```
 
-## Question 7
+### Question 7
 
 Partial code for producing @fig-score-runtime is given below. Which of the following goes in the blank on Line 2? **Select all that apply.**
 
@@ -439,7 +433,7 @@ e.  `na.rm(runtime)`
 
 {{< pagebreak >}}
 
-## Question 8
+### Question 8
 
 Based on this model, order the three labeled movies in @fig-score-runtime in decreasing order of the magnitude (absolute value) of their residuals.
 
@@ -455,7 +449,7 @@ e.  Blue City \> Rang De Basanti \> Winter Sleep
 
 \vspace{2cm}
 
-## Question 9
+### Question 9
 
 ```{r}
 #| include: false
@@ -476,7 +470,7 @@ e.  The correlation between scores and runtimes of movies is `{r} score_runtime_
 
 {{< pagebreak >}}
 
-# Part 2b - Score vs. runtime or year
+## Score vs. runtime or year
 
 The visualizations below show the relationship between `score` and `runtime` as well as `score` and `year`, respectively. Additionally, the lines of best fit are overlaid on the visualizations.
 
@@ -523,7 +517,7 @@ movies |>
 
 ::: {layout="[0.5, 0.5]"}
 ::: {#firstcol}
-## Question 10
+### Question 10
 
 Which of the following goes in `__blank_1__`?
 
@@ -539,7 +533,7 @@ e.  `filter`
 :::
 
 ::: {#secondcol}
-## Question 11
+### Question 11
 
 What can we say about the value that goes in `__blank_2__`?
 
@@ -557,7 +551,7 @@ e.  A value between -1 and -0.434.
 
 {{< pagebreak >}}
 
-# Part 2c - Score vs. runtime and rating
+## Score vs. runtime and rating
 
 In this part, we fit a model predicting `score` from `runtime` and `rating` (categorized as G, PG, PG-13, R, NC-17, and Not Rated), and name it `score_runtime_rating_fit`.
 
@@ -578,7 +572,7 @@ tidy(score_runtime_rating_fit) |>
 
 \vspace{1cm}
 
-## Question 12
+### Question 12
 
 Which of the following is [**TRUE**]{.underline} about the intercept of `score_runtime_rating_fit`? **Select all that are true.**
 
@@ -594,7 +588,7 @@ e.  G-rated movies that are 0 minutes in length are predicted to score, on avera
 
 {{< pagebreak >}}
 
-## Question 13
+### Question 13
 
 Which of the following is the [**best**]{.underline} interpretation of the slope of `runtime` in `score_runtime_rating_fit`?
 
@@ -610,7 +604,7 @@ e.  For each higher level of rating, the movie scores go up by 0.021 points on a
 
 \vspace{1.5cm}
 
-## Question 14
+### Question 14
 
 Fill in the blank:
 
@@ -628,7 +622,7 @@ e.  is both greater than and less than
 
 \vspace{1.5cm}
 
-## Question 15
+### Question 15
 
 The model `score_runtime_rating_fit` (the model predicting `score` from `runtime` and `rating`) can be visualized as parallel lines for each level of `rating`. Which of the following is the equation of the line for R-rated movies?
 
@@ -644,7 +638,7 @@ e.  $\widehat{score} = (4.525 + 0.021) - 0.257 \times runtime$
 
 {{< pagebreak >}}
 
-# Part 3 - Miscellaneous
+# Miscellaneous
 
 ## Question 16
 
