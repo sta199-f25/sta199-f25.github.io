@@ -52,7 +52,7 @@ In 2020, employees of Blizzard Entertainment circulated a spreadsheet to anonymo
 
 The name of the data frame used for this analysis is `blizzard_salary` and the variables are:
 
--   `percent_incr`: Raise given in July 2020, as percent increase with values ranging from 1 (1% increase to 21.5 (21.5% increase)
+-   `percent_incr`: Raise given in July 2020, as percent increase with values ranging from 1 (1% increase) to 21.5 (21.5% increase)
 
 -   `salary_type`: Type of salary, with levels `Hourly` and `Salaried`
 
@@ -61,7 +61,7 @@ The name of the data frame used for this analysis is `blizzard_salary` and the v
 -   `performance_rating`: Most recent review performance rating, with levels `Poor`, `Successful`, `High`, and `Top`.
     The `Poor` level is the lowest rating and the `Top` level is the highest rating.
 
-The top ten rows of `blizzard_salary` are shown below:
+The first ten rows of `blizzard_salary` are shown below:
 
 ```{r}
 blizzard_salary |>

@@ -61,7 +61,7 @@ The name of the data frame used for this analysis is `blizzard_salary` and the v
 -   `performance_rating`: Most recent review performance rating, with levels `Poor`, `Successful`, `High`, and `Top`.
     The `Poor` level is the lowest rating and the `Top` level is the highest rating.
 
-The top ten rows of `blizzard_salary` are shown below:
+The first ten rows of `blizzard_salary` are shown below:
 
 ```{r}
 blizzard_salary |>
@@ -110,7 +110,7 @@ raise_2_fit <- linear_reg() |>
 tidy(raise_2_fit)
 ```
 
-When your teammate sees this model output, they remark "The coefficient for `performance_ratingSuccessful` is negative, that's weird. I guess it means that people who get successful performance ratings get lower raises." How would you respond to your teammate?
+When your teammate sees this model output, they remark "The coefficient for `performance_ratingSuccessful` is negative. That's weird. I guess it means that people who get successful performance ratings get lower raises." How would you respond to your teammate?
 
 ::: {.content-visible when-format="pdf"}
 $\vspace{2cm}$
