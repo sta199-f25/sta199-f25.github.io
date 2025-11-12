@@ -314,6 +314,7 @@ movies <- movies |>
 
 
 ::: {#tbl-data}
+::: {.landscape}
 First 30 rows of `movies`, with variable types suppressed.
 
 ```{r}
@@ -336,6 +337,7 @@ options(
   pillar.sigfig = 3
 )
 ```
+:::
 :::
 
 {{< pagebreak >}}
