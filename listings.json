@@ -1,11 +1,23 @@
 [
   {
-    "listing": "/hw.html",
+    "listing": "/exam-review.html",
     "items": [
-      "/hw/hw-1.html",
-      "/hw/hw-2.html",
-      "/hw/hw-3.html",
-      "/hw/hw-4.html"
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/exam-2-review-A.html",
+      "/exam-review/final-exam-review.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html",
+      "/lab/lab-5.html"
     ]
   },
   {
@@ -32,25 +44,12 @@
     ]
   },
   {
-    "listing": "/lab.html",
+    "listing": "/hw.html",
     "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html",
-      "/lab/lab-4.html",
-      "/lab/lab-5.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review-draft.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/exam-2-review-B-draft.html",
-      "/exam-review/final-exam-review.html"
+      "/hw/hw-1.html",
+      "/hw/hw-2.html",
+      "/hw/hw-3.html",
+      "/hw/hw-4.html"
     ]
   },
   {
