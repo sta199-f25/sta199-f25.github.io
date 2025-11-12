@@ -6,9 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="author" content="Guest lecture by Marie Neubrander  Dr.&nbsp;Mine Çetinkaya-Rundel">
 <meta name="dcterms.date" content="2025-09-16">
 <title>STA 199 – Tidying data</title>
@@ -96,7 +96,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-84133850f911d189a3efae0ff814d241.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f6ebed985419fc3f34adfbdb6c3e8cf2.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -219,9 +219,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="wooclap">
 <p>Which of the following plots does this code produce?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb1-2"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry)) <span class="sc">+</span></span>
-<span id="cb1-3"><a></a>  <span class="fu">geom_beeswarm</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a></a>  <span class="fu">geom_beeswarm</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -267,9 +267,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <p><img data-src="images/07/gerrymander-recreate-2.png"></p>
 </div></div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb2-2"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry)) <span class="sc">+</span></span>
-<span id="cb2-3"><a></a>  <span class="fu">geom_beeswarm</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a></a>  <span class="fu">geom_beeswarm</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
@@ -282,9 +282,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <li>Original Code:</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry)) <span class="sc">+</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">geom_beeswarm</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-3"><a></a>  <span class="fu">geom_beeswarm</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
@@ -307,9 +307,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <li>Swap the order of the two geoms.</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb4-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
@@ -332,9 +332,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <li>Make the boxplots semi-transparent.</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb5-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
@@ -357,9 +357,9 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <li>Remove the legend.</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">y =</span> clinton16)) <span class="sc">+</span></span>
 <span id="cb6-2"><a></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> gerry), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure><p><img data-src="07-tidying-data_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
@@ -536,7 +536,7 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 
 <img data-src="images/07/statsci-majors-2025.png" class="r-stretch"></section><section id="data" class="slide level2 smaller"><h2>Data</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>statsci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -571,14 +571,14 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <img data-src="images/07/statsci-majors-2025.png" width="500" class="r-stretch"></section><section id="the-goal" class="slide level2 smaller nostretch"><h2>The Goal</h2>
 <p>We want to write code that starts something like this:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(statsci, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type)) <span class="sc">+</span> </span>
-<span id="cb9-2"><a></a>  ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(statsci, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type)) <span class="sc">+</span> </span>
+<span id="cb9-2"><a></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><br></p>
 <p>But our data are not in the right format :(</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>statsci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -703,7 +703,7 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="task fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>statsci <span class="sc">|&gt;</span></span>
 <span id="cb22-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
 <span id="cb22-3"><a></a>    </span>
 <span id="cb22-4"><a></a>    <span class="at">cols =</span> ___________________ ,</span>
@@ -711,7 +711,7 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb22-6"><a></a>    <span class="at">names_to =</span> _______________ ,</span>
 <span id="cb22-7"><a></a>    </span>
 <span id="cb22-8"><a></a>    <span class="at">values_to =</span> ______________</span>
-<span id="cb22-9"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
@@ -747,12 +747,12 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>statsci <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>statsci <span class="sc">|&gt;</span> </span>
 <span id="cb25-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
 <span id="cb25-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
 <span id="cb25-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
 <span id="cb25-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
-<span id="cb25-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
    degree_type year      n
@@ -790,12 +790,12 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>statsci <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
 <span id="cb27-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
 <span id="cb27-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
 <span id="cb27-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
-<span id="cb27-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb27-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 
@@ -808,13 +808,13 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28" data-code-line-numbers="|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb28" data-code-line-numbers="|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>statsci <span class="sc">|&gt;</span></span>
 <span id="cb28-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
 <span id="cb28-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
 <span id="cb28-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
 <span id="cb28-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
 <span id="cb28-6"><a></a>    <span class="at">names_transform =</span> as.numeric</span>
-<span id="cb28-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column fragment" style="width:50%;">
 <div class="cell">
@@ -915,12 +915,12 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="task">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>statsci_longer <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>statsci_longer <span class="sc">|&gt;</span> </span>
 <span id="cb36-2"><a></a>  <span class="fu">pivot_wider</span>(</span>
 <span id="cb36-3"><a></a>    <span class="at">names_from =</span> ____________ ,</span>
 <span id="cb36-4"><a></a>    </span>
 <span id="cb36-5"><a></a>    <span class="at">values_from =</span> ___________ , </span>
-<span id="cb36-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb36-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
@@ -1142,7 +1142,7 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1250,14 +1250,13 @@ Guest lecture by Marie Neubrander <br><br>Dr.&nbsp;Mine Çetinkaya-Rundel
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

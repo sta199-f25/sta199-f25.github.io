@@ -6,9 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
 <meta name="dcterms.date" content="2025-10-28">
 <title>STA 199 – Linear models with a multiple predictors</title>
@@ -96,7 +96,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-84133850f911d189a3efae0ff814d241.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f6ebed985419fc3f34adfbdb6c3e8cf2.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -247,7 +247,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 
 </section><section id="packages" class="slide level2"><h2>Packages</h2>
 <div class="cell" data-messages="false">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4          ✔ readr     2.1.5     
@@ -260,7 +260,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidymodels)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching packages ──────────────────────────── tidymodels 1.3.0 ──
 ✔ broom        1.0.9     ✔ rsample      1.3.1
@@ -277,7 +277,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 ✖ yardstick::spec() masks readr::spec()
 ✖ recipes::step()   masks stats::step()</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'palmerpenguins'
@@ -290,8 +290,8 @@ The following objects are masked from 'package:datasets':
 
     penguins, penguins_raw</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb7-2"><a></a><span class="fu">library</span>(ggbeeswarm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb7-2"><a></a><span class="fu">library</span>(ggbeeswarm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="from-last-time-with-penguins" class="slide level2"><h2>From last time (with <code>penguins</code>)</h2>
 <div class="question">
@@ -320,7 +320,7 @@ The following objects are masked from 'package:datasets':
 </div>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb8-2"><a></a>  penguins,</span>
 <span id="cb8-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> body_mass_g)</span>
 <span id="cb8-4"><a></a>) <span class="sc">+</span></span>
@@ -329,7 +329,7 @@ The following objects are masked from 'package:datasets':
 <span id="cb8-7"><a></a>    <span class="at">x =</span> <span class="st">"Island"</span>,</span>
 <span id="cb8-8"><a></a>    <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
 <span id="cb8-9"><a></a>    <span class="at">title =</span> <span class="st">"Body mass by island"</span></span>
-<span id="cb8-10"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -340,11 +340,11 @@ The following objects are masked from 'package:datasets':
 </div></div>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb9-2"><a></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
 <span id="cb9-3"><a></a>  <span class="fu">summarize</span>(</span>
 <span id="cb9-4"><a></a>    <span class="at">bm_mean =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-5"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
@@ -358,7 +358,7 @@ The following objects are masked from 'package:datasets':
 </section><section id="violin-plot" class="slide level2 smaller"><h2>Violin plot</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb11-2"><a></a>  penguins,</span>
 <span id="cb11-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> body_mass_g)</span>
 <span id="cb11-4"><a></a>) <span class="sc">+</span></span>
@@ -367,7 +367,7 @@ The following objects are masked from 'package:datasets':
 <span id="cb11-7"><a></a>    <span class="at">x =</span> <span class="st">"Island"</span>,</span>
 <span id="cb11-8"><a></a>    <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
 <span id="cb11-9"><a></a>    <span class="at">title =</span> <span class="st">"Body mass by island"</span></span>
-<span id="cb11-10"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -379,7 +379,7 @@ The following objects are masked from 'package:datasets':
 </section><section id="density-plot" class="slide level2 smaller"><h2>Density plot</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb12-2"><a></a>  penguins,</span>
 <span id="cb12-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">color =</span> island, <span class="at">fill =</span> island)</span>
 <span id="cb12-4"><a></a>) <span class="sc">+</span></span>
@@ -390,7 +390,7 @@ The following objects are masked from 'package:datasets':
 <span id="cb12-9"><a></a>    <span class="at">x =</span> <span class="st">"Island"</span>,</span>
 <span id="cb12-10"><a></a>    <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
 <span id="cb12-11"><a></a>    <span class="at">title =</span> <span class="st">"Body mass by island"</span></span>
-<span id="cb12-12"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-12"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -402,7 +402,7 @@ The following objects are masked from 'package:datasets':
 </section><section id="multiple-geoms" class="slide level2 smaller"><h2>Multiple geoms</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb13-2"><a></a>  penguins,</span>
 <span id="cb13-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> island)</span>
 <span id="cb13-4"><a></a>) <span class="sc">+</span></span>
@@ -414,7 +414,7 @@ The following objects are masked from 'package:datasets':
 <span id="cb13-10"><a></a>    <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
 <span id="cb13-11"><a></a>    <span class="at">title =</span> <span class="st">"Body mass by island"</span></span>
 <span id="cb13-12"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb13-13"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-13"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -428,10 +428,10 @@ The following objects are masked from 'package:datasets':
 <p>Fit a linear regression model predicting body weight from island and display the results. Why is Biscoe not on the output?</p>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>bm_island_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>bm_island_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a></a>  <span class="fu">fit</span>(body_mass_g <span class="sc">~</span> island, <span class="at">data =</span> penguins)</span>
 <span id="cb14-3"><a></a></span>
-<span id="cb14-4"><a></a><span class="fu">tidy</span>(bm_island_fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-4"><a></a><span class="fu">tidy</span>(bm_island_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
   term            estimate std.error statistic   p.value
@@ -454,11 +454,11 @@ The following objects are masked from 'package:datasets':
 <p>What is the predicted body weight of a penguin on Biscoe island? What are the estimated body weights of penguins on Dream and Torgersen islands? Where have we seen these values before?</p>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>new_penguins <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>new_penguins <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb16-2"><a></a>  <span class="at">island =</span> <span class="fu">c</span>(<span class="st">"Biscoe"</span>, <span class="st">"Dream"</span>, <span class="st">"Torgersen"</span>)</span>
 <span id="cb16-3"><a></a>)</span>
 <span id="cb16-4"><a></a></span>
-<span id="cb16-5"><a></a><span class="fu">augment</span>(bm_island_fit, <span class="at">new_data =</span> new_penguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-5"><a></a><span class="fu">augment</span>(bm_island_fit, <span class="at">new_data =</span> new_penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   .pred island   
@@ -508,10 +508,10 @@ The following objects are masked from 'package:datasets':
 <div class="wooclap">
 <p>What function goes in the blank to make “Dream” the baseline level in the <code>island</code> variable?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb18-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb18-3"><a></a>    <span class="at">island =</span> <span class="fu">___</span>(island, <span class="st">"Dream"</span>)</span>
-<span id="cb18-4"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-4"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="wooclap-choices">
 <ul>
@@ -537,9 +537,9 @@ The following objects are masked from 'package:datasets':
 <div class="wooclap">
 <p>What is the baseline level of <code>island</code> in the following model??</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
 <span id="cb19-2"><a></a>  <span class="fu">fit</span>(body_mass_g <span class="sc">~</span> island, <span class="at">data =</span> penguins) <span class="sc">|&gt;</span></span>
-<span id="cb19-3"><a></a>  <span class="fu">tidy</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-3"><a></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
   term         estimate std.error statistic   p.value
@@ -755,7 +755,7 @@ The following objects are masked from 'package:datasets':
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -863,14 +863,13 @@ The following objects are masked from 'package:datasets':
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

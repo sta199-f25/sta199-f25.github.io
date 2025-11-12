@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Exam 2 review – STA 199</title>
 <style>
@@ -62,19 +62,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4323a2cb4dfa4aaa09d0cff1df15bff0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -116,7 +115,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -318,7 +317,7 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
@@ -564,18 +563,20 @@ window.Quarto = {
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
-  <li><a href="#part-2---movies" id="toc-part-2---movies" class="nav-link" data-scroll-target="#part-2---movies">Part 2 - Movies</a></li>
   <li>
-<a href="#part-2a---score-vs.-runtime" id="toc-part-2a---score-vs.-runtime" class="nav-link" data-scroll-target="#part-2a---score-vs.-runtime">Part 2a - Score vs.&nbsp;runtime</a>
+<a href="#part-2---movies" id="toc-part-2---movies" class="nav-link" data-scroll-target="#part-2---movies">Part 2 - Movies</a>
+  <ul class="collapse">
+<li>
+<a href="#score-vs.-runtime" id="toc-score-vs.-runtime" class="nav-link" data-scroll-target="#score-vs.-runtime">Score vs.&nbsp;runtime</a>
   <ul class="collapse">
 <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   </ul>
 </li>
-  <li><a href="#part-2b---score-vs.-runtime-or-year" id="toc-part-2b---score-vs.-runtime-or-year" class="nav-link" data-scroll-target="#part-2b---score-vs.-runtime-or-year">Part 2b - Score vs.&nbsp;runtime or year</a></li>
+  <li><a href="#score-vs.-runtime-or-year" id="toc-score-vs.-runtime-or-year" class="nav-link" data-scroll-target="#score-vs.-runtime-or-year">Score vs.&nbsp;runtime or year</a></li>
   <li>
-<a href="#part-2c---score-vs.-runtime-and-rating" id="toc-part-2c---score-vs.-runtime-and-rating" class="nav-link" data-scroll-target="#part-2c---score-vs.-runtime-and-rating">Part 2c - Score vs.&nbsp;runtime and rating</a>
+<a href="#score-vs.-runtime-and-rating" id="toc-score-vs.-runtime-and-rating" class="nav-link" data-scroll-target="#score-vs.-runtime-and-rating">Score vs.&nbsp;runtime and rating</a>
   <ul class="collapse">
 <li><a href="#question-12" id="toc-question-12" class="nav-link" data-scroll-target="#question-12">Question 12</a></li>
   <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
@@ -583,8 +584,10 @@ window.Quarto = {
   <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15">Question 15</a></li>
   </ul>
 </li>
+  </ul>
+</li>
   <li>
-<a href="#part-3---miscellaneous" id="toc-part-3---miscellaneous" class="nav-link" data-scroll-target="#part-3---miscellaneous">Part 3 - Miscellaneous</a>
+<a href="#miscellaneous" id="toc-miscellaneous" class="nav-link" data-scroll-target="#miscellaneous">Miscellaneous</a>
   <ul class="collapse">
 <li><a href="#question-16" id="toc-question-16" class="nav-link" data-scroll-target="#question-16">Question 16</a></li>
   <li><a href="#question-17" id="toc-question-17" class="nav-link" data-scroll-target="#question-17">Question 17</a></li>
@@ -715,8 +718,8 @@ Note
 </div>
 <p>Unfortunately they didn’t write their code in a Quarto document, instead just wrote some code in the Console and then lost track of their work. They remember using the <code>fct_relevel()</code> function and doing something like the following:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="ot">&lt;-</span> blizzard_salary <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">performance_rating =</span> <span class="fu">fct_relevel</span>(performance_rating, ___))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="ot">&lt;-</span> blizzard_salary <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">performance_rating =</span> <span class="fu">fct_relevel</span>(performance_rating, ___))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What should they put in the blanks to get the same model output as above?</p>
 <ol type="a">
@@ -793,9 +796,9 @@ Figure&nbsp;1: Visualizations of the relationship between percent increase, annu
 <p>Suppose you now fit a model to predict the natural log of percent increase, <code>log(percent_incr)</code>, from performance rating. The model is called <code>raise_4_fit</code>.</p>
 <p>You’re provided the following:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">raise_4_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">raise_4_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">term</span>, <span class="va">estimate</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>exp_estimate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">estimate</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">mutate</span><span class="op">(</span>exp_estimate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">estimate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   term                         estimate exp_estimate
@@ -978,11 +981,11 @@ Table&nbsp;2
 </figure>
 </div>
 <div style="page-break-after: always;"></div>
-</section><section id="part-2a---score-vs.-runtime" class="level1"><h1>Part 2a - Score vs.&nbsp;runtime</h1>
+<section id="score-vs.-runtime" class="level2"><h2 class="anchored" data-anchor-id="score-vs.-runtime">Score vs.&nbsp;runtime</h2>
 <p>In this part, we fit a model predicting <code>score</code> from <code>runtime</code> and name it <code>score_runtime_fit</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">score_runtime_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">runtime</span>, data <span class="op">=</span> <span class="va">movies</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">score_runtime_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">runtime</span>, data <span class="op">=</span> <span class="va">movies</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> visualizes the relationship between <code>score</code> and <code>runtime</code> as well as the linear model for predicting <code>score</code> from <code>runtime</code>. The top three movies in <a href="#tbl-data" class="quarto-xref">Table&nbsp;2</a> are labeled in the visualization as well. Answer all questions in this part based on <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a>.</p>
 <div class="cell">
@@ -997,15 +1000,15 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 </div>
 </div>
 </div>
-<section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
 <p>Partial code for producing <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> is given below. Which of the following goes in the blank on Line 2? <strong>Select all that apply.</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>movies <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>movies <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">mutate</span>(<span class="at">runtime =</span> ___) <span class="sc">|&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> runtime, <span class="at">y =</span> score)) <span class="sc">+</span></span>
 <span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="co"># additional code for annotating Blue City on the plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="co"># additional code for annotating Blue City on the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><p><code>grepl(" mins", runtime)</code></p></li>
@@ -1015,7 +1018,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <li><p><code>na.rm(runtime)</code></p></li>
 </ol>
 <div style="page-break-after: always;"></div>
-</section><section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+</section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
 <p>Based on this model, order the three labeled movies in <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> in decreasing order of the magnitude (absolute value) of their residuals.</p>
 <ol type="a">
 <li><p>Winter Sleep&gt; Rang De Basanti &gt; Blue City</p></li>
@@ -1023,7 +1026,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <li><p>Rang De Basanti &gt; Winter Sleep&gt; Blue City</p></li>
 <li><p>Blue City &gt; Winter Sleep &gt; Rang De Basanti</p></li>
 <li><p>Blue City &gt; Rang De Basanti &gt; Winter Sleep</p></li>
-</ol></section><section id="question-9" class="level2"><h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+</ol></section><section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
 <p>The R-squared for the model visualized in <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> is 31%. Which of the following is the <u><strong>best</strong></u> interpretation of this value?</p>
 <ol type="a">
 <li><p>31% of the variability in movie runtimes is explained by their scores.</p></li>
@@ -1033,7 +1036,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <li><p>The correlation between scores and runtimes of movies is 0.31.</p></li>
 </ol>
 <div style="page-break-after: always;"></div>
-</section></section><section id="part-2b---score-vs.-runtime-or-year" class="level1"><h1>Part 2b - Score vs.&nbsp;runtime or year</h1>
+</section></section><section id="score-vs.-runtime-or-year" class="level2"><h2 class="anchored" data-anchor-id="score-vs.-runtime-or-year">Score vs.&nbsp;runtime or year</h2>
 <p>The visualizations below show the relationship between <code>score</code> and <code>runtime</code> as well as <code>score</code> and <code>year</code>, respectively. Additionally, the lines of best fit are overlaid on the visualizations.</p>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -1047,11 +1050,11 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 </div>
 <p>The correlation coefficients of these relationships are calculated below, though some of the code and the output are missing. Answer all questions in this part based on the code and output shown below.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>movies <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>movies <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">__blank_1__</span>(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_runtime =</span> <span class="fu">cor</span>(runtime, score),</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_year =</span> <span class="fu">cor</span>(year, score)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code># A tibble: 1 × 2
   r_score_runtime r_score_year
@@ -1060,7 +1063,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <div class="quarto-layout-panel" data-layout="[0.5, 0.5]">
 <div class="quarto-layout-row">
 <div id="firstcol" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<section id="question-10" class="level3"><h3 class="anchored" data-anchor-id="question-10">Question 10</h3>
 <p>Which of the following goes in <code>__blank_1__</code>?</p>
 <ol type="a">
 <li><p><code>summarize</code></p></li>
@@ -1071,7 +1074,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 </ol></section>
 </div>
 <div id="secondcol" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<section id="question-11" class="level2"><h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
+<section id="question-11" class="level3"><h3 class="anchored" data-anchor-id="question-11">Question 11</h3>
 <p>What can we say about the value that goes in <code>__blank_2__</code>?</p>
 <ol type="a">
 <li><p><code>NA</code></p></li>
@@ -1084,7 +1087,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 </div>
 </div>
 <div style="page-break-after: always;"></div>
-</section><section id="part-2c---score-vs.-runtime-and-rating" class="level1"><h1>Part 2c - Score vs.&nbsp;runtime and rating</h1>
+</section><section id="score-vs.-runtime-and-rating" class="level2"><h2 class="anchored" data-anchor-id="score-vs.-runtime-and-rating">Score vs.&nbsp;runtime and rating</h2>
 <p>In this part, we fit a model predicting <code>score</code> from <code>runtime</code> and <code>rating</code> (categorized as G, PG, PG-13, R, NC-17, and Not Rated), and name it <code>score_runtime_rating_fit</code>.</p>
 <p>The model output for <code>score_runtime_rating_fit</code> is shown in <a href="#tbl-score-runtime-rating-tidy" class="quarto-xref">Table&nbsp;3</a>. Answer all questions in this part based on <a href="#tbl-score-runtime-rating-tidy" class="quarto-xref">Table&nbsp;3</a>.</p>
 <div class="cell">
@@ -1158,7 +1161,7 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 </figure>
 </div>
 </div>
-<section id="question-12" class="level2"><h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
+<section id="question-12" class="level3"><h3 class="anchored" data-anchor-id="question-12">Question 12</h3>
 <p>Which of the following is <u><strong>TRUE</strong></u> about the intercept of <code>score_runtime_rating_fit</code>? <strong>Select all that are true.</strong></p>
 <ol type="a">
 <li><p>Keeping runtime constant, G-rated movies are predicted to score, on average, 4.525 points.</p></li>
@@ -1168,7 +1171,7 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 <li><p>G-rated movies that are 0 minutes in length are predicted to score, on average, 4.525 points.</p></li>
 </ol>
 <div style="page-break-after: always;"></div>
-</section><section id="question-13" class="level2"><h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+</section><section id="question-13" class="level3"><h3 class="anchored" data-anchor-id="question-13">Question 13</h3>
 <p>Which of the following is the <u><strong>best</strong></u> interpretation of the slope of <code>runtime</code> in <code>score_runtime_rating_fit</code>?</p>
 <ol type="a">
 <li><p>All else held constant, as runtime increases by 1 minute, the score of the movie increases by 0.021 points.</p></li>
@@ -1176,7 +1179,7 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 <li><p>All else held constant, for each additional minute of runtime, movie scores will be higher by 0.021 points on average.</p></li>
 <li><p>G-rated movies that are 0 minutes in length are predicted to score 0.021 points on average.</p></li>
 <li><p>For each higher level of rating, the movie scores go up by 0.021 points on average.</p></li>
-</ol></section><section id="question-14" class="level2"><h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
+</ol></section><section id="question-14" class="level3"><h3 class="anchored" data-anchor-id="question-14">Question 14</h3>
 <p>Fill in the blank:</p>
 <blockquote class="blockquote">
 <p>R-squared for <code>score_runtime_rating_fit</code> (the model predicting <code>score</code> from <code>runtime</code> and <code>rating</code>) _________ the R-squared the model <code>score_runtime_fit</code> (for predicting <code>score</code> from <code>runtime</code> alone).</p>
@@ -1187,7 +1190,7 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 <li><p>is greater than</p></li>
 <li><p>cannot be compared (based on the information provided) to</p></li>
 <li><p>is both greater than and less than</p></li>
-</ol></section><section id="question-15" class="level2"><h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
+</ol></section><section id="question-15" class="level3"><h3 class="anchored" data-anchor-id="question-15">Question 15</h3>
 <p>The model <code>score_runtime_rating_fit</code> (the model predicting <code>score</code> from <code>runtime</code> and <code>rating</code>) can be visualized as parallel lines for each level of <code>rating</code>. Which of the following is the equation of the line for R-rated movies?</p>
 <ol type="a">
 <li><p><span class="math inline">\(\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime\)</span></p></li>
@@ -1197,7 +1200,7 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 <li><p><span class="math inline">\(\widehat{score} = (4.525 + 0.021) - 0.257 \times runtime\)</span></p></li>
 </ol>
 <div style="page-break-after: always;"></div>
-</section></section><section id="part-3---miscellaneous" class="level1"><h1>Part 3 - Miscellaneous</h1>
+</section></section></section><section id="miscellaneous" class="level1"><h1>Miscellaneous</h1>
 <section id="question-16" class="level2"><h2 class="anchored" data-anchor-id="question-16">Question 16</h2>
 <p>Which of the following is the definition of a regression model? Select all that apply.</p>
 <p>a. <span class="math inline">\(\hat{y} = b_0 + b_1 X_1\)</span></p>
@@ -1337,14 +1340,13 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

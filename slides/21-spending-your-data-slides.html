@@ -6,9 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
 <meta name="dcterms.date" content="2025-11-11">
 <title>STA 199 – Spending your data</title>
@@ -96,7 +96,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-84133850f911d189a3efae0ff814d241.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f6ebed985419fc3f34adfbdb6c3e8cf2.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -252,8 +252,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 
 </section><section id="packages" class="slide level2"><h2>Packages</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) <span class="co"># data wrangling and visualization</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels) <span class="co"># modeling</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) <span class="co"># data wrangling and visualization</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels) <span class="co"># modeling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="data" class="slide level2"><h2>Data</h2>
 <ul>
@@ -262,10 +262,10 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </ul></section><section id="data-chicago_taxi" class="slide level2 smaller"><h2>Data: <code>chicago_taxi</code>
 </h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>chicago_taxi <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/chicago-taxi.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>chicago_taxi <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/chicago-taxi.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>chicago_taxi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>chicago_taxi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2,000 × 7
    tip   distance company                      local dow   month  hour
@@ -286,7 +286,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="data-chicago_taxi-1" class="slide level2 smaller"><h2>Data: <code>chicago_taxi</code>
 </h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glimpse</span>(chicago_taxi)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glimpse</span>(chicago_taxi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 2,000
 Columns: 7
@@ -301,13 +301,13 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 </div>
 </section><section id="data-prep" class="slide level2"><h2>Data prep</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>chicago_taxi <span class="ot">&lt;-</span> chicago_taxi <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>chicago_taxi <span class="ot">&lt;-</span> chicago_taxi <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb7-3"><a></a>    <span class="at">tip =</span> <span class="fu">fct_relevel</span>(tip, <span class="st">"no"</span>, <span class="st">"yes"</span>),</span>
 <span id="cb7-4"><a></a>    <span class="at">local =</span> <span class="fu">fct_relevel</span>(local, <span class="st">"no"</span>, <span class="st">"yes"</span>),</span>
 <span id="cb7-5"><a></a>    <span class="at">dow =</span> <span class="fu">fct_relevel</span>(dow, <span class="st">"Mon"</span>, <span class="st">"Tue"</span>, <span class="st">"Wed"</span>, <span class="st">"Thu"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>),</span>
 <span id="cb7-6"><a></a>    <span class="at">month =</span> <span class="fu">fct_relevel</span>(month, <span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>)</span>
-<span id="cb7-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="outcome-and-predictors" class="slide level2 smaller"><h2>Outcome and predictors</h2>
 <ul>
@@ -377,9 +377,9 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <li class="fragment"><p>Spending too much data in testing prevents us from computing a good estimate of model parameters.</p></li>
 </ul></section><section id="the-initial-split" class="slide level2"><h2>The initial split</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">set.seed</span>(<span class="dv">20251111</span>)</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">set.seed</span>(<span class="dv">20251111</span>)</span>
 <span id="cb8-2"><a></a>chicago_taxi_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(chicago_taxi)</span>
-<span id="cb8-3"><a></a>chicago_taxi_split</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-3"><a></a>chicago_taxi_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;Training/Testing/Total&gt;
 &lt;1500/500/2000&gt;</code></pre>
@@ -395,12 +395,12 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <li class="fragment"><p>Which seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance.</p></li>
 </ul></section><section id="accessing-the-data" class="slide level2"><h2>Accessing the data</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>chicago_taxi_train <span class="ot">&lt;-</span> <span class="fu">training</span>(chicago_taxi_split)</span>
-<span id="cb10-2"><a></a>chicago_taxi_test <span class="ot">&lt;-</span> <span class="fu">testing</span>(chicago_taxi_split)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>chicago_taxi_train <span class="ot">&lt;-</span> <span class="fu">training</span>(chicago_taxi_split)</span>
+<span id="cb10-2"><a></a>chicago_taxi_test <span class="ot">&lt;-</span> <span class="fu">testing</span>(chicago_taxi_split)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="the-training-set" class="slide level2 smaller"><h2>The training set</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>chicago_taxi_train</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>chicago_taxi_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,500 × 7
    tip   distance company                      local dow   month  hour
@@ -459,9 +459,9 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 </section><section id="tip" class="slide level2"><h2><code>tip</code></h2>
 <p>What’s the distribution of the outcome, <code>tip</code>?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>chicago_taxi_train <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>chicago_taxi_train <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a></a>  <span class="fu">count</span>(tip) <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-3"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   tip       n  prop
@@ -473,51 +473,51 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 </section><section id="distance" class="slide level2"><h2><code>distance</code></h2>
 <p>What’s the distribution of <code>distance</code>?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> distance)) <span class="sc">+</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> distance)) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-8-1.png" width="672" class="r-stretch"></section><section id="tip-and-distance" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>distance</code>
 </h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> distance, <span class="at">fill =</span> tip, <span class="at">group =</span> tip)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> distance, <span class="at">fill =</span> tip, <span class="at">group =</span> tip)) <span class="sc">+</span></span>
 <span id="cb16-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb16-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
-<span id="cb16-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-9-1.png" width="672" class="r-stretch"></section><section id="tip-and-hour" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>hour</code>
 </h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> hour, <span class="at">fill =</span> tip, <span class="at">group =</span> tip)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> hour, <span class="at">fill =</span> tip, <span class="at">group =</span> tip)) <span class="sc">+</span></span>
 <span id="cb17-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb17-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
 <span id="cb17-4"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">18</span>, <span class="at">by =</span> <span class="dv">6</span>)) <span class="sc">+</span></span>
-<span id="cb17-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-10-1.png" width="672" class="r-stretch"></section><section id="tip-and-local" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>local</code>
 </h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> local, <span class="at">fill =</span> tip)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> local, <span class="at">fill =</span> tip)) <span class="sc">+</span></span>
 <span id="cb18-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb18-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
 <span id="cb18-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>) <span class="sc">+</span></span>
-<span id="cb18-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"></section><section id="tip-and-dow" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>dow</code>
 </h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> dow, <span class="at">fill =</span> tip)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> dow, <span class="at">fill =</span> tip)) <span class="sc">+</span></span>
 <span id="cb19-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb19-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
 <span id="cb19-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">x =</span> <span class="st">"Day of week"</span>) <span class="sc">+</span></span>
-<span id="cb19-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-12-1.png" width="672" class="r-stretch"></section></section><section><section id="terminology" class="title-slide slide level1 center"><h1>Terminology</h1>
@@ -784,7 +784,7 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -857,14 +857,13 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
