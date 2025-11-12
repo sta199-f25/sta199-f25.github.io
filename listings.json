@@ -32,26 +32,6 @@
     ]
   },
   {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html",
-      "/lab/lab-4.html",
-      "/lab/lab-5.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/final-exam-review.html"
-    ]
-  },
-  {
     "listing": "/ae.html",
     "items": [
       "/ae/ae-01-income-inequality-A.html",
@@ -82,6 +62,28 @@
       "/ae/ae-11-penguins-model.html",
       "/ae/ae-14-chicago-taxi-classification-A.html",
       "/ae/ae-14-chicago-taxi-classification.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/exam-2-review-draft.html",
+      "/exam-review/exam-2-review-B-draft.html",
+      "/exam-review/final-exam-review.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html",
+      "/lab/lab-5.html"
     ]
   }
 ]

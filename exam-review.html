@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4323a2cb4dfa4aaa09d0cff1df15bff0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b820fa26513acdcec6733d6c79d9bb83.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -119,7 +120,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -325,7 +326,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta199-f25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -609,7 +611,7 @@ Subtitle
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-file-modified-sort="1762878468261" data-listing-reading-time-sort="30" data-listing-word-count-sort="5830" data-listing-title-sort="Exam 1 review" data-listing-filename-sort="exam-1-review.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1760967550975" data-listing-reading-time-sort="30" data-listing-word-count-sort="5830" data-listing-title-sort="Exam 1 review" data-listing-filename-sort="exam-1-review.qmd">
 <td>
 <a href="./exam-review/exam-1-review.html" class="title listing-title">Exam 1 review</a>
 </td>
@@ -619,7 +621,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="1" data-listing-file-modified-sort="1762878468261" data-listing-reading-time-sort="4" data-listing-word-count-sort="753" data-listing-title-sort="Exam 1 review" data-listing-filename-sort="exam-1-review-A.qmd">
+<tr data-index="1" data-listing-file-modified-sort="1759107740366" data-listing-reading-time-sort="4" data-listing-word-count-sort="753" data-listing-title-sort="Exam 1 review" data-listing-filename-sort="exam-1-review-A.qmd">
 <td>
 <a href="./exam-review/exam-1-review-A.html" class="title listing-title">Exam 1 review</a>
 </td>
@@ -629,7 +631,7 @@ Subtitle
 
 </tr>
 
-<tr data-index="2" data-listing-file-modified-sort="1762878468262" data-listing-reading-time-sort="1" data-listing-word-count-sort="3" data-listing-title-sort="Exam 2 review" data-listing-filename-sort="exam-2-review.qmd">
+<tr data-index="2" data-listing-file-modified-sort="1759107740366" data-listing-reading-time-sort="1" data-listing-word-count-sort="3" data-listing-title-sort="Exam 2 review" data-listing-filename-sort="exam-2-review.qmd">
 <td>
 <a href="./exam-review/exam-2-review.html" class="title listing-title">Exam 2 review</a>
 </td>
@@ -639,7 +641,27 @@ Subtitle
 
 </tr>
 
-<tr data-index="3" data-listing-file-modified-sort="1762878468262" data-listing-reading-time-sort="1" data-listing-word-count-sort="3" data-listing-title-sort="Final exam review" data-listing-filename-sort="final-exam-review.qmd">
+<tr data-index="3" data-listing-file-modified-sort="1762965400663" data-listing-reading-time-sort="25" data-listing-word-count-sort="4829" data-listing-title-sort="Exam 2 review" data-listing-filename-sort="exam-2-review-draft.qmd">
+<td>
+<a href="./exam-review/exam-2-review-draft.html" class="title listing-title">Exam 2 review</a>
+</td>
+<td>
+<span class="listing-subtitle">Questions</span>
+</td>
+
+</tr>
+
+<tr data-index="4" data-listing-file-modified-sort="1762964432323" data-listing-reading-time-sort="6" data-listing-word-count-sort="1009" data-listing-title-sort="Exam 2 review" data-listing-filename-sort="exam-2-review-B-draft.qmd">
+<td>
+<a href="./exam-review/exam-2-review-B-draft.html" class="title listing-title">Exam 2 review</a>
+</td>
+<td>
+<span class="listing-subtitle">Suggested answers</span>
+</td>
+
+</tr>
+
+<tr data-index="5" data-listing-file-modified-sort="1759107740366" data-listing-reading-time-sort="1" data-listing-word-count-sort="3" data-listing-title-sort="Final exam review" data-listing-filename-sort="final-exam-review.qmd">
 <td>
 <a href="./exam-review/final-exam-review.html" class="title listing-title">Final exam review</a>
 </td>
@@ -717,13 +739,14 @@ Subtitle
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

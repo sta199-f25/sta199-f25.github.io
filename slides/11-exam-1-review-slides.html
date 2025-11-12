@@ -6,9 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
 <meta name="dcterms.date" content="2025-09-30">
 <title>STA 199 – Exam 1 review</title>
@@ -96,7 +96,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f6ebed985419fc3f34adfbdb6c3e8cf2.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-84133850f911d189a3efae0ff814d241.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -250,18 +250,18 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>students <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>students <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb1-2"><a></a>  <span class="sc">~</span>student_id, <span class="sc">~</span>name,  <span class="sc">~</span>major,</span>
 <span id="cb1-3"><a></a>  <span class="st">"S001"</span>,      <span class="st">"Abby"</span>, <span class="st">"History"</span>,</span>
 <span id="cb1-4"><a></a>  <span class="st">"S002"</span>,      <span class="st">"Jinu"</span>, <span class="st">"Mathematics"</span>,</span>
 <span id="cb1-5"><a></a>  <span class="st">"S003"</span>,      <span class="st">"Mira"</span>, <span class="st">"Political Science"</span>,</span>
 <span id="cb1-6"><a></a>  <span class="st">"S004"</span>,      <span class="st">"Rumi"</span>, <span class="st">"Statistical Science"</span>,</span>
 <span id="cb1-7"><a></a>  <span class="st">"S005"</span>,      <span class="st">"Zoey"</span>, <span class="st">"Computer Science"</span></span>
-<span id="cb1-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>enrollments <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>enrollments <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb2-2"><a></a>  <span class="sc">~</span>sid,   <span class="sc">~</span>course,</span>
 <span id="cb2-3"><a></a>  <span class="st">"S003"</span>, <span class="st">"POLSCI 175"</span>,</span>
 <span id="cb2-4"><a></a>  <span class="st">"S003"</span>, <span class="st">"STA 199"</span>,</span>
@@ -274,7 +274,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb2-11"><a></a>  <span class="st">"S005"</span>, <span class="st">"STA 199"</span>,</span>
 <span id="cb2-12"><a></a>  <span class="st">"S005"</span>, <span class="st">"RELIGION 228"</span>,</span>
 <span id="cb2-13"><a></a>  <span class="st">"S005"</span>, <span class="st">"THEATRST 202"</span></span>
-<span id="cb2-14"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-14"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </section><section id="participate" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
@@ -283,8 +283,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="wooclap">
 <p>What goes in the blank to get to find the courses that all <code>students</code> are enrolled in?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>students <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  [BLANK](enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>students <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a></a>  [BLANK](enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="wooclap-options">
 <ul>
@@ -311,8 +311,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>students <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a></a>  <span class="fu">left_join</span>(enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>students <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">left_join</span>(enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13 × 4
    student_id name  major               course      
@@ -339,8 +339,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>students <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">inner_join</span>(enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>students <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">inner_join</span>(enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 11 × 4
    student_id name  major               course      
@@ -365,8 +365,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>students <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">anti_join</span>(enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>students <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">anti_join</span>(enrollments, <span class="at">by =</span> <span class="fu">join_by</span>(student_id <span class="sc">==</span> sid))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   student_id name  major      
@@ -386,11 +386,11 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>survey_raw <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>survey_raw <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb10-2"><a></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">273674</span>, <span class="dv">298765</span>, <span class="dv">287129</span>, <span class="st">"I don't remember"</span>),</span>
 <span id="cb10-3"><a></a>  <span class="at">n_credits =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="fl">4.5</span>, <span class="st">"I'm not sure yet"</span>, <span class="st">"2 - underloading"</span>)</span>
 <span id="cb10-4"><a></a>)</span>
-<span id="cb10-5"><a></a>survey_raw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a></a>survey_raw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   student_id       n_credits       
@@ -404,7 +404,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </section><section id="cleaning-data" class="slide level2 smaller"><h2>Cleaning data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|2|3|4-8|9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>survey <span class="ot">&lt;-</span> survey_raw <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|2|3|4-8|9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>survey <span class="ot">&lt;-</span> survey_raw <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb12-3"><a></a>    <span class="at">student_id =</span> <span class="fu">if_else</span>(student_id <span class="sc">==</span> <span class="st">"I don't remember"</span>, <span class="cn">NA</span>, student_id),</span>
 <span id="cb12-4"><a></a>    <span class="at">n_credits =</span> <span class="fu">case_when</span>(</span>
@@ -414,7 +414,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb12-8"><a></a>    ),</span>
 <span id="cb12-9"><a></a>    <span class="at">n_credits =</span> <span class="fu">as.numeric</span>(n_credits)</span>
 <span id="cb12-10"><a></a>  )</span>
-<span id="cb12-11"><a></a>survey</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-11"><a></a>survey</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   student_id n_credits
@@ -433,12 +433,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 
 </section><section id="openintroloan50" class="slide level2"><h2><code>openintro::loan50</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">library</span>(openintro)</span>
-<span id="cb14-2"><a></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">library</span>(openintro)</span>
+<span id="cb14-2"><a></a><span class="fu">library</span>(ggthemes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">select</span>(annual_income, interest_rate, homeownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">select</span>(annual_income, interest_rate, homeownership)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 3
    annual_income interest_rate homeownership
@@ -461,7 +461,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>What will the following code result in?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb17-2"><a></a>  loan50,</span>
 <span id="cb17-3"><a></a>  <span class="fu">aes</span>(</span>
 <span id="cb17-4"><a></a>    <span class="at">x =</span> annual_income,</span>
@@ -471,7 +471,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb17-8"><a></a>  )</span>
 <span id="cb17-9"><a></a>) <span class="sc">+</span></span>
 <span id="cb17-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb17-11"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-11"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 </section><section id="aesthetic-mappings-1-output" class="slide level2 output-location-slide"><h2>Aesthetic mappings</h2><div class="cell output-location-slide">
@@ -486,7 +486,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>What will the following code result in?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb18-2"><a></a>  loan50,</span>
 <span id="cb18-3"><a></a>  <span class="fu">aes</span>(</span>
 <span id="cb18-4"><a></a>    <span class="at">x =</span> annual_income,</span>
@@ -497,7 +497,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb18-9"><a></a>) <span class="sc">+</span></span>
 <span id="cb18-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb18-11"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb18-12"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-12"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 </section><section id="global-mappings-output" class="slide level2 output-location-slide"><h2>Global mappings</h2><div class="cell output-location-slide">
@@ -515,13 +515,13 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>What will the following code result in?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb20-2"><a></a>  loan50,</span>
 <span id="cb20-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> annual_income, <span class="at">y =</span> interest_rate)</span>
 <span id="cb20-4"><a></a>) <span class="sc">+</span></span>
 <span id="cb20-5"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> homeownership)) <span class="sc">+</span></span>
 <span id="cb20-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb20-7"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-7"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 </section><section id="local-mappings-output" class="slide level2 output-location-slide"><h2>Local mappings</h2><div class="cell output-location-slide">
@@ -539,13 +539,13 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>What will the following code result in?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb22-2"><a></a>  loan50,</span>
 <span id="cb22-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> annual_income, <span class="at">y =</span> interest_rate)</span>
 <span id="cb22-4"><a></a>) <span class="sc">+</span></span>
 <span id="cb22-5"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> homeownership)) <span class="sc">+</span></span>
 <span id="cb22-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb22-7"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-7"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 </section><section id="mapping-vs.-setting-output" class="slide level2 output-location-slide"><h2>Mapping vs.&nbsp;setting</h2><div class="cell output-location-slide">
@@ -565,7 +565,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </ul></section><section id="aside-legends" class="slide level2"><h2>Aside: Legends</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb24-2"><a></a>  loan50,</span>
 <span id="cb24-3"><a></a>  <span class="fu">aes</span>(</span>
 <span id="cb24-4"><a></a>    <span class="at">x =</span> annual_income,</span>
@@ -575,7 +575,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb24-8"><a></a>  )</span>
 <span id="cb24-9"><a></a>) <span class="sc">+</span></span>
 <span id="cb24-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb24-11"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-11"><a></a>  <span class="fu">scale_color_colorblind</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -587,7 +587,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="aside-legends-1" class="slide level2 smaller"><h2>Aside: Legends</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" data-code-line-numbers="|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb25-2"><a></a>  loan50,</span>
 <span id="cb25-3"><a></a>  <span class="fu">aes</span>(</span>
 <span id="cb25-4"><a></a>    <span class="at">x =</span> annual_income,</span>
@@ -598,7 +598,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb25-9"><a></a>) <span class="sc">+</span></span>
 <span id="cb25-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb25-11"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb25-12"><a></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Home ownership"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-12"><a></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Home ownership"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -610,7 +610,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="aside-legends-2" class="slide level2 smaller"><h2>Aside: Legends</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb26" data-code-line-numbers="|13-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26" data-code-line-numbers="|13-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb26-2"><a></a>  loan50,</span>
 <span id="cb26-3"><a></a>  <span class="fu">aes</span>(</span>
 <span id="cb26-4"><a></a>    <span class="at">x =</span> annual_income,</span>
@@ -624,7 +624,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb26-12"><a></a>  <span class="fu">labs</span>(</span>
 <span id="cb26-13"><a></a>    <span class="at">color =</span> <span class="st">"Home ownership"</span>,</span>
 <span id="cb26-14"><a></a>    <span class="at">shape =</span> <span class="st">"Home ownership"</span></span>
-<span id="cb26-15"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-15"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -645,24 +645,24 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>R4DS: <a href="https://r4ds.hadley.nz/factors" class="uri">https://r4ds.hadley.nz/factors</a>.</p>
 </div></aside></section><section id="bar-plot" class="slide level2"><h2>Bar plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(loan50, <span class="fu">aes</span>(<span class="at">x =</span> homeownership)) <span class="sc">+</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(loan50, <span class="fu">aes</span>(<span class="at">x =</span> homeownership)) <span class="sc">+</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="11-exam-1-review_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section><section id="bar-plot---reordered" class="slide level2 smaller"><h2>Bar plot - reordered</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
 <span id="cb28-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb28-3"><a></a>    <span class="at">homeownership =</span> <span class="fu">fct_relevel</span>(homeownership, <span class="st">"mortgage"</span>, <span class="st">"rent"</span>, <span class="st">"own"</span>)</span>
 <span id="cb28-4"><a></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb28-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> homeownership)) <span class="sc">+</span></span>
-<span id="cb28-6"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-6"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="11-exam-1-review_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section><section id="frequency-table" class="slide level2"><h2>Frequency table</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
-<span id="cb29-2"><a></a>  <span class="fu">count</span>(homeownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">count</span>(homeownership)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   homeownership     n
@@ -674,11 +674,11 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </section><section id="bar-plot---reordered-1" class="slide level2 smaller"><h2>Bar plot - reordered</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb31-3"><a></a>    <span class="at">homeownership =</span> <span class="fu">fct_relevel</span>(homeownership, <span class="st">"own"</span>, <span class="st">"rent"</span>, <span class="st">"mortgage"</span>)</span>
 <span id="cb31-4"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb31-5"><a></a>  <span class="fu">count</span>(homeownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-5"><a></a>  <span class="fu">count</span>(homeownership)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   homeownership     n
@@ -690,14 +690,14 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </section><section id="under-the-hood" class="slide level2"><h2>Under the hood</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">class</span>(loan50<span class="sc">$</span>homeownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">class</span>(loan50<span class="sc">$</span>homeownership)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "factor"</code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">typeof</span>(loan50<span class="sc">$</span>homeownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">typeof</span>(loan50<span class="sc">$</span>homeownership)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
@@ -705,7 +705,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">levels</span>(loan50<span class="sc">$</span>homeownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">levels</span>(loan50<span class="sc">$</span>homeownership)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "rent"     "mortgage" "own"     </code></pre>
 </div>
@@ -719,7 +719,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </ul></section><section id="aside" class="slide level2"><h2>Aside: <code>==</code>
 </h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
 <span id="cb39-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb39-3"><a></a>    <span class="at">homeownership_new =</span> <span class="fu">if_else</span>(</span>
 <span id="cb39-4"><a></a>      homeownership <span class="sc">==</span> <span class="st">"rent"</span>,</span>
@@ -727,7 +727,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb39-6"><a></a>      homeownership</span>
 <span id="cb39-7"><a></a>    )</span>
 <span id="cb39-8"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb39-9"><a></a>  <span class="fu">distinct</span>(homeownership, homeownership_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-9"><a></a>  <span class="fu">distinct</span>(homeownership, homeownership_new)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   homeownership homeownership_new
@@ -740,7 +740,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="aside-1" class="slide level2"><h2>Aside: <code>|</code>
 </h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
 <span id="cb41-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb41-3"><a></a>    <span class="at">homeownership_new =</span> <span class="fu">if_else</span>(</span>
 <span id="cb41-4"><a></a>      homeownership <span class="sc">==</span> <span class="st">"rent"</span> <span class="sc">|</span> homeownership <span class="sc">==</span> <span class="st">"mortgage"</span>,</span>
@@ -748,7 +748,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb41-6"><a></a>      homeownership</span>
 <span id="cb41-7"><a></a>    )</span>
 <span id="cb41-8"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb41-9"><a></a>  <span class="fu">distinct</span>(homeownership, homeownership_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-9"><a></a>  <span class="fu">distinct</span>(homeownership, homeownership_new)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   homeownership homeownership_new
@@ -761,7 +761,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </section><section id="aside-in" class="slide level2"><h2>Aside: <code>%in%</code>
 </h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
 <span id="cb43-2"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb43-3"><a></a>    <span class="at">homeownership_new =</span> <span class="fu">if_else</span>(</span>
 <span id="cb43-4"><a></a>      homeownership <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"rent"</span>, <span class="st">"mortgage"</span>),</span>
@@ -769,7 +769,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <span id="cb43-6"><a></a>      homeownership</span>
 <span id="cb43-7"><a></a>    )</span>
 <span id="cb43-8"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb43-9"><a></a>  <span class="fu">distinct</span>(homeownership, homeownership_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-9"><a></a>  <span class="fu">distinct</span>(homeownership, homeownership_new)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   homeownership homeownership_new
@@ -957,7 +957,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1065,13 +1065,14 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
