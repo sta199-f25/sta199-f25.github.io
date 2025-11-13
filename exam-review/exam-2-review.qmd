@@ -325,11 +325,6 @@ First 30 rows of `movies`, with variable types suppressed.
 
 ```{r}
 #| echo: false
-#| output: asis
-
-if (knitr::is_latex_output()) {
-  cat("\\begin{landscape}\n\\begin{verbatim}\n")
-}
 
 options(
   dplyr.print_min = 30,
@@ -348,10 +343,6 @@ options(
   pillar.width = 80,
   pillar.sigfig = 3
 )
-
-if (knitr::is_latex_output()) {
-  cat("\\end{verbatim}\n\\end{landscape}\n")
-}
 
 ```
 :::
