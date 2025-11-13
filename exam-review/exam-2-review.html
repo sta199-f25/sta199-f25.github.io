@@ -911,80 +911,52 @@ Table&nbsp;1: Data dictionary for <code>movies</code>
 <p>The first thirty rows of the <code>movies</code> data frame are shown in <a href="#tbl-data" class="quarto-xref">Table&nbsp;2</a>, with variable types suppressed (since we’ll ask about them later).</p>
 <div style="page-break-after: always;"></div>
 <div id="tbl-data" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: 1 10000000 6947787 1100 1986 Michelle Manning Ross Macdona… Judd Nelson<br>
+2 NA 4018705 48000 2014 Nuri Bilge Ceyl… Ebru Ceylan Haluk Bilgin… 3 NA 10800778 115000 2006 Rakeysh Ompraka… Renzil D’Sil… Aamir Khan<br>
+4 150000000 433921300 146000 2019 Rob Letterman Dan Hernandez Ryan Reynolds 5 28000000 130560428 46000 2017 Jon Lucas Jon Lucas Mila Kunis<br>
+6 30000000 9330075 34000 2018 Jeffrey Nachman… Chad St.&nbsp;John Keanu Reeves 7 NA 343890 262 1984 Armyan Bernstein Armyan Berns… John Shea<br>
+8 150000000 490719763 235000 2017 Matt Reeves Mark Bomback Andy Serkis<br>
+9 6000000 11837928 7400 1995 Rusty Cundieff Rusty Cundie… Clarence Wil… 10 NA 4636169 1500 1986 Duncan Gibbins Bill Phillips Craig Sheffer 11 50000000 49718611 36000 2004 Garry Marshall Patrick J. C… Kate Hudson<br>
+12 NA 3124440 11000 1996 Steven Baigelman Steven Baige… Keanu Reeves 13 NA 19930973 9300 1992 Arthur Hiller John Fusco John Goodman 14 NA 83488 3900 1997 Tom DiCillo Tom DiCillo Matthew Modi… 15 NA NA 6400 1995 Theodoros Angel… Theodoros An… Harvey Keitel 16 32000000 42059111 57000 2010 Nanette Burstein Geoff LaTuli… Drew Barrymo… 17 NA 3741869 6100 1993 Kirk Wong Tin Nam Chun Jackie Chan<br>
+18 NA 124167 3600 1987 Alan Clarke Andrea Dunbar Siobhan Finn… 19 13000000 97837138 255000 2002 Joel Schumacher Larry Cohen Colin Farrell 20 4800000 125479266 124000 2017 Christopher Lan… Scott Lobdell Jessica Rothe 21 NA 83439 5900 2003 David Mickey Ev… David H. Ste… Erik von Det… 22 75000000 107752036 163000 1999 David O. Russell John Ridley George Cloon… 23 3500000 27912072 54000 1993 Albert Hughes Allen Hughes Tyrin Turner 24 4000000 4257354 100000 1995 Directors Allison Ande… Tim Roth<br>
+25 11000000 59520298 19000 2012 Dustin Hoffman Ronald Harwo… Maggie Smith 26 100000 515900 19000 2001 Richard Linklat… Stephen Belb… Ethan Hawke<br>
+27 12000000 57968936 21000 1990 Dwight H. Little Michael Grais Steven Seagal 28 50000000 152022101 43000 1995 Frank Marshall Michael Cric… Laura Linney 29 25000000 11212953 20000 2008 Kimberly Peirce Mark Richard Ryan Phillip… 30 75000000 224012234 282000 1997 Simon West Scott Rosenb… Nicolas Cage # ℹ 470 more rows # ℹ 2 more variables: company, country
 </figcaption><div aria-describedby="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p>First 30 rows of <code>movies</code>, with variable types suppressed.</p>
-<div class="cell" data-tbl-landscape="true">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 500 × 16
-   name           score runtime genre     rating    release_country release_date
- 1 Blue City        4.4 83 mins Action    R         United States   1986-05-02  
- 2 Winter Sleep     8.1 196     Drama     Not Rated Turkey          2014-06-12  
- 3 Rang De Basan…   8.1 167     Comedy    Not Rated United States   2006-01-26  
- 4 Pokémon Detec…   6.6 104     Action    PG        United States   2019-05-10  
- 5 A Bad Moms Ch…   5.6 104     Comedy    R         United States   2017-11-01  
- 6 Replicas         5.5 107     Drama     PG-13     United States   2019-01-11  
- 7 Windy City       5.8 103     Drama     R         Uruguay         1986-01-01  
- 8 War for the P…   7.4 140     Action    PG-13     United States   2017-07-14  
- 9 Tales from th…   6.4 98      Crime     R         United States   1995-05-24  
-10 Fire with Fire   6.5 103     Drama     PG-13     United States   1986-05-09  
-11 Raising Helen    6   119     Comedy    PG-13     United States   2004-05-28  
-12 Feeling Minne…   5.4 99      Comedy    R         United States   1996-09-13  
-13 The Babe         5.9 115     Biography PG        United States   1992-04-17  
-14 The Real Blon…   6   105     Comedy    R         United States   1998-02-27  
-15 To vlemma tou…   7.6 176     Drama     Not Rated United States   1997-11-01  
-16 Going the Dis…   6.3 102     Comedy    R         United States   2010-09-03  
-17 Jung on zo       6.8 103     Action    R         Hong Kong       1993-06-24  
-18 Rita, Sue and…   6.5 93      Comedy    R         United Kingdom  1987-05-29  
-19 Phone Booth      7   81      Crime     R         United States   2003-04-04  
-20 Happy Death D…   6.6 96      Comedy    PG-13     United States   2017-10-13  
-21 Barely Legal     4.7 90      Comedy    R         Thailand        2006-05-25  
-22 Three Kings      7.1 114     Action    R         United States   1999-10-01  
-23 Menace II Soc…   7.5 97      Crime     R         United States   1993-05-26  
-24 Four Rooms       6.8 98      Comedy    R         United States   1995-12-25  
-25 Quartet          6.8 98      Comedy    PG-13     United States   2013-03-01  
-26 Tape             7.2 86      Drama     R         Denmark         2002-07-12  
-27 Marked for De…   6   93      Action    R         United States   1990-10-05  
-28 Congo            5.2 109     Action    PG-13     United States   1995-06-09  
-29 Stop-Loss        6.4 112     Drama     R         United States   2008-03-28  
-30 Con Air          6.9 115     Action    R         United States   1997-06-06  
-      budget     gross  votes  year director         writer        star         
-                                      
- 1  10000000   6947787   1100  1986 Michelle Manning Ross Macdona… Judd Nelson  
- 2        NA   4018705  48000  2014 Nuri Bilge Ceyl… Ebru Ceylan   Haluk Bilgin…
- 3        NA  10800778 115000  2006 Rakeysh Ompraka… Renzil D'Sil… Aamir Khan   
- 4 150000000 433921300 146000  2019 Rob Letterman    Dan Hernandez Ryan Reynolds
- 5  28000000 130560428  46000  2017 Jon Lucas        Jon Lucas     Mila Kunis   
- 6  30000000   9330075  34000  2018 Jeffrey Nachman… Chad St. John Keanu Reeves 
- 7        NA    343890    262  1984 Armyan Bernstein Armyan Berns… John Shea    
- 8 150000000 490719763 235000  2017 Matt Reeves      Mark Bomback  Andy Serkis  
- 9   6000000  11837928   7400  1995 Rusty Cundieff   Rusty Cundie… Clarence Wil…
-10        NA   4636169   1500  1986 Duncan Gibbins   Bill Phillips Craig Sheffer
-11  50000000  49718611  36000  2004 Garry Marshall   Patrick J. C… Kate Hudson  
-12        NA   3124440  11000  1996 Steven Baigelman Steven Baige… Keanu Reeves 
-13        NA  19930973   9300  1992 Arthur Hiller    John Fusco    John Goodman 
-14        NA     83488   3900  1997 Tom DiCillo      Tom DiCillo   Matthew Modi…
-15        NA        NA   6400  1995 Theodoros Angel… Theodoros An… Harvey Keitel
-16  32000000  42059111  57000  2010 Nanette Burstein Geoff LaTuli… Drew Barrymo…
-17        NA   3741869   6100  1993 Kirk Wong        Tin Nam Chun  Jackie Chan  
-18        NA    124167   3600  1987 Alan Clarke      Andrea Dunbar Siobhan Finn…
-19  13000000  97837138 255000  2002 Joel Schumacher  Larry Cohen   Colin Farrell
-20   4800000 125479266 124000  2017 Christopher Lan… Scott Lobdell Jessica Rothe
-21        NA     83439   5900  2003 David Mickey Ev… David H. Ste… Erik von Det…
-22  75000000 107752036 163000  1999 David O. Russell John Ridley   George Cloon…
-23   3500000  27912072  54000  1993 Albert Hughes    Allen Hughes  Tyrin Turner 
-24   4000000   4257354 100000  1995 Directors        Allison Ande… Tim Roth     
-25  11000000  59520298  19000  2012 Dustin Hoffman   Ronald Harwo… Maggie Smith 
-26    100000    515900  19000  2001 Richard Linklat… Stephen Belb… Ethan Hawke  
-27  12000000  57968936  21000  1990 Dwight H. Little Michael Grais Steven Seagal
-28  50000000 152022101  43000  1995 Frank Marshall   Michael Cric… Laura Linney 
-29  25000000  11212953  20000  2008 Kimberly Peirce  Mark Richard  Ryan Phillip…
-30  75000000 224012234 282000  1997 Simon West       Scott Rosenb… Nicolas Cage 
-# ℹ 470 more rows
-# ℹ 2 more variables: company, country</code></pre>
-</div>
-</div>
+<section id="a-tibble-500-16" class="level1"><h1>A tibble: 500 × 16</h1>
+<p>name score runtime genre rating release_country release_date 1 Blue City 4.4 83 mins Action R United States 1986-05-02<br>
+2 Winter Sleep 8.1 196 Drama Not Rated Turkey 2014-06-12<br>
+3 Rang De Basan… 8.1 167 Comedy Not Rated United States 2006-01-26<br>
+4 Pokémon Detec… 6.6 104 Action PG United States 2019-05-10<br>
+5 A Bad Moms Ch… 5.6 104 Comedy R United States 2017-11-01<br>
+6 Replicas 5.5 107 Drama PG-13 United States 2019-01-11<br>
+7 Windy City 5.8 103 Drama R Uruguay 1986-01-01<br>
+8 War for the P… 7.4 140 Action PG-13 United States 2017-07-14<br>
+9 Tales from th… 6.4 98 Crime R United States 1995-05-24<br>
+10 Fire with Fire 6.5 103 Drama PG-13 United States 1986-05-09<br>
+11 Raising Helen 6 119 Comedy PG-13 United States 2004-05-28<br>
+12 Feeling Minne… 5.4 99 Comedy R United States 1996-09-13<br>
+13 The Babe 5.9 115 Biography PG United States 1992-04-17<br>
+14 The Real Blon… 6 105 Comedy R United States 1998-02-27<br>
+15 To vlemma tou… 7.6 176 Drama Not Rated United States 1997-11-01<br>
+16 Going the Dis… 6.3 102 Comedy R United States 2010-09-03<br>
+17 Jung on zo 6.8 103 Action R Hong Kong 1993-06-24<br>
+18 Rita, Sue and… 6.5 93 Comedy R United Kingdom 1987-05-29<br>
+19 Phone Booth 7 81 Crime R United States 2003-04-04<br>
+20 Happy Death D… 6.6 96 Comedy PG-13 United States 2017-10-13<br>
+21 Barely Legal 4.7 90 Comedy R Thailand 2006-05-25<br>
+22 Three Kings 7.1 114 Action R United States 1999-10-01<br>
+23 Menace II Soc… 7.5 97 Crime R United States 1993-05-26<br>
+24 Four Rooms 6.8 98 Comedy R United States 1995-12-25<br>
+25 Quartet 6.8 98 Comedy PG-13 United States 2013-03-01<br>
+26 Tape 7.2 86 Drama R Denmark 2002-07-12<br>
+27 Marked for De… 6 93 Action R United States 1990-10-05<br>
+28 Congo 5.2 109 Action PG-13 United States 1995-06-09<br>
+29 Stop-Loss 6.4 112 Drama R United States 2008-03-28<br>
+30 Con Air 6.9 115 Action R United States 1997-06-06<br>
+budget gross votes year director writer star</p>
+</section>
 </div>
 </figure>
 </div>
@@ -992,7 +964,7 @@ Table&nbsp;2
 <section id="score-vs.-runtime" class="level2"><h2 class="anchored" data-anchor-id="score-vs.-runtime">Score vs.&nbsp;runtime</h2>
 <p>In this part, we fit a model predicting <code>score</code> from <code>runtime</code> and name it <code>score_runtime_fit</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">score_runtime_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">score_runtime_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">runtime</span>, data <span class="op">=</span> <span class="va">movies</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> visualizes the relationship between <code>score</code> and <code>runtime</code> as well as the linear model for predicting <code>score</code> from <code>runtime</code>. The first three movies in <a href="#tbl-data" class="quarto-xref">Table&nbsp;2</a> are labeled in the visualization as well. Answer all questions in this part based on <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a>.</p>
@@ -1012,12 +984,12 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
 <p>Partial code for producing <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> is given below. Which of the following goes in the blank on Line 2? <strong>Select all that apply.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>movies <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">mutate</span>(<span class="at">runtime =</span> ___) <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> runtime, <span class="at">y =</span> score)) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="co"># additional code for annotating Blue City on the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>movies <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">mutate</span>(<span class="at">runtime =</span> ___) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> runtime, <span class="at">y =</span> score)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="co"># additional code for annotating Blue City on the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><p><code>grepl(" mins", runtime)</code></p></li>
@@ -1057,11 +1029,11 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 </div>
 <p>The correlation coefficients of these relationships are calculated below, though some of the code and the output are missing. Answer all questions in this part based on the code and output shown below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>movies <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">__blank_1__</span>(</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_runtime =</span> <span class="fu">cor</span>(runtime, score),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_year =</span> <span class="fu">cor</span>(year, score)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>movies <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">__blank_1__</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_runtime =</span> <span class="fu">cor</span>(runtime, score),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_year =</span> <span class="fu">cor</span>(year, score)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code># A tibble: 1 × 2
   r_score_runtime r_score_year
