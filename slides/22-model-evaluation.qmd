@@ -37,14 +37,14 @@ todays_ae <- "ae-14-chicago-taxi-classification"
 
 ::: wooclap
 
-...
+What is sensitivity also known as?
 
 ::: wooclap-choices
-- `contract.qmd`
-- `index.qmd`
-- `presentation.qmd` or `presentation.pdf`
-- `proposal.qmd`
-- `README.md` in your `data` folder
+- True positive rate
+- True negative rate
+- False positive rate
+- False negative rate
+- Recall
 :::
 
 :::
