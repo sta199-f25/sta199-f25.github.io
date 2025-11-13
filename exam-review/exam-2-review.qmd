@@ -97,6 +97,8 @@ b.  Slope of `raise_2_fit` is higher than RMSE of `raise_1_fit`.
 c.  Adjusted $R^2$ of `raise_2_fit` is higher than adjusted $R^2$ of `raise_1_fit`.
 d.  $R^2$ of `raise_2_fit` is higher $R^2$ of `raise_1_fit`.
 
+{{< pagebreak >}}
+
 ## Question 3
 
 The tidy model output for the `raise_2_fit` model you fit is shown below.
@@ -113,7 +115,7 @@ tidy(raise_2_fit)
 When your teammate sees this model output, they remark "The coefficient for `performance_ratingSuccessful` is negative. That's weird. I guess it means that people who get successful performance ratings get lower raises." How would you respond to your teammate?
 
 ::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
+$\vspace{1.5cm}$
 :::
 
 ## Question 4
@@ -701,6 +703,8 @@ c.  Using your data frame from the previous part, determine, in a single pipelin
 
 d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
     In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
+    
+{{< pagebreak >}}    
 
 ## Question 20
 
