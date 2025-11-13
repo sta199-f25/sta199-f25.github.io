@@ -614,7 +614,6 @@ window.Quarto = {
 <li>(a) <span class="math inline">\(\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime\)</span>
 </li>
 <li>(a) and (d).</li>
-<li>(c) We are 95% confident that the mean number of texts per month of all American teens is between 1450 and 1550.</li>
 <li>A parsimonious model is the simplest model with the best predictive performance.</li>
 <li>a.<br>
 </li>
@@ -697,7 +696,7 @@ Dollar is a double.</p>
 1   0.924  0.0763</code></pre>
 </div>
 </div>
-<ol start="20" type="1">
+<ol start="19" type="1">
 <li>a.</li>
 </ol>
 <div class="cell">
@@ -778,7 +777,7 @@ Dollar is a double.</p>
 4 1     1               4 0.0109  </code></pre>
 </div>
 </div>
-<ol start="21" type="1">
+<ol start="20" type="1">
 <li>a.</li>
 </ol>
 <div class="cell">
@@ -797,7 +796,7 @@ Dollar is a double.</p>
 </div>
 </div>
 </div>
-<p>Number of characters could be reasonable predictor of spam. Also, this plot supports differences in distributions. (I also included the predictors from Question 2 – <code>winner</code> and <code>urgent_subj</code> in addition to <code>dollar</code>)</p>
+<p>Number of characters could be reasonable predictor of spam. Also, this plot supports differences in distributions. (I also included the predictors from the previous question – <code>winner</code> and <code>urgent_subj</code> in addition to <code>dollar</code>)</p>
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">spam_dollar_char_fit</span> <span class="op">&lt;-</span> <span class="fu">logistic_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span></span>
@@ -853,7 +852,7 @@ Dollar is a double.</p>
 4 1     1              14 0.0381 </code></pre>
 </div>
 </div>
-<p>e. The model from Question 21 is preferable over the model in Question 20. While the false positive rate increased, the false negative rate decreased by a larger amount; and overall more emails are categorized correctly (3547+14 = 3561 emails vs 3551 + 4 = 3555) for the model used in Question 21.</p>
+<p>e. The model from Question 20 is preferable over the model in Question 19. While the false positive rate increased, the false negative rate decreased by a larger amount; and overall more emails are categorized correctly (3547+14 = 3561 emails vs 3551 + 4 = 3555) for the model used in Question 20.</p>
 
 
 
