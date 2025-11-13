@@ -75,7 +75,7 @@ What is sensitivity also known as?
 
 Which of the following best describes the area annotated on the ROC curve?
 
-![](images/22/roc-curve-annotated-question.png)
+![](images/22/roc-curve-annotated-question.png){width=500}
 
 ::: wooclap-choices
 - Where all positives classified as positive, all negatives classified as negative
