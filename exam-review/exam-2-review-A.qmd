@@ -40,9 +40,8 @@ execute:
 14. \(c\) is greater than
 15. \(a\) $\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime$
 16. \(a\) and (d).
-17. \(c\) We are 95% confident that the mean number of texts per month of all American teens is between 1450 and 1550.
-18. A parsimonious model is the simplest model with the best predictive performance.
-19. 
+17. A parsimonious model is the simplest model with the best predictive performance.
+18. 
 a.\
 
 ```{r}
@@ -116,7 +115,7 @@ new_email = tibble(dollar = 5)
 predict(spam_dollar_fit, new_data = new_email, type = "prob")
 ```
 
-20. 
+19. 
 a\.
 
 ```{r}
@@ -166,7 +165,7 @@ email_pred_counts |>
   mutate(p = n / sum(n))
 ```
 
-21. 
+20. 
 a\.
 
 ```{r}
@@ -182,7 +181,7 @@ email |>
   )
 ```
 
-Number of characters could be reasonable predictor of spam. Also, this plot supports differences in distributions. (I also included the predictors from Question 2 -- `winner` and `urgent_subj` in addition to `dollar`)
+Number of characters could be reasonable predictor of spam. Also, this plot supports differences in distributions. (I also included the predictors from the previous question -- `winner` and `urgent_subj` in addition to `dollar`)
 
 ```{r}
 #| label: new-spam-model-dollar-char
@@ -226,4 +225,4 @@ pred_counts |>
   mutate(p = n / sum(n))
 ```
 
-e\. The model from Question 21 is preferable over the model in Question 20. While the false positive rate increased, the false negative rate decreased by a larger amount; and overall more emails are categorized correctly (3547+14 = 3561 emails vs 3551 + 4 = 3555) for the model used in Question 21.
+e\. The model from Question 20 is preferable over the model in Question 19. While the false positive rate increased, the false negative rate decreased by a larger amount; and overall more emails are categorized correctly (3547+14 = 3561 emails vs 3551 + 4 = 3555) for the model used in Question 20.

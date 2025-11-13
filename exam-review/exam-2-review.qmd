@@ -453,6 +453,8 @@ d.  Blue City \> Winter Sleep \> Rang De Basanti
 
 e.  Blue City \> Rang De Basanti \> Winter Sleep
 
+{{< pagebreak >}}
+
 ### Question 9
 
 ```{r}
@@ -471,8 +473,6 @@ c.  The model accurately predicts scores of `{r} score_runtime_rsq`% of the movi
 d.  The model accurately predicts scores of `{r} score_runtime_rsq`% of all movies.
 
 e.  The correlation between scores and runtimes of movies is `{r} score_runtime_rsq / 100`.
-
-{{< pagebreak >}}
 
 ## Score vs. runtime or year
 
@@ -616,6 +616,8 @@ d.  cannot be compared (based on the information provided) to
 
 e.  is both greater than and less than
 
+{{< pagebreak >}}
+
 ### Question 15
 
 The model `score_runtime_rating_fit` (the model predicting `score` from `runtime` and `rating`) can be visualized as parallel lines for each level of `rating`. Which of the following is the equation of the line for R-rated movies?
@@ -629,8 +631,6 @@ c.  $\widehat{score} = 4.525 + (0.021 - 0.257) \times runtime$
 d.  $score = 4.525 + (0.021 - 0.257) \times runtime$
 
 e.  $\widehat{score} = (4.525 + 0.021) - 0.257 \times runtime$
-
-{{< pagebreak >}}
 
 # Miscellaneous
 
@@ -648,17 +648,6 @@ d\. $y = \beta_0 + \beta_1 X_1 + \epsilon$
 
 ## Question 17
 
-**Choose the best answer.**
-
-A survey based on a random sample of 2,045 American teenagers found that a 95% confidence interval for the mean number of texts sent per month was (1450, 1550). A valid interpretation of this interval is
-
-a.  95% of all teens who text send between 1450 and 1550 text messages per month.
-b.  If a new survey with the same sample size were to be taken, there is a 95% chance that the mean number of texts in the sample would be between 1450 and 1550.
-c.  We are 95% confident that the mean number of texts per month of all American teens is between 1450 and 1550.
-d.  We are 95% confident that, were we to repeat this survey, the mean number of texts per month of those taking part in the survey would be between 1450 and 1550.
-
-## Question 18
-
 Define the term "parsimonious model".
 
 ::: {.content-visible when-format="pdf"}
@@ -673,7 +662,7 @@ The data come from incoming emails in David Diez's (one of the authors of OpenIn
 
 The outcome variable is `spam`, which takes the value `1` if the email is spam, `0` otherwise.
 
-## Question 19
+## Question 18
 
 a.  What type of variable is `spam`?
     What percent of the emails are spam?
@@ -693,7 +682,7 @@ To obtain the predicted probability, you can set the `type` argument in `predict
 
 {{< pagebreak >}}
 
-## Question 20
+## Question 19
 
 a.  Fit another logistic regression model predicting `spam` from `dollar`, `winner` (indicating whether “winner” appeared in the email), and `urgent_subj` (whether the word "urgent" is in the subject of the email).
     Then, display the tidy output of the model.
@@ -713,7 +702,7 @@ c.  Using your data frame from the previous part, determine, in a single pipelin
 d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
     In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
 
-## Question 21
+## Question 20
 
 a.  Fit another logistic regression model predicting `spam` from `dollar` and another variable you think would be a good predictor.
     Provide a 1-sentence justification for why you chose this variable.
@@ -734,5 +723,5 @@ c.  Using your data frame from the previous part, determine, in a single pipelin
 d.  In a single pipeline, and using `mutate()`, calculate the false positive and false negative rates.
     In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identified the two rates.
 
-e.  Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model (one from Question 20 or Question 21) is preferable and why.
+e.  Based on the false positive and false negatives rates of this model, comment, in 1-2 sentences, on which model (one from Question 19 or Question 20) is preferable and why.
 
