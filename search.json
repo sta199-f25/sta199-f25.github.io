@@ -1519,7 +1519,7 @@
     "href": "slides/21-evaluating-models-slides.html#while-you-wait-participate",
     "title": "Evaluating models",
     "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\n…\n\n\ncontract.qmd\nindex.qmd\n\npresentation.qmd or presentation.pdf\n\nproposal.qmd\n\nREADME.md in your data folder\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "While you wait: Participate 📱💻\n\n\n\nWhat is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/21-evaluating-models-slides.html#announcements",
@@ -1645,14 +1645,14 @@
     "href": "slides/22-model-evaluation.html",
     "title": "Evaluating models",
     "section": "",
-    "text": "…\n\n\ncontract.qmd\nindex.qmd\n\npresentation.qmd or presentation.pdf\n\nproposal.qmd\n\nREADME.md in your data folder\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nProjects due tonight, peer evals diue tpmorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]\n\n\n\n\nWhich of the following best describes the area annotated on the ROC curve?\n\n\n\nWhere all positives classified as positive, all negatives classified as negative\nWhere true positive rate = false positive rate\nWhere all positives classified as negative, all negatives classified as positive\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nWhich corner of the plot indicates the best model performance?"
+    "text": "What is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nProjects due tonight, peer evals diue tpmorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]\n\n\n\n\nWhich of the following best describes the area annotated on the ROC curve?\n\n\n\nWhere all positives classified as positive, all negatives classified as negative\nWhere true positive rate = false positive rate\nWhere all positives classified as negative, all negatives classified as positive\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nWhich corner of the plot indicates the best model performance?"
   },
   {
     "objectID": "slides/22-model-evaluation.html#while-you-wait-participate",
     "href": "slides/22-model-evaluation.html#while-you-wait-participate",
     "title": "Evaluating models",
     "section": "",
-    "text": "…\n\n\ncontract.qmd\nindex.qmd\n\npresentation.qmd or presentation.pdf\n\nproposal.qmd\n\nREADME.md in your data folder\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "What is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/22-model-evaluation.html#announcements",
