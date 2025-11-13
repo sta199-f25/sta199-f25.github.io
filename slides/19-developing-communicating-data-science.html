@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -563,22 +528,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-outliers" id="toc-the-outliers" class="nav-link" data-scroll-target="#the-outliers">The Outliers</a></li>
   </ul>
 </li>
-  <li>
-<a href="#the-in-the-room-chat-gpt-and-friends" id="toc-the-in-the-room-chat-gpt-and-friends" class="nav-link" data-scroll-target="#the-in-the-room-chat-gpt-and-friends">The 🐘 in the room: Chat GPT (and friends)</a>
-  <ul class="collapse">
-<li><a href="#take-a-pulse" id="toc-take-a-pulse" class="nav-link" data-scroll-target="#take-a-pulse">Take a pulse</a></li>
-  <li><a href="#example-1---similar-to-lab-4" id="toc-example-1---similar-to-lab-4" class="nav-link" data-scroll-target="#example-1---similar-to-lab-4">Example 1 - Similar to Lab 4</a></li>
-  <li><a href="#chat-gpt---take-1-prompt" id="toc-chat-gpt---take-1-prompt" class="nav-link" data-scroll-target="#chat-gpt---take-1-prompt">Chat GPT - Take 1 prompt</a></li>
-  <li><a href="#chat-gpt---take-1-response" id="toc-chat-gpt---take-1-response" class="nav-link" data-scroll-target="#chat-gpt---take-1-response">Chat GPT - Take 1 response</a></li>
-  <li><a href="#lets-follow-along-with-chat-gpt" id="toc-lets-follow-along-with-chat-gpt" class="nav-link" data-scroll-target="#lets-follow-along-with-chat-gpt">Let’s follow along with Chat GPT…</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
-  <li><a href="#chat-gpt---take-1-prompt-1" id="toc-chat-gpt---take-1-prompt-1" class="nav-link" data-scroll-target="#chat-gpt---take-1-prompt-1">Chat GPT - Take 1 prompt</a></li>
-  <li><a href="#chat-gpt---take-1-response-1" id="toc-chat-gpt---take-1-response-1" class="nav-link" data-scroll-target="#chat-gpt---take-1-response-1">Chat GPT - Take 1 response</a></li>
-  <li><a href="#chat-gpt---take-1-code" id="toc-chat-gpt---take-1-code" class="nav-link" data-scroll-target="#chat-gpt---take-1-code">Chat GPT - Take 1 code</a></li>
-  <li><a href="#lets-follow-along-with-chat-gpt-1" id="toc-lets-follow-along-with-chat-gpt-1" class="nav-link" data-scroll-target="#lets-follow-along-with-chat-gpt-1">Let’s follow along with Chat GPT…</a></li>
-  <li><a href="#guidelines-and-best-practices-for-using-chat-gpt" id="toc-guidelines-and-best-practices-for-using-chat-gpt" class="nav-link" data-scroll-target="#guidelines-and-best-practices-for-using-chat-gpt">Guidelines and best practices for using Chat GPT</a></li>
-  </ul>
-</li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/19-developing-communicating-data-science.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="19-developing-communicating-data-science-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -689,175 +638,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We are interested in the relationship between tuition, perception of making world a better place, and return on investment among United States colleges. To explore these intersections we will utilize multiple datasets. Here are our research questions: Are tuition costs and salary potential related to the feeling that they are making the world a better place post graduation, and does this differ whether a school is a state school or not? What factors most strongly correlate to a higher percentage of alumni who believe they are making the world a better place? We hypothesize that attending a public college and making above-average money afterwards will have a relationship to a higher percentage of alumni who believe they are making the world a better place.</p>
 </blockquote>
 
+
+
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Title generated by ChatGPT 5. <a href="https://chatgpt.com/s/t_690a23646bd48191adc347aa98ad62f3">Tuition Purpose and ROI</a></p>
-</div></div></section></section><section id="the-in-the-room-chat-gpt-and-friends" class="level1"><h1>The 🐘 in the room: Chat GPT (and friends)</h1>
-<section id="take-a-pulse" class="level2"><h2 class="anchored" data-anchor-id="take-a-pulse">Take a pulse</h2>
-<div class="question">
-<p>How are you using Chat GPT or similar AI tools for this class?</p>
-</div>
-</section><section id="example-1---similar-to-lab-4" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="example-1---similar-to-lab-4">Example 1 - Similar to Lab 4</h2>
-<div class="question">
-<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”</p>
-<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
-<p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
-</div>
-</section><section id="chat-gpt---take-1-prompt" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="chat-gpt---take-1-prompt">Chat GPT - Take 1 prompt</h2>
-<div class="question">
-<p>What is wrong with this prompt? How would you correct it?</p>
-</div>
-<blockquote class="blockquote">
-<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
-</blockquote>
-</section><section id="chat-gpt---take-1-response" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="chat-gpt---take-1-response">Chat GPT - Take 1 response</h2>
-<div class="question">
-<p>Identify at least one mistake or code smell/style issue with the code below.</p>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4          ✔ readr     2.1.5     
-✔ forcats   1.0.0          ✔ stringr   1.5.1     
-✔ ggplot2   4.0.0          ✔ tibble    3.3.0.9004
-✔ lubridate 1.9.4          ✔ tidyr     1.3.1     
-✔ purrr     1.1.0          
-── Conflicts ──────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Given data</span></span>
-<span><span class="va">total_registered</span> <span class="op">&lt;-</span> <span class="fl">771</span></span>
-<span></span>
-<span><span class="co"># Responses by age group</span></span>
-<span><span class="va">responses</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
-<span>  <span class="op">~</span><span class="va">age_group</span> , <span class="op">~</span><span class="va">against</span> , <span class="op">~</span><span class="va">legalize</span> , <span class="op">~</span><span class="va">not_sure</span>                ,</span>
-<span>  <span class="st">"18-49"</span>    ,       <span class="fl">59</span> ,       <span class="fl">292</span> , <span class="fl">391</span> <span class="op">-</span> <span class="op">(</span><span class="fl">59</span> <span class="op">+</span> <span class="fl">292</span><span class="op">)</span>         ,</span>
-<span>  <span class="st">"50+"</span>      ,       <span class="fl">67</span> ,       <span class="fl">245</span> , <span class="op">(</span><span class="fl">771</span> <span class="op">-</span> <span class="fl">391</span><span class="op">)</span> <span class="op">-</span> <span class="op">(</span><span class="fl">67</span> <span class="op">+</span> <span class="fl">245</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Calculate total per group</span></span>
-<span><span class="va">responses</span> <span class="op">&lt;-</span> <span class="va">responses</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>total <span class="op">=</span> <span class="va">against</span> <span class="op">+</span> <span class="va">legalize</span> <span class="op">+</span> <span class="va">not_sure</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Then calculate proportions of each age group in the total sample</span></span>
-<span><span class="va">age_props</span> <span class="op">&lt;-</span> <span class="va">responses</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
-<span>    total_18_49 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">total</span><span class="op">[</span><span class="va">age_group</span> <span class="op">==</span> <span class="st">"18-49"</span><span class="op">]</span><span class="op">)</span>,</span>
-<span>    total_50_plus <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">total</span><span class="op">[</span><span class="va">age_group</span> <span class="op">==</span> <span class="st">"50+"</span><span class="op">]</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"age_group"</span>, values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    age_group <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span></span>
-<span>      <span class="va">age_group</span>,</span>
-<span>      <span class="st">"total_18_49"</span> <span class="op">=</span> <span class="st">"18-49"</span>,</span>
-<span>      <span class="st">"total_50_plus"</span> <span class="op">=</span> <span class="st">"50+"</span></span>
-<span>    <span class="op">)</span>,</span>
-<span>    proportion <span class="op">=</span> <span class="va">count</span> <span class="op">/</span> <span class="va">total_registered</span></span>
-<span>  <span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Show both tables</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  responses_by_age <span class="op">=</span> <span class="va">responses</span>,</span>
-<span>  proportions_by_age <span class="op">=</span> <span class="va">age_props</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$responses_by_age
-# A tibble: 2 × 5
-  age_group against legalize not_sure total
-  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
-1 18-49          59      292       40   391
-2 50+            67      245       68   380
+</div></div></section></section></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
 
-$proportions_by_age
-# A tibble: 2 × 3
-  age_group count proportion
-  &lt;chr&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 18-49       391      0.507
-2 50+         380      0.493</code></pre>
-</div>
-</div>
-</section><section id="lets-follow-along-with-chat-gpt" class="level2"><h2 class="anchored" data-anchor-id="lets-follow-along-with-chat-gpt">Let’s follow along with Chat GPT…</h2>
-<p><a href="https://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c" class="uri">https://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c</a></p>
-</section><section id="example-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="example-2">Example 2</h2>
-<div class="question">
-<p>Each CSI franchise includes a number of series, each with the character string <code>"CSI"</code> (in capital letters) in their title. Using this information, create a new data frame called <code>csi</code> that only has titles from the CSI-verse and all of the columns from <code>tv</code> for these titles. Then, display the first 10 rows of <code>csi</code>. <strong>Note:</strong> The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.</p>
-</div>
-</section><section id="chat-gpt---take-1-prompt-1" class="level2"><h2 class="anchored" data-anchor-id="chat-gpt---take-1-prompt-1">Chat GPT - Take 1 prompt</h2>
-<blockquote class="blockquote">
-<p>Each CSI franchise includes a number of series, each with the character string <code>"CSI"</code> (in capital letters) in their title. Using this information, create a new data frame called <code>csi</code> that only has titles from the CSI-verse and all of the columns from <code>tv</code> for these titles. Then, display the first 10 rows of <code>csi</code>. <strong>Note:</strong> The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.</p>
-</blockquote>
-</section><section id="chat-gpt---take-1-response-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="chat-gpt---take-1-response-1">Chat GPT - Take 1 response</h2>
-<blockquote class="blockquote">
-<p>Here’s a short, safe solution. It keeps all columns from tv, selects only rows whose title contains the exact uppercase string “CSI”, stores that in csi, then prints the first 10 rows.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Base R solution (case-sensitive match for "CSI")</span></span>
-<span><span class="va">csi</span> <span class="op">&lt;-</span> <span class="va">tv</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"CSI"</span>, <span class="va">tv</span><span class="op">$</span><span class="va">title</span>, fixed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="op">]</span></span>
-<span></span>
-<span><span class="co"># Show the first 10 rows</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">csi</span>, <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you prefer dplyr:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">csi</span> <span class="op">&lt;-</span> <span class="va">tv</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"CSI"</span>, <span class="va">title</span>, fixed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">csi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Notes: The code above searches for the exact uppercase substring <code>"CSI"</code> (per your instructions). If you want a case-insensitive match (e.g., to also catch <code>"csi"</code>), use <code>grepl("CSI", tv$title, ignore.case = TRUE)</code> or <code>fixed = FALSE</code> with <code>ignore.case = TRUE</code>.</p>
-</blockquote>
-</section><section id="chat-gpt---take-1-code" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="chat-gpt---take-1-code">Chat GPT - Take 1 code</h2>
-<div class="question">
-<p>What is wrong with the following code?</p>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tv</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/tv.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">csi</span> <span class="op">&lt;-</span> <span class="va">tv</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"CSI"</span>, <span class="va">title</span>, fixed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">csi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 9
-   season title     year month   day av_rating genre_1 genre_2 genre_3
-    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
- 1      1 CSI: Cr…  2001     1    20      8.32 Crime   Drama   Mystery
- 2      2 CSI: Cr…  2002     1    10      8.26 Crime   Drama   Mystery
- 3      3 CSI: Cr…  2003     1    15      8.30 Crime   Drama   Mystery
- 4      4 CSI: Cr…  2004     1    18      8.33 Crime   Drama   Mystery
- 5      5 CSI: Cr…  2005     1    24      8.38 Crime   Drama   Mystery
- 6      6 CSI: Cr…  2006     1    16      8.21 Crime   Drama   Mystery
- 7      7 CSI: Cr…  2007     1    14      8.43 Crime   Drama   Mystery
- 8      8 CSI: Cr…  2008     1     7      8.07 Crime   Drama   Mystery
- 9      9 CSI: Cr…  2009     1    27      7.80 Crime   Drama   Mystery
-10     10 CSI: Cr…  2010     1    23      7.69 Crime   Drama   Mystery</code></pre>
-</div>
-</div>
-</section><section id="lets-follow-along-with-chat-gpt-1" class="level2"><h2 class="anchored" data-anchor-id="lets-follow-along-with-chat-gpt-1">Let’s follow along with Chat GPT…</h2>
-<p><a href="https://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244" class="uri">https://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244</a></p>
-</section><section id="guidelines-and-best-practices-for-using-chat-gpt" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="guidelines-and-best-practices-for-using-chat-gpt">Guidelines and best practices for using Chat GPT</h2>
-<div class="incremental">
-<ul class="incremental">
-<li>Do <u><strong>not</strong></u> just copy-paste the prompt – for appropriate academic conduct, for your own learning, and for getting to better results faster</li>
-<li>Engineer the prompt until the response starts to look like code you’re learning in the course</li>
-<li>If the response is not correct, ask for a correction</li>
-<li>If the response doesn’t follow the guidelines, ask for a correction</li>
-<li>When you ask for a correction, be ready for it to “correct” (i.e., change) more than you asked for</li>
-<li>Do not just copy-paste code from Chat GPT responses, run it line-by-line and edit as needed – Chat GPT does not execute R code so there’s no guarantee any of the code it gives you works</li>
-<li>Watch out for clear mistakes in the response: do not keep loading packages that are already loaded, use the base pipe <code>|&gt;</code>, use the tidyverse style, do not use unnecessary <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> statements, be critical of code smell, etc.</li>
-</ul>
-</div>
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
 
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {

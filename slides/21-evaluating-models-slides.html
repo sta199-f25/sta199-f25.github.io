@@ -10,8 +10,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2025-11-11">
-<title>STA 199 – Spending your data</title>
+<meta name="dcterms.date" content="2025-11-13">
+<title>STA 199 – Evaluating models</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -188,16 +188,16 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Spending your data – STA 199">
-<meta property="og:description" content="Lecture 21">
+<meta property="og:title" content="Evaluating models – STA 199">
+<meta property="og:description" content="Lecture 22">
 <meta property="og:site_name" content="STA 199">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Spending your data</h1>
-  <p class="subtitle">Lecture 21</p>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Evaluating models</h1>
+  <p class="subtitle">Lecture 22</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -210,14 +210,14 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
     </div>
 </div>
 
-  <p class="date">November 11, 2025</p>
+  <p class="date">November 13, 2025</p>
 </section><section><section id="warm-up" class="title-slide slide level1 center"><h1>Warm-up</h1>
 
 </section><section id="while-you-wait-participate" class="slide level2 xsmall"><h2>While you wait: Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>Which of the following files should you be updating in your project between now and Thursday’s deadline? Check all that apply.</p>
+<p>…</p>
 <div class="wooclap-choices">
 <ul>
 <li><code>contract.qmd</code></li>
@@ -240,312 +240,17 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="announcements" class="slide level2 smaller"><h2>Announcements</h2>
+</section><section id="announcements" class="slide level2"><h2>Announcements</h2>
 <ul>
-<li><p>Project write-ups due Thursday at 11:59pm</p></li>
-<li><p>Peer evaluations due Friday at 11:59pm</p></li>
-</ul></section><section id="from-last-week" class="slide level2"><h2>From last week</h2>
-<div class="appex">
-<p>Finish up <code>ae-13-spam-filter</code>.</p>
-</div>
-</section></section><section><section id="setup" class="title-slide slide level1 center"><h1>Setup</h1>
-
-</section><section id="packages" class="slide level2"><h2>Packages</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) <span class="co"># data wrangling and visualization</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels) <span class="co"># modeling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="data" class="slide level2"><h2>Data</h2>
-<ul>
-<li><p>Taxi trips in Chicago, IL in 2022</p></li>
-<li><p>Data from <a href="https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew">Chicago Data Portal</a></p></li>
-</ul></section><section id="data-chicago_taxi" class="slide level2 smaller"><h2>Data: <code>chicago_taxi</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>chicago_taxi <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/chicago-taxi.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>chicago_taxi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,000 × 7
-   tip   distance company                      local dow   month  hour
-   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;
- 1 no        0.4  other                        yes   Fri   Mar      17
- 2 no        0.96 Taxicab Insurance Agency Llc no    Mon   Apr       8
- 3 no        1.07 Sun Taxi                     no    Fri   Feb      15
- 4 no        1.13 other                        no    Sat   Feb      14
- 5 no       10.8  Sun Taxi                     no    Sat   Apr      14
- 6 no        3.6  Chicago Independents         no    Wed   Mar      12
- 7 no        1.08 Flash Cab                    yes   Wed   Mar      13
- 8 no        0.85 Taxicab Insurance Agency Llc no    Tue   Mar       8
- 9 no       17.9  City Service                 no    Tue   Jan      20
-10 no        0    City Service                 yes   Sun   Apr      16
-# ℹ 1,990 more rows</code></pre>
-</div>
-</div>
-</section><section id="data-chicago_taxi-1" class="slide level2 smaller"><h2>Data: <code>chicago_taxi</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glimpse</span>(chicago_taxi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 2,000
-Columns: 7
-$ tip      &lt;chr&gt; "no", "no", "no", "no", "no", "no", "no", "no", "no…
-$ distance &lt;dbl&gt; 0.40, 0.96, 1.07, 1.13, 10.81, 3.60, 1.08, 0.85, 17…
-$ company  &lt;chr&gt; "other", "Taxicab Insurance Agency Llc", "Sun Taxi"…
-$ local    &lt;chr&gt; "yes", "no", "no", "no", "no", "no", "yes", "no", "…
-$ dow      &lt;chr&gt; "Fri", "Mon", "Fri", "Sat", "Sat", "Wed", "Wed", "T…
-$ month    &lt;chr&gt; "Mar", "Apr", "Feb", "Feb", "Apr", "Mar", "Mar", "M…
-$ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</code></pre>
-</div>
-</div>
-</section><section id="data-prep" class="slide level2"><h2>Data prep</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>chicago_taxi <span class="ot">&lt;-</span> chicago_taxi <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-3"><a></a>    <span class="at">tip =</span> <span class="fu">fct_relevel</span>(tip, <span class="st">"no"</span>, <span class="st">"yes"</span>),</span>
-<span id="cb7-4"><a></a>    <span class="at">local =</span> <span class="fu">fct_relevel</span>(local, <span class="st">"no"</span>, <span class="st">"yes"</span>),</span>
-<span id="cb7-5"><a></a>    <span class="at">dow =</span> <span class="fu">fct_relevel</span>(dow, <span class="st">"Mon"</span>, <span class="st">"Tue"</span>, <span class="st">"Wed"</span>, <span class="st">"Thu"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>),</span>
-<span id="cb7-6"><a></a>    <span class="at">month =</span> <span class="fu">fct_relevel</span>(month, <span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>)</span>
-<span id="cb7-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="outcome-and-predictors" class="slide level2 smaller"><h2>Outcome and predictors</h2>
-<ul>
-<li>Outcome - <code>tip</code>: Whether rider left a tip – a factor w/ levels “yes” and “no”</li>
-<li>(Potential) predictors:
-<ul>
-<li>Numerical:
-<ul>
-<li>
-<code>distance</code>: The trip distance, in odometer miles.</li>
-<li>
-<code>hour</code>: The hour of the day in which the trip began.</li>
-</ul>
-</li>
-<li>Categorical:
-<ul>
-<li>
-<code>company</code>: The taxi company – companies that occurred few times were binned as “other”.</li>
-<li>
-<code>local</code>: Whether the trip started in the same community area as it began.</li>
-<li>
-<code>dow</code>: The day of the week in which the trip began.</li>
-<li>
-<code>month</code>: The month in which the trip began.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></section><section id="should-we-include-a-predictor" class="slide level2"><h2>Should we include a predictor?</h2>
-<p>To determine whether we should include a predictor in a model, we should start by asking:</p>
-<ul>
-<li class="fragment"><p>Is it ethical to use this variable? (Or even legal?)</p></li>
-<li class="fragment"><p>Will this variable be available at prediction time?</p></li>
-<li class="fragment"><p>Does this variable contribute to explainability?</p></li>
-</ul></section></section><section><section id="data-splitting-and-spending" class="title-slide slide level1 center"><h1>Data splitting and spending</h1>
-
-</section><section id="weve-been-cheating" class="slide level2"><h2>We’ve been cheating!</h2>
-<ul>
-<li class="fragment"><p>So far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered <em>cheating</em>.</p></li>
-<li class="fragment"><p>Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen.</p></li>
-</ul></section><section id="spending-your-data" class="slide level2 smaller"><h2>Spending your data</h2>
-<p>For predictive models (used primarily in machine learning), we typically split data into training and test sets:</p>
-
-<img data-src="images/21/test-train-split-1.svg" class="quarto-figure quarto-figure-center r-stretch"><ul>
-<li><p>The <strong>training set</strong> is used to estimate model parameters.</p></li>
-<li><p>The <strong>test set</strong> is used to find an independent assessment of model performance.</p></li>
-</ul>
-<div class="fragment">
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Warning</strong></p>
-</div>
-<div class="callout-content">
-<p>Do not use, or even peek at, the test set during training.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section id="how-much-to-spend" class="slide level2"><h2>How much to spend?</h2>
-<ul>
-<li class="fragment"><p>The more data we spend (use in training), the better estimates we’ll get.</p></li>
-<li class="fragment"><p>Spending too much data in training prevents us from computing a good assessment of predictive performance.</p></li>
-<li class="fragment"><p>Spending too much data in testing prevents us from computing a good estimate of model parameters.</p></li>
-</ul></section><section id="the-initial-split" class="slide level2"><h2>The initial split</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">set.seed</span>(<span class="dv">20251111</span>)</span>
-<span id="cb8-2"><a></a>chicago_taxi_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(chicago_taxi)</span>
-<span id="cb8-3"><a></a>chicago_taxi_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;Training/Testing/Total&gt;
-&lt;1500/500/2000&gt;</code></pre>
-</div>
-</div>
-</section><section id="setting-a-seed" class="slide level2 smaller"><h2>Setting a seed</h2>
-<div class="task">
-<p>What does <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> do?</p>
-</div>
-<ul>
-<li class="fragment"><p>To create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.</p></li>
-<li class="fragment"><p>This allows us to reproduce results by setting that seed.</p></li>
-<li class="fragment"><p>Which seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance.</p></li>
-</ul></section><section id="accessing-the-data" class="slide level2"><h2>Accessing the data</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>chicago_taxi_train <span class="ot">&lt;-</span> <span class="fu">training</span>(chicago_taxi_split)</span>
-<span id="cb10-2"><a></a>chicago_taxi_test <span class="ot">&lt;-</span> <span class="fu">testing</span>(chicago_taxi_split)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="the-training-set" class="slide level2 smaller"><h2>The training set</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>chicago_taxi_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,500 × 7
-   tip   distance company                      local dow   month  hour
-   &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;
- 1 no        7.9  Taxi Affiliation Services    no    Sat   Apr      17
- 2 no       10.7  Sun Taxi                     no    Fri   Mar       9
- 3 yes       3.4  Taxi Affiliation Services    no    Thu   Mar      20
- 4 no        4.7  Taxi Affiliation Services    no    Fri   Jan       9
- 5 no       18.6  Taxicab Insurance Agency Llc no    Fri   Feb      15
- 6 yes       0.89 other                        yes   Fri   Mar      17
- 7 no       17.6  City Service                 no    Wed   Feb      19
- 8 no        0.97 Taxicab Insurance Agency Llc yes   Thu   Mar      21
- 9 no        0.4  other                        yes   Fri   Mar      17
-10 yes       2.2  other                        no    Wed   Apr      10
-# ℹ 1,490 more rows</code></pre>
-</div>
-</div>
-</section><section id="the-testing-data" class="slide level2"><h2>The testing data</h2>
-<div class="fragment">
-<div class="huge">
-<p>🙈</p>
-</div>
-</div>
-</section></section><section><section id="exploratory-data-analysis" class="title-slide slide level1 center"><h1>Exploratory data analysis</h1>
-
-</section><section id="initial-questions" class="slide level2 smaller"><h2>Initial questions</h2>
-<ul>
-<li><p>What’s the distribution of the outcome, <code>tip</code>?</p></li>
-<li><p>What’s the distribution of numeric variables like <code>distance</code> or <code>hour</code>?</p></li>
-<li><p>How does the distribution of <code>tip</code> differ across the categorical and numerical variables?</p></li>
-</ul></section><section id="while-you-wait-participate-1" class="slide level2 xsmall"><h2>While you wait: Participate 📱💻</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="wooclap">
-<p>Which dataset should we use for the exploration?</p>
-<div class="wooclap-choices">
-<ul>
-<li>The entire data <code>chicago_taxi</code>
-</li>
-<li>The training data <code>chicago_taxi_train</code>
-</li>
-<li>The testing data <code>chicago_taxi_test</code>
-</li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
-</figure>
-</div>
-<div class="small">
-<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
-</div>
-</div></div>
-</section><section id="tip" class="slide level2"><h2><code>tip</code></h2>
-<p>What’s the distribution of the outcome, <code>tip</code>?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>chicago_taxi_train <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a></a>  <span class="fu">count</span>(tip) <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  tip       n  prop
-  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
-1 no      586 0.391
-2 yes     914 0.609</code></pre>
-</div>
-</div>
-</section><section id="distance" class="slide level2"><h2><code>distance</code></h2>
-<p>What’s the distribution of <code>distance</code>?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> distance)) <span class="sc">+</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="tip-and-distance" class="slide level2 smaller"><h2>
-<code>tip</code> and <code>distance</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> distance, <span class="at">fill =</span> tip, <span class="at">group =</span> tip)) <span class="sc">+</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
-<span id="cb16-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section id="tip-and-hour" class="slide level2 smaller"><h2>
-<code>tip</code> and <code>hour</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> hour, <span class="at">fill =</span> tip, <span class="at">group =</span> tip)) <span class="sc">+</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
-<span id="cb17-4"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">18</span>, <span class="at">by =</span> <span class="dv">6</span>)) <span class="sc">+</span></span>
-<span id="cb17-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="tip-and-local" class="slide level2 smaller"><h2>
-<code>tip</code> and <code>local</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> local, <span class="at">fill =</span> tip)) <span class="sc">+</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb18-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
-<span id="cb18-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>) <span class="sc">+</span></span>
-<span id="cb18-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section><section id="tip-and-dow" class="slide level2 smaller"><h2>
-<code>tip</code> and <code>dow</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> dow, <span class="at">fill =</span> tip)) <span class="sc">+</span></span>
-<span id="cb19-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb19-3"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
-<span id="cb19-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">x =</span> <span class="st">"Day of week"</span>) <span class="sc">+</span></span>
-<span id="cb19-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section></section><section><section id="terminology" class="title-slide slide level1 center"><h1>Terminology</h1>
-
-</section><section id="false-negative-and-positive" class="slide level2"><h2>False negative and positive</h2>
-<ul>
-<li><p><strong>False negative rate</strong> is the proportion of actual positives that were classified as negatives.</p></li>
-<li><p><strong>False positive rate</strong> is the proportion of actual negatives that were classified as positives.</p></li>
-</ul></section><section id="sensitivity" class="slide level2"><h2>Sensitivity</h2>
-<p><strong>Sensitivity</strong> is the proportion of actual positives that were correctly classified as positive.</p>
-<ul>
-<li><p>Also known as <strong>true positive rate</strong> and <strong>recall</strong></p></li>
-<li><p>Sensitivity = 1 − False negative rate</p></li>
-<li><p>Useful when false negatives are more “expensive” than false positives</p></li>
-</ul></section><section id="specificity" class="slide level2"><h2>Specificity</h2>
-<p><strong>Specificity</strong> is the proportion of actual negatives that were correctly classified as negative</p>
-<ul>
-<li><p>Also known as <strong>true negative rate</strong></p></li>
-<li><p>Specificity = 1 − False positive rate</p></li>
-</ul></section><section id="roc-curve" class="slide level2"><h2>ROC curve</h2>
-<p>The <strong>receiver operating characteristic (ROC) curve</strong> allows to assess the model performance across a range of thresholds.</p>
-
-<img data-src="images/21/roc-curve.png" class="r-stretch"></section><section id="participate" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<li><p>Projects due tonight, peer evals diue tpmorrow night</p></li>
+<li><p>Practice Exam 2 is posted on the course website</p></li>
+<li><p>Reply to post on Ed about requests for topics / concepts for exam review <a href="https://edstem.org/us/courses/80616/discussion/7304129">[thread]</a></p></li>
+</ul></section><section id="from-last-class-participate" class="slide level2 xsmall"><h2>From last class: Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
 <p>Which of the following best describes the area annotated on the ROC curve?</p>
-<p><img data-src="images/21/roc-curve-annotated-question.png"></p>
+<p><img data-src="images/22/roc-curve-annotated-question.png"></p>
 <div class="wooclap-choices">
 <ul>
 <li>Where all positives classified as positive, all negatives classified as negative</li>
@@ -563,6 +268,216 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
+</section><section id="roc-curve" class="slide level2 smaller"><h2>ROC curve</h2>
+<div class="task">
+<p>Which corner of the plot indicates the best model performance?</p>
+</div>
+
+<img data-src="images/22/roc-curve-annotated.png" class="r-stretch"></section></section><section><section id="next-steps" class="title-slide slide level1 center"><h1>Next steps</h1>
+
+</section><section id="next-steps-1" class="slide level2 smaller"><h2>Next steps</h2>
+<ul>
+<li class="fragment"><p>Fit models on training data</p></li>
+<li class="fragment"><p>Make predictions on testing data</p></li>
+<li class="fragment">
+<p>Evaluate predictions on testing data:</p>
+<ul>
+<li class="fragment">Linear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.</li>
+<li class="fragment">Logistic models: False negative and positive rates, AUC (area under the curve), etc.</li>
+</ul>
+</li>
+<li class="fragment"><p>Make decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability</p></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>We will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="ae-14-chicago-taxi-classification" class="slide level2 smaller"><h2>ae-14-chicago-taxi-classification</h2>
+<div class="appex">
+<ul>
+<li><p>Go to your ae project in RStudio.</p></li>
+<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-14-chicago-taxi-classification.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
+</ul>
+</div>
+</section><section id="recap" class="slide level2 smaller"><h2>Recap</h2>
+<ul>
+<li class="fragment"><p>Split data into training and testing sets (generally 75/25)</p></li>
+<li class="fragment"><p>Fit models on training data and reduce to a few candidate models</p></li>
+<li class="fragment"><p>Make predictions on testing data</p></li>
+<li class="fragment">
+<p>Evaluate predictions on testing data using appropriate predictive performance metrics</p>
+<ul>
+<li class="fragment">Linear models: Adjusted R-squared, AIC, etc.</li>
+<li class="fragment">Logistic models: False negative and positive rates, AUC (area under the curve), etc.</li>
+</ul>
+</li>
+<li class="fragment"><p>Don’t forget to also consider explainability and domain knowledge when selecting a final model</p></li>
+<li class="fragment"><p>In a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)</p></li>
+</ul></section></section><section><section id="time-permitting-the-in-the-room-chat-gpt-and-friends" class="title-slide slide level1 center"><h1>[Time permitting] The 🐘 in the room: Chat GPT (and friends)</h1>
+
+</section><section id="take-a-pulse" class="slide level2"><h2>Take a pulse</h2>
+<div class="question">
+<p>How are you using Chat GPT or similar AI tools for this class?</p>
+</div>
+</section><section id="example-1---similar-to-lab-4" class="slide level2 smaller scrollable"><h2>Example 1 - Similar to Lab 4</h2>
+<div class="question">
+<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”</p>
+<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
+<p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
+</div>
+</section><section id="chat-gpt---take-1-prompt" class="slide level2 smaller scrollable"><h2>Chat GPT - Take 1 prompt</h2>
+<div class="question">
+<p>What is wrong with this prompt? How would you correct it?</p>
+</div>
+<blockquote>
+<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”</p>
+</blockquote>
+<blockquote>
+<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
+</blockquote>
+<blockquote>
+<p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
+</blockquote>
+</section><section id="chat-gpt---take-1-response" class="slide level2 smaller scrollable"><h2>Chat GPT - Take 1 response</h2>
+<div class="question">
+<p>Identify at least one mistake or code smell/style issue with the code below.</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="co"># Given data</span></span>
+<span id="cb1-4"><a></a>total_registered <span class="ot">&lt;-</span> <span class="dv">771</span></span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="co"># Responses by age group</span></span>
+<span id="cb1-7"><a></a>responses <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-8"><a></a>  <span class="sc">~</span>age_group , <span class="sc">~</span>against , <span class="sc">~</span>legalize , <span class="sc">~</span>not_sure                ,</span>
+<span id="cb1-9"><a></a>  <span class="st">"18-49"</span>    ,       <span class="dv">59</span> ,       <span class="dv">292</span> , <span class="dv">391</span> <span class="sc">-</span> (<span class="dv">59</span> <span class="sc">+</span> <span class="dv">292</span>)         ,</span>
+<span id="cb1-10"><a></a>  <span class="st">"50+"</span>      ,       <span class="dv">67</span> ,       <span class="dv">245</span> , (<span class="dv">771</span> <span class="sc">-</span> <span class="dv">391</span>) <span class="sc">-</span> (<span class="dv">67</span> <span class="sc">+</span> <span class="dv">245</span>)</span>
+<span id="cb1-11"><a></a>)</span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a><span class="co"># Calculate total per group</span></span>
+<span id="cb1-14"><a></a>responses <span class="ot">&lt;-</span> responses <span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a></a>  <span class="fu">mutate</span>(<span class="at">total =</span> against <span class="sc">+</span> legalize <span class="sc">+</span> not_sure)</span>
+<span id="cb1-16"><a></a></span>
+<span id="cb1-17"><a></a><span class="co"># Then calculate proportions of each age group in the total sample</span></span>
+<span id="cb1-18"><a></a>age_props <span class="ot">&lt;-</span> responses <span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-20"><a></a>    <span class="at">total_18_49 =</span> <span class="fu">sum</span>(total[age_group <span class="sc">==</span> <span class="st">"18-49"</span>]),</span>
+<span id="cb1-21"><a></a>    <span class="at">total_50_plus =</span> <span class="fu">sum</span>(total[age_group <span class="sc">==</span> <span class="st">"50+"</span>])</span>
+<span id="cb1-22"><a></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-23"><a></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"age_group"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-24"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-25"><a></a>    <span class="at">age_group =</span> <span class="fu">recode</span>(</span>
+<span id="cb1-26"><a></a>      age_group,</span>
+<span id="cb1-27"><a></a>      <span class="st">"total_18_49"</span> <span class="ot">=</span> <span class="st">"18-49"</span>,</span>
+<span id="cb1-28"><a></a>      <span class="st">"total_50_plus"</span> <span class="ot">=</span> <span class="st">"50+"</span></span>
+<span id="cb1-29"><a></a>    ),</span>
+<span id="cb1-30"><a></a>    <span class="at">proportion =</span> count <span class="sc">/</span> total_registered</span>
+<span id="cb1-31"><a></a>  )</span>
+<span id="cb1-32"><a></a></span>
+<span id="cb1-33"><a></a><span class="co"># Show both tables</span></span>
+<span id="cb1-34"><a></a><span class="fu">list</span>(</span>
+<span id="cb1-35"><a></a>  <span class="at">responses_by_age =</span> responses,</span>
+<span id="cb1-36"><a></a>  <span class="at">proportions_by_age =</span> age_props</span>
+<span id="cb1-37"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$responses_by_age
+# A tibble: 2 × 5
+  age_group against legalize not_sure total
+  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+1 18-49          59      292       40   391
+2 50+            67      245       68   380
+
+$proportions_by_age
+# A tibble: 2 × 3
+  age_group count proportion
+  &lt;chr&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1 18-49       391      0.507
+2 50+         380      0.493</code></pre>
+</div>
+</div>
+</section><section id="lets-follow-along-with-chat-gpt" class="slide level2"><h2>Let’s follow along with Chat GPT…</h2>
+<p><a href="https://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c" class="uri">https://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c</a></p>
+</section><section id="example-2" class="slide level2 smaller"><h2>Example 2</h2>
+<div class="question">
+<p>Each CSI franchise includes a number of series, each with the character string <code>"CSI"</code> (in capital letters) in their title. Using this information, create a new data frame called <code>csi</code> that only has titles from the CSI-verse and all of the columns from <code>tv</code> for these titles. Then, display the first 10 rows of <code>csi</code>. <strong>Note:</strong> The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.</p>
+</div>
+</section><section id="chat-gpt---take-1-prompt-1" class="slide level2"><h2>Chat GPT - Take 1 prompt</h2>
+<blockquote>
+<p>Each CSI franchise includes a number of series, each with the character string <code>"CSI"</code> (in capital letters) in their title. Using this information, create a new data frame called <code>csi</code> that only has titles from the CSI-verse and all of the columns from <code>tv</code> for these titles. Then, display the first 10 rows of <code>csi</code>. <strong>Note:</strong> The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.</p>
+</blockquote>
+</section><section id="chat-gpt---take-1-response-1" class="slide level2 xsmall"><h2>Chat GPT - Take 1 response</h2>
+<blockquote>
+<p>Here’s a short, safe solution. It keeps all columns from tv, selects only rows whose title contains the exact uppercase string “CSI”, stores that in csi, then prints the first 10 rows.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Base R solution (case-sensitive match for "CSI")</span></span>
+<span id="cb3-2"><a></a>csi <span class="ot">&lt;-</span> tv[<span class="fu">grepl</span>(<span class="st">"CSI"</span>, tv<span class="sc">$</span>title, <span class="at">fixed =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Show the first 10 rows</span></span>
+<span id="cb3-5"><a></a><span class="fu">head</span>(csi, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you prefer dplyr:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>csi <span class="ot">&lt;-</span> tv <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a></a> <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"CSI"</span>, title, <span class="at">fixed =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a>csi <span class="sc">%&gt;%</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notes: The code above searches for the exact uppercase substring <code>"CSI"</code> (per your instructions). If you want a case-insensitive match (e.g., to also catch <code>"csi"</code>), use <code>grepl("CSI", tv$title, ignore.case = TRUE)</code> or <code>fixed = FALSE</code> with <code>ignore.case = TRUE</code>.</p>
+</blockquote>
+</section><section id="chat-gpt---take-1-code" class="slide level2 xsmall"><h2>Chat GPT - Take 1 code</h2>
+<div class="question">
+<p>What is wrong with the following code?</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>tv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/tv.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>csi <span class="ot">&lt;-</span> tv <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"CSI"</span>, title, <span class="at">fixed =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a>csi <span class="sc">%&gt;%</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 9
+   season title     year month   day av_rating genre_1 genre_2 genre_3
+    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+ 1      1 CSI: Cr…  2001     1    20      8.32 Crime   Drama   Mystery
+ 2      2 CSI: Cr…  2002     1    10      8.26 Crime   Drama   Mystery
+ 3      3 CSI: Cr…  2003     1    15      8.30 Crime   Drama   Mystery
+ 4      4 CSI: Cr…  2004     1    18      8.33 Crime   Drama   Mystery
+ 5      5 CSI: Cr…  2005     1    24      8.38 Crime   Drama   Mystery
+ 6      6 CSI: Cr…  2006     1    16      8.21 Crime   Drama   Mystery
+ 7      7 CSI: Cr…  2007     1    14      8.43 Crime   Drama   Mystery
+ 8      8 CSI: Cr…  2008     1     7      8.07 Crime   Drama   Mystery
+ 9      9 CSI: Cr…  2009     1    27      7.80 Crime   Drama   Mystery
+10     10 CSI: Cr…  2010     1    23      7.69 Crime   Drama   Mystery</code></pre>
+</div>
+</div>
+</section><section id="lets-follow-along-with-chat-gpt-1" class="slide level2"><h2>Let’s follow along with Chat GPT…</h2>
+<p><a href="https://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244" class="uri">https://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244</a></p>
+</section><section id="guidelines-and-best-practices-for-using-chat-gpt" class="slide level2 smaller"><h2>Guidelines and best practices for using Chat GPT</h2>
+<ul>
+<li class="fragment">Do <u><strong>not</strong></u> just copy-paste the prompt – for appropriate academic conduct, for your own learning, and for getting to better results faster</li>
+<li class="fragment">Engineer the prompt until the response starts to look like code you’re learning in the course</li>
+<li class="fragment">If the response is not correct, ask for a correction</li>
+<li class="fragment">If the response doesn’t follow the guidelines, ask for a correction</li>
+<li class="fragment">When you ask for a correction, be ready for it to “correct” (i.e., change) more than you asked for</li>
+<li class="fragment">Do not just copy-paste code from Chat GPT responses, run it line-by-line and edit as needed – Chat GPT does not execute R code so there’s no guarantee any of the code it gives you works</li>
+<li class="fragment">Watch out for clear mistakes in the response: do not keep loading packages that are already loaded, use the base pipe <code>|&gt;</code>, use the tidyverse style, do not use unnecessary <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> statements, be critical of code smell, etc.</li>
+</ul>
 
 
 </section></section>

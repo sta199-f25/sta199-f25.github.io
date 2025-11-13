@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2025-11-11">
-<title>Spending your data – STA 199</title>
+<meta name="dcterms.date" content="2025-11-13">
+<title>Evaluating models – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,8 +107,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta property="og:title" content="Spending your data – STA 199">
-<meta property="og:description" content="Lecture 21">
+<meta property="og:title" content="Evaluating models – STA 199">
+<meta property="og:description" content="Lecture 22">
 <meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
 <meta property="og:image:height" content="888">
@@ -283,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Spending your data</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Evaluating models</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -538,63 +538,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#from-last-week" id="toc-from-last-week" class="nav-link" data-scroll-target="#from-last-week">From last week</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
-  <ul class="collapse">
-<li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#data-chicago_taxi" id="toc-data-chicago_taxi" class="nav-link" data-scroll-target="#data-chicago_taxi">Data: <code>chicago_taxi</code></a></li>
-  <li><a href="#data-chicago_taxi-1" id="toc-data-chicago_taxi-1" class="nav-link" data-scroll-target="#data-chicago_taxi-1">Data: <code>chicago_taxi</code></a></li>
-  <li><a href="#data-prep" id="toc-data-prep" class="nav-link" data-scroll-target="#data-prep">Data prep</a></li>
-  <li><a href="#outcome-and-predictors" id="toc-outcome-and-predictors" class="nav-link" data-scroll-target="#outcome-and-predictors">Outcome and predictors</a></li>
-  <li><a href="#should-we-include-a-predictor" id="toc-should-we-include-a-predictor" class="nav-link" data-scroll-target="#should-we-include-a-predictor">Should we include a predictor?</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#data-splitting-and-spending" id="toc-data-splitting-and-spending" class="nav-link" data-scroll-target="#data-splitting-and-spending">Data splitting and spending</a>
-  <ul class="collapse">
-<li><a href="#weve-been-cheating" id="toc-weve-been-cheating" class="nav-link" data-scroll-target="#weve-been-cheating">We’ve been cheating!</a></li>
-  <li><a href="#spending-your-data" id="toc-spending-your-data" class="nav-link" data-scroll-target="#spending-your-data">Spending your data</a></li>
-  <li><a href="#how-much-to-spend" id="toc-how-much-to-spend" class="nav-link" data-scroll-target="#how-much-to-spend">How much to spend?</a></li>
-  <li><a href="#the-initial-split" id="toc-the-initial-split" class="nav-link" data-scroll-target="#the-initial-split">The initial split</a></li>
-  <li><a href="#setting-a-seed" id="toc-setting-a-seed" class="nav-link" data-scroll-target="#setting-a-seed">Setting a seed</a></li>
-  <li><a href="#accessing-the-data" id="toc-accessing-the-data" class="nav-link" data-scroll-target="#accessing-the-data">Accessing the data</a></li>
-  <li><a href="#the-training-set" id="toc-the-training-set" class="nav-link" data-scroll-target="#the-training-set">The training set</a></li>
-  <li><a href="#the-testing-data" id="toc-the-testing-data" class="nav-link" data-scroll-target="#the-testing-data">The testing data</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a>
-  <ul class="collapse">
-<li><a href="#initial-questions" id="toc-initial-questions" class="nav-link" data-scroll-target="#initial-questions">Initial questions</a></li>
-  <li><a href="#while-you-wait-participate-1" id="toc-while-you-wait-participate-1" class="nav-link" data-scroll-target="#while-you-wait-participate-1">While you wait: Participate 📱💻</a></li>
-  <li><a href="#tip" id="toc-tip" class="nav-link" data-scroll-target="#tip"><code>tip</code></a></li>
-  <li><a href="#distance" id="toc-distance" class="nav-link" data-scroll-target="#distance"><code>distance</code></a></li>
-  <li><a href="#tip-and-distance" id="toc-tip-and-distance" class="nav-link" data-scroll-target="#tip-and-distance"><code>tip</code> and <code>distance</code></a></li>
-  <li><a href="#tip-and-hour" id="toc-tip-and-hour" class="nav-link" data-scroll-target="#tip-and-hour"><code>tip</code> and <code>hour</code></a></li>
-  <li><a href="#tip-and-local" id="toc-tip-and-local" class="nav-link" data-scroll-target="#tip-and-local"><code>tip</code> and <code>local</code></a></li>
-  <li><a href="#tip-and-dow" id="toc-tip-and-dow" class="nav-link" data-scroll-target="#tip-and-dow"><code>tip</code> and <code>dow</code></a></li>
-  </ul>
-</li>
-  <li>
-<a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology">Terminology</a>
-  <ul class="collapse">
-<li><a href="#false-negative-and-positive" id="toc-false-negative-and-positive" class="nav-link" data-scroll-target="#false-negative-and-positive">False negative and positive</a></li>
-  <li><a href="#sensitivity" id="toc-sensitivity" class="nav-link" data-scroll-target="#sensitivity">Sensitivity</a></li>
-  <li><a href="#specificity" id="toc-specificity" class="nav-link" data-scroll-target="#specificity">Specificity</a></li>
+  <li><a href="#from-last-class-participate" id="toc-from-last-class-participate" class="nav-link" data-scroll-target="#from-last-class-participate">From last class: Participate 📱💻</a></li>
   <li><a href="#roc-curve" id="toc-roc-curve" class="nav-link" data-scroll-target="#roc-curve">ROC curve</a></li>
-  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/21-spending-your-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="21-spending-your-data-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  <li>
+<a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next steps</a>
+  <ul class="collapse">
+<li><a href="#next-steps-1" id="toc-next-steps-1" class="nav-link" data-scroll-target="#next-steps-1">Next steps</a></li>
+  <li><a href="#ae-14-chicago-taxi-classification" id="toc-ae-14-chicago-taxi-classification" class="nav-link" data-scroll-target="#ae-14-chicago-taxi-classification">ae-14-chicago-taxi-classification</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#time-permitting-the-in-the-room-chat-gpt-and-friends" id="toc-time-permitting-the-in-the-room-chat-gpt-and-friends" class="nav-link" data-scroll-target="#time-permitting-the-in-the-room-chat-gpt-and-friends">[Time permitting] The 🐘 in the room: Chat GPT (and friends)</a>
+  <ul class="collapse">
+<li><a href="#take-a-pulse" id="toc-take-a-pulse" class="nav-link" data-scroll-target="#take-a-pulse">Take a pulse</a></li>
+  <li><a href="#example-1---similar-to-lab-4" id="toc-example-1---similar-to-lab-4" class="nav-link" data-scroll-target="#example-1---similar-to-lab-4">Example 1 - Similar to Lab 4</a></li>
+  <li><a href="#chat-gpt---take-1-prompt" id="toc-chat-gpt---take-1-prompt" class="nav-link" data-scroll-target="#chat-gpt---take-1-prompt">Chat GPT - Take 1 prompt</a></li>
+  <li><a href="#chat-gpt---take-1-response" id="toc-chat-gpt---take-1-response" class="nav-link" data-scroll-target="#chat-gpt---take-1-response">Chat GPT - Take 1 response</a></li>
+  <li><a href="#lets-follow-along-with-chat-gpt" id="toc-lets-follow-along-with-chat-gpt" class="nav-link" data-scroll-target="#lets-follow-along-with-chat-gpt">Let’s follow along with Chat GPT…</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  <li><a href="#chat-gpt---take-1-prompt-1" id="toc-chat-gpt---take-1-prompt-1" class="nav-link" data-scroll-target="#chat-gpt---take-1-prompt-1">Chat GPT - Take 1 prompt</a></li>
+  <li><a href="#chat-gpt---take-1-response-1" id="toc-chat-gpt---take-1-response-1" class="nav-link" data-scroll-target="#chat-gpt---take-1-response-1">Chat GPT - Take 1 response</a></li>
+  <li><a href="#chat-gpt---take-1-code" id="toc-chat-gpt---take-1-code" class="nav-link" data-scroll-target="#chat-gpt---take-1-code">Chat GPT - Take 1 code</a></li>
+  <li><a href="#lets-follow-along-with-chat-gpt-1" id="toc-lets-follow-along-with-chat-gpt-1" class="nav-link" data-scroll-target="#lets-follow-along-with-chat-gpt-1">Let’s follow along with Chat GPT…</a></li>
+  <li><a href="#guidelines-and-best-practices-for-using-chat-gpt" id="toc-guidelines-and-best-practices-for-using-chat-gpt" class="nav-link" data-scroll-target="#guidelines-and-best-practices-for-using-chat-gpt">Guidelines and best practices for using Chat GPT</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/22-model-evaluation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="21-evaluating-models-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Spending your data</h1>
-<p class="subtitle lead">Lecture 21</p>
+<h1 class="title">Evaluating models</h1>
+<p class="subtitle lead">Lecture 22</p>
 </div>
 
 
@@ -618,7 +595,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 11, 2025</p>
+      <p class="date">November 13, 2025</p>
     </div>
   </div>
   
@@ -632,7 +609,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>Which of the following files should you be updating in your project between now and Thursday’s deadline? Check all that apply.</p>
+<p>…</p>
 <div class="wooclap-choices">
 <ul>
 <li><code>contract.qmd</code></li>
@@ -656,220 +633,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
+</section><section id="announcements" class="level2"><h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li><p>Project write-ups due Thursday at 11:59pm</p></li>
-<li><p>Peer evaluations due Friday at 11:59pm</p></li>
-</ul></section><section id="from-last-week" class="level2"><h2 class="anchored" data-anchor-id="from-last-week">From last week</h2>
-<div class="appex">
-<p>Finish up <code>ae-13-spam-filter</code>.</p>
-</div>
-</section></section><section id="setup" class="level1"><h1>Setup</h1>
-<section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># data wrangling and visualization</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span> <span class="co"># modeling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
-<ul>
-<li><p>Taxi trips in Chicago, IL in 2022</p></li>
-<li><p>Data from <a href="https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew">Chicago Data Portal</a></p></li>
-</ul></section><section id="data-chicago_taxi" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-chicago_taxi">Data: <code>chicago_taxi</code>
-</h2>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/chicago-taxi.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,000 × 7
-   tip   distance company                      local dow   month  hour
-   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;
- 1 no        0.4  other                        yes   Fri   Mar      17
- 2 no        0.96 Taxicab Insurance Agency Llc no    Mon   Apr       8
- 3 no        1.07 Sun Taxi                     no    Fri   Feb      15
- 4 no        1.13 other                        no    Sat   Feb      14
- 5 no       10.8  Sun Taxi                     no    Sat   Apr      14
- 6 no        3.6  Chicago Independents         no    Wed   Mar      12
- 7 no        1.08 Flash Cab                    yes   Wed   Mar      13
- 8 no        0.85 Taxicab Insurance Agency Llc no    Tue   Mar       8
- 9 no       17.9  City Service                 no    Tue   Jan      20
-10 no        0    City Service                 yes   Sun   Apr      16
-# ℹ 1,990 more rows</code></pre>
-</div>
-</div>
-</section><section id="data-chicago_taxi-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-chicago_taxi-1">Data: <code>chicago_taxi</code>
-</h2>
-<div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">chicago_taxi</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 2,000
-Columns: 7
-$ tip      &lt;chr&gt; "no", "no", "no", "no", "no", "no", "no", "no", "no…
-$ distance &lt;dbl&gt; 0.40, 0.96, 1.07, 1.13, 10.81, 3.60, 1.08, 0.85, 17…
-$ company  &lt;chr&gt; "other", "Taxicab Insurance Agency Llc", "Sun Taxi"…
-$ local    &lt;chr&gt; "yes", "no", "no", "no", "no", "no", "yes", "no", "…
-$ dow      &lt;chr&gt; "Fri", "Mon", "Fri", "Sat", "Sat", "Wed", "Wed", "T…
-$ month    &lt;chr&gt; "Mar", "Apr", "Feb", "Feb", "Apr", "Mar", "Mar", "M…
-$ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</code></pre>
-</div>
-</div>
-</section><section id="data-prep" class="level2"><h2 class="anchored" data-anchor-id="data-prep">Data prep</h2>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi</span> <span class="op">&lt;-</span> <span class="va">chicago_taxi</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    tip <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">tip</span>, <span class="st">"no"</span>, <span class="st">"yes"</span><span class="op">)</span>,</span>
-<span>    local <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">local</span>, <span class="st">"no"</span>, <span class="st">"yes"</span><span class="op">)</span>,</span>
-<span>    dow <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">dow</span>, <span class="st">"Mon"</span>, <span class="st">"Tue"</span>, <span class="st">"Wed"</span>, <span class="st">"Thu"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span><span class="op">)</span>,</span>
-<span>    month <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">month</span>, <span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="outcome-and-predictors" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="outcome-and-predictors">Outcome and predictors</h2>
-<ul>
-<li>Outcome - <code>tip</code>: Whether rider left a tip – a factor w/ levels “yes” and “no”</li>
-<li>(Potential) predictors:
-<ul>
-<li>Numerical:
-<ul>
-<li>
-<code>distance</code>: The trip distance, in odometer miles.</li>
-<li>
-<code>hour</code>: The hour of the day in which the trip began.</li>
-</ul>
-</li>
-<li>Categorical:
-<ul>
-<li>
-<code>company</code>: The taxi company – companies that occurred few times were binned as “other”.</li>
-<li>
-<code>local</code>: Whether the trip started in the same community area as it began.</li>
-<li>
-<code>dow</code>: The day of the week in which the trip began.</li>
-<li>
-<code>month</code>: The month in which the trip began.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></section><section id="should-we-include-a-predictor" class="level2"><h2 class="anchored" data-anchor-id="should-we-include-a-predictor">Should we include a predictor?</h2>
-<p>To determine whether we should include a predictor in a model, we should start by asking:</p>
-<div class="incremental">
-<ul class="incremental">
-<li><p>Is it ethical to use this variable? (Or even legal?)</p></li>
-<li><p>Will this variable be available at prediction time?</p></li>
-<li><p>Does this variable contribute to explainability?</p></li>
-</ul>
-</div>
-</section></section><section id="data-splitting-and-spending" class="level1"><h1>Data splitting and spending</h1>
-<section id="weve-been-cheating" class="level2"><h2 class="anchored" data-anchor-id="weve-been-cheating">We’ve been cheating!</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>So far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered <em>cheating</em>.</p></li>
-<li><p>Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen.</p></li>
-</ul>
-</div>
-</section><section id="spending-your-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="spending-your-data">Spending your data</h2>
-<p>For predictive models (used primarily in machine learning), we typically split data into training and test sets:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/21/test-train-split-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/21/test-train-split-1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
-</figure>
-</div>
-<ul>
-<li><p>The <strong>training set</strong> is used to estimate model parameters.</p></li>
-<li><p>The <strong>test set</strong> is used to find an independent assessment of model performance.</p></li>
-</ul>
-<p>. . .</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do not use, or even peek at, the test set during training.</p>
-</div>
-</div>
-</section><section id="how-much-to-spend" class="level2"><h2 class="anchored" data-anchor-id="how-much-to-spend">How much to spend?</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>The more data we spend (use in training), the better estimates we’ll get.</p></li>
-<li><p>Spending too much data in training prevents us from computing a good assessment of predictive performance.</p></li>
-<li><p>Spending too much data in testing prevents us from computing a good estimate of model parameters.</p></li>
-</ul>
-</div>
-</section><section id="the-initial-split" class="level2"><h2 class="anchored" data-anchor-id="the-initial-split">The initial split</h2>
-<div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">20251111</span><span class="op">)</span></span>
-<span><span class="va">chicago_taxi_split</span> <span class="op">&lt;-</span> <span class="fu">initial_split</span><span class="op">(</span><span class="va">chicago_taxi</span><span class="op">)</span></span>
-<span><span class="va">chicago_taxi_split</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;Training/Testing/Total&gt;
-&lt;1500/500/2000&gt;</code></pre>
-</div>
-</div>
-</section><section id="setting-a-seed" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="setting-a-seed">Setting a seed</h2>
-<div class="task">
-<p>What does <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> do?</p>
-</div>
-<div class="incremental">
-<ul class="incremental">
-<li><p>To create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.</p></li>
-<li><p>This allows us to reproduce results by setting that seed.</p></li>
-<li><p>Which seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance.</p></li>
-</ul>
-</div>
-</section><section id="accessing-the-data" class="level2"><h2 class="anchored" data-anchor-id="accessing-the-data">Accessing the data</h2>
-<div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi_train</span> <span class="op">&lt;-</span> <span class="fu">training</span><span class="op">(</span><span class="va">chicago_taxi_split</span><span class="op">)</span></span>
-<span><span class="va">chicago_taxi_test</span> <span class="op">&lt;-</span> <span class="fu">testing</span><span class="op">(</span><span class="va">chicago_taxi_split</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="the-training-set" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="the-training-set">The training set</h2>
-<div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi_train</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,500 × 7
-   tip   distance company                      local dow   month  hour
-   &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;
- 1 no        7.9  Taxi Affiliation Services    no    Sat   Apr      17
- 2 no       10.7  Sun Taxi                     no    Fri   Mar       9
- 3 yes       3.4  Taxi Affiliation Services    no    Thu   Mar      20
- 4 no        4.7  Taxi Affiliation Services    no    Fri   Jan       9
- 5 no       18.6  Taxicab Insurance Agency Llc no    Fri   Feb      15
- 6 yes       0.89 other                        yes   Fri   Mar      17
- 7 no       17.6  City Service                 no    Wed   Feb      19
- 8 no        0.97 Taxicab Insurance Agency Llc yes   Thu   Mar      21
- 9 no        0.4  other                        yes   Fri   Mar      17
-10 yes       2.2  other                        no    Wed   Apr      10
-# ℹ 1,490 more rows</code></pre>
-</div>
-</div>
-</section><section id="the-testing-data" class="level2"><h2 class="anchored" data-anchor-id="the-testing-data">The testing data</h2>
-<p>. . .</p>
-<div class="huge">
-<p>🙈</p>
-</div>
-</section></section><section id="exploratory-data-analysis" class="level1"><h1>Exploratory data analysis</h1>
-<section id="initial-questions" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="initial-questions">Initial questions</h2>
-<ul>
-<li><p>What’s the distribution of the outcome, <code>tip</code>?</p></li>
-<li><p>What’s the distribution of numeric variables like <code>distance</code> or <code>hour</code>?</p></li>
-<li><p>How does the distribution of <code>tip</code> differ across the categorical and numerical variables?</p></li>
-</ul></section><section id="while-you-wait-participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate-1">While you wait: Participate 📱💻</h2>
+<li><p>Projects due tonight, peer evals diue tpmorrow night</p></li>
+<li><p>Practice Exam 2 is posted on the course website</p></li>
+<li><p>Reply to post on Ed about requests for topics / concepts for exam review <a href="https://edstem.org/us/courses/80616/discussion/7304129">[thread]</a></p></li>
+</ul></section><section id="from-last-class-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="from-last-class-participate">From last class: Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>Which dataset should we use for the exploration?</p>
+<p>Which of the following best describes the area annotated on the ROC curve?</p>
+<p><a href="images/22/roc-curve-annotated-question.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/22/roc-curve-annotated-question.png" class="img-fluid"></a></p>
 <div class="wooclap-choices">
 <ul>
-<li>The entire data <code>chicago_taxi</code>
-</li>
-<li>The training data <code>chicago_taxi_train</code>
-</li>
-<li>The testing data <code>chicago_taxi_test</code>
-</li>
+<li>Where all positives classified as positive, all negatives classified as negative</li>
+<li>Where true positive rate = false positive rate</li>
+<li>Where all positives classified as negative, all negatives classified as positive</li>
 </ul>
 </div>
 </div>
@@ -883,137 +662,219 @@ Warning
 </div>
 </div>
 </div>
-</section><section id="tip" class="level2"><h2 class="anchored" data-anchor-id="tip"><code>tip</code></h2>
-<p>What’s the distribution of the outcome, <code>tip</code>?</p>
-<div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chicago_taxi_train</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">tip</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  tip       n  prop
-  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
-1 no      586 0.391
-2 yes     914 0.609</code></pre>
+</section><section id="roc-curve" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="roc-curve">ROC curve</h2>
+<div class="task">
+<p>Which corner of the plot indicates the best model performance?</p>
 </div>
-</div>
-</section><section id="distance" class="level2"><h2 class="anchored" data-anchor-id="distance"><code>distance</code></h2>
-<p>What’s the distribution of <code>distance</code>?</p>
-<div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">chicago_taxi_train</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">distance</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="tip-and-distance" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tip-and-distance">
-<code>tip</code> and <code>distance</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> distance, <span class="at">fill =</span> tip, <span class="at">group =</span> tip)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="tip-and-hour" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tip-and-hour">
-<code>tip</code> and <code>hour</code>
-</h2>
-<div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">chicago_taxi_train</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hour</span>, fill <span class="op">=</span> <span class="va">tip</span>, group <span class="op">=</span> <span class="va">tip</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1</span>, show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"yes"</span> <span class="op">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="op">=</span> <span class="st">"darkgray"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">18</span>, by <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">tip</span>, ncol <span class="op">=</span> <span class="fl">1</span>, labeller <span class="op">=</span> <span class="va">label_both</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="tip-and-local" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tip-and-local">
-<code>tip</code> and <code>local</code>
-</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(chicago_taxi_train, <span class="fu">aes</span>(<span class="at">x =</span> local, <span class="at">fill =</span> tip)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="ot">=</span> <span class="st">"darkgray"</span>)) <span class="sc">+</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>) <span class="sc">+</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="tip-and-dow" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tip-and-dow">
-<code>tip</code> and <code>dow</code>
-</h2>
-<div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">chicago_taxi_train</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">dow</span>, fill <span class="op">=</span> <span class="va">tip</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span>, color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"yes"</span> <span class="op">=</span> <span class="st">"darkolivegreen4"</span>, <span class="st">"no"</span> <span class="op">=</span> <span class="st">"darkgray"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Proportion"</span>, x <span class="op">=</span> <span class="st">"Day of week"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="21-spending-your-data_files/figure-revealjs/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section></section><section id="terminology" class="level1"><h1>Terminology</h1>
-<section id="false-negative-and-positive" class="level2"><h2 class="anchored" data-anchor-id="false-negative-and-positive">False negative and positive</h2>
-<ul>
-<li><p><strong>False negative rate</strong> is the proportion of actual positives that were classified as negatives.</p></li>
-<li><p><strong>False positive rate</strong> is the proportion of actual negatives that were classified as positives.</p></li>
-</ul></section><section id="sensitivity" class="level2"><h2 class="anchored" data-anchor-id="sensitivity">Sensitivity</h2>
-<p><strong>Sensitivity</strong> is the proportion of actual positives that were correctly classified as positive.</p>
-<ul>
-<li><p>Also known as <strong>true positive rate</strong> and <strong>recall</strong></p></li>
-<li><p>Sensitivity = 1 − False negative rate</p></li>
-<li><p>Useful when false negatives are more “expensive” than false positives</p></li>
-</ul></section><section id="specificity" class="level2"><h2 class="anchored" data-anchor-id="specificity">Specificity</h2>
-<p><strong>Specificity</strong> is the proportion of actual negatives that were correctly classified as negative</p>
-<ul>
-<li><p>Also known as <strong>true negative rate</strong></p></li>
-<li><p>Specificity = 1 − False positive rate</p></li>
-</ul></section><section id="roc-curve" class="level2"><h2 class="anchored" data-anchor-id="roc-curve">ROC curve</h2>
-<p>The <strong>receiver operating characteristic (ROC) curve</strong> allows to assess the model performance across a range of thresholds.</p>
-<p><a href="images/21/roc-curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/21/roc-curve.png" class="img-fluid"></a></p>
-</section><section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="wooclap">
-<p>Which of the following best describes the area annotated on the ROC curve?</p>
-<p><a href="images/21/roc-curve-annotated-question.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/21/roc-curve-annotated-question.png" class="img-fluid"></a></p>
-<div class="wooclap-choices">
-<ul>
-<li>Where all positives classified as positive, all negatives classified as negative</li>
-<li>Where true positive rate = false positive rate</li>
-<li>Where all positives classified as negative, all negatives classified as positive</li>
+<p><a href="images/22/roc-curve-annotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/22/roc-curve-annotated.png" class="img-fluid"></a></p>
+</section></section><section id="next-steps" class="level1"><h1>Next steps</h1>
+<section id="next-steps-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="next-steps-1">Next steps</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Fit models on training data</p></li>
+<li><p>Make predictions on testing data</p></li>
+<li>
+<p>Evaluate predictions on testing data:</p>
+<ul class="incremental">
+<li>Linear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.</li>
+<li>Logistic models: False negative and positive rates, AUC (area under the curve), etc.</li>
+</ul>
+</li>
+<li><p>Make decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability</p></li>
 </ul>
 </div>
+<p>. . .</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
-</figure>
-</div>
-<div class="small">
-<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>We will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses.</p>
+</div>
+</div>
+</section><section id="ae-14-chicago-taxi-classification" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-14-chicago-taxi-classification">ae-14-chicago-taxi-classification</h2>
+<div class="appex">
+<ul>
+<li><p>Go to your ae project in RStudio.</p></li>
+<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-14-chicago-taxi-classification.qmd</em>.</p></li>
+<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
+</ul>
+</div>
+</section><section id="recap" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="recap">Recap</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Split data into training and testing sets (generally 75/25)</p></li>
+<li><p>Fit models on training data and reduce to a few candidate models</p></li>
+<li><p>Make predictions on testing data</p></li>
+<li>
+<p>Evaluate predictions on testing data using appropriate predictive performance metrics</p>
+<ul class="incremental">
+<li>Linear models: Adjusted R-squared, AIC, etc.</li>
+<li>Logistic models: False negative and positive rates, AUC (area under the curve), etc.</li>
+</ul>
+</li>
+<li><p>Don’t forget to also consider explainability and domain knowledge when selecting a final model</p></li>
+<li><p>In a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)</p></li>
+</ul>
+</div>
+</section></section><section id="time-permitting-the-in-the-room-chat-gpt-and-friends" class="level1"><h1>[Time permitting] The 🐘 in the room: Chat GPT (and friends)</h1>
+<section id="take-a-pulse" class="level2"><h2 class="anchored" data-anchor-id="take-a-pulse">Take a pulse</h2>
+<div class="question">
+<p>How are you using Chat GPT or similar AI tools for this class?</p>
+</div>
+</section><section id="example-1---similar-to-lab-4" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="example-1---similar-to-lab-4">Example 1 - Similar to Lab 4</h2>
+<div class="question">
+<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”</p>
+<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
+<p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
+</div>
+</section><section id="chat-gpt---take-1-prompt" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="chat-gpt---take-1-prompt">Chat GPT - Take 1 prompt</h2>
+<div class="question">
+<p>What is wrong with this prompt? How would you correct it?</p>
+</div>
+<blockquote class="blockquote">
+<p>SurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Of the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Calculate the proportions of 18-49 year olds and 50+ year-olds in this sample. Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in.</p>
+</blockquote>
+</section><section id="chat-gpt---take-1-response" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="chat-gpt---take-1-response">Chat GPT - Take 1 response</h2>
+<div class="question">
+<p>Identify at least one mistake or code smell/style issue with the code below.</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Given data</span></span>
+<span><span class="va">total_registered</span> <span class="op">&lt;-</span> <span class="fl">771</span></span>
+<span></span>
+<span><span class="co"># Responses by age group</span></span>
+<span><span class="va">responses</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
+<span>  <span class="op">~</span><span class="va">age_group</span> , <span class="op">~</span><span class="va">against</span> , <span class="op">~</span><span class="va">legalize</span> , <span class="op">~</span><span class="va">not_sure</span>                ,</span>
+<span>  <span class="st">"18-49"</span>    ,       <span class="fl">59</span> ,       <span class="fl">292</span> , <span class="fl">391</span> <span class="op">-</span> <span class="op">(</span><span class="fl">59</span> <span class="op">+</span> <span class="fl">292</span><span class="op">)</span>         ,</span>
+<span>  <span class="st">"50+"</span>      ,       <span class="fl">67</span> ,       <span class="fl">245</span> , <span class="op">(</span><span class="fl">771</span> <span class="op">-</span> <span class="fl">391</span><span class="op">)</span> <span class="op">-</span> <span class="op">(</span><span class="fl">67</span> <span class="op">+</span> <span class="fl">245</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate total per group</span></span>
+<span><span class="va">responses</span> <span class="op">&lt;-</span> <span class="va">responses</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>total <span class="op">=</span> <span class="va">against</span> <span class="op">+</span> <span class="va">legalize</span> <span class="op">+</span> <span class="va">not_sure</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Then calculate proportions of each age group in the total sample</span></span>
+<span><span class="va">age_props</span> <span class="op">&lt;-</span> <span class="va">responses</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    total_18_49 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">total</span><span class="op">[</span><span class="va">age_group</span> <span class="op">==</span> <span class="st">"18-49"</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>    total_50_plus <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">total</span><span class="op">[</span><span class="va">age_group</span> <span class="op">==</span> <span class="st">"50+"</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"age_group"</span>, values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    age_group <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span></span>
+<span>      <span class="va">age_group</span>,</span>
+<span>      <span class="st">"total_18_49"</span> <span class="op">=</span> <span class="st">"18-49"</span>,</span>
+<span>      <span class="st">"total_50_plus"</span> <span class="op">=</span> <span class="st">"50+"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    proportion <span class="op">=</span> <span class="va">count</span> <span class="op">/</span> <span class="va">total_registered</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Show both tables</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  responses_by_age <span class="op">=</span> <span class="va">responses</span>,</span>
+<span>  proportions_by_age <span class="op">=</span> <span class="va">age_props</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$responses_by_age
+# A tibble: 2 × 5
+  age_group against legalize not_sure total
+  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+1 18-49          59      292       40   391
+2 50+            67      245       68   380
+
+$proportions_by_age
+# A tibble: 2 × 3
+  age_group count proportion
+  &lt;chr&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1 18-49       391      0.507
+2 50+         380      0.493</code></pre>
+</div>
+</div>
+</section><section id="lets-follow-along-with-chat-gpt" class="level2"><h2 class="anchored" data-anchor-id="lets-follow-along-with-chat-gpt">Let’s follow along with Chat GPT…</h2>
+<p><a href="https://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c" class="uri">https://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c</a></p>
+</section><section id="example-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="example-2">Example 2</h2>
+<div class="question">
+<p>Each CSI franchise includes a number of series, each with the character string <code>"CSI"</code> (in capital letters) in their title. Using this information, create a new data frame called <code>csi</code> that only has titles from the CSI-verse and all of the columns from <code>tv</code> for these titles. Then, display the first 10 rows of <code>csi</code>. <strong>Note:</strong> The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.</p>
+</div>
+</section><section id="chat-gpt---take-1-prompt-1" class="level2"><h2 class="anchored" data-anchor-id="chat-gpt---take-1-prompt-1">Chat GPT - Take 1 prompt</h2>
+<blockquote class="blockquote">
+<p>Each CSI franchise includes a number of series, each with the character string <code>"CSI"</code> (in capital letters) in their title. Using this information, create a new data frame called <code>csi</code> that only has titles from the CSI-verse and all of the columns from <code>tv</code> for these titles. Then, display the first 10 rows of <code>csi</code>. <strong>Note:</strong> The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired.</p>
+</blockquote>
+</section><section id="chat-gpt---take-1-response-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="chat-gpt---take-1-response-1">Chat GPT - Take 1 response</h2>
+<blockquote class="blockquote">
+<p>Here’s a short, safe solution. It keeps all columns from tv, selects only rows whose title contains the exact uppercase string “CSI”, stores that in csi, then prints the first 10 rows.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Base R solution (case-sensitive match for "CSI")</span></span>
+<span><span class="va">csi</span> <span class="op">&lt;-</span> <span class="va">tv</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"CSI"</span>, <span class="va">tv</span><span class="op">$</span><span class="va">title</span>, fixed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Show the first 10 rows</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">csi</span>, <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you prefer dplyr:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">csi</span> <span class="op">&lt;-</span> <span class="va">tv</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"CSI"</span>, <span class="va">title</span>, fixed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">csi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notes: The code above searches for the exact uppercase substring <code>"CSI"</code> (per your instructions). If you want a case-insensitive match (e.g., to also catch <code>"csi"</code>), use <code>grepl("CSI", tv$title, ignore.case = TRUE)</code> or <code>fixed = FALSE</code> with <code>ignore.case = TRUE</code>.</p>
+</blockquote>
+</section><section id="chat-gpt---take-1-code" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="chat-gpt---take-1-code">Chat GPT - Take 1 code</h2>
+<div class="question">
+<p>What is wrong with the following code?</p>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tv</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/tv.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">csi</span> <span class="op">&lt;-</span> <span class="va">tv</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"CSI"</span>, <span class="va">title</span>, fixed <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">csi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 9
+   season title     year month   day av_rating genre_1 genre_2 genre_3
+    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+ 1      1 CSI: Cr…  2001     1    20      8.32 Crime   Drama   Mystery
+ 2      2 CSI: Cr…  2002     1    10      8.26 Crime   Drama   Mystery
+ 3      3 CSI: Cr…  2003     1    15      8.30 Crime   Drama   Mystery
+ 4      4 CSI: Cr…  2004     1    18      8.33 Crime   Drama   Mystery
+ 5      5 CSI: Cr…  2005     1    24      8.38 Crime   Drama   Mystery
+ 6      6 CSI: Cr…  2006     1    16      8.21 Crime   Drama   Mystery
+ 7      7 CSI: Cr…  2007     1    14      8.43 Crime   Drama   Mystery
+ 8      8 CSI: Cr…  2008     1     7      8.07 Crime   Drama   Mystery
+ 9      9 CSI: Cr…  2009     1    27      7.80 Crime   Drama   Mystery
+10     10 CSI: Cr…  2010     1    23      7.69 Crime   Drama   Mystery</code></pre>
+</div>
+</div>
+</section><section id="lets-follow-along-with-chat-gpt-1" class="level2"><h2 class="anchored" data-anchor-id="lets-follow-along-with-chat-gpt-1">Let’s follow along with Chat GPT…</h2>
+<p><a href="https://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244" class="uri">https://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244</a></p>
+</section><section id="guidelines-and-best-practices-for-using-chat-gpt" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="guidelines-and-best-practices-for-using-chat-gpt">Guidelines and best practices for using Chat GPT</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Do <u><strong>not</strong></u> just copy-paste the prompt – for appropriate academic conduct, for your own learning, and for getting to better results faster</li>
+<li>Engineer the prompt until the response starts to look like code you’re learning in the course</li>
+<li>If the response is not correct, ask for a correction</li>
+<li>If the response doesn’t follow the guidelines, ask for a correction</li>
+<li>When you ask for a correction, be ready for it to “correct” (i.e., change) more than you asked for</li>
+<li>Do not just copy-paste code from Chat GPT responses, run it line-by-line and edit as needed – Chat GPT does not execute R code so there’s no guarantee any of the code it gives you works</li>
+<li>Watch out for clear mistakes in the response: do not keep loading packages that are already loaded, use the base pipe <code>|&gt;</code>, use the tidyverse style, do not use unnecessary <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> statements, be critical of code smell, etc.</li>
+</ul>
 </div>
 
 
@@ -1471,7 +1332,7 @@ Warning
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/21-spending-your-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/22-model-evaluation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
