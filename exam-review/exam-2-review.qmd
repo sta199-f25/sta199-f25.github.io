@@ -359,7 +359,7 @@ score_runtime_fit <- linear_reg() |>
 ```
 
 
-@fig-score-runtime visualizes the relationship between `score` and `runtime` as well as the linear model for predicting `score` from `runtime`. The top three movies in @tbl-data are labeled in the visualization as well. Answer all questions in this part based on @fig-score-runtime.
+@fig-score-runtime visualizes the relationship between `score` and `runtime` as well as the linear model for predicting `score` from `runtime`. The first three movies in @tbl-data are labeled in the visualization as well. Answer all questions in this part based on @fig-score-runtime.
 
 ```{r}
 #| label: fig-score-runtime-prep
@@ -445,11 +445,11 @@ e.  `na.rm(runtime)`
 
 Based on this model, order the three labeled movies in @fig-score-runtime in decreasing order of the magnitude (absolute value) of their residuals.
 
-a.  Winter Sleep\> Rang De Basanti \> Blue City
+a.  Winter Sleep \> Rang De Basanti \> Blue City
 
-b.  Winter Sleep\> Blue City \> Rang De Basanti
+b.  Winter Sleep \> Blue City \> Rang De Basanti
 
-c.  Rang De Basanti \> Winter Sleep\> Blue City
+c.  Rang De Basanti \> Winter Sleep \> Blue City
 
 d.  Blue City \> Winter Sleep \> Rang De Basanti
 
