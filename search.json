@@ -1526,7 +1526,7 @@
     "href": "slides/21-evaluating-models-slides.html#announcements",
     "title": "Evaluating models",
     "section": "Announcements",
-    "text": "Announcements\n\nProjects due tonight, peer evals diue tpmorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]"
+    "text": "Announcements\n\nProjects due tonight, peer evals due tomorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]"
   },
   {
     "objectID": "slides/21-evaluating-models-slides.html#from-last-class-participate",
@@ -1543,13 +1543,6 @@
     "text": "ROC curve\n\nWhich corner of the plot indicates the best model performance?"
   },
   {
-    "objectID": "slides/21-evaluating-models-slides.html#next-steps-1",
-    "href": "slides/21-evaluating-models-slides.html#next-steps-1",
-    "title": "Evaluating models",
-    "section": "Next steps",
-    "text": "Next steps\n\nFit models on training data\nMake predictions on testing data\n\nEvaluate predictions on testing data:\n\nLinear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nMake decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability\n\n\n\n\n\n\n\n\nNote\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
-  },
-  {
     "objectID": "slides/21-evaluating-models-slides.html#ae-14-chicago-taxi-classification",
     "href": "slides/21-evaluating-models-slides.html#ae-14-chicago-taxi-classification",
     "title": "Evaluating models",
@@ -1561,91 +1554,14 @@
     "href": "slides/21-evaluating-models-slides.html#recap",
     "title": "Evaluating models",
     "section": "Recap",
-    "text": "Recap\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)"
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#take-a-pulse",
-    "href": "slides/21-evaluating-models-slides.html#take-a-pulse",
-    "title": "Evaluating models",
-    "section": "Take a pulse",
-    "text": "Take a pulse\n\nHow are you using Chat GPT or similar AI tools for this class?"
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#example-1---similar-to-lab-4",
-    "href": "slides/21-evaluating-models-slides.html#example-1---similar-to-lab-4",
-    "title": "Evaluating models",
-    "section": "Example 1 - Similar to Lab 4",
-    "text": "Example 1 - Similar to Lab 4\n\nSurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”\nOf the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.\nCalculate the proportions of 18-49 year olds and 50+ year-olds in this sample. make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in."
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-prompt",
-    "href": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-prompt",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 prompt",
-    "text": "Chat GPT - Take 1 prompt\n\nWhat is wrong with this prompt? How would you correct it?\n\n\nSurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”\n\n\nOf the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.\n\n\nCalculate the proportions of 18-49 year olds and 50+ year-olds in this sample. Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in."
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-response",
-    "href": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-response",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 response",
-    "text": "Chat GPT - Take 1 response\n\nIdentify at least one mistake or code smell/style issue with the code below.\n\n\nlibrary(tidyverse)\n\n# Given data\ntotal_registered &lt;- 771\n\n# Responses by age group\nresponses &lt;- tribble(\n  ~age_group , ~against , ~legalize , ~not_sure                ,\n  \"18-49\"    ,       59 ,       292 , 391 - (59 + 292)         ,\n  \"50+\"      ,       67 ,       245 , (771 - 391) - (67 + 245)\n)\n\n# Calculate total per group\nresponses &lt;- responses %&gt;%\n  mutate(total = against + legalize + not_sure)\n\n# Then calculate proportions of each age group in the total sample\nage_props &lt;- responses %&gt;%\n  summarise(\n    total_18_49 = sum(total[age_group == \"18-49\"]),\n    total_50_plus = sum(total[age_group == \"50+\"])\n  ) %&gt;%\n  pivot_longer(everything(), names_to = \"age_group\", values_to = \"count\") %&gt;%\n  mutate(\n    age_group = recode(\n      age_group,\n      \"total_18_49\" = \"18-49\",\n      \"total_50_plus\" = \"50+\"\n    ),\n    proportion = count / total_registered\n  )\n\n# Show both tables\nlist(\n  responses_by_age = responses,\n  proportions_by_age = age_props\n)\n\n$responses_by_age\n# A tibble: 2 × 5\n  age_group against legalize not_sure total\n  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;\n1 18-49          59      292       40   391\n2 50+            67      245       68   380\n\n$proportions_by_age\n# A tibble: 2 × 3\n  age_group count proportion\n  &lt;chr&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 18-49       391      0.507\n2 50+         380      0.493"
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#lets-follow-along-with-chat-gpt",
-    "href": "slides/21-evaluating-models-slides.html#lets-follow-along-with-chat-gpt",
-    "title": "Evaluating models",
-    "section": "Let’s follow along with Chat GPT…",
-    "text": "Let’s follow along with Chat GPT…\nhttps://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c"
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#example-2",
-    "href": "slides/21-evaluating-models-slides.html#example-2",
-    "title": "Evaluating models",
-    "section": "Example 2",
-    "text": "Example 2\n\nEach CSI franchise includes a number of series, each with the character string \"CSI\" (in capital letters) in their title. Using this information, create a new data frame called csi that only has titles from the CSI-verse and all of the columns from tv for these titles. Then, display the first 10 rows of csi. Note: The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired."
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-prompt-1",
-    "href": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-prompt-1",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 prompt",
-    "text": "Chat GPT - Take 1 prompt\n\nEach CSI franchise includes a number of series, each with the character string \"CSI\" (in capital letters) in their title. Using this information, create a new data frame called csi that only has titles from the CSI-verse and all of the columns from tv for these titles. Then, display the first 10 rows of csi. Note: The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired."
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-response-1",
-    "href": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-response-1",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 response",
-    "text": "Chat GPT - Take 1 response\n\nHere’s a short, safe solution. It keeps all columns from tv, selects only rows whose title contains the exact uppercase string “CSI”, stores that in csi, then prints the first 10 rows.\n# Base R solution (case-sensitive match for \"CSI\")\ncsi &lt;- tv[grepl(\"CSI\", tv$title, fixed = TRUE), ]\n\n# Show the first 10 rows\nhead(csi, 10)\nIf you prefer dplyr:\nlibrary(dplyr)\n\ncsi &lt;- tv %&gt;%\n filter(grepl(\"CSI\", title, fixed = TRUE))\n\ncsi %&gt;% slice_head(n = 10)\nNotes: The code above searches for the exact uppercase substring \"CSI\" (per your instructions). If you want a case-insensitive match (e.g., to also catch \"csi\"), use grepl(\"CSI\", tv$title, ignore.case = TRUE) or fixed = FALSE with ignore.case = TRUE."
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-code",
-    "href": "slides/21-evaluating-models-slides.html#chat-gpt---take-1-code",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 code",
-    "text": "Chat GPT - Take 1 code\n\nWhat is wrong with the following code?\n\n\ntv &lt;- read_csv(\"data/tv.csv\")\n\n\nlibrary(dplyr)\n\ncsi &lt;- tv %&gt;%\n  filter(grepl(\"CSI\", title, fixed = TRUE))\n\ncsi %&gt;% slice_head(n = 10)\n\n# A tibble: 10 × 9\n   season title     year month   day av_rating genre_1 genre_2 genre_3\n    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  \n 1      1 CSI: Cr…  2001     1    20      8.32 Crime   Drama   Mystery\n 2      2 CSI: Cr…  2002     1    10      8.26 Crime   Drama   Mystery\n 3      3 CSI: Cr…  2003     1    15      8.30 Crime   Drama   Mystery\n 4      4 CSI: Cr…  2004     1    18      8.33 Crime   Drama   Mystery\n 5      5 CSI: Cr…  2005     1    24      8.38 Crime   Drama   Mystery\n 6      6 CSI: Cr…  2006     1    16      8.21 Crime   Drama   Mystery\n 7      7 CSI: Cr…  2007     1    14      8.43 Crime   Drama   Mystery\n 8      8 CSI: Cr…  2008     1     7      8.07 Crime   Drama   Mystery\n 9      9 CSI: Cr…  2009     1    27      7.80 Crime   Drama   Mystery\n10     10 CSI: Cr…  2010     1    23      7.69 Crime   Drama   Mystery"
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#lets-follow-along-with-chat-gpt-1",
-    "href": "slides/21-evaluating-models-slides.html#lets-follow-along-with-chat-gpt-1",
-    "title": "Evaluating models",
-    "section": "Let’s follow along with Chat GPT…",
-    "text": "Let’s follow along with Chat GPT…\nhttps://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244"
-  },
-  {
-    "objectID": "slides/21-evaluating-models-slides.html#guidelines-and-best-practices-for-using-chat-gpt",
-    "href": "slides/21-evaluating-models-slides.html#guidelines-and-best-practices-for-using-chat-gpt",
-    "title": "Evaluating models",
-    "section": "Guidelines and best practices for using Chat GPT",
-    "text": "Guidelines and best practices for using Chat GPT\n\nDo not just copy-paste the prompt – for appropriate academic conduct, for your own learning, and for getting to better results faster\nEngineer the prompt until the response starts to look like code you’re learning in the course\nIf the response is not correct, ask for a correction\nIf the response doesn’t follow the guidelines, ask for a correction\nWhen you ask for a correction, be ready for it to “correct” (i.e., change) more than you asked for\nDo not just copy-paste code from Chat GPT responses, run it line-by-line and edit as needed – Chat GPT does not execute R code so there’s no guarantee any of the code it gives you works\nWatch out for clear mistakes in the response: do not keep loading packages that are already loaded, use the base pipe |&gt;, use the tidyverse style, do not use unnecessary print() statements, be critical of code smell, etc."
+    "text": "Recap\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)\n\n\n\n\n\n\n\n\nNote\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
   },
   {
     "objectID": "slides/22-model-evaluation.html",
     "href": "slides/22-model-evaluation.html",
     "title": "Evaluating models",
     "section": "",
-    "text": "What is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nProjects due tonight, peer evals diue tpmorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]\n\n\n\n\nWhich of the following best describes the area annotated on the ROC curve?\n\n\n\nWhere all positives classified as positive, all negatives classified as negative\nWhere true positive rate = false positive rate\nWhere all positives classified as negative, all negatives classified as positive\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nWhich corner of the plot indicates the best model performance?"
+    "text": "What is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nProjects due tonight, peer evals due tomorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]\n\n\n\n\nWhich of the following best describes the area annotated on the ROC curve?\n\n\n\nWhere all positives classified as positive, all negatives classified as negative\nWhere true positive rate = false positive rate\nWhere all positives classified as negative, all negatives classified as positive\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nWhich corner of the plot indicates the best model performance?"
   },
   {
     "objectID": "slides/22-model-evaluation.html#while-you-wait-participate",
@@ -1659,7 +1575,7 @@
     "href": "slides/22-model-evaluation.html#announcements",
     "title": "Evaluating models",
     "section": "",
-    "text": "Projects due tonight, peer evals diue tpmorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]"
+    "text": "Projects due tonight, peer evals due tomorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]"
   },
   {
     "objectID": "slides/22-model-evaluation.html#from-last-class-participate",
@@ -1676,13 +1592,6 @@
     "text": "Which corner of the plot indicates the best model performance?"
   },
   {
-    "objectID": "slides/22-model-evaluation.html#next-steps-1",
-    "href": "slides/22-model-evaluation.html#next-steps-1",
-    "title": "Evaluating models",
-    "section": "Next steps",
-    "text": "Next steps\n\n\nFit models on training data\nMake predictions on testing data\n\nEvaluate predictions on testing data:\n\nLinear models: R-squared, adjusted R-squared, RMSE (root mean squared error), etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nMake decisions based on model predictive performance, validity across various testing/training splits (aka “cross validation”), explainability\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
-  },
-  {
     "objectID": "slides/22-model-evaluation.html#ae-14-chicago-taxi-classification",
     "href": "slides/22-model-evaluation.html#ae-14-chicago-taxi-classification",
     "title": "Evaluating models",
@@ -1694,84 +1603,7 @@
     "href": "slides/22-model-evaluation.html#recap",
     "title": "Evaluating models",
     "section": "Recap",
-    "text": "Recap\n\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)"
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#take-a-pulse",
-    "href": "slides/22-model-evaluation.html#take-a-pulse",
-    "title": "Evaluating models",
-    "section": "Take a pulse",
-    "text": "Take a pulse\n\nHow are you using Chat GPT or similar AI tools for this class?"
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#example-1---similar-to-lab-4",
-    "href": "slides/22-model-evaluation.html#example-1---similar-to-lab-4",
-    "title": "Evaluating models",
-    "section": "Example 1 - Similar to Lab 4",
-    "text": "Example 1 - Similar to Lab 4\n\nSurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”\nOf the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.\nCalculate the proportions of 18-49 year olds and 50+ year-olds in this sample. make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in."
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#chat-gpt---take-1-prompt",
-    "href": "slides/22-model-evaluation.html#chat-gpt---take-1-prompt",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 prompt",
-    "text": "Chat GPT - Take 1 prompt\n\nWhat is wrong with this prompt? How would you correct it?\n\n\nSurveyUSA polled 900 NC adults between September 4-7, 2024. Of the 900 NC adults, 771 were identified by SurveyUSA as being registered to vote. The following question was asked to these 771 adults: “Should the use of marijuana for medical use remain against the law in North Carolina? Or be legalized?”\n\n\nOf the 771 responses, 391 were between the ages of 18-49. Of the individuals that are between 18-49, 59 individuals responded that they think medical marijuana should remain against the law, 292 said it should be made legal, and the remainder were not sure. Of the individuals that are 50+, 67 individuals responded that they think medical marijuana should remain against the law, 245 said it should be made legal, and the remainder were not sure.\n\n\nCalculate the proportions of 18-49 year olds and 50+ year-olds in this sample. Make sure the result is an ungrouped data frame with a column for relevant counts, a column for relevant proportions, and a column for the groups you’re interested in."
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#chat-gpt---take-1-response",
-    "href": "slides/22-model-evaluation.html#chat-gpt---take-1-response",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 response",
-    "text": "Chat GPT - Take 1 response\n\nIdentify at least one mistake or code smell/style issue with the code below.\n\n\nlibrary(tidyverse)\n\n# Given data\ntotal_registered &lt;- 771\n\n# Responses by age group\nresponses &lt;- tribble(\n  ~age_group , ~against , ~legalize , ~not_sure                ,\n  \"18-49\"    ,       59 ,       292 , 391 - (59 + 292)         ,\n  \"50+\"      ,       67 ,       245 , (771 - 391) - (67 + 245)\n)\n\n# Calculate total per group\nresponses &lt;- responses %&gt;%\n  mutate(total = against + legalize + not_sure)\n\n# Then calculate proportions of each age group in the total sample\nage_props &lt;- responses %&gt;%\n  summarise(\n    total_18_49 = sum(total[age_group == \"18-49\"]),\n    total_50_plus = sum(total[age_group == \"50+\"])\n  ) %&gt;%\n  pivot_longer(everything(), names_to = \"age_group\", values_to = \"count\") %&gt;%\n  mutate(\n    age_group = recode(\n      age_group,\n      \"total_18_49\" = \"18-49\",\n      \"total_50_plus\" = \"50+\"\n    ),\n    proportion = count / total_registered\n  )\n\n# Show both tables\nlist(\n  responses_by_age = responses,\n  proportions_by_age = age_props\n)\n\n$responses_by_age\n# A tibble: 2 × 5\n  age_group against legalize not_sure total\n  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;\n1 18-49          59      292       40   391\n2 50+            67      245       68   380\n\n$proportions_by_age\n# A tibble: 2 × 3\n  age_group count proportion\n  &lt;chr&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 18-49       391      0.507\n2 50+         380      0.493"
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#lets-follow-along-with-chat-gpt",
-    "href": "slides/22-model-evaluation.html#lets-follow-along-with-chat-gpt",
-    "title": "Evaluating models",
-    "section": "Let’s follow along with Chat GPT…",
-    "text": "Let’s follow along with Chat GPT…\nhttps://chatgpt.com/share/e/690a259e-d0ac-8005-a3d8-0c1f80d22e7c"
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#example-2",
-    "href": "slides/22-model-evaluation.html#example-2",
-    "title": "Evaluating models",
-    "section": "Example 2",
-    "text": "Example 2\n\nEach CSI franchise includes a number of series, each with the character string \"CSI\" (in capital letters) in their title. Using this information, create a new data frame called csi that only has titles from the CSI-verse and all of the columns from tv for these titles. Then, display the first 10 rows of csi. Note: The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired."
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#chat-gpt---take-1-prompt-1",
-    "href": "slides/22-model-evaluation.html#chat-gpt---take-1-prompt-1",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 prompt",
-    "text": "Chat GPT - Take 1 prompt\n\nEach CSI franchise includes a number of series, each with the character string \"CSI\" (in capital letters) in their title. Using this information, create a new data frame called csi that only has titles from the CSI-verse and all of the columns from tv for these titles. Then, display the first 10 rows of csi. Note: The titles and seasons included in the dataset may not be all CSI titles and titles that have ever aired."
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#chat-gpt---take-1-response-1",
-    "href": "slides/22-model-evaluation.html#chat-gpt---take-1-response-1",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 response",
-    "text": "Chat GPT - Take 1 response\n\nHere’s a short, safe solution. It keeps all columns from tv, selects only rows whose title contains the exact uppercase string “CSI”, stores that in csi, then prints the first 10 rows.\n# Base R solution (case-sensitive match for \"CSI\")\ncsi &lt;- tv[grepl(\"CSI\", tv$title, fixed = TRUE), ]\n\n# Show the first 10 rows\nhead(csi, 10)\nIf you prefer dplyr:\nlibrary(dplyr)\n\ncsi &lt;- tv %&gt;%\n filter(grepl(\"CSI\", title, fixed = TRUE))\n\ncsi %&gt;% slice_head(n = 10)\nNotes: The code above searches for the exact uppercase substring \"CSI\" (per your instructions). If you want a case-insensitive match (e.g., to also catch \"csi\"), use grepl(\"CSI\", tv$title, ignore.case = TRUE) or fixed = FALSE with ignore.case = TRUE."
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#chat-gpt---take-1-code",
-    "href": "slides/22-model-evaluation.html#chat-gpt---take-1-code",
-    "title": "Evaluating models",
-    "section": "Chat GPT - Take 1 code",
-    "text": "Chat GPT - Take 1 code\n\nWhat is wrong with the following code?\n\n\ntv &lt;- read_csv(\"data/tv.csv\")\n\n\nlibrary(dplyr)\n\ncsi &lt;- tv %&gt;%\n  filter(grepl(\"CSI\", title, fixed = TRUE))\n\ncsi %&gt;% slice_head(n = 10)\n\n# A tibble: 10 × 9\n   season title     year month   day av_rating genre_1 genre_2 genre_3\n    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  \n 1      1 CSI: Cr…  2001     1    20      8.32 Crime   Drama   Mystery\n 2      2 CSI: Cr…  2002     1    10      8.26 Crime   Drama   Mystery\n 3      3 CSI: Cr…  2003     1    15      8.30 Crime   Drama   Mystery\n 4      4 CSI: Cr…  2004     1    18      8.33 Crime   Drama   Mystery\n 5      5 CSI: Cr…  2005     1    24      8.38 Crime   Drama   Mystery\n 6      6 CSI: Cr…  2006     1    16      8.21 Crime   Drama   Mystery\n 7      7 CSI: Cr…  2007     1    14      8.43 Crime   Drama   Mystery\n 8      8 CSI: Cr…  2008     1     7      8.07 Crime   Drama   Mystery\n 9      9 CSI: Cr…  2009     1    27      7.80 Crime   Drama   Mystery\n10     10 CSI: Cr…  2010     1    23      7.69 Crime   Drama   Mystery"
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#lets-follow-along-with-chat-gpt-1",
-    "href": "slides/22-model-evaluation.html#lets-follow-along-with-chat-gpt-1",
-    "title": "Evaluating models",
-    "section": "Let’s follow along with Chat GPT…",
-    "text": "Let’s follow along with Chat GPT…\nhttps://chatgpt.com/share/e/690a2790-6a9c-8005-b6db-ca8e37607244"
-  },
-  {
-    "objectID": "slides/22-model-evaluation.html#guidelines-and-best-practices-for-using-chat-gpt",
-    "href": "slides/22-model-evaluation.html#guidelines-and-best-practices-for-using-chat-gpt",
-    "title": "Evaluating models",
-    "section": "Guidelines and best practices for using Chat GPT",
-    "text": "Guidelines and best practices for using Chat GPT\n\n\nDo not just copy-paste the prompt – for appropriate academic conduct, for your own learning, and for getting to better results faster\nEngineer the prompt until the response starts to look like code you’re learning in the course\nIf the response is not correct, ask for a correction\nIf the response doesn’t follow the guidelines, ask for a correction\nWhen you ask for a correction, be ready for it to “correct” (i.e., change) more than you asked for\nDo not just copy-paste code from Chat GPT responses, run it line-by-line and edit as needed – Chat GPT does not execute R code so there’s no guarantee any of the code it gives you works\nWatch out for clear mistakes in the response: do not keep loading packages that are already loaded, use the base pipe |&gt;, use the tidyverse style, do not use unnecessary print() statements, be critical of code smell, etc."
+    "text": "Recap\n\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
   },
   {
     "objectID": "slides/19-developing-communicating-data-science-slides.html#announcements",
