@@ -477,7 +477,7 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <span id="cb15-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="tip-and-distance" class="slide level2 smaller"><h2>
+<img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-8-1.png" width="672" class="r-stretch"></section><section id="tip-and-distance" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>distance</code>
 </h2>
 <div class="cell">
@@ -487,7 +487,7 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <span id="cb16-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section id="tip-and-hour" class="slide level2 smaller"><h2>
+<img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-9-1.png" width="672" class="r-stretch"></section><section id="tip-and-hour" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>hour</code>
 </h2>
 <div class="cell">
@@ -498,7 +498,7 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <span id="cb17-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tip, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">labeller =</span> label_both, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="tip-and-local" class="slide level2 smaller"><h2>
+<img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-10-1.png" width="672" class="r-stretch"></section><section id="tip-and-local" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>local</code>
 </h2>
 <div class="cell">
@@ -509,7 +509,7 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <span id="cb18-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section><section id="tip-and-dow" class="slide level2 smaller"><h2>
+<img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"></section><section id="tip-and-dow" class="slide level2 smaller"><h2>
 <code>tip</code> and <code>dow</code>
 </h2>
 <div class="cell">
@@ -520,7 +520,7 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
 <span id="cb19-5"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="21-spending-your-data_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section></section><section><section id="terminology" class="title-slide slide level1 center"><h1>Terminology</h1>
+<img data-src="21-spending-your-data_files/figure-html/unnamed-chunk-12-1.png" width="672" class="r-stretch"></section></section><section><section id="terminology" class="title-slide slide level1 center"><h1>Terminology</h1>
 
 </section><section id="false-negative-and-positive" class="slide level2"><h2>False negative and positive</h2>
 <ul>
@@ -765,41 +765,6 @@ $ hour     &lt;dbl&gt; 17, 8, 15, 14, 14, 12, 13, 8, 20, 16, 20, 8, 15, 15…</c
           RevealZoom
         ]
       });
-    </script><script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
     </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
