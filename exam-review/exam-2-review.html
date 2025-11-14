@@ -708,7 +708,11 @@ Note
 5 performance_ratingTop         2.99       0.715           4.18 3.92e- 5</code></pre>
 </div>
 </div>
-<p>When your teammate sees this model output, they remark “The coefficient for <code>performance_ratingSuccessful</code> is negative. That’s weird. I guess it means that people who get successful performance ratings get lower raises.” How would you respond to your teammate?</p>
+<p>When your teammate sees this model output, they remark</p>
+<blockquote class="blockquote">
+<p>“The coefficient for <code>performance_ratingSuccessful</code> is negative. That’s weird. I guess it means that people who get successful performance ratings get lower raises.”</p>
+</blockquote>
+<p>How would you respond to your teammate?</p>
 </section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>Ultimately, your teammate decides they don’t like the negative slope coefficients in the model output you created (not that there’s anything wrong with negative slope coefficients!), does something else, and comes up with the following model output.</p>
 <div class="cell">
@@ -949,45 +953,15 @@ Table&nbsp;2
 28 Congo            5.2 109     Action    PG-13     United States   1995-06-09  
 29 Stop-Loss        6.4 112     Drama     R         United States   2008-03-28  
 30 Con Air          6.9 115     Action    R         United States   1997-06-06  
-      budget     gross  votes  year director         writer        star         
-                                      
- 1  10000000   6947787   1100  1986 Michelle Manning Ross Macdona… Judd Nelson  
- 2        NA   4018705  48000  2014 Nuri Bilge Ceyl… Ebru Ceylan   Haluk Bilgin…
- 3        NA  10800778 115000  2006 Rakeysh Ompraka… Renzil D'Sil… Aamir Khan   
- 4 150000000 433921300 146000  2019 Rob Letterman    Dan Hernandez Ryan Reynolds
- 5  28000000 130560428  46000  2017 Jon Lucas        Jon Lucas     Mila Kunis   
- 6  30000000   9330075  34000  2018 Jeffrey Nachman… Chad St. John Keanu Reeves 
- 7        NA    343890    262  1984 Armyan Bernstein Armyan Berns… John Shea    
- 8 150000000 490719763 235000  2017 Matt Reeves      Mark Bomback  Andy Serkis  
- 9   6000000  11837928   7400  1995 Rusty Cundieff   Rusty Cundie… Clarence Wil…
-10        NA   4636169   1500  1986 Duncan Gibbins   Bill Phillips Craig Sheffer
-11  50000000  49718611  36000  2004 Garry Marshall   Patrick J. C… Kate Hudson  
-12        NA   3124440  11000  1996 Steven Baigelman Steven Baige… Keanu Reeves 
-13        NA  19930973   9300  1992 Arthur Hiller    John Fusco    John Goodman 
-14        NA     83488   3900  1997 Tom DiCillo      Tom DiCillo   Matthew Modi…
-15        NA        NA   6400  1995 Theodoros Angel… Theodoros An… Harvey Keitel
-16  32000000  42059111  57000  2010 Nanette Burstein Geoff LaTuli… Drew Barrymo…
-17        NA   3741869   6100  1993 Kirk Wong        Tin Nam Chun  Jackie Chan  
-18        NA    124167   3600  1987 Alan Clarke      Andrea Dunbar Siobhan Finn…
-19  13000000  97837138 255000  2002 Joel Schumacher  Larry Cohen   Colin Farrell
-20   4800000 125479266 124000  2017 Christopher Lan… Scott Lobdell Jessica Rothe
-21        NA     83439   5900  2003 David Mickey Ev… David H. Ste… Erik von Det…
-22  75000000 107752036 163000  1999 David O. Russell John Ridley   George Cloon…
-23   3500000  27912072  54000  1993 Albert Hughes    Allen Hughes  Tyrin Turner 
-24   4000000   4257354 100000  1995 Directors        Allison Ande… Tim Roth     
-25  11000000  59520298  19000  2012 Dustin Hoffman   Ronald Harwo… Maggie Smith 
-26    100000    515900  19000  2001 Richard Linklat… Stephen Belb… Ethan Hawke  
-27  12000000  57968936  21000  1990 Dwight H. Little Michael Grais Steven Seagal
-28  50000000 152022101  43000  1995 Frank Marshall   Michael Cric… Laura Linney 
-29  25000000  11212953  20000  2008 Kimberly Peirce  Mark Richard  Ryan Phillip…
-30  75000000 224012234 282000  1997 Simon West       Scott Rosenb… Nicolas Cage 
 # ℹ 470 more rows
-# ℹ 2 more variables: company, country</code></pre>
+# ℹ 9 more variables: budget, gross, votes, year,
+#   director, writer, star, company, country</code></pre>
 </div>
 </div>
 </div>
 </figure>
 </div>
+<div style="page-break-after: always;"></div>
 <div style="page-break-after: always;"></div>
 <section id="score-vs.-runtime" class="level2"><h2 class="anchored" data-anchor-id="score-vs.-runtime">Score vs.&nbsp;runtime</h2>
 <p>In this part, we fit a model predicting <code>score</code> from <code>runtime</code> and name it <code>score_runtime_fit</code>.</p>
@@ -1017,7 +991,7 @@ Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> f
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> runtime, <span class="at">y =</span> score)) <span class="sc">+</span></span>
 <span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="co"># additional code for annotating Blue City on the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="co"># additional code for annotating Blue City on the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><p><code>grepl(" mins", runtime)</code></p></li>
