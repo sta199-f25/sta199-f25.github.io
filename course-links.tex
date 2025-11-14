@@ -1,0 +1,1383 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Exam 2 review},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Exam 2 review}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Questions}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1737}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.7545}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0659}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Course GitHub organization & 🔗 on
+\href{https://github.com/sta199-f25}{GitHub} & \\
+RStudio containers & 🔗 on
+\href{https://cmgr.oit.duke.edu/containers}{Duke Container Manager} & \\
+Office hours & 🔗 on
+\href{https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing}{Google
+Sheets} & \\
+Ed Discussion & 🔗 on
+\href{https://edstem.org/us/courses/80616/discussion/}{Canvas} & \\
+Gradescope & 🔗 on
+\href{https://www.gradescope.com/courses/1067800}{Canvas} & \\
+Gradebook & 🔗 on
+\href{https://canvas.duke.edu/courses/61539/gradebook}{Canvas} & \\
+Texbooks & 🔗 \href{https://r4ds.hadley.nz/}{R for Data Science}
+
+🔗 \href{https://openintro-ims2.netlify.app/}{Introduction to Modern
+Statistics} & \\
+Package documentation & 🔗 ggplot2:
+\href{https://ggplot2.tidyverse.org/}{ggplot2.tidyverse.org}
+
+🔗 dplyr: \href{https://dplyr.tidyverse.org/}{dplyr.tidyverse.org}
+
+🔗 tidyr: \href{https://tidyr.tidyverse.org/}{tidyr.tidyverse.org}
+
+🔗 forcats: \href{https://forcats.tidyverse.org/}{forcats.tidyverse.org}
+
+🔗 stringr: \href{https://stringr.tidyverse.org/}{stringr.tidyverse.org}
+
+🔗 lubridate:
+\href{https://lubridate.tidyverse.org/}{lubridate.tidyverse.org}
+
+🔗 readr: \href{https://readr.tidyverse.org/}{readr.tidyverse.org}
+
+🔗 readxl: \href{https://readxl.tidyverse.org/}{readxl.tidyverse.org}
+& \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: load{-}packages}
+\NormalTok{\#| message: false}
+\NormalTok{library(tidyverse)}
+\NormalTok{library(tidymodels)}
+\NormalTok{library(openintro)}
+\NormalTok{library(scales)}
+\NormalTok{theme\_set(theme\_minimal(base\_size = 12))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: blizzard{-}data{-}prep}
+\NormalTok{blizzard\_salary \textless{}{-} blizzard\_salary |\textgreater{}}
+\NormalTok{  mutate(}
+\NormalTok{    annual\_salary = case\_when(}
+\NormalTok{      salary\_type == "week" \textasciitilde{} current\_salary * 52,}
+\NormalTok{      salary\_type == "hour" \textasciitilde{} current\_salary * 40 * 52,}
+\NormalTok{      TRUE \textasciitilde{} current\_salary}
+\NormalTok{    ),}
+\NormalTok{    performance\_rating = if\_else(}
+\NormalTok{      performance\_rating == "Developing",}
+\NormalTok{      "Poor",}
+\NormalTok{      performance\_rating}
+\NormalTok{    )}
+\NormalTok{  ) |\textgreater{}}
+\NormalTok{  filter(salary\_type != "week") |\textgreater{}}
+\NormalTok{  mutate(}
+\NormalTok{    salary\_type = if\_else(salary\_type == "hour", "Hourly", "Salaried")}
+\NormalTok{  ) |\textgreater{}}
+\NormalTok{  filter(!is.na(annual\_salary)) |\textgreater{}}
+\NormalTok{  select(percent\_incr, salary\_type, annual\_salary, performance\_rating)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colback=white, titlerule=0mm, leftrule=.75mm, left=2mm, opacitybacktitle=0.6, toprule=.15mm, toptitle=1mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, rightrule=.15mm]
+
+Suggested answers can be found
+\href{./exam-review/exam-2-review-A.qmd}{here}, but resist the urge to
+peek before you go through it yourself.
+
+\end{tcolorbox}
+
+\subsection{Blizzard salaries}\label{blizzard-salaries}
+
+In 2020, employees of Blizzard Entertainment circulated a spreadsheet to
+anonymously share salaries and recent pay increases amidst rising
+tension in the video game industry over wage disparities and executive
+compensation. (Source:
+\href{https://www.bloomberg.com/news/articles/2020-08-03/blizzard-workers-share-salaries-in-revolt-over-wage-disparities}{Blizzard
+Workers Share Salaries in Revolt Over Pay})
+
+The name of the data frame used for this analysis is
+\texttt{blizzard\_salary} and the variables are:
+
+\begin{itemize}
+\item
+  \texttt{percent\_incr}: Raise given in July 2020, as percent increase
+  with values ranging from 1 (1\% increase) to 21.5 (21.5\% increase)
+\item
+  \texttt{salary\_type}: Type of salary, with levels \texttt{Hourly} and
+  \texttt{Salaried}
+\item
+  \texttt{annual\_salary}: Annual salary, in USD, with values ranging
+  from \$50,939 to \$216,856.
+\item
+  \texttt{performance\_rating}: Most recent review performance rating,
+  with levels \texttt{Poor}, \texttt{Successful}, \texttt{High}, and
+  \texttt{Top}. The \texttt{Poor} level is the lowest rating and the
+  \texttt{Top} level is the highest rating.
+\end{itemize}
+
+The first ten rows of \texttt{blizzard\_salary} are shown below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{blizzard\_salary |\textgreater{}}
+\NormalTok{  select(percent\_incr, salary\_type, annual\_salary, performance\_rating)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Question 1}\label{question-1}
+
+You fit a model for predicting raises (\texttt{percent\_incr}) from
+salaries (\texttt{annual\_salary}). We'll call this model
+\texttt{raise\_1\_fit}. A tidy output of the model is shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: raise{-}salary{-}fit}
+\NormalTok{raise\_1\_fit \textless{}{-} linear\_reg() |\textgreater{}}
+\NormalTok{  fit(percent\_incr \textasciitilde{} annual\_salary, data = blizzard\_salary)}
+
+\NormalTok{tidy(raise\_1\_fit)}
+\end{Highlighting}
+\end{Shaded}
+
+Which of the following is the best interpretation of the slope
+coefficient?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  For every additional \$1,000 of annual salary, the model predicts the
+  raise to be higher, on average, by 1.55\%.
+\item
+  For every additional \$1,000 of annual salary, the raise goes up by
+  0.0155\%.
+\item
+  For every additional \$1,000 of annual salary, the model predicts the
+  raise to be higher, on average, by 0.0155\%.
+\item
+  For every additional \$1,000 of annual salary, the model predicts the
+  raise to be higher, on average, by 1.87\%.
+\end{enumerate}
+
+\subsection{Question 2}\label{question-2}
+
+You then fit a model for predicting raises (\texttt{percent\_incr}) from
+salaries (\texttt{annual\_salary}) and performance ratings
+(\texttt{performance\_rating}). We'll call this model
+\texttt{raise\_2\_fit}. Which of the following is definitely true based
+on the information you have so far?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Intercept of \texttt{raise\_2\_fit} is higher than intercept of
+  \texttt{raise\_1\_fit}.
+\item
+  Slope of \texttt{raise\_2\_fit} is higher than RMSE of
+  \texttt{raise\_1\_fit}.
+\item
+  Adjusted \(R^2\) of \texttt{raise\_2\_fit} is higher than adjusted
+  \(R^2\) of \texttt{raise\_1\_fit}.
+\item
+  \(R^2\) of \texttt{raise\_2\_fit} is higher \(R^2\) of
+  \texttt{raise\_1\_fit}.
+\end{enumerate}
+
+\newpage{}
+
+\subsection{Question 3}\label{question-3}
+
+The tidy model output for the \texttt{raise\_2\_fit} model you fit is
+shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: raise{-}salary{-}rating{-}fit}
+\NormalTok{raise\_2\_fit \textless{}{-} linear\_reg() |\textgreater{}}
+\NormalTok{  fit(percent\_incr \textasciitilde{} annual\_salary + performance\_rating, data = blizzard\_salary)}
+
+\NormalTok{tidy(raise\_2\_fit)}
+\end{Highlighting}
+\end{Shaded}
+
+When your teammate sees this model output, they remark ``The coefficient
+for \texttt{performance\_ratingSuccessful} is negative. That's weird. I
+guess it means that people who get successful performance ratings get
+lower raises.'' How would you respond to your teammate?
+
+\(\vspace{1.5cm}\)
+
+\subsection{Question 4}\label{question-4}
+
+Ultimately, your teammate decides they don't like the negative slope
+coefficients in the model output you created (not that there's anything
+wrong with negative slope coefficients!), does something else, and comes
+up with the following model output.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{blizzard\_salary \textless{}{-} blizzard\_salary |\textgreater{}}
+\NormalTok{  mutate(}
+\NormalTok{    performance\_rating = fct\_relevel(}
+\NormalTok{      performance\_rating,}
+\NormalTok{      "Poor",}
+\NormalTok{      "Successful",}
+\NormalTok{      "High",}
+\NormalTok{      "Top"}
+\NormalTok{    )}
+\NormalTok{  )}
+
+\NormalTok{raise\_2\_fit \textless{}{-} linear\_reg() |\textgreater{}}
+\NormalTok{  fit(percent\_incr \textasciitilde{} annual\_salary + performance\_rating, data = blizzard\_salary)}
+
+\NormalTok{tidy(raise\_2\_fit)}
+\end{Highlighting}
+\end{Shaded}
+
+Unfortunately they didn't write their code in a Quarto document, instead
+just wrote some code in the Console and then lost track of their work.
+They remember using the \texttt{fct\_relevel()} function and doing
+something like the following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| eval: false}
+\NormalTok{\#| echo: true}
+\NormalTok{blizzard\_salary \textless{}{-} blizzard\_salary |\textgreater{}}
+\NormalTok{  mutate(performance\_rating = fct\_relevel(performance\_rating, \_\_\_))}
+\end{Highlighting}
+\end{Shaded}
+
+What should they put in the blanks to get the same model output as
+above?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  ``Poor'', ``Successful'', ``High'', ``Top''
+\item
+  ``Successful'', ``High'', ``Top''
+\item
+  ``Top'', ``High'', ``Successful'', ``Poor''
+\item
+  Poor, Successful, High, Top
+\end{enumerate}
+
+\subsection{Question 5}\label{question-5}
+
+Suppose we fit a model to predict \texttt{percent\_incr} from
+\texttt{annual\_salary} and \texttt{salary\_type}. A tidy output of the
+model is shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: raise{-}salary{-}type{-}fit}
+\NormalTok{raise\_3\_fit \textless{}{-} linear\_reg() |\textgreater{}}
+\NormalTok{  fit(percent\_incr \textasciitilde{} annual\_salary + salary\_type, data = blizzard\_salary)}
+
+\NormalTok{tidy(raise\_3\_fit)}
+\end{Highlighting}
+\end{Shaded}
+
+Which of the following visualizations represent this model? Explain your
+reasoning.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: fig{-}raise{-}salary{-}type}
+\NormalTok{\#| warning: false}
+\NormalTok{\#| layout{-}ncol: 2}
+\NormalTok{\#| fig{-}cap: |}
+\NormalTok{\#|   Visualizations of the relationship between percent increase, annual}
+\NormalTok{\#|   salary, and salary type}
+\NormalTok{\#| fig{-}subcap:}
+\NormalTok{\#|   {-} Option 1}
+\NormalTok{\#|   {-} Option 2}
+\NormalTok{\#|   {-} Option 3}
+\NormalTok{\#|   {-} Option 4}
+\NormalTok{ggplot(}
+\NormalTok{  blizzard\_salary,}
+\NormalTok{  aes(x = annual\_salary, y = percent\_incr, color = salary\_type)}
+\NormalTok{) +}
+\NormalTok{  geom\_point(aes(shape = salary\_type), alpha = 0.5, size = 2) +}
+\NormalTok{  geom\_smooth(}
+\NormalTok{    aes(linetype = salary\_type),}
+\NormalTok{    method = "lm",}
+\NormalTok{    se = FALSE,}
+\NormalTok{    fullrange = TRUE,}
+\NormalTok{    linewidth = 1.5}
+\NormalTok{  ) +}
+\NormalTok{  labs(}
+\NormalTok{    x = "Annual salary",}
+\NormalTok{    y = "Percent increase",}
+\NormalTok{    color = "Salary type",}
+\NormalTok{    linetype = "Salary type",}
+\NormalTok{    shape = "Salary type"}
+\NormalTok{  ) +}
+\NormalTok{  scale\_x\_continuous(labels = label\_dollar()) +}
+\NormalTok{  scale\_y\_continuous(labels = label\_percent(scale = 1)) +}
+\NormalTok{  theme(legend.position = "top")}
+
+\NormalTok{ggplot(}
+\NormalTok{  blizzard\_salary,}
+\NormalTok{  aes(x = annual\_salary, y = percent\_incr, color = salary\_type)}
+\NormalTok{) +}
+\NormalTok{  geom\_point(aes(shape = salary\_type), alpha = 0.5, size = 2) +}
+\NormalTok{  geom\_smooth(}
+\NormalTok{    aes(linetype = salary\_type),}
+\NormalTok{    se = FALSE,}
+\NormalTok{    fullrange = TRUE,}
+\NormalTok{    linewidth = 1.5}
+\NormalTok{  ) +}
+\NormalTok{  labs(}
+\NormalTok{    x = "Annual salary",}
+\NormalTok{    y = "Percent increase"}
+\NormalTok{  ) +}
+\NormalTok{  scale\_x\_continuous(labels = label\_dollar()) +}
+\NormalTok{  scale\_y\_continuous(labels = label\_percent(scale = 1)) +}
+\NormalTok{  theme(legend.position = "top")}
+
+\NormalTok{ggplot(}
+\NormalTok{  blizzard\_salary,}
+\NormalTok{  aes(x = annual\_salary, y = percent\_incr, color = salary\_type)}
+\NormalTok{) +}
+\NormalTok{  geom\_point(}
+\NormalTok{    aes(shape = salary\_type),}
+\NormalTok{    alpha = 0.5,}
+\NormalTok{    size = 2,}
+\NormalTok{    show.legend = FALSE}
+\NormalTok{  ) +}
+\NormalTok{  geom\_abline(}
+\NormalTok{    intercept = 1.24,}
+\NormalTok{    slope = 0.0000137,}
+\NormalTok{    color = "\#E87d72",}
+\NormalTok{    linewidth = 1.5,}
+\NormalTok{    linetype = "solid"}
+\NormalTok{  ) +}
+\NormalTok{  geom\_abline(}
+\NormalTok{    intercept = 1.24 + 0.913,}
+\NormalTok{    slope = 0.0000137,}
+\NormalTok{    color = "\#56bcc2",}
+\NormalTok{    linewidth = 1.5,}
+\NormalTok{    linetype = "dashed"}
+\NormalTok{  ) +}
+\NormalTok{  labs(}
+\NormalTok{    x = "Annual salary",}
+\NormalTok{    y = "Percent increase",}
+\NormalTok{  ) +}
+\NormalTok{  scale\_x\_continuous(labels = label\_dollar()) +}
+\NormalTok{  scale\_y\_continuous(labels = label\_percent(scale = 1))}
+
+\NormalTok{ggplot(}
+\NormalTok{  blizzard\_salary,}
+\NormalTok{  aes(x = annual\_salary, y = percent\_incr, color = salary\_type)}
+\NormalTok{) +}
+\NormalTok{  geom\_point(alpha = 0.5, size = 2, show.legend = FALSE) +}
+\NormalTok{  geom\_abline(}
+\NormalTok{    intercept = 1.24,}
+\NormalTok{    slope = 0.0000137,}
+\NormalTok{    color = "\#56bcc2",}
+\NormalTok{    linewidth = 1.5,}
+\NormalTok{    linetype = "dashed"}
+\NormalTok{  ) +}
+\NormalTok{  geom\_abline(}
+\NormalTok{    intercept = 1.24 + 0.913,}
+\NormalTok{    slope = 0.0000137,}
+\NormalTok{    color = "\#E87d72",}
+\NormalTok{    linewidth = 1.5}
+\NormalTok{  ) +}
+\NormalTok{  labs(}
+\NormalTok{    x = "Annual salary",}
+\NormalTok{    y = "Percent increase",}
+\NormalTok{  ) +}
+\NormalTok{  scale\_x\_continuous(labels = label\_dollar()) +}
+\NormalTok{  scale\_y\_continuous(labels = label\_percent(scale = 1))}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage{}
+
+\newpage{}
+
+\subsection{Question 6}\label{question-6}
+
+Suppose you now fit a model to predict the natural log of percent
+increase, \texttt{log(percent\_incr)}, from performance rating. The
+model is called \texttt{raise\_4\_fit}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raise\_4\_fit \textless{}{-} linear\_reg() |\textgreater{}}
+\NormalTok{  fit(log(percent\_incr + 0.0001) \textasciitilde{} performance\_rating, data = blizzard\_salary)}
+\end{Highlighting}
+\end{Shaded}
+
+You're provided the following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| echo: true}
+\NormalTok{tidy(raise\_4\_fit) |\textgreater{}}
+\NormalTok{  select(term, estimate) |\textgreater{}}
+\NormalTok{  mutate(exp\_estimate = exp(estimate))}
+\end{Highlighting}
+\end{Shaded}
+
+Based on this, which of the following is true?
+
+a. The model predicts that the percentage increase employees with
+Successful performance get, on average, is higher by 10.25\% compared to
+the employees with Poor performance rating.
+
+b. The model predicts that the percentage increase employees with
+Successful performance get, on average, is higher by 6.93\% compared to
+the employees with Poor performance rating.
+
+c. The model predicts that the percentage increase employees with
+Successful performance get, on average, is higher by a factor of 1025
+compared to the employees with Poor performance rating.
+
+d. The model predicts that the percentage increase employees with
+Successful performance get, on average, is higher by a factor of 6.93
+compared to the employees with Poor performance rating.
+
+\newpage{}
+
+\section{Movies}\label{movies}
+
+The data for this part comes from the Internet Movie Database (IMDB).
+Specifically, the data are a random sample of movies released between
+1980 and 2020.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: load{-}data}
+\NormalTok{\#| message: false}
+\NormalTok{movies \textless{}{-} read\_csv("data/movies.csv")}
+\end{Highlighting}
+\end{Shaded}
+
+The name of the data frame used for this analysis is \texttt{movies},
+and it contains the variables shown in Table~\ref{tbl-data-dictionary}.
+
+\setcounter{table}{0}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.8000}}@{}}
+\caption{Data dictionary for
+\texttt{movies}}\label{tbl-data-dictionary}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{name} & name of the movie \\
+\texttt{rating} & rating of the movie (R, PG, etc.) \\
+\texttt{genre} & main genre of the movie. \\
+\texttt{runtime} & duration of the movie \\
+\texttt{year} & year of release \\
+\texttt{release\_date} & release date (YYYY-MM-DD) \\
+\texttt{release\_country} & release country \\
+\texttt{score} & IMDB user rating \\
+\texttt{votes} & number of user votes \\
+\texttt{director} & the director \\
+\texttt{writer} & writer of the movie \\
+\texttt{star} & main actor/actress \\
+\texttt{country} & country of origin \\
+\texttt{budget} & the budget of a movie (some movies don't have this, so
+it appears as 0) \\
+\texttt{gross} & revenue of the movie \\
+\texttt{company} & the production company \\
+\end{longtable}
+
+The first thirty rows of the \texttt{movies} data frame are shown in
+Table~\ref{tbl-data}, with variable types suppressed (since we'll ask
+about them later).
+
+\newpage{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| echo: false}
+\NormalTok{movies\_to\_mark \textless{}{-} c("Blue City", "Rang De Basanti", "Winter Sleep")}
+
+\NormalTok{movies \textless{}{-} movies |\textgreater{}}
+\NormalTok{  mutate(}
+\NormalTok{    mark = if\_else(name \%in\% movies\_to\_mark, TRUE, FALSE),}
+\NormalTok{    rating = case\_when(}
+\NormalTok{      rating == "TV{-}PG" \textasciitilde{} "PG",}
+\NormalTok{      rating == "Unrated" \textasciitilde{} "Not Rated",}
+\NormalTok{      is.na(rating) \textasciitilde{} "Not Rated",}
+\NormalTok{      .default = rating}
+\NormalTok{    ),}
+\NormalTok{    rating = fct\_relevel(rating, "G", "PG", "PG{-}13", "R", "NC{-}17", "Not Rated")}
+\NormalTok{  ) |\textgreater{}}
+\NormalTok{  arrange(desc(mark)) |\textgreater{}}
+\NormalTok{  relocate(}
+\NormalTok{    name,}
+\NormalTok{    score,}
+\NormalTok{    runtime,}
+\NormalTok{    genre,}
+\NormalTok{    rating,}
+\NormalTok{    release\_country,}
+\NormalTok{    release\_date,}
+\NormalTok{    budget,}
+\NormalTok{    gross,}
+\NormalTok{    votes,}
+\NormalTok{    year,}
+\NormalTok{    director,}
+\NormalTok{    writer,}
+\NormalTok{    star,}
+\NormalTok{    company,}
+\NormalTok{    country}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{landscape}
+
+\begin{table}
+
+\caption{\label{tbl-data}}
+
+\centering{
+
+First 30 rows of \texttt{movies}, with variable types suppressed.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| echo: false}
+\NormalTok{options(}
+\NormalTok{  dplyr.print\_min = 30,}
+\NormalTok{  pillar.min\_chars = 13,}
+\NormalTok{  pillar.width = 110,}
+\NormalTok{  pillar.sigfig = 6}
+\NormalTok{)}
+
+\NormalTok{format(movies |\textgreater{} select(!c(mark)))[{-}3L] |\textgreater{}}
+\NormalTok{  str\_remove\_all(" \textless{}.*?\textgreater{}") |\textgreater{}}
+\NormalTok{  cat(sep = "\textbackslash{}n")}
+
+\NormalTok{options(}
+\NormalTok{  dplyr.print\_min = 10,}
+\NormalTok{  pillar.min\_chars = 8,}
+\NormalTok{  pillar.width = 80,}
+\NormalTok{  pillar.sigfig = 3}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+}
+
+\end{table}%
+
+\end{landscape}
+\clearpage
+
+\newpage{}
+
+\newpage{}
+
+\subsection{Score vs.~runtime}\label{score-vs.-runtime}
+
+In this part, we fit a model predicting \texttt{score} from
+\texttt{runtime} and name it \texttt{score\_runtime\_fit}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| echo: true}
+\NormalTok{score\_runtime\_fit \textless{}{-} linear\_reg() |\textgreater{}}
+\NormalTok{  fit(score \textasciitilde{} runtime, data = movies)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{?@fig-score-runtime} visualizes the relationship between
+\texttt{score} and \texttt{runtime} as well as the linear model for
+predicting \texttt{score} from \texttt{runtime}. The first three movies
+in Table~\ref{tbl-data} are labeled in the visualization as well. Answer
+all questions in this part based on \textbf{?@fig-score-runtime}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: fig{-}score{-}runtime{-}prep}
+\NormalTok{\#| echo: false}
+\NormalTok{movies \textless{}{-} movies |\textgreater{}}
+\NormalTok{  mutate(}
+\NormalTok{    runtime = parse\_number(runtime),}
+\NormalTok{    shape1 = case\_when(}
+\NormalTok{      name == movies\_to\_mark[1] \textasciitilde{} "circle",}
+\NormalTok{      name == movies\_to\_mark[2] \textasciitilde{} "square",}
+\NormalTok{      name == movies\_to\_mark[3] \textasciitilde{} "triangle",}
+\NormalTok{      .default = "circle"}
+\NormalTok{    ),}
+\NormalTok{    shape2 = case\_when(}
+\NormalTok{      name == movies\_to\_mark[1] \textasciitilde{} "circle open",}
+\NormalTok{      name == movies\_to\_mark[2] \textasciitilde{} "square open",}
+\NormalTok{      name == movies\_to\_mark[3] \textasciitilde{} "triangle open",}
+\NormalTok{      .default = NA}
+\NormalTok{    ),}
+\NormalTok{    color = if\_else(mark, "black", "gray50"),}
+\NormalTok{    alpha = if\_else(mark, 1, 0.5)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: fig{-}score{-}runtime}
+\NormalTok{\#| fig{-}cap: Scatterplot of \textasciigrave{}score\textasciigrave{} vs. \textasciigrave{}runtime\textasciigrave{} for \textasciigrave{}movies\textasciigrave{}.}
+\NormalTok{\#| echo: false}
+\NormalTok{\#| message: false}
+\NormalTok{\#| fig{-}asp: 0.5}
+\NormalTok{\#| fig{-}width: 6.5}
+\NormalTok{ggplot(movies, aes(x = runtime, y = score)) +}
+\NormalTok{  geom\_point(aes(shape = shape1, color = color, alpha = alpha)) +}
+\NormalTok{  geom\_smooth(method = "lm", se = FALSE, color = "black") +}
+\NormalTok{  scale\_shape\_identity() +}
+\NormalTok{  scale\_alpha\_identity() +}
+\NormalTok{  scale\_color\_identity() +}
+\NormalTok{  geom\_point(}
+\NormalTok{    data = movies |\textgreater{} filter(mark),}
+\NormalTok{    aes(shape = shape2),}
+\NormalTok{    size = 3}
+\NormalTok{  ) +}
+\NormalTok{  geom\_label(}
+\NormalTok{    data = movies |\textgreater{} filter(mark),}
+\NormalTok{    aes(label = name),}
+\NormalTok{    size = 3,}
+\NormalTok{    nudge\_x = 1,}
+\NormalTok{    nudge\_y = c({-}0.4, {-}0.4, 0.4)}
+\NormalTok{  ) +}
+\NormalTok{  scale\_x\_continuous(breaks = seq(80, 240, 20))}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage{}
+
+\subsubsection{Question 7}\label{question-7}
+
+Partial code for producing \textbf{?@fig-score-runtime} is given below.
+Which of the following goes in the blank on Line 2? \textbf{Select all
+that apply.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| eval: false}
+\NormalTok{\#| echo: true}
+\NormalTok{\#| code{-}line{-}numbers: true}
+\NormalTok{movies |\textgreater{}}
+\NormalTok{  mutate(runtime = \_\_\_) |\textgreater{}}
+\NormalTok{  ggplot(aes(x = runtime, y = score)) +}
+\NormalTok{  geom\_point(alpha = 0.5) +}
+\NormalTok{  geom\_smooth(method = "lm", se = FALSE)}
+\NormalTok{\# additional code for annotating Blue City on the plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \texttt{grepl("\ mins",\ runtime)}
+\item
+  \texttt{grep("\ mins",\ runtime)}
+\item
+  \texttt{str\_remove(runtime,\ "\ mins")}
+\item
+  \texttt{as.numeric(str\_remove(runtime,\ "\ mins"))}
+\item
+  \texttt{na.rm(runtime)}
+\end{enumerate}
+
+\subsubsection{Question 8}\label{question-8}
+
+Based on this model, order the three labeled movies in
+\textbf{?@fig-score-runtime} in decreasing order of the magnitude
+(absolute value) of their residuals.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Winter Sleep \textgreater{} Rang De Basanti \textgreater{} Blue City
+\item
+  Winter Sleep \textgreater{} Blue City \textgreater{} Rang De Basanti
+\item
+  Rang De Basanti \textgreater{} Winter Sleep \textgreater{} Blue City
+\item
+  Blue City \textgreater{} Winter Sleep \textgreater{} Rang De Basanti
+\item
+  Blue City \textgreater{} Rang De Basanti \textgreater{} Winter Sleep
+\end{enumerate}
+
+\newpage{}
+
+\subsubsection{Question 9}\label{question-9}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| include: false}
+\NormalTok{score\_runtime\_rsq \textless{}{-} round(glance(score\_runtime\_fit)$r.squared * 100, 0)}
+\end{Highlighting}
+\end{Shaded}
+
+The R-squared for the model visualized in \textbf{?@fig-score-runtime}
+is \texttt{\{r\}\ score\_runtime\_rsq}\%. Which of the following is the
+\ul{\textbf{best}} interpretation of this value?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \texttt{\{r\}\ score\_runtime\_rsq}\% of the variability in movie
+  runtimes is explained by their scores.
+\item
+  \texttt{\{r\}\ score\_runtime\_rsq}\% of the variability in movie
+  scores is explained by their runtime.
+\item
+  The model accurately predicts scores of
+  \texttt{\{r\}\ score\_runtime\_rsq}\% of the movies in this sample.
+\item
+  The model accurately predicts scores of
+  \texttt{\{r\}\ score\_runtime\_rsq}\% of all movies.
+\item
+  The correlation between scores and runtimes of movies is
+  \texttt{\{r\}\ score\_runtime\_rsq\ /\ 100}.
+\end{enumerate}
+
+\subsection{Score vs.~runtime or year}\label{score-vs.-runtime-or-year}
+
+The visualizations below show the relationship between \texttt{score}
+and \texttt{runtime} as well as \texttt{score} and \texttt{year},
+respectively. Additionally, the lines of best fit are overlaid on the
+visualizations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| layout{-}ncol: 2}
+\NormalTok{\#| echo: false}
+\NormalTok{\#| message: false}
+\NormalTok{ggplot(movies, aes(x = runtime, y = score)) +}
+\NormalTok{  geom\_point(alpha = 0.5, color = "gray40") +}
+\NormalTok{  geom\_smooth(method = "lm", se = FALSE, color = "black", linewidth = 1.2)}
+
+\NormalTok{ggplot(movies, aes(x = year, y = score)) +}
+\NormalTok{  geom\_point(alpha = 0.5, color = "gray40") +}
+\NormalTok{  geom\_smooth(method = "lm", se = FALSE, color = "black", linewidth = 1.2)}
+\end{Highlighting}
+\end{Shaded}
+
+The correlation coefficients of these relationships are calculated
+below, though some of the code and the output are missing. Answer all
+questions in this part based on the code and output shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| include: false}
+\NormalTok{movies |\textgreater{}}
+\NormalTok{  summarize(}
+\NormalTok{    r\_score\_runtime = cor(runtime, score),}
+\NormalTok{    r\_score\_year = cor(year, score)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| eval: false}
+\NormalTok{\#| echo: true}
+\NormalTok{movies |\textgreater{}}
+\NormalTok{  \_\_blank\_1\_\_(}
+\NormalTok{    r\_score\_runtime = cor(runtime, score),}
+\NormalTok{    r\_score\_year = cor(year, score)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 1 × 2
+  r_score_runtime r_score_year
+            <dbl>        <dbl>
+1           0.434. __blank_2__       
+\end{verbatim}
+
+\subsubsection{Question 10}\label{question-10}
+
+Which of the following goes in \texttt{\_\_blank\_1\_\_}?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \texttt{summarize}
+\item
+  \texttt{mutate}
+\item
+  \texttt{group\_by}
+\item
+  \texttt{arrange}
+\item
+  \texttt{filter}
+\end{enumerate}
+
+\subsubsection{Question 11}\label{question-11}
+
+What can we say about the value that goes in \texttt{\_\_blank\_2\_\_}?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \texttt{NA}
+\item
+  A value between 0 and 0.434.
+\item
+  A value between 0.434 and 1.
+\item
+  A value between 0 and -0.434.
+\item
+  A value between -1 and -0.434.
+\end{enumerate}
+
+\newpage{}
+
+\subsection{Score vs.~runtime and
+rating}\label{score-vs.-runtime-and-rating}
+
+In this part, we fit a model predicting \texttt{score} from
+\texttt{runtime} and \texttt{rating} (categorized as G, PG, PG-13, R,
+NC-17, and Not Rated), and name it \texttt{score\_runtime\_rating\_fit}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{score\_runtime\_rating\_fit \textless{}{-} linear\_reg() |\textgreater{}}
+\NormalTok{  fit(score \textasciitilde{} runtime + rating, data = movies)}
+\end{Highlighting}
+\end{Shaded}
+
+The model output for \texttt{score\_runtime\_rating\_fit} is shown in
+\textbf{?@tbl-score-runtime-rating-tidy}. Answer all questions in this
+part based on \textbf{?@tbl-score-runtime-rating-tidy}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#| label: tbl{-}score{-}runtime{-}rating{-}tidy}
+\NormalTok{\#| tbl{-}cap: Regression output for \textasciigrave{}score\_runtime\_rating\_fit\textasciigrave{}.}
+\NormalTok{\#| echo: false}
+\NormalTok{tidy(score\_runtime\_rating\_fit) |\textgreater{}}
+\NormalTok{  knitr::kable(digits = 3)}
+\end{Highlighting}
+\end{Shaded}
+
+\vspace{1cm}
+
+\subsubsection{Question 12}\label{question-12}
+
+Which of the following is \ul{\textbf{TRUE}} about the intercept of
+\texttt{score\_runtime\_rating\_fit}? \textbf{Select all that are true.}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Keeping runtime constant, G-rated movies are predicted to score, on
+  average, 4.525 points.
+\item
+  Keeping runtime constant, movies without a rating are predicted to
+  score, on average, 4.525 points.
+\item
+  Movies without a rating that are 0 minutes in length are predicted to
+  score, on average, 4.525 points.
+\item
+  All else held constant, movies that are 0 minutes in length are
+  predicted to score, on average, 4.525 points.
+\item
+  G-rated movies that are 0 minutes in length are predicted to score, on
+  average, 4.525 points.
+\end{enumerate}
+
+\newpage{}
+
+\subsubsection{Question 13}\label{question-13}
+
+Which of the following is the \ul{\textbf{best}} interpretation of the
+slope of \texttt{runtime} in \texttt{score\_runtime\_rating\_fit}?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  All else held constant, as runtime increases by 1 minute, the score of
+  the movie increases by 0.021 points.
+\item
+  For G-rated movies, all else held constant, as runtime increases by 1
+  minute, the score of the movie increases by 0.021 points.
+\item
+  All else held constant, for each additional minute of runtime, movie
+  scores will be higher by 0.021 points on average.
+\item
+  G-rated movies that are 0 minutes in length are predicted to score
+  0.021 points on average.
+\item
+  For each higher level of rating, the movie scores go up by 0.021
+  points on average.
+\end{enumerate}
+
+\subsubsection{Question 14}\label{question-14}
+
+Fill in the blank:
+
+\begin{quote}
+R-squared for \texttt{score\_runtime\_rating\_fit} (the model predicting
+\texttt{score} from \texttt{runtime} and \texttt{rating})
+\_\_\_\_\_\_\_\_\_ the R-squared the model \texttt{score\_runtime\_fit}
+(for predicting \texttt{score} from \texttt{runtime} alone).
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  is less than
+\item
+  is equal to
+\item
+  is greater than
+\item
+  cannot be compared (based on the information provided) to
+\item
+  is both greater than and less than
+\end{enumerate}
+
+\newpage{}
+
+\subsubsection{Question 15}\label{question-15}
+
+The model \texttt{score\_runtime\_rating\_fit} (the model predicting
+\texttt{score} from \texttt{runtime} and \texttt{rating}) can be
+visualized as parallel lines for each level of \texttt{rating}. Which of
+the following is the equation of the line for R-rated movies?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime\)
+\item
+  \(score = (4.525 - 0.257) + 0.021 \times runtime\)
+\item
+  \(\widehat{score} = 4.525 + (0.021 - 0.257) \times runtime\)
+\item
+  \(score = 4.525 + (0.021 - 0.257) \times runtime\)
+\item
+  \(\widehat{score} = (4.525 + 0.021) - 0.257 \times runtime\)
+\end{enumerate}
+
+\section{Miscellaneous}\label{miscellaneous}
+
+\subsection{Question 16}\label{question-16}
+
+Which of the following is the definition of a regression model? Select
+all that apply.
+
+a. \(\hat{y} = b_0 + b_1 X_1\)
+
+b. \(y = \beta_0 + \beta_1 X_1\)
+
+c. \(\hat{y} = \beta_0 + \beta_1 X_1 + \epsilon\)
+
+d. \(y = \beta_0 + \beta_1 X_1 + \epsilon\)
+
+\subsection{Question 17}\label{question-17}
+
+Define the term ``parsimonious model''.
+
+\(\vspace{2cm}\)
+
+\newpage{}
+
+\section{Building a spam filter}\label{building-a-spam-filter}
+
+The data come from incoming emails in David Diez's (one of the authors
+of OpenIntro textbooks) Gmail account for the first three months of
+2012. All personally identifiable information has been removed. The
+dataset is called \texttt{email} and it's in the \textbf{openintro}
+package.
+
+The outcome variable is \texttt{spam}, which takes the value \texttt{1}
+if the email is spam, \texttt{0} otherwise.
+
+\subsection{Question 18}\label{question-18}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What type of variable is \texttt{spam}? What percent of the emails are
+  spam?
+\item
+  What type of variable is \texttt{dollar} - number of times a dollar
+  sign or the word ``dollar'' appeared in the email? Visualize and
+  describe its distribution, supporting your description with the
+  appropriate summary statistics.
+\item
+  Fit a logistic regression model predicting \texttt{spam} from
+  \texttt{dollar}. Then, display the tidy output of the model.
+\item
+  Using this model and the \texttt{predict()} function, predict the
+  probability the email is spam if it contains 5 dollar signs. Based on
+  this probability, how does the model classify this email?
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colback=white, titlerule=0mm, leftrule=.75mm, left=2mm, opacitybacktitle=0.6, toprule=.15mm, toptitle=1mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, rightrule=.15mm]
+
+To obtain the predicted probability, you can set the \texttt{type}
+argument in \texttt{predict()} to \texttt{"prob"}.
+
+\end{tcolorbox}
+
+\newpage{}
+
+\subsection{Question 19}\label{question-19}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Fit another logistic regression model predicting \texttt{spam} from
+  \texttt{dollar}, \texttt{winner} (indicating whether ``winner''
+  appeared in the email), and \texttt{urgent\_subj} (whether the word
+  ``urgent'' is in the subject of the email). Then, display the tidy
+  output of the model.
+\item
+  Using this model and the \texttt{augment()} function, classify each
+  email in the \texttt{email} dataset as spam or not spam. Store the
+  resulting data frame with an appropriate name and display the data
+  frame as well.
+\item
+  Using your data frame from the previous part, determine, in a single
+  pipeline, and using \texttt{count()}, the numbers of emails:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    that are labelled as spam that are actually spam
+  \item
+    that are not labelled as spam that are actually spam
+  \item
+    that are labelled as spam that are actually not spam
+  \item
+    that are not labelled as spam that are actually not spam
+  \end{itemize}
+
+  Store the resulting data frame with an appropriate name and display
+  the data frame as well.
+\item
+  In a single pipeline, and using \texttt{mutate()}, calculate the false
+  positive and false negative rates. In addition to these numbers
+  showing in your R output, you must write a sentence that explicitly
+  states and identified the two rates.
+\end{enumerate}
+
+\newpage{}
+
+\subsection{Question 20}\label{question-20}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Fit another logistic regression model predicting \texttt{spam} from
+  \texttt{dollar} and another variable you think would be a good
+  predictor. Provide a 1-sentence justification for why you chose this
+  variable. Display the tidy output of the model.
+\item
+  Using this model and the \texttt{augment()} function, classify each
+  email in the \texttt{email} dataset as spam or not spam. Store the
+  resulting data frame with an appropriate name and display the data
+  frame as well.
+\item
+  Using your data frame from the previous part, determine, in a single
+  pipeline, and using \texttt{count()}, the numbers of emails:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    that are labelled as spam that are actually spam
+  \item
+    that are not labelled as spam that are actually spam
+  \item
+    that are labelled as spam that are actually not spam
+  \item
+    that are not labelled as spam that are actually not spam
+  \end{itemize}
+
+  Store the resulting data frame with an appropriate name and display
+  the data frame as well.
+\item
+  In a single pipeline, and using \texttt{mutate()}, calculate the false
+  positive and false negative rates. In addition to these numbers
+  showing in your R output, you must write a sentence that explicitly
+  states and identified the two rates.
+\item
+  Based on the false positive and false negatives rates of this model,
+  comment, in 1-2 sentences, on which model (one from Question 19 or
+  Question 20) is preferable and why.
+\end{enumerate}
+
+
+
+
+\end{document}
