@@ -1,0 +1,122 @@
+---
+title: Lab 6
+subtitle: "#canceled"
+description: "Due: End of lab on Mon, Nov 17"
+categories: Lab
+filters:
+  - ../remove-fmt-skip.lua
+draft: true
+---
+
+# Introduction
+
+In this lab you'll will work with hotel cancellations.
+The data describe the demand of two different types of hotels.
+Each observation represents a hotel booking between July 1, 2015 and August 31, 2017.
+Some bookings were cancelled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`).
+You can view the code book for all variables [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md).
+
+## Getting started
+
+By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment.
+If you're not sure how, refer back to an earlier lab.
+
+Open the *lab-6.qmd* template Quarto file and update the `authors` field to add your name first (first and last) and then your teammates' names (first and last).
+Render the document.
+Examine the rendered document and make sure your and your teammates' names are updated in the document.
+Commit and push your changes with a meaningful commit message and push to GitHub.
+
+<details>
+
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+
+{{< include _guidelines.qmd >}}
+
+</details>
+
+## Packages
+
+In this lab we will work with the **tidyverse** package.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+# Questions
+
+## Question 1
+
+The dataset, called `hotels.csv`, can be found in the `data` folder.
+
+a.  Read it in with `read_csv()`.
+
+b.  Transform the `is_canceled` variable to be a factor with "not canceled" (0) as the first level and "canceled" (1) as the second level.
+
+## Question 2
+
+Using these data, one of our goals is to explore the following question:
+
+> *Are reservations earlier in the month or later in the month more likely to be cancelled?*
+
+a.  **In a single pipeline**, calculate the mean arrival dates (`arrival_date_day_of_month`) for reservations that were cancelled and reservations that were not cancelled.
+
+b.  In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
+
+c.  Fit the appropriate model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and display a tidy summary of the model output.
+    Then, interpret the slope coefficient in context of the data and the research question.
+
+::: {.callout-tip collapse="true"}
+## Hint
+
+The slope interpretation will have the following format:
+
+> The model predicts that, for each day the booking is \_\_\_ (later / earlier) in the month, the \_\_\_ (chance / probability / odds) of a hotel cancellation is \_\_\_ (lower / higher) by a factor of \_\_\_, on average.
+:::
+
+d.  Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month.
+    Based on this probability, would you predict this booking would be cancelled or not cancelled.
+    Explain your reasoning for your classification.
+
+## Question 3
+
+a.  Fit another model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and `hotel` type (Resort or City Hotel), allowing the relationship between `arrival_date_day_of_month` and `is_canceled` to vary based on `hotel` type.
+    Display a tidy output of the model.
+
+b.  Interpret the intercept in context of the data.
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+By now you should also be familiar with how to submit your assignment in Gradescope.
+
+<details>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
+{{< include _submission.qmd >}}
+
+</details>
+
+## Grading and feedback
+
+-   This lab is worth 30 points:
+    -   10 points for being in lab and turning in *something* -- no partial credit for this part.
+    -   20 points for:
+        -   answering the questions correctly -- there is partial credit for this part.
+        -   following the workflow -- there is partial credit for this part.
+-   The workflow points are for:
+    -   committing at least three times as you work through your lab,
+    -   having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+    -   overall organization.
+-   You'll receive feedback on your lab on Gradescope within a week.
+
+Good luck, and have fun with it!
