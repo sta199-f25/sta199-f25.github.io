@@ -78,6 +78,17 @@ If there is an appendix, it is reasonably organized and easy for the reader to f
 All code, warnings, and messages are suppressed.
 The main body of the written report (not including the appendix) is no longer than 10 pages.
 
+### Code style + smell
+
+This is an assessment of the overall presentation and formatting of the written report.
+
+**Grading criteria:** The report neatly written and organized with clear section headers and appropriately sized figures with informative labels.
+Numerical results are displayed with a reasonable number of digits, and all visualizations are neatly formatted.
+All citations and links are properly formatted.
+If there is an appendix, it is reasonably organized and easy for the reader to find relevant information.
+All code, warnings, and messages are suppressed.
+The main body of the written report (not including the appendix) is no longer than 10 pages.
+
 ## Grading
 
 The write-up is due on Thursday, November 13 at 11:59 pm. 
@@ -88,9 +99,10 @@ It is worth 30 points, broken down as follows:
 |-------------------------------|--------|
 | **Introduction**              |  2 pts |
 | **Data**                      |  3 pts |
-| **Analysis**                  | 20 pts |
+| **Analysis**                  | 15 pts |
 | **Discussion**                |  3 pts |
 | **Organization + formatting** |  2 pts |
+| **Code style + smell**        |  5 pts |
 
 # Presentation + slides {#presentation-slides}
 
