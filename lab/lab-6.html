@@ -569,9 +569,12 @@ window.Quarto = {
   <li>
 <a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
   <ul class="collapse">
-<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+<li><a href="#part-1---predicting-cancellations" id="toc-part-1---predicting-cancellations" class="nav-link" data-scroll-target="#part-1---predicting-cancellations">Part 1 - Predicting cancellations</a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#part-2---predicting-daily-rates" id="toc-part-2---predicting-daily-rates" class="nav-link" data-scroll-target="#part-2---predicting-daily-rates">Part 2 - Predicting daily rates</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   </ul>
 </li>
   <li>
@@ -641,11 +644,19 @@ Click to expand if you need a refresher on assignment guidelines.
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="questions" class="level1"><h1>Questions</h1>
-<section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<section id="part-1---predicting-cancellations" class="level2"><h2 class="anchored" data-anchor-id="part-1---predicting-cancellations">Part 1 - Predicting cancellations</h2>
+</section><section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>The dataset, called <code>hotels.csv</code>, can be found in the <code>data</code> folder.</p>
 <ol type="a">
 <li><p>Read it in with <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p></li>
-<li><p>Transform the <code>is_canceled</code> variable to be a factor with “not canceled” (0) as the first level and “canceled” (1) as the second level.</p></li>
+<li>
+<p>Our outcome variable is <code>is_canceled</code>. Transform this variable to the appropriate data class so that</p>
+<ul>
+<li>it uses informative labels (“not canceled” and “canceled” instead of 0 and 1, respectively), and</li>
+<li>the levels are ordered such that when we fit a logistic regression model to predict this outcome, success is defined as “canceled” (what we’re predicting)</li>
+</ul>
+</li>
+<li><p>Split the data into a training set (75%) and a testing set (25%), setting the random seed to <code>1117</code> for reproducibility.</p></li>
 </ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Using these data, one of our goals is to explore the following question:</p>
 <blockquote class="blockquote">
@@ -681,7 +692,45 @@ Hint
 <ol type="a">
 <li><p>Fit another model to predict whether a reservation was cancelled from <code>arrival_date_day_of_month</code> and <code>hotel</code> type (Resort or City Hotel), allowing the relationship between <code>arrival_date_day_of_month</code> and <code>is_canceled</code> to vary based on <code>hotel</code> type. Display a tidy output of the model.</p></li>
 <li><p>Interpret the intercept in context of the data.</p></li>
-</ol></section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
+</ol></section><section id="part-2---predicting-daily-rates" class="level2"><h2 class="anchored" data-anchor-id="part-2---predicting-daily-rates">Part 2 - Predicting daily rates</h2>
+</section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>The dataset also contains information about the average daily rate (<code>adr</code>) for each reservation.</p>
+<ol type="a">
+<li><p>Create a scatterplot of <code>adr</code> (y-axis) versus <code>adults</code> (x-axis), colored by <code>hotel</code> type. Add a linear regression line to the plot with <code>geom_smooth(method = "lm")</code>.</p></li>
+<li><p>Fit a model predicting <code>adr</code> from <code>adults</code> and <code>hotel</code> type. This model should match your plot from part (a). Display a tidy summary of the model output.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Think about whether you should include only main effects of <code>adults</code> and <code>hotel</code> or also their interaction effect as well in your model in order to match the plot.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"lab/data/hotels.csv"</span><span class="op">)</span></span>
+<span><span class="va">d</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">adr</span> <span class="op">&lt;</span> <span class="fl">1000</span> <span class="op">&amp;</span> <span class="va">adr</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">adults</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">adr</span><span class="op">)</span>, color <span class="op">=</span> <span class="va">hotel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">d</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">adr</span> <span class="op">&lt;</span> <span class="fl">1000</span> <span class="op">&amp;</span> <span class="va">adr</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">adults</span>, y <span class="op">=</span> <span class="va">adr</span>, color <span class="op">=</span> <span class="va">hotel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
