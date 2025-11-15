@@ -47,13 +47,19 @@ library(tidymodels)
 
 # Questions
 
+## Part 1 - Predicting cancellations
+
 ## Question 1
 
 The dataset, called `hotels.csv`, can be found in the `data` folder.
 
 a.  Read it in with `read_csv()`.
 
-b.  Transform the `is_canceled` variable to be a factor with "not canceled" (0) as the first level and "canceled" (1) as the second level.
+b.  Our outcome variable is `is_canceled`. Transform this variable to the appropriate data class so that 
+    - it uses informative labels ("not canceled" and "canceled" instead of 0 and 1, respectively), and
+    - the levels are ordered such that when we fit a logistic regression model to predict this outcome, success is defined as "canceled" (what we're predicting)
+
+c.  Split the data into a training set (75%) and a testing set (25%), setting the random seed to `1117` for reproducibility.
 
 ## Question 2
 
@@ -86,6 +92,43 @@ a.  Fit another model to predict whether a reservation was cancelled from `arriv
     Display a tidy output of the model.
 
 b.  Interpret the intercept in context of the data.
+
+## Part 2 - Predicting daily rates
+
+## Question 4
+
+The dataset also contains information about the average daily rate (`adr`) for each reservation.
+
+a.  Create a scatterplot of `adr` (y-axis) versus `adults` (x-axis), colored by `hotel` type.
+    Add a linear regression line to the plot with `geom_smooth(method = "lm")`.
+
+b.  Fit a model predicting `adr` from `adults` and `hotel` type.
+    This model should match your plot from part (a).
+    Display a tidy summary of the model output.
+
+::: {.callout-tip collapse="true"}
+## Hint
+
+Think about whether you should include only main effects of `adults` and `hotel` or also their interaction effect as well in your model in order to match the plot.
+:::
+
+
+
+```{r}
+library(tidyverse)
+d <- read_csv("lab/data/hotels.csv")
+d |>
+  filter(adr < 1000 & adr > 0) |>
+  ggplot(aes(x = adults, y = log(adr), color = hotel)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+d |>
+  filter(adr < 1000 & adr > 0) |>
+  ggplot(aes(x = adults, y = adr, color = hotel)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
 
 # Wrap-up
 
