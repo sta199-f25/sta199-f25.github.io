@@ -45,33 +45,149 @@ library(tidyverse)
 library(tidymodels)
 ```
 
-# Questions
-
-## Part 1 - Predicting cancellations
-
-## Question 1
+## Data
 
 The dataset, called `hotels.csv`, can be found in the `data` folder.
 
-a.  Read it in with `read_csv()`.
+```{r}
+#| include: false
+#| eval: true
+hotels <- read_csv(here::here("lab", "data/hotels.csv"))
+```
 
-b.  Our outcome variable is `is_canceled`. Transform this variable to the appropriate data class so that 
+```{r}
+hotels <- read_csv("data/hotels.csv")
+```
+
+Below is an exploratory summary of the variables in the dataset we will use in our analysis.
+
+::: {layout="[0.55, -0.05, 0.4]"}
+
+:::{#firstcol}
+
+```{r}
+#| echo: false
+#| eval: true
+hotels |>
+  count(is_canceled) |>
+  mutate(
+    is_canceled = if_else(is_canceled == 1, "1 - Canceled", "0 - Not canceled")
+  ) |>
+  knitr::kable(col.names = c("Cancellation status", "Number of bookings"))
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-width: 4
+#| fig-asp: 0.55
+ggplot(hotels, aes(x = arrival_date_day_of_month)) +
+  geom_histogram(binwidth = 1) +
+  scale_y_continuous(labels = scales::label_number()) +
+  labs(
+    x = "Arrival date - Day of month",
+    y = NULL,
+    title = "dow: Arrival date - Day of month"
+  ) +
+  theme_minimal() +
+  theme(plot.title.position = "plot")
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-width: 4
+#| fig-asp: 0.55
+ggplot(hotels, aes(x = adr)) +
+  geom_boxplot() +
+  scale_x_continuous(labels = scales::label_dollar()) +
+  labs(
+    x = "Average daily rate",
+    title = "adr: Average daily rate",
+  ) +
+  theme_minimal() +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank())
+```
+
+:::
+
+
+:::{#secondcol}
+
+```{r}
+#| echo: false
+#| eval: true
+hotels |>
+  count(adults) |>
+  knitr::kable(col.names = c("Number of adults", "Number of bookings"))
+```
+
+:::
+
+:::
+
+# Questions
+
+## Part 1 - Data prep
+
+### Question 1
+
+a.  One of the outcome variables you'll use is `is_canceled`. Transform this variable to the appropriate data class so that 
     - it uses informative labels ("not canceled" and "canceled" instead of 0 and 1, respectively), and
     - the levels are ordered such that when we fit a logistic regression model to predict this outcome, success is defined as "canceled" (what we're predicting)
 
+```{r}
+#| include: false
+#| eval: true
+hotels <- hotels |>
+  mutate(
+    is_canceled = if_else(is_canceled == 1, "canceled", "not canceled"),
+    is_canceled = fct_relevel(is_canceled, "not canceled", "canceled")
+  )
+```
+
+b.  Based on the exploratory summaries above, you should address a few data quality issues before moving forward with the analysis.
+    To do so, filter the dataset to remove
+    - any bookings with average daily rate greater than $1,000 and
+    - any bookings with number of adults greater than or equal to 5.
+
+```{r}
+#| include: false
+#| eval: true
+hotels <- hotels |>
+  filter(adr <= 1000, adults < 5)
+```
+
 c.  Split the data into a training set (75%) and a testing set (25%), setting the random seed to `1117` for reproducibility.
 
-## Question 2
+```{r}
+#| include: false
+#| eval: true
+set.seed(1117)
+hotels_split <- initial_split(hotels)
+hotels_train <- training(hotels_split)
+hotels_test <- testing(hotels_split)
+```
+
+## Part 2 - Predicting cancellations
+
+### Question 2
 
 Using these data, one of our goals is to explore the following question:
 
 > *Are reservations earlier in the month or later in the month more likely to be cancelled?*
 
-a.  **In a single pipeline**, calculate the mean arrival dates (`arrival_date_day_of_month`) for reservations that were cancelled and reservations that were not cancelled.
+a.  In a single pipeline, calculate the mean arrival dates (`arrival_date_day_of_month`) for reservations that were cancelled and reservations that were not cancelled.
 
-b.  In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
+::: {.callout-tip collapse="true"}
+## Hint
 
-c.  Fit the appropriate model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and display a tidy summary of the model output.
+Think carefully about which dataset you should use: `hotels`, the training subset, or the testing subset?
+:::
+
+a.  In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
+
+b.  Fit the appropriate model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and display a tidy summary of the model output.
     Then, interpret the slope coefficient in context of the data and the research question.
 
 ::: {.callout-tip collapse="true"}
@@ -82,29 +198,102 @@ The slope interpretation will have the following format:
 > The model predicts that, for each day the booking is \_\_\_ (later / earlier) in the month, the \_\_\_ (chance / probability / odds) of a hotel cancellation is \_\_\_ (lower / higher) by a factor of \_\_\_, on average.
 :::
 
-d.  Calculate the probability that the hotel reservation is cancelled if it the arrival date date is on the 26th of the month.
+c.  Calculate the probability that the hotel reservation is cancelled if it the arrival date is on the 17th of the month.
     Based on this probability, would you predict this booking would be cancelled or not cancelled.
     Explain your reasoning for your classification.
 
-## Question 3
+### Question 3
 
 a.  Fit another model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and `hotel` type (Resort or City Hotel), allowing the relationship between `arrival_date_day_of_month` and `is_canceled` to vary based on `hotel` type.
     Display a tidy output of the model.
 
 b.  Interpret the intercept in context of the data.
 
-## Part 2 - Predicting daily rates
+## Part 3 - Predicting daily rates
 
-## Question 4
+### Question 4
 
 The dataset also contains information about the average daily rate (`adr`) for each reservation.
+The following model predicts `adr` from `adults` and `hotel` type.
 
-a.  Create a scatterplot of `adr` (y-axis) versus `adults` (x-axis), colored by `hotel` type.
-    Add a linear regression line to the plot with `geom_smooth(method = "lm")`.
+```{r}
+#| eval: true
+#| echo: false
+adr_fit_1 <- linear_reg() |>
+  fit(adr ~ adults + hotel, data = hotels_train)
 
-b.  Fit a model predicting `adr` from `adults` and `hotel` type.
-    This model should match your plot from part (a).
-    Display a tidy summary of the model output.
+adr_aug_1 <- augment(adr_fit_1, hotels_train)
+
+tidy(adr_fit_1)
+```
+
+a.  Which of the following is the best interpretation of the slope coefficient for `adults`?
+
+    For each additional adult in the booking, the average daily rate is predicted to be higher by $29.50 
+
+    A. on average, holding hotel type constant.
+
+    B. for Resort Hotels compared to City Hotels, on average.
+    
+    C. for City Hotels compared to Resort Hotels, on average.
+    
+    D. on average, not holding any other variables constant.
+
+b.  Which of the following is the correct interpretation of the slope coefficient for `hotel`?
+
+    A. For each additional Resort Hotel booking, the predicted average daily rate is $10.70 lower, holding number of adults constant.
+    
+    B. For each additional adult in the booking, the average daily rate is predicted to be lower by $10.70 for resort hotels compared to City Hotels, on average.
+    
+    C. Resort Hotels bookings are predicted to have an average daily rate that is $10.70 lower than City Hotels, on average, holding number of adults constant.
+    
+    D. Resort Hotels bookings are predicted to have an average daily rate that is $10.70 higher than City Hotels, on average, holding number of adults constant.
+
+c.  Which of the following is the correct interpretation of the intercept?
+
+    A. The predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $50.50, on average.
+    
+    B. The predicted average daily rate for a bookings with 0 adults at a City Hotel is $50.50, on average.
+    
+    C. For each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.
+    
+    D. For each additional adult and City Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.
+
+d.  Which of the following (Plot A or Plot B) is the correct visual representation of this model?
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| layout-ncol: 2
+#| fig-width: 5
+#| fig-asp: 0.618
+ggplot(hotels_train, aes(x = adults, y = adr, color = hotel)) +
+  geom_point() +
+  geom_smooth(method = "lm", linewidth = 1, se = FALSE) +
+  ggthemes::scale_color_colorblind() +
+  labs(
+    title = "Plot A",
+    x = "Number of adults",
+    y = "Average daily rate",
+    color = "Hotel"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "inside", legend.position.inside = c(0.15, 0.80))
+
+ggplot(adr_aug_1, aes(x = adults, color = hotel)) +
+  geom_point(aes(y = adr)) +
+  geom_line(aes(y = .pred), linewidth = 1) +
+  ggthemes::scale_color_colorblind() +
+  labs(
+    title = "Plot B",
+    x = "Number of adults",
+    y = "Average daily rate",
+    color = "Hotel"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "inside", legend.position.inside = c(0.15, 0.80))
+```
 
 ::: {.callout-tip collapse="true"}
 ## Hint
@@ -112,23 +301,12 @@ b.  Fit a model predicting `adr` from `adults` and `hotel` type.
 Think about whether you should include only main effects of `adults` and `hotel` or also their interaction effect as well in your model in order to match the plot.
 :::
 
+::: {.callout-note}
+## What next?
 
-
-```{r}
-library(tidyverse)
-d <- read_csv("lab/data/hotels.csv")
-d |>
-  filter(adr < 1000 & adr > 0) |>
-  ggplot(aes(x = adults, y = log(adr), color = hotel)) +
-  geom_point() +
-  geom_smooth(method = "lm")
-
-d |>
-  filter(adr < 1000 & adr > 0) |>
-  ggplot(aes(x = adults, y = adr, color = hotel)) +
-  geom_point() +
-  geom_smooth(method = "lm")
-```
+If you were to continue this analysis, you could evaluate the model performance on the testing set.
+You could also explore including other predictors in the model to see if they improve model performance.
+:::
 
 # Wrap-up
 
