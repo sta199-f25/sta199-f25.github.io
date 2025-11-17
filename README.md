@@ -1,7 +1,7 @@
 # sta199-f25.github.io
 
 ## Colors
-
+ 
 Pantone Fall 2025 colors:
 
 -   `#005871` - Lyons blue
