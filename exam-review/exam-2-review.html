@@ -556,13 +556,17 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#blizzard-salaries" id="toc-blizzard-salaries" class="nav-link active" data-scroll-target="#blizzard-salaries">Blizzard salaries</a></li>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+<li>
+<a href="#blizzard-salaries" id="toc-blizzard-salaries" class="nav-link active" data-scroll-target="#blizzard-salaries">Blizzard salaries</a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  </ul>
+</li>
   <li>
 <a href="#movies" id="toc-movies" class="nav-link" data-scroll-target="#movies">Movies</a>
   <ul class="collapse">
@@ -667,7 +671,7 @@ Note
 # ℹ 399 more rows</code></pre>
 </div>
 </div>
-</section><section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1</h3>
 <p>You fit a model for predicting raises (<code>percent_incr</code>) from salaries (<code>annual_salary</code>). We’ll call this model <code>raise_1_fit</code>. A tidy output of the model is shown below.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -684,7 +688,7 @@ Note
 <li>For every additional $1,000 of annual salary, the raise goes up by 0.0155%.</li>
 <li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.</li>
 <li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 1.87%.</li>
-</ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+</ol></section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
 <p>You then fit a model for predicting raises (<code>percent_incr</code>) from salaries (<code>annual_salary</code>) and performance ratings (<code>performance_rating</code>). We’ll call this model <code>raise_2_fit</code>. Which of the following is definitely true based on the information you have so far?</p>
 <ol type="a">
 <li>Intercept of <code>raise_2_fit</code> is higher than intercept of <code>raise_1_fit</code>.</li>
@@ -694,7 +698,7 @@ Note
 <span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code>.</li>
 </ol>
 <div style="page-break-after: always;"></div>
-</section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+</section><section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
 <p>The tidy model output for the <code>raise_2_fit</code> model you fit is shown below.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -713,7 +717,7 @@ Note
 <p>“The coefficient for <code>performance_ratingSuccessful</code> is negative. That’s weird. I guess it means that people who get successful performance ratings get lower raises.”</p>
 </blockquote>
 <p>How would you respond to your teammate?</p>
-</section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+</section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
 <p>Ultimately, your teammate decides they don’t like the negative slope coefficients in the model output you created (not that there’s anything wrong with negative slope coefficients!), does something else, and comes up with the following model output.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -738,7 +742,7 @@ Note
 <li>“Successful”, “High”, “Top”</li>
 <li>“Top”, “High”, “Successful”, “Poor”</li>
 <li>Poor, Successful, High, Top</li>
-</ol></section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+</ol></section><section id="question-5" class="level3"><h3 class="anchored" data-anchor-id="question-5">Question 5</h3>
 <p>Suppose we fit a model to predict <code>percent_incr</code> from <code>annual_salary</code> and <code>salary_type</code>. A tidy output of the model is shown below.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -803,7 +807,7 @@ Figure&nbsp;1: Visualizations of the relationship between percent increase, annu
 </figcaption></figure>
 </div>
 <div style="page-break-after: always;"></div>
-</section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+</section><section id="question-6" class="level3"><h3 class="anchored" data-anchor-id="question-6">Question 6</h3>
 <p>Suppose you now fit a model to predict the natural log of percent increase, <code>log(percent_incr)</code>, from performance rating. The model is called <code>raise_4_fit</code>.</p>
 <p>You’re provided the following:</p>
 <div class="cell">
@@ -826,7 +830,7 @@ Figure&nbsp;1: Visualizations of the relationship between percent increase, annu
 <p>c. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.</p>
 <p>d. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.</p>
 <div style="page-break-after: always;"></div>
-</section><section id="movies" class="level1"><h1>Movies</h1>
+</section></section><section id="movies" class="level1"><h1>Movies</h1>
 <p>The data for this part comes from the Internet Movie Database (IMDB). Specifically, the data are a random sample of movies released between 1980 and 2020.</p>
 <p>The name of the data frame used for this analysis is <code>movies</code>, and it contains the variables shown in <a href="#tbl-data-dictionary" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div id="tbl-data-dictionary" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[20,80]">
