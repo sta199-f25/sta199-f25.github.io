@@ -73,7 +73,7 @@ blizzard_salary |>
   select(percent_incr, salary_type, annual_salary, performance_rating)
 ```
 
-## Question 1
+### Question 1
 
 You fit a model for predicting raises (`percent_incr`) from salaries (`annual_salary`). We'll call this model `raise_1_fit`. A tidy output of the model is shown below.
 
@@ -92,7 +92,7 @@ b.  For every additional \$1,000 of annual salary, the raise goes up by 0.0155%.
 c.  For every additional \$1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.
 d.  For every additional \$1,000 of annual salary, the model predicts the raise to be higher, on average, by 1.87%.
 
-## Question 2
+### Question 2
 
 You then fit a model for predicting raises (`percent_incr`) from salaries (`annual_salary`) and performance ratings (`performance_rating`). We'll call this model `raise_2_fit`. Which of the following is definitely true based on the information you have so far?
 
@@ -103,7 +103,7 @@ d.  $R^2$ of `raise_2_fit` is higher $R^2$ of `raise_1_fit`.
 
 {{< pagebreak >}}
 
-## Question 3
+### Question 3
 
 The tidy model output for the `raise_2_fit` model you fit is shown below.
 
@@ -125,7 +125,7 @@ How would you respond to your teammate?
 $\vspace{1.5cm}$
 :::
 
-## Question 4
+### Question 4
 
 Ultimately, your teammate decides they don't like the negative slope coefficients in the model output you created (not that there's anything wrong with negative slope coefficients!), does something else, and comes up with the following model output.
 
@@ -163,7 +163,7 @@ b.  "Successful", "High", "Top"
 c.  "Top", "High", "Successful", "Poor"
 d.  Poor, Successful, High, Top
 
-## Question 5
+### Question 5
 
 Suppose we fit a model to predict `percent_incr` from `annual_salary` and `salary_type`. A tidy output of the model is shown below.
 
@@ -294,7 +294,7 @@ ggplot(
 
 {{< pagebreak >}}
 
-## Question 6
+### Question 6
 
 Suppose you now fit a model to predict the natural log of percent increase, `log(percent_incr)`, from performance rating. The model is called `raise_4_fit`.
 
