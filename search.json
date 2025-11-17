@@ -5191,6 +5191,76 @@
     "text": "Footnotes\n\nRemember, haikus not novellas when writing code!↩︎"
   },
   {
+    "objectID": "lab/lab-6.html",
+    "href": "lab/lab-6.html",
+    "title": "Lab 6",
+    "section": "",
+    "text": "In this lab you’ll will work with hotel cancellations. The data describe the demand of two different types of hotels. Each observation represents a hotel booking between July 1, 2015 and August 31, 2017. Some bookings were cancelled (is_canceled = 1) and others were kept, i.e., the guests checked into the hotel (is_canceled = 0). You can view the code book for all variables here.\n\nBy now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment. If you’re not sure how, refer back to an earlier lab.\nOpen the lab-6.qmd template Quarto file and update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Render the document. Examine the rendered document and make sure your and your teammates’ names are updated in the document. Commit and push your changes with a meaningful commit message and push to GitHub.\n\nClick to expand if you need a refresher on assignment guidelines.\n\nCode should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
+  },
+  {
+    "objectID": "lab/lab-6.html#getting-started",
+    "href": "lab/lab-6.html#getting-started",
+    "title": "Lab 6",
+    "section": "",
+    "text": "By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment. If you’re not sure how, refer back to an earlier lab.\nOpen the lab-6.qmd template Quarto file and update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Render the document. Examine the rendered document and make sure your and your teammates’ names are updated in the document. Commit and push your changes with a meaningful commit message and push to GitHub.\n\nClick to expand if you need a refresher on assignment guidelines.\n\nCode should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
+  },
+  {
+    "objectID": "lab/lab-6.html#packages",
+    "href": "lab/lab-6.html#packages",
+    "title": "Lab 6",
+    "section": "Packages",
+    "text": "Packages\nIn this lab we will work with the tidyverse package.\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "lab/lab-6.html#data",
+    "href": "lab/lab-6.html#data",
+    "title": "Lab 6",
+    "section": "Data",
+    "text": "Data\nThe dataset, called hotels.csv, can be found in the data folder.\n\nhotels &lt;- read_csv(\"data/hotels.csv\")\n\nBelow is an exploratory summary of the variables in the dataset we will use in our analysis.\n\n\n\n\n\n\n\nCancellation status\nNumber of bookings\n\n\n\n0 - Not canceled\n75166\n\n\n1 - Canceled\n44224\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nNumber of adults\nNumber of bookings\n\n\n\n0\n403\n\n\n1\n23027\n\n\n2\n89680\n\n\n3\n6202\n\n\n4\n62\n\n\n5\n2\n\n\n6\n1\n\n\n10\n1\n\n\n20\n2\n\n\n26\n5\n\n\n27\n2\n\n\n40\n1\n\n\n50\n1\n\n\n55\n1"
+  },
+  {
+    "objectID": "lab/lab-6.html#part-1---data-prep",
+    "href": "lab/lab-6.html#part-1---data-prep",
+    "title": "Lab 6",
+    "section": "Part 1 - Data prep",
+    "text": "Part 1 - Data prep\nQuestion 1\n\nOne of the outcome variables you’ll use is is_canceled. Transform this variable to the appropriate data class so that\n\nit uses informative labels (“not canceled” and “canceled” instead of 0 and 1, respectively), and\nthe levels are ordered such that when we fit a logistic regression model to predict this outcome, success is defined as “canceled” (what we’re predicting)\n\n\nBased on the exploratory summaries above, you should address a few data quality issues before moving forward with the analysis. To do so, filter the dataset to remove\n\nany bookings with average daily rate greater than $1,000 and\nany bookings with number of adults greater than or equal to 5.\n\n\nSplit the data into a training set (75%) and a testing set (25%), setting the random seed to 1117 for reproducibility."
+  },
+  {
+    "objectID": "lab/lab-6.html#part-2---predicting-cancellations",
+    "href": "lab/lab-6.html#part-2---predicting-cancellations",
+    "title": "Lab 6",
+    "section": "Part 2 - Predicting cancellations",
+    "text": "Part 2 - Predicting cancellations\nQuestion 2\nUsing these data, one of our goals is to explore the following question:\n\nAre reservations earlier in the month or later in the month more likely to be cancelled?\n\n\nIn a single pipeline, calculate the mean arrival dates (arrival_date_day_of_month) for reservations that were cancelled and reservations that were not cancelled.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThink carefully about which dataset you should use: hotels, the training subset, or the testing subset?\n\n\n\n\nIn your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.\nFit the appropriate model to predict whether a reservation was cancelled from arrival_date_day_of_month and display a tidy summary of the model output. Then, interpret the slope coefficient in context of the data and the research question.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThe slope interpretation will have the following format:\n\nThe model predicts that, for each day the booking is ___ (later / earlier) in the month, the ___ (chance / probability / odds) of a hotel cancellation is ___ (lower / higher) by a factor of ___, on average.\n\n\n\n\n\nCalculate the probability that the hotel reservation is cancelled if it the arrival date is on the 17th of the month. Based on this probability, would you predict this booking would be cancelled or not cancelled. Explain your reasoning for your classification.\nQuestion 3\n\nFit another model to predict whether a reservation was cancelled from arrival_date_day_of_month and hotel type (Resort or City Hotel), allowing the relationship between arrival_date_day_of_month and is_canceled to vary based on hotel type. Display a tidy output of the model.\nInterpret the intercept in context of the data."
+  },
+  {
+    "objectID": "lab/lab-6.html#part-3---predicting-daily-rates",
+    "href": "lab/lab-6.html#part-3---predicting-daily-rates",
+    "title": "Lab 6",
+    "section": "Part 3 - Predicting daily rates",
+    "text": "Part 3 - Predicting daily rates\nQuestion 4\nThe dataset also contains information about the average daily rate (adr) for each reservation. The following model predicts adr from adults and hotel type.\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239\n\n\n\n\nWhich of the following is the best interpretation of the slope coefficient for adults?\nFor each additional adult in the booking, the average daily rate is predicted to be higher by $29.50\nA. on average, holding hotel type constant.\nB. for Resort Hotels compared to City Hotels, on average.\nC. for City Hotels compared to Resort Hotels, on average.\nD. on average, not holding any other variables constant.\n\n\nWhich of the following is the correct interpretation of the slope coefficient for hotel?\nA. For each additional Resort Hotel booking, the predicted average daily rate is $10.70 lower, holding number of adults constant.\nB. For each additional adult in the booking, the average daily rate is predicted to be lower by $10.70 for resort hotels compared to City Hotels, on average.\nC. Resort Hotels bookings are predicted to have an average daily rate that is $10.70 lower than City Hotels, on average, holding number of adults constant.\nD. Resort Hotels bookings are predicted to have an average daily rate that is $10.70 higher than City Hotels, on average, holding number of adults constant.\n\n\nWhich of the following is the correct interpretation of the intercept?\nA. The predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $50.50, on average.\nB. The predicted average daily rate for a bookings with 0 adults at a City Hotel is $50.50, on average.\nC. For each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.\nD. For each additional adult and City Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.\n\nWhich of the following (Plot A or Plot B) is the correct visual representation of this model?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThink about whether you should include only main effects of adults and hotel or also their interaction effect as well in your model in order to match the plot.\n\n\n\n\n\n\n\n\n\nWhat next?\n\n\n\nIf you were to continue this analysis, you could evaluate the model performance on the testing set. You could also explore including other predictors in the model to see if they improve model performance."
+  },
+  {
+    "objectID": "lab/lab-6.html#submission",
+    "href": "lab/lab-6.html#submission",
+    "title": "Lab 6",
+    "section": "Submission",
+    "text": "Submission\nBy now you should also be familiar with how to submit your assignment in Gradescope.\n\nClick to expand if you need a refresher on how to get started with a lab assignment.\nSubmit your PDF document to Gradescope by the end of the lab to be considered “on time”:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials \\(\\rightarrow\\) Duke NetID and log in using your NetID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with question. All the pages of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nChecklist\n\n\n\nMake sure you have:\n\nattempted all questions\nrendered your Quarto document\ncommitted and pushed everything to your GitHub repository such that the Git pane in RStudio is empty\nuploaded your PDF to Gradescope"
+  },
+  {
+    "objectID": "lab/lab-6.html#grading-and-feedback",
+    "href": "lab/lab-6.html#grading-and-feedback",
+    "title": "Lab 6",
+    "section": "Grading and feedback",
+    "text": "Grading and feedback\n\nThis lab is worth 30 points:\n\n10 points for being in lab and turning in something – no partial credit for this part.\n20 points for:\n\nanswering the questions correctly – there is partial credit for this part.\nfollowing the workflow – there is partial credit for this part.\n\n\n\n\nThe workflow points are for:\n\ncommitting at least three times as you work through your lab,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization.\n\n\nYou’ll receive feedback on your lab on Gradescope within a week.\n\nGood luck, and have fun with it!"
+  },
+  {
+    "objectID": "lab/lab-6.html#footnotes",
+    "href": "lab/lab-6.html#footnotes",
+    "title": "Lab 6",
+    "section": "Footnotes",
+    "text": "Footnotes\n\nRemember, haikus not novellas when writing code!↩︎"
+  },
+  {
     "objectID": "computing-troubleshooting.html",
     "href": "computing-troubleshooting.html",
     "title": "Computing troubleshooting",
@@ -5227,7 +5297,7 @@
     "href": "lab.html",
     "title": "Labs",
     "section": "",
-    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nDue: End of lab on Mon, Aug 25\n\n\n\n\n\n\nLab 1\n\n\nExploring NC Counties\n\n\nDue: End of lab on Mon, Sep 8\n\n\n\n\n\n\nLab 2\n\n\nGet in teams then group_by()\n\n\nDue: End of lab on Mon, Sep 15\n\n\n\n\n\n\nLab 3\n\n\nA pivot and a join walk into a pipe…\n\n\nDue: End of lab on Mon, Sep 22\n\n\n\n\n\n\nLab 4\n\n\nChanges in college athletics\n\n\nDue: End of lab on Mon, Sep 29\n\n\n\n\n\n\nLab 5\n\n\nMake up your other half\n\n\nDue: End of lab on Mon, Oct 29\n\n\n\n\n\n\nNo matching items",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nDue: End of lab on Mon, Aug 25\n\n\n\n\n\n\nLab 1\n\n\nExploring NC Counties\n\n\nDue: End of lab on Mon, Sep 8\n\n\n\n\n\n\nLab 2\n\n\nGet in teams then group_by()\n\n\nDue: End of lab on Mon, Sep 15\n\n\n\n\n\n\nLab 3\n\n\nA pivot and a join walk into a pipe…\n\n\nDue: End of lab on Mon, Sep 22\n\n\n\n\n\n\nLab 4\n\n\nChanges in college athletics\n\n\nDue: End of lab on Mon, Sep 29\n\n\n\n\n\n\nLab 5\n\n\nMake up your other half\n\n\nDue: End of lab on Mon, Oct 29\n\n\n\n\n\n\nLab 6\n\n\n#canceled\n\n\nDue: End of lab on Mon, Nov 17\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Labs"
     ]
