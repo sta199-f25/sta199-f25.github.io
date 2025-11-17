@@ -5,7 +5,7 @@ description: "Due: End of lab on Mon, Nov 17"
 categories: Lab
 filters:
   - ../remove-fmt-skip.lua
-draft: true
+draft: false
 ---
 
 # Introduction
@@ -185,9 +185,9 @@ a.  In a single pipeline, calculate the mean arrival dates (`arrival_date_day_of
 Think carefully about which dataset you should use: `hotels`, the training subset, or the testing subset?
 :::
 
-a.  In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
+b.  In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was cancelled and the day of month for the booking.
 
-b.  Fit the appropriate model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and display a tidy summary of the model output.
+c.  Fit the appropriate model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and display a tidy summary of the model output.
     Then, interpret the slope coefficient in context of the data and the research question.
 
 ::: {.callout-tip collapse="true"}
@@ -198,7 +198,7 @@ The slope interpretation will have the following format:
 > The model predicts that, for each day the booking is \_\_\_ (later / earlier) in the month, the \_\_\_ (chance / probability / odds) of a hotel cancellation is \_\_\_ (lower / higher) by a factor of \_\_\_, on average.
 :::
 
-c.  Calculate the probability that the hotel reservation is cancelled if it the arrival date is on the 17th of the month.
+d.  Calculate the probability that the hotel reservation is cancelled if it the arrival date is on the 17th of the month.
     Based on this probability, would you predict this booking would be cancelled or not cancelled.
     Explain your reasoning for your classification.
 
