@@ -1,15 +1,5 @@
 [
   {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/exam-2-review-A.html",
-      "/exam-review/final-exam-review.html"
-    ]
-  },
-  {
     "listing": "/lab.html",
     "items": [
       "/lab/lab-0.html",
@@ -19,6 +9,16 @@
       "/lab/lab-4.html",
       "/lab/lab-5.html",
       "/lab/lab-6.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/exam-2-review-A.html",
+      "/exam-review/final-exam-review.html"
     ]
   },
   {
