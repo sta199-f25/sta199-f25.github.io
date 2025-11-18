@@ -239,7 +239,7 @@ augment(is_canceled_fit_1, new_data = new_booking)
 
 - `augment()` returns the data frame passed to `new_data` _augment_ed by
   - the predicted probability of success,
-  - the predicted probability of success, and
+  - the predicted probability of failure, and
   - the predicted class (based on a 0.5 cutoff by default)
 
 ```{r}
