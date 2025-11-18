@@ -31,13 +31,15 @@ todays_ae <- "ae-14-chicago-taxi-classification"
 
 ## Announcements {.smaller}
 
-- Exam:
-  - In class:
+- Exam - In class:
     - Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
     - Bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)
-  - Take home:
-    - Open book, notes, internet
-    - Due Saturday, November 22 at noon
+
+- Exam - Take home:
+  - Open book, notes, internet
+  - No office hours
+  - Questions on Ed (private by default)
+  - Due Saturday, November 22 at noon
 
 - Reminder: Academic dishonesty / Duke Community Standard
 
