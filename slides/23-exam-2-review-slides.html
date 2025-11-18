@@ -96,7 +96,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f6ebed985419fc3f34adfbdb6c3e8cf2.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-27130b92cf5bfca8d85a2a871b9fcd62.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
 <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -213,30 +213,6 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
   <p class="date">November 18, 2025</p>
 </section><section><section id="warm-up" class="title-slide slide level1 center"><h1>Warm-up</h1>
 
-</section><section id="while-you-wait-participate" class="slide level2 xsmall"><h2>While you wait: Participate 📱💻</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="wooclap">
-<p>What is sensitivity also known as?</p>
-<div class="wooclap-choices">
-<ul>
-<li>True positive rate</li>
-<li>True negative rate</li>
-<li>False positive rate</li>
-<li>False negative rate</li>
-<li>Recall</li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
-</figure>
-</div>
-<div class="small">
-<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
-</div>
-</div></div>
 </section><section id="announcements" class="slide level2"><h2>Announcements</h2>
 <ul>
 <li><p>Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you</p></li>
@@ -305,7 +281,8 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <li>Linear regression with a categorical predictor</li>
 <li>Linear regression with a log-transformed outcome and a numerical predictor</li>
 <li>Linear regression with a log-transformed outcome and a categorical predictor</li>
-<li>Logistic regression with a numerical predictor</li>
+<li>Logistic regression with a numerical predictor <span class="fragment">✅</span>
+</li>
 <li>Logistic regression with a categorical predictor</li>
 </ul>
 </div>
@@ -641,7 +618,8 @@ log(\widehat{y}) = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k
 <div class="wooclap-choices">
 <ul>
 <li>True positive rate</li>
-<li>Area under the ROC curve</li>
+<li>Area under the ROC curve <span class="fragment">✅</span>
+</li>
 <li>Adjusted R-squared</li>
 <li>Root mean squared error</li>
 <li>R-squared</li>
@@ -716,6 +694,153 @@ log(\widehat{y}) = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k
 <div class="task fragment">
 <p>Which model would you select as your final model based on AUC?</p>
 </div>
+</section><section id="linear-regression-1" class="slide level2"><h2>Linear regression</h2>
+<p>The dataset also contains information about the average daily rate (<code>adr</code>) for each reservation. The following model predicts <code>adr</code> from <code>adults</code> and <code>hotel</code> type.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.5     0.605      83.5 0        
+2 adults                29.5     0.311      94.9 0        
+3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239</code></pre>
+</div>
+</div>
+</section><section id="participate-2" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following is the best interpretation of the slope coefficient for <code>adults</code>?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.5     0.605      83.5 0        
+2 adults                29.5     0.311      94.9 0        
+3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239</code></pre>
+</div>
+</div>
+<p>For each additional adult in the booking, the average daily rate is predicted to be higher by $29.50</p>
+<div class="wooclap-choices">
+<ul>
+<li>on average, holding hotel type constant. <span class="fragment">✅</span>
+</li>
+<li>for Resort Hotels compared to City Hotels, on average.</li>
+<li>for City Hotels compared to Resort Hotels, on average.</li>
+<li>on average, not holding any other variables constant.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section><section id="participate-3" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap medium">
+<p>Which of the following is the correct interpretation of the slope coefficient for <code>hotel</code>?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.5     0.605      83.5 0        
+2 adults                29.5     0.311      94.9 0        
+3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239</code></pre>
+</div>
+</div>
+<div class="wooclap-choices">
+<ul>
+<li>For each additional Resort Hotel booking, the predicted average daily rate is $10.70 lower, holding number of adults constant.</li>
+<li>For each additional adult in the booking, the average daily rate is predicted to be lower by $10.70 for resort hotels compared to City Hotels, on average.</li>
+<li>Resort Hotels bookings are predicted to have an average daily rate that is $10.70 lower than City Hotels, on average, holding number of adults constant. <span class="fragment">✅</span>
+</li>
+<li>Resort Hotels bookings are predicted to have an average daily rate that is $10.70 higher than City Hotels, on average, holding number of adults constant.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section><section id="participate-4" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following is the correct interpretation of the intercept?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.5     0.605      83.5 0        
+2 adults                29.5     0.311      94.9 0        
+3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239</code></pre>
+</div>
+</div>
+<div class="wooclap-choices">
+<ul>
+<li>The predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $50.50, on average.</li>
+<li>The predicted average daily rate for a bookings with 0 adults at a City Hotel is $50.50, on average. <span class="fragment">✅</span>
+</li>
+<li>For each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.</li>
+<li>For each additional adult and City Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section><section id="participate-5" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following (Plot A or Plot B) is the correct visual representation of this model?</p>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="23-exam-2-review_files/figure-revealjs/unnamed-chunk-25-1.png" width="480"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="23-exam-2-review_files/figure-revealjs/unnamed-chunk-25-2.png" width="480"></p>
+</div>
+</div>
+</div>
+<div class="wooclap-choices">
+<ul>
+<li>Plot A</li>
+<li>Plot B <span class="fragment">✅</span>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
 
 
 </section></section>

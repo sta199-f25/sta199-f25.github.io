@@ -2229,13 +2229,6 @@
     "text": "ae-09-chronicle-scrape\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-09-chronicle-scrape.qmd and chronicle-scrape.R."
   },
   {
-    "objectID": "slides/23-exam-2-review-slides.html#while-you-wait-participate",
-    "href": "slides/23-exam-2-review-slides.html#while-you-wait-participate",
-    "title": "Exam 2 review",
-    "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\nWhat is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
-  },
-  {
     "objectID": "slides/23-exam-2-review-slides.html#announcements",
     "href": "slides/23-exam-2-review-slides.html#announcements",
     "title": "Exam 2 review",
@@ -2275,7 +2268,7 @@
     "href": "slides/23-exam-2-review-slides.html#participate",
     "title": "Exam 2 review",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nWhat type of model would you use to answer the question:\n\nAre reservations earlier in the month or later in the month more likely to be cancelled?\n\n\n\nLinear regression with a numerical predictor\nLinear regression with a categorical predictor\nLinear regression with a log-transformed outcome and a numerical predictor\nLinear regression with a log-transformed outcome and a categorical predictor\nLogistic regression with a numerical predictor\nLogistic regression with a categorical predictor\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nWhat type of model would you use to answer the question:\n\nAre reservations earlier in the month or later in the month more likely to be cancelled?\n\n\n\nLinear regression with a numerical predictor\nLinear regression with a categorical predictor\nLinear regression with a log-transformed outcome and a numerical predictor\nLinear regression with a log-transformed outcome and a categorical predictor\nLogistic regression with a numerical predictor ✅\n\nLogistic regression with a categorical predictor\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/23-exam-2-review-slides.html#linear-regression",
@@ -2408,7 +2401,7 @@
     "href": "slides/23-exam-2-review-slides.html#participate-1",
     "title": "Exam 2 review",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nSuppose we want to select a final model to predict whether a reservation was cancelled. Which metric would be most appropriate to evaluate the predictive performance of our logistic regression models?\n\n\nTrue positive rate\nArea under the ROC curve\nAdjusted R-squared\nRoot mean squared error\nR-squared\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nSuppose we want to select a final model to predict whether a reservation was cancelled. Which metric would be most appropriate to evaluate the predictive performance of our logistic regression models?\n\n\nTrue positive rate\nArea under the ROC curve ✅\n\nAdjusted R-squared\nRoot mean squared error\nR-squared\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/23-exam-2-review-slides.html#area-under-the-roc-curve-auc",
@@ -2418,18 +2411,46 @@
     "text": "Area under the ROC curve (AUC)\n\nis_canceled_aug_1 &lt;- augment(is_canceled_fit_1, new_data = hotels_test)\nis_canceled_aug_2 &lt;- augment(is_canceled_fit_2, new_data = hotels_test)\nis_canceled_aug_3 &lt;- augment(is_canceled_fit_3, new_data = hotels_test)\n\n\n\nSingle predictor:\n\nroc_auc(\n  is_canceled_aug_1,\n  truth = is_canceled,\n  .pred_canceled,\n  event_level = \"second\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.503\n\n\n\nMain effects:\n\nroc_auc(\n  is_canceled_aug_2,\n  truth = is_canceled,\n  .pred_canceled,\n  event_level = \"second\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.571\n\n\n\nInteraction effects:\n\nroc_auc(\n  is_canceled_aug_3,\n  truth = is_canceled,\n  .pred_canceled,\n  event_level = \"second\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.571\n\n\n\n\nWhich model would you select as your final model based on AUC?"
   },
   {
+    "objectID": "slides/23-exam-2-review-slides.html#linear-regression-1",
+    "href": "slides/23-exam-2-review-slides.html#linear-regression-1",
+    "title": "Exam 2 review",
+    "section": "Linear regression",
+    "text": "Linear regression\nThe dataset also contains information about the average daily rate (adr) for each reservation. The following model predicts adr from adults and hotel type.\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239"
+  },
+  {
+    "objectID": "slides/23-exam-2-review-slides.html#participate-2",
+    "href": "slides/23-exam-2-review-slides.html#participate-2",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the best interpretation of the slope coefficient for adults?\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239\n\n\nFor each additional adult in the booking, the average daily rate is predicted to be higher by $29.50\n\n\non average, holding hotel type constant. ✅\n\nfor Resort Hotels compared to City Hotels, on average.\nfor City Hotels compared to Resort Hotels, on average.\non average, not holding any other variables constant.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/23-exam-2-review-slides.html#participate-3",
+    "href": "slides/23-exam-2-review-slides.html#participate-3",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the slope coefficient for hotel?\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239\n\n\n\n\nFor each additional Resort Hotel booking, the predicted average daily rate is $10.70 lower, holding number of adults constant.\nFor each additional adult in the booking, the average daily rate is predicted to be lower by $10.70 for resort hotels compared to City Hotels, on average.\nResort Hotels bookings are predicted to have an average daily rate that is $10.70 lower than City Hotels, on average, holding number of adults constant. ✅\n\nResort Hotels bookings are predicted to have an average daily rate that is $10.70 higher than City Hotels, on average, holding number of adults constant.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/23-exam-2-review-slides.html#participate-4",
+    "href": "slides/23-exam-2-review-slides.html#participate-4",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the intercept?\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239\n\n\n\n\nThe predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $50.50, on average.\nThe predicted average daily rate for a bookings with 0 adults at a City Hotel is $50.50, on average. ✅\n\nFor each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.\nFor each additional adult and City Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/23-exam-2-review-slides.html#participate-5",
+    "href": "slides/23-exam-2-review-slides.html#participate-5",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following (Plot A or Plot B) is the correct visual representation of this model?\n\n\n\n\n\n\n\n\n\n\n\n\nPlot A\nPlot B ✅\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/23-exam-2-review.html",
     "href": "slides/23-exam-2-review.html",
     "title": "Exam 2 review",
     "section": "",
-    "text": "What is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\nReminder: Academic dishonesty / Duke Community Standard\n\n\nFinish up the application exercise by finding the area under the ROC curve.\n\n\n\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)"
-  },
-  {
-    "objectID": "slides/23-exam-2-review.html#while-you-wait-participate",
-    "href": "slides/23-exam-2-review.html#while-you-wait-participate",
-    "title": "Exam 2 review",
-    "section": "",
-    "text": "What is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\nReminder: Academic dishonesty / Duke Community Standard\n\n\nFinish up the application exercise by finding the area under the ROC curve.\n\n\n\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)"
   },
   {
     "objectID": "slides/23-exam-2-review.html#announcements",
@@ -2471,7 +2492,7 @@
     "href": "slides/23-exam-2-review.html#participate",
     "title": "Exam 2 review",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nWhat type of model would you use to answer the question:\n\nAre reservations earlier in the month or later in the month more likely to be cancelled?\n\n\n\nLinear regression with a numerical predictor\nLinear regression with a categorical predictor\nLinear regression with a log-transformed outcome and a numerical predictor\nLinear regression with a log-transformed outcome and a categorical predictor\nLogistic regression with a numerical predictor\nLogistic regression with a categorical predictor\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nWhat type of model would you use to answer the question:\n\nAre reservations earlier in the month or later in the month more likely to be cancelled?\n\n\n\nLinear regression with a numerical predictor\nLinear regression with a categorical predictor\nLinear regression with a log-transformed outcome and a numerical predictor\nLinear regression with a log-transformed outcome and a categorical predictor\nLogistic regression with a numerical predictor ✅\n\nLogistic regression with a categorical predictor\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/23-exam-2-review.html#linear-regression",
@@ -2604,7 +2625,7 @@
     "href": "slides/23-exam-2-review.html#participate-1",
     "title": "Exam 2 review",
     "section": "Participate 📱💻",
-    "text": "Participate 📱💻\n\n\n\nSuppose we want to select a final model to predict whether a reservation was cancelled. Which metric would be most appropriate to evaluate the predictive performance of our logistic regression models?\n\n\nTrue positive rate\nArea under the ROC curve\nAdjusted R-squared\nRoot mean squared error\nR-squared\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Participate 📱💻\n\n\n\nSuppose we want to select a final model to predict whether a reservation was cancelled. Which metric would be most appropriate to evaluate the predictive performance of our logistic regression models?\n\n\nTrue positive rate\nArea under the ROC curve ✅\n\nAdjusted R-squared\nRoot mean squared error\nR-squared\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/23-exam-2-review.html#area-under-the-roc-curve-auc",
@@ -2612,6 +2633,41 @@
     "title": "Exam 2 review",
     "section": "Area under the ROC curve (AUC)",
     "text": "Area under the ROC curve (AUC)\n\nis_canceled_aug_1 &lt;- augment(is_canceled_fit_1, new_data = hotels_test)\nis_canceled_aug_2 &lt;- augment(is_canceled_fit_2, new_data = hotels_test)\nis_canceled_aug_3 &lt;- augment(is_canceled_fit_3, new_data = hotels_test)\n\n\n\nSingle predictor:\n\nroc_auc(\n  is_canceled_aug_1,\n  truth = is_canceled,\n  .pred_canceled,\n  event_level = \"second\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.503\n\n\n\n\nMain effects:\n\nroc_auc(\n  is_canceled_aug_2,\n  truth = is_canceled,\n  .pred_canceled,\n  event_level = \"second\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.571\n\n\n\n\nInteraction effects:\n\nroc_auc(\n  is_canceled_aug_3,\n  truth = is_canceled,\n  .pred_canceled,\n  event_level = \"second\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.571\n\n\n\n\n\nWhich model would you select as your final model based on AUC?"
+  },
+  {
+    "objectID": "slides/23-exam-2-review.html#linear-regression-1",
+    "href": "slides/23-exam-2-review.html#linear-regression-1",
+    "title": "Exam 2 review",
+    "section": "Linear regression",
+    "text": "Linear regression\nThe dataset also contains information about the average daily rate (adr) for each reservation. The following model predicts adr from adults and hotel type.\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239"
+  },
+  {
+    "objectID": "slides/23-exam-2-review.html#participate-2",
+    "href": "slides/23-exam-2-review.html#participate-2",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the best interpretation of the slope coefficient for adults?\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239\n\n\nFor each additional adult in the booking, the average daily rate is predicted to be higher by $29.50\n\n\non average, holding hotel type constant. ✅\n\nfor Resort Hotels compared to City Hotels, on average.\nfor City Hotels compared to Resort Hotels, on average.\non average, not holding any other variables constant.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/23-exam-2-review.html#participate-3",
+    "href": "slides/23-exam-2-review.html#participate-3",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the slope coefficient for hotel?\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239\n\n\n\n\nFor each additional Resort Hotel booking, the predicted average daily rate is $10.70 lower, holding number of adults constant.\nFor each additional adult in the booking, the average daily rate is predicted to be lower by $10.70 for resort hotels compared to City Hotels, on average.\nResort Hotels bookings are predicted to have an average daily rate that is $10.70 lower than City Hotels, on average, holding number of adults constant. ✅\n\nResort Hotels bookings are predicted to have an average daily rate that is $10.70 higher than City Hotels, on average, holding number of adults constant.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/23-exam-2-review.html#participate-4",
+    "href": "slides/23-exam-2-review.html#participate-4",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the intercept?\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.5     0.605      83.5 0        \n2 adults                29.5     0.311      94.9 0        \n3 hotelResort Hotel    -10.7     0.322     -33.1 2.48e-239\n\n\n\n\nThe predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $50.50, on average.\nThe predicted average daily rate for a bookings with 0 adults at a City Hotel is $50.50, on average. ✅\n\nFor each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.\nFor each additional adult and City Hotel in the booking, the average daily rate is predicted to be $50.50 higher, on average.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/23-exam-2-review.html#participate-5",
+    "href": "slides/23-exam-2-review.html#participate-5",
+    "title": "Exam 2 review",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following (Plot A or Plot B) is the correct visual representation of this model?\n\n\n\n\n\n\n\n\n\n\n\n\nPlot A\nPlot B ✅\n\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/06-exploratory-data-analysis-II-slides.html#while-you-wait-participate",
