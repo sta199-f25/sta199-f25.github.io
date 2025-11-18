@@ -2233,7 +2233,7 @@
     "href": "slides/23-exam-2-review-slides.html#announcements",
     "title": "Exam 2 review",
     "section": "Announcements",
-    "text": "Announcements\n\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\nReminder: Academic dishonesty / Duke Community Standard"
+    "text": "Announcements\n\n\nExam:\n\nIn class:\n\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\n\n\nTake home:\n\nOpen book, notes, internet\nDue Saturday, November 22 at noon\n\n\n\n\nReminder: Academic dishonesty / Duke Community Standard\nNext Tuesday: Can watch class live on Panopto link"
   },
   {
     "objectID": "slides/23-exam-2-review-slides.html#from-last-class-ae-14-chicago-taxi-classification",
@@ -2450,14 +2450,14 @@
     "href": "slides/23-exam-2-review.html",
     "title": "Exam 2 review",
     "section": "",
-    "text": "Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\nReminder: Academic dishonesty / Duke Community Standard\n\n\nFinish up the application exercise by finding the area under the ROC curve.\n\n\n\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)"
+    "text": "Exam:\n\nIn class:\n\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\n\n\nTake home:\n\nOpen book, notes, internet\nDue Saturday, November 22 at noon\n\n\n\n\nReminder: Academic dishonesty / Duke Community Standard\nNext Tuesday: Can watch class live on Panopto link\n\n\nFinish up the application exercise by finding the area under the ROC curve.\n\n\n\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)"
   },
   {
     "objectID": "slides/23-exam-2-review.html#announcements",
     "href": "slides/23-exam-2-review.html#announcements",
     "title": "Exam 2 review",
     "section": "",
-    "text": "Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\nReminder: Academic dishonesty / Duke Community Standard"
+    "text": "Exam:\n\nIn class:\n\nCheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you\nBring a pencil and eraser (you’re allowed to use a pen, but you might not want to)\n\n\nTake home:\n\nOpen book, notes, internet\nDue Saturday, November 22 at noon\n\n\n\n\nReminder: Academic dishonesty / Duke Community Standard\nNext Tuesday: Can watch class live on Panopto link"
   },
   {
     "objectID": "slides/23-exam-2-review.html#from-last-class-ae-14-chicago-taxi-classification",
