@@ -4,7 +4,7 @@ subtitle: "Lecture 22"
 date: "2025-11-13"
 format: 
   revealjs: 
-    output-file: 21-evaluating-models-slides.html
+    output-file: 22-evaluating-models-slides.html
     footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
     theme: slides.scss
     transition: fade
