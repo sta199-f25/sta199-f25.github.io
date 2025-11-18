@@ -1,0 +1,541 @@
+---
+title: "Exam 2 review"
+subtitle: "Lecture 23"
+date: "2025-11-18"
+format: 
+  revealjs: 
+    output-file: 23-exam-2-review-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 24))
+todays_ae <- "ae-14-chicago-taxi-classification"
+```
+
+# Warm-up
+
+## While you wait: Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+What is sensitivity also known as?
+
+::: wooclap-choices
+- True positive rate
+- True negative rate
+- False positive rate
+- False negative rate
+- Recall
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Announcements
+
+- Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
+
+- Bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)
+
+- Reminder: Academic dishonesty / Duke Community Standard
+
+## From last class: `{r} todays_ae` {.smaller}
+
+::: appex
+Finish up the application exercise by finding the area under the ROC curve.
+:::
+
+## Recap {.xsmall}
+
+::: incremental
+- Split data into training and testing sets (generally 75/25)
+
+- Fit models on training data and reduce to a few candidate models
+
+- Make predictions on testing data
+
+- Evaluate predictions on testing data using appropriate predictive performance metrics
+  - Linear models: Adjusted R-squared, AIC, etc.
+  - Logistic models: False negative and positive rates, AUC (area under the curve), etc.
+
+- Don't forget to also consider explainability and domain knowledge when selecting a final model
+
+- In a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering,  hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)
+:::
+
+# Modeling review
+
+## Hotel cancellations
+
+```{r}
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+```{r}
+#| eval: false
+hotels <- read_csv("data/hotels.csv")
+```
+
+```{r}
+#| include: false
+hotels <- read_csv(here::here("slides", "data/hotels.csv"))
+```
+
+## Data prep {.smaller}
+
+- Relevel `is_canceled`
+- Remove bookings with average daily rate greater than $1,000
+- Remove bookings with number of adults greater than or equal to 5
+- Split the data into a training set (75%) and a testing set (25%)
+
+```{r}
+#| code-line-numbers: "|2-5|6|1|8-11"
+hotels <- hotels |>
+  mutate(
+    is_canceled = if_else(is_canceled == 1, "canceled", "not canceled"),
+    is_canceled = fct_relevel(is_canceled, "not canceled", "canceled")
+  ) |>
+  filter(adr <= 1000, adults < 5)
+
+set.seed(1117)
+hotels_split <- initial_split(hotels)
+hotels_train <- training(hotels_split)
+hotels_test <- testing(hotels_split)
+```
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+What type of model would you use to answer the question:
+
+> Are reservations earlier in the month or later in the month more likely to be cancelled?
+
+::: wooclap-choices
+- Linear regression with a numerical predictor
+- Linear regression with a categorical predictor
+- Linear regression with a log-transformed outcome and a numerical predictor
+- Linear regression with a log-transformed outcome and a categorical predictor
+- Logistic regression with a numerical predictor
+- Logistic regression with a categorical predictor
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Linear regression
+
+Numerical outcome:
+
+$$
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \varepsilon
+$$
+
+<br>
+
+$$
+\widehat{y} = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k
+$$
+
+## Linear regression with log-transformed outcome
+
+Numerical outcome, log-transformed for a better linear fit:
+
+$$
+log(y) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \varepsilon
+$$
+
+<br>
+
+$$
+log(\widehat{y}) = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k
+$$
+
+## Logistic regression
+
+Binary outcome, where $p = P(Y=1)$, the probability of success:
+
+$$
+\log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \varepsilon
+$$
+
+<br>
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k
+$$
+
+## Cancellation ~ arrival date {.smaller}
+
+```{r}
+is_canceled_fit_1 <- logistic_reg() |>
+  fit(is_canceled ~ arrival_date_day_of_month, data = hotels_train)
+
+tidy(is_canceled_fit_1)
+```
+
+## Slope in logistic regression {.smaller}
+
+```{r}
+tidy(is_canceled_fit_1) |>
+  select(term, estimate) |>
+  mutate(exp_estimate = exp(estimate))
+```
+
+. . .
+
+<br>
+
+For each day the booking is later in the month, the odds of reservations being canceled is predicted to be lower by a factor of 0.998, on average.
+
+## Intercept in logistic regression {.smaller}
+
+```{r}
+tidy(is_canceled_fit_1) |>
+  select(term, estimate) |>
+  mutate(exp_estimate = exp(estimate))
+```
+
+. . .
+
+<br>
+
+On the 0th day of the month, the odds of reservations being canceled is predicted to be 0.601, on average.
+The intercept is not meaningful in this context since there is no 0th day of the month.
+
+## Prediction in logistic regression {.smaller}
+
+::: task
+Predict the probability of cancellation for a booking made on the 18th day of the month.
+:::
+
+. . .
+
+```{r}
+new_booking <- tibble(arrival_date_day_of_month = 18)
+augment(is_canceled_fit_1, new_data = new_booking)
+```
+
+## `augment()` vs. `predict()` {.smaller}
+
+- `augment()` returns the data frame passed to `new_data` _augment_ed by
+  - the predicted probability of success,
+  - the predicted probability of success, and
+  - the predicted class (based on a 0.5 cutoff by default)
+
+```{r}
+augment(is_canceled_fit_1, new_data = new_booking)
+```
+
+. . .
+
+- `predict()` the predicted class (based on a 0.5 cutoff by default)
+
+```{r}
+predict(is_canceled_fit_1, new_data = new_booking)
+```
+
+## Cancellation ~ arrival date + hotel type {.smaller}
+
+::: task
+Fit another model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and `hotel` type (Resort or City Hotel), allowing the relationship between `arrival_date_day_of_month` and `is_canceled` to **not** vary based on `hotel` type.
+:::
+
+. . .
+
+```{r}
+is_canceled_fit_2 <- logistic_reg() |>
+  fit(is_canceled ~ arrival_date_day_of_month + hotel, data = hotels_train)
+
+tidy(is_canceled_fit_2)
+```
+
+## Slope in logistic regression {.smaller}
+
+```{r}
+tidy(is_canceled_fit_2) |>
+  select(term, estimate) |>
+  mutate(exp_estimate = exp(estimate))
+```
+
+. . .
+
+<br>
+
+Holding hotel type constant, for each day the booking is later in the month, the odds of reservations being canceled is predicted to be lower by a factor of 0.998, on average.
+
+## Slope in logistic regression {.smaller}
+
+```{r}
+tidy(is_canceled_fit_2) |>
+  select(term, estimate) |>
+  mutate(exp_estimate = exp(estimate))
+```
+
+. . .
+
+<br>
+
+Holding arrival day of month constant, the odds of Resort Hotel reservations being canceled is predicted to be lower by a factor of 0.541 compared to City Hotel reservations, on average.
+
+## Intercept in logistic regression {.smaller}
+
+```{r}
+tidy(is_canceled_fit_2) |>
+  select(term, estimate) |>
+  mutate(exp_estimate = exp(estimate))
+```
+
+. . .
+
+<br>
+
+On the 0th day of the month, the odds of City Hotel reservations being canceled is predicted to be 0.729, on average.
+The intercept is not meaningful in this context since there is no 0th day of the month.
+
+## Cancellation ~ arrival date * hotel type {.smaller}
+
+::: task
+Fit another model to predict whether a reservation was cancelled from `arrival_date_day_of_month` and `hotel` type (Resort or City Hotel), allowing the relationship between `arrival_date_day_of_month` and `is_canceled` to vary based on `hotel` type.
+:::
+
+. . .
+
+```{r}
+is_canceled_fit_3 <- logistic_reg() |>
+  fit(is_canceled ~ arrival_date_day_of_month * hotel, data = hotels_train)
+
+tidy(is_canceled_fit_3)
+```
+
+## Logistic regression w/ interaction effect {.smaller}
+
+```{r}
+tidy(is_canceled_fit_3) |>
+  select(term, estimate)
+```
+
+<br>
+
+. . .
+
+$$
+\begin{aligned}
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) &= -0.321 \\
+&- 0.00117 \times \texttt{arrival_date_day_of_month} \\
+&- 0.594 \times \texttt{hotelResort Hotel} \\
+&- 0.00125 \times \texttt{arrival_date_day_of_month:hotelResort Hotel} \\
+\end{aligned}
+$$
+
+## Logistic regression w/ interaction effect {.smaller .scrollable}
+
+$$
+\begin{aligned}
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) &= -0.321 \\
+&- 0.00117 \times \texttt{arrival_date_day_of_month} \\
+&- 0.594 \times \texttt{hotelResort Hotel} \\
+&- 0.00125 \times \texttt{arrival_date_day_of_month:hotelResort Hotel} \\
+\end{aligned}
+$$
+
+<br>
+
+. . .
+
+**City Hotel:**
+
+$$
+\begin{aligned}
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) &= -0.321 \\
+&- 0.00117 \times \texttt{arrival_date_day_of_month} \\
+&- 0.594 \times 0 \\
+&- 0.00125 \times \texttt{arrival_date_day_of_month} \times 0 \\
+\\
+&= -0.321 - 0.00117 \times \texttt{arrival_date_day_of_month} \\
+\end{aligned}
+$$
+
+## Logistic regression w/ interaction effect {.smaller .scrollable}
+
+$$
+\begin{aligned}
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) &= -0.321 \\
+&- 0.00117 \times \texttt{arrival_date_day_of_month} \\
+&- 0.594 \times \texttt{hotelResort Hotel} \\
+&- 0.00125 \times \texttt{arrival_date_day_of_month:hotelResort Hotel} \\
+\end{aligned}
+$$
+
+<br>
+
+. . .
+
+**Resort Hotel:**
+
+$$
+\begin{aligned}
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) &= -0.321 \\
+&- 0.00117 \times \texttt{arrival_date_day_of_month} \\
+&- 0.594 \times 1 \\
+&- 0.00125 \times \texttt{arrival_date_day_of_month} \times 1 \\
+\\
+&= -(0.321+0.594) - (0.00117+0.00125) \times \texttt{arrival_date_day_of_month} \\
+\\
+&= -0.915 - 0.00242 \times \texttt{arrival_date_day_of_month} \\
+\end{aligned}
+$$
+
+## Logistic regression w/ interaction effect {.smaller}
+
+**City Hotel:**
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) = -0.321 - 0.00117 \times \texttt{arrival_date_day_of_month}
+$$
+
+- `exp(-0.00117)` = `{r} round(exp(-0.00117), 3)`: In City Hotels, for each day the booking is later in the month, the odds of reservations being canceled is predicted to be lower by a factor of 0.999, on average.
+
+- `exp(−0.321)` = `{r} round(exp(-0.321), 3)`: In City Hotels, on the 0th day of the month, the odds of reservations being canceled is predicted to be 0.725, on average.
+The intercept is not meaningful in this context since there is no 0th day of the month.
+
+## Logistic regression w/ interaction effect {.smaller}
+
+**Resort Hotel:**
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right) = -0.915 - 0.00242 \times \texttt{arrival_date_day_of_month}
+$$
+
+- `exp(-0.00117)` = `{r} round(exp(-0.00242), 3)`: In Resort Hotels, for each day the booking is later in the month, the odds of reservations being canceled is predicted to be lower by a factor of 0.998, on average.
+
+- `exp(−0.321)` = `{r} round(exp(-0.915), 3)`: In Resort Hotels, on the 0th day of the month, the odds of reservations being canceled is predicted to be 0.401, on average.
+The intercept is not meaningful in this context since there is no 0th day of the month.
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Suppose we want to select a final model to predict whether a reservation was cancelled. Which metric would be most appropriate to evaluate the predictive performance of our logistic regression models?
+
+::: wooclap-choices
+- True positive rate
+- Area under the ROC curve
+- Adjusted R-squared
+- Root mean squared error
+- R-squared
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Area under the ROC curve (AUC) {.xsmall}
+
+```{r}
+is_canceled_aug_1 <- augment(is_canceled_fit_1, new_data = hotels_test)
+is_canceled_aug_2 <- augment(is_canceled_fit_2, new_data = hotels_test)
+is_canceled_aug_3 <- augment(is_canceled_fit_3, new_data = hotels_test)
+```
+
+::: {.columns}
+
+::: {.column width="33%" .fragment}
+
+Single predictor:
+
+```{r}
+roc_auc(
+  is_canceled_aug_1,
+  truth = is_canceled,
+  .pred_canceled,
+  event_level = "second"
+)
+```
+
+:::
+
+::: {.column width="33%" .fragment}
+
+Main effects:
+
+```{r}
+roc_auc(
+  is_canceled_aug_2,
+  truth = is_canceled,
+  .pred_canceled,
+  event_level = "second"
+)
+```
+
+:::
+
+::: {.column width="33%" .fragment}
+
+Interaction effects:
+
+```{r}
+roc_auc(
+  is_canceled_aug_3,
+  truth = is_canceled,
+  .pred_canceled,
+  event_level = "second"
+)
+```
+
+:::
+
+::: 
+
+::: {.task .fragment}
+Which model would you select as your final model based on AUC?
+:::
