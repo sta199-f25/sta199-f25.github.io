@@ -29,34 +29,6 @@ todays_ae <- "ae-14-chicago-taxi-classification"
 
 # Warm-up
 
-## While you wait: Participate 📱💻 {.xsmall}
-
-::: columns
-
-::: {.column width="70%"}
-
-::: wooclap
-
-What is sensitivity also known as?
-
-::: wooclap-choices
-- True positive rate
-- True negative rate
-- False positive rate
-- False negative rate
-- Recall
-:::
-
-:::
-
-:::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-
-:::
-
 ## Announcements
 
 - Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
@@ -148,7 +120,7 @@ What type of model would you use to answer the question:
 - Linear regression with a categorical predictor
 - Linear regression with a log-transformed outcome and a numerical predictor
 - Linear regression with a log-transformed outcome and a categorical predictor
-- Logistic regression with a numerical predictor
+- Logistic regression with a numerical predictor [✅]{.fragment}
 - Logistic regression with a categorical predictor
 :::
 
@@ -463,7 +435,7 @@ Suppose we want to select a final model to predict whether a reservation was can
 
 ::: wooclap-choices
 - True positive rate
-- Area under the ROC curve
+- Area under the ROC curve [✅]{.fragment}
 - Adjusted R-squared
 - Root mean squared error
 - R-squared
@@ -538,4 +510,177 @@ roc_auc(
 
 ::: {.task .fragment}
 Which model would you select as your final model based on AUC?
+:::
+
+## Linear regression
+
+The dataset also contains information about the average daily rate (`adr`) for each reservation.
+The following model predicts `adr` from `adults` and `hotel` type.
+
+```{r}
+#| eval: true
+#| echo: false
+adr_fit_1 <- linear_reg() |>
+  fit(adr ~ adults + hotel, data = hotels_train)
+
+adr_aug_1 <- augment(adr_fit_1, hotels_train)
+
+tidy(adr_fit_1)
+```
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following is the best interpretation of the slope coefficient for `adults`?
+
+```{r}
+#| echo: false
+tidy(adr_fit_1)
+```
+
+For each additional adult in the booking, the average daily rate is predicted to be higher by \$29.50
+
+::: wooclap-choices
+- on average, holding hotel type constant. [✅]{.fragment}
+- for Resort Hotels compared to City Hotels, on average.
+- for City Hotels compared to Resort Hotels, on average.
+- on average, not holding any other variables constant.
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: {.wooclap .medium}
+
+Which of the following is the correct interpretation of the slope coefficient for `hotel`?
+
+```{r}
+#| echo: false
+tidy(adr_fit_1)
+```
+
+::: wooclap-choices
+- For each additional Resort Hotel booking, the predicted average daily rate is \$10.70 lower, holding number of adults constant.
+- For each additional adult in the booking, the average daily rate is predicted to be lower by \$10.70 for resort hotels compared to City Hotels, on average.
+- Resort Hotels bookings are predicted to have an average daily rate that is \$10.70 lower than City Hotels, on average, holding number of adults constant. [✅]{.fragment}
+- Resort Hotels bookings are predicted to have an average daily rate that is \$10.70 higher than City Hotels, on average, holding number of adults constant.
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following is the correct interpretation of the intercept?
+
+```{r}
+#| echo: false
+tidy(adr_fit_1)
+```
+
+::: wooclap-choices
+- The predicted average daily rate for a bookings with 0 adults at a Resort Hotel is \$50.50, on average.
+- The predicted average daily rate for a bookings with 0 adults at a City Hotel is \$50.50, on average. [✅]{.fragment}
+- For each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be \$50.50 higher, on average.
+- For each additional adult and City Hotel in the booking, the average daily rate is predicted to be \$50.50 higher, on average.
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following (Plot A or Plot B) is the correct visual representation of this model?
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| layout-ncol: 2
+#| fig-width: 5
+#| fig-asp: 0.618
+ggplot(hotels_train, aes(x = adults, y = adr, color = hotel)) +
+  geom_point() +
+  geom_smooth(method = "lm", linewidth = 1, se = FALSE) +
+  ggthemes::scale_color_colorblind() +
+  labs(
+    title = "Plot A",
+    x = "Number of adults",
+    y = "Average daily rate",
+    color = "Hotel"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "inside", legend.position.inside = c(0.15, 0.80))
+
+ggplot(adr_aug_1, aes(x = adults, color = hotel)) +
+  geom_point(aes(y = adr)) +
+  geom_line(aes(y = .pred), linewidth = 1) +
+  ggthemes::scale_color_colorblind() +
+  labs(
+    title = "Plot B",
+    x = "Number of adults",
+    y = "Average daily rate",
+    color = "Hotel"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "inside", legend.position.inside = c(0.15, 0.80))
+```
+
+::: wooclap-choices
+- Plot A
+- Plot B [✅]{.fragment}
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
 :::
