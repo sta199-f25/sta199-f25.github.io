@@ -29,13 +29,19 @@ todays_ae <- "ae-14-chicago-taxi-classification"
 
 # Warm-up
 
-## Announcements
+## Announcements {.smaller}
 
-- Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
-
-- Bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)
+- Exam:
+  - In class:
+    - Cheat sheet: 8.5x11, both sides, hand written or typed, any content you want, must be prepared by you
+    - Bring a pencil and eraser (you’re allowed to use a pen, but you might not want to)
+  - Take home:
+    - Open book, notes, internet
+    - Due Saturday, November 22 at noon
 
 - Reminder: Academic dishonesty / Duke Community Standard
+
+- Next Tuesday: Can watch class live on Panopto link
 
 ## From last class: `{r} todays_ae` {.smaller}
 
