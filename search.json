@@ -1473,43 +1473,43 @@
     "text": "Uncertainty - Catalan independence\n\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. “Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”, Power from Statistics: Data Information and Knowledge, 2017."
   },
   {
-    "objectID": "slides/22-evaluating-models-slides.html#while-you-wait-participate",
-    "href": "slides/22-evaluating-models-slides.html#while-you-wait-participate",
+    "objectID": "slides/22-model-evaluation-slides.html#while-you-wait-participate",
+    "href": "slides/22-model-evaluation-slides.html#while-you-wait-participate",
     "title": "Evaluating models",
     "section": "While you wait: Participate 📱💻",
     "text": "While you wait: Participate 📱💻\n\n\n\nWhat is sensitivity also known as?\n\n\nTrue positive rate\nTrue negative rate\nFalse positive rate\nFalse negative rate\nRecall\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
-    "objectID": "slides/22-evaluating-models-slides.html#announcements",
-    "href": "slides/22-evaluating-models-slides.html#announcements",
+    "objectID": "slides/22-model-evaluation-slides.html#announcements",
+    "href": "slides/22-model-evaluation-slides.html#announcements",
     "title": "Evaluating models",
     "section": "Announcements",
     "text": "Announcements\n\nProjects due tonight, peer evals due tomorrow night\nPractice Exam 2 is posted on the course website\nReply to post on Ed about requests for topics / concepts for exam review [thread]"
   },
   {
-    "objectID": "slides/22-evaluating-models-slides.html#from-last-class-participate",
-    "href": "slides/22-evaluating-models-slides.html#from-last-class-participate",
+    "objectID": "slides/22-model-evaluation-slides.html#from-last-class-participate",
+    "href": "slides/22-model-evaluation-slides.html#from-last-class-participate",
     "title": "Evaluating models",
     "section": "From last class: Participate 📱💻",
     "text": "From last class: Participate 📱💻\n\n\n\nWhich of the following best describes the area annotated on the ROC curve?\n\n\n\nWhere all positives classified as positive, all negatives classified as negative\nWhere true positive rate = false positive rate\nWhere all positives classified as negative, all negatives classified as positive\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
-    "objectID": "slides/22-evaluating-models-slides.html#roc-curve",
-    "href": "slides/22-evaluating-models-slides.html#roc-curve",
+    "objectID": "slides/22-model-evaluation-slides.html#roc-curve",
+    "href": "slides/22-model-evaluation-slides.html#roc-curve",
     "title": "Evaluating models",
     "section": "ROC curve",
     "text": "ROC curve\n\nWhich corner of the plot indicates the best model performance?"
   },
   {
-    "objectID": "slides/22-evaluating-models-slides.html#ae-14-chicago-taxi-classification",
-    "href": "slides/22-evaluating-models-slides.html#ae-14-chicago-taxi-classification",
+    "objectID": "slides/22-model-evaluation-slides.html#ae-14-chicago-taxi-classification",
+    "href": "slides/22-model-evaluation-slides.html#ae-14-chicago-taxi-classification",
     "title": "Evaluating models",
     "section": "ae-14-chicago-taxi-classification",
     "text": "ae-14-chicago-taxi-classification\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-14-chicago-taxi-classification.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
-    "objectID": "slides/22-evaluating-models-slides.html#recap",
-    "href": "slides/22-evaluating-models-slides.html#recap",
+    "objectID": "slides/22-model-evaluation-slides.html#recap",
+    "href": "slides/22-model-evaluation-slides.html#recap",
     "title": "Evaluating models",
     "section": "Recap",
     "text": "Recap\n\nSplit data into training and testing sets (generally 75/25)\nFit models on training data and reduce to a few candidate models\nMake predictions on testing data\n\nEvaluate predictions on testing data using appropriate predictive performance metrics\n\nLinear models: Adjusted R-squared, AIC, etc.\nLogistic models: False negative and positive rates, AUC (area under the curve), etc.\n\n\nDon’t forget to also consider explainability and domain knowledge when selecting a final model\nIn a future machine learning course: Cross-validation (partitioning training data into training and validation sets and repeating this many times to evaluate model predictive performance before using the testing data), feature engineering, hyperparameter tuning, more complex models (random forests, gradient boosting machines, neural networks, etc.)\n\n\n\n\n\n\n\n\nNote\n\n\nWe will only learn about a subset of these in this course, but you can go further into these ideas in STA 210 or STA 221 as well as in various machine learning courses."
