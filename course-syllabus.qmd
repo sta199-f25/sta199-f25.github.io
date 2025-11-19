@@ -287,6 +287,10 @@ The exam's content will be related to the content in videos and reading assignme
 
 You will submit your take-home exam by pushing your work to your GitHub repository for the exam and submitting the PDF output on Gradescope *by the stated deadline on the schedule.*
 
+*Missed exams: There are no make-up exams. If you miss Exam 1 or 2 due to an illness or similar documented with a Dean's Excuse, your final exam score will replace the missed exam score. If you miss the Final Exam due to an illness or similar documented with a Dean's Excuse, you will receive an Incomplete and can take the final exam later.* 
+
+*Improvement bonus: For students who take all exams (Exam 1, Exam 2, and Final Exam), the final exam score will replace the lower of the two mid-semester exam scores, if the final exam score is higher.*
+
 #### Project
 
 The project aims to apply what you've learned throughout the semester to analyze an interesting data-driven research question.
