@@ -11,3 +11,4 @@ _site/
 **/*.quarto_ipynb
 
 /.luarc.json
+data_0.parquet

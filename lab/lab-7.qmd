@@ -1,0 +1,120 @@
+---
+title: Lab 7
+subtitle: "Leavin' on a jet plane"
+description: "Due: End of lab on Mon, Nov 24"
+categories: Lab
+filters:
+  - ../remove-fmt-skip.lua
+draft: false
+execute:
+  echo: true
+  eval: true
+  message: false
+---
+
+# Introduction
+
+In this lab you'll explore the relationship between distance and air time of flights out of RDU in 2024.
+
+And you'll work in what's considered a pretty unlikely situation: you have access to population data -- all flights out of RDU in 2024!
+But we'll ask you to pretend that you didn't actually have access and you need to work with sample data.
+How? 
+Hang in there, get the population data loaded first, then we'll explain the next steps!
+
+## Getting started
+
+By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment.
+If you're not sure how, refer back to an earlier lab.
+
+Open the *lab-7.qmd* template Quarto file and update the `authors` field to add your name first (first and last) and then your teammates' names (first and last).
+Render the document.
+Examine the rendered document and make sure your and your teammates' names are updated in the document.
+Commit and push your changes with a meaningful commit message and push to GitHub.
+
+<details>
+
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+
+{{< include _guidelines.qmd >}}
+
+</details>
+
+## Packages
+
+In this lab we will work with the **tidyverse** package.
+
+```{r}
+#| eval: true
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+## Population data
+
+The dataset, called `rdu-flights.csv`, can be found in the `data` folder.
+
+# Questions
+
+## Question 1 - Sample
+
+Take a random sample of 100 flights and store it as `rdu_flights_sample`.
+Each person in the class should have a different sample.
+
+## Question 2 - Visualize
+
+Visualize the relationship between `distance` and `air_time` using a scatter plot.
+Also add a regression line to the scatter plot.
+Do not show the standard error ribbon around the regression line.
+
+How does the relationship between the variables in your sample compare to that of others in your team or others in the class?
+How do the regression lines compare?
+Exactly the same? Wildly different? Somewhere in between?
+
+## Question 3 - Model and estimate
+
+Fit a model predicting `air_time` using `distance` using the sample data.
+Display the model summary.
+
+How does the slope estimate in your sample compare to that of others in your team or others in the class?
+Exactly the same? Wildly different? Somewhere in between?
+
+## Question 4 - Quantify(ish) uncertainty
+
+Mark your slope estimate from Question 3 on the number line on the board.
+Then, based on the slope estimates from the entire class, determine a reasonable range of values for the estimate of the slope of the relationship between `distance` and `air_time`.
+How do you define "reasonable"?
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+By now you should also be familiar with how to submit your assignment in Gradescope.
+
+<details>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
+{{< include _submission.qmd >}}
+
+</details>
+
+## Grading and feedback
+
+-   This lab is worth 30 points:
+    -   10 points for being in lab and turning in *something* -- no partial credit for this part.
+    -   20 points for:
+        -   answering the questions correctly -- there is partial credit for this part.
+        -   following the workflow -- there is partial credit for this part.
+-   The workflow points are for:
+    -   committing at least three times as you work through your lab,
+    -   having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+    -   overall organization.
+-   You'll receive feedback on your lab on Gradescope within a week.
+
+Good luck, and have fun with it!
