@@ -714,49 +714,6 @@ Catch the AI making a mistake?
 <p>Load the <code>lemurs</code> data from your <code>data</code> folder and save it as <code>lemurs</code>. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the <code>taxon</code> variable. You should refer back to the linked data dictionary to understand what the different values of <code>taxon</code> mean. Your response should be a tibble with at least three columns, <code>taxon</code>, <code>taxon_name</code> (a new variable you create that contains the description of the <code>taxon</code>, e.g., <code>EMON</code> is <code>Mongoose lemur</code>), and <code>n</code> (number of lemurs with that taxon).</p>
 </section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
 <p>What is the slope of the regression line for predicting weights of lemurs (<code>weight_g</code>) from the ages of lemurs (in years) when their weight was measured (<code>age_at_wt_y</code>)? Calculate and interpret a 95% bootstrap bootstrap confidence interval. Also report your point estimate. Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Below is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete.” They include some blanks you need to fill in, and they are just intended to guide you in the right direction.</p>
-<ul>
-<li>Step 1: Calculate the point estimate for the slope and the intercept of the regression line.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">obs_fit</span> <span class="op">&lt;-</span> <span class="va">lemurs</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span><span class="va">weight_g</span> <span class="op">~</span> <span class="va">age_at_wt_y</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Step 2: Simulate a bootstrap distribution.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(___)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(weight_g <span class="sc">~</span> age_at_wt_y) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> ____, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Step 3: Calculate the bounds of the confidence interval.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conf_ints <span class="ot">&lt;-</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    boot_dist,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">level =</span> ___,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_estimate =</span> obs_fit</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
 </section><section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
 <p>What are the slopes of the regression line for predicting weights of lemurs (<code>weight_g</code>) from the ages of lemurs (in years) when their weight was measured (<code>age_at_wt_y</code>) and their types (<code>taxon</code>)? Calculate and interpret a 95% bootstrap bootstrap confidence interval. Also report your point estimate. Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p>
 </section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
@@ -789,7 +746,7 @@ Tip
 <li>lists levels in the order they appear in the plot.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">wt</span>, y <span class="op">=</span> <span class="va">mpg</span>, color <span class="op">=</span> <span class="va">am</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">wt</span>, y <span class="op">=</span> <span class="va">mpg</span>, color <span class="op">=</span> <span class="va">am</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
 <span>    x <span class="op">=</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
