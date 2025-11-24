@@ -122,47 +122,6 @@ Calculate and interpret a 95% bootstrap bootstrap confidence interval.
 Also report your point estimate.
 Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
 
-::: callout-tip
-
-Below is a step-by-step recipe for constructing and visualizing a confidence interval.
-The code snippets shown are not "complete." They include some blanks you need to fill in, and they are just intended to guide you in the right direction.
-
--   Step 1: Calculate the point estimate for the slope and the intercept of the regression line.
-
-```{r}
-#| eval: false
-obs_fit <- lemurs |>
-  specify(weight_g ~ age_at_wt_y) |>
-  fit()
-```
-
--   Step 2: Simulate a bootstrap distribution.
-
-```{r}
-#| eval: false
-set.seed(___)
-
-boot_dist <- lemurs |>
-  specify(weight_g ~ age_at_wt_y) |>
-  generate(reps = ____, type = "bootstrap") |>
-  fit()
-```
-
--   Step 3: Calculate the bounds of the confidence interval.
-
-```{r}
-#| eval: false
-conf_ints <-
-  get_confidence_interval(
-    boot_dist,
-    level = ___,
-    point_estimate = obs_fit
-  )
-```
-
-:::
-
-
 ### Question 3
 
 What are the slopes of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`) and their types (`taxon`)?
