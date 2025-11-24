@@ -1,0 +1,266 @@
+---
+title: HW 5
+subtitle: Wages up, parasites down
+description: "Due: Sun, Nov 2, 11:59 pm"
+categories: HW
+filters:
+  - ../remove-fmt-skip.lua
+draft: false
+---
+
+# Introduction
+
+This is a two-part homework assignment:
+
+- **Part 1 -- 🤖 🧑🏽‍🏫 Feedback from AI + Humans:** First get feedback from AI, improve yoyr work based on the feedback, and then get feedback from humans on the same questions. This part is graded, you just get some extra, real-time feedback, before submitting it for grading.
+
+- **Part 2 -- 🧑🏽‍🏫 Feedback from Humans only:** Graded, you get feedback from the course instructional team within a week. 
+
+Both parts go in the same document -- `hw-5.qmd`.
+
+## Getting started
+
+By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.
+
+<details>
+<summary>Click to expand if you need a refresher on how to get started with a homework assignment.</summary>
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
+    Click on the repo with the prefix **hw-4**.
+    It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**.
+    Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+</details>
+
+By now you should also be familiar with guidelines for formatting your code and plots as well as your Git and Gradescope workflow.
+
+<details>
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+{{< include _guidelines.qmd >}}
+</details>
+
+## Packages
+
+In this homework you will work with the **tidyverse** and **tidymodels** packages.
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+```
+
+# Part 1 -- Feedback from AI + Humans
+
+## Instructions
+
+Write your answer to each question in the appropriate section of the `hw-5.qmd` file.
+Then, highlight your answer to a question, click on _Addins > AIFEEDR > Get feedback_.
+In the app that opens, select the appropriate homework number (4) and question number.
+Then click on _Get Feedback_.
+Please be patient, feedback generation can take a few seconds. 
+Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. 
+You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.
+
+<details>
+<summary>Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.</summary>
+{{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
+</details>
+
+::: {.callout-note title="Catch the AI making a mistake?" icon=false}
+Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to earn the opportunity for **extra credit**.
+
+Your bug report must include screenshots of the relevant parts of your Quarto document as well as the "incorrect" feedback you received.
+Your bug report should be printed and turned in to Dr. Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date.
+Electronic submissions will not be accepted.
+Your bug report, including screenshots, should fit on no more than two pages.
+
+If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), you will receive 1 extra point that will be added to your total points for the assignment.
+:::
+
+## Data
+
+In this part, you'll work with data from the [Duke Lemur Center](https://lemur.duke.edu/), which houses over 200 lemurs across 14 species -- the most diverse population of lemurs on Earth, outside their native Madagascar.
+
+> Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction.
+> Our mission is to learn everything we can about lemurs -- because the more we learn, the better we can work to save them from extinction.
+> They are endemic only to Madagascar, so it's essentially a one-shot deal: once lemurs are gone from Madagascar, they are gone from the wild.
+
+> By studying the variables that most affect their health, reproduction, and social dynamics, the Duke Lemur Center learns how to most effectively focus [their conservation efforts](https://lemur.duke.edu/protect/overview-madagascar-conservation-programs/).
+> And the more we learn about lemurs, the better we can educate the public around the world about just how amazing these animals are, why they need to be protected, and how each and every one of us can make a difference in their survival.
+
+> Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md)
+
+While the TidyTuesday project used the full dataset, you'll work with a subset.
+The dataset, called `lemurs.csv`, can be found in the `data` folder.
+You can learn more about the data at <https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24>.
+A data dictionary has been included in the README of the `data` folder of your repository.
+
+## Questions
+
+::: render-commit-push
+Do not forget to render, commit, and push regularly, after each substantial change to your document (e.g., after answering each question).
+Use succinct and informative commit messages.
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+### Question 1
+
+Load the `lemurs` data from your `data` folder and save it as `lemurs`.
+Then, report which "types" of lemurs are represented in the sample and how many of each.
+Note that this information is in the `taxon` variable.
+You should refer back to the linked data dictionary to understand what the different values of `taxon` mean.
+Your response should be a tibble with at least three columns, `taxon`, `taxon_name` (a new variable you create that contains the description of the `taxon`, e.g., `EMON` is `Mongoose lemur`), and `n` (number of lemurs with that taxon).
+
+### Question 2
+
+What is the slope of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`)?
+Calculate and interpret a 95% bootstrap bootstrap confidence interval.
+Also report your point estimate.
+Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
+
+::: callout-tip
+
+Below is a step-by-step recipe for constructing and visualizing a confidence interval.
+The code snippets shown are not "complete." They include some blanks you need to fill in, and they are just intended to guide you in the right direction.
+
+-   Step 1: Calculate the point estimate for the slope and the intercept of the regression line.
+
+```{r}
+#| eval: false
+obs_fit <- lemurs |>
+  specify(weight_g ~ age_at_wt_y) |>
+  fit()
+```
+
+-   Step 2: Simulate a bootstrap distribution.
+
+```{r}
+#| eval: false
+set.seed(___)
+
+boot_dist <- lemurs |>
+  specify(weight_g ~ age_at_wt_y) |>
+  generate(reps = ____, type = "bootstrap") |>
+  fit()
+```
+
+-   Step 3: Calculate the bounds of the confidence interval.
+
+```{r}
+#| eval: false
+conf_ints <-
+  get_confidence_interval(
+    boot_dist,
+    level = ___,
+    point_estimate = obs_fit
+  )
+```
+
+:::
+
+
+### Question 3
+
+What are the slopes of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`) and their types (`taxon`)?
+Calculate and interpret a 95% bootstrap bootstrap confidence interval.
+Also report your point estimate.
+Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
+
+### Question 4
+
+What is the **median** weight of red-bellied lemurs?
+What is the **median** weight of ring-tailed lemurs?
+What is the **median** weight of mongoose lemurs?
+Calculate and interpret a 95% bootstrap bootstrap confidence intervals.
+Also report your point estimates.
+Don't forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
+
+::: render-commit-push
+Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
+And once again, make sure to commit and push all changed files so that your Git pane is empty afterward.
+We keep repeating this because it's important and because we see students forget to do this.
+So take a moment to make sure you're practicing good version control habits.
+:::
+
+# Part 2 -- Feedback from Humans only
+
+## Questions
+
+### Question 5
+
+In this part, you'll work with one of the most basic and overused datasets in R: `mtcars`.
+The data in this dataset come from the 1974 Motor Trend US magazine (so, yes, they're old!) and provide information on fuel efficiency and other car characteristics.
+
+Since the dataset is used in many code examples, it's not unexpected that some analyses of the data are good and some not so much.
+
+::: callout-tip
+For both parts of this question, you should review the data dictionary that is in the documentation for the dataset which you can find at <https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html> or by typing `?mtcars` in your Console.
+:::
+
+a\.
+You come across the following visualization of these data.
+First, determine what is wrong with this visualization and describe it in one sentence.
+Then, fix and improve the visualization.
+As part of your improvement, make sure your legend
+
+-   is on top of the plot,
+-   is informative, and
+-   lists levels in the order they appear in the plot.
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, color = am)) +
+  geom_point() +
+  labs(
+    x = "Weight (1000 lbs)",
+    y = "Miles / gallon"
+  )
+```
+
+b\.
+Update your plot from part (a) further, this time using different shaped points for cars with V-shaped and straight engines.
+Once again, some requirements for your legend – it should be informative and on the right of the plot.
+
+c\.
+Your task is to make your plot from part (b) as ugly and as ineffective as possible.
+Change colors, axes, fonts, themes, or anything else you can think of.
+You can also search online for other themes, fonts, etc. that you want to tweak.
+Try to make it **as ugly as possible**, the sky is the limit!
+And there is a prize for the winner of the ugliest plot -- voted on by your TAs and your classmates.
+You must make at least 5 updates to the plot.
+
+Your answer must include
+
+-   a list of the at least 5 updates you've made to your plot from Question 7b, and
+
+-   1-2 sentence explanation of why the plot you created is *ugly* (to you, at least) and ineffective.
+
+::: callout-important
+All code for producing your ugly plot must go in the code cell labeled `ugly-plot` in your Quarto file.
+DO NOT CHANGE THE LABEL OF THE CODE CELL FOR THIS PLOT, OR YOUR PLOT WON'T BE ENTERED INTO THE UGLY PLOT COMPETITION.
+:::
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+{{< include _submission.qmd >}}
+
+## Grading and feedback
+
+-   All questions are graded for accuracy and completeness, but you get additional feedback for Questions 1-4 from AI before submitting your final answers for grading.
+
+-   Partial credit will be given where appropriate.
+
+-   There are also workflow points for:
+    - committing at least three times as you work through your homework,
+    - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+    - overall organization.
