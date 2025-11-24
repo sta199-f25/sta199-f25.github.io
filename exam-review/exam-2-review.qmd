@@ -795,7 +795,7 @@ d.  In a single pipeline, and using `mutate()`, calculate the false positive and
     
 {{< pagebreak >}}    
 
-## Question 20
+## Question 20 
 
 a.  Fit another logistic regression model predicting `spam` from `dollar` and other variable(s) you think would be a good predictor.
     Provide a 1-sentence justification for why you chose this variable.
