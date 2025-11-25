@@ -213,10 +213,51 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
   <p class="date">November 25, 2025</p>
 </section><section><section id="warm-up" class="title-slide slide level1 center"><h1>Warm-up</h1>
 
-</section><section id="announcements" class="slide level2 smaller"><h2>Announcements</h2>
+</section><section id="while-you-wait-participate" class="slide level2 xsmall"><h2>While you wait: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Given that HW 6 will be assigned on Monday, Dec 1, what day should HW 5 be due? It will be due at 11:59 pm on the deadline we decide on.</p>
+<div class="wooclap-choices">
 <ul>
-<li><p>HW 5 due…</p></li>
-<li><p>…</p></li>
+<li>Sunday, Nov 30 - no change</li>
+<li>Monday, Dec 1 - postponed by 1 day</li>
+<li>Tuesday, Dec 2 - postponed by 2 days</li>
+<li>Wednesday, Dec 3 - postponed by 3 days</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section><section id="announcements" class="slide level2 xsmall"><h2>Announcements</h2>
+<ul>
+<li>HW:
+<ul>
+<li>HW 5 due [whichever date we decided on in the previous slide]</li>
+<li>HW 6 due at 11:59 pm on Fri, Dec 6, but will be accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
+</ul>
+</li>
+<li>Final exam:
+<ul>
+<li>In-class only, “cheat sheet” with same specs as usual allowed</li>
+<li>Cumulative – will definitely have material since Exam 2, but there’s so little of it that it won’t be a huge portion of the exam</li>
+<li>Final exam review during reading period – date/time/location TBA</li>
+<li>Office hours during reading period + final exam week – schedule TBA</li>
+</ul>
+</li>
+<li>Grades:
+<ul>
+<li>Exam 2 in-class grades posted – can review questions in my office hours anytime before the final</li>
+<li>Exam 2 take-home + project grades to be posted after Thanksgiving break</li>
+</ul>
+</li>
 </ul></section></section><section><section id="quantifying-uncertainty" class="title-slide slide level1 center"><h1>Quantifying uncertainty</h1>
 
 </section><section id="goal" class="slide level2"><h2>Goal</h2>
@@ -258,7 +299,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 <img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section><section id="modeling" class="slide level2 smaller"><h2>Modeling</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|5|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>df_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>df_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">fit</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span>
 <span id="cb3-3"><a></a></span>
 <span id="cb3-4"><a></a><span class="fu">tidy</span>(df_fit) <span class="sc">|&gt;</span></span>
@@ -291,18 +332,110 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </table>
 </div>
 </div>
-<div class="fragment">
+</section><section id="participate" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following is the correct interpretation of the <strong>intercept</strong>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead><tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">116652</td>
+<td style="text-align: right;">53302</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">area</td>
+<td style="text-align: right;">159</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="wooclap-choices small">
 <ul>
-<li>
-<strong>Intercept:</strong> Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.
-<ul>
-<li>Is this interpretation useful?</li>
-</ul>
-</li>
-<li>
-<strong>Slope:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</li>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $116,652, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.</li>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $15,900, on average.</li>
 </ul>
 </div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
+</section><section id="participate-1" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following is the correct interpretation of the <strong>slope</strong>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead><tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">116652</td>
+<td style="text-align: right;">53302</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">area</td>
+<td style="text-align: right;">159</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="wooclap-choices small">
+<ul>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $159, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.</li>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $159, on average.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
 </section><section id="from-sample-to-population" class="slide level2 smaller"><h2>From sample to population</h2>
 <blockquote>
 <p>For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</p>
@@ -318,7 +451,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <li><p>For our inferences to be valid, the sample should be random and representative of the population we’re interested in</p></li>
 </ul>
 
-<img data-src="images/24/soup.png" class="r-stretch"></section><section id="inference-for-simple-linear-regression" class="slide level2"><h2>Inference for simple linear regression</h2>
+<img data-src="images/24/soup.png" alt="Soup in a bowl" class="r-stretch"></section><section id="inference-for-simple-linear-regression" class="slide level2"><h2>Inference for simple linear regression</h2>
 <ul>
 <li><p>Calculate a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span> (today)</p></li>
 <li><p>Conduct a hypothesis test for the slope,<span class="math inline">\(\beta_1\)</span> (next week)</p></li>
@@ -367,27 +500,6 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section><section id="bootstrap-sample-2" class="slide level2"><h2>Bootstrap sample 2</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
 <figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:100.0%"></p>
 </figure>
 </div>
@@ -403,7 +515,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </div></div>
-</section><section id="bootstrap-sample-3" class="slide level2"><h2>Bootstrap sample 3</h2>
+</section><section id="bootstrap-sample-2" class="slide level2"><h2>Bootstrap sample 2</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -424,7 +536,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </div></div>
-</section><section id="bootstrap-sample-4" class="slide level2"><h2>Bootstrap sample 4</h2>
+</section><section id="bootstrap-sample-3" class="slide level2"><h2>Bootstrap sample 3</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -445,7 +557,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </div></div>
-</section><section id="bootstrap-sample-5" class="slide level2"><h2>Bootstrap sample 5</h2>
+</section><section id="bootstrap-sample-4" class="slide level2"><h2>Bootstrap sample 4</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -466,10 +578,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </div></div>
-<div class="fragment">
-<p><em>so on and so forth…</em></p>
-</div>
-</section><section id="bootstrap-samples-1---5" class="slide level2"><h2>Bootstrap samples 1 - 5</h2>
+</section><section id="bootstrap-sample-5" class="slide level2"><h2>Bootstrap sample 5</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -490,13 +599,16 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </div>
 </div></div>
-</section><section id="bootstrap-samples-1---100" class="slide level2"><h2>Bootstrap samples 1 - 100</h2>
+<div class="fragment">
+<p><em>so on and so forth…</em></p>
+</div>
+</section><section id="bootstrap-samples-1---5" class="slide level2"><h2>Bootstrap samples 1 - 5</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:100.0%"></p>
+<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -505,7 +617,54 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-19-1.png" style="width:100.0%"></p>
+<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section><section id="bootstrap-samples-1---100" class="slide level2"><h2>Bootstrap samples 1 - 100</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<div class="question">
+<p>Look familiar?</p>
+</div>
+</div>
+</section><section id="look-familiar" class="slide level2"><h2>Look familiar?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -516,19 +675,19 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p><strong>Fill in the blank:</strong> For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
 
-<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section><section id="slopes-of-bootstrap-samples-1" class="slide level2 smaller"><h2>Slopes of bootstrap samples</h2>
+<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section><section id="slopes-of-bootstrap-samples-1" class="slide level2 smaller"><h2>Slopes of bootstrap samples</h2>
 <div class="task">
 <p><strong>Fill in the blank:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
 
-<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section><section id="confidence-level" class="slide level2 smaller"><h2>Confidence level</h2>
+<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section><section id="confidence-level" class="slide level2 smaller"><h2>Confidence level</h2>
 <div class="task">
 <p>How confident are you that the true slope is between $0 and $250? How about $150 and $170? How about $90 and $210?</p>
 </div>
 
-<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section><section id="confidence-interval-1" class="slide level2 smaller"><h2>95% confidence interval</h2>
+<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section><section id="confidence-interval-1" class="slide level2 smaller"><h2>95% confidence interval</h2>
 
-<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"><ul>
+<img data-src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment">A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution</li>
 <li class="fragment">We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
 </ul></section></section><section><section id="application-exercise" class="title-slide slide level1 center"><h1>Application exercise</h1>

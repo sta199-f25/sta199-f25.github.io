@@ -11570,14 +11570,21 @@
     "href": "slides/24-quantifying-uncertainty.html",
     "title": "Quantifying uncertainty",
     "section": "",
-    "text": "HW 5 due…\n…"
+    "text": "Given that HW 6 will be assigned on Monday, Dec 1, what day should HW 5 be due? It will be due at 11:59 pm on the deadline we decide on.\n\n\nSunday, Nov 30 - no change\nMonday, Dec 1 - postponed by 1 day\nTuesday, Dec 2 - postponed by 2 days\nWednesday, Dec 3 - postponed by 3 days\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nHW:\n\nHW 5 due [whichever date we decided on in the previous slide]\nHW 6 due at 11:59 pm on Fri, Dec 6, but will be accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nIn-class only, “cheat sheet” with same specs as usual allowed\nCumulative – will definitely have material since Exam 2, but there’s so little of it that it won’t be a huge portion of the exam\nFinal exam review during reading period – date/time/location TBA\nOffice hours during reading period + final exam week – schedule TBA\n\n\nGrades:\n\nExam 2 in-class grades posted – can review questions in my office hours anytime before the final\nExam 2 take-home + project grades to be posted after Thanksgiving break"
+  },
+  {
+    "objectID": "slides/24-quantifying-uncertainty.html#while-you-wait-participate",
+    "href": "slides/24-quantifying-uncertainty.html#while-you-wait-participate",
+    "title": "Quantifying uncertainty",
+    "section": "",
+    "text": "Given that HW 6 will be assigned on Monday, Dec 1, what day should HW 5 be due? It will be due at 11:59 pm on the deadline we decide on.\n\n\nSunday, Nov 30 - no change\nMonday, Dec 1 - postponed by 1 day\nTuesday, Dec 2 - postponed by 2 days\nWednesday, Dec 3 - postponed by 3 days\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/24-quantifying-uncertainty.html#announcements",
     "href": "slides/24-quantifying-uncertainty.html#announcements",
     "title": "Quantifying uncertainty",
     "section": "",
-    "text": "HW 5 due…\n…"
+    "text": "HW:\n\nHW 5 due [whichever date we decided on in the previous slide]\nHW 6 due at 11:59 pm on Fri, Dec 6, but will be accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nIn-class only, “cheat sheet” with same specs as usual allowed\nCumulative – will definitely have material since Exam 2, but there’s so little of it that it won’t be a huge portion of the exam\nFinal exam review during reading period – date/time/location TBA\nOffice hours during reading period + final exam week – schedule TBA\n\n\nGrades:\n\nExam 2 in-class grades posted – can review questions in my office hours anytime before the final\nExam 2 take-home + project grades to be posted after Thanksgiving break"
   },
   {
     "objectID": "slides/24-quantifying-uncertainty.html#goal",
@@ -11612,7 +11619,21 @@
     "href": "slides/24-quantifying-uncertainty.html#modeling",
     "title": "Quantifying uncertainty",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+  },
+  {
+    "objectID": "slides/24-quantifying-uncertainty.html#participate",
+    "href": "slides/24-quantifying-uncertainty.html#participate",
+    "title": "Quantifying uncertainty",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the intercept?\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652\n53302\n2\n0\n\n\narea\n159\n18\n9\n0\n\n\n\n\n\n\n\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $116,652, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $15,900, on average.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/24-quantifying-uncertainty.html#participate-1",
+    "href": "slides/24-quantifying-uncertainty.html#participate-1",
+    "title": "Quantifying uncertainty",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the slope?\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652\n53302\n2\n0\n\n\narea\n159\n18\n9\n0\n\n\n\n\n\n\n\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $159, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $159, on average.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/24-quantifying-uncertainty.html#from-sample-to-population",
@@ -11703,7 +11724,14 @@
     "href": "slides/24-quantifying-uncertainty.html#bootstrap-samples-1---100",
     "title": "Quantifying uncertainty",
     "section": "Bootstrap samples 1 - 100",
-    "text": "Bootstrap samples 1 - 100"
+    "text": "Bootstrap samples 1 - 100\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\n\nLook familiar?"
+  },
+  {
+    "objectID": "slides/24-quantifying-uncertainty.html#look-familiar",
+    "href": "slides/24-quantifying-uncertainty.html#look-familiar",
+    "title": "Quantifying uncertainty",
+    "section": "Look familiar?",
+    "text": "Look familiar?"
   },
   {
     "objectID": "slides/24-quantifying-uncertainty.html#slopes-of-bootstrap-samples",
@@ -11797,11 +11825,18 @@
     "text": "Recap\n\nPopulation: Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. (population size = \\(N\\))\nSample: Subset of the population, ideally random and representative (sample size = \\(n\\))\nSample statistic \\(\\ne\\) population parameter, but if the sample is good, it can be a good estimate\nStatistical inference: Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process\nWe report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population\nSince we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability"
   },
   {
+    "objectID": "slides/24-quantifying-uncertainty-slides.html#while-you-wait-participate",
+    "href": "slides/24-quantifying-uncertainty-slides.html#while-you-wait-participate",
+    "title": "Quantifying uncertainty",
+    "section": "While you wait: Participate 📱💻",
+    "text": "While you wait: Participate 📱💻\n\n\n\nGiven that HW 6 will be assigned on Monday, Dec 1, what day should HW 5 be due? It will be due at 11:59 pm on the deadline we decide on.\n\n\nSunday, Nov 30 - no change\nMonday, Dec 1 - postponed by 1 day\nTuesday, Dec 2 - postponed by 2 days\nWednesday, Dec 3 - postponed by 3 days\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/24-quantifying-uncertainty-slides.html#announcements",
     "href": "slides/24-quantifying-uncertainty-slides.html#announcements",
     "title": "Quantifying uncertainty",
     "section": "Announcements",
-    "text": "Announcements\n\nHW 5 due…\n…"
+    "text": "Announcements\n\nHW:\n\nHW 5 due [whichever date we decided on in the previous slide]\nHW 6 due at 11:59 pm on Fri, Dec 6, but will be accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nIn-class only, “cheat sheet” with same specs as usual allowed\nCumulative – will definitely have material since Exam 2, but there’s so little of it that it won’t be a huge portion of the exam\nFinal exam review during reading period – date/time/location TBA\nOffice hours during reading period + final exam week – schedule TBA\n\n\nGrades:\n\nExam 2 in-class grades posted – can review questions in my office hours anytime before the final\nExam 2 take-home + project grades to be posted after Thanksgiving break"
   },
   {
     "objectID": "slides/24-quantifying-uncertainty-slides.html#goal",
@@ -11836,7 +11871,21 @@
     "href": "slides/24-quantifying-uncertainty-slides.html#modeling",
     "title": "Quantifying uncertainty",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+  },
+  {
+    "objectID": "slides/24-quantifying-uncertainty-slides.html#participate",
+    "href": "slides/24-quantifying-uncertainty-slides.html#participate",
+    "title": "Quantifying uncertainty",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the intercept?\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652\n53302\n2\n0\n\n\narea\n159\n18\n9\n0\n\n\n\n\n\n\n\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $116,652, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $15,900, on average.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/24-quantifying-uncertainty-slides.html#participate-1",
+    "href": "slides/24-quantifying-uncertainty-slides.html#participate-1",
+    "title": "Quantifying uncertainty",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is the correct interpretation of the slope?\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652\n53302\n2\n0\n\n\narea\n159\n18\n9\n0\n\n\n\n\n\n\n\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $159, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.\nFor each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.\nDuke Forest houses that are 0 square feet are predicted to sell, for $159, on average.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
     "objectID": "slides/24-quantifying-uncertainty-slides.html#from-sample-to-population",
@@ -11927,7 +11976,14 @@
     "href": "slides/24-quantifying-uncertainty-slides.html#bootstrap-samples-1---100",
     "title": "Quantifying uncertainty",
     "section": "Bootstrap samples 1 - 100",
-    "text": "Bootstrap samples 1 - 100"
+    "text": "Bootstrap samples 1 - 100\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLook familiar?"
+  },
+  {
+    "objectID": "slides/24-quantifying-uncertainty-slides.html#look-familiar",
+    "href": "slides/24-quantifying-uncertainty-slides.html#look-familiar",
+    "title": "Quantifying uncertainty",
+    "section": "Look familiar?",
+    "text": "Look familiar?"
   },
   {
     "objectID": "slides/24-quantifying-uncertainty-slides.html#slopes-of-bootstrap-samples",

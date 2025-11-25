@@ -134,9 +134,10 @@ window.Quarto = {
 </script>
 <meta property="og:title" content="Quantifying uncertainty – STA 199">
 <meta property="og:description" content="Lecture 24">
-<meta property="og:image" content="https://sta199-f25.github.io/slides/images/24/duke_forest_home.jpg">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:alt" content="Home in Duke Forest">
+<meta property="og:image:height" content="888">
+<meta property="og:image:width" content="866">
 </head>
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -560,7 +561,8 @@ window.Quarto = {
 <li>
 <a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
   <ul class="collapse">
-<li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
+<li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
   </ul>
 </li>
   <li>
@@ -571,6 +573,8 @@ window.Quarto = {
   <li><a href="#data-houses-in-duke-forest" id="toc-data-houses-in-duke-forest" class="nav-link" data-scroll-target="#data-houses-in-duke-forest">Data: Houses in Duke Forest</a></li>
   <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a></li>
   <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
+  <li><a href="#participate-1" id="toc-participate-1" class="nav-link" data-scroll-target="#participate-1">Participate 📱💻</a></li>
   <li><a href="#from-sample-to-population" id="toc-from-sample-to-population" class="nav-link" data-scroll-target="#from-sample-to-population">From sample to population</a></li>
   <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference">Statistical inference</a></li>
   <li><a href="#inference-for-simple-linear-regression" id="toc-inference-for-simple-linear-regression" class="nav-link" data-scroll-target="#inference-for-simple-linear-regression">Inference for simple linear regression</a></li>
@@ -589,6 +593,7 @@ window.Quarto = {
   <li><a href="#bootstrap-sample-5" id="toc-bootstrap-sample-5" class="nav-link" data-scroll-target="#bootstrap-sample-5">Bootstrap sample 5</a></li>
   <li><a href="#bootstrap-samples-1---5" id="toc-bootstrap-samples-1---5" class="nav-link" data-scroll-target="#bootstrap-samples-1---5">Bootstrap samples 1 - 5</a></li>
   <li><a href="#bootstrap-samples-1---100" id="toc-bootstrap-samples-1---100" class="nav-link" data-scroll-target="#bootstrap-samples-1---100">Bootstrap samples 1 - 100</a></li>
+  <li><a href="#look-familiar" id="toc-look-familiar" class="nav-link" data-scroll-target="#look-familiar">Look familiar?</a></li>
   <li><a href="#slopes-of-bootstrap-samples" id="toc-slopes-of-bootstrap-samples" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples">Slopes of bootstrap samples</a></li>
   <li><a href="#slopes-of-bootstrap-samples-1" id="toc-slopes-of-bootstrap-samples-1" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</a></li>
   <li><a href="#confidence-level" id="toc-confidence-level" class="nav-link" data-scroll-target="#confidence-level">Confidence level</a></li>
@@ -648,10 +653,52 @@ window.Quarto = {
 
 
 </header><section id="warm-up" class="level1"><h1>Warm-up</h1>
-<section id="announcements" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="announcements">Announcements</h2>
+<section id="while-you-wait-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate">While you wait: Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Given that HW 6 will be assigned on Monday, Dec 1, what day should HW 5 be due? It will be due at 11:59 pm on the deadline we decide on.</p>
+<div class="wooclap-choices">
 <ul>
-<li><p>HW 5 due…</p></li>
-<li><p>…</p></li>
+<li>Sunday, Nov 30 - no change</li>
+<li>Monday, Dec 1 - postponed by 1 day</li>
+<li>Tuesday, Dec 2 - postponed by 2 days</li>
+<li>Wednesday, Dec 3 - postponed by 3 days</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="announcements" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li>HW:
+<ul>
+<li>HW 5 due [whichever date we decided on in the previous slide]</li>
+<li>HW 6 due at 11:59 pm on Fri, Dec 6, but will be accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
+</ul>
+</li>
+<li>Final exam:
+<ul>
+<li>In-class only, “cheat sheet” with same specs as usual allowed</li>
+<li>Cumulative – will definitely have material since Exam 2, but there’s so little of it that it won’t be a huge portion of the exam</li>
+<li>Final exam review during reading period – date/time/location TBA</li>
+<li>Office hours during reading period + final exam week – schedule TBA</li>
+</ul>
+</li>
+<li>Grades:
+<ul>
+<li>Exam 2 in-class grades posted – can review questions in my office hours anytime before the final</li>
+<li>Exam 2 take-home + project grades to be posted after Thanksgiving break</li>
+</ul>
+</li>
 </ul></section></section><section id="quantifying-uncertainty" class="level1"><h1>Quantifying uncertainty</h1>
 <section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <p>Find range of plausible values for the slope using bootstrap confidence intervals.</p>
@@ -675,7 +722,7 @@ window.Quarto = {
 </li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><a href="images/24/duke_forest_home.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/24/duke_forest_home.jpg" class="img-fluid" alt="Home in Duke Forest"></a></p>
+<p><a href="images/24/duke_forest_home.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/24/duke_forest_home.jpg" class="img-fluid" alt="Home in Duke Forest"></a></p>
 </div>
 </div>
 <p><strong>Goal</strong>: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.</p>
@@ -691,18 +738,18 @@ window.Quarto = {
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/dollar_format.html">label_dollar</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section><section id="modeling" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="modeling">Modeling</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>df_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">fit</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">tidy</span>(df_fit) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="co"># neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span>, data <span class="op">=</span> <span class="va">duke_forest</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">df_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -731,17 +778,113 @@ window.Quarto = {
 </table>
 </div>
 </div>
-<p>. . .</p>
+</section><section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following is the correct interpretation of the <strong>intercept</strong>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">116652</td>
+<td style="text-align: right;">53302</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">area</td>
+<td style="text-align: right;">159</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="wooclap-choices small">
 <ul>
-<li>
-<strong>Intercept:</strong> Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.
-<ul>
-<li>Is this interpretation useful?</li>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $116,652, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.</li>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $15,900, on average.</li>
 </ul>
-</li>
-<li>
-<strong>Slope:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</li>
-</ul></section><section id="from-sample-to-population" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="from-sample-to-population">From sample to population</h2>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate-1">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>Which of the following is the correct interpretation of the <strong>slope</strong>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">116652</td>
+<td style="text-align: right;">53302</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">area</td>
+<td style="text-align: right;">159</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="wooclap-choices small">
+<ul>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $159, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.</li>
+<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.</li>
+<li>Duke Forest houses that are 0 square feet are predicted to sell, for $159, on average.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
+</section><section id="from-sample-to-population" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="from-sample-to-population">From sample to population</h2>
 <blockquote class="blockquote">
 <p>For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</p>
 </blockquote>
@@ -755,7 +898,7 @@ window.Quarto = {
 <li><p><strong>Statistical inference</strong> provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from</p></li>
 <li><p>For our inferences to be valid, the sample should be random and representative of the population we’re interested in</p></li>
 </ul>
-<p><a href="images/24/soup.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/24/soup.png" class="img-fluid"></a></p>
+<p><a href="images/24/soup.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/24/soup.png" class="img-fluid" alt="Soup in a bowl"></a></p>
 </section><section id="inference-for-simple-linear-regression" class="level2"><h2 class="anchored" data-anchor-id="inference-for-simple-linear-regression">Inference for simple linear regression</h2>
 <ul>
 <li><p>Calculate a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span> (today)</p></li>
@@ -808,7 +951,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -817,7 +960,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -830,7 +973,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -839,7 +982,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -852,7 +995,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -861,7 +1004,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -874,7 +1017,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -883,7 +1026,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -896,7 +1039,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -905,7 +1048,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -920,7 +1063,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-17-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -929,7 +1072,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -942,7 +1085,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -951,7 +1094,33 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-19-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>. . .</p>
+<div class="question">
+<p>Look familiar?</p>
+</div>
+</section><section id="look-familiar" class="level2"><h2 class="anchored" data-anchor-id="look-familiar">Look familiar?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -965,7 +1134,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-24-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -977,7 +1146,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-25-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -989,7 +1158,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-26-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -998,7 +1167,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-27-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -1086,7 +1255,7 @@ window.Quarto = {
 <p>If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?</p>
 </div>
 <p>. . .</p>
-<p><a href="images/24/garfield.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="images/24/garfield.png" class="img-fluid"></a></p>
+<p><a href="images/24/garfield.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="images/24/garfield.png" class="img-fluid"></a></p>
 </section><section id="precision-vs.-accuracy-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="precision-vs.-accuracy-1">Precision vs.&nbsp;accuracy</h2>
 <div class="task">
 <p>How can we get best of both worlds – high precision and high accuracy?</p>
