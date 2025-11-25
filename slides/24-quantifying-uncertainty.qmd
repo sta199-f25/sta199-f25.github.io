@@ -29,11 +29,49 @@ todays_ae <- "XXX"
 
 # Warm-up
 
-## Announcements {.smaller}
+## While you wait: Participate 📱💻 {.xsmall}
 
-- HW 5 due...
+::: columns
 
-- ...
+::: {.column width="70%"}
+
+::: wooclap
+
+Given that HW 6 will be assigned on Monday, Dec 1, what day should HW 5 be due? It will be due at 11:59 pm on the deadline we decide on.
+
+::: wooclap-choices
+- Sunday, Nov 30 - no change
+- Monday, Dec 1 - postponed by 1 day
+- Tuesday, Dec 2 - postponed by 2 days
+- Wednesday, Dec 3 - postponed by 3 days
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+
+## Announcements {.xsmall}
+
+- HW:
+  - HW 5 due [whichever date we decided on in the previous slide]
+  - HW 6 due at 11:59 pm on Fri, Dec 6, but will be accepted until Sun, Dec 7 at 11:59 pm without penalty
+
+- Final exam:
+  - In-class only, "cheat sheet" with same specs as usual allowed
+  - Cumulative -- will definitely have material since Exam 2, but there's so little of it that it won't be a huge portion of the exam
+  - Final exam review during reading period -- date/time/location TBA
+  - Office hours during reading period + final exam week -- schedule TBA
+
+- Grades:
+  - Exam 2 in-class grades posted -- can review questions in my office hours anytime before the final
+  - Exam 2 take-home + project grades to be posted after Thanksgiving break
 
 # Quantifying uncertainty
 
@@ -89,17 +127,12 @@ ggplot(duke_forest, aes(x = area, y = price)) +
 ## Modeling {.smaller}
 
 ```{r}
-#| echo: true
-#| code-line-numbers: "|5|6"
-
 df_fit <- linear_reg() |>
   fit(price ~ area, data = duke_forest)
 
 tidy(df_fit) |>
   kable(digits = 2) # neatly format table to 2 digits
 ```
-
-. . .
 
 ```{r}
 #| echo: false
@@ -110,9 +143,71 @@ intercept <- tidy(df_fit) |>
 slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 ```
 
--   **Intercept:** Duke Forest houses that are 0 square feet are expected to sell, for `r dollar(intercept)`, on average.
-    -   Is this interpretation useful?
--   **Slope:** For each additional square foot, we expect the sale price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following is the correct interpretation of the **intercept**?
+
+```{r}
+#| echo: false
+tidy(df_fit) |>
+  kable(digits = 0)
+```
+
+::: {.wooclap-choices .small}
+- For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by `r dollar(intercept)`, on average.
+- Duke Forest houses that are 0 square feet are predicted to sell, for `r dollar(intercept)`, on average.
+- For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by `r dollar(slope*100)`, on average.
+- Duke Forest houses that are 0 square feet are predicted to sell, for `r dollar(slope*100)`, on average.
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following is the correct interpretation of the **slope**?
+
+```{r}
+#| echo: false
+tidy(df_fit) |>
+  kable(digits = 0)
+```
+
+::: {.wooclap-choices .small}
+- For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
+- Duke Forest houses that are 0 square feet are predicted to sell, for `r dollar(intercept)`, on average.
+- For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by `r dollar(slope*100)`, on average.
+- Duke Forest houses that are 0 square feet are predicted to sell, for `r dollar(slope)`, on average.
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
 
 ## From sample to population {.smaller}
 
@@ -130,7 +225,7 @@ slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 
 -   For our inferences to be valid, the sample should be random and representative of the population we're interested in
 
-![](images/24/soup.png)
+![](images/24/soup.png){fig-alt="Soup in a bowl"}
 
 ## Inference for simple linear regression
 
@@ -488,6 +583,47 @@ p_df_boot_samples_100
 
 :::
 :::::
+
+. . .
+
+::: question
+Look familiar?
+:::
+
+## Look familiar?
+
+::::: columns
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| message: false
+p_df_boot_samples_100
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(duke_forest, aes(x = area, y = price)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    title = "Price and area of houses in Duke Forest"
+  ) +
+  scale_y_continuous(limits = c(90000, 1550000), labels = label_dollar()) +
+  scale_x_continuous(limits = c(1000, 6500), labels = label_number())
+```
+
+:::
+:::::
+
+
 
 ## Slopes of bootstrap samples {.smaller}
 
