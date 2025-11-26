@@ -20,7 +20,7 @@ d <- read_sheet(
   "https://docs.google.com/spreadsheets/d/1rWhVJd5JXvHKpsUkXz8I4dRr1E6_u8__GgTS-Ir0sq8/edit?gid=675503730#gid=675503730",
   sheet = "Schedule"
 )
-prepare_cutoff_date <- as.Date("2025-11-30")
+prepare_cutoff_date <- as.Date("2025-12-15")
 ```
 
 ```{r}
