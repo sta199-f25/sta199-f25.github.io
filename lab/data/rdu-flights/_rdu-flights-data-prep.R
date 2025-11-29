@@ -43,6 +43,16 @@ rdu_flights <- all_data |>
   ) |>
   relocate(carrier_name, .after = carrier_code)
 
-# write data -----------------------------------------------------------------------
+# write data for lab 7 --------------------------------------------------------
 
 write_csv(rdu_flights, file = "lab/data/rdu-flights.csv")
+
+# sample and write data for lab 8 ---------------------------------------------
+
+set.seed(20251129)
+rdu_flights_sample <- rdu_flights |>
+  slice_sample(n = 10) |>
+  select(distance, air_time) |>
+  rownames_to_column(var = "flight_id")
+
+write_csv(rdu_flights_sample, file = "lab/data/rdu-flights-sample.csv")

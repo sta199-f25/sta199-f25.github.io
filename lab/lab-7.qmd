@@ -1,6 +1,6 @@
 ---
 title: Lab 7
-subtitle: "Leavin' on a jet plane"
+subtitle: "Leavin' on a jet plane, confidently"
 description: "Due: End of lab on Mon, Nov 24"
 categories: Lab
 filters:
