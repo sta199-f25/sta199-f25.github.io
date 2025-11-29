@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="Due: End of lab on Mon, Nov 24">
-<title>Lab 7 – STA 199</title>
+<title>Lab 8 – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,7 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+}</script><meta name="quarto:status" content="draft">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -128,9 +132,12 @@ window.Quarto = {
   typesetMath
 };
 </script>
-<meta property="og:title" content="Lab 7 – STA 199">
+<meta property="og:title" content="Lab 8 – STA 199">
 <meta property="og:description" content="Due: End of lab on Mon, Nov 24">
+<meta property="og:image" content="https://sta199-f25.github.io/lab/lab-8_files/figure-html/unnamed-chunk-3-1.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="711">
+<meta property="og:image:width" content="1152">
 </head>
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -297,11 +304,11 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 7</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 8</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -569,10 +576,24 @@ window.Quarto = {
   <li>
 <a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
   <ul class="collapse">
-<li><a href="#question-1---sample" id="toc-question-1---sample" class="nav-link" data-scroll-target="#question-1---sample">Question 1 - Sample</a></li>
-  <li><a href="#question-2---visualize" id="toc-question-2---visualize" class="nav-link" data-scroll-target="#question-2---visualize">Question 2 - Visualize</a></li>
-  <li><a href="#question-3---model-and-estimate" id="toc-question-3---model-and-estimate" class="nav-link" data-scroll-target="#question-3---model-and-estimate">Question 3 - Model and estimate</a></li>
-  <li><a href="#question-4---quantifyish-uncertainty" id="toc-question-4---quantifyish-uncertainty" class="nav-link" data-scroll-target="#question-4---quantifyish-uncertainty">Question 4 - Quantify(ish) uncertainty</a></li>
+<li><a href="#part-1---observe" id="toc-part-1---observe" class="nav-link" data-scroll-target="#part-1---observe">Part 1 - Observe</a></li>
+  <li>
+<a href="#question-1---read-the-observed-data" id="toc-question-1---read-the-observed-data" class="nav-link" data-scroll-target="#question-1---read-the-observed-data">Question 1 - Read the observed data</a>
+  <ul class="collapse">
+<li><a href="#question-2---visualize-the-observed-relationship" id="toc-question-2---visualize-the-observed-relationship" class="nav-link" data-scroll-target="#question-2---visualize-the-observed-relationship">Question 2 - Visualize the observed relationship</a></li>
+  </ul>
+</li>
+  <li><a href="#question-3---model-and-estimate-the-observed-relationship" id="toc-question-3---model-and-estimate-the-observed-relationship" class="nav-link" data-scroll-target="#question-3---model-and-estimate-the-observed-relationship">Question 3 - Model and estimate the observed relationship</a></li>
+  <li><a href="#part-2---hypothesize" id="toc-part-2---hypothesize" class="nav-link" data-scroll-target="#part-2---hypothesize">Part 2 - Hypothesize</a></li>
+  <li><a href="#question-4---set-the-null-hypothesis" id="toc-question-4---set-the-null-hypothesis" class="nav-link" data-scroll-target="#question-4---set-the-null-hypothesis">Question 4 - Set the null hypothesis</a></li>
+  <li><a href="#question-5---set-the-alternative-hypothesis" id="toc-question-5---set-the-alternative-hypothesis" class="nav-link" data-scroll-target="#question-5---set-the-alternative-hypothesis">Question 5 - Set the alternative hypothesis</a></li>
+  <li><a href="#part-3---generate" id="toc-part-3---generate" class="nav-link" data-scroll-target="#part-3---generate">Part 3 - Generate</a></li>
+  <li><a href="#question-6---break-the-relationship" id="toc-question-6---break-the-relationship" class="nav-link" data-scroll-target="#question-6---break-the-relationship">Question 6 - Break the relationship</a></li>
+  <li><a href="#question-7---visualize-model-and-estimate-the-broken-relationship" id="toc-question-7---visualize-model-and-estimate-the-broken-relationship" class="nav-link" data-scroll-target="#question-7---visualize-model-and-estimate-the-broken-relationship">Question 7 - Visualize, model, and estimate the broken relationship</a></li>
+  <li><a href="#question-8---generate-the-null-distribution-collectively" id="toc-question-8---generate-the-null-distribution-collectively" class="nav-link" data-scroll-target="#question-8---generate-the-null-distribution-collectively">Question 8 - Generate the null distribution (collectively)</a></li>
+  <li><a href="#part-4---calculate-and-conclude" id="toc-part-4---calculate-and-conclude" class="nav-link" data-scroll-target="#part-4---calculate-and-conclude">Part 4 - Calculate and conclude</a></li>
+  <li><a href="#question-9---calculate-the-p-value" id="toc-question-9---calculate-the-p-value" class="nav-link" data-scroll-target="#question-9---calculate-the-p-value">Question 9 - Calculate the p-value</a></li>
+  <li><a href="#question-10---conclude-the-hypothesis-test" id="toc-question-10---conclude-the-hypothesis-test" class="nav-link" data-scroll-target="#question-10---conclude-the-hypothesis-test">Question 10 - Conclude the hypothesis test</a></li>
   </ul>
 </li>
   <li>
@@ -582,12 +603,12 @@ window.Quarto = {
   <li><a href="#grading-and-feedback" id="toc-grading-and-feedback" class="nav-link" data-scroll-target="#grading-and-feedback">Grading and feedback</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-7.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Lab 7</h1>
-<p class="subtitle lead">Leavin’ on a jet plane, confidently</p>
+<h1 class="title">Lab 8</h1>
+<p class="subtitle lead">Leavin’ on a jet plane, hypothetically</p>
   <div class="quarto-categories">
     <div class="quarto-category">Lab</div>
   </div>
@@ -610,11 +631,10 @@ window.Quarto = {
 
 
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
-<p>In this lab you’ll explore the relationship between distance and air time of flights out of RDU in 2024.</p>
-<p>And you’ll work in what’s considered a pretty unlikely situation: you have access to population data – all flights out of RDU in 2024! But we’ll ask you to pretend that you didn’t actually have access and you need to work with sample data. How? Hang in there, get the population data loaded first, then we’ll explain the next steps!</p>
+<p>Last week you explored the relationship between distance and air time of flights out of RDU in 2024. And you did it in some <em>la la land</em> where we you had access to the full population. Time to get back to reality! This week you will explore the same relationship, but this time you will work with a single sample from the population.</p>
 <section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <p>By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment. If you’re not sure how, refer back to an earlier lab.</p>
-<p>Open the <em>lab-7.qmd</em> template Quarto file and update the <code>authors</code> field to add your name first (first and last) and then your teammates’ names (first and last). Render the document. Examine the rendered document and make sure your and your teammates’ names are updated in the document. Commit and push your changes with a meaningful commit message and push to GitHub.</p>
+<p>Open the <em>lab-8.qmd</em> template Quarto file and update the <code>authors</code> field to add your name first (first and last) and then your teammates’ names (first and last). Render the document. Examine the rendered document and make sure your and your teammates’ names are updated in the document. Commit and push your changes with a meaningful commit message and push to GitHub.</p>
 <details><summary>
 Click to expand if you need a refresher on assignment guidelines.
 </summary><section id="code" class="level3"><h3 class="anchored" data-anchor-id="code">Code</h3>
@@ -643,18 +663,321 @@ Click to expand if you need a refresher on assignment guidelines.
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="population-data" class="level2"><h2 class="anchored" data-anchor-id="population-data">Population data</h2>
-<p>The dataset, called <code>rdu-flights.csv</code>, can be found in the <code>data</code> folder.</p>
+<p>The dataset, called <code>rdu-flights-sample.csv</code>, can be found in the <code>data</code> folder.</p>
 </section><section id="questions" class="level1"><h1>Questions</h1>
-<section id="question-1---sample" class="level2"><h2 class="anchored" data-anchor-id="question-1---sample">Question 1 - Sample</h2>
-<p>Take a random sample of 100 flights and store it as <code>rdu_flights_sample</code>. Each person in the class should have a different sample.</p>
-</section><section id="question-2---visualize" class="level2"><h2 class="anchored" data-anchor-id="question-2---visualize">Question 2 - Visualize</h2>
+<section id="part-1---observe" class="level2"><h2 class="anchored" data-anchor-id="part-1---observe">Part 1 - Observe</h2>
+</section><section id="question-1---read-the-observed-data" class="level2"><h2 class="anchored" data-anchor-id="question-1---read-the-observed-data">Question 1 - Read the observed data</h2>
+<p>Read in your random sample of 100 flights and store it as <code>rdu_flights_sample</code>. Each person in the class will have the same observed sample of flights.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rdu_flights_sample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/rdu-flights-sample.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 10 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (3): flight_id, distance, air_time
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<section id="question-2---visualize-the-observed-relationship" class="level3"><h3 class="anchored" data-anchor-id="question-2---visualize-the-observed-relationship">Question 2 - Visualize the observed relationship</h3>
 <p>Visualize the relationship between <code>distance</code> and <code>air_time</code> using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.</p>
-<p>How does the relationship between the variables in your sample compare to that of others in your team or others in the class? How do the regression lines compare? Exactly the same? Wildly different? Somewhere in between?</p>
-</section><section id="question-3---model-and-estimate" class="level2"><h2 class="anchored" data-anchor-id="question-3---model-and-estimate">Question 3 - Model and estimate</h2>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">rdu_flights_sample</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">distance</span>, y <span class="op">=</span> <span class="va">air_time</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Scatter plot of air time vs. distance"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Distance (miles)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Air time (minutes)"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="lab-8_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="lab-8_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="576"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section><section id="question-3---model-and-estimate-the-observed-relationship" class="level2"><h2 class="anchored" data-anchor-id="question-3---model-and-estimate-the-observed-relationship">Question 3 - Model and estimate the observed relationship</h2>
 <p>Fit a model predicting <code>air_time</code> using <code>distance</code> using the sample data. Display the model summary.</p>
-<p>How does the slope estimate in your sample compare to that of others in your team or others in the class? Exactly the same? Wildly different? Somewhere in between?</p>
-</section><section id="question-4---quantifyish-uncertainty" class="level2"><h2 class="anchored" data-anchor-id="question-4---quantifyish-uncertainty">Question 4 - Quantify(ish) uncertainty</h2>
-<p>Mark your slope estimate from Question 3 on the number line on the board. Then, based on the slope estimates from the entire class, determine a reasonable range of values for the estimate of the slope of the relationship between <code>distance</code> and <code>air_time</code>. How do you define “reasonable”?</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">air_time_dist_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">air_time</span> <span class="op">~</span> <span class="va">distance</span>, data <span class="op">=</span> <span class="va">rdu_flights_sample</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">air_time_dist_fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)   16.1     2.76         5.82 3.98e- 4
+2 distance       0.123   0.00277     44.5  7.20e-11</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="part-2---hypothesize" class="level2"><h2 class="anchored" data-anchor-id="part-2---hypothesize">Part 2 - Hypothesize</h2>
+</section><section id="question-4---set-the-null-hypothesis" class="level2"><h2 class="anchored" data-anchor-id="question-4---set-the-null-hypothesis">Question 4 - Set the null hypothesis</h2>
+<p>What if there was no relationship between <code>distance</code> and <code>air_time</code>? What would the true slope of the relationship be in that case? This is your null hypothesis. You can articulate it as:</p>
+<p><span class="math inline">\(H_0:\)</span> There is no relationship between distance and air time, the value of the true slope is ____, i.e., <span class="math inline">\(\beta_1\)</span> = ____.</p>
+<p>Fill in the blanks.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The null hypothesis <strong>always</strong> sets the true population parameter <strong>equal</strong> to a specific value.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(H_0:\)</span> There is no relationship between distance and air time, the value of the true slope is 0, i.e., <span class="math inline">\(\beta_1\)</span> = 0.</p>
+</div>
+</div>
+</section><section id="question-5---set-the-alternative-hypothesis" class="level2"><h2 class="anchored" data-anchor-id="question-5---set-the-alternative-hypothesis">Question 5 - Set the alternative hypothesis</h2>
+<p>What if there is a relationship between <code>distance</code> and <code>air_time</code>? This is your alternative hypothesis!</p>
+<p><span class="math inline">\(H_A:\)</span> There is a relationship between distance and air time, the value of the true slope is ____, i.e., <span class="math inline">\(\beta_1\)</span> ______.</p>
+<p>Fill in the blanks.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The alternative hypothesis <strong>always</strong> compares the true population parameter to the same specific value set in the null hypothesis. This comparison ca be “not equal to”, “greater than”, or “less than” and the choice depends on the research question. In this case, our research question is whether there is <em>some</em> relationship between distance and air time.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(H_A:\)</span> There is a relationship between distance and air time, the value of the true slope is not equal to 0, i.e., <span class="math inline">\(\beta_1\)</span> <span class="math inline">\(\ne\)</span> 0.</p>
+</div>
+</div>
+</section><section id="part-3---generate" class="level2"><h2 class="anchored" data-anchor-id="part-3---generate">Part 3 - Generate</h2>
+</section><section id="question-6---break-the-relationship" class="level2"><h2 class="anchored" data-anchor-id="question-6---break-the-relationship">Question 6 - Break the relationship</h2>
+<p>Now let’s set aside reality for a bit again, and imagine we live in the land of the null hypothesis where there is no relationship between <code>distance</code> and <code>air_time</code>. Using the sample data, simulate such a world by breaking any relationship between <code>distance</code> and <code>air_time</code>. How? Randomly permute the <code>air_time</code> values in your sample data to break any relationship between <code>distance</code> and <code>air_time</code>, and store the resulting air time values in a new column called <code>air_time_permuted</code>. Each person in the class should have a different permuation of the <code>air_time</code> values. You could achieve this by setting different seeds, e.g., each person could use their birthday. Mine is Feb 5, so I’ll use <code>25</code>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">52</span><span class="op">)</span></span>
+<span><span class="va">rdu_flights_sample</span> <span class="op">&lt;-</span> <span class="va">rdu_flights_sample</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    air_time_permuted <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span></span>
+<span>      <span class="va">air_time</span>,</span>
+<span>      size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">rdu_flights_sample</span><span class="op">)</span>,</span>
+<span>      replace <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Display <code>rdu_flights_sample</code> to see the new column. Confirm that each <code>air_time_permuted</code> value comes from the original <code>air_time</code> values, but the order is different.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rdu_flights_sample</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   flight_id distance air_time air_time_permuted
+       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;             &lt;dbl&gt;
+ 1         1      130       37                92
+ 2         2      612       92               192
+ 3         3     1433      192                70
+ 4         4     1042      142                39
+ 5         5      227       39                52
+ 6         6     2354      308               142
+ 7         7      227       52                99
+ 8         8      646       99                37
+ 9         9      427       70               308
+10        10      416       56                56</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="question-7---visualize-model-and-estimate-the-broken-relationship" class="level2"><h2 class="anchored" data-anchor-id="question-7---visualize-model-and-estimate-the-broken-relationship">Question 7 - Visualize, model, and estimate the broken relationship</h2>
+<p>Visualize the relationship between <code>distance</code> and <code>air_time</code> using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.</p>
+<p>Then, fit a model predicting <code>air_time_permuted</code> using <code>distance</code> using the sample data. Display the model summary.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">rdu_flights_sample</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">distance</span>, y <span class="op">=</span> <span class="va">air_time_permuted</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Scatter plot of permuted air time vs. distance"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Distance (miles)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Permuted air time (minutes)"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="lab-8_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="lab-8_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="576"></a></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">air_time_perm_dist_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">air_time_permuted</span> <span class="op">~</span> <span class="va">distance</span>, data <span class="op">=</span> <span class="va">rdu_flights_sample</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">air_time_perm_dist_fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term          estimate std.error statistic p.value
+  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept) 109.         43.6      2.49     0.0374
+2 distance      0.000209    0.0437   0.00479  0.996 </code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>How does the slope estimate for your permuted air time values compare to that of others in your team or others in the class? Exactly the same? Wildly different? Somewhere in between?</p>
+</section><section id="question-8---generate-the-null-distribution-collectively" class="level2"><h2 class="anchored" data-anchor-id="question-8---generate-the-null-distribution-collectively">Question 8 - Generate the null distribution (collectively)</h2>
+<p>Each person in the class has now simulated a slightly different world where there is no relationship between <code>distance</code> and <code>air_time</code> by breaking any relationship in their sample data. Mark your slope estimate from Question 7 on the number line on the board. The distribution you constructed on the board is called the <strong>null distribution</strong> of the slope estimates. This distribution represents what slope estimates we would expect to see if the null hypothesis were true.</p>
+<p>When everyone has marked their slope estimates, what does the overall distribution of slope estimates look like? Is it centered around a particular value?</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The overall distribution of slope estimates looks approximately normal and is centered around 0.</p>
+</div>
+</div>
+</section><section id="part-4---calculate-and-conclude" class="level2"><h2 class="anchored" data-anchor-id="part-4---calculate-and-conclude">Part 4 - Calculate and conclude</h2>
+</section><section id="question-9---calculate-the-p-value" class="level2"><h2 class="anchored" data-anchor-id="question-9---calculate-the-p-value">Question 9 - Calculate the p-value</h2>
+<p>The <strong>p-value</strong> is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.</p>
+<p>Based on the null distribution you constructed collectively in Question 8, calculate your p-value.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>First mark the slope estimate you observed in Question 3 on the number line on the board. Then count how many slope estimates in the null distribution are <strong>beyond</strong> your observed slope estimate. Then, don’t forget about the other side of the distribution – we generally account for that side by multiplying the count we obtained by 2. Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Answers will vary.</p>
+</div>
+</div>
+</section><section id="question-10---conclude-the-hypothesis-test" class="level2"><h2 class="anchored" data-anchor-id="question-10---conclude-the-hypothesis-test">Question 10 - Conclude the hypothesis test</h2>
+<p>Using a significance level of <span class="math inline">\(\alpha = 0.05\)</span>, what is your conclusion regarding the hypothesis test you conducted?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your p-value is less than or equal to <span class="math inline">\(\alpha\)</span>, you reject the null hypothesis, and conclude that the data provide convincing evidence of a discernible relationship between distance and air time. If your p-value is greater than <span class="math inline">\(\alpha\)</span>, you fail to reject the null hypothesis, and conclude that the data do not provide convincing evidence of a discernible relationship between distance and air time. Whatever you do, your conclusion should always be stated in the context of the research question.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Answers will vary.</p>
+</div>
+</div>
 </section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1147,12 +1470,43 @@ Checklist
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-7.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/lab/lab-8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
-</footer>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>
