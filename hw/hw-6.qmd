@@ -1,0 +1,219 @@
+---
+title: HW 6
+subtitle: ADD SUBTITLE HERE
+description: "Due: Sun, Dec 5, 11:59 pm"
+categories: HW
+filters:
+  - ../remove-fmt-skip.lua
+draft: true
+---
+
+# Introduction
+
+This is a two-part homework assignment:
+
+- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-6-part-1.qmd`, no submission required.
+
+  ::: {.callout-warning title="Heads up!"}
+  While Part 1 is not graded, it is a prerequisite for Part 2 -- Question 6 in Part 2 asks you to summarize your experience in Part 1.
+  Additionally, the skills you practice in Part 1 will be useful for future assignments that are graded.
+  Finally, there are workflow points assigned to Part 1 -- you must make at least three commits in Part 1 and make updates to both your qmd and pdf files in order to earn these points.
+  :::
+
+- **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team within a week. Complete in `hw-6-part-2.qmd`, submit on Gradescope.
+
+By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.
+
+<details>
+<summary>Click to expand if you need a refresher on how to get started with a homework assignment.</summary>
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
+    Click on the repo with the prefix **hw-6**.
+    It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**.
+    Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+</details>
+
+By now you should also be familiar with guidelines for formatting your code and plots as well as your Git and Gradescope workflow.
+
+<details>
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+{{< include _guidelines.qmd >}}
+</details>
+
+
+# Part 1 -- Feedback from AI
+
+Your answers to the questions in this part should go in the file `hw-6-part-1.qmd`.
+
+## Instructions
+
+Write your answer to each question in the appropriate section of the `hw-6-part-1.qmd` file.
+Then, highlight your answer to a question, click on _Addins > AIFEEDR > Get feedback_.
+In the app that opens, select the appropriate homework number (4) and question number.
+Then click on _Get Feedback_.
+Please be patient, feedback generation can take a few seconds. 
+Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. 
+You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.
+
+<details>
+<summary>Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.</summary>
+{{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
+</details>
+
+::: {.callout-note title="Catch the AI making a mistake?" icon=false}
+Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to earn the opportunity for **extra credit**.
+
+Your bug report must include screenshots of the relevant parts of your Quarto document as well as the "incorrect" feedback you received.
+Your bug report should be printed and turned in to Dr. Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date.
+Electronic submissions will not be accepted.
+Your bug report, including screenshots, should fit on no more than two pages.
+
+If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), you will receive 1 extra point that will be added to your total points for the assignment.
+:::
+
+## Context
+
+Parasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.
+
+In this part of the homwework, you will explore how much evolutionary history predicts parasite similarity.
+
+## Packages
+
+In this part you will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+```
+
+## Data
+
+The dataset comes from an Ecology Letters paper by Cooper at al. (2012) entitled “Phylogenetic host specificity and understanding parasite sharing in primates” located [here](https://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2012.01858.x). The goal of the paper was to identify the ability of evolutionary history and ecological traits to characterize parasite host specificity.
+
+Each row of the data contains two species, `species1` and `species2`.
+
+Subsequent columns describe metrics that compare the species:
+
+-   `divergence_time`: how many (millions) of years ago the two species diverged. i.e. how many million years ago they were the same species.
+
+-   `distance`: geodesic distance between species geographic range centroids (in kilometers)
+
+-   `BMdiff`: difference in body mass between the two species (in grams)
+
+-   `precdiff`: difference in mean annual precipitation across the two species geographic ranges (mm)
+
+-   `parsim`: a measure of parasite similarity (proportion of parasites shared between species, ranges between 0 to 1.)
+
+The data are available in `parasites.csv` in your `data` folder.
+
+## Questions
+
+::: render-commit-push
+Do not forget to render, commit, and push regularly, after each substantial change to your document (e.g., after answering each question).
+Use succinct and informative commit messages.
+Make sure to commit and push all changed files so that your Git pane is empty afterward.
+:::
+
+## Part 1: Babies
+
+Every year, the US releases to the public a large dataset containing information on births recorded in the country. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from the dataset released in 2014.
+
+The data are available in the `births14` data frame in the **openintro** package.
+
+### Question 1
+
+```{r}
+births14 |>
+  drop_na(habit) |>
+  ggplot(aes(x = habit, fill = lowbirthweight)) +
+  geom_bar() +
+  facet_wrap(~mature, scales = "free_y")
+```
+
+### Question 2
+
+### Question 3
+
+### Question 4
+
+### Question 5
+
+### Question 6
+
+## Part XX: Lemurs
+
+Questions 7 and 8 question use the `lemurs` data from Homework 5.
+You can refer to the background information provided in that assignment for context, and load the data from `lemurs.csv` in your data folder.
+
+### Question 7
+
+The goal of this question is to answer the following research question:
+
+> Do female lemurs differ in weight from male lemurs, on average?
+
+a. Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 randomization samples (`reps = 1000`) when simulating your randomization distribution.
+
+b. Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0? Explain your reasoning.
+
+c. Construct and interpret a 95% bootstrap confidence interval for the difference in means of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
+
+### Question 8
+
+The goal of this question is to answer the following research question:
+
+> Does the median weight of female lemurs differ from that of male lemurs?
+
+a. Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 randomization samples (`reps = 1000`) when simulating your randomization distribution.
+
+b. Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in medians of female and male lemurs to include 0? Explain your reasoning.
+
+c. Construct and interpret a 95% bootstrap confidence interval for the difference in medians of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
+
+## Part XX - Second chances
+
+In this part, you get to revisit work you’ve turned in before that can be improved. For Question 9 you’ll pick a question from a previous lab and for Question 10 a question from your take-home midterm, and improve them.
+
+Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the deadline but didn’t get a chance to. Some notes for completing this exercise:
+
+- You might need to add your data from your lab/midterm to the data/ folder in this assignment. You do not need to also add a data dictionary.
+
+- You will need to copy over any code needed to clean/prepare your data for this specific question. You can reuse code from your previous assignment, but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors, make sure to fix them.
+
+- Don’t worry about being critical of your own work. Even if you lost no points on the question if you think it can be improved, articulate how / why. We will not apply additional penalties for any mistakes you might point out that we didn’t catch when grading your lab/midterm. There’s no risk of being critical!
+
+### Question 9
+
+Choose one question from a previous lab or homework that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.
+
+### Question 10
+
+Choose one question from the take-home midterm that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Submission
+
+{{< include _submission.qmd >}}
+
+## Grading and feedback
+
+-   Questions 1-5 are not graded, but you should complete them to get practice.
+
+-   Questions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.
+    -   Questions will be graded for accuracy and completeness.
+    -   Partial credit will be given where appropriate.
+    -   There are also workflow points for:
+        - committing at least three times as you work through your homework,
+        - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+        - overall organization.
