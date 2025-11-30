@@ -170,7 +170,7 @@ Then, don't forget about the other side of the distribution -- we generally acco
 Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.
 :::
 
-## e - Conclude the hypothesis test
+### e - Conclude the hypothesis test
 
 Using a significance level of $\alpha = 0.05$, what is your conclusion regarding the hypothesis test you conducted?
 
