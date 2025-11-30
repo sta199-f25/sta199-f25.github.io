@@ -5,7 +5,7 @@ description: "Due: End of lab on Mon, Nov 24"
 categories: Lab
 filters:
   - ../remove-fmt-skip.lua
-draft: true
+draft: false
 execute:
   echo: true
   eval: true
