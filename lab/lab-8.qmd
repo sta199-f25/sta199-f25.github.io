@@ -58,7 +58,7 @@ The dataset, called `rdu-flights-sample.csv`, can be found in the `data` folder.
 
 ## Part 1 - Observe
 
-## Question 1 - Read the observed data
+### Question 1 - Read the observed data
 
 Read in your random sample of 100 flights and store it as `rdu_flights_sample`.
 Each person in the class will have the same observed sample of flights.
@@ -69,14 +69,14 @@ Visualize the relationship between `distance` and `air_time` using a scatter plo
 Also add a regression line to the scatter plot.
 Do not show the standard error ribbon around the regression line.
 
-## Question 3 - Model and estimate the observed relationship
+### Question 3 - Model and estimate the observed relationship
 
 Fit a model predicting `air_time` using `distance` using the sample data.
 Display the model summary.
 
 ## Part 2 - Hypothesize
 
-## Question 4 - Set the null hypothesis
+### Question 4 - Set the null hypothesis
 
 What if there was no relationship between `distance` and `air_time`?
 What would the true slope of the relationship be in that case?
@@ -91,7 +91,7 @@ Fill in the blanks.
 The null hypothesis **always** sets the true population parameter **equal** to a specific value.
 :::
 
-## Question 5 - Set the alternative hypothesis
+### Question 5 - Set the alternative hypothesis
 
 What if there is a relationship between `distance` and `air_time`?
 This is your alternative hypothesis!
@@ -108,7 +108,7 @@ In this case, our research question is whether there is *some* relationship betw
 
 ## Part 3 - Generate
 
-## Question 6 - Break the relationship
+### Question 6 - Break the relationship
 
 Now let's set aside reality for a bit again, and imagine we live in the land of the null hypothesis where there is no relationship between `distance` and `air_time`.
 Using the sample data, simulate such a world by breaking any relationship between `distance` and `air_time`.
@@ -134,7 +134,7 @@ rdu_flights_sample <- rdu_flights_sample |>
 Display `rdu_flights_sample` to see the new column.
 Confirm that each `air_time_permuted` value comes from the original `air_time` values, but the order is different.
 
-## Question 7 - Visualize, model, and estimate the broken relationship
+### Question 7 - Visualize, model, and estimate the broken relationship
 
 Visualize the relationship between `distance` and `air_time` using a scatter plot.
 Also add a regression line to the scatter plot.
@@ -146,7 +146,7 @@ Display the model summary.
 How does the slope estimate for your permuted air time values compare to that of others in your team or others in the class?
 Exactly the same? Wildly different? Somewhere in between?
 
-## Question 8 - Generate the null distribution (collectively)
+### Question 8 - Generate the null distribution (collectively)
 
 Each person in the class has now simulated a slightly different world where there is no relationship between `distance` and `air_time` by breaking any relationship in their sample data.
 Mark your slope estimate from Question 7 on the number line on the board.
@@ -158,7 +158,7 @@ Is it centered around a particular value?
 
 ## Part 4 - Calculate and conclude
 
-## Question 9 - Calculate the p-value
+### Question 9 - Calculate the p-value
 
 The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true.
 In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.
