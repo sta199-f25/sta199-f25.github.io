@@ -119,6 +119,7 @@ You could achieve this by setting different seeds, e.g., each person could use t
 Mine is Feb 5, so I'll use `25`.
 
 ```{r}
+#| eval: false
 set.seed(52)
 rdu_flights_sample <- rdu_flights_sample |>
   mutate(
