@@ -5902,6 +5902,146 @@
     "text": "Footnotes\n\nRemember, haikus not novellas when writing code!↩︎"
   },
   {
+    "objectID": "lab/lab-8.html",
+    "href": "lab/lab-8.html",
+    "title": "Lab 8",
+    "section": "",
+    "text": "Last week you explored the relationship between distance and air time of flights out of RDU in 2024. And you did it in some la la land where we you had access to the full population. Time to get back to reality! This week you will explore the same relationship, but this time you will work with a single sample from the population.\n\nBy now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment. If you’re not sure how, refer back to an earlier lab.\nOpen the lab-8.qmd template Quarto file and update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Render the document. Examine the rendered document and make sure your and your teammates’ names are updated in the document. Commit and push your changes with a meaningful commit message and push to GitHub.\n\nClick to expand if you need a refresher on assignment guidelines.\n\nCode should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
+  },
+  {
+    "objectID": "lab/lab-8.html#getting-started",
+    "href": "lab/lab-8.html#getting-started",
+    "title": "Lab 8",
+    "section": "",
+    "text": "By now you should be familiar with how to get started with a lab assignment by cloning the GitHub repo for the assignment. If you’re not sure how, refer back to an earlier lab.\nOpen the lab-8.qmd template Quarto file and update the authors field to add your name first (first and last) and then your teammates’ names (first and last). Render the document. Examine the rendered document and make sure your and your teammates’ names are updated in the document. Commit and push your changes with a meaningful commit message and push to GitHub.\n\nClick to expand if you need a refresher on assignment guidelines.\n\nCode should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nAdditionally, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\n\n\nPlots should have an informative title and, if needed, also a subtitle.\nAxes and legends should be labeled with both the variable name and its units (if applicable).\nCareful consideration should be given to aesthetic choices.\n\nContinuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment.\nFinal versions of both your .qmd file and the rendered PDF should be pushed to GitHub."
+  },
+  {
+    "objectID": "lab/lab-8.html#packages",
+    "href": "lab/lab-8.html#packages",
+    "title": "Lab 8",
+    "section": "Packages",
+    "text": "Packages\nIn this lab we will work with the tidyverse package.\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "lab/lab-8.html#population-data",
+    "href": "lab/lab-8.html#population-data",
+    "title": "Lab 8",
+    "section": "Population data",
+    "text": "Population data\nThe dataset, called rdu-flights-sample.csv, can be found in the data folder."
+  },
+  {
+    "objectID": "lab/lab-8.html#part-1---observe",
+    "href": "lab/lab-8.html#part-1---observe",
+    "title": "Lab 8",
+    "section": "Part 1 - Observe",
+    "text": "Part 1 - Observe"
+  },
+  {
+    "objectID": "lab/lab-8.html#question-1---read-the-observed-data",
+    "href": "lab/lab-8.html#question-1---read-the-observed-data",
+    "title": "Lab 8",
+    "section": "Question 1 - Read the observed data",
+    "text": "Question 1 - Read the observed data\nRead in your random sample of 100 flights and store it as rdu_flights_sample. Each person in the class will have the same observed sample of flights.\nQuestion 2 - Visualize the observed relationship\nVisualize the relationship between distance and air_time using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line."
+  },
+  {
+    "objectID": "lab/lab-8.html#question-3---model-and-estimate-the-observed-relationship",
+    "href": "lab/lab-8.html#question-3---model-and-estimate-the-observed-relationship",
+    "title": "Lab 8",
+    "section": "Question 3 - Model and estimate the observed relationship",
+    "text": "Question 3 - Model and estimate the observed relationship\nFit a model predicting air_time using distance using the sample data. Display the model summary."
+  },
+  {
+    "objectID": "lab/lab-8.html#part-2---hypothesize",
+    "href": "lab/lab-8.html#part-2---hypothesize",
+    "title": "Lab 8",
+    "section": "Part 2 - Hypothesize",
+    "text": "Part 2 - Hypothesize"
+  },
+  {
+    "objectID": "lab/lab-8.html#question-4---set-the-null-hypothesis",
+    "href": "lab/lab-8.html#question-4---set-the-null-hypothesis",
+    "title": "Lab 8",
+    "section": "Question 4 - Set the null hypothesis",
+    "text": "Question 4 - Set the null hypothesis\nWhat if there was no relationship between distance and air_time? What would the true slope of the relationship be in that case? This is your null hypothesis. You can articulate it as:\n\\(H_0:\\) There is no relationship between distance and air time, the value of the true slope is ____, i.e., \\(\\beta_1\\) = ____.\nFill in the blanks.\n\n\n\n\n\n\nTip\n\n\n\nThe null hypothesis always sets the true population parameter equal to a specific value."
+  },
+  {
+    "objectID": "lab/lab-8.html#question-5---set-the-alternative-hypothesis",
+    "href": "lab/lab-8.html#question-5---set-the-alternative-hypothesis",
+    "title": "Lab 8",
+    "section": "Question 5 - Set the alternative hypothesis",
+    "text": "Question 5 - Set the alternative hypothesis\nWhat if there is a relationship between distance and air_time? This is your alternative hypothesis!\n\\(H_A:\\) There is a relationship between distance and air time, the value of the true slope is ____, i.e., \\(\\beta_1\\) ______.\nFill in the blanks.\n\n\n\n\n\n\nTip\n\n\n\nThe alternative hypothesis always compares the true population parameter to the same specific value set in the null hypothesis. This comparison ca be “not equal to”, “greater than”, or “less than” and the choice depends on the research question. In this case, our research question is whether there is some relationship between distance and air time."
+  },
+  {
+    "objectID": "lab/lab-8.html#part-3---generate",
+    "href": "lab/lab-8.html#part-3---generate",
+    "title": "Lab 8",
+    "section": "Part 3 - Generate",
+    "text": "Part 3 - Generate"
+  },
+  {
+    "objectID": "lab/lab-8.html#question-6---break-the-relationship",
+    "href": "lab/lab-8.html#question-6---break-the-relationship",
+    "title": "Lab 8",
+    "section": "Question 6 - Break the relationship",
+    "text": "Question 6 - Break the relationship\nNow let’s set aside reality for a bit again, and imagine we live in the land of the null hypothesis where there is no relationship between distance and air_time. Using the sample data, simulate such a world by breaking any relationship between distance and air_time. How? Randomly permute the air_time values in your sample data to break any relationship between distance and air_time, and store the resulting air time values in a new column called air_time_permuted. Each person in the class should have a different permuation of the air_time values. You could achieve this by setting different seeds, e.g., each person could use their birthday. Mine is Feb 5, so I’ll use 52.\n\nset.seed(52)\nrdu_flights_sample &lt;- rdu_flights_sample |&gt;\n  mutate(\n    air_time_permuted = sample(\n      air_time,\n      size = nrow(rdu_flights_sample),\n      replace = FALSE\n    )\n  )\n\nDisplay rdu_flights_sample to see the new column. Confirm that each air_time_permuted value comes from the original air_time values, but the order is different."
+  },
+  {
+    "objectID": "lab/lab-8.html#question-7---visualize-model-and-estimate-the-broken-relationship",
+    "href": "lab/lab-8.html#question-7---visualize-model-and-estimate-the-broken-relationship",
+    "title": "Lab 8",
+    "section": "Question 7 - Visualize, model, and estimate the broken relationship",
+    "text": "Question 7 - Visualize, model, and estimate the broken relationship\nVisualize the relationship between distance and air_time using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.\nThen, fit a model predicting air_time_permuted using distance using the sample data. Display the model summary.\nHow does the slope estimate for your permuted air time values compare to that of others in your team or others in the class? Exactly the same? Wildly different? Somewhere in between?"
+  },
+  {
+    "objectID": "lab/lab-8.html#question-8---generate-the-null-distribution-collectively",
+    "href": "lab/lab-8.html#question-8---generate-the-null-distribution-collectively",
+    "title": "Lab 8",
+    "section": "Question 8 - Generate the null distribution (collectively)",
+    "text": "Question 8 - Generate the null distribution (collectively)\nEach person in the class has now simulated a slightly different world where there is no relationship between distance and air_time by breaking any relationship in their sample data. Mark your slope estimate from Question 7 on the number line on the board. The distribution you constructed on the board is called the null distribution of the slope estimates. This distribution represents what slope estimates we would expect to see if the null hypothesis were true.\nWhen everyone has marked their slope estimates, what does the overall distribution of slope estimates look like? Is it centered around a particular value?"
+  },
+  {
+    "objectID": "lab/lab-8.html#part-4---calculate-and-conclude",
+    "href": "lab/lab-8.html#part-4---calculate-and-conclude",
+    "title": "Lab 8",
+    "section": "Part 4 - Calculate and conclude",
+    "text": "Part 4 - Calculate and conclude"
+  },
+  {
+    "objectID": "lab/lab-8.html#question-9---calculate-the-p-value",
+    "href": "lab/lab-8.html#question-9---calculate-the-p-value",
+    "title": "Lab 8",
+    "section": "Question 9 - Calculate the p-value",
+    "text": "Question 9 - Calculate the p-value\nThe p-value is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.\nBased on the null distribution you constructed collectively in Question 8, calculate your p-value.\n\n\n\n\n\n\nTip\n\n\n\nFirst mark the slope estimate you observed in Question 3 on the number line on the board. Then count how many slope estimates in the null distribution are beyond your observed slope estimate. Then, don’t forget about the other side of the distribution – we generally account for that side by multiplying the count we obtained by 2. Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value."
+  },
+  {
+    "objectID": "lab/lab-8.html#question-10---conclude-the-hypothesis-test",
+    "href": "lab/lab-8.html#question-10---conclude-the-hypothesis-test",
+    "title": "Lab 8",
+    "section": "Question 10 - Conclude the hypothesis test",
+    "text": "Question 10 - Conclude the hypothesis test\nUsing a significance level of \\(\\alpha = 0.05\\), what is your conclusion regarding the hypothesis test you conducted?\n\n\n\n\n\n\nTip\n\n\n\nIf your p-value is less than or equal to \\(\\alpha\\), you reject the null hypothesis, and conclude that the data provide convincing evidence of a discernible relationship between distance and air time. If your p-value is greater than \\(\\alpha\\), you fail to reject the null hypothesis, and conclude that the data do not provide convincing evidence of a discernible relationship between distance and air time. Whatever you do, your conclusion should always be stated in the context of the research question."
+  },
+  {
+    "objectID": "lab/lab-8.html#submission",
+    "href": "lab/lab-8.html#submission",
+    "title": "Lab 8",
+    "section": "Submission",
+    "text": "Submission\nBy now you should also be familiar with how to submit your assignment in Gradescope.\n\nClick to expand if you need a refresher on how to get started with a lab assignment.\nSubmit your PDF document to Gradescope by the end of the lab to be considered “on time”:\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials \\(\\rightarrow\\) Duke NetID and log in using your NetID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with question. All the pages of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nChecklist\n\n\n\nMake sure you have:\n\nattempted all questions\nrendered your Quarto document\ncommitted and pushed everything to your GitHub repository such that the Git pane in RStudio is empty\nuploaded your PDF to Gradescope"
+  },
+  {
+    "objectID": "lab/lab-8.html#grading-and-feedback",
+    "href": "lab/lab-8.html#grading-and-feedback",
+    "title": "Lab 8",
+    "section": "Grading and feedback",
+    "text": "Grading and feedback\n\nThis lab is worth 30 points:\n\n10 points for being in lab and turning in something – no partial credit for this part.\n20 points for:\n\nanswering the questions correctly – there is partial credit for this part.\nfollowing the workflow – there is partial credit for this part.\n\n\n\n\nThe workflow points are for:\n\ncommitting at least three times as you work through your lab,\nhaving your final version of .qmd and .pdf files in your GitHub repository, and\noverall organization.\n\n\nYou’ll receive feedback on your lab on Gradescope within a week.\n\nGood luck, and have fun with it!"
+  },
+  {
+    "objectID": "lab/lab-8.html#footnotes",
+    "href": "lab/lab-8.html#footnotes",
+    "title": "Lab 8",
+    "section": "Footnotes",
+    "text": "Footnotes\n\nRemember, haikus not novellas when writing code!↩︎"
+  },
+  {
     "objectID": "course-links.html",
     "href": "course-links.html",
     "title": "Useful links",
@@ -6137,7 +6277,7 @@
     "href": "lab.html",
     "title": "Labs",
     "section": "",
-    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nDue: End of lab on Mon, Aug 25\n\n\n\n\n\n\nLab 1\n\n\nExploring NC Counties\n\n\nDue: End of lab on Mon, Sep 8\n\n\n\n\n\n\nLab 2\n\n\nGet in teams then group_by()\n\n\nDue: End of lab on Mon, Sep 15\n\n\n\n\n\n\nLab 3\n\n\nA pivot and a join walk into a pipe…\n\n\nDue: End of lab on Mon, Sep 22\n\n\n\n\n\n\nLab 4\n\n\nChanges in college athletics\n\n\nDue: End of lab on Mon, Sep 29\n\n\n\n\n\n\nLab 5\n\n\nMake up your other half\n\n\nDue: End of lab on Mon, Oct 29\n\n\n\n\n\n\nLab 6\n\n\n#canceled\n\n\nDue: End of lab on Mon, Nov 17\n\n\n\n\n\n\nLab 7\n\n\nLeavin’ on a jet plane, confidently\n\n\nDue: End of lab on Mon, Nov 24\n\n\n\n\n\n\nNo matching items",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\n\nNo.\n\n\n\nTitle\n\n\n\nDue date\n\n\n\n\n\n\n\n\nLab 0\n\n\nMise en place\n\n\nDue: End of lab on Mon, Aug 25\n\n\n\n\n\n\nLab 1\n\n\nExploring NC Counties\n\n\nDue: End of lab on Mon, Sep 8\n\n\n\n\n\n\nLab 2\n\n\nGet in teams then group_by()\n\n\nDue: End of lab on Mon, Sep 15\n\n\n\n\n\n\nLab 3\n\n\nA pivot and a join walk into a pipe…\n\n\nDue: End of lab on Mon, Sep 22\n\n\n\n\n\n\nLab 4\n\n\nChanges in college athletics\n\n\nDue: End of lab on Mon, Sep 29\n\n\n\n\n\n\nLab 5\n\n\nMake up your other half\n\n\nDue: End of lab on Mon, Oct 29\n\n\n\n\n\n\nLab 6\n\n\n#canceled\n\n\nDue: End of lab on Mon, Nov 17\n\n\n\n\n\n\nLab 7\n\n\nLeavin’ on a jet plane, confidently\n\n\nDue: End of lab on Mon, Nov 24\n\n\n\n\n\n\nLab 8\n\n\nLeavin’ on a jet plane, hypothetically\n\n\nDue: End of lab on Mon, Nov 24\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Labs"
     ]
