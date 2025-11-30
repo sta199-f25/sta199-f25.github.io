@@ -116,7 +116,7 @@ How?
 Randomly permute the `air_time` values in your sample data to break any relationship between `distance` and `air_time`, and store the resulting air time values in a new column called `air_time_permuted`.
 Each person in the class should have a different permuation of the `air_time` values.
 You could achieve this by setting different seeds, e.g., each person could use their birthday.
-Mine is Feb 5, so I'll use `25`.
+Mine is Feb 5, so I'll use `52`.
 
 ```{r}
 #| eval: false
