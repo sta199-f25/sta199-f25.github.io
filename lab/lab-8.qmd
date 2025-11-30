@@ -63,50 +63,16 @@ The dataset, called `rdu-flights-sample.csv`, can be found in the `data` folder.
 Read in your random sample of 100 flights and store it as `rdu_flights_sample`.
 Each person in the class will have the same observed sample of flights.
 
-::: {.callout-warning title="Suggested answer"}
-
-```{r}
-rdu_flights_sample <- read_csv("data/rdu-flights-sample.csv")
-```
-
-:::
-
 ### Question 2 - Visualize the observed relationship
 
 Visualize the relationship between `distance` and `air_time` using a scatter plot.
 Also add a regression line to the scatter plot.
 Do not show the standard error ribbon around the regression line.
 
-::: {.callout-warning title="Suggested answer"}
-
-```{r}
-ggplot(rdu_flights_sample, aes(x = distance, y = air_time)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  labs(
-    title = "Scatter plot of air time vs. distance",
-    x = "Distance (miles)",
-    y = "Air time (minutes)"
-  )
-```
-
-:::
-
 ## Question 3 - Model and estimate the observed relationship
 
 Fit a model predicting `air_time` using `distance` using the sample data.
 Display the model summary.
-
-::: {.callout-warning title="Suggested answer"}
-
-```{r}
-air_time_dist_fit <- linear_reg() |>
-  fit(air_time ~ distance, data = rdu_flights_sample)
-
-tidy(air_time_dist_fit)
-```
-
-:::
 
 ## Part 2 - Hypothesize
 
@@ -125,10 +91,6 @@ Fill in the blanks.
 The null hypothesis **always** sets the true population parameter **equal** to a specific value.
 :::
 
-::: {.callout-warning title="Suggested answer"}
-$H_0:$ There is no relationship between distance and air time, the value of the true slope is 0, i.e., $\beta_1$ = 0.
-:::
-
 ## Question 5 - Set the alternative hypothesis
 
 What if there is a relationship between `distance` and `air_time`?
@@ -142,10 +104,6 @@ Fill in the blanks.
 The alternative hypothesis **always** compares the true population parameter to the same specific value set in the null hypothesis. 
 This comparison ca be "not equal to", "greater than", or "less than" and the choice depends on the research question.
 In this case, our research question is whether there is *some* relationship between distance and air time.
-:::
-
-::: {.callout-warning title="Suggested answer"}
-$H_A:$ There is a relationship between distance and air time, the value of the true slope is not equal to 0, i.e., $\beta_1$ $\ne$ 0.
 :::
 
 ## Part 3 - Generate
@@ -175,14 +133,6 @@ rdu_flights_sample <- rdu_flights_sample |>
 Display `rdu_flights_sample` to see the new column.
 Confirm that each `air_time_permuted` value comes from the original `air_time` values, but the order is different.
 
-::: {.callout-warning title="Suggested answer"}
-
-```{r}
-rdu_flights_sample
-```
-
-:::
-
 ## Question 7 - Visualize, model, and estimate the broken relationship
 
 Visualize the relationship between `distance` and `air_time` using a scatter plot.
@@ -191,26 +141,6 @@ Do not show the standard error ribbon around the regression line.
 
 Then, fit a model predicting `air_time_permuted` using `distance` using the sample data.
 Display the model summary.
-
-::: {.callout-warning title="Suggested answer"}
-
-```{r}
-ggplot(rdu_flights_sample, aes(x = distance, y = air_time_permuted)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  labs(
-    title = "Scatter plot of permuted air time vs. distance",
-    x = "Distance (miles)",
-    y = "Permuted air time (minutes)"
-  )
-
-air_time_perm_dist_fit <- linear_reg() |>
-  fit(air_time_permuted ~ distance, data = rdu_flights_sample)
-
-tidy(air_time_perm_dist_fit)
-```
-
-:::
 
 How does the slope estimate for your permuted air time values compare to that of others in your team or others in the class?
 Exactly the same? Wildly different? Somewhere in between?
@@ -224,12 +154,6 @@ This distribution represents what slope estimates we would expect to see if the 
 
 When everyone has marked their slope estimates, what does the overall distribution of slope estimates look like?
 Is it centered around a particular value?
-
-::: {.callout-warning title="Suggested answer"}
-
-The overall distribution of slope estimates looks approximately normal and is centered around 0.
-
-:::
 
 ## Part 4 - Calculate and conclude
 
@@ -247,12 +171,6 @@ Then, don't forget about the other side of the distribution -- we generally acco
 Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.
 :::
 
-::: {.callout-warning title="Suggested answer"}
-
-Answers will vary.
-
-:::
-
 ## Question 10 - Conclude the hypothesis test
 
 Using a significance level of $\alpha = 0.05$, what is your conclusion regarding the hypothesis test you conducted?
@@ -261,12 +179,6 @@ Using a significance level of $\alpha = 0.05$, what is your conclusion regarding
 If your p-value is less than or equal to $\alpha$, you reject the null hypothesis, and conclude that the data provide convincing evidence of a discernible relationship between distance and air time.
 If your p-value is greater than $\alpha$, you fail to reject the null hypothesis, and conclude that the data do not provide convincing evidence of a discernible relationship between distance and air time.
 Whatever you do, your conclusion should always be stated in the context of the research question.
-:::
-
-::: {.callout-warning title="Suggested answer"}
-
-Answers will vary.
-
 :::
 
 # Wrap-up
