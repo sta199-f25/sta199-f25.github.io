@@ -124,7 +124,7 @@ a.  Break the relationship:
 
 b.  Visualize, model, and estimate the broken relationship:
 
-    Visualize the relationship between `distance` and `air_time` using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.
+    Visualize the relationship between `distance` and `air_time_permuted` using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.
 
     Then, fit a model predicting `air_time_permuted` using `distance` using the sample data. Display the model summary.
 
