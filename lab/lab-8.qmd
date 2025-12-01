@@ -163,7 +163,7 @@ Is it centered around a particular value?
 The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true.
 In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.
 
-Based on the null distribution you constructed collectively in Question 8, calculate your p-value.
+Based on the null distribution you constructed collectively in Question 3, calculate your p-value.
 
 ::: callout-tip
 First mark the slope estimate you observed in Question 3 on the number line on the board.
