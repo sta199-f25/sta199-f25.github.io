@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="description" content="Due: Sun, Dec 5, 11:59 pm">
+<meta name="description" content="Due: Fri, Dec 5, 11:59 pm accepted until Sun, Dec 7, 11:59 pm with no penalty">
 <title>HW 6 – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -76,7 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-dark-6c451fa543b29d8f6d5872b5bb226417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-a8d7f66b06bfc3ab1343c450e991fb53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,8 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><meta name="quarto:status" content="draft">
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -130,8 +132,11 @@ window.Quarto = {
 };
 </script>
 <meta property="og:title" content="HW 6 – STA 199">
-<meta property="og:description" content="Due: Sun, Dec 5, 11:59 pm">
+<meta property="og:description" content="Due: Fri, Dec 5, 11:59 pmaccepted until Sun, Dec 7, 11:59 pm with no penalty">
+<meta property="og:image" content="https://sta199-f25.github.io/hw/images/hw-6/table-to-recreate.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="468">
+<meta property="og:image:width" content="1332">
 </head>
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -298,7 +303,7 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -558,39 +563,30 @@ window.Quarto = {
 <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a></li>
   <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#part-1-feedback-from-ai" id="toc-part-1-feedback-from-ai" class="nav-link" data-scroll-target="#part-1-feedback-from-ai">Part 1 – Feedback from AI</a>
-  <ul class="collapse">
-<li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context">Context</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li>
-<a href="#part-1-babies" id="toc-part-1-babies" class="nav-link" data-scroll-target="#part-1-babies">Part 1: Babies</a>
-  <ul class="collapse">
-<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
-  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
-  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
-  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
-  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   </ul>
 </li>
   <li>
-<a href="#part-xx-lemurs" id="toc-part-xx-lemurs" class="nav-link" data-scroll-target="#part-xx-lemurs">Part XX: Lemurs</a>
+<a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
   <ul class="collapse">
-<li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
-  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+<li>
+<a href="#part-1-lemurs" id="toc-part-1-lemurs" class="nav-link" data-scroll-target="#part-1-lemurs">Part 1: Lemurs</a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1 🤖</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2 🧑🏽‍🏫</a></li>
   </ul>
 </li>
   <li>
-<a href="#part-xx---second-chances" id="toc-part-xx---second-chances" class="nav-link" data-scroll-target="#part-xx---second-chances">Part XX - Second chances</a>
+<a href="#part-2-babies" id="toc-part-2-babies" class="nav-link" data-scroll-target="#part-2-babies">Part 2: Babies</a>
   <ul class="collapse">
-<li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
-  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+<li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3 🤖</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4 🧑🏽‍🏫</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5 🤖</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6 🧑🏽‍🏫</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7 🤖</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8 🧑🏽‍🏫</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9 🤖</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10 🧑🏽‍🏫</a></li>
   </ul>
 </li>
   </ul>
@@ -607,7 +603,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">HW 6</h1>
-<p class="subtitle lead">ADD SUBTITLE HERE</p>
+<p class="subtitle lead">More lemurs and even more babies</p>
   <div class="quarto-categories">
     <div class="quarto-category">HW</div>
   </div>
@@ -615,7 +611,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Due: Sun, Dec 5, 11:59 pm
+    Due: Fri, Dec 5, 11:59 pm<br>accepted until Sun, Dec 7, 11:59 pm with no penalty
   </div>
 </div>
 
@@ -630,26 +626,12 @@ window.Quarto = {
 
 
 </header><section id="introduction" class="level1"><h1>Introduction</h1>
-<p>This is a two-part homework assignment:</p>
-<ul>
-<li>
-<p><strong>Part 1 – 🤖 Feedback from AI:</strong> Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in <code>hw-6-part-1.qmd</code>, no submission required.</p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Heads up!">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Heads up!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>While Part 1 is not graded, it is a prerequisite for Part 2 – Question 6 in Part 2 asks you to summarize your experience in Part 1. Additionally, the skills you practice in Part 1 will be useful for future assignments that are graded. Finally, there are workflow points assigned to Part 1 – you must make at least three commits in Part 1 and make updates to both your qmd and pdf files in order to earn these points.</p>
-</div>
-</div>
-</li>
-<li><p><strong>Part 2 – 🧑🏽‍🏫 Feedback from Humans:</strong> Graded, you get feedback from the course instructional team within a week. Complete in <code>hw-6-part-2.qmd</code>, submit on Gradescope.</p></li>
-</ul>
+<p>Odd numbered questions on this assignment have AI feedback available. They’re for practice, not graded, and you get immediate feedback from AI, based on rubrics designed by the course instructor. Some of them are also required for subsequent questions. We expect you to complete these questions but there won’t be points allocated to them on the assignment. You will still need to tag these pages Gradescope. These questions are marked with “<strong>🤖 Feedback from AI</strong>”.</p>
+<details><summary>
+Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.
+</summary><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby" title="aifeedr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</details><p>Even numbered questions are graded and you will receive feedback from the course instructional team within a week. These questions are marked with “<strong>🧑🏽‍🏫 Feedback from Humans</strong>”.</p>
+<p>You will complete all questions in the file called <code>hw-6.qmd</code>.</p>
 <p>By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.</p>
 <details><summary>
 Click to expand if you need a refresher on how to get started with a homework assignment.
@@ -683,102 +665,154 @@ Click to expand if you need a refresher on assignment guidelines.
 <ul>
 <li>You should have at least 3 commits with meaningful commit messages by the end of the assignment.</li>
 <li>Final versions of both your <code>.qmd</code> file and the rendered PDF should be pushed to GitHub.</li>
-</ul></section></details></section><section id="part-1-feedback-from-ai" class="level1"><h1>Part 1 – Feedback from AI</h1>
-<p>Your answers to the questions in this part should go in the file <code>hw-6-part-1.qmd</code>.</p>
-<section id="instructions" class="level2"><h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Write your answer to each question in the appropriate section of the <code>hw-6-part-1.qmd</code> file. Then, highlight your answer to a question, click on <em>Addins &gt; AIFEEDR &gt; Get feedback</em>. In the app that opens, select the appropriate homework number (4) and question number. Then click on <em>Get Feedback</em>. Please be patient, feedback generation can take a few seconds. Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.</p>
-<details><summary>
-Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.
-</summary><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby" title="aifeedr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</details><div class="callout callout-style-default callout-note no-icon callout-titled" title="Catch the AI making a mistake?">
+</ul></section></details><div class="callout callout-style-default callout-note no-icon callout-titled" title="🐛 Catch the AI making a mistake?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Catch the AI making a mistake?
+🐛 Catch the AI making a mistake?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to earn the opportunity for <strong>extra credit</strong>.</p>
-<p>Your bug report must include screenshots of the relevant parts of your Quarto document as well as the “incorrect” feedback you received. Your bug report should be printed and turned in to Dr.&nbsp;Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date. Electronic submissions will not be accepted. Your bug report, including screenshots, should fit on no more than two pages.</p>
+<p>Your bug report must include screenshots of the relevant parts of your Quarto document as well as the “incorrect” feedback you received. Your bug report should be printed and turned in to Dr.&nbsp;Çetinkaya-Rundel in person by 11:45 am on the Tuesday following the assignment due date. Since we don’t have class on Tuesday, December 9, these are due in my office (Old Chem 211C). Electronic submissions will not be accepted. Your bug report, including screenshots, should fit on no more than two pages.</p>
 <p>If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), you will receive 1 extra point that will be added to your total points for the assignment.</p>
 </div>
 </div>
-</section><section id="context" class="level2"><h2 class="anchored" data-anchor-id="context">Context</h2>
-<p>Parasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.</p>
-<p>In this part of the homwework, you will explore how much evolutionary history predicts parasite similarity.</p>
 </section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>In this part you will work with the <strong>tidyverse</strong> package, which is a collection of packages for doing data analysis in a “tidy” way.</p>
+<p>In this assignment you will work with the following packages:</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The dataset comes from an Ecology Letters paper by Cooper at al.&nbsp;(2012) entitled “Phylogenetic host specificity and understanding parasite sharing in primates” located <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2012.01858.x">here</a>. The goal of the paper was to identify the ability of evolutionary history and ecological traits to characterize parasite host specificity.</p>
-<p>Each row of the data contains two species, <code>species1</code> and <code>species2</code>.</p>
-<p>Subsequent columns describe metrics that compare the species:</p>
-<ul>
-<li><p><code>divergence_time</code>: how many (millions) of years ago the two species diverged. i.e.&nbsp;how many million years ago they were the same species.</p></li>
-<li><p><code>distance</code>: geodesic distance between species geographic range centroids (in kilometers)</p></li>
-<li><p><code>BMdiff</code>: difference in body mass between the two species (in grams)</p></li>
-<li><p><code>precdiff</code>: difference in mean annual precipitation across the two species geographic ranges (mm)</p></li>
-<li><p><code>parsim</code>: a measure of parasite similarity (proportion of parasites shared between species, ranges between 0 to 1.)</p></li>
-</ul>
-<p>The data are available in <code>parasites.csv</code> in your <code>data</code> folder.</p>
-</section><section id="questions" class="level2"><h2 class="anchored" data-anchor-id="questions">Questions</h2>
+</section><section id="questions" class="level1"><h1>Questions</h1>
 <div class="render-commit-push">
 <p>Do not forget to render, commit, and push regularly, after each substantial change to your document (e.g., after answering each question). Use succinct and informative commit messages. Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
-</section><section id="part-1-babies" class="level2"><h2 class="anchored" data-anchor-id="part-1-babies">Part 1: Babies</h2>
-<p>Every year, the US releases to the public a large dataset containing information on births recorded in the country. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from the dataset released in 2014.</p>
-<p>The data are available in the <code>births14</code> data frame in the <strong>openintro</strong> package.</p>
-<section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1</h3>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">births14</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">habit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">habit</span>, fill <span class="op">=</span> <span class="va">lowbirthweight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">mature</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
-</section><section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
-</section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
-</section><section id="question-5" class="level3"><h3 class="anchored" data-anchor-id="question-5">Question 5</h3>
-</section><section id="question-6" class="level3"><h3 class="anchored" data-anchor-id="question-6">Question 6</h3>
-</section></section><section id="part-xx-lemurs" class="level2"><h2 class="anchored" data-anchor-id="part-xx-lemurs">Part XX: Lemurs</h2>
-<p>Questions 7 and 8 question use the <code>lemurs</code> data from Homework 5. You can refer to the background information provided in that assignment for context, and load the data from <code>lemurs.csv</code> in your data folder.</p>
-<section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
-<p>The goal of this question is to answer the following research question:</p>
+<section id="part-1-lemurs" class="level2"><h2 class="anchored" data-anchor-id="part-1-lemurs">Part 1: Lemurs</h2>
+<p>Questions 1 and 2 question use the <code>lemurs</code> data from Homework 5. You can refer to the background information provided in that assignment for context, and load the data from <code>lemurs.csv</code> in your data folder.</p>
+<section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1 🤖</h3>
+<p><strong>🤖 Feedback from AI:</strong> The goal of this question is to answer the following research question:</p>
 <blockquote class="blockquote">
 <p>Do female lemurs differ in weight from male lemurs, on average?</p>
 </blockquote>
+<p>More specifically, we want to answer whether the data provide convincing evidence of a discernible difference between the average weights of female and male lemurs.</p>
 <ol type="a">
-<li><p>Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 randomization samples (<code>reps = 1000</code>) when simulating your randomization distribution.</p></li>
+<li><p>Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 resamples (<code>reps = 1000</code>) when simulating your randomization distribution.</p></li>
 <li><p>Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0? Explain your reasoning.</p></li>
-<li><p>Construct and interpret a 95% bootstrap confidence interval for the difference in means of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p></li>
-</ol></section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
-<p>The goal of this question is to answer the following research question:</p>
+<li><p>Construct and interpret a 95% bootstrap confidence interval for the difference in means of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 resamples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p></li>
+</ol></section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2 🧑🏽‍🏫</h3>
+<p><strong>🧑🏽‍🏫 Feedback from Humans:</strong> The goal of this question is to answer the following research question:</p>
 <blockquote class="blockquote">
 <p>Does the median weight of female lemurs differ from that of male lemurs?</p>
 </blockquote>
+<p>More specifically, we want to answer whether the data provide convincing evidence of a discernible difference between the median weights of female and male lemurs.</p>
 <ol type="a">
-<li><p>Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 randomization samples (<code>reps = 1000</code>) when simulating your randomization distribution.</p></li>
+<li><p>Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 resamples (<code>reps = 1000</code>) when simulating your randomization distribution.</p></li>
 <li><p>Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in medians of female and male lemurs to include 0? Explain your reasoning.</p></li>
-<li><p>Construct and interpret a 95% bootstrap confidence interval for the difference in medians of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p></li>
-</ol></section></section><section id="part-xx---second-chances" class="level2"><h2 class="anchored" data-anchor-id="part-xx---second-chances">Part XX - Second chances</h2>
-<p>In this part, you get to revisit work you’ve turned in before that can be improved. For Question 9 you’ll pick a question from a previous lab and for Question 10 a question from your take-home midterm, and improve them.</p>
-<p>Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the deadline but didn’t get a chance to. Some notes for completing this exercise:</p>
+<li><p>Construct and interpret a 95% bootstrap confidence interval for the difference in medians of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 resamples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p></li>
+</ol></section></section><section id="part-2-babies" class="level2"><h2 class="anchored" data-anchor-id="part-2-babies">Part 2: Babies</h2>
+<p>Every year, the US releases to the public a large dataset containing information on births recorded in the country. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This is a random sample of 1,000 cases from the dataset released in 2014.</p>
+<p>The data are available your <code>data</code> folder in <code>births14.csv</code>. Questions 3-10 use these data.</p>
+<p>The variables in the data are as follows:</p>
 <ul>
-<li><p>You might need to add your data from your lab/midterm to the data/ folder in this assignment. You do not need to also add a data dictionary.</p></li>
-<li><p>You will need to copy over any code needed to clean/prepare your data for this specific question. You can reuse code from your previous assignment, but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors, make sure to fix them.</p></li>
-<li><p>Don’t worry about being critical of your own work. Even if you lost no points on the question if you think it can be improved, articulate how / why. We will not apply additional penalties for any mistakes you might point out that we didn’t catch when grading your lab/midterm. There’s no risk of being critical!</p></li>
+<li>
+<code>fage</code>: Father’s age in years.</li>
+<li>
+<code>mage</code>: Mother’s age in years.</li>
+<li>
+<code>mature</code>: Maturity status of mother.</li>
+<li>
+<code>weeks</code>: Length of pregnancy in weeks.</li>
+<li>
+<code>premie</code>: Whether the birth was classified as premature (premie) or full-term.</li>
+<li>
+<code>visits</code>: Number of hospital visits during pregnancy.</li>
+<li>
+<code>gained</code>: Weight gained by mother during pregnancy in pounds.</li>
+<li>
+<code>weight</code>: Weight of the baby at birth in pounds.</li>
+<li>
+<code>lowbirthweight</code>: Whether baby was classified as low birthweight (low) or not (⁠not low⁠).</li>
+<li>
+<code>sex</code>: Sex of the baby, female or male.</li>
+<li>
+<code>habit</code>: Status of the mother as a nonsmoker or a smoker.</li>
+<li>
+<code>marital</code>: Whether mother is married or ⁠not married⁠ at birth.</li>
+<li>
+<code>whitemom</code>: Whether mom is white or ⁠not white⁠.</li>
 </ul>
-<section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
-<p>Choose one question from a previous lab or homework that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.</p>
-</section><section id="question-10" class="level3"><h3 class="anchored" data-anchor-id="question-10">Question 10</h3>
-<p>Choose one question from the take-home midterm that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.</p>
-</section></section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
+<section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3 🤖</h3>
+<p><strong>🤖 Feedback from AI:</strong> In this question you start exploring the data to make decisions about how to prepare it for the analysis.</p>
+<p>First, read the data in and store it as <code>births14_raw</code>.</p>
+<p>Then, in a single pipeline, filter for any rows of the <code>births14</code> data frame where one or more of the following variables has an <code>NA</code> value: <code>mage</code>, <code>weight</code>, <code>habit</code>, <code>mature</code>, <code>lowbirthweight</code>, then select only these five variables to display.</p>
+</section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4 🧑🏽‍🏫</h3>
+<p><strong>🧑🏽‍🏫 Feedback from Humans:</strong> In this question you start your data prep.</p>
+<p>In a single pipeline, remove any rows of the <code>births14</code> data frame with <code>NA</code> values among those you identified as having <code>NA</code> values in the previous question .</p>
+<p>Then, find and state the numbers of rows of columns of <code>births14</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should end up with 981 rows. If you do not, revisit your earlier work to make sure you have removed all rows with <code>NA</code> values in any of the specified columns.</p>
+</div>
+</div>
+</section><section id="question-5" class="level3"><h3 class="anchored" data-anchor-id="question-5">Question 5 🤖</h3>
+<p><strong>🤖 Feedback from AI:</strong> This question walks you through an exploration of a threshold used when the data set was put together.</p>
+<p>One of the variables in the data is <code>mature</code>, indicating whether the mom is considered “mature” or “younger”. This categorization is based on a medical threshold used for pregnancies. Using the data alone (not medical knowledge or external resources), determine the threshold age used to categorize moms as “mature” vs.&nbsp;“younger”. Describe your process, include any evidence (summary statistics and/or visualization), and clearly state the threshold you determined.</p>
+</section><section id="question-6" class="level3"><h3 class="anchored" data-anchor-id="question-6">Question 6 🧑🏽‍🏫</h3>
+<p><strong>🧑🏽‍🏫 Feedback from Humans:</strong> This question walks you through an exploration of another threshold used when the data set was put together.</p>
+<p>Another variable in the data is <code>lowbirthweight</code>, indicating whether the baby’s weight is considered “low” or “not low” at birth. This categorization is based on a medical threshold used for births. Using the data alone (not medical knowledge or external resources), determine the threshold weight used to categorize baby weights as “low” vs.&nbsp;“now low”. Describe your process, include any evidence (summary statistics and/or visualization), and clearly state the threshold you determined.</p>
+</section><section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7 🤖</h3>
+<p><strong>🤖 Feedback from AI:</strong> In this question you finish up your data prep for the remaining steps of the analysis.</p>
+<p>In a single pipeline, recode the variables <code>mature</code>, <code>habit</code>, and <code>lowbirthweight</code> in the <code>births14</code> data frame as follows:</p>
+<ul>
+<li>
+<code>mature</code> : “mature mom” → “35 and over”, “younger mom” → “34 and under”</li>
+<li>
+<code>habit</code> : “smoker” → “Smoker”, “nonsmoker” → “Non-smoker”</li>
+<li>
+<code>lowbirthweight</code> : “low” → “Low”, “not low” → “Not low”</li>
+</ul>
+<p>In that same pipeline, relocate these three variables to be the first three columns of the data frame.</p>
+<p>Save the result back to <code>births14</code> and display the first 10 rows (and however many columns fit across the page) of <code>births14</code>.</p>
+</section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8 🧑🏽‍🏫</h3>
+<p><strong>🧑🏽‍🏫 Feedback from Humans:</strong> This question explores low birth weight prevalence.</p>
+<p>Your fellow researchers are interested in exploring how the baby weight at birth varies by characteristics of the mother.</p>
+<ol type="a">
+<li>
+<p>One researcher in your group made a summary table that shows the number of low birth weight babies for every possible combination for mother’s <code>mature</code> and <code>habit</code> status. The table is show below. Recreate this table in a single pipeline. Make sure to get the caption, table number, and column names exactly right.</p>
+<p><a href="images/hw-6/table-to-recreate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/hw-6/table-to-recreate.png" class="img-fluid"></a></p>
+</li>
+<li>
+<p>Another researcher in the group made the barplot below that shows the distribution of low birth weight babies condtional on mother’s age and smoking status. Recreate this visualization, paying attention to all details, including figure width and aspect ratio (which you don’t need to get exactly right, but you should strive to get close).</p>
+<p><a href="images/hw-6/plot-to-recreate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/hw-6/plot-to-recreate.png" class="img-fluid"></a></p>
+</li>
+<li><p>Refer back to the visualization you recreated in Part (b), in light of the numbers in the table you recreated in Part (a). What is misleading about the visualization? Explain in 1-2 sentences.</p></li>
+<li><p>Update the visualization to correct the issue you identified in Part (c). Briefly explain what you did to fix the issue and what the new visualization shows. Note that there are a few ways you can address the issue, but you should select the best option.</p></li>
+</ol></section><section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9 🤖</h3>
+<p><strong>🤖 Feedback from AI:</strong> In this question you will conduct inference for a slope in a model with a single predictor.</p>
+<ol type="a">
+<li><p>Fit a model for predicting baby weight (<code>weight</code>) from mother’s age category (<code>mature</code>). Display the tidy model output.</p></li>
+<li><p>Construct a 95% confidence interval for the slope the model from part (a), using bootstrapping with 1,000 resamples and the percentile method. Dislay the bounds of the interval and interpret it in the context of the data and the research question.</p></li>
+<li><p>Visualize the bootstrap distribution you used to construct the confidence interval. Comment on its shape and center.</p></li>
+<li><p>Based on your interval from Part (b), do these data provide convincing evidence of a discernible difference between the average weights of babies born to mothers who are 35 years and older vs.&nbsp;those born to mothers who are 34 years and younger? Explain your reasoning. Note: You do not need to a hypothesis test to answer this question, justify your answer with your confidence interval only.</p></li>
+</ol></section><section id="question-10" class="level3"><h3 class="anchored" data-anchor-id="question-10">Question 10 🧑🏽‍🏫</h3>
+<p><strong>🧑🏽‍🏫 Feedback from Humans:</strong> In this question you will conduct inference for slopes in a model with a two predictors.</p>
+<ol type="a">
+<li><p>Fit a model for predicting baby weight (<code>weight</code>) from mother’s age (<code>mage</code>) and smoking status (<code>habit</code>). Display the tidy model output.</p></li>
+<li><p>Construct 95% confidence intervals for the slopes the model from part (a), using bootstrapping with 1,000 resamples and the percentile method. Dislay the bounds of the intervals and interpret them in the context of the data and the research question.</p></li>
+<li><p>Visualize the bootstrap distributions you used to construct the confidence intervals. Comment on their shapes and centers.</p></li>
+</ol></section></section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -822,9 +856,9 @@ Checklist
 </div>
 </section><section id="grading-and-feedback" class="level2"><h2 class="anchored" data-anchor-id="grading-and-feedback">Grading and feedback</h2>
 <ul>
-<li><p>Questions 1-5 are not graded, but you should complete them to get practice.</p></li>
+<li><p>Odd numbered questions marked with “<strong>🤖 Feedback from AI</strong>” are not graded, but you should complete them to both get practice and to be able to do the subsequent question.</p></li>
 <li>
-<p>Questions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.</p>
+<p>Even numbered questions marked with “<strong>🧑🏽‍🏫 Feedback from Humans</strong>” are graded, and you will receive feedback on Gradescope from the course instructional team within a week.</p>
 <ul>
 <li>Questions will be graded for accuracy and completeness.</li>
 <li>Partial credit will be given where appropriate.</li>
@@ -840,7 +874,10 @@ Checklist
 </ul>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1"><p>United States Department of Health and Human Services. Centers for Disease Control and Prevention. National Center for Health Statistics. Natality Detail File, 2014 United States. Inter-university Consortium for Political and Social Research, 2016-10-07. doi:10.3886/ICPSR36461.v1.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1264,7 +1301,38 @@ Checklist
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
-</footer>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>
