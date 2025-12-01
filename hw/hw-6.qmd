@@ -5,9 +5,7 @@ description: "Due: Fri, Dec 5, 11:59 pm -- accepted until Sun, Dec 7, 11:59 pm w
 categories: HW
 filters:
   - ../remove-fmt-skip.lua
-draft: true
-execute: 
-  eval: true
+draft: false
 ---
 
 # Introduction
@@ -75,7 +73,6 @@ If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), y
 In this assignment you will work with the following packages:
 
 ```{r}
-#| message: false
 library(tidyverse)
 library(tidymodels)
 library(knitr)
