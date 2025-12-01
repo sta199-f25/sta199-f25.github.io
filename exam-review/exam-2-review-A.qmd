@@ -59,9 +59,9 @@ Spam is a factor; it is an indicator for if an email was spam or not.
 ```{r}
 #| label: spam-distribution
 #| echo: true
-email |> 
+email |>
   count(spam) |>
-  mutate(percent = (n/sum(n))*100)
+  mutate(percent = (n / sum(n)) * 100)
 ```
 
 About 9.36 percent of the emails are labeled spam.
@@ -73,8 +73,8 @@ Dollar is a double.
 #| label: dollar-distribution
 #| echo: true
 email |>
-  ggplot(aes(x = dollar)) + 
-  geom_histogram(bins = 20) + 
+  ggplot(aes(x = dollar)) +
+  geom_histogram(bins = 20) +
   labs(
     title = "Histogram of dollar mentions in emails",
     x = "Number of times dollar appears in the email",
@@ -123,7 +123,7 @@ a\.
 #| echo: true
 spam_dollar_winner_urg_fit <- logistic_reg() |>
   fit(
-    spam ~ dollar + winner + urgent_subj, 
+    spam ~ dollar + winner + urgent_subj,
     data = email
   )
 
@@ -135,7 +135,10 @@ b\.
 ```{r}
 #| label: augment
 #| echo: true
-spam_dollar_winner_urg_aug <- augment(spam_dollar_winner_urg_fit, new_data = email)
+spam_dollar_winner_urg_aug <- augment(
+  spam_dollar_winner_urg_fit,
+  new_data = email
+)
 
 spam_dollar_winner_urg_aug
 ```
@@ -173,7 +176,7 @@ a\.
 #| echo: true
 email |>
   ggplot(aes(x = num_char, y = spam)) +
-  geom_boxplot() + 
+  geom_boxplot() +
   labs(
     title = "Boxplot of number of characters for spam and not spam emails",
     x = "Number of characters",
@@ -188,7 +191,7 @@ Number of characters could be reasonable predictor of spam. Also, this plot supp
 #| echo: true
 spam_dollar_char_fit <- logistic_reg() |>
   fit(
-    spam ~  dollar + winner + urgent_subj + num_char, 
+    spam ~ dollar + winner + urgent_subj + num_char,
     data = email
   )
 

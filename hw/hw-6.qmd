@@ -226,11 +226,11 @@ Your fellow researchers are interested in exploring how the baby weight at birth
 
 a.  One researcher in your group made a summary table that shows the number of low birth weight babies for every possible combination for mother's `mature` and `habit` status. The table is show below. Recreate this table in a single pipeline. Make sure to get the caption, table number, and column names exactly right.
 
-    ![](images/hw-6/table-to-recreate.png)
+    ![](images/hw-6/table-to-recreate.png){width="80%"}
 
 b.  Another researcher in the group made the barplot below that shows the distribution of low birth weight babies condtional on mother's age and smoking status. Recreate this visualization, paying attention to all details, including figure width and aspect ratio (which you don't need to get exactly right, but you should strive to get close).
 
-    ![](images/hw-6/plot-to-recreate.png)
+    ![](images/hw-6/plot-to-recreate.png){width="80%"}
 
 c.  Refer back to the visualization you recreated in Part (b), in light of the numbers in the table you recreated in Part (a).
     What is misleading about the visualization?
