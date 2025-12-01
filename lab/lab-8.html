@@ -585,13 +585,18 @@ window.Quarto = {
   </ul>
 </li>
   <li>
-<a href="#question-3---generate-then-calculate-and-conclude" id="toc-question-3---generate-then-calculate-and-conclude" class="nav-link" data-scroll-target="#question-3---generate-then-calculate-and-conclude">Question 3 - Generate, then calculate and conclude</a>
+<a href="#question-3---generate" id="toc-question-3---generate" class="nav-link" data-scroll-target="#question-3---generate">Question 3 - Generate</a>
   <ul class="collapse">
 <li><a href="#a---break-the-relationship" id="toc-a---break-the-relationship" class="nav-link" data-scroll-target="#a---break-the-relationship">a - Break the relationship</a></li>
   <li><a href="#b---visualize-model-and-estimate-the-broken-relationship" id="toc-b---visualize-model-and-estimate-the-broken-relationship" class="nav-link" data-scroll-target="#b---visualize-model-and-estimate-the-broken-relationship">b - Visualize, model, and estimate the broken relationship</a></li>
   <li><a href="#c---generate-the-null-distribution-collectively" id="toc-c---generate-the-null-distribution-collectively" class="nav-link" data-scroll-target="#c---generate-the-null-distribution-collectively">c - Generate the null distribution (collectively)</a></li>
-  <li><a href="#d---calculate-the-p-value" id="toc-d---calculate-the-p-value" class="nav-link" data-scroll-target="#d---calculate-the-p-value">d - Calculate the p-value</a></li>
-  <li><a href="#e---conclude-the-hypothesis-test" id="toc-e---conclude-the-hypothesis-test" class="nav-link" data-scroll-target="#e---conclude-the-hypothesis-test">e - Conclude the hypothesis test</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#question-4---calculate-and-conclude" id="toc-question-4---calculate-and-conclude" class="nav-link" data-scroll-target="#question-4---calculate-and-conclude">Question 4 - Calculate and conclude</a>
+  <ul class="collapse">
+<li><a href="#a---calculate-the-p-value" id="toc-a---calculate-the-p-value" class="nav-link" data-scroll-target="#a---calculate-the-p-value">a - Calculate the p-value</a></li>
+  <li><a href="#b---conclude-the-hypothesis-test" id="toc-b---conclude-the-hypothesis-test" class="nav-link" data-scroll-target="#b---conclude-the-hypothesis-test">b - Conclude the hypothesis test</a></li>
   </ul>
 </li>
   </ul>
@@ -667,7 +672,7 @@ Click to expand if you need a refresher on assignment guidelines.
 </section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="question-1---observe" class="level2"><h2 class="anchored" data-anchor-id="question-1---observe">Question 1 - Observe</h2>
 <section id="a---read-the-observed-data" class="level3"><h3 class="anchored" data-anchor-id="a---read-the-observed-data">a - Read the observed data</h3>
-<p>Read in your random sample of 100 flights and store it as <code>rdu_flights_sample</code>. Each person in the class will have the same observed sample of flights.</p>
+<p>Read in your random sample of 10 flights and store it as <code>rdu_flights_sample</code>. Each person in the class will have the same observed sample of flights.</p>
 </section><section id="b---visualize-the-observed-relationship" class="level3"><h3 class="anchored" data-anchor-id="b---visualize-the-observed-relationship">b - Visualize the observed relationship</h3>
 <p>Visualize the relationship between <code>distance</code> and <code>air_time</code> using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.</p>
 </section><section id="c---model-and-estimate-the-observed-relationship" class="level3"><h3 class="anchored" data-anchor-id="c---model-and-estimate-the-observed-relationship">c - Model and estimate the observed relationship</h3>
@@ -707,7 +712,7 @@ Tip
 <p>The alternative hypothesis <strong>always</strong> compares the true population parameter to the same specific value set in the null hypothesis. This comparison ca be “not equal to”, “greater than”, or “less than” and the choice depends on the research question. In this case, our research question is whether there is <em>some</em> relationship between distance and air time.</p>
 </div>
 </div>
-</section></section><section id="question-3---generate-then-calculate-and-conclude" class="level2"><h2 class="anchored" data-anchor-id="question-3---generate-then-calculate-and-conclude">Question 3 - Generate, then calculate and conclude</h2>
+</section></section><section id="question-3---generate" class="level2"><h2 class="anchored" data-anchor-id="question-3---generate">Question 3 - Generate</h2>
 <section id="a---break-the-relationship" class="level3"><h3 class="anchored" data-anchor-id="a---break-the-relationship">a - Break the relationship</h3>
 <p>Now let’s set aside reality for a bit again, and imagine we live in the land of the null hypothesis where there is no relationship between <code>distance</code> and <code>air_time</code>. Using the sample data, simulate such a world by breaking any relationship between <code>distance</code> and <code>air_time</code>. How? Randomly permute the <code>air_time</code> values in your sample data to break any relationship between <code>distance</code> and <code>air_time</code>, and store the resulting air time values in a new column called <code>air_time_permuted</code>. Each person in the class should have a different permuation of the <code>air_time</code> values. You could achieve this by setting different seeds, e.g., each person could use their birthday. Mine is Feb 5, so I’ll use <code>52</code>.</p>
 <div class="cell">
@@ -729,9 +734,10 @@ Tip
 </section><section id="c---generate-the-null-distribution-collectively" class="level3"><h3 class="anchored" data-anchor-id="c---generate-the-null-distribution-collectively">c - Generate the null distribution (collectively)</h3>
 <p>Each person in the class has now simulated a slightly different world where there is no relationship between <code>distance</code> and <code>air_time</code> by breaking any relationship in their sample data. Mark your slope estimate from Question 7 on the number line on the board. The distribution you constructed on the board is called the <strong>null distribution</strong> of the slope estimates. This distribution represents what slope estimates we would expect to see if the null hypothesis were true.</p>
 <p>When everyone has marked their slope estimates, what does the overall distribution of slope estimates look like? Is it centered around a particular value?</p>
-</section><section id="d---calculate-the-p-value" class="level3"><h3 class="anchored" data-anchor-id="d---calculate-the-p-value">d - Calculate the p-value</h3>
+</section></section><section id="question-4---calculate-and-conclude" class="level2"><h2 class="anchored" data-anchor-id="question-4---calculate-and-conclude">Question 4 - Calculate and conclude</h2>
+<section id="a---calculate-the-p-value" class="level3"><h3 class="anchored" data-anchor-id="a---calculate-the-p-value">a - Calculate the p-value</h3>
 <p>The <strong>p-value</strong> is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.</p>
-<p>Based on the null distribution you constructed collectively in Question 8, calculate your p-value.</p>
+<p>Based on the null distribution you constructed collectively in Question 3, calculate your p-value.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -745,7 +751,7 @@ Tip
 <p>First mark the slope estimate you observed in Question 3 on the number line on the board. Then count how many slope estimates in the null distribution are <strong>beyond</strong> your observed slope estimate. Then, don’t forget about the other side of the distribution – we generally account for that side by multiplying the count we obtained by 2. Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.</p>
 </div>
 </div>
-</section><section id="e---conclude-the-hypothesis-test" class="level3"><h3 class="anchored" data-anchor-id="e---conclude-the-hypothesis-test">e - Conclude the hypothesis test</h3>
+</section><section id="b---conclude-the-hypothesis-test" class="level3"><h3 class="anchored" data-anchor-id="b---conclude-the-hypothesis-test">b - Conclude the hypothesis test</h3>
 <p>Using a significance level of <span class="math inline">\(\alpha = 0.05\)</span>, what is your conclusion regarding the hypothesis test you conducted?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
