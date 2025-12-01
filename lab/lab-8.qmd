@@ -132,7 +132,7 @@ b.  Visualize, model, and estimate the broken relationship:
 
 c.  Generate the null distribution (collectively):
 
-    Each person in the class has now simulated a slightly different world where there is no relationship between `distance` and `air_time` by breaking any relationship in their sample data. Mark your slope estimate from Question 7 on the number line on the board. The distribution you constructed on the board is called the **null distribution** of the slope estimates. This distribution represents what slope estimates we would expect to see if the null hypothesis were true.
+    Each person in the class has now simulated a slightly different world where there is no relationship between `distance` and `air_time` by breaking any relationship in their sample data. Mark your slope estimate from part (b) on the number line on the board. The distribution you constructed on the board is called the **null distribution** of the slope estimates. This distribution represents what slope estimates we would expect to see if the null hypothesis were true.
 
     When everyone has marked their slope estimates, what does the overall distribution of slope estimates look like? Is it centered around a particular value?
 
@@ -140,12 +140,12 @@ c.  Generate the null distribution (collectively):
 
 a.  Calculate the p-value:
 
-    The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.
+    The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3 - part (b).
 
-    Based on the null distribution you constructed collectively in Question 3, calculate your p-value.
+    Based on the null distribution you constructed collectively in Question 3 - part (c), calculate your p-value.
 
     ::: callout-tip
-    First mark the slope estimate you observed in Question 3 on the number line on the board.
+    First mark the slope estimate you observed in Question 3 - part (b) on the number line on the board.
     Then count how many slope estimates in the null distribution are **beyond** your observed slope estimate.
     Then, don't forget about the other side of the distribution -- we generally account for that side by multiplying the count we obtained by 2.
     Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.
