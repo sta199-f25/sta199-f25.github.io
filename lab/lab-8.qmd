@@ -145,7 +145,7 @@ a.  Calculate the p-value:
     Based on the null distribution you constructed collectively in Question 3 - part (c), calculate your p-value.
 
     ::: callout-tip
-    First mark the slope estimate you observed in Question 3 - part (b) on the number line on the board.
+    First mark the slope estimate you observed in Question 1 - part (c) on the number line on the board.
     Then count how many slope estimates in the null distribution are **beyond** your observed slope estimate.
     Then, don't forget about the other side of the distribution -- we generally account for that side by multiplying the count we obtained by 2.
     Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.
