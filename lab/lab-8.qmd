@@ -106,7 +106,7 @@ This comparison ca be "not equal to", "greater than", or "less than" and the cho
 In this case, our research question is whether there is *some* relationship between distance and air time.
 :::
 
-## Question 3 - Generate, then calculate and conclude
+## Question 3 - Generate
 
 ### a - Break the relationship
 
@@ -156,7 +156,9 @@ This distribution represents what slope estimates we would expect to see if the 
 When everyone has marked their slope estimates, what does the overall distribution of slope estimates look like?
 Is it centered around a particular value?
 
-### d - Calculate the p-value
+## Question 4 - Calculate and conclude
+
+### a - Calculate the p-value
 
 The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true.
 In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.
@@ -170,7 +172,7 @@ Then, don't forget about the other side of the distribution -- we generally acco
 Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.
 :::
 
-### e - Conclude the hypothesis test
+### b - Conclude the hypothesis test
 
 Using a significance level of $\alpha = 0.05$, what is your conclusion regarding the hypothesis test you conducted?
 
