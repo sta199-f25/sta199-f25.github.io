@@ -58,129 +58,108 @@ The dataset, called `rdu-flights-sample.csv`, can be found in the `data` folder.
 
 ## Question 1 - Observe
 
-### a - Read the observed data
+a.  Read the observed data:
 
-Read in your random sample of 10 flights and store it as `rdu_flights_sample`.
-Each person in the class will have the same observed sample of flights.
+    Read in your random sample of 10 flights and store it as `rdu_flights_sample`. Each person in the class will have the same observed sample of flights.
 
-### b - Visualize the observed relationship
+b.  Visualize the observed relationship:
 
-Visualize the relationship between `distance` and `air_time` using a scatter plot.
-Also add a regression line to the scatter plot.
-Do not show the standard error ribbon around the regression line.
+    Visualize the relationship between `distance` and `air_time` using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.
 
-### c - Model and estimate the observed relationship
+c.  Model and estimate the observed relationship:
 
-Fit a model predicting `air_time` using `distance` using the sample data.
-Display the model summary.
+    Fit a model predicting `air_time` using `distance` using the sample data. Display the model summary.
 
 ## Question 2 - Hypothesize
 
-### a - Set the null hypothesis
+a.  Set the null hypothesis:
 
-What if there was no relationship between `distance` and `air_time`?
-What would the true slope of the relationship be in that case?
-This is your null hypothesis.
-You can articulate it as:
+    What if there was no relationship between `distance` and `air_time`? What would the true slope of the relationship be in that case? This is your null hypothesis. You can articulate it as:
 
-$H_0:$ There is no relationship between distance and air time, the value of the true slope is \_\_\_\_, i.e., $\beta_1$ = \_\_\_\_.
+    $H_0:$ There is no relationship between distance and air time, the value of the true slope is \_\_\_\_, i.e., $\beta_1$ = \_\_\_\_.
 
-Fill in the blanks.
+    Fill in the blanks.
 
-::: callout-tip
-The null hypothesis **always** sets the true population parameter **equal** to a specific value.
-:::
+    ::: callout-tip
+    The null hypothesis **always** sets the true population parameter **equal** to a specific value.
+    :::
 
-### b - Set the alternative hypothesis
+b.  Set the alternative hypothesis:
 
-What if there is a relationship between `distance` and `air_time`?
-This is your alternative hypothesis!
+    What if there is a relationship between `distance` and `air_time`? This is your alternative hypothesis!
 
-$H_A:$ There is a relationship between distance and air time, the value of the true slope is \_\_\_\_, i.e., $\beta_1$ \_\_\_\_\_\_.
+    $H_A:$ There is a relationship between distance and air time, the value of the true slope is \_\_\_\_, i.e., $\beta_1$ \_\_\_\_\_\_.
 
-Fill in the blanks.
+    Fill in the blanks.
 
-::: callout-tip
-The alternative hypothesis **always** compares the true population parameter to the same specific value set in the null hypothesis. 
-This comparison ca be "not equal to", "greater than", or "less than" and the choice depends on the research question.
-In this case, our research question is whether there is *some* relationship between distance and air time.
-:::
+    ::: callout-tip
+    The alternative hypothesis **always** compares the true population parameter to the same specific value set in the null hypothesis.
+    This comparison ca be "not equal to", "greater than", or "less than" and the choice depends on the research question.
+    In this case, our research question is whether there is *some* relationship between distance and air time.
+    :::
 
 ## Question 3 - Generate
 
-### a - Break the relationship
+a.  Break the relationship:
 
-Now let's set aside reality for a bit again, and imagine we live in the land of the null hypothesis where there is no relationship between `distance` and `air_time`.
-Using the sample data, simulate such a world by breaking any relationship between `distance` and `air_time`.
-How?
-Randomly permute the `air_time` values in your sample data to break any relationship between `distance` and `air_time`, and store the resulting air time values in a new column called `air_time_permuted`.
-Each person in the class should have a different permuation of the `air_time` values.
-You could achieve this by setting different seeds, e.g., each person could use their birthday.
-Mine is Feb 5, so I'll use `52`.
+    Now let's set aside reality for a bit again, and imagine we live in the land of the null hypothesis where there is no relationship between `distance` and `air_time`. Using the sample data, simulate such a world by breaking any relationship between `distance` and `air_time`. 
+    
+    How? Randomly permute the `air_time` values in your sample data to break any relationship between `distance` and `air_time`, and store the resulting air time values in a new column called `air_time_permuted`. Each person in the class should have a different permuation of the `air_time` values. You could achieve this by setting different seeds, e.g., each person could use their birthday. Mine is Feb 5, so I'll use `52`.
 
-```{r}
-#| eval: false
-set.seed(52)
-rdu_flights_sample <- rdu_flights_sample |>
-  mutate(
-    air_time_permuted = sample(
-      air_time,
-      size = nrow(rdu_flights_sample),
-      replace = FALSE
-    )
-  )
-```
+    ```{r}
+    #| eval: false
+    set.seed(52)
+    rdu_flights_sample <- rdu_flights_sample |>
+      mutate(
+        air_time_permuted = sample(
+          air_time,
+          size = nrow(rdu_flights_sample),
+          replace = FALSE
+        )
+      )
+    ```
 
-Display `rdu_flights_sample` to see the new column.
-Confirm that each `air_time_permuted` value comes from the original `air_time` values, but the order is different.
+    Display `rdu_flights_sample` to see the new column.
+    Confirm that each `air_time_permuted` value comes from the original `air_time` values, but the order is different.
 
-### b - Visualize, model, and estimate the broken relationship
+b.  Visualize, model, and estimate the broken relationship:
 
-Visualize the relationship between `distance` and `air_time` using a scatter plot.
-Also add a regression line to the scatter plot.
-Do not show the standard error ribbon around the regression line.
+    Visualize the relationship between `distance` and `air_time` using a scatter plot. Also add a regression line to the scatter plot. Do not show the standard error ribbon around the regression line.
 
-Then, fit a model predicting `air_time_permuted` using `distance` using the sample data.
-Display the model summary.
+    Then, fit a model predicting `air_time_permuted` using `distance` using the sample data. Display the model summary.
 
-How does the slope estimate for your permuted air time values compare to that of others in your team or others in the class?
-Exactly the same? Wildly different? Somewhere in between?
+    How does the slope estimate for your permuted air time values compare to that of others in your team or others in the class? Exactly the same? Wildly different? Somewhere in between?
 
-### c - Generate the null distribution (collectively)
+c.  Generate the null distribution (collectively):
 
-Each person in the class has now simulated a slightly different world where there is no relationship between `distance` and `air_time` by breaking any relationship in their sample data.
-Mark your slope estimate from Question 7 on the number line on the board.
-The distribution you constructed on the board is called the **null distribution** of the slope estimates.
-This distribution represents what slope estimates we would expect to see if the null hypothesis were true.
+    Each person in the class has now simulated a slightly different world where there is no relationship between `distance` and `air_time` by breaking any relationship in their sample data. Mark your slope estimate from Question 7 on the number line on the board. The distribution you constructed on the board is called the **null distribution** of the slope estimates. This distribution represents what slope estimates we would expect to see if the null hypothesis were true.
 
-When everyone has marked their slope estimates, what does the overall distribution of slope estimates look like?
-Is it centered around a particular value?
+    When everyone has marked their slope estimates, what does the overall distribution of slope estimates look like? Is it centered around a particular value?
 
 ## Question 4 - Calculate and conclude
 
-### a - Calculate the p-value
+a.  Calculate the p-value:
 
-The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true.
-In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.
+    The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3.
 
-Based on the null distribution you constructed collectively in Question 3, calculate your p-value.
+    Based on the null distribution you constructed collectively in Question 3, calculate your p-value.
 
-::: callout-tip
-First mark the slope estimate you observed in Question 3 on the number line on the board.
-Then count how many slope estimates in the null distribution are **beyond** your observed slope estimate.
-Then, don't forget about the other side of the distribution -- we generally account for that side by multiplying the count we obtained by 2.
-Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.
-:::
+    ::: callout-tip
+    First mark the slope estimate you observed in Question 3 on the number line on the board.
+    Then count how many slope estimates in the null distribution are **beyond** your observed slope estimate.
+    Then, don't forget about the other side of the distribution -- we generally account for that side by multiplying the count we obtained by 2.
+    Finally, divide that count by the total number of slope estimates in the null distribution to get your p-value.
+    :::
 
-### b - Conclude the hypothesis test
+b.  Conclude the hypothesis test:
 
-Using a significance level of $\alpha = 0.05$, what is your conclusion regarding the hypothesis test you conducted?
+    Using a significance level of $\alpha = 0.05$, what is your conclusion regarding the hypothesis test you conducted?
 
-::: callout-tip
-If your p-value is less than or equal to $\alpha$, you reject the null hypothesis, and conclude that the data provide convincing evidence of a discernible relationship between distance and air time.
-If your p-value is greater than $\alpha$, you fail to reject the null hypothesis, and conclude that the data do not provide convincing evidence of a discernible relationship between distance and air time.
-Whatever you do, your conclusion should always be stated in the context of the research question.
-:::
+    ::: callout-tip
+    If your p-value is less than or equal to $\alpha$, you reject the null hypothesis, and conclude that the data provide convincing evidence of a discernible relationship between distance and air time.
+    If your p-value is greater than $\alpha$, you fail to reject the null hypothesis, and conclude that the data do not provide convincing evidence of a discernible relationship between distance and air time.
+    Whatever you do, your conclusion should always be stated in the context of the research question.
+    :::
 
 # Wrap-up
 
