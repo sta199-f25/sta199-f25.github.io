@@ -140,7 +140,7 @@ c.  Generate the null distribution (collectively):
 
 a.  Calculate the p-value:
 
-    The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 3 - part (b).
+    The **p-value** is defined as the probability of the observed or more extreme outcomes assuming the null hypothesis is true. In this case, the p-value is the probability, under the null distribution, of observing a slope estimate as extreme or more extreme than the one you observed in Question 1 - part (c).
 
     Based on the null distribution you constructed collectively in Question 3 - part (c), calculate your p-value.
 
