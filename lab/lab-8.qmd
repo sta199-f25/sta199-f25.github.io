@@ -60,7 +60,7 @@ The dataset, called `rdu-flights-sample.csv`, can be found in the `data` folder.
 
 ### a - Read the observed data
 
-Read in your random sample of 100 flights and store it as `rdu_flights_sample`.
+Read in your random sample of 10 flights and store it as `rdu_flights_sample`.
 Each person in the class will have the same observed sample of flights.
 
 ### b - Visualize the observed relationship
