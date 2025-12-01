@@ -1,7 +1,7 @@
 ---
 title: HW 6
 subtitle: More lemurs and even more babies
-description: "Due: Fri, Dec 5, 11:59 pm -- accepted until Sun, Dec 7, 11:59 pm with no penalty"
+description: "Due: Fri, Dec 5, 11:59 pm<br>accepted until Sun, Dec 7, 11:59 pm with no penalty"
 categories: HW
 filters:
   - ../remove-fmt-skip.lua

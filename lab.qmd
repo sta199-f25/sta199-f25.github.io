@@ -13,4 +13,3 @@ listing:
     description: "Due date"
 ---
 
-More labs to be added as the semester progresses.

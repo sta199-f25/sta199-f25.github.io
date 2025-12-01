@@ -13,4 +13,3 @@ listing:
     description: "Due date"
 ---
 
-More homeworks to be added as the semester progresses.
