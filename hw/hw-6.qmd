@@ -1,118 +1,87 @@
 ---
 title: HW 6
-subtitle: ADD SUBTITLE HERE
-description: "Due: Sun, Dec 5, 11:59 pm"
+subtitle: More lemurs and even more babies
+description: "Due: Fri, Dec 5, 11:59 pm -- accepted until Sun, Dec 7, 11:59 pm with no penalty"
 categories: HW
 filters:
   - ../remove-fmt-skip.lua
 draft: true
+execute: 
+  eval: true
 ---
 
 # Introduction
 
-This is a two-part homework assignment:
+Odd numbered questions on this assignment have AI feedback available.
+They're for practice, not graded, and you get immediate feedback from AI, based on rubrics designed by the course instructor.
+Some of them are also required for subsequent questions.
+We expect you to complete these questions but there won't be points allocated to them on the assignment.
+You will still need to tag these pages Gradescope.
+These questions are marked with "**🤖 Feedback from AI**".
 
-- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-6-part-1.qmd`, no submission required.
+<details>
 
-  ::: {.callout-warning title="Heads up!"}
-  While Part 1 is not graded, it is a prerequisite for Part 2 -- Question 6 in Part 2 asks you to summarize your experience in Part 1.
-  Additionally, the skills you practice in Part 1 will be useful for future assignments that are graded.
-  Finally, there are workflow points assigned to Part 1 -- you must make at least three commits in Part 1 and make updates to both your qmd and pdf files in order to earn these points.
-  :::
+<summary>Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.</summary>
 
-- **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team within a week. Complete in `hw-6-part-2.qmd`, submit on Gradescope.
+{{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
+
+</details>
+
+Even numbered questions are graded and you will receive feedback from the course instructional team within a week.
+These questions are marked with "**🧑🏽‍🏫 Feedback from Humans**".
+
+You will complete all questions in the file called `hw-6.qmd`.
 
 By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.
 
 <details>
+
 <summary>Click to expand if you need a refresher on how to get started with a homework assignment.</summary>
 
 -   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
 -   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
--   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub.
-    Click on the repo with the prefix **hw-6**.
-    It contains the starter documents you need to complete the homework.
--   Click on the green **CODE** button, select **Use SSH**.
-    Click on the clipboard icon to copy the repo URL.
+-   Go to the course organization at [github.com/sta199-f25](https://github.com/sta199-f25) organization on GitHub. Click on the repo with the prefix **hw-6**. It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**. Click on the clipboard icon to copy the repo URL.
 -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
 -   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
 -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
 </details>
 
 By now you should also be familiar with guidelines for formatting your code and plots as well as your Git and Gradescope workflow.
 
 <details>
+
 <summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+
 {{< include _guidelines.qmd >}}
+
 </details>
 
-
-# Part 1 -- Feedback from AI
-
-Your answers to the questions in this part should go in the file `hw-6-part-1.qmd`.
-
-## Instructions
-
-Write your answer to each question in the appropriate section of the `hw-6-part-1.qmd` file.
-Then, highlight your answer to a question, click on _Addins > AIFEEDR > Get feedback_.
-In the app that opens, select the appropriate homework number (4) and question number.
-Then click on _Get Feedback_.
-Please be patient, feedback generation can take a few seconds. 
-Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. 
-You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.
-
-<details>
-<summary>Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.</summary>
-{{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
-</details>
-
-::: {.callout-note title="Catch the AI making a mistake?" icon=false}
+::: {.callout-note title="🐛 Catch the AI making a mistake?" icon="false"}
 Submit a bug report with evidence of the mistake as well as your rationale for why it is a mistake to earn the opportunity for **extra credit**.
 
 Your bug report must include screenshots of the relevant parts of your Quarto document as well as the "incorrect" feedback you received.
-Your bug report should be printed and turned in to Dr. Çetinkaya-Rundel in person by the beginning of class (11:45 am) on the Tuesday following the assignment due date.
+Your bug report should be printed and turned in to Dr. Çetinkaya-Rundel in person by 11:45 am on the Tuesday following the assignment due date.
+Since we don't have class on Tuesday, December 9, these are due in my office (Old Chem 211C).
 Electronic submissions will not be accepted.
 Your bug report, including screenshots, should fit on no more than two pages.
 
 If your bug report is confirmed (i.e., I agree that AI indeed made a mistake), you will receive 1 extra point that will be added to your total points for the assignment.
 :::
 
-## Context
-
-Parasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.
-
-In this part of the homwework, you will explore how much evolutionary history predicts parasite similarity.
-
 ## Packages
 
-In this part you will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
+In this assignment you will work with the following packages:
 
 ```{r}
+#| message: false
 library(tidyverse)
 library(tidymodels)
+library(knitr)
 ```
 
-## Data
-
-The dataset comes from an Ecology Letters paper by Cooper at al. (2012) entitled “Phylogenetic host specificity and understanding parasite sharing in primates” located [here](https://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2012.01858.x). The goal of the paper was to identify the ability of evolutionary history and ecological traits to characterize parasite host specificity.
-
-Each row of the data contains two species, `species1` and `species2`.
-
-Subsequent columns describe metrics that compare the species:
-
--   `divergence_time`: how many (millions) of years ago the two species diverged. i.e. how many million years ago they were the same species.
-
--   `distance`: geodesic distance between species geographic range centroids (in kilometers)
-
--   `BMdiff`: difference in body mass between the two species (in grams)
-
--   `precdiff`: difference in mean annual precipitation across the two species geographic ranges (mm)
-
--   `parsim`: a measure of parasite similarity (proportion of parasites shared between species, ranges between 0 to 1.)
-
-The data are available in `parasites.csv` in your `data` folder.
-
-## Questions
+# Questions
 
 ::: render-commit-push
 Do not forget to render, commit, and push regularly, after each substantial change to your document (e.g., after answering each question).
@@ -120,80 +89,189 @@ Use succinct and informative commit messages.
 Make sure to commit and push all changed files so that your Git pane is empty afterward.
 :::
 
-## Part 1: Babies
+## Part 1: Lemurs
 
-Every year, the US releases to the public a large dataset containing information on births recorded in the country. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from the dataset released in 2014.
-
-The data are available in the `births14` data frame in the **openintro** package.
-
-### Question 1
-
-```{r}
-births14 |>
-  drop_na(habit) |>
-  ggplot(aes(x = habit, fill = lowbirthweight)) +
-  geom_bar() +
-  facet_wrap(~mature, scales = "free_y")
-```
-
-### Question 2
-
-### Question 3
-
-### Question 4
-
-### Question 5
-
-### Question 6
-
-## Part XX: Lemurs
-
-Questions 7 and 8 question use the `lemurs` data from Homework 5.
+Questions 1 and 2 question use the `lemurs` data from Homework 5.
 You can refer to the background information provided in that assignment for context, and load the data from `lemurs.csv` in your data folder.
 
-### Question 7
+### Question 1 🤖
 
-The goal of this question is to answer the following research question:
+**🤖 Feedback from AI:** The goal of this question is to answer the following research question:
 
 > Do female lemurs differ in weight from male lemurs, on average?
 
-a. Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 randomization samples (`reps = 1000`) when simulating your randomization distribution.
+More specifically, we want to answer whether the data provide convincing evidence of a discernible difference between the average weights of female and male lemurs.
 
-b. Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0? Explain your reasoning.
+a.  Conduct a hypothesis test to answer this question at 5% discernability level.
+    Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value.
+    Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question.
+    Don’t forget to set a seed and use 1,000 resamples (`reps = 1000`) when simulating your randomization distribution.
 
-c. Construct and interpret a 95% bootstrap confidence interval for the difference in means of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
+b.  Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0?
+    Explain your reasoning.
 
-### Question 8
+c.  Construct and interpret a 95% bootstrap confidence interval for the difference in means of female and male lemurs.
+    Does it include 0?
+    Does this align with your answer to Part (b)?
+    Don’t forget to set a seed and use 1,000 resamples (`reps = 1000`) when simulating your bootstrap distribution.
 
-The goal of this question is to answer the following research question:
+### Question 2 🧑🏽‍🏫
+
+**🧑🏽‍🏫 Feedback from Humans:** The goal of this question is to answer the following research question:
 
 > Does the median weight of female lemurs differ from that of male lemurs?
 
-a. Conduct a hypothesis test to answer this question at 5% discernability level. Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value. Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question. Don’t forget to set a seed and use 1,000 randomization samples (`reps = 1000`) when simulating your randomization distribution.
+More specifically, we want to answer whether the data provide convincing evidence of a discernible difference between the median weights of female and male lemurs.
 
-b. Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in medians of female and male lemurs to include 0? Explain your reasoning.
+a.  Conduct a hypothesis test to answer this question at 5% discernability level.
+    Clearly state your hypotheses in the context of the data and the research question, simulate a randomization distribution, find the p-value, and make a decision on your hypotheses based on this p-value.
+    Provide a one-sentence conclusion for your hypothesis test in the context of the data and the research question.
+    Don’t forget to set a seed and use 1,000 resamples (`reps = 1000`) when simulating your randomization distribution.
 
-c. Construct and interpret a 95% bootstrap confidence interval for the difference in medians of female and male lemurs. Does it include 0? Does this align with your answer to Part (b)? Don’t forget to set a seed and use 1,000 bootstrap samples (`reps = 1000`) when simulating your bootstrap distribution.
+b.  Based on your answer to Part (a), would you expect a 95% confidence interval for the difference in medians of female and male lemurs to include 0?
+    Explain your reasoning.
 
-## Part XX - Second chances
+c.  Construct and interpret a 95% bootstrap confidence interval for the difference in medians of female and male lemurs.
+    Does it include 0?
+    Does this align with your answer to Part (b)?
+    Don’t forget to set a seed and use 1,000 resamples (`reps = 1000`) when simulating your bootstrap distribution.
 
-In this part, you get to revisit work you’ve turned in before that can be improved. For Question 9 you’ll pick a question from a previous lab and for Question 10 a question from your take-home midterm, and improve them.
+## Part 2: Babies
 
-Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the deadline but didn’t get a chance to. Some notes for completing this exercise:
+Every year, the US releases to the public a large dataset containing information on births recorded in the country.
+This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children.[^1]
+This is a random sample of 1,000 cases from the dataset released in 2014.
 
-- You might need to add your data from your lab/midterm to the data/ folder in this assignment. You do not need to also add a data dictionary.
+[^1]: United States Department of Health and Human Services.
+    Centers for Disease Control and Prevention.
+    National Center for Health Statistics.
+    Natality Detail File, 2014 United States.
+    Inter-university Consortium for Political and Social Research, 2016-10-07.
+    doi:10.3886/ICPSR36461.v1.
 
-- You will need to copy over any code needed to clean/prepare your data for this specific question. You can reuse code from your previous assignment, but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors, make sure to fix them.
+The data are available your `data` folder in `births14.csv`.
+Questions 3-10 use these data.
 
-- Don’t worry about being critical of your own work. Even if you lost no points on the question if you think it can be improved, articulate how / why. We will not apply additional penalties for any mistakes you might point out that we didn’t catch when grading your lab/midterm. There’s no risk of being critical!
+The variables in the data are as follows:
 
-### Question 9
+-   `fage`: Father's age in years.
+-   `mage`: Mother's age in years.
+-   `mature`: Maturity status of mother.
+-   `weeks`: Length of pregnancy in weeks.
+-   `premie`: Whether the birth was classified as premature (premie) or full-term.
+-   `visits`: Number of hospital visits during pregnancy.
+-   `gained`: Weight gained by mother during pregnancy in pounds.
+-   `weight`: Weight of the baby at birth in pounds.
+-   `lowbirthweight`: Whether baby was classified as low birthweight (low) or not (⁠not low⁠).
+-   `sex`: Sex of the baby, female or male.
+-   `habit`: Status of the mother as a nonsmoker or a smoker.
+-   `marital`: Whether mother is married or ⁠not married⁠ at birth.
+-   `whitemom`: Whether mom is white or ⁠not white⁠.
 
-Choose one question from a previous lab or homework that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.
+### Question 3 🤖
 
-### Question 10
+**🤖 Feedback from AI:** In this question you start exploring the data to make decisions about how to prepare it for the analysis.
 
-Choose one question from the take-home midterm that you received lots of feedback on and/or lost many points on and improve it. First, write one sentence reminding us of the specific question and a few sentences on why you chose this specific question to improve and how you plan to improve it. Then, improve it.
+First, read the data in and store it as `births14_raw`.
+
+Then, in a single pipeline, filter for any rows of the `births14` data frame where one or more of the following variables has an `NA` value: `mage`, `weight`, `habit`, `mature`, `lowbirthweight`, then select only these five variables to display.
+
+### Question 4 🧑🏽‍🏫
+
+**🧑🏽‍🏫 Feedback from Humans:** In this question you start your data prep.
+
+In a single pipeline, remove any rows of the `births14` data frame with `NA` values among those you identified as having `NA` values in the previous question .
+
+Then, find and state the numbers of rows of columns of `births14`.
+
+::: callout-tip
+You should end up with 981 rows.
+If you do not, revisit your earlier work to make sure you have removed all rows with `NA` values in any of the specified columns.
+:::
+
+### Question 5 🤖
+
+**🤖 Feedback from AI:** This question walks you through an exploration of a threshold used when the data set was put together.
+
+One of the variables in the data is `mature`, indicating whether the mom is considered "mature" or "younger".
+This categorization is based on a medical threshold used for pregnancies.
+Using the data alone (not medical knowledge or external resources), determine the threshold age used to categorize moms as "mature" vs. "younger".
+Describe your process, include any evidence (summary statistics and/or visualization), and clearly state the threshold you determined.
+
+### Question 6 🧑🏽‍🏫
+
+**🧑🏽‍🏫 Feedback from Humans:** This question walks you through an exploration of another threshold used when the data set was put together.
+
+Another variable in the data is `lowbirthweight`, indicating whether the baby's weight is considered "low" or "not low" at birth.
+This categorization is based on a medical threshold used for births.
+Using the data alone (not medical knowledge or external resources), determine the threshold weight used to categorize baby weights as "low" vs. "now low".
+Describe your process, include any evidence (summary statistics and/or visualization), and clearly state the threshold you determined.
+
+### Question 7 🤖
+
+**🤖 Feedback from AI:** In this question you finish up your data prep for the remaining steps of the analysis.
+
+In a single pipeline, recode the variables `mature`, `habit`, and `lowbirthweight` in the `births14` data frame as follows:
+
+-   `mature` : "mature mom" → "35 and over", "younger mom" → "34 and under"
+-   `habit` : "smoker" → "Smoker", "nonsmoker" → "Non-smoker"
+-   `lowbirthweight` : "low" → "Low", "not low" → "Not low"
+
+In that same pipeline, relocate these three variables to be the first three columns of the data frame.
+
+Save the result back to `births14` and display the first 10 rows (and however many columns fit across the page) of `births14`.
+
+### Question 8 🧑🏽‍🏫
+
+**🧑🏽‍🏫 Feedback from Humans:** This question explores low birth weight prevalence.
+
+Your fellow researchers are interested in exploring how the baby weight at birth varies by characteristics of the mother.
+
+a.  One researcher in your group made a summary table that shows the number of low birth weight babies for every possible combination for mother's `mature` and `habit` status. The table is show below. Recreate this table in a single pipeline. Make sure to get the caption, table number, and column names exactly right.
+
+    ![](images/hw-6/table-to-recreate.png)
+
+b.  Another researcher in the group made the barplot below that shows the distribution of low birth weight babies condtional on mother's age and smoking status. Recreate this visualization, paying attention to all details, including figure width and aspect ratio (which you don't need to get exactly right, but you should strive to get close).
+
+    ![](images/hw-6/plot-to-recreate.png)
+
+c.  Refer back to the visualization you recreated in Part (b), in light of the numbers in the table you recreated in Part (a).
+    What is misleading about the visualization?
+    Explain in 1-2 sentences.
+
+d.  Update the visualization to correct the issue you identified in Part (c).
+    Briefly explain what you did to fix the issue and what the new visualization shows.
+    Note that there are a few ways you can address the issue, but you should select the best option.
+
+### Question 9 🤖
+
+**🤖 Feedback from AI:** In this question you will conduct inference for a slope in a model with a single predictor.
+
+a.  Fit a model for predicting baby weight (`weight`) from mother's age category (`mature`).
+    Display the tidy model output.
+
+b.  Construct a 95% confidence interval for the slope the model from part (a), using bootstrapping with 1,000 resamples and the percentile method.
+    Dislay the bounds of the interval and interpret it in the context of the data and the research question.
+
+c.  Visualize the bootstrap distribution you used to construct the confidence interval.
+    Comment on its shape and center.
+
+d.  Based on your interval from Part (b), do these data provide convincing evidence of a discernible difference between the average weights of babies born to mothers who are 35 years and older vs. those born to mothers who are 34 years and younger?
+    Explain your reasoning.
+    Note: You do not need to a hypothesis test to answer this question, justify your answer with your confidence interval only.
+
+### Question 10 🧑🏽‍🏫
+
+**🧑🏽‍🏫 Feedback from Humans:** In this question you will conduct inference for slopes in a model with a two predictors.
+
+a.  Fit a model for predicting baby weight (`weight`) from mother's age (`mage`) and smoking status (`habit`).
+    Display the tidy model output.
+
+b.  Construct 95% confidence intervals for the slopes the model from part (a), using bootstrapping with 1,000 resamples and the percentile method.
+    Dislay the bounds of the intervals and interpret them in the context of the data and the research question.
+
+c.  Visualize the bootstrap distributions you used to construct the confidence intervals.
+    Comment on their shapes and centers.
 
 # Wrap-up
 
@@ -208,12 +286,13 @@ We will be checking these to make sure you have been practicing how to commit an
 
 ## Grading and feedback
 
--   Questions 1-5 are not graded, but you should complete them to get practice.
+-   Odd numbered questions marked with "**🤖 Feedback from AI**" are not graded, but you should complete them to both get practice and to be able to do the subsequent question.
 
--   Questions 6-10 are graded, and you will receive feedback on Gradescope from the course instructional team within a week.
+-   Even numbered questions marked with "**🧑🏽‍🏫 Feedback from Humans**" are graded, and you will receive feedback on Gradescope from the course instructional team within a week.
+
     -   Questions will be graded for accuracy and completeness.
     -   Partial credit will be given where appropriate.
     -   There are also workflow points for:
-        - committing at least three times as you work through your homework,
-        - having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
-        - overall organization.
+        -   committing at least three times as you work through your homework,
+        -   having your final version of `.qmd` and `.pdf` files in your GitHub repository, and
+        -   overall organization.
