@@ -24,12 +24,48 @@ editor_options:
 #| label: setup
 #| include: false
 ggplot2::theme_set(ggplot2::theme_bw(base_size = 24))
-todays_ae <- "XXX"
 ```
 
 # Warm-up
 
-## While you wait: Participate 📱💻 {.xsmall}
+## It's Giving Tuesday -- Give feedback!
+
+::: {.columns}
+
+::: {.column width="30%".xsmall}
+
+-  Take 2 minutes to fill out the TA evaluation form -- link in your email! Due Monday, December 8th.
+
+-  Nominate a TA for the StatSci TA of the Year award by sending an email to <dus@stat.duke.edu> with a brief narrative for your nomination.
+
+:::
+
+::: {.column width="70%"}
+
+![](images/25/ta-1.png){width="200px"} ![](images/25/ta-2.png){width="200px"} ![](images/25/ta-3.png){width="200px"}
+
+:::
+
+::: 
+
+::: xsmall
+-  Please also fill out the course evaluation (on DukeHub) as well, I'd love to your feedback!
+:::
+
+## Announcements {.xsmall}
+
+- HW:
+  - HW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty
+  - HW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty
+
+- Final exam: 
+  - Classroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), check your email for your classroom assignment
+  - Review: During reading period, date/time TBA
+  - Office hours: TBA soon as review session is scheduled
+
+# From last time
+
+## Participate 📱💻 {.xsmall}
 
 ::: columns
 
@@ -37,10 +73,13 @@ todays_ae <- "XXX"
 
 ::: wooclap
 
-...
+Which of the following is true about confidence intervals?
 
 ::: wooclap-choices
-- ...
+- They're for a sample statistic.
+- They're for a population parameter.
+- They can be either for both a sample statistic or a population parameter.
+- They're neither for a sample statistic nor a population parameter.
 :::
 
 :::
@@ -53,22 +92,22 @@ todays_ae <- "XXX"
 
 :::
 
+## Why do we construct confidence intervals?
 
-## Announcements {.xsmall}
+To estimate plausible values of a parameter of interest, e.g., 
 
-- HW:
-  - HW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty
-  - HW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty
+- a slope ($\beta_1$)
+- a mean ($\mu$)
+- a proportion ($p$)
+- etc.
 
-- Final exam: 
-  - Classroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), watch your email for your classroom assignment
-  - Review: During reading period, date/time TBA
+## What is bootstrapping?
 
-# From last time
+-   Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.
 
-## Goal + setup
+-   We then use these simulated samples to quantify the uncertainty around the sample statistic we're interested in, e.g., a slope ($b_1$), a mean ($\bar{x}$), a proportion ($\hat{p}$).
 
-Find range of plausible values for the slope using bootstrap confidence intervals.
+## Setup
 
 ```{r}
 #| message: false
@@ -106,120 +145,6 @@ boot_fits <- duke_forest |>
 boot_fits
 ```
 
-## Computing the CI for the slope III
-
-**Percentile method:** Compute the 95% CI as the middle 95% of the bootstrap distribution:
-
-```{r}
-#| code-line-numbers: "5"
-get_confidence_interval(
-  boot_fits,
-  point_estimate = observed_fit,
-  level = 0.95,
-  type = "percentile" # default method
-)
-```
-
-## Precision vs. accuracy {.smaller}
-
-::: task
-If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval?
-What drawbacks are associated with using a wider interval?
-:::
-
-. . .
-
-![](images/24/garfield.png)
-
-## Precision vs. accuracy {.smaller}
-
-::: task
-How can we get best of both worlds -- high precision and high accuracy?
-:::
-
-## Changing confidence level {.smaller}
-
-::: task
-How would you modify the following code to calculate a 90% confidence interval?
-How would you modify it for a 99% confidence interval?
-:::
-
-```{r}
-#| code-line-numbers: "|4"
-get_confidence_interval(
-  boot_fits,
-  point_estimate = observed_fit,
-  level = 0.95,
-  type = "percentile"
-)
-```
-
-## Changing confidence level {.smaller}
-
-::: {.columns}
-
-::: {.column}
-
-**Confidence level: 90%**
-
-```{r}
-#| code-line-numbers: "4"
-get_confidence_interval(
-  boot_fits,
-  point_estimate = observed_fit,
-  level = 0.90,
-  type = "percentile"
-)
-```
-
-:::
-
-::: {.column}
-
-**Confidence level: 99%**
-
-```{r}
-#| code-line-numbers: "4"
-get_confidence_interval(
-  boot_fits,
-  point_estimate = observed_fit,
-  level = 0.99,
-  type = "percentile"
-)
-```
-
-:::
-
-:::
-
-## Recap {.xsmall}
-
-::: incremental
-
--   **Population:** Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. -- population size = $N$
-
--   **Sample:** Subset of the population, ideally random and representative -- sample size = $n$
-
--   Sample statistic $\ne$ population parameter, but if the sample is good, it can be a good estimate
-
--   **Statistical inference:** Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process
-
--   We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population
-
--   Since we can't continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability
-
-:::
-
-## Why do we construct confidence intervals?
-
-To estimate plausible values of a parameter of interest, e.g., a slope ($\beta_1$), a mean ($\mu$), a proportion ($p$).
-
-## What is bootstrapping?
-
--   Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.
-
--   We then use these simulated samples to quantify the uncertainty around the sample statistic we're interested in, e.g., a slope ($b_1$), a mean ($\bar{x}$), a proportion ($\hat{p}$).
-
 ## What does each observation on the plot represent? {.smaller}
 
 ::: {.columns}
@@ -240,22 +165,136 @@ visualize(boot_fits)
 
 :::
 
+## Computing the CI for the slope III
 
-## Bootstrapping for categorical data
+**Percentile method:** Compute the 95% CI as the middle 95% of the bootstrap distribution:
 
--   `specify(response = x, success = "success level")`
+```{r}
+#| code-line-numbers: "5"
+get_confidence_interval(
+  boot_fits,
+  point_estimate = observed_fit,
+  level = 0.95,
+  type = "percentile" # default method
+)
+```
 
--   `calculate(stat = "prop")`
+## Participate 📱💻 {.xsmall}
 
-## Bootstrapping for other `stat`s
+::: columns
 
--   `calculate()` documentation: [infer.tidymodels.org/reference/calculate.html](https://infer.tidymodels.org/reference/calculate.html)
+::: {.column width="70%"}
 
--   **infer** pipelines: [infer.tidymodels.org/articles/observed_stat_examples.html](https://infer.tidymodels.org/articles/observed_stat_examples.html)
+::: wooclap
+
+If you want to be very certain (i.e., more confident) that you capture the population parameter, should we use a wider or a narrower interval?
+
+::: wooclap-choices
+- Wider 
+- Narrower
+- Depends on the situation
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Precision vs. accuracy {.smaller}
+
+::: task
+What drawbacks are associated with using a wider interval?
+:::
+
+. . .
+
+![](images/25/garfield.png)
+
+## Precision vs. accuracy {.smaller}
+
+::: task
+How can we get best of both worlds -- high precision and high accuracy?
+:::
+
+## Recap {.xsmall}
+
+::: incremental
+
+-   **Population:** Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. -- population size = $N$
+
+-   **Sample:** Subset of the population, ideally random and representative -- sample size = $n$
+
+-   Sample statistic $\ne$ population parameter, but if the sample is good, it can be a good estimate
+
+-   **Statistical inference:** Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process
+
+-   We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population
+
+-   Since we can't continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability
+
+:::
+
+## An alternative approach
+
+**Standard error method:** Compute the 95% CI as the observed slope plus/minus ~2 * standard error (the standard deviation of the bootstrap distribution):
+
+```{r}
+#| code-line-numbers: "5"
+#| output-location: column
+get_confidence_interval(
+  boot_fits,
+  point_estimate = observed_fit,
+  level = 0.95,
+  type = "se"
+)
+```
+
+## Margin of error
+
+That quantity (~2 * standard error) is called the **margin of error**, e.g.,
+
+![](images/25/cnn-poll.png){width="700px}
+
+::: aside
+Source: <https://www.cnn.com/polling/approval/trump-polls>
+:::
+
+## On the horizon... {.smaller}
+
+::: incremental
+-   In this class you learned how to construct a confidence interval (i.e., calculate the margin of error) using a computational method called bootstrapping.
+
+-   The bootstrap distributions you constructed (given enough `reps` -- repeated samples) were unimodal and symmetric around the observed statistic.
+
+-   This is not a happenstance! And there is theory behind it... It's called the **Central Limit Theorem**!
+
+-   You can learn about the Central Limit Theorem and theory-based methods for constructing confidence intervals (and other inference procedures) in future stats courses.
+:::
+
+## Syntax notes {.smaller}
+
+-   Bootstrapping for categorical data
+
+    -   `specify(response = x, success = "success level")`
+
+    -   `calculate(stat = "prop")`
+
+. . .
+
+- Bootstrapping for other `stat`s
+
+    -   `calculate()` documentation: [infer.tidymodels.org/reference/calculate.html](https://infer.tidymodels.org/reference/calculate.html)
+
+    -   **infer** pipelines: [infer.tidymodels.org/articles/observed_stat_examples.html](https://infer.tidymodels.org/articles/observed_stat_examples.html)
 
 # Hypothesis testing
 
-## Hypothesis testing
+## Hypothesis testing {.smaller}
 
 A hypothesis test is a statistical technique used to evaluate *competing claims* using data
 
@@ -269,7 +308,9 @@ A hypothesis test is a statistical technique used to evaluate *competing claims*
 
 . . .
 
-Note: Hypotheses are always at the population level!
+::: callout-note
+Hypotheses are always at the population level!
+:::
 
 ## Setting hypotheses
 
