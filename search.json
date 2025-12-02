@@ -3584,7 +3584,7 @@
     "href": "slides/25-making-decisions-slides.html#hypothesis-testing-mindset",
     "title": "Making decisions",
     "section": "Hypothesis testing “mindset”",
-    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world:\n\n\\[P \\big( b_1 \\leq 159~or~b_1 \\geq 159 ~|~ \\beta_1 = 0 \\big)\\]"
+    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world:\n\n\\[P \\big( b_1 \\leq -159~or~b_1 \\geq 159 ~|~ \\beta_1 = 0 \\big)\\]"
   },
   {
     "objectID": "slides/25-making-decisions-slides.html#hypothesis-testing-as-a-court-trial",
@@ -3801,7 +3801,7 @@
     "href": "slides/25-making-decisions.html#hypothesis-testing-mindset",
     "title": "Making decisions",
     "section": "Hypothesis testing “mindset”",
-    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world:\n\n\\[P \\big( b_1 \\leq 159~or~b_1 \\geq 159 ~|~ \\beta_1 = 0 \\big)\\]"
+    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world:\n\n\\[P \\big( b_1 \\leq -159~or~b_1 \\geq 159 ~|~ \\beta_1 = 0 \\big)\\]"
   },
   {
     "objectID": "slides/25-making-decisions.html#hypothesis-testing-as-a-court-trial",
