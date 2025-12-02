@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-<meta name="dcterms.date" content="2025-11-25">
-<title>Quantifying uncertainty – STA 199</title>
+<meta name="dcterms.date" content="2025-12-02">
+<title>Making decisions – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -132,8 +132,8 @@ window.Quarto = {
   typesetMath
 };
 </script>
-<meta property="og:title" content="Quantifying uncertainty – STA 199">
-<meta property="og:description" content="Lecture 24">
+<meta property="og:title" content="Making decisions – STA 199">
+<meta property="og:description" content="Lecture 25">
 <meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
 <meta property="og:site_name" content="STA 199">
 <meta property="og:image:height" content="888">
@@ -308,7 +308,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantifying uncertainty</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Making decisions</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -566,52 +566,47 @@ window.Quarto = {
   </ul>
 </li>
   <li>
-<a href="#quantifying-uncertainty" id="toc-quantifying-uncertainty" class="nav-link" data-scroll-target="#quantifying-uncertainty">Quantifying uncertainty</a>
+<a href="#from-last-time" id="toc-from-last-time" class="nav-link" data-scroll-target="#from-last-time">From last time</a>
   <ul class="collapse">
-<li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data-houses-in-duke-forest" id="toc-data-houses-in-duke-forest" class="nav-link" data-scroll-target="#data-houses-in-duke-forest">Data: Houses in Duke Forest</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a></li>
-  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a></li>
-  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
-  <li><a href="#participate-1" id="toc-participate-1" class="nav-link" data-scroll-target="#participate-1">Participate 📱💻</a></li>
-  <li><a href="#from-sample-to-population" id="toc-from-sample-to-population" class="nav-link" data-scroll-target="#from-sample-to-population">From sample to population</a></li>
-  <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference">Statistical inference</a></li>
-  <li><a href="#inference-for-simple-linear-regression" id="toc-inference-for-simple-linear-regression" class="nav-link" data-scroll-target="#inference-for-simple-linear-regression">Inference for simple linear regression</a></li>
+<li><a href="#goal-setup" id="toc-goal-setup" class="nav-link" data-scroll-target="#goal-setup">Goal + setup</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-i" id="toc-computing-the-ci-for-the-slope-i" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-i">Computing the CI for the slope I</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-ii" id="toc-computing-the-ci-for-the-slope-ii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-iii" id="toc-computing-the-ci-for-the-slope-iii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</a></li>
+  <li><a href="#precision-vs.-accuracy" id="toc-precision-vs.-accuracy" class="nav-link" data-scroll-target="#precision-vs.-accuracy">Precision vs.&nbsp;accuracy</a></li>
+  <li><a href="#precision-vs.-accuracy-1" id="toc-precision-vs.-accuracy-1" class="nav-link" data-scroll-target="#precision-vs.-accuracy-1">Precision vs.&nbsp;accuracy</a></li>
+  <li><a href="#changing-confidence-level" id="toc-changing-confidence-level" class="nav-link" data-scroll-target="#changing-confidence-level">Changing confidence level</a></li>
+  <li><a href="#changing-confidence-level-1" id="toc-changing-confidence-level-1" class="nav-link" data-scroll-target="#changing-confidence-level-1">Changing confidence level</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#why-do-we-construct-confidence-intervals" id="toc-why-do-we-construct-confidence-intervals" class="nav-link" data-scroll-target="#why-do-we-construct-confidence-intervals">Why do we construct confidence intervals?</a></li>
+  <li><a href="#what-is-bootstrapping" id="toc-what-is-bootstrapping" class="nav-link" data-scroll-target="#what-is-bootstrapping">What is bootstrapping?</a></li>
+  <li><a href="#what-does-each-observation-on-the-plot-represent" id="toc-what-does-each-observation-on-the-plot-represent" class="nav-link" data-scroll-target="#what-does-each-observation-on-the-plot-represent">What does each observation on the plot represent?</a></li>
+  <li><a href="#bootstrapping-for-categorical-data" id="toc-bootstrapping-for-categorical-data" class="nav-link" data-scroll-target="#bootstrapping-for-categorical-data">Bootstrapping for categorical data</a></li>
+  <li><a href="#bootstrapping-for-other-stats" id="toc-bootstrapping-for-other-stats" class="nav-link" data-scroll-target="#bootstrapping-for-other-stats">Bootstrapping for other <code>stat</code>s</a></li>
   </ul>
 </li>
   <li>
-<a href="#confidence-interval-for-the-slope" id="toc-confidence-interval-for-the-slope" class="nav-link" data-scroll-target="#confidence-interval-for-the-slope">Confidence interval for the slope</a>
+<a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis testing</a>
   <ul class="collapse">
-<li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence interval</a></li>
-  <li><a href="#confidence-interval-for-the-slope-1" id="toc-confidence-interval-for-the-slope-1" class="nav-link" data-scroll-target="#confidence-interval-for-the-slope-1">Confidence interval for the slope</a></li>
-  <li><a href="#quantify-the-variability-of-the-slope" id="toc-quantify-the-variability-of-the-slope" class="nav-link" data-scroll-target="#quantify-the-variability-of-the-slope">Quantify the variability of the slope</a></li>
-  <li><a href="#bootstrap-sample-1" id="toc-bootstrap-sample-1" class="nav-link" data-scroll-target="#bootstrap-sample-1">Bootstrap sample 1</a></li>
-  <li><a href="#bootstrap-sample-2" id="toc-bootstrap-sample-2" class="nav-link" data-scroll-target="#bootstrap-sample-2">Bootstrap sample 2</a></li>
-  <li><a href="#bootstrap-sample-3" id="toc-bootstrap-sample-3" class="nav-link" data-scroll-target="#bootstrap-sample-3">Bootstrap sample 3</a></li>
-  <li><a href="#bootstrap-sample-4" id="toc-bootstrap-sample-4" class="nav-link" data-scroll-target="#bootstrap-sample-4">Bootstrap sample 4</a></li>
-  <li><a href="#bootstrap-sample-5" id="toc-bootstrap-sample-5" class="nav-link" data-scroll-target="#bootstrap-sample-5">Bootstrap sample 5</a></li>
-  <li><a href="#bootstrap-samples-1---5" id="toc-bootstrap-samples-1---5" class="nav-link" data-scroll-target="#bootstrap-samples-1---5">Bootstrap samples 1 - 5</a></li>
-  <li><a href="#bootstrap-samples-1---100" id="toc-bootstrap-samples-1---100" class="nav-link" data-scroll-target="#bootstrap-samples-1---100">Bootstrap samples 1 - 100</a></li>
-  <li><a href="#look-familiar" id="toc-look-familiar" class="nav-link" data-scroll-target="#look-familiar">Look familiar?</a></li>
-  <li><a href="#slopes-of-bootstrap-samples" id="toc-slopes-of-bootstrap-samples" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples">Slopes of bootstrap samples</a></li>
-  <li><a href="#slopes-of-bootstrap-samples-1" id="toc-slopes-of-bootstrap-samples-1" class="nav-link" data-scroll-target="#slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</a></li>
-  <li><a href="#confidence-level" id="toc-confidence-level" class="nav-link" data-scroll-target="#confidence-level">Confidence level</a></li>
-  <li><a href="#confidence-interval-1" id="toc-confidence-interval-1" class="nav-link" data-scroll-target="#confidence-interval-1">95% confidence interval</a></li>
+<li><a href="#hypothesis-testing-1" id="toc-hypothesis-testing-1" class="nav-link" data-scroll-target="#hypothesis-testing-1">Hypothesis testing</a></li>
+  <li><a href="#setting-hypotheses" id="toc-setting-hypotheses" class="nav-link" data-scroll-target="#setting-hypotheses">Setting hypotheses</a></li>
+  <li><a href="#hypothesis-testing-mindset" id="toc-hypothesis-testing-mindset" class="nav-link" data-scroll-target="#hypothesis-testing-mindset">Hypothesis testing “mindset”</a></li>
+  <li><a href="#hypothesis-testing-as-a-court-trial" id="toc-hypothesis-testing-as-a-court-trial" class="nav-link" data-scroll-target="#hypothesis-testing-as-a-court-trial">Hypothesis testing as a court trial</a></li>
+  <li><a href="#hypothesis-testing-framework" id="toc-hypothesis-testing-framework" class="nav-link" data-scroll-target="#hypothesis-testing-framework">Hypothesis testing framework</a></li>
+  <li><a href="#calculate-observed-slope" id="toc-calculate-observed-slope" class="nav-link" data-scroll-target="#calculate-observed-slope">Calculate observed slope</a></li>
+  <li><a href="#simulate-null-distribution" id="toc-simulate-null-distribution" class="nav-link" data-scroll-target="#simulate-null-distribution">Simulate null distribution</a></li>
+  <li><a href="#view-null-distribution" id="toc-view-null-distribution" class="nav-link" data-scroll-target="#view-null-distribution">View null distribution</a></li>
+  <li><a href="#visualize-null-distribution" id="toc-visualize-null-distribution" class="nav-link" data-scroll-target="#visualize-null-distribution">Visualize null distribution</a></li>
+  <li><a href="#visualize-null-distribution-p-value" id="toc-visualize-null-distribution-p-value" class="nav-link" data-scroll-target="#visualize-null-distribution-p-value">Visualize null distribution + p-value</a></li>
+  <li><a href="#get-p-value" id="toc-get-p-value" class="nav-link" data-scroll-target="#get-p-value">Get p-value</a></li>
+  <li><a href="#make-a-decision" id="toc-make-a-decision" class="nav-link" data-scroll-target="#make-a-decision">Make a decision</a></li>
   </ul>
 </li>
-  <li>
-<a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
-  <ul class="collapse">
-<li><a href="#ae-15-duke-forest-bootstrap" id="toc-ae-15-duke-forest-bootstrap" class="nav-link" data-scroll-target="#ae-15-duke-forest-bootstrap">ae-15-duke-forest-bootstrap</a></li>
-  </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/24-quantifying-uncertainty.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="24-quantifying-uncertainty-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/25-making-decisions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="25-quantifying-uncertainty-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Quantifying uncertainty</h1>
-<p class="subtitle lead">Lecture 24</p>
+<h1 class="title">Making decisions</h1>
+<p class="subtitle lead">Lecture 25</p>
 </div>
 
 
@@ -635,7 +630,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 25, 2025</p>
+      <p class="date">December 2, 2025</p>
     </div>
   </div>
   
@@ -649,13 +644,10 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>Given that HW 6 will be assigned on Monday, Dec 1, what day should HW 5 be due? It will be due at 11:59 pm on the deadline we decide on.</p>
+<p>…</p>
 <div class="wooclap-choices">
 <ul>
-<li>Sunday, Nov 30 - no change</li>
-<li>Monday, Dec 1 - postponed by 1 day</li>
-<li>Tuesday, Dec 2 - postponed by 2 days</li>
-<li>Wednesday, Dec 3 - postponed by 3 days</li>
+<li>…</li>
 </ul>
 </div>
 </div>
@@ -673,512 +665,348 @@ window.Quarto = {
 <ul>
 <li>HW:
 <ul>
-<li>HW 5 due [whichever date we decided on in the previous slide]</li>
-<li>HW 6 due at 11:59 pm on Fri, Dec 6, but will be accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
+<li>HW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty</li>
+<li>HW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
 </ul>
 </li>
 <li>Final exam:
 <ul>
-<li>In-class only, “cheat sheet” with same specs as usual allowed</li>
-<li>Cumulative – will definitely have material since Exam 2, but there’s so little of it that it won’t be a huge portion of the exam</li>
-<li>Final exam review during reading period – date/time/location TBA</li>
-<li>Office hours during reading period + final exam week – schedule TBA</li>
+<li>Classroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), watch your email for your classroom assignment</li>
+<li>Review: During reading period, date/time TBA</li>
 </ul>
 </li>
-<li>Grades:
-<ul>
-<li>Exam 2 in-class grades posted – can review questions in my office hours anytime before the final</li>
-<li>Exam 2 take-home + project grades to be posted after Thanksgiving break</li>
-</ul>
-</li>
-</ul></section></section><section id="quantifying-uncertainty" class="level1"><h1>Quantifying uncertainty</h1>
-<section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
+</ul></section></section><section id="from-last-time" class="level1"><h1>From last time</h1>
+<section id="goal-setup" class="level2"><h2 class="anchored" data-anchor-id="goal-setup">Goal + setup</h2>
 <p>Find range of plausible values for the slope using bootstrap confidence intervals.</p>
-</section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load packages</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># for data wrangling and visualization</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span> <span class="co"># for modeling</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span> <span class="co"># for Duke Forest dataset</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span> <span class="co"># for pretty axis labels</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://glue.tidyverse.org/">glue</a></span><span class="op">)</span> <span class="co"># for constructing character strings</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co"># for neatly formatted tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="data-houses-in-duke-forest" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-houses-in-duke-forest">Data: Houses in Duke Forest</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Data on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020</li>
-<li>Scraped from Zillow</li>
-<li>Source: <a href="http://openintrostat.github.io/openintro/reference/duke_forest.html"><code>openintro::duke_forest</code></a>
-</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><a href="images/24/duke_forest_home.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/24/duke_forest_home.jpg" class="img-fluid" alt="Home in Duke Forest"></a></p>
-</div>
-</div>
-<p><strong>Goal</strong>: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.</p>
-</section><section id="exploratory-data-analysis" class="level2"><h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
+</section><section id="computing-the-ci-for-the-slope-i" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-i">Computing the CI for the slope I</h2>
+<p>Calculate the observed slope:</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">duke_forest</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">area</span>, y <span class="op">=</span> <span class="va">price</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">"Area (square feet)"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Sale price (USD)"</span>,</span>
-<span>    title <span class="op">=</span> <span class="st">"Price and area of houses in Duke Forest"</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/dollar_format.html">label_dollar</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="modeling" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="modeling">Modeling</h2>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span>, data <span class="op">=</span> <span class="va">duke_forest</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">tidy</span><span class="op">(</span><span class="va">df_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead><tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">116652.33</td>
-<td style="text-align: right;">53302.46</td>
-<td style="text-align: right;">2.19</td>
-<td style="text-align: right;">0.03</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">area</td>
-<td style="text-align: right;">159.48</td>
-<td style="text-align: right;">18.17</td>
-<td style="text-align: right;">8.78</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-</tbody>
-</table>
+<span><span class="va">observed_fit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      estimate
+  &lt;chr&gt;        &lt;dbl&gt;
+1 intercept  116652.
+2 area          159.</code></pre>
 </div>
 </div>
-</section><section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="wooclap">
-<p>Which of the following is the correct interpretation of the <strong>intercept</strong>?</p>
+</section><section id="computing-the-ci-for-the-slope-ii" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</h2>
+<p>Take <code>1000</code> bootstrap samples and fit models to each one:</p>
 <div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead><tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">116652</td>
-<td style="text-align: right;">53302</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">area</td>
-<td style="text-align: right;">159</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">set.seed</span>(<span class="dv">1120</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>boot_fits <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">fit</span>()</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a>boot_fits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,000 × 3
+# Groups:   replicate [1,000]
+   replicate term      estimate
+       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;
+ 1         1 intercept   47819.
+ 2         1 area          191.
+ 3         2 intercept  144645.
+ 4         2 area          134.
+ 5         3 intercept  114008.
+ 6         3 area          161.
+ 7         4 intercept  100639.
+ 8         4 area          166.
+ 9         5 intercept  215264.
+10         5 area          125.
+# ℹ 1,990 more rows</code></pre>
 </div>
 </div>
-<div class="wooclap-choices small">
-<ul>
-<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $116,652, on average.</li>
-<li>Duke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.</li>
-<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.</li>
-<li>Duke Forest houses that are 0 square feet are predicted to sell, for $15,900, on average.</li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
-</figure>
-</div>
-<div class="small">
-<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
-</div>
-</div>
-</div>
-</section><section id="participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate-1">Participate 📱💻</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="wooclap">
-<p>Which of the following is the correct interpretation of the <strong>slope</strong>?</p>
+</section><section id="computing-the-ci-for-the-slope-iii" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</h2>
+<p><strong>Percentile method:</strong> Compute the 95% CI as the middle 95% of the bootstrap distribution:</p>
 <div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead><tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">116652</td>
-<td style="text-align: right;">53302</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">area</td>
-<td style="text-align: right;">159</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  boot_fits,</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span> <span class="co"># default method</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          87.5     216.
+2 intercept -24293.   300646.</code></pre>
 </div>
 </div>
-<div class="wooclap-choices small">
-<ul>
-<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher by $159, on average.</li>
-<li>Duke Forest houses that are 0 square feet are predicted to sell, for $116,652, on average.</li>
-<li>For each additional square foot, the model predicts the sale price of Duke Forest houses to be lower by $15,900, on average.</li>
-<li>Duke Forest houses that are 0 square feet are predicted to sell, for $159, on average.</li>
-</ul>
+</section><section id="precision-vs.-accuracy" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="precision-vs.-accuracy">Precision vs.&nbsp;accuracy</h2>
+<div class="task">
+<p>If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?</p>
+</div>
+<p>. . .</p>
+<p><a href="images/24/garfield.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/24/garfield.png" class="img-fluid"></a></p>
+</section><section id="precision-vs.-accuracy-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="precision-vs.-accuracy-1">Precision vs.&nbsp;accuracy</h2>
+<div class="task">
+<p>How can we get best of both worlds – high precision and high accuracy?</p>
+</div>
+</section><section id="changing-confidence-level" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level">Changing confidence level</h2>
+<div class="task">
+<p>How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  boot_fits,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          87.5     216.
+2 intercept -24293.   300646.</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
-</figure>
+</section><section id="changing-confidence-level-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level-1">Changing confidence level</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Confidence level: 90%</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  boot_fits,</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="at">level =</span> <span class="fl">0.90</span>,</span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          98.7     206.
+2 intercept  -2047.   270878.</code></pre>
 </div>
-<div class="small">
-<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div><div class="column">
+<p><strong>Confidence level: 99%</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb12-2"><a href="#cb12-2"></a>  boot_fits,</span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="at">level =</span> <span class="fl">0.99</span>,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          66.5     230.
+2 intercept -58628.   355215.</code></pre>
 </div>
 </div>
 </div>
-</section><section id="from-sample-to-population" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="from-sample-to-population">From sample to population</h2>
-<blockquote class="blockquote">
-<p>For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</p>
-</blockquote>
-<p><br></p>
-<ul>
-<li>This estimate is valid for the single sample of 98 houses.</li>
-<li>But what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?</li>
-<li>What if we want to say something about the relationship between these variables for all houses in Duke Forest?</li>
-</ul></section><section id="statistical-inference" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="statistical-inference">Statistical inference</h2>
-<ul>
-<li><p><strong>Statistical inference</strong> provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from</p></li>
-<li><p>For our inferences to be valid, the sample should be random and representative of the population we’re interested in</p></li>
-</ul>
-<p><a href="images/24/soup.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/24/soup.png" class="img-fluid" alt="Soup in a bowl"></a></p>
-</section><section id="inference-for-simple-linear-regression" class="level2"><h2 class="anchored" data-anchor-id="inference-for-simple-linear-regression">Inference for simple linear regression</h2>
-<ul>
-<li><p>Calculate a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span> (today)</p></li>
-<li><p>Conduct a hypothesis test for the slope,<span class="math inline">\(\beta_1\)</span> (next week)</p></li>
-</ul></section></section><section id="confidence-interval-for-the-slope" class="level1"><h1>Confidence interval for the slope</h1>
-<section id="confidence-interval" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval">Confidence interval</h2>
+</div>
+</section><section id="recap" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="recap">Recap</h2>
 <div class="incremental">
 <ul class="incremental">
-<li>A plausible range of values for a population parameter is called a <strong>confidence interval</strong>
-</li>
-<li>Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net
-<ul class="incremental">
-<li>We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish</li>
-<li>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</li>
-</ul>
-</li>
+<li><p><strong>Population:</strong> Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. – population size = <span class="math inline">\(N\)</span></p></li>
+<li><p><strong>Sample:</strong> Subset of the population, ideally random and representative – sample size = <span class="math inline">\(n\)</span></p></li>
+<li><p>Sample statistic <span class="math inline">\(\ne\)</span> population parameter, but if the sample is good, it can be a good estimate</p></li>
+<li><p><strong>Statistical inference:</strong> Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process</p></li>
+<li><p>We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population</p></li>
+<li><p>Since we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability</p></li>
 </ul>
 </div>
-</section><section id="confidence-interval-for-the-slope-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval-for-the-slope-1">Confidence interval for the slope</h2>
-<p>A confidence interval will allow us to make a statement like “<em>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.</em>”</p>
+</section><section id="why-do-we-construct-confidence-intervals" class="level2"><h2 class="anchored" data-anchor-id="why-do-we-construct-confidence-intervals">Why do we construct confidence intervals?</h2>
+<p>To estimate plausible values of a parameter of interest, e.g., a slope (<span class="math inline">\(\beta_1\)</span>), a mean (<span class="math inline">\(\mu\)</span>), a proportion (<span class="math inline">\(p\)</span>).</p>
+</section><section id="what-is-bootstrapping" class="level2"><h2 class="anchored" data-anchor-id="what-is-bootstrapping">What is bootstrapping?</h2>
+<ul>
+<li><p>Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.</p></li>
+<li><p>We then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (<span class="math inline">\(b_1\)</span>), a mean (<span class="math inline">\(\bar{x}\)</span>), a proportion (<span class="math inline">\(\hat{p}\)</span>).</p></li>
+</ul></section><section id="what-does-each-observation-on-the-plot-represent" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="what-does-each-observation-on-the-plot-represent">What does each observation on the plot represent?</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Resample, with replacement, from the original data</li>
+<li>Do this <code>reps = 1000</code> times</li>
+<li>Calculate the summary statistic of interest in each of these samples</li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="bootstrapping-for-categorical-data" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-for-categorical-data">Bootstrapping for categorical data</h2>
+<ul>
+<li><p><code>specify(response = x, success = "success level")</code></p></li>
+<li><p><code>calculate(stat = "prop")</code></p></li>
+</ul></section><section id="bootstrapping-for-other-stats" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-for-other-stats">Bootstrapping for other <code>stat</code>s</h2>
+<ul>
+<li><p><code>calculate()</code> documentation: <a href="https://infer.tidymodels.org/reference/calculate.html">infer.tidymodels.org/reference/calculate.html</a></p></li>
+<li><p><strong>infer</strong> pipelines: <a href="https://infer.tidymodels.org/articles/observed_stat_examples.html">infer.tidymodels.org/articles/observed_stat_examples.html</a></p></li>
+</ul></section></section><section id="hypothesis-testing" class="level1"><h1>Hypothesis testing</h1>
+<section id="hypothesis-testing-1" class="level2"><h2 class="anchored" data-anchor-id="hypothesis-testing-1">Hypothesis testing</h2>
+<p>A hypothesis test is a statistical technique used to evaluate <em>competing claims</em> using data</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: An assumption about the population. “There is nothing going on.”</p></li>
+<li><p><strong>Alternative hypothesis,</strong> <span class="math inline">\(H_A\)</span>: A research question about the population. “There is something going on”.</p></li>
+</ul>
+</div>
+<p>. . .</p>
+<p>Note: Hypotheses are always at the population level!</p>
+</section><section id="setting-hypotheses" class="level2"><h2 class="anchored" data-anchor-id="setting-hypotheses">Setting hypotheses</h2>
+<ul>
+<li><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, <span class="math inline">\(\beta_1 = 0\)</span>.</p></li>
+<li><p><strong>Alternative hypothesis,</strong> <span class="math inline">\(H_A\)</span>: “There is something going on”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, <span class="math inline">\(\beta_1 \ne 0\)</span>.</p></li>
+</ul></section><section id="hypothesis-testing-mindset" class="level2"><h2 class="anchored" data-anchor-id="hypothesis-testing-mindset">Hypothesis testing “mindset”</h2>
+<ul>
+<li><p>Assume you live in a world where null hypothesis is true: <span class="math inline">\(\beta_1 = 0\)</span>.</p></li>
+<li><p>Ask yourself how likely you are to observe the sample statistic, or something even more extreme, in this world:</p></li>
+</ul>
+<p><span class="math display">\[P \big( b_1 \leq 159~or~b_1 \geq 159 ~|~ \beta_1 = 0 \big)\]</span></p>
+</section><section id="hypothesis-testing-as-a-court-trial" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="hypothesis-testing-as-a-court-trial">Hypothesis testing as a court trial</h2>
+<ul>
+<li><p><strong>Null hypothesis</strong>, <span class="math inline">\(H_0\)</span>: Defendant is innocent</p></li>
+<li><p><strong>Alternative hypothesis</strong>, <span class="math inline">\(H_A\)</span>: Defendant is guilty</p></li>
+</ul>
 <p>. . .</p>
 <ul>
-<li><p>Should X be $10? $100? $1000?</p></li>
-<li><p>If we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?</p></li>
-<li><p>The answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is</p></li>
-<li><p>We need a way to quantify the variability of the sample statistic</p></li>
-</ul></section><section id="quantify-the-variability-of-the-slope" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="quantify-the-variability-of-the-slope">Quantify the variability of the slope</h2>
-<p><strong>for estimation</strong></p>
-<div class="incremental">
-<ul class="incremental">
-<li>Two approaches:
-<ol class="incremental" type="1">
-<li>Via simulation (what we’ll do in this course)</li>
-<li>Via mathematical models (what you can learn about in future courses)</li>
-</ol>
-</li>
 <li>
-<strong>Bootstrapping</strong> to quantify the variability of the slope for the purpose of estimation:
+<strong>Present the evidence:</strong> Collect data</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>Judge the evidence:</strong> “Could these data plausibly have happened by chance if the null hypothesis were true?”
+<ul>
+<li>Yes: Fail to reject <span class="math inline">\(H_0\)</span>
+</li>
+<li>No: Reject <span class="math inline">\(H_0\)</span>
+</li>
+</ul>
+</li>
+</ul></section><section id="hypothesis-testing-framework" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="hypothesis-testing-framework">Hypothesis testing framework</h2>
+<div class="incremental">
 <ul class="incremental">
-<li>Bootstrap new samples from the original sample</li>
-<li>Fit models to each of the samples and estimate the slope</li>
-<li>Use features of the distribution of the bootstrapped slopes to construct a confidence interval</li>
+<li><p>Start with a null hypothesis, <span class="math inline">\(H_0\)</span>, that represents the status quo</p></li>
+<li><p>Set an alternative hypothesis, <span class="math inline">\(H_A\)</span>, that represents the research question, i.e.&nbsp;what we’re testing for</p></li>
+<li>
+<p>Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a <strong>p-value</strong> (probability of observed or more extreme outcome given that the null hypothesis is true)</p>
+<ul class="incremental">
+<li>if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis</li>
+<li>if they do, then reject the null hypothesis in favor of the alternative</li>
 </ul>
 </li>
 </ul>
 </div>
-</section><section id="bootstrap-sample-1" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-1">Bootstrap sample 1</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+</section><section id="calculate-observed-slope" class="level2"><h2 class="anchored" data-anchor-id="calculate-observed-slope">Calculate observed slope</h2>
+<p>… which we have already done:</p>
 <div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">observed_fit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      estimate
+  &lt;chr&gt;        &lt;dbl&gt;
+1 intercept  116652.
+2 area          159.</code></pre>
+</div>
+</div>
+</section><section id="simulate-null-distribution" class="level2"><h2 class="anchored" data-anchor-id="simulate-null-distribution">Simulate null distribution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">set.seed</span>(<span class="dv">20251202</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a>null_dist <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="view-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="view-null-distribution">View null distribution</h2>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,000 × 3
+# Groups:   replicate [1,000]
+   replicate term       estimate
+       &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;
+ 1         1 intercept 594889.  
+ 2         1 area         -12.6 
+ 3         2 intercept 477930.  
+ 4         2 area          29.5 
+ 5         3 intercept 581950.  
+ 6         3 area          -7.93
+ 7         4 intercept 487542.  
+ 8         4 area          26.0 
+ 9         5 intercept 643406.  
+10         5 area         -30.0 
+# ℹ 1,990 more rows</code></pre>
+</div>
+</div>
+</section><section id="visualize-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="visualize-null-distribution">Visualize null distribution</h2>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
+</section><section id="visualize-null-distribution-p-value" class="level2"><h2 class="anchored" data-anchor-id="visualize-null-distribution-p-value">Visualize null distribution + p-value</h2>
+<div class="cell" data-output-location="column">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">shade_p_value</span><span class="op">(</span></span>
+<span>    obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, </span>
+<span>    direction <span class="op">=</span> <span class="st">"two-sided"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
-</section><section id="bootstrap-sample-2" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-2">Bootstrap sample 2</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+</section><section id="get-p-value" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="get-p-value">Get p-value</h2>
 <div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an
+approximation based on the number of `reps` chosen in the
+`generate()` step.
+ℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.
+Please be cautious in reporting a p-value of 0. This result is an
+approximation based on the number of `reps` chosen in the
+`generate()` step.
+ℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      p_value
+  &lt;chr&gt;       &lt;dbl&gt;
+1 area            0
+2 intercept       0</code></pre>
 </div>
 </div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-sample-3" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-3">Bootstrap sample 3</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-sample-4" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-4">Bootstrap sample 4</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-sample-5" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-sample-5">Bootstrap sample 5</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>. . .</p>
-<p><em>so on and so forth…</em></p>
-</section><section id="bootstrap-samples-1---5" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-samples-1---5">Bootstrap samples 1 - 5</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-17-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrap-samples-1---100" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-samples-1---100">Bootstrap samples 1 - 100</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-21-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>. . .</p>
-<div class="question">
-<p>Look familiar?</p>
-</div>
-</section><section id="look-familiar" class="level2"><h2 class="anchored" data-anchor-id="look-familiar">Look familiar?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="slopes-of-bootstrap-samples" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="slopes-of-bootstrap-samples">Slopes of bootstrap samples</h2>
+</section><section id="make-a-decision" class="level2"><h2 class="anchored" data-anchor-id="make-a-decision">Make a decision</h2>
 <div class="task">
-<p><strong>Fill in the blank:</strong> For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-24-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="slopes-of-bootstrap-samples-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</h2>
-<div class="task">
-<p><strong>Fill in the blank:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-25-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="confidence-level" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-level">Confidence level</h2>
-<div class="task">
-<p>How confident are you that the true slope is between $0 and $250? How about $150 and $170? How about $90 and $210?</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-26-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="confidence-interval-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval-1">95% confidence interval</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-27-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="24-quantifying-uncertainty_files/figure-revealjs/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="incremental">
-<ul class="incremental">
-<li>A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution</li>
-<li>We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
-</ul>
-</div>
-</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
-<section id="ae-15-duke-forest-bootstrap" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-15-duke-forest-bootstrap">ae-15-duke-forest-bootstrap</h2>
-<div class="appex">
-<ul>
-<li><p>Go to your ae project in RStudio.</p></li>
-<li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-15-duke-forest-bootstrap.qmd</em>.</p></li>
-<li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
-</ul>
+<p>Based on the p-value calculated, what is the conclusion of the hypothesis test?</p>
 </div>
 
 
@@ -1636,7 +1464,7 @@ window.Quarto = {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/24-quantifying-uncertainty.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/25-making-decisions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #FFBE98;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
