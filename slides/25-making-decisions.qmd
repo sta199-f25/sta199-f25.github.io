@@ -4,7 +4,7 @@ subtitle: "Lecture 25"
 date: "2025-12-02"
 format: 
   revealjs: 
-    output-file: 25-quantifying-uncertainty-slides.html
+    output-file: 25-making-decisions-slides.html
     footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
     theme: slides.scss
     transition: fade
