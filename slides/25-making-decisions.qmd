@@ -325,7 +325,7 @@ Hypotheses are always at the population level!
 
 -   Ask yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: 
 
-$$P \big( b_1 \leq 159~or~b_1 \geq 159 ~|~ \beta_1 = 0 \big)$$
+$$P \big( b_1 \leq -159~or~b_1 \geq 159 ~|~ \beta_1 = 0 \big)$$
 
 ## Hypothesis testing as a court trial {.smaller}
 
