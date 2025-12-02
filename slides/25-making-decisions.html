@@ -134,12 +134,12 @@ window.Quarto = {
 </script>
 <meta property="og:title" content="Making decisions – STA 199">
 <meta property="og:description" content="Lecture 25">
-<meta property="og:image" content="https://sta199-f25.github.io/slides/images/wooclap-qr.png">
+<meta property="og:image" content="https://sta199-f25.github.io/slides/images/25/ta-1.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:height" content="888">
-<meta property="og:image:width" content="866">
+<meta property="og:image:height" content="1340">
+<meta property="og:image:width" content="702">
 </head>
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -561,27 +561,29 @@ window.Quarto = {
 <li>
 <a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up">Warm-up</a>
   <ul class="collapse">
-<li><a href="#while-you-wait-participate" id="toc-while-you-wait-participate" class="nav-link" data-scroll-target="#while-you-wait-participate">While you wait: Participate 📱💻</a></li>
+<li><a href="#its-giving-tuesday-give-feedback" id="toc-its-giving-tuesday-give-feedback" class="nav-link" data-scroll-target="#its-giving-tuesday-give-feedback">It’s Giving Tuesday – Give feedback!</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
   </ul>
 </li>
   <li>
 <a href="#from-last-time" id="toc-from-last-time" class="nav-link" data-scroll-target="#from-last-time">From last time</a>
   <ul class="collapse">
-<li><a href="#goal-setup" id="toc-goal-setup" class="nav-link" data-scroll-target="#goal-setup">Goal + setup</a></li>
-  <li><a href="#computing-the-ci-for-the-slope-i" id="toc-computing-the-ci-for-the-slope-i" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-i">Computing the CI for the slope I</a></li>
-  <li><a href="#computing-the-ci-for-the-slope-ii" id="toc-computing-the-ci-for-the-slope-ii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</a></li>
-  <li><a href="#computing-the-ci-for-the-slope-iii" id="toc-computing-the-ci-for-the-slope-iii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</a></li>
-  <li><a href="#precision-vs.-accuracy" id="toc-precision-vs.-accuracy" class="nav-link" data-scroll-target="#precision-vs.-accuracy">Precision vs.&nbsp;accuracy</a></li>
-  <li><a href="#precision-vs.-accuracy-1" id="toc-precision-vs.-accuracy-1" class="nav-link" data-scroll-target="#precision-vs.-accuracy-1">Precision vs.&nbsp;accuracy</a></li>
-  <li><a href="#changing-confidence-level" id="toc-changing-confidence-level" class="nav-link" data-scroll-target="#changing-confidence-level">Changing confidence level</a></li>
-  <li><a href="#changing-confidence-level-1" id="toc-changing-confidence-level-1" class="nav-link" data-scroll-target="#changing-confidence-level-1">Changing confidence level</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+<li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate 📱💻</a></li>
   <li><a href="#why-do-we-construct-confidence-intervals" id="toc-why-do-we-construct-confidence-intervals" class="nav-link" data-scroll-target="#why-do-we-construct-confidence-intervals">Why do we construct confidence intervals?</a></li>
   <li><a href="#what-is-bootstrapping" id="toc-what-is-bootstrapping" class="nav-link" data-scroll-target="#what-is-bootstrapping">What is bootstrapping?</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-i" id="toc-computing-the-ci-for-the-slope-i" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-i">Computing the CI for the slope I</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-ii" id="toc-computing-the-ci-for-the-slope-ii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</a></li>
   <li><a href="#what-does-each-observation-on-the-plot-represent" id="toc-what-does-each-observation-on-the-plot-represent" class="nav-link" data-scroll-target="#what-does-each-observation-on-the-plot-represent">What does each observation on the plot represent?</a></li>
-  <li><a href="#bootstrapping-for-categorical-data" id="toc-bootstrapping-for-categorical-data" class="nav-link" data-scroll-target="#bootstrapping-for-categorical-data">Bootstrapping for categorical data</a></li>
-  <li><a href="#bootstrapping-for-other-stats" id="toc-bootstrapping-for-other-stats" class="nav-link" data-scroll-target="#bootstrapping-for-other-stats">Bootstrapping for other <code>stat</code>s</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-iii" id="toc-computing-the-ci-for-the-slope-iii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</a></li>
+  <li><a href="#participate-1" id="toc-participate-1" class="nav-link" data-scroll-target="#participate-1">Participate 📱💻</a></li>
+  <li><a href="#precision-vs.-accuracy" id="toc-precision-vs.-accuracy" class="nav-link" data-scroll-target="#precision-vs.-accuracy">Precision vs.&nbsp;accuracy</a></li>
+  <li><a href="#precision-vs.-accuracy-1" id="toc-precision-vs.-accuracy-1" class="nav-link" data-scroll-target="#precision-vs.-accuracy-1">Precision vs.&nbsp;accuracy</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#an-alternative-approach" id="toc-an-alternative-approach" class="nav-link" data-scroll-target="#an-alternative-approach">An alternative approach</a></li>
+  <li><a href="#margin-of-error" id="toc-margin-of-error" class="nav-link" data-scroll-target="#margin-of-error">Margin of error</a></li>
+  <li><a href="#on-the-horizon" id="toc-on-the-horizon" class="nav-link" data-scroll-target="#on-the-horizon">On the horizon…</a></li>
+  <li><a href="#syntax-notes" id="toc-syntax-notes" class="nav-link" data-scroll-target="#syntax-notes">Syntax notes</a></li>
   </ul>
 </li>
   <li>
@@ -601,10 +603,10 @@ window.Quarto = {
   <li><a href="#make-a-decision" id="toc-make-a-decision" class="nav-link" data-scroll-target="#make-a-decision">Make a decision</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/25-making-decisions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="25-quantifying-uncertainty-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/edit/main/slides/25-making-decisions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-f25/sta199-f25.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="25-making-decisions-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Making decisions</h1>
 <p class="subtitle lead">Lecture 25</p>
 </div>
@@ -640,14 +642,49 @@ window.Quarto = {
 
 
 </header><section id="warm-up" class="level1"><h1>Warm-up</h1>
-<section id="while-you-wait-participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="while-you-wait-participate">While you wait: Participate 📱💻</h2>
+<section id="its-giving-tuesday-give-feedback" class="level2"><h2 class="anchored" data-anchor-id="its-giving-tuesday-give-feedback">It’s Giving Tuesday – Give feedback!</h2>
+<div class="columns">
+<div class="column xsmall" style="width:30%;">
+<ul>
+<li><p>Take 2 minutes to fill out the TA evaluation form – link in your email! Due Monday, December 8th.</p></li>
+<li><p>Nominate a TA for the StatSci TA of the Year award by sending an email to <a href="mailto:dus@stat.duke.edu" class="email">dus@stat.duke.edu</a> with a brief narrative for your nomination.</p></li>
+</ul>
+</div><div class="column" style="width:70%;">
+<p><img src="images/25/ta-1.png" class="img-fluid" width="200"><img src="images/25/ta-2.png" class="img-fluid" width="200"><img src="images/25/ta-3.png" class="img-fluid" width="200"></p>
+</div>
+</div>
+<div class="xsmall">
+<ul>
+<li>Please also fill out the course evaluation (on DukeHub) as well, I’d love to your feedback!</li>
+</ul>
+</div>
+</section><section id="announcements" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li>HW:
+<ul>
+<li>HW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty</li>
+<li>HW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
+</ul>
+</li>
+<li>Final exam:
+<ul>
+<li>Classroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), check your email for your classroom assignment</li>
+<li>Review: During reading period, date/time TBA</li>
+<li>Office hours: TBA soon as review session is scheduled</li>
+</ul>
+</li>
+</ul></section></section><section id="from-last-time" class="level1 page-columns page-full"><h1>From last time</h1>
+<section id="participate" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate">Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>…</p>
+<p>Which of the following is true about confidence intervals?</p>
 <div class="wooclap-choices">
 <ul>
-<li>…</li>
+<li>They’re for a sample statistic.</li>
+<li>They’re for a population parameter.</li>
+<li>They can be either for both a sample statistic or a population parameter.</li>
+<li>They’re neither for a sample statistic nor a population parameter.</li>
 </ul>
 </div>
 </div>
@@ -661,23 +698,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="announcements" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="announcements">Announcements</h2>
+</section><section id="why-do-we-construct-confidence-intervals" class="level2"><h2 class="anchored" data-anchor-id="why-do-we-construct-confidence-intervals">Why do we construct confidence intervals?</h2>
+<p>To estimate plausible values of a parameter of interest, e.g.,</p>
 <ul>
-<li>HW:
+<li>a slope (<span class="math inline">\(\beta_1\)</span>)</li>
+<li>a mean (<span class="math inline">\(\mu\)</span>)</li>
+<li>a proportion (<span class="math inline">\(p\)</span>)</li>
+<li>etc.</li>
+</ul></section><section id="what-is-bootstrapping" class="level2"><h2 class="anchored" data-anchor-id="what-is-bootstrapping">What is bootstrapping?</h2>
 <ul>
-<li>HW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty</li>
-<li>HW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
-</ul>
-</li>
-<li>Final exam:
-<ul>
-<li>Classroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), watch your email for your classroom assignment</li>
-<li>Review: During reading period, date/time TBA</li>
-</ul>
-</li>
-</ul></section></section><section id="from-last-time" class="level1"><h1>From last time</h1>
-<section id="goal-setup" class="level2"><h2 class="anchored" data-anchor-id="goal-setup">Goal + setup</h2>
-<p>Find range of plausible values for the slope using bootstrap confidence intervals.</p>
+<li><p>Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.</p></li>
+<li><p>We then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (<span class="math inline">\(b_1\)</span>), a mean (<span class="math inline">\(\bar{x}\)</span>), a proportion (<span class="math inline">\(\hat{p}\)</span>).</p></li>
+</ul></section><section id="setup" class="level2"><h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
@@ -728,6 +760,25 @@ window.Quarto = {
 # ℹ 1,990 more rows</code></pre>
 </div>
 </div>
+</section><section id="what-does-each-observation-on-the-plot-represent" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="what-does-each-observation-on-the-plot-represent">What does each observation on the plot represent?</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Resample, with replacement, from the original data</li>
+<li>Do this <code>reps = 1000</code> times</li>
+<li>Calculate the summary statistic of interest in each of these samples</li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="computing-the-ci-for-the-slope-iii" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</h2>
 <p><strong>Percentile method:</strong> Compute the 95% CI as the middle 95% of the bootstrap distribution:</p>
 <div class="cell">
@@ -745,72 +796,38 @@ window.Quarto = {
 2 intercept -24293.   300646.</code></pre>
 </div>
 </div>
+</section><section id="participate-1" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="participate-1">Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>If you want to be very certain (i.e., more confident) that you capture the population parameter, should we use a wider or a narrower interval?</p>
+<div class="wooclap-choices">
+<ul>
+<li>Wider</li>
+<li>Narrower</li>
+<li>Depends on the situation</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/wooclap-qr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/wooclap-qr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></a></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div>
+</div>
 </section><section id="precision-vs.-accuracy" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="precision-vs.-accuracy">Precision vs.&nbsp;accuracy</h2>
 <div class="task">
-<p>If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?</p>
+<p>What drawbacks are associated with using a wider interval?</p>
 </div>
 <p>. . .</p>
-<p><a href="images/24/garfield.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/24/garfield.png" class="img-fluid"></a></p>
+<p><a href="images/25/garfield.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/25/garfield.png" class="img-fluid"></a></p>
 </section><section id="precision-vs.-accuracy-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="precision-vs.-accuracy-1">Precision vs.&nbsp;accuracy</h2>
 <div class="task">
 <p>How can we get best of both worlds – high precision and high accuracy?</p>
-</div>
-</section><section id="changing-confidence-level" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level">Changing confidence level</h2>
-<div class="task">
-<p>How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?</p>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb8-2"><a href="#cb8-2"></a>  boot_fits,</span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
-<span id="cb8-4"><a href="#cb8-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  term      lower_ci upper_ci
-  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
-1 area          87.5     216.
-2 intercept -24293.   300646.</code></pre>
-</div>
-</div>
-</section><section id="changing-confidence-level-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level-1">Changing confidence level</h2>
-<div class="columns">
-<div class="column">
-<p><strong>Confidence level: 90%</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb10-2"><a href="#cb10-2"></a>  boot_fits,</span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="at">level =</span> <span class="fl">0.90</span>,</span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  term      lower_ci upper_ci
-  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
-1 area          98.7     206.
-2 intercept  -2047.   270878.</code></pre>
-</div>
-</div>
-</div><div class="column">
-<p><strong>Confidence level: 99%</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb12-2"><a href="#cb12-2"></a>  boot_fits,</span>
-<span id="cb12-3"><a href="#cb12-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="at">level =</span> <span class="fl">0.99</span>,</span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  term      lower_ci upper_ci
-  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
-1 area          66.5     230.
-2 intercept -58628.   355215.</code></pre>
-</div>
-</div>
-</div>
 </div>
 </section><section id="recap" class="level2 xsmall"><h2 class="xsmall anchored" data-anchor-id="recap">Recap</h2>
 <div class="incremental">
@@ -823,41 +840,59 @@ window.Quarto = {
 <li><p>Since we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability</p></li>
 </ul>
 </div>
-</section><section id="why-do-we-construct-confidence-intervals" class="level2"><h2 class="anchored" data-anchor-id="why-do-we-construct-confidence-intervals">Why do we construct confidence intervals?</h2>
-<p>To estimate plausible values of a parameter of interest, e.g., a slope (<span class="math inline">\(\beta_1\)</span>), a mean (<span class="math inline">\(\mu\)</span>), a proportion (<span class="math inline">\(p\)</span>).</p>
-</section><section id="what-is-bootstrapping" class="level2"><h2 class="anchored" data-anchor-id="what-is-bootstrapping">What is bootstrapping?</h2>
-<ul>
-<li><p>Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.</p></li>
-<li><p>We then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (<span class="math inline">\(b_1\)</span>), a mean (<span class="math inline">\(\bar{x}\)</span>), a proportion (<span class="math inline">\(\hat{p}\)</span>).</p></li>
-</ul></section><section id="what-does-each-observation-on-the-plot-represent" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="what-does-each-observation-on-the-plot-represent">What does each observation on the plot represent?</h2>
-<div class="columns">
-<div class="column">
-<ul>
-<li>Resample, with replacement, from the original data</li>
-<li>Do this <code>reps = 1000</code> times</li>
-<li>Calculate the summary statistic of interest in each of these samples</li>
+</section><section id="an-alternative-approach" class="level2"><h2 class="anchored" data-anchor-id="an-alternative-approach">An alternative approach</h2>
+<p><strong>Standard error method:</strong> Compute the 95% CI as the observed slope plus/minus ~2 * standard error (the standard deviation of the bootstrap distribution):</p>
+<div class="cell" data-output-location="column">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  boot_fits,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="at">point_estimate =</span> observed_fit,</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="at">type =</span> <span class="st">"se"</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          95.5     223.
+2 intercept -42990.   276295.</code></pre>
+</div>
+</div>
+</section><section id="margin-of-error" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="margin-of-error">Margin of error</h2>
+<p>That quantity (~2 * standard error) is called the <strong>margin of error</strong>, e.g.,</p>
+<p><a href="images/25/cnn-poll.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/25/cnn-poll.png" class="img-fluid"></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Source: <a href="https://www.cnn.com/polling/approval/trump-polls" class="uri">https://www.cnn.com/polling/approval/trump-polls</a></p>
+</div></div></section><section id="on-the-horizon" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="on-the-horizon">On the horizon…</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>In this class you learned how to construct a confidence interval (i.e., calculate the margin of error) using a computational method called bootstrapping.</p></li>
+<li><p>The bootstrap distributions you constructed (given enough <code>reps</code> – repeated samples) were unimodal and symmetric around the observed statistic.</p></li>
+<li><p>This is not a happenstance! And there is theory behind it… It’s called the <strong>Central Limit Theorem</strong>!</p></li>
+<li><p>You can learn about the Central Limit Theorem and theory-based methods for constructing confidence intervals (and other inference procedures) in future stats courses.</p></li>
 </ul>
-</div><div class="column">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></a></p>
-</figure>
 </div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="bootstrapping-for-categorical-data" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-for-categorical-data">Bootstrapping for categorical data</h2>
+</section><section id="syntax-notes" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="syntax-notes">Syntax notes</h2>
+<ul>
+<li>
+<p>Bootstrapping for categorical data</p>
 <ul>
 <li><p><code>specify(response = x, success = "success level")</code></p></li>
 <li><p><code>calculate(stat = "prop")</code></p></li>
-</ul></section><section id="bootstrapping-for-other-stats" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-for-other-stats">Bootstrapping for other <code>stat</code>s</h2>
+</ul>
+</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<p>Bootstrapping for other <code>stat</code>s</p>
 <ul>
 <li><p><code>calculate()</code> documentation: <a href="https://infer.tidymodels.org/reference/calculate.html">infer.tidymodels.org/reference/calculate.html</a></p></li>
 <li><p><strong>infer</strong> pipelines: <a href="https://infer.tidymodels.org/articles/observed_stat_examples.html">infer.tidymodels.org/articles/observed_stat_examples.html</a></p></li>
+</ul>
+</li>
 </ul></section></section><section id="hypothesis-testing" class="level1"><h1>Hypothesis testing</h1>
-<section id="hypothesis-testing-1" class="level2"><h2 class="anchored" data-anchor-id="hypothesis-testing-1">Hypothesis testing</h2>
+<section id="hypothesis-testing-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="hypothesis-testing-1">Hypothesis testing</h2>
 <p>A hypothesis test is a statistical technique used to evaluate <em>competing claims</em> using data</p>
 <div class="incremental">
 <ul class="incremental">
@@ -866,7 +901,19 @@ window.Quarto = {
 </ul>
 </div>
 <p>. . .</p>
-<p>Note: Hypotheses are always at the population level!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hypotheses are always at the population level!</p>
+</div>
+</div>
 </section><section id="setting-hypotheses" class="level2"><h2 class="anchored" data-anchor-id="setting-hypotheses">Setting hypotheses</h2>
 <ul>
 <li><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, <span class="math inline">\(\beta_1 = 0\)</span>.</p></li>
@@ -915,7 +962,7 @@ window.Quarto = {
 </section><section id="calculate-observed-slope" class="level2"><h2 class="anchored" data-anchor-id="calculate-observed-slope">Calculate observed slope</h2>
 <p>… which we have already done:</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -930,16 +977,16 @@ window.Quarto = {
 </div>
 </section><section id="simulate-null-distribution" class="level2"><h2 class="anchored" data-anchor-id="simulate-null-distribution">Simulate null distribution</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">set.seed</span>(<span class="dv">20251202</span>)</span>
-<span id="cb16-2"><a href="#cb16-2"></a>null_dist <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">set.seed</span>(<span class="dv">20251202</span>)</span>
+<span id="cb12-2"><a href="#cb12-2"></a>null_dist <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="view-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="view-null-distribution">View null distribution</h2>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2,000 × 3
 # Groups:   replicate [1,000]
@@ -960,31 +1007,31 @@ window.Quarto = {
 </div>
 </section><section id="visualize-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="visualize-null-distribution">Visualize null distribution</h2>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section><section id="visualize-null-distribution-p-value" class="level2"><h2 class="anchored" data-anchor-id="visualize-null-distribution-p-value">Visualize null distribution + p-value</h2>
 <div class="cell" data-output-location="column">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">shade_p_value</span><span class="op">(</span></span>
 <span>    obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, </span>
 <span>    direction <span class="op">=</span> <span class="st">"two-sided"</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="960"></a></p>
+<figure class="figure"><p><a href="25-making-decisions_files/figure-revealjs/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="25-making-decisions_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section><section id="get-p-value" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="get-p-value">Get p-value</h2>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an

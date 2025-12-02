@@ -3440,197 +3440,211 @@
     "text": "Nonlinear relationships"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#while-you-wait-participate",
-    "href": "slides/25-quantifying-uncertainty-slides.html#while-you-wait-participate",
+    "objectID": "slides/25-making-decisions-slides.html#its-giving-tuesday-give-feedback",
+    "href": "slides/25-making-decisions-slides.html#its-giving-tuesday-give-feedback",
     "title": "Making decisions",
-    "section": "While you wait: Participate 📱💻",
-    "text": "While you wait: Participate 📱💻\n\n\n\n…\n\n\n…\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "section": "It’s Giving Tuesday – Give feedback!",
+    "text": "It’s Giving Tuesday – Give feedback!\n\n\n\nTake 2 minutes to fill out the TA evaluation form – link in your email! Due Monday, December 8th.\nNominate a TA for the StatSci TA of the Year award by sending an email to dus@stat.duke.edu with a brief narrative for your nomination.\n\n\n\n\n\n\nPlease also fill out the course evaluation (on DukeHub) as well, I’d love to your feedback!"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#announcements",
-    "href": "slides/25-quantifying-uncertainty-slides.html#announcements",
+    "objectID": "slides/25-making-decisions-slides.html#announcements",
+    "href": "slides/25-making-decisions-slides.html#announcements",
     "title": "Making decisions",
     "section": "Announcements",
-    "text": "Announcements\n\nHW:\n\nHW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty\nHW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nClassroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), watch your email for your classroom assignment\nReview: During reading period, date/time TBA"
+    "text": "Announcements\n\nHW:\n\nHW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty\nHW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nClassroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), check your email for your classroom assignment\nReview: During reading period, date/time TBA\nOffice hours: TBA soon as review session is scheduled"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#goal-setup",
-    "href": "slides/25-quantifying-uncertainty-slides.html#goal-setup",
+    "objectID": "slides/25-making-decisions-slides.html#participate",
+    "href": "slides/25-making-decisions-slides.html#participate",
     "title": "Making decisions",
-    "section": "Goal + setup",
-    "text": "Goal + setup\nFind range of plausible values for the slope using bootstrap confidence intervals.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is true about confidence intervals?\n\n\nThey’re for a sample statistic.\nThey’re for a population parameter.\nThey can be either for both a sample statistic or a population parameter.\nThey’re neither for a sample statistic nor a population parameter.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#computing-the-ci-for-the-slope-i",
-    "href": "slides/25-quantifying-uncertainty-slides.html#computing-the-ci-for-the-slope-i",
-    "title": "Making decisions",
-    "section": "Computing the CI for the slope I",
-    "text": "Computing the CI for the slope I\nCalculate the observed slope:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159."
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#computing-the-ci-for-the-slope-ii",
-    "href": "slides/25-quantifying-uncertainty-slides.html#computing-the-ci-for-the-slope-ii",
-    "title": "Making decisions",
-    "section": "Computing the CI for the slope II",
-    "text": "Computing the CI for the slope II\nTake 1000 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 2,000 × 3\n# Groups:   replicate [1,000]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 1,990 more rows"
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#computing-the-ci-for-the-slope-iii",
-    "href": "slides/25-quantifying-uncertainty-slides.html#computing-the-ci-for-the-slope-iii",
-    "title": "Making decisions",
-    "section": "Computing the CI for the slope III",
-    "text": "Computing the CI for the slope III\nPercentile method: Compute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.95,\n  type = \"percentile\" # default method\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          87.5     216.\n2 intercept -24293.   300646."
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#precision-vs.-accuracy",
-    "href": "slides/25-quantifying-uncertainty-slides.html#precision-vs.-accuracy",
-    "title": "Making decisions",
-    "section": "Precision vs. accuracy",
-    "text": "Precision vs. accuracy\n\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?"
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#precision-vs.-accuracy-1",
-    "href": "slides/25-quantifying-uncertainty-slides.html#precision-vs.-accuracy-1",
-    "title": "Making decisions",
-    "section": "Precision vs. accuracy",
-    "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?"
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#changing-confidence-level",
-    "href": "slides/25-quantifying-uncertainty-slides.html#changing-confidence-level",
-    "title": "Making decisions",
-    "section": "Changing confidence level",
-    "text": "Changing confidence level\n\nHow would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?\n\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.95,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          87.5     216.\n2 intercept -24293.   300646."
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#changing-confidence-level-1",
-    "href": "slides/25-quantifying-uncertainty-slides.html#changing-confidence-level-1",
-    "title": "Making decisions",
-    "section": "Changing confidence level",
-    "text": "Changing confidence level\n\n\nConfidence level: 90%\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.90,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          98.7     206.\n2 intercept  -2047.   270878.\n\n\n\nConfidence level: 99%\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.99,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          66.5     230.\n2 intercept -58628.   355215."
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#recap",
-    "href": "slides/25-quantifying-uncertainty-slides.html#recap",
-    "title": "Making decisions",
-    "section": "Recap",
-    "text": "Recap\n\nPopulation: Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. – population size = \\(N\\)\nSample: Subset of the population, ideally random and representative – sample size = \\(n\\)\nSample statistic \\(\\ne\\) population parameter, but if the sample is good, it can be a good estimate\nStatistical inference: Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process\nWe report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population\nSince we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability"
-  },
-  {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#why-do-we-construct-confidence-intervals",
-    "href": "slides/25-quantifying-uncertainty-slides.html#why-do-we-construct-confidence-intervals",
+    "objectID": "slides/25-making-decisions-slides.html#why-do-we-construct-confidence-intervals",
+    "href": "slides/25-making-decisions-slides.html#why-do-we-construct-confidence-intervals",
     "title": "Making decisions",
     "section": "Why do we construct confidence intervals?",
-    "text": "Why do we construct confidence intervals?\nTo estimate plausible values of a parameter of interest, e.g., a slope (\\(\\beta_1\\)), a mean (\\(\\mu\\)), a proportion (\\(p\\))."
+    "text": "Why do we construct confidence intervals?\nTo estimate plausible values of a parameter of interest, e.g.,\n\na slope (\\(\\beta_1\\))\na mean (\\(\\mu\\))\na proportion (\\(p\\))\netc."
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#what-is-bootstrapping",
-    "href": "slides/25-quantifying-uncertainty-slides.html#what-is-bootstrapping",
+    "objectID": "slides/25-making-decisions-slides.html#what-is-bootstrapping",
+    "href": "slides/25-making-decisions-slides.html#what-is-bootstrapping",
     "title": "Making decisions",
     "section": "What is bootstrapping?",
     "text": "What is bootstrapping?\n\nBootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.\nWe then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (\\(b_1\\)), a mean (\\(\\bar{x}\\)), a proportion (\\(\\hat{p}\\))."
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#what-does-each-observation-on-the-plot-represent",
-    "href": "slides/25-quantifying-uncertainty-slides.html#what-does-each-observation-on-the-plot-represent",
+    "objectID": "slides/25-making-decisions-slides.html#setup",
+    "href": "slides/25-making-decisions-slides.html#setup",
+    "title": "Making decisions",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#computing-the-ci-for-the-slope-i",
+    "href": "slides/25-making-decisions-slides.html#computing-the-ci-for-the-slope-i",
+    "title": "Making decisions",
+    "section": "Computing the CI for the slope I",
+    "text": "Computing the CI for the slope I\nCalculate the observed slope:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159."
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#computing-the-ci-for-the-slope-ii",
+    "href": "slides/25-making-decisions-slides.html#computing-the-ci-for-the-slope-ii",
+    "title": "Making decisions",
+    "section": "Computing the CI for the slope II",
+    "text": "Computing the CI for the slope II\nTake 1000 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 2,000 × 3\n# Groups:   replicate [1,000]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 1,990 more rows"
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#what-does-each-observation-on-the-plot-represent",
+    "href": "slides/25-making-decisions-slides.html#what-does-each-observation-on-the-plot-represent",
     "title": "Making decisions",
     "section": "What does each observation on the plot represent?",
     "text": "What does each observation on the plot represent?\n\n\n\nResample, with replacement, from the original data\nDo this reps = 1000 times\nCalculate the summary statistic of interest in each of these samples"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#bootstrapping-for-categorical-data",
-    "href": "slides/25-quantifying-uncertainty-slides.html#bootstrapping-for-categorical-data",
+    "objectID": "slides/25-making-decisions-slides.html#computing-the-ci-for-the-slope-iii",
+    "href": "slides/25-making-decisions-slides.html#computing-the-ci-for-the-slope-iii",
     "title": "Making decisions",
-    "section": "Bootstrapping for categorical data",
-    "text": "Bootstrapping for categorical data\n\nspecify(response = x, success = \"success level\")\ncalculate(stat = \"prop\")"
+    "section": "Computing the CI for the slope III",
+    "text": "Computing the CI for the slope III\nPercentile method: Compute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.95,\n  type = \"percentile\" # default method\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          87.5     216.\n2 intercept -24293.   300646."
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#bootstrapping-for-other-stats",
-    "href": "slides/25-quantifying-uncertainty-slides.html#bootstrapping-for-other-stats",
+    "objectID": "slides/25-making-decisions-slides.html#participate-1",
+    "href": "slides/25-making-decisions-slides.html#participate-1",
     "title": "Making decisions",
-    "section": "Bootstrapping for other stats",
-    "text": "Bootstrapping for other stats\n\ncalculate() documentation: infer.tidymodels.org/reference/calculate.html\ninfer pipelines: infer.tidymodels.org/articles/observed_stat_examples.html"
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nIf you want to be very certain (i.e., more confident) that you capture the population parameter, should we use a wider or a narrower interval?\n\n\nWider\nNarrower\nDepends on the situation\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-1",
-    "href": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-1",
+    "objectID": "slides/25-making-decisions-slides.html#precision-vs.-accuracy",
+    "href": "slides/25-making-decisions-slides.html#precision-vs.-accuracy",
+    "title": "Making decisions",
+    "section": "Precision vs. accuracy",
+    "text": "Precision vs. accuracy\n\nWhat drawbacks are associated with using a wider interval?"
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#precision-vs.-accuracy-1",
+    "href": "slides/25-making-decisions-slides.html#precision-vs.-accuracy-1",
+    "title": "Making decisions",
+    "section": "Precision vs. accuracy",
+    "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?"
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#recap",
+    "href": "slides/25-making-decisions-slides.html#recap",
+    "title": "Making decisions",
+    "section": "Recap",
+    "text": "Recap\n\nPopulation: Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. – population size = \\(N\\)\nSample: Subset of the population, ideally random and representative – sample size = \\(n\\)\nSample statistic \\(\\ne\\) population parameter, but if the sample is good, it can be a good estimate\nStatistical inference: Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process\nWe report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population\nSince we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability"
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#an-alternative-approach",
+    "href": "slides/25-making-decisions-slides.html#an-alternative-approach",
+    "title": "Making decisions",
+    "section": "An alternative approach",
+    "text": "An alternative approach\nStandard error method: Compute the 95% CI as the observed slope plus/minus ~2 * standard error (the standard deviation of the bootstrap distribution):\n\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.95,\n  type = \"se\"\n)\n\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          95.5     223.\n2 intercept -42990.   276295."
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#margin-of-error",
+    "href": "slides/25-making-decisions-slides.html#margin-of-error",
+    "title": "Making decisions",
+    "section": "Margin of error",
+    "text": "Margin of error\nThat quantity (~2 * standard error) is called the margin of error, e.g.,\n\n\n\nSource: https://www.cnn.com/polling/approval/trump-polls"
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#on-the-horizon",
+    "href": "slides/25-making-decisions-slides.html#on-the-horizon",
+    "title": "Making decisions",
+    "section": "On the horizon…",
+    "text": "On the horizon…\n\nIn this class you learned how to construct a confidence interval (i.e., calculate the margin of error) using a computational method called bootstrapping.\nThe bootstrap distributions you constructed (given enough reps – repeated samples) were unimodal and symmetric around the observed statistic.\nThis is not a happenstance! And there is theory behind it… It’s called the Central Limit Theorem!\nYou can learn about the Central Limit Theorem and theory-based methods for constructing confidence intervals (and other inference procedures) in future stats courses."
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#syntax-notes",
+    "href": "slides/25-making-decisions-slides.html#syntax-notes",
+    "title": "Making decisions",
+    "section": "Syntax notes",
+    "text": "Syntax notes\n\n\nBootstrapping for categorical data\n\nspecify(response = x, success = \"success level\")\ncalculate(stat = \"prop\")\n\n\n\n\n\n\nBootstrapping for other stats\n\ncalculate() documentation: infer.tidymodels.org/reference/calculate.html\ninfer pipelines: infer.tidymodels.org/articles/observed_stat_examples.html"
+  },
+  {
+    "objectID": "slides/25-making-decisions-slides.html#hypothesis-testing-1",
+    "href": "slides/25-making-decisions-slides.html#hypothesis-testing-1",
     "title": "Making decisions",
     "section": "Hypothesis testing",
-    "text": "Hypothesis testing\nA hypothesis test is a statistical technique used to evaluate competing claims using data\n\nNull hypothesis, \\(H_0\\): An assumption about the population. “There is nothing going on.”\nAlternative hypothesis, \\(H_A\\): A research question about the population. “There is something going on”.\n\n\nNote: Hypotheses are always at the population level!"
+    "text": "Hypothesis testing\nA hypothesis test is a statistical technique used to evaluate competing claims using data\n\nNull hypothesis, \\(H_0\\): An assumption about the population. “There is nothing going on.”\nAlternative hypothesis, \\(H_A\\): A research question about the population. “There is something going on”.\n\n\n\n\n\n\n\n\nNote\n\n\nHypotheses are always at the population level!"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#setting-hypotheses",
-    "href": "slides/25-quantifying-uncertainty-slides.html#setting-hypotheses",
+    "objectID": "slides/25-making-decisions-slides.html#setting-hypotheses",
+    "href": "slides/25-making-decisions-slides.html#setting-hypotheses",
     "title": "Making decisions",
     "section": "Setting hypotheses",
     "text": "Setting hypotheses\n\nNull hypothesis, \\(H_0\\): “There is nothing going on.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, \\(\\beta_1 = 0\\).\nAlternative hypothesis, \\(H_A\\): “There is something going on”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than, \\(\\beta_1 \\ne 0\\)."
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-mindset",
-    "href": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-mindset",
+    "objectID": "slides/25-making-decisions-slides.html#hypothesis-testing-mindset",
+    "href": "slides/25-making-decisions-slides.html#hypothesis-testing-mindset",
     "title": "Making decisions",
     "section": "Hypothesis testing “mindset”",
     "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world:\n\n\\[P \\big( b_1 \\leq 159~or~b_1 \\geq 159 ~|~ \\beta_1 = 0 \\big)\\]"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-as-a-court-trial",
-    "href": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-as-a-court-trial",
+    "objectID": "slides/25-making-decisions-slides.html#hypothesis-testing-as-a-court-trial",
+    "href": "slides/25-making-decisions-slides.html#hypothesis-testing-as-a-court-trial",
     "title": "Making decisions",
     "section": "Hypothesis testing as a court trial",
     "text": "Hypothesis testing as a court trial\n\nNull hypothesis, \\(H_0\\): Defendant is innocent\nAlternative hypothesis, \\(H_A\\): Defendant is guilty\n\n\n\n\nPresent the evidence: Collect data\n\n\n\n\n\nJudge the evidence: “Could these data plausibly have happened by chance if the null hypothesis were true?”\n\nYes: Fail to reject \\(H_0\\)\n\nNo: Reject \\(H_0\\)"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-framework",
-    "href": "slides/25-quantifying-uncertainty-slides.html#hypothesis-testing-framework",
+    "objectID": "slides/25-making-decisions-slides.html#hypothesis-testing-framework",
+    "href": "slides/25-making-decisions-slides.html#hypothesis-testing-framework",
     "title": "Making decisions",
     "section": "Hypothesis testing framework",
     "text": "Hypothesis testing framework\n\nStart with a null hypothesis, \\(H_0\\), that represents the status quo\nSet an alternative hypothesis, \\(H_A\\), that represents the research question, i.e. what we’re testing for\n\nConduct a hypothesis test under the assumption that the null hypothesis is true and calculate a p-value (probability of observed or more extreme outcome given that the null hypothesis is true)\n\nif the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis\nif they do, then reject the null hypothesis in favor of the alternative"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#calculate-observed-slope",
-    "href": "slides/25-quantifying-uncertainty-slides.html#calculate-observed-slope",
+    "objectID": "slides/25-making-decisions-slides.html#calculate-observed-slope",
+    "href": "slides/25-making-decisions-slides.html#calculate-observed-slope",
     "title": "Making decisions",
     "section": "Calculate observed slope",
     "text": "Calculate observed slope\n… which we have already done:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159."
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#simulate-null-distribution",
-    "href": "slides/25-quantifying-uncertainty-slides.html#simulate-null-distribution",
+    "objectID": "slides/25-making-decisions-slides.html#simulate-null-distribution",
+    "href": "slides/25-making-decisions-slides.html#simulate-null-distribution",
     "title": "Making decisions",
     "section": "Simulate null distribution",
     "text": "Simulate null distribution\n\nset.seed(20251202)\nnull_dist &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  fit()"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#view-null-distribution",
-    "href": "slides/25-quantifying-uncertainty-slides.html#view-null-distribution",
+    "objectID": "slides/25-making-decisions-slides.html#view-null-distribution",
+    "href": "slides/25-making-decisions-slides.html#view-null-distribution",
     "title": "Making decisions",
     "section": "View null distribution",
     "text": "View null distribution\n\nnull_dist\n\n# A tibble: 2,000 × 3\n# Groups:   replicate [1,000]\n   replicate term       estimate\n       &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;\n 1         1 intercept 594889.  \n 2         1 area         -12.6 \n 3         2 intercept 477930.  \n 4         2 area          29.5 \n 5         3 intercept 581950.  \n 6         3 area          -7.93\n 7         4 intercept 487542.  \n 8         4 area          26.0 \n 9         5 intercept 643406.  \n10         5 area         -30.0 \n# ℹ 1,990 more rows"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#visualize-null-distribution",
-    "href": "slides/25-quantifying-uncertainty-slides.html#visualize-null-distribution",
+    "objectID": "slides/25-making-decisions-slides.html#visualize-null-distribution",
+    "href": "slides/25-making-decisions-slides.html#visualize-null-distribution",
     "title": "Making decisions",
     "section": "Visualize null distribution",
     "text": "Visualize null distribution\n\nvisualize(null_dist)"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#visualize-null-distribution-p-value",
-    "href": "slides/25-quantifying-uncertainty-slides.html#visualize-null-distribution-p-value",
+    "objectID": "slides/25-making-decisions-slides.html#visualize-null-distribution-p-value",
+    "href": "slides/25-making-decisions-slides.html#visualize-null-distribution-p-value",
     "title": "Making decisions",
     "section": "Visualize null distribution + p-value",
     "text": "Visualize null distribution + p-value\n\n\nvisualize(null_dist) +\n  shade_p_value(\n    obs_stat = observed_fit, \n    direction = \"two-sided\"\n  )"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#get-p-value",
-    "href": "slides/25-quantifying-uncertainty-slides.html#get-p-value",
+    "objectID": "slides/25-making-decisions-slides.html#get-p-value",
+    "href": "slides/25-making-decisions-slides.html#get-p-value",
     "title": "Making decisions",
     "section": "Get p-value",
     "text": "Get p-value\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_fit, direction = \"two-sided\")\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the\n`generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\nPlease be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the\n`generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 2 × 2\n  term      p_value\n  &lt;chr&gt;       &lt;dbl&gt;\n1 area            0\n2 intercept       0"
   },
   {
-    "objectID": "slides/25-quantifying-uncertainty-slides.html#make-a-decision",
-    "href": "slides/25-quantifying-uncertainty-slides.html#make-a-decision",
+    "objectID": "slides/25-making-decisions-slides.html#make-a-decision",
+    "href": "slides/25-making-decisions-slides.html#make-a-decision",
     "title": "Making decisions",
     "section": "Make a decision",
     "text": "Make a decision\n\nBased on the p-value calculated, what is the conclusion of the hypothesis test?"
@@ -3640,28 +3654,49 @@
     "href": "slides/25-making-decisions.html",
     "title": "Making decisions",
     "section": "",
-    "text": "…\n\n\n…\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID.\n\n\n\n\n\nHW:\n\nHW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty\nHW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nClassroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), watch your email for your classroom assignment\nReview: During reading period, date/time TBA"
+    "text": "Take 2 minutes to fill out the TA evaluation form – link in your email! Due Monday, December 8th.\nNominate a TA for the StatSci TA of the Year award by sending an email to dus@stat.duke.edu with a brief narrative for your nomination.\n\n\n\n\n\n\n\nPlease also fill out the course evaluation (on DukeHub) as well, I’d love to your feedback!\n\n\n\n\nHW:\n\nHW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty\nHW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nClassroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), check your email for your classroom assignment\nReview: During reading period, date/time TBA\nOffice hours: TBA soon as review session is scheduled"
   },
   {
-    "objectID": "slides/25-making-decisions.html#while-you-wait-participate",
-    "href": "slides/25-making-decisions.html#while-you-wait-participate",
+    "objectID": "slides/25-making-decisions.html#its-giving-tuesday-give-feedback",
+    "href": "slides/25-making-decisions.html#its-giving-tuesday-give-feedback",
     "title": "Making decisions",
     "section": "",
-    "text": "…\n\n\n…\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+    "text": "Take 2 minutes to fill out the TA evaluation form – link in your email! Due Monday, December 8th.\nNominate a TA for the StatSci TA of the Year award by sending an email to dus@stat.duke.edu with a brief narrative for your nomination.\n\n\n\n\n\n\n\nPlease also fill out the course evaluation (on DukeHub) as well, I’d love to your feedback!"
   },
   {
     "objectID": "slides/25-making-decisions.html#announcements",
     "href": "slides/25-making-decisions.html#announcements",
     "title": "Making decisions",
     "section": "",
-    "text": "HW:\n\nHW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty\nHW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nClassroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), watch your email for your classroom assignment\nReview: During reading period, date/time TBA"
+    "text": "HW:\n\nHW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty\nHW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty\n\n\nFinal exam:\n\nClassroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), check your email for your classroom assignment\nReview: During reading period, date/time TBA\nOffice hours: TBA soon as review session is scheduled"
   },
   {
-    "objectID": "slides/25-making-decisions.html#goal-setup",
-    "href": "slides/25-making-decisions.html#goal-setup",
+    "objectID": "slides/25-making-decisions.html#participate",
+    "href": "slides/25-making-decisions.html#participate",
     "title": "Making decisions",
-    "section": "Goal + setup",
-    "text": "Goal + setup\nFind range of plausible values for the slope using bootstrap confidence intervals.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nWhich of the following is true about confidence intervals?\n\n\nThey’re for a sample statistic.\nThey’re for a population parameter.\nThey can be either for both a sample statistic or a population parameter.\nThey’re neither for a sample statistic nor a population parameter.\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
+    "objectID": "slides/25-making-decisions.html#why-do-we-construct-confidence-intervals",
+    "href": "slides/25-making-decisions.html#why-do-we-construct-confidence-intervals",
+    "title": "Making decisions",
+    "section": "Why do we construct confidence intervals?",
+    "text": "Why do we construct confidence intervals?\nTo estimate plausible values of a parameter of interest, e.g.,\n\na slope (\\(\\beta_1\\))\na mean (\\(\\mu\\))\na proportion (\\(p\\))\netc."
+  },
+  {
+    "objectID": "slides/25-making-decisions.html#what-is-bootstrapping",
+    "href": "slides/25-making-decisions.html#what-is-bootstrapping",
+    "title": "Making decisions",
+    "section": "What is bootstrapping?",
+    "text": "What is bootstrapping?\n\nBootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.\nWe then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (\\(b_1\\)), a mean (\\(\\bar{x}\\)), a proportion (\\(\\hat{p}\\))."
+  },
+  {
+    "objectID": "slides/25-making-decisions.html#setup",
+    "href": "slides/25-making-decisions.html#setup",
+    "title": "Making decisions",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
   },
   {
     "objectID": "slides/25-making-decisions.html#computing-the-ci-for-the-slope-i",
@@ -3678,6 +3713,13 @@
     "text": "Computing the CI for the slope II\nTake 1000 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 2,000 × 3\n# Groups:   replicate [1,000]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 1,990 more rows"
   },
   {
+    "objectID": "slides/25-making-decisions.html#what-does-each-observation-on-the-plot-represent",
+    "href": "slides/25-making-decisions.html#what-does-each-observation-on-the-plot-represent",
+    "title": "Making decisions",
+    "section": "What does each observation on the plot represent?",
+    "text": "What does each observation on the plot represent?\n\n\n\nResample, with replacement, from the original data\nDo this reps = 1000 times\nCalculate the summary statistic of interest in each of these samples"
+  },
+  {
     "objectID": "slides/25-making-decisions.html#computing-the-ci-for-the-slope-iii",
     "href": "slides/25-making-decisions.html#computing-the-ci-for-the-slope-iii",
     "title": "Making decisions",
@@ -3685,11 +3727,18 @@
     "text": "Computing the CI for the slope III\nPercentile method: Compute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.95,\n  type = \"percentile\" # default method\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          87.5     216.\n2 intercept -24293.   300646."
   },
   {
+    "objectID": "slides/25-making-decisions.html#participate-1",
+    "href": "slides/25-making-decisions.html#participate-1",
+    "title": "Making decisions",
+    "section": "Participate 📱💻",
+    "text": "Participate 📱💻\n\n\n\nIf you want to be very certain (i.e., more confident) that you capture the population parameter, should we use a wider or a narrower interval?\n\n\nWider\nNarrower\nDepends on the situation\n\n\n\n\n\n\n\n\n\nScan the QR code or go to app.wooclap.com/sta199. Log in with your Duke NetID."
+  },
+  {
     "objectID": "slides/25-making-decisions.html#precision-vs.-accuracy",
     "href": "slides/25-making-decisions.html#precision-vs.-accuracy",
     "title": "Making decisions",
     "section": "Precision vs. accuracy",
-    "text": "Precision vs. accuracy\n\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?\n\n. . ."
+    "text": "Precision vs. accuracy\n\nWhat drawbacks are associated with using a wider interval?\n\n. . ."
   },
   {
     "objectID": "slides/25-making-decisions.html#precision-vs.-accuracy-1",
@@ -3699,20 +3748,6 @@
     "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?"
   },
   {
-    "objectID": "slides/25-making-decisions.html#changing-confidence-level",
-    "href": "slides/25-making-decisions.html#changing-confidence-level",
-    "title": "Making decisions",
-    "section": "Changing confidence level",
-    "text": "Changing confidence level\n\nHow would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?\n\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.95,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          87.5     216.\n2 intercept -24293.   300646."
-  },
-  {
-    "objectID": "slides/25-making-decisions.html#changing-confidence-level-1",
-    "href": "slides/25-making-decisions.html#changing-confidence-level-1",
-    "title": "Making decisions",
-    "section": "Changing confidence level",
-    "text": "Changing confidence level\n\n\nConfidence level: 90%\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.90,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          98.7     206.\n2 intercept  -2047.   270878.\n\n\n\nConfidence level: 99%\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.99,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          66.5     230.\n2 intercept -58628.   355215."
-  },
-  {
     "objectID": "slides/25-making-decisions.html#recap",
     "href": "slides/25-making-decisions.html#recap",
     "title": "Making decisions",
@@ -3720,46 +3755,39 @@
     "text": "Recap\n\n\nPopulation: Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. – population size = \\(N\\)\nSample: Subset of the population, ideally random and representative – sample size = \\(n\\)\nSample statistic \\(\\ne\\) population parameter, but if the sample is good, it can be a good estimate\nStatistical inference: Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process\nWe report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population\nSince we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability"
   },
   {
-    "objectID": "slides/25-making-decisions.html#why-do-we-construct-confidence-intervals",
-    "href": "slides/25-making-decisions.html#why-do-we-construct-confidence-intervals",
+    "objectID": "slides/25-making-decisions.html#an-alternative-approach",
+    "href": "slides/25-making-decisions.html#an-alternative-approach",
     "title": "Making decisions",
-    "section": "Why do we construct confidence intervals?",
-    "text": "Why do we construct confidence intervals?\nTo estimate plausible values of a parameter of interest, e.g., a slope (\\(\\beta_1\\)), a mean (\\(\\mu\\)), a proportion (\\(p\\))."
+    "section": "An alternative approach",
+    "text": "An alternative approach\nStandard error method: Compute the 95% CI as the observed slope plus/minus ~2 * standard error (the standard deviation of the bootstrap distribution):\n\nget_confidence_interval(\n  boot_fits,\n  point_estimate = observed_fit,\n  level = 0.95,\n  type = \"se\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          95.5     223.\n2 intercept -42990.   276295."
   },
   {
-    "objectID": "slides/25-making-decisions.html#what-is-bootstrapping",
-    "href": "slides/25-making-decisions.html#what-is-bootstrapping",
+    "objectID": "slides/25-making-decisions.html#margin-of-error",
+    "href": "slides/25-making-decisions.html#margin-of-error",
     "title": "Making decisions",
-    "section": "What is bootstrapping?",
-    "text": "What is bootstrapping?\n\nBootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.\nWe then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (\\(b_1\\)), a mean (\\(\\bar{x}\\)), a proportion (\\(\\hat{p}\\))."
+    "section": "Margin of error",
+    "text": "Margin of error\nThat quantity (~2 * standard error) is called the margin of error, e.g.,\n\n\n\nSource: https://www.cnn.com/polling/approval/trump-polls"
   },
   {
-    "objectID": "slides/25-making-decisions.html#what-does-each-observation-on-the-plot-represent",
-    "href": "slides/25-making-decisions.html#what-does-each-observation-on-the-plot-represent",
+    "objectID": "slides/25-making-decisions.html#on-the-horizon",
+    "href": "slides/25-making-decisions.html#on-the-horizon",
     "title": "Making decisions",
-    "section": "What does each observation on the plot represent?",
-    "text": "What does each observation on the plot represent?\n\n\n\nResample, with replacement, from the original data\nDo this reps = 1000 times\nCalculate the summary statistic of interest in each of these samples"
+    "section": "On the horizon…",
+    "text": "On the horizon…\n\n\nIn this class you learned how to construct a confidence interval (i.e., calculate the margin of error) using a computational method called bootstrapping.\nThe bootstrap distributions you constructed (given enough reps – repeated samples) were unimodal and symmetric around the observed statistic.\nThis is not a happenstance! And there is theory behind it… It’s called the Central Limit Theorem!\nYou can learn about the Central Limit Theorem and theory-based methods for constructing confidence intervals (and other inference procedures) in future stats courses."
   },
   {
-    "objectID": "slides/25-making-decisions.html#bootstrapping-for-categorical-data",
-    "href": "slides/25-making-decisions.html#bootstrapping-for-categorical-data",
+    "objectID": "slides/25-making-decisions.html#syntax-notes",
+    "href": "slides/25-making-decisions.html#syntax-notes",
     "title": "Making decisions",
-    "section": "Bootstrapping for categorical data",
-    "text": "Bootstrapping for categorical data\n\nspecify(response = x, success = \"success level\")\ncalculate(stat = \"prop\")"
-  },
-  {
-    "objectID": "slides/25-making-decisions.html#bootstrapping-for-other-stats",
-    "href": "slides/25-making-decisions.html#bootstrapping-for-other-stats",
-    "title": "Making decisions",
-    "section": "Bootstrapping for other stats",
-    "text": "Bootstrapping for other stats\n\ncalculate() documentation: infer.tidymodels.org/reference/calculate.html\ninfer pipelines: infer.tidymodels.org/articles/observed_stat_examples.html"
+    "section": "Syntax notes",
+    "text": "Syntax notes\n\n\nBootstrapping for categorical data\n\nspecify(response = x, success = \"success level\")\ncalculate(stat = \"prop\")\n\n\n\n. . .\n\n\nBootstrapping for other stats\n\ncalculate() documentation: infer.tidymodels.org/reference/calculate.html\ninfer pipelines: infer.tidymodels.org/articles/observed_stat_examples.html"
   },
   {
     "objectID": "slides/25-making-decisions.html#hypothesis-testing-1",
     "href": "slides/25-making-decisions.html#hypothesis-testing-1",
     "title": "Making decisions",
     "section": "Hypothesis testing",
-    "text": "Hypothesis testing\nA hypothesis test is a statistical technique used to evaluate competing claims using data\n\n\nNull hypothesis, \\(H_0\\): An assumption about the population. “There is nothing going on.”\nAlternative hypothesis, \\(H_A\\): A research question about the population. “There is something going on”.\n\n\n. . .\nNote: Hypotheses are always at the population level!"
+    "text": "Hypothesis testing\nA hypothesis test is a statistical technique used to evaluate competing claims using data\n\n\nNull hypothesis, \\(H_0\\): An assumption about the population. “There is nothing going on.”\nAlternative hypothesis, \\(H_A\\): A research question about the population. “There is something going on”.\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nHypotheses are always at the population level!"
   },
   {
     "objectID": "slides/25-making-decisions.html#setting-hypotheses",

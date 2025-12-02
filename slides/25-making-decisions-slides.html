@@ -213,14 +213,49 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
   <p class="date">December 2, 2025</p>
 </section><section><section id="warm-up" class="title-slide slide level1 center"><h1>Warm-up</h1>
 
-</section><section id="while-you-wait-participate" class="slide level2 xsmall"><h2>While you wait: Participate 📱💻</h2>
+</section><section id="its-giving-tuesday-give-feedback" class="slide level2"><h2>It’s Giving Tuesday – Give feedback!</h2>
+<div class="columns">
+<div class="column xsmall" style="width:30%;">
+<ul>
+<li><p>Take 2 minutes to fill out the TA evaluation form – link in your email! Due Monday, December 8th.</p></li>
+<li><p>Nominate a TA for the StatSci TA of the Year award by sending an email to <a href="mailto:dus@stat.duke.edu" class="email">dus@stat.duke.edu</a> with a brief narrative for your nomination.</p></li>
+</ul>
+</div><div class="column" style="width:70%;">
+<p><img data-src="images/25/ta-1.png" width="200"><img data-src="images/25/ta-2.png" width="200"><img data-src="images/25/ta-3.png" width="200"></p>
+</div></div>
+<div class="xsmall">
+<ul>
+<li>Please also fill out the course evaluation (on DukeHub) as well, I’d love to your feedback!</li>
+</ul>
+</div>
+</section><section id="announcements" class="slide level2 xsmall"><h2>Announcements</h2>
+<ul>
+<li>HW:
+<ul>
+<li>HW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty</li>
+<li>HW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
+</ul>
+</li>
+<li>Final exam:
+<ul>
+<li>Classroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), check your email for your classroom assignment</li>
+<li>Review: During reading period, date/time TBA</li>
+<li>Office hours: TBA soon as review session is scheduled</li>
+</ul>
+</li>
+</ul></section></section><section><section id="from-last-time" class="title-slide slide level1 center"><h1>From last time</h1>
+
+</section><section id="participate" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="wooclap">
-<p>…</p>
+<p>Which of the following is true about confidence intervals?</p>
 <div class="wooclap-choices">
 <ul>
-<li>…</li>
+<li>They’re for a sample statistic.</li>
+<li>They’re for a population parameter.</li>
+<li>They can be either for both a sample statistic or a population parameter.</li>
+<li>They’re neither for a sample statistic nor a population parameter.</li>
 </ul>
 </div>
 </div>
@@ -233,24 +268,18 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
 </div>
 </div></div>
-</section><section id="announcements" class="slide level2 xsmall"><h2>Announcements</h2>
+</section><section id="why-do-we-construct-confidence-intervals" class="slide level2"><h2>Why do we construct confidence intervals?</h2>
+<p>To estimate plausible values of a parameter of interest, e.g.,</p>
 <ul>
-<li>HW:
+<li>a slope (<span class="math inline">\(\beta_1\)</span>)</li>
+<li>a mean (<span class="math inline">\(\mu\)</span>)</li>
+<li>a proportion (<span class="math inline">\(p\)</span>)</li>
+<li>etc.</li>
+</ul></section><section id="what-is-bootstrapping" class="slide level2"><h2>What is bootstrapping?</h2>
 <ul>
-<li>HW 5 accepted until Wed, Dec 3 at 11:59 pm without penalty</li>
-<li>HW 6 due at 11:59 pm on Fri, Dec 6, accepted until Sun, Dec 7 at 11:59 pm without penalty</li>
-</ul>
-</li>
-<li>Final exam:
-<ul>
-<li>Classroom: Half of you will take it in this room (Bio Sci 111) the other half in (Physics 128), watch your email for your classroom assignment</li>
-<li>Review: During reading period, date/time TBA</li>
-</ul>
-</li>
-</ul></section></section><section><section id="from-last-time" class="title-slide slide level1 center"><h1>From last time</h1>
-
-</section><section id="goal-setup" class="slide level2"><h2>Goal + setup</h2>
-<p>Find range of plausible values for the slope using bootstrap confidence intervals.</p>
+<li><p>Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.</p></li>
+<li><p>We then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (<span class="math inline">\(b_1\)</span>), a mean (<span class="math inline">\(\bar{x}\)</span>), a proportion (<span class="math inline">\(\hat{p}\)</span>).</p></li>
+</ul></section><section id="setup" class="slide level2"><h2>Setup</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels)</span>
@@ -301,6 +330,24 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 # ℹ 1,990 more rows</code></pre>
 </div>
 </div>
+</section><section id="what-does-each-observation-on-the-plot-represent" class="slide level2 smaller"><h2>What does each observation on the plot represent?</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Resample, with replacement, from the original data</li>
+<li>Do this <code>reps = 1000</code> times</li>
+<li>Calculate the summary statistic of interest in each of these samples</li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="25-making-decisions_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
 </section><section id="computing-the-ci-for-the-slope-iii" class="slide level2"><h2>Computing the CI for the slope III</h2>
 <p><strong>Percentile method:</strong> Compute the 95% CI as the middle 95% of the bootstrap distribution:</p>
 <div class="cell">
@@ -318,73 +365,39 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 2 intercept -24293.   300646.</code></pre>
 </div>
 </div>
+</section><section id="participate-1" class="slide level2 xsmall"><h2>Participate 📱💻</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wooclap">
+<p>If you want to be very certain (i.e., more confident) that you capture the population parameter, should we use a wider or a narrower interval?</p>
+<div class="wooclap-choices">
+<ul>
+<li>Wider</li>
+<li>Narrower</li>
+<li>Depends on the situation</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/wooclap-qr.png" class="quarto-figure quarto-figure-center" width="200"></p>
+</figure>
+</div>
+<div class="small">
+<p>Scan the QR code or go to <a href="https://app.wooclap.com/sta199">app.wooclap.com/sta199</a>. Log in with your Duke NetID.</p>
+</div>
+</div></div>
 </section><section id="precision-vs.-accuracy" class="slide level2 smaller"><h2>Precision vs.&nbsp;accuracy</h2>
 <div class="task">
-<p>If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?</p>
+<p>What drawbacks are associated with using a wider interval?</p>
 </div>
 <div class="fragment">
-<p><img data-src="images/24/garfield.png"></p>
+<p><img data-src="images/25/garfield.png"></p>
 </div>
 </section><section id="precision-vs.-accuracy-1" class="slide level2 smaller"><h2>Precision vs.&nbsp;accuracy</h2>
 <div class="task">
 <p>How can we get best of both worlds – high precision and high accuracy?</p>
 </div>
-</section><section id="changing-confidence-level" class="slide level2 smaller"><h2>Changing confidence level</h2>
-<div class="task">
-<p>How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?</p>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb8-2"><a></a>  boot_fits,</span>
-<span id="cb8-3"><a></a>  <span class="at">point_estimate =</span> observed_fit,</span>
-<span id="cb8-4"><a></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb8-5"><a></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb8-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  term      lower_ci upper_ci
-  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
-1 area          87.5     216.
-2 intercept -24293.   300646.</code></pre>
-</div>
-</div>
-</section><section id="changing-confidence-level-1" class="slide level2 smaller"><h2>Changing confidence level</h2>
-<div class="columns">
-<div class="column">
-<p><strong>Confidence level: 90%</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb10-2"><a></a>  boot_fits,</span>
-<span id="cb10-3"><a></a>  <span class="at">point_estimate =</span> observed_fit,</span>
-<span id="cb10-4"><a></a>  <span class="at">level =</span> <span class="fl">0.90</span>,</span>
-<span id="cb10-5"><a></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb10-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  term      lower_ci upper_ci
-  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
-1 area          98.7     206.
-2 intercept  -2047.   270878.</code></pre>
-</div>
-</div>
-</div><div class="column">
-<p><strong>Confidence level: 99%</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb12-2"><a></a>  boot_fits,</span>
-<span id="cb12-3"><a></a>  <span class="at">point_estimate =</span> observed_fit,</span>
-<span id="cb12-4"><a></a>  <span class="at">level =</span> <span class="fl">0.99</span>,</span>
-<span id="cb12-5"><a></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb12-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  term      lower_ci upper_ci
-  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
-1 area          66.5     230.
-2 intercept -58628.   355215.</code></pre>
-</div>
-</div>
-</div></div>
 </section><section id="recap" class="slide level2 xsmall"><h2>Recap</h2>
 <ul>
 <li class="fragment"><p><strong>Population:</strong> Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. – population size = <span class="math inline">\(N\)</span></p></li>
@@ -393,48 +406,80 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <li class="fragment"><p><strong>Statistical inference:</strong> Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process</p></li>
 <li class="fragment"><p>We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population</p></li>
 <li class="fragment"><p>Since we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability</p></li>
-</ul></section><section id="why-do-we-construct-confidence-intervals" class="slide level2"><h2>Why do we construct confidence intervals?</h2>
-<p>To estimate plausible values of a parameter of interest, e.g., a slope (<span class="math inline">\(\beta_1\)</span>), a mean (<span class="math inline">\(\mu\)</span>), a proportion (<span class="math inline">\(p\)</span>).</p>
-</section><section id="what-is-bootstrapping" class="slide level2"><h2>What is bootstrapping?</h2>
-<ul>
-<li><p>Bootstrapping is a statistical procedure that resamples(with replacement) a single data set to create many simulated samples.</p></li>
-<li><p>We then use these simulated samples to quantify the uncertainty around the sample statistic we’re interested in, e.g., a slope (<span class="math inline">\(b_1\)</span>), a mean (<span class="math inline">\(\bar{x}\)</span>), a proportion (<span class="math inline">\(\hat{p}\)</span>).</p></li>
-</ul></section><section id="what-does-each-observation-on-the-plot-represent" class="slide level2 smaller"><h2>What does each observation on the plot represent?</h2>
-<div class="columns">
+</ul></section><section id="an-alternative-approach" class="slide level2"><h2>An alternative approach</h2>
+<p><strong>Standard error method:</strong> Compute the 95% CI as the observed slope plus/minus ~2 * standard error (the standard deviation of the bootstrap distribution):</p>
+<div class="cell columns column-output-location">
 <div class="column">
-<ul>
-<li>Resample, with replacement, from the original data</li>
-<li>Do this <code>reps = 1000</code> times</li>
-<li>Calculate the summary statistic of interest in each of these samples</li>
-</ul>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb8-2"><a></a>  boot_fits,</span>
+<span id="cb8-3"><a></a>  <span class="at">point_estimate =</span> observed_fit,</span>
+<span id="cb8-4"><a></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb8-5"><a></a>  <span class="at">type =</span> <span class="st">"se"</span></span>
+<span id="cb8-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure><p><img data-src="25-making-decisions_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
-</figure>
-</div>
-</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          95.5     223.
+2 intercept -42990.   276295.</code></pre>
 </div>
 </div></div>
-</section><section id="bootstrapping-for-categorical-data" class="slide level2"><h2>Bootstrapping for categorical data</h2>
+</section><section id="margin-of-error" class="slide level2"><h2>Margin of error</h2>
+<p>That quantity (~2 * standard error) is called the <strong>margin of error</strong>, e.g.,</p>
+<p><img data-src="images/25/cnn-poll.png"></p>
+
+<aside><div>
+<p>Source: <a href="https://www.cnn.com/polling/approval/trump-polls" class="uri">https://www.cnn.com/polling/approval/trump-polls</a></p>
+</div></aside></section><section id="on-the-horizon" class="slide level2 smaller"><h2>On the horizon…</h2>
+<ul>
+<li class="fragment"><p>In this class you learned how to construct a confidence interval (i.e., calculate the margin of error) using a computational method called bootstrapping.</p></li>
+<li class="fragment"><p>The bootstrap distributions you constructed (given enough <code>reps</code> – repeated samples) were unimodal and symmetric around the observed statistic.</p></li>
+<li class="fragment"><p>This is not a happenstance! And there is theory behind it… It’s called the <strong>Central Limit Theorem</strong>!</p></li>
+<li class="fragment"><p>You can learn about the Central Limit Theorem and theory-based methods for constructing confidence intervals (and other inference procedures) in future stats courses.</p></li>
+</ul></section><section id="syntax-notes" class="slide level2 smaller"><h2>Syntax notes</h2>
+<ul>
+<li>
+<p>Bootstrapping for categorical data</p>
 <ul>
 <li><p><code>specify(response = x, success = "success level")</code></p></li>
 <li><p><code>calculate(stat = "prop")</code></p></li>
-</ul></section><section id="bootstrapping-for-other-stats" class="slide level2"><h2>Bootstrapping for other <code>stat</code>s</h2>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<p>Bootstrapping for other <code>stat</code>s</p>
 <ul>
 <li><p><code>calculate()</code> documentation: <a href="https://infer.tidymodels.org/reference/calculate.html">infer.tidymodels.org/reference/calculate.html</a></p></li>
 <li><p><strong>infer</strong> pipelines: <a href="https://infer.tidymodels.org/articles/observed_stat_examples.html">infer.tidymodels.org/articles/observed_stat_examples.html</a></p></li>
-</ul></section></section><section><section id="hypothesis-testing" class="title-slide slide level1 center"><h1>Hypothesis testing</h1>
+</ul>
+</li>
+</ul>
+</div>
+</section></section><section><section id="hypothesis-testing" class="title-slide slide level1 center"><h1>Hypothesis testing</h1>
 
-</section><section id="hypothesis-testing-1" class="slide level2"><h2>Hypothesis testing</h2>
+</section><section id="hypothesis-testing-1" class="slide level2 smaller"><h2>Hypothesis testing</h2>
 <p>A hypothesis test is a statistical technique used to evaluate <em>competing claims</em> using data</p>
 <ul>
 <li class="fragment"><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: An assumption about the population. “There is nothing going on.”</p></li>
 <li class="fragment"><p><strong>Alternative hypothesis,</strong> <span class="math inline">\(H_A\)</span>: A research question about the population. “There is something going on”.</p></li>
 </ul>
 <div class="fragment">
-<p>Note: Hypotheses are always at the population level!</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Hypotheses are always at the population level!</p>
+</div>
+</div>
+</div>
 </div>
 </section><section id="setting-hypotheses" class="slide level2"><h2>Setting hypotheses</h2>
 <ul>
@@ -484,11 +529,11 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </ul></section><section id="calculate-observed-slope" class="slide level2"><h2>Calculate observed slope</h2>
 <p>… which we have already done:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>observed_fit <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">fit</span>()</span>
-<span id="cb14-4"><a></a></span>
-<span id="cb14-5"><a></a>observed_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>observed_fit <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">fit</span>()</span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a>observed_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   term      estimate
@@ -499,16 +544,16 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </section><section id="simulate-null-distribution" class="slide level2"><h2>Simulate null distribution</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|1|2|3|4|5|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">set.seed</span>(<span class="dv">20251202</span>)</span>
-<span id="cb16-2"><a></a>null_dist <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-5"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-6"><a></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|1|2|3|4|5|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">set.seed</span>(<span class="dv">20251202</span>)</span>
+<span id="cb12-2"><a></a>null_dist <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="view-null-distribution" class="slide level2 smaller"><h2>View null distribution</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>null_dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>null_dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2,000 × 3
 # Groups:   replicate [1,000]
@@ -529,29 +574,29 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </div>
 </section><section id="visualize-null-distribution" class="slide level2 smaller"><h2>Visualize null distribution</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">visualize</span>(null_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">visualize</span>(null_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="25-making-decisions_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section><section id="visualize-null-distribution-p-value" class="slide level2"><h2>Visualize null distribution + p-value</h2>
+<img data-src="25-making-decisions_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="visualize-null-distribution-p-value" class="slide level2"><h2>Visualize null distribution + p-value</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">visualize</span>(null_dist) <span class="sc">+</span></span>
-<span id="cb20-2"><a></a>  <span class="fu">shade_p_value</span>(</span>
-<span id="cb20-3"><a></a>    <span class="at">obs_stat =</span> observed_fit, </span>
-<span id="cb20-4"><a></a>    <span class="at">direction =</span> <span class="st">"two-sided"</span></span>
-<span id="cb20-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">visualize</span>(null_dist) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">shade_p_value</span>(</span>
+<span id="cb16-3"><a></a>    <span class="at">obs_stat =</span> observed_fit, </span>
+<span id="cb16-4"><a></a>    <span class="at">direction =</span> <span class="st">"two-sided"</span></span>
+<span id="cb16-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="25-making-decisions_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<figure><p><img data-src="25-making-decisions_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
 </section><section id="get-p-value" class="slide level2 smaller"><h2>Get p-value</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> observed_fit, <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> observed_fit, <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an
 approximation based on the number of `reps` chosen in the
