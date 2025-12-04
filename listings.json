@@ -1,63 +1,5 @@
 [
   {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html",
-      "/lab/lab-3.html",
-      "/lab/lab-4.html",
-      "/lab/lab-5.html",
-      "/lab/lab-6.html",
-      "/lab/lab-7.html",
-      "/lab/lab-8.html"
-    ]
-  },
-  {
-    "listing": "/exam-review.html",
-    "items": [
-      "/exam-review/exam-1-review.html",
-      "/exam-review/exam-1-review-A.html",
-      "/exam-review/exam-2-review.html",
-      "/exam-review/exam-2-review-A.html",
-      "/exam-review/final-exam-review.html"
-    ]
-  },
-  {
-    "listing": "/course-team.html",
-    "items": [
-      "/ta/abuzar.html",
-      "/ta/alexa.html",
-      "/ta/allison.html",
-      "/ta/arijit.html",
-      "/ta/ben.html",
-      "/ta/bethany.html",
-      "/ta/eduardo.html",
-      "/ta/federico.html",
-      "/ta/jessie.html",
-      "/ta/kathleen.html",
-      "/ta/katie.html",
-      "/ta/luxman.html",
-      "/ta/marie.html",
-      "/ta/max.html",
-      "/ta/natasha.html",
-      "/ta/sarah.html",
-      "/ta/xueyan.html",
-      "/ta/ziyan.html"
-    ]
-  },
-  {
-    "listing": "/hw.html",
-    "items": [
-      "/hw/hw-1.html",
-      "/hw/hw-2.html",
-      "/hw/hw-3.html",
-      "/hw/hw-4.html",
-      "/hw/hw-5.html",
-      "/hw/hw-6.html"
-    ]
-  },
-  {
     "listing": "/ae.html",
     "items": [
       "/ae/ae-01-income-inequality-A.html",
@@ -90,6 +32,64 @@
       "/ae/ae-14-chicago-taxi-classification.html",
       "/ae/ae-15-duke-forest-bootstrap-A.html",
       "/ae/ae-15-duke-forest-bootstrap.html"
+    ]
+  },
+  {
+    "listing": "/hw.html",
+    "items": [
+      "/hw/hw-1.html",
+      "/hw/hw-2.html",
+      "/hw/hw-3.html",
+      "/hw/hw-4.html",
+      "/hw/hw-5.html",
+      "/hw/hw-6.html"
+    ]
+  },
+  {
+    "listing": "/course-team.html",
+    "items": [
+      "/ta/abuzar.html",
+      "/ta/alexa.html",
+      "/ta/allison.html",
+      "/ta/arijit.html",
+      "/ta/ben.html",
+      "/ta/bethany.html",
+      "/ta/eduardo.html",
+      "/ta/federico.html",
+      "/ta/jessie.html",
+      "/ta/kathleen.html",
+      "/ta/katie.html",
+      "/ta/luxman.html",
+      "/ta/marie.html",
+      "/ta/max.html",
+      "/ta/natasha.html",
+      "/ta/sarah.html",
+      "/ta/xueyan.html",
+      "/ta/ziyan.html"
+    ]
+  },
+  {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html",
+      "/lab/lab-3.html",
+      "/lab/lab-4.html",
+      "/lab/lab-5.html",
+      "/lab/lab-6.html",
+      "/lab/lab-7.html",
+      "/lab/lab-8.html"
+    ]
+  },
+  {
+    "listing": "/exam-review.html",
+    "items": [
+      "/exam-review/exam-1-review.html",
+      "/exam-review/exam-1-review-A.html",
+      "/exam-review/exam-2-review.html",
+      "/exam-review/exam-2-review-A.html",
+      "/exam-review/final-exam-review.html"
     ]
   }
 ]
