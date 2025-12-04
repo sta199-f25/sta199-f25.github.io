@@ -97,6 +97,10 @@ website:
             text: Milestone 6            
           - href: project/tips-resources.qmd
             text: Tips + resources
+      - section: "Student work"
+        contents:
+          - href: student-work/ugly-plots.qmd
+            text: Ugly plots
       - lab.qmd
       - hw.qmd
       - ae.qmd

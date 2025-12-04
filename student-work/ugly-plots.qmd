@@ -7,7 +7,7 @@ lightbox:
   effect: fade
 ---
 
-Mirror mirror on the wall, who is the ugliest one of them all?
+> "Mirror, mirror on the wall, who’s the ugliest of them all?"
 
 Students [were asked](/hw/hw-5.html#question-5) to make a simple plot "as ugly as possible".
 Below are their submissions.
@@ -15,400 +15,405 @@ Prepare for your eyes to bleed!
 
 ---
 
-![](ugly-plots/ugly-plot-1-a-k-b-8-8.png){width="400px" group="ugly-plots"}
+## Winner
 
-![](ugly-plots/ugly-plot-1-aayush-s418.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-s396684.png){width="400px" group="ugly-plots"} 
 
-![](ugly-plots/ugly-plot-1-AbbyWins.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-abigailp72.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-addi-smith.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-adibala5.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-aditi-hongalgi.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-adityanarayan12.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ahoram14.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-aishaaliomar589-cyber.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Alele23.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-AlexPark04.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-alicia-gordon.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-angela-xiong.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-anneettelee.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-annienam05.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ansons05.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-anushakamath67.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-anushkaa06.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-aplumpton.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-apolee17.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ApolloFung.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-arabellaperry.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-arielbaiye.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ashleycoburn.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ASiminou.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-avaclaar.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-avamaroulis.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-avelaunche.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-AvenSchwartz.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-awallace-lab.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-bdrevels.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Bella-Costa85.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-bennjohnston.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-biancafantozzi.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-blapalm.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-bnoel1789.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Bradleydb1.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-BrainyBeluga.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-BriannacY.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-caitlinbarrett.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-camchristie825.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-caosondang.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ceceliagw.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ChandlerCHill.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-char1003.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-charlieselbin.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-chiaemy25.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-chloegrler.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-chuang240.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-CindymxZhang.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-clairek28.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-corrinemak.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-cristinachung.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-dannyreynolds.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-dbbarton.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-debmusonera.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-demikwilson27.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-devontonneson.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Dianadroid-06.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Diego-J-San.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-diegot7.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-dinganna2018.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-djmurong.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-dmarcheli.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-dvillasegura.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-eddandomcho.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-eirydu.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ellanikolejohns.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-emanchatthaa.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-emersoncortazar.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-emilyhuang9.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-emilyzheng24.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ericqiang517.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-EshaanSatyawada2029.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-esong524.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ethankhorana.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-eugeneyoo59.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-eujinschung.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-faith-c-17.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-felixm7026.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-fionaxu26.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Frankthetank1138.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-georgiaandrews13.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Golden-llama.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-graceewangg.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-HamzaHefzy.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-HarryRL.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-HayesWright.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-hLin8888.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-hope-schoudel.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-hutchinsceline.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-irisdownes11.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-isaackwee.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-isaacmart212.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-isabellaabrajan.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-itsvia.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-jacksonheidesch.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-JadenPearlmutter.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-jam341.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-janatageldin00.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-janeyjh3323.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Jaspersven1.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-JohnCajski.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-joliefutterman.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-JordyAlvarado.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Joshywewe.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-jpfeehery.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-jst263.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-jugarnica.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-julia-gonzalez1.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-juliannacogliandro.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-juliettejworkman.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-KylaGreene.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-KyleMac-26.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-lanemiller28.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-LauraRH28.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-laurensoobrian.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Lcoleman24.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-LenaDoreen.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-leodu2004.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-libbyvand.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Logan44443.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-lpmkon.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-lucacadamo.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-lwen7419.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-madelinele.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-magdelineafework-ship-it.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-MaggieDing0911.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-mariahtd06.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Marina-Varriano.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-marksereda.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-Marshia27.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-matthewdelpreto.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-matthewpreb13.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-maxjbrodsky.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-maylouhz.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-melaniella.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-MelanieTheCelery.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-mgallagher24.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-mhobbs11.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-mjy13.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-moses0119.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-naima-12345.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-naimoahmedd.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-nalareid10.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-NevaehV.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ngimanaledi.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-nicoletedja.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-noah-breithaupt.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-ntmilev.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-nz431.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-oliviacenteno.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-OrBruchimDuke.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-OwenLi729.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-paugust234.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-phoebegoldthwaite.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-pkotapati57.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-praneever.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-preciousadesida.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-PriyaGoel982.png){width="400px" group="ugly-plots"}
+## Honorable mentions
 
 ![](ugly-plots/ugly-plot-1-rachelqi06.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-reesewoodworth.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-paugust234.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-ApolloFung.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-EshaanSatyawada2029.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-eddandomcho.png){width="400px" group="ugly-plots"} 
+
+## All submissions
+
+![](ugly-plots/ugly-plot-1-a-k-b-8-8.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-aayush-s418.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-AbbyWins.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-abigailp72.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-addi-smith.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-adibala5.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-aditi-hongalgi.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-adityanarayan12.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-ahoram14.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-aishaaliomar589-cyber.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Alele23.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-AlexPark04.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-alicia-gordon.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-angela-xiong.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-anneettelee.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-annienam05.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-ansons05.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-anushakamath67.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-anushkaa06.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-aplumpton.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-arabellaperry.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-arielbaiye.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-ashleycoburn.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-ASiminou.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-avaclaar.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-avamaroulis.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-avelaunche.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-AvenSchwartz.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-awallace-lab.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-bdrevels.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Bella-Costa85.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-bennjohnston.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-biancafantozzi.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-blapalm.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-bnoel1789.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-Bradleydb1.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-BrainyBeluga.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-BriannacY.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-caitlinbarrett.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-camchristie825.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-caosondang.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-ceceliagw.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-ChandlerCHill.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-char1003.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-charlieselbin.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-chiaemy25.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-chloegrler.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-chuang240.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-CindymxZhang.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-clairek28.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-corrinemak.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-cristinachung.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-dannyreynolds.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-dbbarton.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-debmusonera.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-demikwilson27.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-devontonneson.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-Dianadroid-06.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Diego-J-San.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-diegot7.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-dinganna2018.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-dmarcheli.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-dvillasegura.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-ellanikolejohns.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-emanchatthaa.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-emersoncortazar.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-eirydu.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-emilyzheng24.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-ericqiang517.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-felixm7026.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-fionaxu26.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Frankthetank1138.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-georgiaandrews13.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Golden-llama.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-graceewangg.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-HamzaHefzy.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-HarryRL.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-HayesWright.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-hLin8888.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-hope-schoudel.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-hutchinsceline.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-irisdownes11.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-isaackwee.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-isaacmart212.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-isabellaabrajan.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-itsvia.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-jacksonheidesch.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-JadenPearlmutter.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-jam341.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-janatageldin00.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-janeyjh3323.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Jaspersven1.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-JohnCajski.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-joliefutterman.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-JordyAlvarado.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Joshywewe.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-jpfeehery.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-jst263.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-jugarnica.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-julia-gonzalez1.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-juliannacogliandro.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-juliettejworkman.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-KylaGreene.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-KyleMac-26.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-lanemiller28.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-LauraRH28.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-laurensoobrian.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Lcoleman24.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-LenaDoreen.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-leodu2004.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-libbyvand.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Logan44443.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-lpmkon.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-lucacadamo.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-lwen7419.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-madelinele.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-magdelineafework-ship-it.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-MaggieDing0911.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-mariahtd06.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Marina-Varriano.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-marksereda.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-Marshia27.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-matthewdelpreto.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-matthewpreb13.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-maxjbrodsky.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-maylouhz.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-melaniella.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-MelanieTheCelery.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-mgallagher24.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-mhobbs11.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-mjy13.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-moses0119.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-naima-12345.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-naimoahmedd.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-nalareid10.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-NevaehV.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-ngimanaledi.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-nicoletedja.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-noah-breithaupt.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-ntmilev.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-nz431.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-oliviacenteno.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-OrBruchimDuke.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-OwenLi729.png){width="400px" group="ugly-plots"} 
+![](ugly-plots/ugly-plot-1-phoebegoldthwaite.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-pkotapati57.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-praneever.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-preciousadesida.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-reesewoodworth.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-renapark-duke.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-riansharp.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-riansharp.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-RJrowan05.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-ryanlee878.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-ryanlee878.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-S-srivas.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-s396684.png){width="400px" group="ugly-plots"}
-
 ![](ugly-plots/ugly-plot-1-sabrinac-n.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-sanchezayssa.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-sanchezayssa.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-sara-solis.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-sdifulvio11.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-sdifulvio11.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-sebsanchez-18.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-sirio14.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-sirio14.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-smf9012.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-so-abigail08.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-sofia-gonz.png){width="400px" group="ugly-plots"}
-
-![](ugly-plots/ugly-plot-1-sofiadibgomez.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-sofiadibgomez.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-sophiabustos1.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-sophm1025.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-sophm1025.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-srivenkat25.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-sriyasridhar17.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-sriyasridhar17.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-tatecommission.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-thaisrolly.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-thaisrolly.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-Truben424.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-tylerlrogers.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-tylerlrogers.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-TylerScaringella.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-victoriamiringu.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-victoriamiringu.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-virginiacaballero1973.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-vivianauerbach8.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-vivianauerbach8.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-viviansiebrecht.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-vkasabrukhau.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-vkasabrukhau.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-WenjinnW.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-williamcorey.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-williamcorey.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-WillVo1.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-yaelgreenblum.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-yaelgreenblum.png){width="400px" group="ugly-plots"} 
 
 ![](ugly-plots/ugly-plot-1-Yerik1221.png){width="400px" group="ugly-plots"}
 
-![](ugly-plots/ugly-plot-1-zachapel1.png){width="400px" group="ugly-plots"}
+![](ugly-plots/ugly-plot-1-zachapel1.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-apolee17.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-PriyaGoel982.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-esong524.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-ethankhorana.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-faith-c-17.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-so-abigail08.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-emilyhuang9.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-eugeneyoo59.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-eujinschung.png){width="400px" group="ugly-plots"} 
+
+![](ugly-plots/ugly-plot-1-sofia-gonz.png){width="400px" group="ugly-plots"}
+
+![](ugly-plots/ugly-plot-1-djmurong.png){width="400px" group="ugly-plots"}
