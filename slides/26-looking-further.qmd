@@ -336,7 +336,7 @@ What is the probability of getting an outcome $$ 4 when rolling a 6-sided die? W
 ## Which die is the good die? {.smaller}
 
 ::: question
-You're playing a game where you win if the die roll is $$ 4. If you could get your pick, which die would you prefer to play this game with?
+You're playing a game where you win if the die roll is $\ge$ 4. If you could get your pick, which die would you prefer to play this game with?
 :::
 
 - 6-sided
@@ -422,17 +422,6 @@ How did you make this decision?
 ::: question
 What is the probability, based on the outcome of the {first} roll, that A is the good die (and B is the bad die)?
 :::
-
-- We want to find P(A is good $|$ outcome of $1^{st}$ roll).
-
-- This is a conditional probability so we'll use Bayes' Theorem
-$$ P(X|Y) = \frac{P(X~and~Y)}{P(Y)} $$
-
-- In context, this would be
-
-![](images/26/p1.png)
-
-- Earlier, we decided that the prior probability, P(A good) = 0.5.
 
 ## Posterior probability {.xsmall}
 
