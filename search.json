@@ -6927,7 +6927,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science and Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n💻 lab 0\n\nLab 0 due at the end of lab session (not graded)\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n🖥️ slides 01  🗒️ notes 01\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 01  ✅ ae 01\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n🖥️ slides 03  🗒️ notes 03\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 02  ✅ ae 02\n\n\n\n\n3\nMon, Sep 8\nLab 1: Exploring NC Counties\n\n💻 lab 1  📝 hw 1\n\nLab 1 due at the end of the lab session\n\n\n\nTue, Sep 9\nExploratory data analysis I\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships  🎥 Code along :: Star Wars characters\n\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 03  ✅ ae 03\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\n📘 ims - chp 5  📘 ims - chp 6  🎥 Code along :: Diving deeper with Palmer Penguins\n\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 04  ✅ ae 04\n\n\n\n\n\nSun, Sep 14\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Get in teams then group_by()\n\n📗 r4ds - chp 4\n\n💻 lab 2  📝 hw 2\n\nLab 2 due at the end of the lab session\n\n\n\nTue, Sep 16\nTidying data\n🎥 Tidy data  🎥 Tidying data  🎥 Code along :: Country populations over time  📗 r4ds - chp 5\n\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 05  ✅ ae 05\n\n\n\n\n\nThu, Sep 18\nJoining data\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 06  ✅ ae 06\n\n\n\n\n\nSun, Sep 21\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\n\n💻 lab 3  📝 hw 3\n\nLab 3 due at the end of the lab session\n\n\n\nTue, Sep 23\nData types and classes\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n🖥️ slides 09  🗒️ notes 09  ⌨️ ae 07  ✅ ae 07\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\n🎥 Importing data  🎥 Code along :: Halving CO2 emissions  🎥 Code along :: Student survey  📗 r4ds - chp 7  📗 r4ds - chp 17.1 - 17.3\n\n🖥️ slides 10  🗒️ notes 10  ⌨️ ae 08  ✅ ae 08\n\n\n\n\n\nSun, Sep 28\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Changes in college athletics\n\n💻 lab 4\n\nLab 4 due at the end of lab session\n\n\n\nTue, Sep 30\nExam 1 review\n\n🖥️ slides 11  🗒️ notes 11  📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\n\n\n\n\n\n\nSat, Oct 4\n\n\n\nExam 1 take-home due at 12 pm (noon)\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\n📝 Pre-read: Merge conflicts  📝 Project description\n\n📓 project milestone 1  📓 project milestone 2\n\nProject milestone 1 due at the end of lab session\n\n\n\nTue, Oct 7\nWeb scraping a single page\n🎥 Web scraping basics  🎥 Code along :: Scraping an eCommerce page  📗 r4ds - chp 24.1 - 24.6\n\n🖥️ slides 12  🗒️ notes 12  ⌨️ ae 09  ✅ ae 09\n\n\n\n\n\nThu, Oct 9\nWeb scraping many pages\n🎥 Code along :: Scraping many eCommerce pages  🎥 Web scraping considerations  📗 r4ds - chp 25.1 - 25.2\n\n🖥️ slides 13  🗒️ notes 13  ⌨️ ae 09  ✅ ae 09\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\n\n\n\n\n\n\nThu, Oct 16\nData science ethics\n🎥 Misrepresentation  🎥 Data privacy  🎥 Algorithmic bias  🎥 Code along :: Sectors and services\n\n🖥️ slides 14  🗒️ notes 14\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\n📝 Tidyverse style guide - Chp 1-5\n\n📓 project milestone 3\n\nProject milestone 3 due at the end of lab session\n\n\n\nTue, Oct 21\nThe language of models\n🎥 The language of models  🎥 Linear regression with a numerical predictor  📘 ims - chp 7.1\n\n🖥️ slides 15  🗒️ notes 15  ⌨️ ae 10  ✅ ae 10\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\n🎥 Linear regression with a categorical predictor  🎥 Outliers in linear regression  🎥 Code along :: Modeling fish  📘 ims - chp 7.2\n\n🖥️ slides 16  🗒️ notes 16  ⌨️ ae 11  ✅ ae 11\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Make up your other half [45 minutes]\n\n📓 project milestone 4  💻 lab 5 📝 hw 4\n\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors\n🎥 Linear regression with multiple predictors  🎥 Main and interaction effects  📘 ims - chp 8.1-8.2  📘 ims - chp 8.3-8.5\n\n🖥️ slides 17  🗒️ notes 17  ⌨️ ae 12  ✅ ae 12\n\n\n\n\n\nThu, Oct 30\nModel selection and overfitting\n🎥 Code along :: Modeling interest rates\n\n🖥️ slides 18  🗒️ notes 18\n\nPeer evaluation 3 at 11:59 pm\n\n\n\nSun, Nov 2\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\n\n📓 project milestone 5\n\nProject milestone 5 due at the end of lab session\n\n\n\nTue, Nov 4\nDeveloping and communicating data science results\n📘 ims - chp 6  📗 r4ds - chp 10\n\n🖥️ slides 19  🗒️ notes 19\n\n\n\n\n\nThu, Nov 6\nLogistic regression\n🎥 Logistic regression  🎥 Code along :: Building a spam filter  📘 ims - chp 9\n\n🖥️ slides 20  🗒️ notes 20  ⌨️ ae 13  ✅ ae 13\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Presentation\n\n📓 project milestone 6\n\nProject milestone 6 presentation due at the start of lab session\n\n\n\nTue, Nov 11\nSpending your data\n🎥 Clasification and decision errors  🎥 Overfitting and spending your data\n\n🖥️ slides 21  🗒️ notes 21\n\n\n\n\n\nThu, Nov 13\nEvaluating models\n🎥 Code along :: Forest classification\n\n🖥️ slides 22  🗒️ notes 22  ⌨️ ae 14  ✅ ae 14\n\nProject milestone 6 write-up due at 11:59 pm\n\n\n\nFri, Nov 14\n\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\n\n💻 lab 6\n\nLab 6 due at the end of lab session\n\n\n\nTue, Nov 18\nExam 2 review\n\n🖥️ slides 23  🗒️ notes 23  📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\n\n\n\n\n\n\nSat, Nov 22\n\n\n\nExam 2 take-home due at 12 pm (noon)\n\n\n14\nMon, Nov 24\nLab 7: Leavin’ on a jet plane\n\n💻 lab 7  📝 hw 5\n\nLab 7 due at the end of lab session\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\n🎥 Quantifying uncertainty  🎥 Bootstrapping  🎥 Code along :: Bootstrapping Duke Forest houses  📘 ims - chp 11  📘 ims - chp 12\n\n🖥️ slides 24  🗒️ notes 24  ⌨️ ae 15  ✅ ae 15\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\n\n\n\n\n\n\nSun, Nov 30\n\n\n\nHW 5 due at 11:59 pm (will be accepted until Wed, Dec 3 at 11:59 pm without penalty)\n\n\n15\nMon, Dec 1\nLab 8: Inference\n\n💻 lab 8  📝 hw 6\n\nLab 8 due at the end of lab session\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\n🎥 Hypothesis testing  📘 ims - chp 11\n\n🖥️ slides 25  🗒️ notes 25\n\n\n\n\n\nThu, Dec 4\nLooking further\n[To be posted]\n\n\n\n\n\nFri, Dec 5\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n1\nMon, Aug 25\nLab 0: Mise en place\n\n💻 lab 0\n\nLab 0 due at the end of lab session (not graded)\n\n\n\nTue, Aug 26\nHello World and Hello STA 199!\n📝 Syllabus\n\n🖥️ slides 01  🗒️ notes 01\n\n\n\n\n\nThu, Aug 28\nMeet the toolkit\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto  🎥 Code along :: First data viz with UN Votes\n\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 01  ✅ ae 01\n\n\n\n\n2\nMon, Sep 1\nNo lab - Labor Day\n\n\n\n\n\n\nTue, Sep 2\nARC Presentation  Grammar of data visualization\n📗 r4ds - chp 1  📘 ims - chp 4  🎥 Visualizing data  🎥 Building a plot step-by-step with ggplot2  🎥 Grammar of graphics  🎥 Code along :: First look at Palmer Penguins\n\n🖥️ slides 03  🗒️ notes 03\n\n\n\n\n\nThu, Sep 4\nGrammar of data transformation\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 02  ✅ ae 02\n\n\n\n\n3\nMon, Sep 8\nLab 1: Exploring NC Counties\n\n💻 lab 1  📝 hw 1\n\nLab 1 due at the end of the lab session\n\n\n\nTue, Sep 9\nExploratory data analysis I\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships  🎥 Code along :: Star Wars characters\n\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 03  ✅ ae 03\n\n\n\n\n\nThu, Sep 11\nExploratory data analysis II\n📘 ims - chp 5  📘 ims - chp 6  🎥 Code along :: Diving deeper with Palmer Penguins\n\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 04  ✅ ae 04\n\n\n\n\n\nSun, Sep 14\n\n\n\nHW 1 due at 11:59 pm\n\n\n4\nMon, Sep 15\nLab 2: Get in teams then group_by()\n\n📗 r4ds - chp 4\n\n💻 lab 2  📝 hw 2\n\nLab 2 due at the end of the lab session\n\n\n\nTue, Sep 16\nTidying data\n🎥 Tidy data  🎥 Tidying data  🎥 Code along :: Country populations over time  📗 r4ds - chp 5\n\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 05  ✅ ae 05\n\n\n\n\n\nThu, Sep 18\nJoining data\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 06  ✅ ae 06\n\n\n\n\n\nSun, Sep 21\n\n\n\nHW 2 due at 11:59 pm\n\n\n5\nMon, Sep 22\nLab 3: Inflation everywhere\n\n💻 lab 3  📝 hw 3\n\nLab 3 due at the end of the lab session\n\n\n\nTue, Sep 23\nData types and classes\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n🖥️ slides 09  🗒️ notes 09  ⌨️ ae 07  ✅ ae 07\n\n\n\n\n\nThu, Sep 25\nImporting and recoding data\n🎥 Importing data  🎥 Code along :: Halving CO2 emissions  🎥 Code along :: Student survey  📗 r4ds - chp 7  📗 r4ds - chp 17.1 - 17.3\n\n🖥️ slides 10  🗒️ notes 10  ⌨️ ae 08  ✅ ae 08\n\n\n\n\n\nSun, Sep 28\n\n\n\nHW 3 due at 11:59 pm\n\n\n6\nMon, Sep 29\nLab 4: Changes in college athletics\n\n💻 lab 4\n\nLab 4 due at the end of lab session\n\n\n\nTue, Sep 30\nExam 1 review\n\n🖥️ slides 11  🗒️ notes 11  📝 exam 1 review  ✅ exam 1 review\n\n\n\n\n\nThu, Oct 2\nExam 1 - In-class + take-home released\n\n\n\n\n\n\nSat, Oct 4\n\n\n\nExam 1 take-home due at 12 pm (noon)\n\n\n7\nMon, Oct 6\nProject milestone 1 - Working collaboratively [45 mins]  Project milestone 2 - Project proposals [30 mins]\n📝 Pre-read: Merge conflicts  📝 Project description\n\n📓 project milestone 1  📓 project milestone 2\n\nProject milestone 1 due at the end of lab session\n\n\n\nTue, Oct 7\nWeb scraping a single page\n🎥 Web scraping basics  🎥 Code along :: Scraping an eCommerce page  📗 r4ds - chp 24.1 - 24.6\n\n🖥️ slides 12  🗒️ notes 12  ⌨️ ae 09  ✅ ae 09\n\n\n\n\n\nThu, Oct 9\nWeb scraping many pages\n🎥 Code along :: Scraping many eCommerce pages  🎥 Web scraping considerations  📗 r4ds - chp 25.1 - 25.2\n\n🖥️ slides 13  🗒️ notes 13  ⌨️ ae 09  ✅ ae 09\n\nMidterm course evaluation due at 11:59 pm (optional)\n\n\n8\nMon, Oct 13\nNo lab - Fall Break\n\n\n\n\n\n\nTue, Oct 14\nNo lecture - Fall Break\n\n\n\n\n\n\nThu, Oct 16\nData science ethics\n🎥 Misrepresentation  🎥 Data privacy  🎥 Algorithmic bias  🎥 Code along :: Sectors and services\n\n🖥️ slides 14  🗒️ notes 14\n\nProject milestone 2 due at 11:59 pm  Peer evaluation 1 due at 11:59 pm\n\n\n9\nMon, Oct 20\nProject milestone 3 - Improve and progress\n📝 Tidyverse style guide - Chp 1-5\n\n📓 project milestone 3\n\nProject milestone 3 due at the end of lab session\n\n\n\nTue, Oct 21\nThe language of models\n🎥 The language of models  🎥 Linear regression with a numerical predictor  📘 ims - chp 7.1\n\n🖥️ slides 15  🗒️ notes 15  ⌨️ ae 10  ✅ ae 10\n\n\n\n\n\nThu, Oct 23\nLinear regression with a single predictor\n🎥 Linear regression with a categorical predictor  🎥 Outliers in linear regression  🎥 Code along :: Modeling fish  📘 ims - chp 7.2\n\n🖥️ slides 16  🗒️ notes 16  ⌨️ ae 11  ✅ ae 11\n\nPeer evaluation 2 due at 11:59 pm\n\n\n10\nMon, Oct 27\nProject milestone 4 - Peer review [30 minutes]  Lab 5: Make up your other half [45 minutes]\n\n📓 project milestone 4  💻 lab 5 📝 hw 4\n\nProject milestone 4 at the end of lab session  Lab 5 due at the end of the lab session\n\n\n\nTue, Oct 28\nLinear regression with multiple predictors\n🎥 Linear regression with multiple predictors  🎥 Main and interaction effects  📘 ims - chp 8.1-8.2  📘 ims - chp 8.3-8.5\n\n🖥️ slides 17  🗒️ notes 17  ⌨️ ae 12  ✅ ae 12\n\n\n\n\n\nThu, Oct 30\nModel selection and overfitting\n🎥 Code along :: Modeling interest rates\n\n🖥️ slides 18  🗒️ notes 18\n\nPeer evaluation 3 at 11:59 pm\n\n\n\nSun, Nov 2\n\n\n\nHW 4 at 11:59 pm\n\n\n11\nMon, Nov 3\nProject milestone 5 - Work on writeup and presentations\n\n📓 project milestone 5\n\nProject milestone 5 due at the end of lab session\n\n\n\nTue, Nov 4\nDeveloping and communicating data science results\n📘 ims - chp 6  📗 r4ds - chp 10\n\n🖥️ slides 19  🗒️ notes 19\n\n\n\n\n\nThu, Nov 6\nLogistic regression\n🎥 Logistic regression  🎥 Code along :: Building a spam filter  📘 ims - chp 9\n\n🖥️ slides 20  🗒️ notes 20  ⌨️ ae 13  ✅ ae 13\n\n\n\n\n12\nMon, Nov 10\nProject milestone 6 - Presentation\n\n📓 project milestone 6\n\nProject milestone 6 presentation due at the start of lab session\n\n\n\nTue, Nov 11\nSpending your data\n🎥 Clasification and decision errors  🎥 Overfitting and spending your data\n\n🖥️ slides 21  🗒️ notes 21\n\n\n\n\n\nThu, Nov 13\nEvaluating models\n🎥 Code along :: Forest classification\n\n🖥️ slides 22  🗒️ notes 22  ⌨️ ae 14  ✅ ae 14\n\nProject milestone 6 write-up due at 11:59 pm\n\n\n\nFri, Nov 14\n\n\n\nPeer evaluation 4 due at 11:59 pm\n\n\n13\nMon, Nov 17\nLab 6: Everything so far II\n\n💻 lab 6\n\nLab 6 due at the end of lab session\n\n\n\nTue, Nov 18\nExam 2 review\n\n🖥️ slides 23  🗒️ notes 23  📝 exam 2 review  ✅ exam 2 review\n\n\n\n\n\nThu, Nov 20\nExam 2 - In-class + take-home released\n\n\n\n\n\n\nSat, Nov 22\n\n\n\nExam 2 take-home due at 12 pm (noon)\n\n\n14\nMon, Nov 24\nLab 7: Leavin’ on a jet plane\n\n💻 lab 7  📝 hw 5\n\nLab 7 due at the end of lab session\n\n\n\nTue, Nov 25\nQuantifying uncertainty with bootstrap intervals\n🎥 Quantifying uncertainty  🎥 Bootstrapping  🎥 Code along :: Bootstrapping Duke Forest houses  📘 ims - chp 11  📘 ims - chp 12\n\n🖥️ slides 24  🗒️ notes 24  ⌨️ ae 15  ✅ ae 15\n\n\n\n\n\nThu, Nov 27\nNo lecture - Thanksgiving\n\n\n\n\n\n\nSun, Nov 30\n\n\n\nHW 5 due at 11:59 pm (will be accepted until Wed, Dec 3 at 11:59 pm without penalty)\n\n\n15\nMon, Dec 1\nLab 8: Inference\n\n💻 lab 8  📝 hw 6\n\nLab 8 due at the end of lab session\n\n\n\nTue, Dec 2\nMaking decisions with randomization tests\n🎥 Hypothesis testing  📘 ims - chp 11\n\n🖥️ slides 25  🗒️ notes 25\n\n\n\n\n\nThu, Dec 4\nLooking further\n[To be posted]\n🖥️ slides 26  🗒️ notes 26\n\n\n\n\n\nFri, Dec 5\n\n\n\nHW 6 due at 11:59 pm (will be accepted until Sun, Dec 7 at 11:59 pm without penalty)\n\n\n\nNA\nFinal review (time TBD, location TBD)\n\n📝 final review  ✅ final review\n\n\n\n\n16\nFri, Dec 12\nFinal (2 pm - 5 pm)",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -9421,7 +9421,7 @@
     "href": "slides/26-looking-further.html",
     "title": "Looking further",
     "section": "",
-    "text": "Take 2 minutes to fill out the TA evaluation form – link in your email! Due Monday, December 8th.\nNominate a TA for the StatSci TA of the Year award by sending an email to dus@stat.duke.edu with a brief narrative for your nomination.\n\n\n\n\n\n\n\nPlease also fill out the course evaluation (on DukeHub) as well, I’d love to your feedback!\n\n\n\n\n\nHW 6:\n\nQ4: Instructions clarified – save result as births14\n\nQ8: Table to recreate updated\n\n\nFinal exam review: Tuesday, Dec 9, 3-4 pm at Soc Sci 136\nFinal exam office hourse posted"
+    "text": "Take 2 minutes to fill out the TA evaluation form – link in your email! Due Monday, December 8th.\nNominate a TA for the StatSci TA of the Year award by sending an email to dus@stat.duke.edu with a brief narrative for your nomination.\n\n\n\n\n\n\n\nPlease also fill out the course evaluation (on DukeHub) as well, I’d love to your feedback!\n\n\n\n\n\nHW 6:\n\nQ4: Instructions clarified – save result as births14\n\nQ8: Table to recreate updated\n\n\nFinal exam review: Tuesday, Dec 9, 3-4 pm at Soc Sci 136\nFinal exam office hourse posted\n\nDue: On paper (hand written or typed) at the final exam review\nTask:\n\nWrite one question for the final exam.\nMust be related to course content, which specific references from course content (lecture slide deck, book chapter, video, etc.)\nCan be a 3-point (one correct answer) or 5-point (select-all-that-apply) question\n\nGrading:\n\nIf you turn in a “good” (or good enough) question, you get +1 or +2 points on your Exam 2, depending on the quality of the question.\nI will use one of these questions on the exam, so that’s even more incentive to write a really good one!\nIf you turn in a “not good enough” question, you don’t get any extra credit.\n\n\n\nBest ugly plot\nBest team name\nMost messed up repo"
   },
   {
     "objectID": "slides/26-looking-further.html#give-feedback",
@@ -9436,6 +9436,20 @@
     "title": "Looking further",
     "section": "",
     "text": "HW 6:\n\nQ4: Instructions clarified – save result as births14\n\nQ8: Table to recreate updated\n\n\nFinal exam review: Tuesday, Dec 9, 3-4 pm at Soc Sci 136\nFinal exam office hourse posted"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#extra-credit",
+    "href": "slides/26-looking-further.html#extra-credit",
+    "title": "Looking further",
+    "section": "",
+    "text": "Due: On paper (hand written or typed) at the final exam review\nTask:\n\nWrite one question for the final exam.\nMust be related to course content, which specific references from course content (lecture slide deck, book chapter, video, etc.)\nCan be a 3-point (one correct answer) or 5-point (select-all-that-apply) question\n\nGrading:\n\nIf you turn in a “good” (or good enough) question, you get +1 or +2 points on your Exam 2, depending on the quality of the question.\nI will use one of these questions on the exam, so that’s even more incentive to write a really good one!\nIf you turn in a “not good enough” question, you don’t get any extra credit."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#awards",
+    "href": "slides/26-looking-further.html#awards",
+    "title": "Looking further",
+    "section": "",
+    "text": "Best ugly plot\nBest team name\nMost messed up repo"
   },
   {
     "objectID": "slides/26-looking-further.html#participate",
@@ -9501,6 +9515,132 @@
     "text": "Simulating under the null"
   },
   {
+    "objectID": "slides/26-looking-further.html#observed",
+    "href": "slides/26-looking-further.html#observed",
+    "title": "Looking further",
+    "section": "Observed",
+    "text": "Observed\n\nobs_diff &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  calculate(\"diff in props\", success = \"promoted\", order = c(\"male\", \"female\"))\n\nobs_diff\n\nResponse: decision (factor)\nExplanatory: sex (factor)\n# A tibble: 1 × 1\n   stat\n  &lt;dbl&gt;\n1 0.292"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#null-distribution",
+    "href": "slides/26-looking-further.html#null-distribution",
+    "title": "Looking further",
+    "section": "Null distribution",
+    "text": "Null distribution\n\nset.seed(199)\nnull_dist &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 10000, type = \"permute\") |&gt;\n  calculate(\"diff in props\", success = \"promoted\", order = c(\"male\", \"female\"))\n\nnull_dist\n\nResponse: decision (factor)\nExplanatory: sex (factor)\nNull Hypothes...\n# A tibble: 10,000 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 -0.208 \n 2         2  0.125 \n 3         3 -0.0417\n 4         4 -0.0417\n 5         5  0.125 \n 6         6 -0.125 \n 7         7 -0.0417\n 8         8 -0.0417\n 9         9 -0.0417\n10        10 -0.0417\n# ℹ 9,990 more rows"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#visualizing-the-null-distribution",
+    "href": "slides/26-looking-further.html#visualizing-the-null-distribution",
+    "title": "Looking further",
+    "section": "Visualizing the null distribution",
+    "text": "Visualizing the null distribution\n\nvisualize(null_dist)"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#visualizing-the-p-value",
+    "href": "slides/26-looking-further.html#visualizing-the-p-value",
+    "title": "Looking further",
+    "section": "Visualizing the p-value",
+    "text": "Visualizing the p-value\n\nvisualize(null_dist) +\n  shade_p_value(obs_stat = obs_diff, direction = \"two-sided\")"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#calculating-the-p-value",
+    "href": "slides/26-looking-further.html#calculating-the-p-value",
+    "title": "Looking further",
+    "section": "Calculating the p-value",
+    "text": "Calculating the p-value\n\nget_p_value(\n  null_dist,\n  obs_stat = obs_diff,\n  direction = \"two-sided\"\n)\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1   0.044"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#conclusion",
+    "href": "slides/26-looking-further.html#conclusion",
+    "title": "Looking further",
+    "section": "Conclusion",
+    "text": "Conclusion\nWith a p-value smaller than 0.05, we reject the null hypothesis and conclude that the data provide convincing evidence of a discernible difference between the male and female promotion rate, i.e., sex discrimination in promotion decisions."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#whats-the-chance-of-winning",
+    "href": "slides/26-looking-further.html#whats-the-chance-of-winning",
+    "title": "Looking further",
+    "section": "What’s the chance of winning?",
+    "text": "What’s the chance of winning?\n\nWhat is the probability of getting an outcome $$ 4 when rolling a 6-sided die? What is the probability when rolling a 12-sided die?\n\n\n6-sided: \\({3}{4}\\), 12-sided: \\({1}{2}\\)\n\n6-sided: \\({1}{3}\\), 12-sided: \\({2}{3}\\)\n\n6-sided: \\({1}{2}\\), 12-sided: \\({3}{4}\\)\n\n6-sided: \\({2}{3}\\), 12-sided: \\({1}{3}\\)"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#which-die-is-the-good-die",
+    "href": "slides/26-looking-further.html#which-die-is-the-good-die",
+    "title": "Looking further",
+    "section": "Which die is the good die?",
+    "text": "Which die is the good die?\n\nYou’re playing a game where you win if the die roll is \\(\\ge\\) 4. If you could get your pick, which die would you prefer to play this game with?\n\n\n6-sided\n12-sided"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#interpretation-of-probability",
+    "href": "slides/26-looking-further.html#interpretation-of-probability",
+    "title": "Looking further",
+    "section": "Interpretation of probability",
+    "text": "Interpretation of probability\n\nFrequentist interpretation:\n\nThe probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times.\nSingle main stream school until recently.\nWhat we’ve been using so far in this course.\n\n\nBayesian interpretation:\n\nA Bayesian interprets probability as a subjective degree of belief: For the same event, two separate people could have differing probabilities.\nLargely popularized by revolutionary advance in computational technology and methods during the last twenty years."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#set-up",
+    "href": "slides/26-looking-further.html#set-up",
+    "title": "Looking further",
+    "section": "Set up",
+    "text": "Set up\n\nI have two dice: one 6-sided, the other 12-sided.\nWe’re going to play a game where I’m going to call them die A and die B, and you won’t know which one is which.\nYou pick die A or B, I roll it, and I tell you if you win or not, where winning is getting a number \\(\\ge\\) 4. If you win, you get a piece of candy. If you lose, I get to keep the candy.\nWe’ll play this multiple times with different contestants.\nI will not swap die A and B at any point.\nWe’ll record which die each contestant picks and whether they won or lost.\nThe ultimate goal is to come to a class consensus about whether A or B is the good die.\nYou get to pick how long you want to keep playing, but remember, each time you guess wrong, you lose a piece of candy (so there is a cost associated with too many tries). If you make the wrong decision, you lose all the candy."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#hypotheses-and-decisions",
+    "href": "slides/26-looking-further.html#hypotheses-and-decisions",
+    "title": "Looking further",
+    "section": "Hypotheses and decisions",
+    "text": "Hypotheses and decisions\n\nSampling isn’t free!\nAt each trial you risk losing pieces of candy if you lose (the die comes up \\(&lt;\\) 4). Too many trials means you won’t have much candy left. And if we spend too much class time and we may not get through all the material."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#initial-guess",
+    "href": "slides/26-looking-further.html#initial-guess",
+    "title": "Looking further",
+    "section": "Initial guess",
+    "text": "Initial guess\n\nYou have no idea if I have chosen A to be the good die (12-sided) or bad die (6-sided). Then, before we collect any data, what is your best guess for A is the good die and B is the bad die?\n\n\nP(A good, B bad) = 0.33; P(A bad, B good) = 0.67\nP(A good, B bad) = 0.50; P(A bad, B good) = 0.50\nP(A good, B bad) = 0; P(A bad, B good) = 1\nP(A good, B bad) = 0.25; P(A bad, B good) = 0.75"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#prior-probabilities",
+    "href": "slides/26-looking-further.html#prior-probabilities",
+    "title": "Looking further",
+    "section": "Prior probabilities",
+    "text": "Prior probabilities\n\n\nThese are your prior probabilities for the two competing claims (hypotheses):\n\n\n\\(H_1\\): A good, B bad\n\n\\(H_2\\): A bad, B good\n\n\nThat is, these probabilities represent what you believe before seeing any data.\nYou could have conceivably made up these probabilities, but instead you have chosen to make an educated guess."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#decision-making",
+    "href": "slides/26-looking-further.html#decision-making",
+    "title": "Looking further",
+    "section": "Decision making",
+    "text": "Decision making\n\nWhat is your decision?\n\n\n\nHow did you make this decision?"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#probability-tree---roll-1",
+    "href": "slides/26-looking-further.html#probability-tree---roll-1",
+    "title": "Looking further",
+    "section": "Probability tree - roll 1",
+    "text": "Probability tree - roll 1\n\nWhat is the probability, based on the outcome of the {first} roll, that A is the good die (and B is the bad die)?"
+  },
+  {
+    "objectID": "slides/26-looking-further.html#posterior-probability",
+    "href": "slides/26-looking-further.html#posterior-probability",
+    "title": "Looking further",
+    "section": "Posterior probability",
+    "text": "Posterior probability\n\nThe probability\n\n\\[ {P(A~is~good~|~outcome~of~1^{st}~roll)} \\]\nis also called the posterior probability.\n\nPosterior probability is generally defined as P(hypothesis \\(|\\) data). It tells us the probability of a hypothesis we set forth, given the data we just observed. It depends on both the prior probability we set and the observed data.\nThis is different than a p-value (a Frequentist concept) which is roughly P(data \\(|\\) hypothesis).\nIn the next iteration (roll) we get to take advantage of what we learned from the data.\nIn other words, we update our prior with our posterior."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#recap-bayesian-inference",
+    "href": "slides/26-looking-further.html#recap-bayesian-inference",
+    "title": "Looking further",
+    "section": "Recap: Bayesian inference",
+    "text": "Recap: Bayesian inference\n\nTake advantage of prior information, like a previously published study or a physical model.\nNaturally integrate data as you collect it, and update your priors.\nAvoid the counter-intuitive Frequentist definition of a p-value as the P(observed or more extreme outcome \\(|\\) \\(H_0\\) is true). Instead base decisions on the posterior probability, P(hypothesis is true \\(|\\) observed data).\nWatch out! A good prior helps, a bad prior hurts, but the prior matters less the more data you have.\nMore advanced Bayesian techniques offer flexibility not present in Frequentist models."
+  },
+  {
+    "objectID": "slides/26-looking-further.html#thank-you",
+    "href": "slides/26-looking-further.html#thank-you",
+    "title": "Looking further",
+    "section": "Thank you!",
+    "text": "Thank you!"
+  },
+  {
     "objectID": "slides/26-looking-further-slides.html#give-feedback",
     "href": "slides/26-looking-further-slides.html#give-feedback",
     "title": "Looking further",
@@ -9513,6 +9653,20 @@
     "title": "Looking further",
     "section": "Announcements",
     "text": "Announcements\n\n\nHW 6:\n\nQ4: Instructions clarified – save result as births14\n\nQ8: Table to recreate updated\n\n\nFinal exam review: Tuesday, Dec 9, 3-4 pm at Soc Sci 136\nFinal exam office hourse posted"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#extra-credit",
+    "href": "slides/26-looking-further-slides.html#extra-credit",
+    "title": "Looking further",
+    "section": "Extra credit",
+    "text": "Extra credit\nDue: On paper (hand written or typed) at the final exam review\nTask:\n\nWrite one question for the final exam.\nMust be related to course content, which specific references from course content (lecture slide deck, book chapter, video, etc.)\nCan be a 3-point (one correct answer) or 5-point (select-all-that-apply) question\n\nGrading:\n\nIf you turn in a “good” (or good enough) question, you get +1 or +2 points on your Exam 2, depending on the quality of the question.\nI will use one of these questions on the exam, so that’s even more incentive to write a really good one!\nIf you turn in a “not good enough” question, you don’t get any extra credit."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#awards",
+    "href": "slides/26-looking-further-slides.html#awards",
+    "title": "Looking further",
+    "section": "Awards",
+    "text": "Awards\n\nBest ugly plot\nBest team name\nMost messed up repo"
   },
   {
     "objectID": "slides/26-looking-further-slides.html#participate",
@@ -9576,6 +9730,132 @@
     "title": "Looking further",
     "section": "Simulating under the null",
     "text": "Simulating under the null"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#observed",
+    "href": "slides/26-looking-further-slides.html#observed",
+    "title": "Looking further",
+    "section": "Observed",
+    "text": "Observed\n\nobs_diff &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  calculate(\"diff in props\", success = \"promoted\", order = c(\"male\", \"female\"))\n\nobs_diff\n\nResponse: decision (factor)\nExplanatory: sex (factor)\n# A tibble: 1 × 1\n   stat\n  &lt;dbl&gt;\n1 0.292"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#null-distribution",
+    "href": "slides/26-looking-further-slides.html#null-distribution",
+    "title": "Looking further",
+    "section": "Null distribution",
+    "text": "Null distribution\n\nset.seed(199)\nnull_dist &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 10000, type = \"permute\") |&gt;\n  calculate(\"diff in props\", success = \"promoted\", order = c(\"male\", \"female\"))\n\nnull_dist\n\nResponse: decision (factor)\nExplanatory: sex (factor)\nNull Hypothes...\n# A tibble: 10,000 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 -0.208 \n 2         2  0.125 \n 3         3 -0.0417\n 4         4 -0.0417\n 5         5  0.125 \n 6         6 -0.125 \n 7         7 -0.0417\n 8         8 -0.0417\n 9         9 -0.0417\n10        10 -0.0417\n# ℹ 9,990 more rows"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#visualizing-the-null-distribution",
+    "href": "slides/26-looking-further-slides.html#visualizing-the-null-distribution",
+    "title": "Looking further",
+    "section": "Visualizing the null distribution",
+    "text": "Visualizing the null distribution\n\nvisualize(null_dist)"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#visualizing-the-p-value",
+    "href": "slides/26-looking-further-slides.html#visualizing-the-p-value",
+    "title": "Looking further",
+    "section": "Visualizing the p-value",
+    "text": "Visualizing the p-value\n\nvisualize(null_dist) +\n  shade_p_value(obs_stat = obs_diff, direction = \"two-sided\")"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#calculating-the-p-value",
+    "href": "slides/26-looking-further-slides.html#calculating-the-p-value",
+    "title": "Looking further",
+    "section": "Calculating the p-value",
+    "text": "Calculating the p-value\n\nget_p_value(\n  null_dist,\n  obs_stat = obs_diff,\n  direction = \"two-sided\"\n)\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1   0.044"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#conclusion",
+    "href": "slides/26-looking-further-slides.html#conclusion",
+    "title": "Looking further",
+    "section": "Conclusion",
+    "text": "Conclusion\nWith a p-value smaller than 0.05, we reject the null hypothesis and conclude that the data provide convincing evidence of a discernible difference between the male and female promotion rate, i.e., sex discrimination in promotion decisions."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#whats-the-chance-of-winning",
+    "href": "slides/26-looking-further-slides.html#whats-the-chance-of-winning",
+    "title": "Looking further",
+    "section": "What’s the chance of winning?",
+    "text": "What’s the chance of winning?\n\nWhat is the probability of getting an outcome $$ 4 when rolling a 6-sided die? What is the probability when rolling a 12-sided die?\n\n\n6-sided: \\({3}{4}\\), 12-sided: \\({1}{2}\\)\n\n6-sided: \\({1}{3}\\), 12-sided: \\({2}{3}\\)\n\n6-sided: \\({1}{2}\\), 12-sided: \\({3}{4}\\)\n\n6-sided: \\({2}{3}\\), 12-sided: \\({1}{3}\\)"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#which-die-is-the-good-die",
+    "href": "slides/26-looking-further-slides.html#which-die-is-the-good-die",
+    "title": "Looking further",
+    "section": "Which die is the good die?",
+    "text": "Which die is the good die?\n\nYou’re playing a game where you win if the die roll is \\(\\ge\\) 4. If you could get your pick, which die would you prefer to play this game with?\n\n\n6-sided\n12-sided"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#interpretation-of-probability",
+    "href": "slides/26-looking-further-slides.html#interpretation-of-probability",
+    "title": "Looking further",
+    "section": "Interpretation of probability",
+    "text": "Interpretation of probability\n\nFrequentist interpretation:\n\nThe probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times.\nSingle main stream school until recently.\nWhat we’ve been using so far in this course.\n\n\nBayesian interpretation:\n\nA Bayesian interprets probability as a subjective degree of belief: For the same event, two separate people could have differing probabilities.\nLargely popularized by revolutionary advance in computational technology and methods during the last twenty years."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#set-up",
+    "href": "slides/26-looking-further-slides.html#set-up",
+    "title": "Looking further",
+    "section": "Set up",
+    "text": "Set up\n\nI have two dice: one 6-sided, the other 12-sided.\nWe’re going to play a game where I’m going to call them die A and die B, and you won’t know which one is which.\nYou pick die A or B, I roll it, and I tell you if you win or not, where winning is getting a number \\(\\ge\\) 4. If you win, you get a piece of candy. If you lose, I get to keep the candy.\nWe’ll play this multiple times with different contestants.\nI will not swap die A and B at any point.\nWe’ll record which die each contestant picks and whether they won or lost.\nThe ultimate goal is to come to a class consensus about whether A or B is the good die.\nYou get to pick how long you want to keep playing, but remember, each time you guess wrong, you lose a piece of candy (so there is a cost associated with too many tries). If you make the wrong decision, you lose all the candy."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#hypotheses-and-decisions",
+    "href": "slides/26-looking-further-slides.html#hypotheses-and-decisions",
+    "title": "Looking further",
+    "section": "Hypotheses and decisions",
+    "text": "Hypotheses and decisions\n\nSampling isn’t free!\nAt each trial you risk losing pieces of candy if you lose (the die comes up \\(&lt;\\) 4). Too many trials means you won’t have much candy left. And if we spend too much class time and we may not get through all the material."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#initial-guess",
+    "href": "slides/26-looking-further-slides.html#initial-guess",
+    "title": "Looking further",
+    "section": "Initial guess",
+    "text": "Initial guess\n\nYou have no idea if I have chosen A to be the good die (12-sided) or bad die (6-sided). Then, before we collect any data, what is your best guess for A is the good die and B is the bad die?\n\n\nP(A good, B bad) = 0.33; P(A bad, B good) = 0.67\nP(A good, B bad) = 0.50; P(A bad, B good) = 0.50\nP(A good, B bad) = 0; P(A bad, B good) = 1\nP(A good, B bad) = 0.25; P(A bad, B good) = 0.75"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#prior-probabilities",
+    "href": "slides/26-looking-further-slides.html#prior-probabilities",
+    "title": "Looking further",
+    "section": "Prior probabilities",
+    "text": "Prior probabilities\n\n\nThese are your prior probabilities for the two competing claims (hypotheses):\n\n\n\\(H_1\\): A good, B bad\n\n\\(H_2\\): A bad, B good\n\n\nThat is, these probabilities represent what you believe before seeing any data.\nYou could have conceivably made up these probabilities, but instead you have chosen to make an educated guess."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#decision-making",
+    "href": "slides/26-looking-further-slides.html#decision-making",
+    "title": "Looking further",
+    "section": "Decision making",
+    "text": "Decision making\n\nWhat is your decision?\n\n\n\nHow did you make this decision?"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#probability-tree---roll-1",
+    "href": "slides/26-looking-further-slides.html#probability-tree---roll-1",
+    "title": "Looking further",
+    "section": "Probability tree - roll 1",
+    "text": "Probability tree - roll 1\n\nWhat is the probability, based on the outcome of the {first} roll, that A is the good die (and B is the bad die)?"
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#posterior-probability",
+    "href": "slides/26-looking-further-slides.html#posterior-probability",
+    "title": "Looking further",
+    "section": "Posterior probability",
+    "text": "Posterior probability\n\nThe probability\n\n\\[ {P(A~is~good~|~outcome~of~1^{st}~roll)} \\]\nis also called the posterior probability.\n\nPosterior probability is generally defined as P(hypothesis \\(|\\) data). It tells us the probability of a hypothesis we set forth, given the data we just observed. It depends on both the prior probability we set and the observed data.\nThis is different than a p-value (a Frequentist concept) which is roughly P(data \\(|\\) hypothesis).\nIn the next iteration (roll) we get to take advantage of what we learned from the data.\nIn other words, we update our prior with our posterior."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#recap-bayesian-inference",
+    "href": "slides/26-looking-further-slides.html#recap-bayesian-inference",
+    "title": "Looking further",
+    "section": "Recap: Bayesian inference",
+    "text": "Recap: Bayesian inference\n\nTake advantage of prior information, like a previously published study or a physical model.\nNaturally integrate data as you collect it, and update your priors.\nAvoid the counter-intuitive Frequentist definition of a p-value as the P(observed or more extreme outcome \\(|\\) \\(H_0\\) is true). Instead base decisions on the posterior probability, P(hypothesis is true \\(|\\) observed data).\nWatch out! A good prior helps, a bad prior hurts, but the prior matters less the more data you have.\nMore advanced Bayesian techniques offer flexibility not present in Frequentist models."
+  },
+  {
+    "objectID": "slides/26-looking-further-slides.html#thank-you",
+    "href": "slides/26-looking-further-slides.html#thank-you",
+    "title": "Looking further",
+    "section": "Thank you!",
+    "text": "Thank you!"
   },
   {
     "objectID": "slides/25-making-decisions.html",
