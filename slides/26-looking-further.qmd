@@ -62,6 +62,37 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 24))
 
 - Final exam office hourse [posted](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)
 
+## Extra credit {.xsmall}
+
+**Due:** On paper (hand written or typed) at the final exam review
+
+**Task:** 
+
+- Write one question for the final exam.
+
+- Must be related to course content, which specific references from course content (lecture slide deck, book chapter, video, etc.)
+
+- Can be a 3-point (one correct answer) or 5-point (select-all-that-apply) question
+
+**Grading:**
+
+- If you turn in a "good" (or good enough) question, you get +1 or +2 points on your Exam 2, depending on the quality of the question.
+
+- I will use one of these questions on the exam, so that's even more incentive to write a really good one!
+
+- If you turn in a "not good enough" question, you don't get any extra credit.
+
+## Awards
+
+::: incremental
+
+- Best ugly plot
+
+- Best team name
+
+- Most messed up repo
+:::
+
 # From last time
 
 ## Participate 📱💻 {.xsmall}
@@ -238,4 +269,202 @@ Observed difference in promotion rates
 ## Simulating under the null
 
 ![](images/26/sex-rand-shuffle-sort.png)
+
+## Observed
+
+```{r}
+obs_diff <- sex_discrimination |>
+  specify(decision ~ sex, success = "promoted") |>
+  calculate("diff in props", success = "promoted", order = c("male", "female"))
+
+obs_diff
+```
+
+## Null distribution {.smaller}
+
+```{r}
+set.seed(199)
+null_dist <- sex_discrimination |>
+  specify(decision ~ sex, success = "promoted") |>
+  hypothesize(null = "independence") |>
+  generate(reps = 10000, type = "permute") |>
+  calculate("diff in props", success = "promoted", order = c("male", "female"))
+
+null_dist
+```
+
+## Visualizing the null distribution
+
+```{r}
+visualize(null_dist)
+```
+
+## Visualizing the p-value
+
+```{r}
+visualize(null_dist) +
+  shade_p_value(obs_stat = obs_diff, direction = "two-sided")
+```
+
+## Calculating the p-value
+
+```{r}
+get_p_value(
+  null_dist,
+  obs_stat = obs_diff,
+  direction = "two-sided"
+)
+```
+
+## Conclusion
+
+With a p-value smaller than 0.05, we reject the null hypothesis and conclude that the data provide convincing evidence of a discernible difference between the male and female promotion rate, i.e., sex discrimination in promotion decisions.
+
+# Decision making, the Bayesian way
+
+## What's the chance of winning? {.smaller}
+
+::: question
+What is the probability of getting an outcome $$ 4 when rolling a 6-sided die? What is the probability when rolling a 12-sided die?
+:::
+
+- 6-sided: ${3}{4}$, 12-sided: ${1}{2}$
+- 6-sided: ${1}{3}$, 12-sided: ${2}{3}$
+- 6-sided: ${1}{2}$, 12-sided: ${3}{4}$
+- 6-sided: ${2}{3}$, 12-sided: ${1}{3}$
+
+## Which die is the good die? {.smaller}
+
+::: question
+You're playing a game where you win if the die roll is $$ 4. If you could get your pick, which die would you prefer to play this game with?
+:::
+
+- 6-sided
+- 12-sided
+
+## Interpretation of probability {.smaller}
+
+- Frequentist interpretation:
+  - The probability of an outcome is the proportion of times the outcome would occur if we observed the **random process** an infinite number of times.
+  - Single main stream school until recently.
+  - What we've been using so far in this course.
+
+- Bayesian interpretation:
+  - A Bayesian interprets probability as a subjective degree of belief: For the same event, two separate people could have differing probabilities.
+  - Largely popularized by revolutionary advance in computational technology and methods during the last twenty years.
+
+## Set up {.xsmall}
+
+- I have two dice: one 6-sided, the other 12-sided.
+
+- We're going to play a game where I'm going to call them die A and die B, and you won't know which one is which.
+
+- You pick die A or B, I roll it, and I tell you if you win or not, where winning is getting a number $\ge$ 4. If you win, you get a piece of candy. If you lose, I get to keep the candy.
+
+- We'll play this multiple times with different contestants.
+
+- I will not swap die A and B at any point.
+
+- We'll record which die each contestant picks and whether they won or lost.
+
+- The ultimate goal is to come to a class consensus about whether A or B is the good die.
+
+- You get to pick how long you want to keep playing, but remember, each time you guess wrong, you lose a piece of candy (so there is a cost associated with too many tries). If you make the wrong decision, you lose all the candy.
+
+## Hypotheses and decisions {.smaller}
+
+![](images/26/hypotheses-decisions.png)
+
+**Sampling isn't free!**
+
+At each trial you risk losing pieces of candy if you lose (the die comes up $<$ 4). Too many trials means you won't have much candy left. And if we spend too much class time and we may not get through all the material.
+
+## Initial guess {.smaller}
+
+::: question
+You have no idea if I have chosen A to be the good die (12-sided) or bad die (6-sided). Then, before we collect any data, what is your best guess for A is the good die and B is the bad die?
+:::
+
+- P(A good, B bad) = 0.33; P(A bad, B good) = 0.67
+- P(A good, B bad) = 0.50; P(A bad, B good) = 0.50
+- P(A good, B bad) = 0; P(A bad, B good) = 1
+- P(A good, B bad) = 0.25; P(A bad, B good) = 0.75
+
+## Prior probabilities {.smaller}
+
+- These are your **prior probabilities** for the two competing claims (hypotheses):
+
+  - $H_1$: A good, B bad
+  - $H_2$: A bad, B good
+
+- That is, these probabilities represent what you believe before seeing any data.
+
+- You could have conceivably made up these probabilities, but instead you have chosen to make an educated guess.
+
+# Results
+
+![](images/26/data.png)
+
+## Decision making {.smaller}
+
+::: question
+What is your decision?
+:::
+
+<br>
+
+::: question
+How did you make this decision?
+:::
+
+## Probability tree - roll 1 {.smaller}
+
+::: question
+What is the probability, based on the outcome of the {first} roll, that A is the good die (and B is the bad die)?
+:::
+
+- We want to find P(A is good $|$ outcome of $1^{st}$ roll).
+
+- This is a conditional probability so we'll use Bayes' Theorem
+$$ P(X|Y) = \frac{P(X~and~Y)}{P(Y)} $$
+
+- In context, this would be
+
+![](images/26/p1.png)
+
+- Earlier, we decided that the prior probability, P(A good) = 0.5.
+
+## Posterior probability {.xsmall}
+
+- The probability
+
+$$ {P(A~is~good~|~outcome~of~1^{st}~roll)} $$
+
+is also called the **posterior probability**.
+
+- Posterior probability is generally defined as P(hypothesis $|$ data). It tells us the probability of a hypothesis we set forth, given the data we just observed. It depends on both the prior probability we set and the observed data.
+
+- This is different than a p-value (a Frequentist concept) which is roughly P(data $|$ hypothesis).
+
+- In the next iteration (roll) we get to take advantage of what we learned from the data.
+
+- In other words, we update our prior with our posterior.
+
+## Recap: Bayesian inference {.smaller}
+
+- Take advantage of prior information, like a previously published study or a physical model.
+
+- Naturally integrate data as you collect it, and update your priors.
+
+- Avoid the counter-intuitive Frequentist definition of a p-value as the P(observed or more extreme outcome $|$ $H_0$ is true). Instead base decisions on the posterior probability, P(hypothesis is true $|$ observed data).
+
+- **Watch out!** A good prior helps, a bad prior hurts, but the prior matters less the more data you have.
+
+- More advanced Bayesian techniques offer flexibility not present in Frequentist models.
+
+# And finally...
+
+## Thank you!
+
+![](images/26/thank-you.png)
 
