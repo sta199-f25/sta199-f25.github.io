@@ -1,0 +1,241 @@
+---
+title: "Looking further"
+subtitle: "Lecture 26"
+date: "2025-12-04"
+format: 
+  revealjs: 
+    output-file: 26-looking-further-slides.html
+    footer: "[🔗 sta199-f25.github.io](https://sta199-f25.github.io/)"
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    logo: images/logo.png
+    pdf-separate-fragments: true
+    toc: false
+  html: 
+    code-link: true
+filters: 
+  - ../remove-fmt-skip.lua
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 24))
+```
+
+# Warm-up
+
+## Give feedback!
+
+::: {.columns}
+
+::: {.column width="30%".xsmall}
+
+-  Take 2 minutes to fill out the TA evaluation form -- link in your email! Due Monday, December 8th.
+
+-  Nominate a TA for the StatSci TA of the Year award by sending an email to <dus@stat.duke.edu> with a brief narrative for your nomination.
+
+:::
+
+::: {.column width="70%"}
+
+![](images/25/ta-1.png){width="200px"} ![](images/25/ta-2.png){width="200px"} ![](images/25/ta-3.png){width="200px"}
+
+:::
+
+::: 
+
+::: xsmall
+-  Please also fill out the course evaluation (on DukeHub) as well, I'd love to your feedback!
+:::
+
+## Announcements {.xsmall}
+
+- HW 6:
+  - Q4: Instructions clarified -- save result as `births14`
+  - Q8: Table to recreate updated
+
+- Final exam review: Tuesday, Dec 9, 3-4 pm at Soc Sci 136
+
+- Final exam office hourse [posted](https://docs.google.com/spreadsheets/d/1rVx9uZVNcrG_nUSDo7iol5VEeGcHURASVtBpwZjz5bc/edit?usp=sharing)
+
+# From last time
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+p-value is the probability of ___
+
+::: wooclap-choices
+- accepting the null hypothsesis
+- null hypothesis being true
+- observed or more extreme outcome given that the null hypothesis is true
+- null hypothesis being true given the outcome
+- a false positive
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+# Decision making with hypothesis tests
+
+## Setup
+
+```{r}
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(janitor)
+```
+
+## Sex discrimination in hiring {.smaller}
+
+- A study investigating sex discrimination in the 1970s was set in the context of personnel decisions within a bank. The research question we hope to answer is, “Are individuals who identify as female discriminated against in promotion decisions made by their managers who identify as male?” 
+
+- This study considered sex roles, and only allowed for options of “male” and “female”. The identities being considered are not gender identities and the study allowed only for a binary classification of sex.
+
+::: aside
+Rosen, B., and T. H. Jerdee. 1974. “Influence of Sex Role Stereotypes on Personnel Decisions.” Journal of Applied Psychology 59 (1): 9. <https://doi.org/doi.org/10.1037/h0035834>.
+:::
+
+## Study design {.smaller}
+
+- Participants: 48 bank supervisors who identified as male, attending a management institute at the University of North Carolina in 1972
+
+- Task: Assume the role of the personnel director of a bank and judge whether a candidate should be promoted to a branch manager position based on personnel files they were randomly assigned
+
+- Personnel files: Identical except that half of them indicated the candidate identified as male and the other half indicated the candidate identified as female
+
+- Variables: `sex` (male or female), `decision` (promoted or not promoted)
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following is the correct null hypothesis for this study?
+
+::: wooclap-choices
+- Sex and promotion decision are independent
+- Sex and promotion decision are dependent
+- Males are more likely to be promoted
+- Females are more likely to be promoted
+- Males and females are equally likely to be promoted
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Participate 📱💻 {.xsmall}
+
+::: columns
+
+::: {.column width="70%"}
+
+::: wooclap
+
+Which of the following is the correct alternative hypothesis for this study?
+
+::: wooclap-choices
+- Males are more likely to be promoted
+- Females are more likely to be promoted
+- Males and females are equally likely to be promoted
+- Males and females are not equally likely to be promoted
+:::
+
+:::
+
+:::
+
+::: {.column width="30%"}
+{{< include _wooclap-column.qmd >}}
+:::
+
+:::
+
+## Hypotheses {.smaller}
+
+p = Proportion of candidates promoted
+
+<br>
+
+. . .
+
+**Null hypothesis:** Sex and promotion decision are independent, i.e., males and females are equally likely to be promoted.
+
+$$ p_{Male} = p_{Female} $$
+
+. . .
+
+**Alternative hypothesis:** Sex and promotion decision are dependent, i.e., males and females are not equally likely to be promoted.
+
+$$ p_{Male} \ne p_{Female} $$
+
+
+## Data
+
+::: {.columns}
+
+::: {.column width="75%"}
+
+```{r}
+sex_discrimination |>
+  count(decision, sex) |>
+  pivot_wider(
+    names_from = decision,
+    values_from = n
+  ) |>
+  mutate(
+    total = promoted + `not promoted`,
+    p_prmtd = promoted / total
+  )
+```
+
+:::
+
+::: {.column width="25%" .fragment .small}
+
+<br><br><br><br><br>
+
+Observed difference in promotion rates
+
+(male - female)
+
+= 0.875 - 0.583
+
+= 0.292
+
+:::
+
+::: 
+
+## Simulating under the null
+
+![](images/26/sex-rand-shuffle-sort.png)
+
