@@ -177,7 +177,7 @@ Then, in a single pipeline, filter for any rows of the `births14` data frame whe
 
 **🧑🏽‍🏫 Feedback from Humans:** In this question you start your data prep.
 
-In a single pipeline, remove any rows of the `births14` data frame with `NA` values among those you identified as having `NA` values in the previous question .
+In a single pipeline, remove any rows of the `births14_raw` data frame with `NA` values among those you identified as having `NA` values in the previous question, and save the results as `births14`.
 
 Then, find and state the numbers of rows of columns of `births14`.
 
