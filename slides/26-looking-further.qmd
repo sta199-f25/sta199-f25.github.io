@@ -218,16 +218,21 @@ p = Proportion of candidates promoted
 
 . . .
 
+::: fragment
+
 **Null hypothesis:** Sex and promotion decision are independent, i.e., males and females are equally likely to be promoted.
 
 $$ p_{Male} = p_{Female} $$
 
-. . .
+:::
+
+::: fragment
 
 **Alternative hypothesis:** Sex and promotion decision are dependent, i.e., males and females are not equally likely to be promoted.
 
 $$ p_{Male} \ne p_{Female} $$
 
+:::
 
 ## Data
 
@@ -236,6 +241,7 @@ $$ p_{Male} \ne p_{Female} $$
 ::: {.column width="75%"}
 
 ```{r}
+#| label: obs-diff-table
 sex_discrimination |>
   count(decision, sex) |>
   pivot_wider(
