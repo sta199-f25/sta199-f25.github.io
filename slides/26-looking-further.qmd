@@ -292,7 +292,11 @@ null_dist <- sex_discrimination |>
   specify(decision ~ sex, success = "promoted") |>
   hypothesize(null = "independence") |>
   generate(reps = 10000, type = "permute") |>
-  calculate("diff in props", success = "promoted", order = c("male", "female"))
+  calculate(
+    stat = "diff in props",
+    success = "promoted",
+    order = c("male", "female")
+  )
 
 null_dist
 ```
