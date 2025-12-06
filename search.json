@@ -9498,7 +9498,7 @@
     "href": "slides/26-looking-further.html#hypotheses",
     "title": "Looking further",
     "section": "Hypotheses",
-    "text": "Hypotheses\np = Proportion of candidates promoted\n\n. . .\nNull hypothesis: Sex and promotion decision are independent, i.e., males and females are equally likely to be promoted.\n\\[ p_{Male} = p_{Female} \\]\n. . .\nAlternative hypothesis: Sex and promotion decision are dependent, i.e., males and females are not equally likely to be promoted.\n\\[ p_{Male} \\ne p_{Female} \\]"
+    "text": "Hypotheses\np = Proportion of candidates promoted\n\n. . .\n\nNull hypothesis: Sex and promotion decision are independent, i.e., males and females are equally likely to be promoted.\n\\[ p_{Male} = p_{Female} \\]\n\n\nAlternative hypothesis: Sex and promotion decision are dependent, i.e., males and females are not equally likely to be promoted.\n\\[ p_{Male} \\ne p_{Female} \\]"
   },
   {
     "objectID": "slides/26-looking-further.html#data",
@@ -9526,7 +9526,7 @@
     "href": "slides/26-looking-further.html#null-distribution",
     "title": "Looking further",
     "section": "Null distribution",
-    "text": "Null distribution\n\nset.seed(199)\nnull_dist &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 10000, type = \"permute\") |&gt;\n  calculate(\"diff in props\", success = \"promoted\", order = c(\"male\", \"female\"))\n\nnull_dist\n\nResponse: decision (factor)\nExplanatory: sex (factor)\nNull Hypothes...\n# A tibble: 10,000 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 -0.208 \n 2         2  0.125 \n 3         3 -0.0417\n 4         4 -0.0417\n 5         5  0.125 \n 6         6 -0.125 \n 7         7 -0.0417\n 8         8 -0.0417\n 9         9 -0.0417\n10        10 -0.0417\n# ℹ 9,990 more rows"
+    "text": "Null distribution\n\nset.seed(199)\nnull_dist &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 10000, type = \"permute\") |&gt;\n  calculate(\n    stat = \"diff in props\",\n    success = \"promoted\",\n    order = c(\"male\", \"female\")\n  )\n\nnull_dist\n\nResponse: decision (factor)\nExplanatory: sex (factor)\nNull Hypothes...\n# A tibble: 10,000 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 -0.208 \n 2         2  0.125 \n 3         3 -0.0417\n 4         4 -0.0417\n 5         5  0.125 \n 6         6 -0.125 \n 7         7 -0.0417\n 8         8 -0.0417\n 9         9 -0.0417\n10        10 -0.0417\n# ℹ 9,990 more rows"
   },
   {
     "objectID": "slides/26-looking-further.html#visualizing-the-null-distribution",
@@ -9715,7 +9715,7 @@
     "href": "slides/26-looking-further-slides.html#hypotheses",
     "title": "Looking further",
     "section": "Hypotheses",
-    "text": "Hypotheses\np = Proportion of candidates promoted\n\n\nNull hypothesis: Sex and promotion decision are independent, i.e., males and females are equally likely to be promoted.\n\\[ p_{Male} = p_{Female} \\]\n\n\nAlternative hypothesis: Sex and promotion decision are dependent, i.e., males and females are not equally likely to be promoted.\n\\[ p_{Male} \\ne p_{Female} \\]"
+    "text": "Hypotheses\np = Proportion of candidates promoted\n\n\n\nNull hypothesis: Sex and promotion decision are independent, i.e., males and females are equally likely to be promoted.\n\\[ p_{Male} = p_{Female} \\]\n\n\nAlternative hypothesis: Sex and promotion decision are dependent, i.e., males and females are not equally likely to be promoted.\n\\[ p_{Male} \\ne p_{Female} \\]"
   },
   {
     "objectID": "slides/26-looking-further-slides.html#data",
@@ -9743,7 +9743,7 @@
     "href": "slides/26-looking-further-slides.html#null-distribution",
     "title": "Looking further",
     "section": "Null distribution",
-    "text": "Null distribution\n\nset.seed(199)\nnull_dist &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 10000, type = \"permute\") |&gt;\n  calculate(\"diff in props\", success = \"promoted\", order = c(\"male\", \"female\"))\n\nnull_dist\n\nResponse: decision (factor)\nExplanatory: sex (factor)\nNull Hypothes...\n# A tibble: 10,000 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 -0.208 \n 2         2  0.125 \n 3         3 -0.0417\n 4         4 -0.0417\n 5         5  0.125 \n 6         6 -0.125 \n 7         7 -0.0417\n 8         8 -0.0417\n 9         9 -0.0417\n10        10 -0.0417\n# ℹ 9,990 more rows"
+    "text": "Null distribution\n\nset.seed(199)\nnull_dist &lt;- sex_discrimination |&gt;\n  specify(decision ~ sex, success = \"promoted\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 10000, type = \"permute\") |&gt;\n  calculate(\n    stat = \"diff in props\",\n    success = \"promoted\",\n    order = c(\"male\", \"female\")\n  )\n\nnull_dist\n\nResponse: decision (factor)\nExplanatory: sex (factor)\nNull Hypothes...\n# A tibble: 10,000 × 2\n   replicate    stat\n       &lt;int&gt;   &lt;dbl&gt;\n 1         1 -0.208 \n 2         2  0.125 \n 3         3 -0.0417\n 4         4 -0.0417\n 5         5  0.125 \n 6         6 -0.125 \n 7         7 -0.0417\n 8         8 -0.0417\n 9         9 -0.0417\n10        10 -0.0417\n# ℹ 9,990 more rows"
   },
   {
     "objectID": "slides/26-looking-further-slides.html#visualizing-the-null-distribution",
